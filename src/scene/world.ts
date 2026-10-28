@@ -28,7 +28,8 @@ export const world = {
   tint: new THREE.Color(1, 1, 1),
   tintAmt: 0,
   snow: 0,
-  isMobile: false,
+  /** phones get lighter post-processing and fewer stars */
+  isMobile: typeof window !== 'undefined' && (Math.min(window.innerWidth, window.innerHeight) < 700 || matchMedia('(pointer: coarse)').matches),
 }
 
 const smooth = (a: number, b: number, k: number, dt: number) => a + (b - a) * (1 - Math.exp(-k * dt))
