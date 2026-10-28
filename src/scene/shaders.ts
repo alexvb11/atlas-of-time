@@ -107,13 +107,17 @@ export const driftVertex = /* glsl */ `
 attribute vec3 aPosA;
 attribute vec3 aPosB;
 attribute vec2 aUv;
+attribute float aOkA;
+attribute float aOkB;
 uniform float uMix;
 uniform float uLift;
 varying vec2 vUv;
 varying vec3 vN;
 varying vec3 vWorld;
+varying float vOk;
 void main() {
   vec3 p = normalize(mix(aPosA, aPosB, uMix));
+  vOk = mix(aOkA, aOkB, uMix);
   vUv = aUv;
   vN = normalize(mat3(modelMatrix) * p);
   vec4 w = modelMatrix * vec4(p * uLift, 1.0);
@@ -132,6 +136,7 @@ uniform float uSnow;
 varying vec2 vUv;
 varying vec3 vN;
 varying vec3 vWorld;
+varying float vOk;
 ${lightingChunk}
 void main() {
   vec3 N = normalize(vN);
@@ -140,9 +145,15 @@ void main() {
   float land = texture2D(uData, vUv).r;
   // coastal triangles may sample ocean pixels after simplification: use a neutral land colour there
   vec3 albedo = mix(vec3(0.22, 0.24, 0.16), day, smoothstep(0.2, 0.7, land));
-  albedo = mix(albedo, desaturate(albedo, 0.6) * uTint * 1.6, uTintAmt);
+  // Deep time: today's vegetation and ice are anachronistic, so keep only the relief/texture
+  // variation of the photo (clamped luminance) and colour it with the period palette.
+  float lum = clamp(dot(albedo, vec3(0.2126, 0.7152, 0.0722)), 0.06, 0.32);
+  vec3 period = uTint * (0.42 + lum * 1.25);
+  albedo = mix(albedo, period, uTintAmt);
   albedo = mix(albedo, vec3(0.82, 0.88, 0.94), uSnow);
-  gl_FragColor = vec4(shade(albedo, N, V, 0.0, vec3(0.0)), uOpacity);
+  if (vOk < 0.05) discard;
+  // ghost crust (inferred positions) stays faint; reconstructed crust is solid
+  gl_FragColor = vec4(shade(albedo, N, V, 0.0, vec3(0.0)), uOpacity * (vOk > 0.5 ? 1.0 : vOk * 1.6));
   #include <tonemapping_fragment>
   #include <colorspace_fragment>
 }

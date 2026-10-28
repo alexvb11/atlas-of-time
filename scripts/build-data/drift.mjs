@@ -16,6 +16,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import earcut from 'earcut'
+import { createHash } from 'node:crypto'
 import * as topojson from 'topojson-client'
 import { presimplify, simplify } from 'topojson-simplify'
 
@@ -40,28 +41,64 @@ const simple = simplify(pre, Number(process.env.W ?? 0.05))
 const land = topojson.merge(simple, simple.objects.countries.geometries)
 const borders = topojson.mesh(simple, simple.objects.countries, (a, b) => a !== b)
 
-const verts = [] // [lon, lat]
+const verts = [] // [lon, lat], lon normalised to [-180, 180)
 const vkey = new Map()
+const norm = (x) => ((((x + 180) % 360) + 360) % 360) - 180
 const addV = (lon, lat) => {
-  const k = `${lon.toFixed(4)},${lat.toFixed(4)}`
+  const k = `${norm(lon).toFixed(4)},${lat.toFixed(4)}`
   let i = vkey.get(k)
   if (i === undefined) {
     i = verts.length
-    verts.push([lon, lat])
+    verts.push([norm(lon), lat])
     vkey.set(k, i)
   }
   return i
 }
 
+// Rings that cross the antimeridian jump by ~360° in longitude; triangulating them in raw lon/lat
+// creates triangles spanning the whole map. Unwrap each ring to continuous longitudes first (and
+// close polar caps along the pole), triangulate there, and store normalised vertices.
+function unwrap(ring) {
+  const out = [[ring[0][0], ring[0][1]]]
+  for (let i = 1; i < ring.length; i++) {
+    let x = ring[i][0]
+    const prev = out[i - 1][0]
+    while (x - prev > 180) x -= 360
+    while (x - prev < -180) x += 360
+    out.push([x, ring[i][1]])
+  }
+  return out
+}
+
 let tris = []
+let polarCaps = 0
 for (const poly of land.coordinates) {
   const flat = []
   const holes = []
   const ids = []
+  let outerMean = 0
   poly.forEach((ring, r) => {
-    if (r > 0) holes.push(flat.length / 2)
-    // drop closing vertex
-    for (const [lon, lat] of ring.slice(0, -1)) {
+    let u = unwrap(ring)
+    const d = u[u.length - 1][0] - u[0][0]
+    u = u.slice(0, -1)
+    if (r === 0) {
+      outerMean = u.reduce((a, p) => a + p[0], 0) / u.length
+      if (Math.abs(d) > 180) {
+        // polar cap: walk along the pole back to the start
+        polarCaps++
+        const poleLat = u.reduce((a, p) => a + p[1], 0) / u.length < 0 ? -90 : 90
+        const x0 = u[0][0] + d
+        const steps = Math.ceil(Math.abs(d) / 5)
+        u.push([x0, u[0][1]])
+        for (let k = 0; k <= steps; k++) u.push([x0 - (d * k) / steps, poleLat])
+      }
+    } else {
+      const mean = u.reduce((a, p) => a + p[0], 0) / u.length
+      const shift = Math.round((outerMean - mean) / 360) * 360
+      u = u.map(([x, y]) => [x + shift, y])
+      holes.push(flat.length / 2)
+    }
+    for (const [lon, lat] of u) {
       flat.push(lon, lat)
       ids.push(addV(lon, lat))
     }
@@ -69,6 +106,7 @@ for (const poly of land.coordinates) {
   const t = earcut(flat, holes.length ? holes : null, 2)
   for (let i = 0; i < t.length; i++) tris.push(ids[t[i]])
 }
+console.log('polar caps closed:', polarCaps)
 
 const toVec = ([lon, lat]) => {
   const p = (lat * Math.PI) / 180
@@ -88,9 +126,10 @@ const midpoint = (a, b) => {
   let m = mid.get(k)
   if (m === undefined) {
     const [x1, y1] = verts[a]
-    const [x2, y2] = verts[b]
-    m = verts.length
-    verts.push([(x1 + x2) / 2, (y1 + y2) / 2])
+    let [x2, y2] = verts[b]
+    if (x2 - x1 > 180) x2 -= 360
+    if (x2 - x1 < -180) x2 += 360
+    m = addV((x1 + x2) / 2, (y1 + y2) / 2)
     mid.set(k, m)
   }
   return m
@@ -143,6 +182,16 @@ for (const poly of land.coordinates)
     for (let i = 0; i < ring.length - 1; i++) coast.push(addV(...ring[i]), addV(...ring[i + 1]))
 
 const N = verts.length
+{
+  let area = 0
+  for (let i = 0; i < tris.length; i += 3) {
+    const [a, b, c] = [tris[i], tris[i + 1], tris[i + 2]].map((v) => toVec(verts[v]))
+    const u = [b[0] - a[0], b[1] - a[1], b[2] - a[2]]
+    const w = [c[0] - a[0], c[1] - a[1], c[2] - a[2]]
+    area += Math.hypot(u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0]) / 2
+  }
+  console.log(`land area ${area.toFixed(2)} sr (Earth's land is ~3.65 sr)`)
+}
 console.log(`vertices ${N}, triangles ${tris.length / 3}, border segs ${seg.length / 2}, coast segs ${coast.length / 2}`)
 
 {
@@ -157,17 +206,17 @@ console.log(`vertices ${N}, triangles ${tris.length / 3}, border segs ${seg.leng
     Buffer.from(new Uint32Array(coast).buffer),
   ])
   await fs.writeFile(path.join(out, 'mesh.bin'), buf)
+  await fs.writeFile(path.join(cache, `mesh-${N}.bin`), buf)
 }
 
-if (process.env.DRY) process.exit(0)
 // ---------- reconstruction ----------
-async function reconstruct(time) {
-  const file = path.join(cache, `gplates-${MODEL}-${N}-${time}.json`)
+async function requestPoints(points, time, cacheName) {
+  const file = path.join(cache, `${cacheName}-${time}.json`)
   try { return JSON.parse(await fs.readFile(file, 'utf8')) } catch {}
   const coords = []
   const CHUNK = 6000
-  for (let s = 0; s < N; s += CHUNK) {
-    const part = verts.slice(s, s + CHUNK)
+  for (let s = 0; s < points.length; s += CHUNK) {
+    const part = points.slice(s, s + CHUNK)
     const body = `points=${part.map(([a, b]) => `${a.toFixed(4)},${b.toFixed(4)}`).join(',')}&time=${time}&model=${MODEL}&return_null_points`
     for (let attempt = 0; ; attempt++) {
       try {
@@ -190,6 +239,49 @@ async function reconstruct(time) {
   }
   await fs.writeFile(file, JSON.stringify(coords))
   return coords
+}
+
+// Reuse earlier reconstructions point-by-point: any vertex already sent to GPlates in a previous
+// build (same normalised coordinates) is looked up instead of re-requested.
+const previous = []
+for (const f of await fs.readdir(cache)) {
+  const m = f.match(/^mesh-(\d+)\.bin$/)
+  if (!m || Number(m[1]) === N) continue
+  const b = await fs.readFile(path.join(cache, f))
+  const ab = b.buffer.slice(b.byteOffset, b.byteOffset + b.length)
+  const n = new Uint32Array(ab, 0, 1)[0]
+  const ll = new Float32Array(ab, 16, n * 2)
+  const keyIdx = new Map()
+  for (let i = 0; i < n; i++) keyIdx.set(`${norm(ll[i * 2]).toFixed(4)},${ll[i * 2 + 1].toFixed(4)}`, i)
+  previous.push({ name: `gplates-${MODEL}-${n}`, keyIdx })
+}
+const vertKey = (i) => `${verts[i][0].toFixed(4)},${verts[i][1].toFixed(4)}`
+const source = verts.map((_, i) => {
+  // float32 round-trip in the old mesh can shift the 4th decimal; try exact key only
+  for (const p of previous) {
+    const j = p.keyIdx.get(vertKey(i))
+    if (j !== undefined) return [p, j]
+  }
+  return null
+})
+const missing = source.map((s, i) => (s ? -1 : i)).filter((i) => i >= 0)
+const missingName = `gplates-${MODEL}-x${createHash('sha1').update(missing.map(vertKey).join(';')).digest('hex').slice(0, 10)}`
+console.log(`${N - missing.length} vertices reused from earlier builds, ${missing.length} new`)
+if (process.env.DRY) process.exit(0)
+
+async function reconstruct(time) {
+  const olds = new Map()
+  for (const p of previous) {
+    try { olds.set(p, JSON.parse(await fs.readFile(path.join(cache, `${p.name}-${time}.json`), 'utf8'))) } catch {}
+  }
+  const extraIdx = missing.slice()
+  // vertices whose earlier build lacks this timestep must be requested too
+  source.forEach((s, i) => { if (s && !olds.has(s[0])) extraIdx.push(i) })
+  const extra = extraIdx.length ? await requestPoints(extraIdx.map((i) => verts[i]), time, extraIdx.length === missing.length ? missingName : `${missingName}-full`) : []
+  const out = new Array(N)
+  extraIdx.forEach((i, k) => (out[i] = extra[k]))
+  source.forEach((s, i) => { if (s && olds.has(s[0])) out[i] = olds.get(s[0])[s[1]] })
+  return out
 }
 
 const results = new Map()
@@ -255,7 +347,10 @@ for (const t of TIMES) {
     q[i * 2] = Math.round((lon / 180) * 32767)
     q[i * 2 + 1] = Math.round((lat / 90) * 32767)
   })
-  await fs.writeFile(path.join(out, `t${t}.bin`), Buffer.from(q.buffer))
+  // trailing byte per vertex: 1 = GPlates placed it, 0 = position inferred from neighbours
+  const placed = new Uint8Array(N)
+  c.forEach((p, i) => (placed[i] = p ? 1 : 0))
+  await fs.writeFile(path.join(out, `t${t}.bin`), Buffer.concat([Buffer.from(q.buffer), Buffer.from(placed.buffer)]))
   prev = filled
 }
 

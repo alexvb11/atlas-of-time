@@ -16,6 +16,8 @@ export type DriftMesh = {
 
 let meshPromise: Promise<DriftMesh> | null = null
 const snaps = new Map<number, Float32Array>()
+/** per snapshot: 1 where GPlates placed the vertex, 0 where it was inferred from neighbours */
+export const placedMask = new WeakMap<Float32Array, Uint8Array>()
 const pending = new Map<number, Promise<Float32Array>>()
 
 export function loadDriftMesh(): Promise<DriftMesh> {
@@ -59,7 +61,7 @@ export function loadSnapshot(mesh: DriftMesh, ma: number): Promise<Float32Array>
     p = fetch(`/data/drift/t${ma}.bin`)
       .then((r) => r.arrayBuffer())
       .then((b) => {
-        const q = new Int16Array(b)
+        const q = new Int16Array(b, 0, mesh.n * 2)
         const out = new Float32Array(mesh.n * 3)
         const v = new THREE.Vector3()
         for (let i = 0; i < mesh.n; i++) {
@@ -68,6 +70,7 @@ export function loadSnapshot(mesh: DriftMesh, ma: number): Promise<Float32Array>
           out[i * 3 + 1] = v.y
           out[i * 3 + 2] = v.z
         }
+        if (b.byteLength >= mesh.n * 5) placedMask.set(out, new Uint8Array(b, mesh.n * 4, mesh.n))
         snaps.set(ma, out)
         pending.delete(ma)
         return out

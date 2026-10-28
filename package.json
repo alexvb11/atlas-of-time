@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "data": "node scripts/build-data/textures.mjs && node scripts/build-data/drift.mjs && node scripts/build-data/history.mjs && node scripts/build-data/countries.mjs && node scripts/build-data/population.mjs && node scripts/build-data/entities.mjs",
+    "data:entities": "node scripts/build-data/entities.mjs",
+    "qa:shots": "node scripts/qa/shots.mjs",
+    "qa:audit": "node scripts/qa/audit.mjs 20",
+    "qa:fps": "node scripts/qa/fps.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",
@@ -44,5 +49,8 @@
     "topojson-simplify": "^3.0.3",
     "typescript": "~7.0.2",
     "vite": "^8.3.5"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

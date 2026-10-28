@@ -41,8 +41,18 @@ export function onHistoryChange(fn: () => void) {
   return () => void listeners.delete(fn)
 }
 
+// Snapshots that must not be carried forward to the next one: the 123,000 BCE map shows
+// Neanderthals and Homo erectus, who were gone by about 40,000 years ago.
+const VALID_UNTIL: Record<number, number> = { [-122999]: 2026 - 40000 }
+
 /** Index of the latest snapshot at or before t, -1 if none */
 export function snapshotIndexAt(t: number): number {
+  const i = latestAtOrBefore(t)
+  if (i >= 0 && VALID_UNTIL[historyYears[i]] !== undefined && t > VALID_UNTIL[historyYears[i]]) return -1
+  return i
+}
+
+function latestAtOrBefore(t: number): number {
   let lo = 0
   let hi = historyYears.length - 1
   let ans = -1

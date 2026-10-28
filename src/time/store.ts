@@ -24,6 +24,8 @@ type State = {
 
   introDone: boolean
   paletteOpen: boolean
+  /** id of the event whose card is open */
+  activeEvent: string | null
   soundOn: boolean
   reducedMotion: boolean
 
@@ -53,6 +55,7 @@ export const useTime = create<State>()(
     hover: null,
     introDone: false,
     paletteOpen: false,
+    activeEvent: null,
     soundOn: false,
     reducedMotion: !!reduced,
 

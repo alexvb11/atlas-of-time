@@ -21,6 +21,8 @@ export const world = {
   dim: 0,
   /** time-warp strength 0..1 from scrub velocity */
   warp: 0,
+  /** confidence in the plate reconstruction, fades for the oldest snapshots */
+  deepConf: 1,
   /** political borders visibility */
   borders: 1,
   tint: new THREE.Color(1, 1, 1),
@@ -63,6 +65,7 @@ export function updateWorld(dt: number) {
   world.sea = seaLevelAt(t)
   world.ice = iceAt(t)
   world.lights = Math.pow(sstep(1870, 1985, t), 1.3)
+  world.deepConf = 1 - 0.65 * sstep(480, 600, world.ma)
   world.borders = t >= -122999 ? 1 - world.drift : 0
   world.dim = smooth(world.dim, s.selection ? 1 : 0, 3, dt)
 
@@ -73,7 +76,7 @@ export function updateWorld(dt: number) {
   const tint = (p && TINTS[p.name]) || [1, 1, 1]
   tmp.setRGB(tint[0], tint[1], tint[2])
   world.tint.lerp(tmp, 1 - Math.exp(-4 * dt))
-  world.tintAmt = smooth(world.tintAmt, p && TINTS[p.name] ? 0.55 : 0, 4, dt)
+  world.tintAmt = smooth(world.tintAmt, p && TINTS[p.name] ? 0.9 : 0, 4, dt)
   world.snow = smooth(world.snow, p?.name === 'Cryogenian' ? 0.7 : 0, 3, dt)
 }
 

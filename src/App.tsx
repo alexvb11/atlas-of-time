@@ -1,29 +1,42 @@
-import { useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { Scene } from './scene/Scene'
 import { TimeBar, useTimeKeys } from './ui/TimeBar'
 import { Hud, Readout } from './ui/Readout'
 import { HoverLabel } from './ui/HoverLabel'
 import { Panel } from './ui/panel/Panel'
+import { CommandPalette } from './ui/CommandPalette'
+import { Corner } from './ui/Corner'
+import { Intro } from './app/Intro'
+import { EventCard } from './ui/EventCard'
 import { useTime } from './time/store'
 
 export default function App() {
   useTimeKeys()
-  useEffect(() => {
-    useTime.getState().set({ introDone: true })
-  }, [])
+  const introDone = useTime((s) => s.introDone)
   return (
     <main className="fixed inset-0 overflow-hidden bg-void">
       <Scene />
-      <div id="globe-labels" className="pointer-events-none fixed inset-0 overflow-hidden" />
-      {/* soft scrim so the readout stays legible over bright cloud tops */}
-      <div className="pointer-events-none fixed inset-x-0 top-0 h-[300px] bg-[radial-gradient(ellipse_70%_100%_at_50%_0%,rgba(2,4,9,.82),rgba(2,4,9,.35)_55%,transparent)]" />
-      <HoverLabel />
-      <Panel />
-      <header className="pointer-events-none fixed inset-x-0 top-0 z-10 px-4 pt-[max(12px,env(safe-area-inset-top))]">
-        <TimeBar />
-        <Hud />
-        <Readout />
-      </header>
+      <div id="globe-labels" className={`pointer-events-none fixed inset-0 overflow-hidden transition-opacity duration-1000 ${introDone ? "" : "opacity-0"}`} />
+      <div id="globe-events" className={`pointer-events-none fixed inset-0 overflow-hidden ${introDone ? '' : 'invisible'}`} />
+      <AnimatePresence>
+        {introDone && (
+          <>
+            {/* soft scrim so the readout stays legible over bright cloud tops */}
+            <div key="scrim" className="pointer-events-none fixed inset-x-0 top-0 h-[300px] bg-[radial-gradient(ellipse_70%_100%_at_50%_0%,rgba(2,4,9,.82),rgba(2,4,9,.35)_55%,transparent)]" />
+            <HoverLabel key="hover" />
+            <Panel key="panel" />
+            <header key="header" className="pointer-events-none fixed inset-x-0 top-0 z-10 px-4 pt-[max(12px,env(safe-area-inset-top))]">
+              <TimeBar />
+              <Hud />
+              <Readout />
+            </header>
+            <Corner key="corner" />
+            <EventCard key="event" />
+          </>
+        )}
+      </AnimatePresence>
+      <CommandPalette />
+      <Intro />
     </main>
   )
 }

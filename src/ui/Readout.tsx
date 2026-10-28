@@ -38,7 +38,7 @@ export function Hud() {
   const pop = worldPopAt(time)
   const items: { k: string; v: string }[] = []
   items.push({ k: age ? 'Era' : 'Period', v: age?.name ?? period?.name ?? '' })
-  if (age && period) items.push({ k: 'Epoch', v: period.name })
+  if (age && period && period.name !== 'Holocene') items.push({ k: 'Epoch', v: period.name })
   if (pop) items.push({ k: 'World population', v: `${pop.estimated ? '~' : ''}${formatPopulation(pop.value)}` })
   else if (period?.life) items.push({ k: 'Life', v: period.life })
   if (age?.powers) items.push({ k: 'Powers', v: age.powers })

@@ -58,7 +58,7 @@ void main() {
   float day = 0.55 + 0.45 * smoothstep(-0.2, 0.4, dot(normalize(vN), uSun));
   // walls glow brighter toward the top edge; the cap stays a soft translucent wash
   float wall = 1.0 - vTop;
-  float a = uOpacity * (0.16 + 0.25 * fres + wall * 0.0);
+  float a = uOpacity * (0.05 + 0.2 * fres);
   float shimmer = 0.92 + 0.08 * sin(uTime * 1.4 + vWorld.y * 30.0);
   gl_FragColor = vec4(uColor * day * shimmer, a);
 }

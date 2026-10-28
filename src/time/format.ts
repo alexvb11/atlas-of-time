@@ -37,6 +37,7 @@ export function formatYear(t: number, approx = false): string {
 }
 
 export function formatPopulation(n: number): string {
+  n = Number(n.toPrecision(3))
   if (n >= 1e9) return `${(n / 1e9).toFixed(n >= 1e10 ? 0 : 2)} billion`
   if (n >= 1e6) return `${(n / 1e6).toFixed(n >= 1e8 ? 0 : 1)} million`
   if (n >= 1e3) return `${Math.round(n / 1e3)} thousand`

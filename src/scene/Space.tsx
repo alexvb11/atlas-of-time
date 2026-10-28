@@ -121,9 +121,9 @@ void main() {
   // keep it to one region of the sky, very faint
   float region = smoothstep(0.2, 0.95, dot(d, normalize(vec3(-0.6, 0.35, -0.7))));
   float band = smoothstep(0.45, 0.0, abs(dot(d, normalize(vec3(0.0, 0.94, 0.32)))));
-  vec3 col = mix(vec3(0.05, 0.08, 0.20), vec3(0.18, 0.10, 0.22), m) * pow(n, 2.4) * (region * 1.3 + band * 0.35);
-  col += vec3(0.02, 0.05, 0.09) * pow(n, 3.0) * band;
-  gl_FragColor = vec4(col * 0.75, 1.0);
+  vec3 col = mix(vec3(0.03, 0.06, 0.15), vec3(0.10, 0.07, 0.16), m) * pow(n, 3.0) * (region * 0.9 + band * 0.25);
+  col += vec3(0.015, 0.035, 0.06) * pow(n, 3.0) * band;
+  gl_FragColor = vec4(col * 0.45, 1.0);
 }
 `
 

@@ -9,6 +9,7 @@ import * as caucasus from './curated/caucasus.mjs'
 import * as med from './curated/mediterranean.mjs'
 import * as china from './curated/china.mjs'
 import * as ab from './curated/americas-britain.mjs'
+import { events, routes } from './curated/events.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const cacheDir = path.join(root, 'scripts/.cache/wiki')
@@ -34,6 +35,7 @@ for (const e of entities) {
 }
 for (const [iso, l] of Object.entries(lineages))
   for (const s of [...l.spans, ...(l.related ?? [])]) if (!ids.has(s[2])) errors.push(`lineage ${iso}: unknown entity ${s[2]}`)
+for (const ev of events) for (const id of ev.entities ?? []) if (!ids.has(id)) errors.push(`event ${ev.id}: unknown entity ${id}`)
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
@@ -86,6 +88,6 @@ await fs.writeFile(path.join(root, 'scripts/reports/unmatched-basemap-names.json
 
 await fs.writeFile(
   path.join(root, 'public/data/entities.json'),
-  JSON.stringify({ generated: new Date().toISOString().slice(0, 10), languages, entities, lineages }),
+  JSON.stringify({ generated: new Date().toISOString().slice(0, 10), languages, entities, lineages, events: [...events].sort((a, b) => a.t - b.t), routes }),
 )
 console.log(`${entities.length} entities, ${languages.length} languages, ${Object.keys(lineages).length} lineages; ${unmatched.length}/${Object.keys(names).length} basemap names unmatched (see scripts/reports)`)

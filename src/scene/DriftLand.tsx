@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useFrame, type ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
-import { availablePair, bracket, loadDriftMesh, loadSnapshot, type DriftMesh } from '../data/drift'
+import { availablePair, bracket, loadDriftMesh, loadSnapshot, placedMask, type DriftMesh } from '../data/drift'
 import { driftFragment, driftVertex } from './shaders'
 import { SUN, world } from './world'
 import { useEarthTextures } from './Globe'
@@ -13,22 +13,61 @@ import { pointerOnGlobe } from './CameraRig'
 const lineVertex = /* glsl */ `
 attribute vec3 aPosA;
 attribute vec3 aPosB;
+attribute float aOkA;
+attribute float aOkB;
 uniform float uMix;
 uniform float uLift;
+uniform vec3 uSun;
 varying float vFacing;
+varying float vOk;
 void main() {
   vec3 p = normalize(mix(aPosA, aPosB, uMix));
+  vOk = mix(aOkA, aOkB, uMix) * (0.2 + 0.8 * smoothstep(-0.2, 0.3, dot(p, uSun)));
   vec4 w = modelMatrix * vec4(p * uLift, 1.0);
   vFacing = dot(normalize(cameraPosition - w.xyz), p);
   gl_Position = projectionMatrix * viewMatrix * w;
 }
 `
+/**
+ * Per-vertex visibility for a snapshot: primitives (triangles or segments) whose edges stretched far
+ * beyond their present-day length straddle two plates; fade them so rifts read as gaps, not streaks.
+ */
+const okCache = new WeakMap<Float32Array, Map<Uint32Array, Float32Array>>()
+function stretchOk(mesh: DriftMesh, snap: Float32Array, index: Uint32Array, k: 2 | 3): Float32Array {
+  let byIndex = okCache.get(snap)
+  if (!byIndex) okCache.set(snap, (byIndex = new Map()))
+  const hit = byIndex.get(index)
+  if (hit) return hit
+  const P = mesh.present
+  const placed = placedMask.get(snap)
+  const ok = new Float32Array(mesh.n).fill(1)
+  const len = (A: Float32Array, i: number, j: number) => Math.hypot(A[i * 3] - A[j * 3], A[i * 3 + 1] - A[j * 3 + 1], A[i * 3 + 2] - A[j * 3 + 2])
+  for (let p = 0; p < index.length; p += k) {
+    let ratio = 0
+    for (let e = 0; e < k; e++) {
+      const i = index[p + e]
+      const j = index[p + ((e + 1) % k)]
+      ratio = Math.max(ratio, len(snap, i, j) / Math.max(len(P, i, j), 0.0015))
+    }
+    let v = 1 - THREE.MathUtils.smoothstep(ratio, 1.5, 2.2)
+    // crust the plate model does not place at this time: shown only as a faint ghost
+    if (placed) for (let e = 0; e < k; e++) if (!placed[index[p + e]]) v = Math.min(v, 0.12)
+    for (let e = 0; e < k; e++) {
+      const i = index[p + e]
+      if (v < ok[i]) ok[i] = v
+    }
+  }
+  byIndex.set(index, ok)
+  return ok
+}
+
 const lineFragment = /* glsl */ `
 uniform vec3 uColor;
 uniform float uOpacity;
 varying float vFacing;
+varying float vOk;
 void main() {
-  gl_FragColor = vec4(uColor, uOpacity * smoothstep(0.0, 0.25, vFacing));
+  gl_FragColor = vec4(uColor, uOpacity * smoothstep(0.0, 0.25, vFacing) * vOk * vOk);
 }
 `
 
@@ -70,6 +109,8 @@ function DriftLayers({ mesh }: { mesh: DriftMesh }) {
       g.setAttribute('position', pos)
       g.setAttribute('aPosA', attrA)
       g.setAttribute('aPosB', attrB)
+      g.setAttribute('aOkA', new THREE.BufferAttribute(new Float32Array(mesh.n).fill(1), 1))
+      g.setAttribute('aOkB', new THREE.BufferAttribute(new Float32Array(mesh.n).fill(1), 1))
       g.setIndex(new THREE.BufferAttribute(index, 1))
       g.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 1.01)
       return g
@@ -96,11 +137,11 @@ function DriftLayers({ mesh }: { mesh: DriftMesh }) {
     [tex],
   )
   const coastUniforms = useMemo(
-    () => ({ uMix: { value: 0 }, uLift: { value: 1.0022 }, uColor: { value: new THREE.Color('#a8e6ff') }, uOpacity: { value: 0 } }),
+    () => ({ uMix: { value: 0 }, uSun: { value: SUN }, uLift: { value: 1.0022 }, uColor: { value: new THREE.Color('#a8e6ff') }, uOpacity: { value: 0 } }),
     [],
   )
   const borderUniforms = useMemo(
-    () => ({ uMix: { value: 0 }, uLift: { value: 1.0024 }, uColor: { value: new THREE.Color('#ffc477') }, uOpacity: { value: 0 } }),
+    () => ({ uMix: { value: 0 }, uSun: { value: SUN }, uLift: { value: 1.0024 }, uColor: { value: new THREE.Color('#ffc477') }, uOpacity: { value: 0 } }),
     [],
   )
 
@@ -127,13 +168,22 @@ function DriftLayers({ mesh }: { mesh: DriftMesh }) {
 
     const pair = availablePair(mesh, ma)
     if (!pair) return
+    const setOk = (which: 'aOkA' | 'aOkB', snap: Float32Array) => {
+      for (const [g, idx, k] of [[land, mesh.tris, 3], [coast, mesh.coast, 2], [borders, mesh.borders, 2]] as const) {
+        const attr = g.attributes[which] as THREE.BufferAttribute
+        ;(attr.array as Float32Array).set(stretchOk(mesh, snap, idx, k))
+        attr.needsUpdate = true
+      }
+    }
     if (pair.A !== current.current.A) {
+      setOk('aOkA', pair.A)
       ;(attrA.array as Float32Array).set(pair.A)
       attrA.needsUpdate = true
       current.current.A = pair.A
       cpuDirty.current = true
     }
     if (pair.B !== current.current.B) {
+      setOk('aOkB', pair.B)
       ;(attrB.array as Float32Array).set(pair.B)
       attrB.needsUpdate = true
       current.current.B = pair.B
@@ -147,12 +197,11 @@ function DriftLayers({ mesh }: { mesh: DriftMesh }) {
     const u = matRef.current?.uniforms
     if (u) {
       u.uMix.value = pair.f
-      u.uOpacity.value = Math.min(1, world.drift * 1.15)
-      u.uDim.value = world.dim * 0.6
+      u.uOpacity.value = Math.min(1, world.drift * 1.15) * world.deepConf
+      u.uDim.value = world.dim * 0.3
       u.uTint.value.copy(world.tint)
       u.uTintAmt.value = world.tintAmt
       u.uSnow.value = world.snow
-      matRef.current!.transparent = world.drift < 0.999
       matRef.current!.depthWrite = world.drift > 0.5
     }
     for (const [m, op] of [

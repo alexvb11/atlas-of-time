@@ -81,8 +81,12 @@ export function resolveAt(idx: EntityIndex, p: [number, number], t: number, poli
   }
   if (span) {
     const e = idx.entities.get(span[2])!
-    if (!polity || GENERIC.test(polity.name) || e.match.includes(polity.name)) {
-      const onMap = !!polity && e.match.includes(polity.name)
+    // the border data sometimes keeps a name past its time (e.g. "Sui Empire" in 700 CE); when the
+    // name belongs to a curated entity that is not alive at T, trust the dated lineage instead
+    const staleName = !!polity && idx.matchesAny(polity.name).length > 0
+    if (!polity || GENERIC.test(polity.name) || e.match.includes(polity.name) || staleName) {
+      // a stale-named polygon still traces the right era's extent, so keep it as the outline
+      const onMap = !!polity && (e.match.includes(polity.name) || staleName)
       return { kind: 'entity', entity: e, via: 'lineage', polity: onMap ? polity : null, country, lineage, outlineFromCountry: !onMap }
     }
   }

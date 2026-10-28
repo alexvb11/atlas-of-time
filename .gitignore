@@ -4,3 +4,5 @@ scripts/.cache
 .DS_Store
 *.local
 .vercel
+scripts/qa/shots
+scripts/qa/audit

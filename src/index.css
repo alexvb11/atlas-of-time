@@ -86,10 +86,11 @@ body {
   }
 }
 
-:focus-visible {
-  outline: 2px solid var(--color-cyan);
-  outline-offset: 3px;
-  border-radius: 10px;
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+  }
 }
 
 .scroll-thin {
@@ -129,3 +130,68 @@ body {
   0%, 100% { transform: perspective(60px) rotateY(0deg) skewY(0deg); }
   50% { transform: perspective(60px) rotateY(-14deg) skewY(-2deg); }
 }
+
+/* event markers projected from the globe */
+.globe-event {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: rgb(255 228 190 / 0.92);
+  font: 500 11.5px/1 var(--font-sans);
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.95);
+  white-space: nowrap;
+  will-change: transform, opacity;
+  transition: opacity 0.25s;
+}
+.globe-event .dot {
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: var(--color-amber);
+  box-shadow: 0 0 0 3px rgb(255 196 119 / 0.18), 0 0 14px 2px rgb(255 196 119 / 0.65);
+  transition: transform 0.35s var(--ease-spring);
+}
+.globe-event.kind-battle .dot { background: #ff9a7a; box-shadow: 0 0 0 3px rgb(255 154 122 / 0.18), 0 0 14px 2px rgb(255 154 122 / 0.6); }
+.globe-event.kind-disaster .dot { background: #ffd36e; }
+.globe-event.kind-culture .dot,
+.globe-event.kind-discovery .dot { background: var(--color-cyan); box-shadow: 0 0 0 3px rgb(127 216 255 / 0.18), 0 0 14px 2px rgb(127 216 255 / 0.6); }
+.globe-event .txt {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.3s, transform 0.4s var(--ease-spring);
+}
+.globe-event.near .txt,
+.globe-event:hover .txt,
+.globe-event.active .txt,
+.globe-event:focus-visible .txt {
+  opacity: 1;
+  transform: none;
+}
+.globe-event:hover .dot,
+.globe-event.active .dot {
+  transform: scale(1.5);
+}
+.globe-event.near .dot {
+  animation: event-pulse 2.4s ease-out infinite;
+}
+@keyframes event-pulse {
+  0% { box-shadow: 0 0 0 0 rgb(255 196 119 / 0.5), 0 0 14px 2px rgb(255 196 119 / 0.65); }
+  100% { box-shadow: 0 0 0 14px rgb(255 196 119 / 0), 0 0 14px 2px rgb(255 196 119 / 0.65); }
+}
+
+.globe-event.future .dot {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--color-amber), 0 0 8px rgb(255 196 119 / 0.35);
+  animation: none;
+}
+.globe-event.future .txt { color: rgb(200 215 235 / 0.7); font-style: italic; }
+.globe-event.future.near .txt { opacity: 0; }
+.globe-event.future:hover .txt { opacity: 1; }

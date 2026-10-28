@@ -48,6 +48,14 @@ function pack(items: { id: string; r: number }[]) {
       p.y = Math.min(H - p.r - 2, Math.max(p.r + 2, p.y))
     }
   }
+  // centre the cluster
+  const minX = Math.min(...pos.map((p) => p.x - p.r)), maxX = Math.max(...pos.map((p) => p.x + p.r))
+  const minY = Math.min(...pos.map((p) => p.y - p.r)), maxY = Math.max(...pos.map((p) => p.y + p.r))
+  const dx = W / 2 - (minX + maxX) / 2, dy = H / 2 - (minY + maxY) / 2
+  for (const p of pos) {
+    p.x += dx
+    p.y += dy
+  }
   return pos
 }
 

@@ -6,6 +6,7 @@ import * as THREE from 'three'
 import { getSnapshot, historyYears, loadHistoryIndex, loadSnapshot, onHistoryChange, snapshotIndexAt, snapshotPair, type Snapshot } from '../data/history'
 import { lonLatToVec3 } from '../geo/sphere'
 import { world } from './world'
+import { loadEntityIndex } from '../data/entities'
 import { useTime } from '../time/store'
 
 const vtx = /* glsl */ `
@@ -135,6 +136,12 @@ function Labels({ snap }: { snap: Snapshot }) {
       const el = document.createElement('div')
       el.className = 'globe-label'
       el.textContent = p.name
+      // the border data keeps some outdated names (e.g. "Zaire" in 2010): use today's country name
+      if (snap.year >= 1994)
+        loadEntityIndex().then((idx) => {
+          const c = idx.countryAt(p.label[0], p.label[1])
+          if (c && c.name !== p.name) el.textContent = c.name
+        })
       const s = Math.min(1.25, 0.72 + Math.sqrt(p.area) * 1.2)
       el.style.setProperty('--s', s.toFixed(2))
       el.setAttribute('aria-hidden', 'true')

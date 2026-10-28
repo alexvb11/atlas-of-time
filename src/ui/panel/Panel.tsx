@@ -50,9 +50,11 @@ export function Panel() {
   const mobile = useIsMobile()
   const [tab, setTab] = useState<Tab>('Overview')
   const closeRef = useRef<HTMLButtonElement>(null)
+  const asideRef = useRef<HTMLElement>(null)
 
+  // move focus into the dialog for keyboard and screen-reader users without drawing a ring
   useEffect(() => {
-    if (selection) closeRef.current?.focus({ preventScroll: true })
+    if (selection) setTimeout(() => asideRef.current?.focus({ preventScroll: true }), 50)
   }, [selection])
 
   const variants = mobile
@@ -64,6 +66,8 @@ export function Panel() {
       {selection && res && idx && (
         <motion.aside
           key="panel"
+          ref={asideRef}
+          tabIndex={-1}
           role="dialog"
           aria-label="Place details"
           initial="hidden"
@@ -73,8 +77,8 @@ export function Panel() {
           transition={{ type: 'spring', stiffness: 170, damping: 22, mass: 0.9 }}
           className={
             mobile
-              ? 'glass pointer-events-auto fixed inset-x-0 bottom-0 z-30 flex h-[64vh] flex-col rounded-t-[30px] pb-[env(safe-area-inset-bottom)]'
-              : 'glass pointer-events-auto fixed top-[168px] right-4 bottom-4 z-30 flex w-[420px] flex-col rounded-[30px]'
+              ? 'glass pointer-events-auto fixed inset-x-0 bottom-0 z-30 outline-none flex h-[64vh] flex-col rounded-t-[30px] pb-[env(safe-area-inset-bottom)]'
+              : 'glass pointer-events-auto fixed top-[168px] outline-none right-4 bottom-4 z-30 flex w-[420px] flex-col rounded-[30px]'
           }
         >
           {mobile && <div className="mx-auto mt-2.5 h-1 w-10 rounded-full bg-white/20" />}
