@@ -61,7 +61,7 @@ function lineageSpan(idx: EntityIndex, iso: string | undefined, t: number, lon: 
 
 export function resolveAt(idx: EntityIndex, p: [number, number], t: number, polity: Polity | null): Resolution {
   const [lon, lat] = p
-  const country = idx.countryAt(lon, lat)
+  const country = countryNear(idx, lon, lat)
   const lineage = lineageFor(idx, country?.iso3)
 
   if (toMa(t) > 2) {
@@ -102,10 +102,30 @@ export function resolveAt(idx: EntityIndex, p: [number, number], t: number, poli
   return { kind: 'prehistory', ...prehistoryAt(lon, lat, t), country, lineage }
 }
 
+/** Country under the point, tolerating coastlines simplified away (archipelagos, fjords) */
+function countryNear(idx: EntityIndex, lon: number, lat: number): Country | null {
+  const direct = idx.countryAt(lon, lat)
+  if (direct) return direct
+  for (const r of [0.12, 0.25])
+    for (const [dx, dy] of [[r, 0], [-r, 0], [0, r], [0, -r], [r, r], [-r, -r], [r, -r], [-r, r]]) {
+      const c = idx.countryAt(lon + dx, lat + dy)
+      if (c) return c
+    }
+  return null
+}
+
 function oceanName(lon: number, lat: number) {
+  const inBox = (a: number, b: number, c: number, d: number) => lon >= a && lon <= c && lat >= b && lat <= d
+  if (inBox(46.5, 36.5, 54.5, 47.2)) return 'Caspian Sea'
+  if (inBox(27, 40.5, 42, 47)) return 'Black Sea'
+  if (inBox(-6, 30, 36.5, 46)) return 'Mediterranean Sea'
+  if (inBox(9.5, 53, 30.5, 66)) return 'Baltic Sea'
+  if (inBox(-4.5, 51, 9.5, 61.5)) return 'North Sea'
+  if (inBox(32, 12, 43.5, 30)) return 'Red Sea'
+  if (inBox(47.5, 23.5, 57, 30.5)) return 'Persian Gulf'
   if (lat < -60) return 'Southern Ocean'
   if (lat > 66) return 'Arctic Ocean'
-  if (lon > -70 && lon < 20 && lat > -60) return lat > 30 && lon > -6 ? 'Mediterranean / European seas' : 'Atlantic Ocean'
+  if (lon > -70 && lon < 20 && lat > -60) return 'Atlantic Ocean'
   if (lon >= 20 && lon < 120 && lat < 25) return 'Indian Ocean'
   return 'Pacific Ocean'
 }
@@ -148,7 +168,8 @@ export function prehistoryAt(lon: number, lat: number, t: number): { title: stri
     if (fertile) return { who: 'Early farmers', title: 'Neolithic farmers of the Fertile Crescent', text: 'Among the first farmers anywhere: wheat, barley, sheep and goats were domesticated here from about 11,000 years ago.' }
     return { who: 'Foragers and early farmers', title: 'Neolithic and Mesolithic peoples', text: 'Farming was spreading from several centres; many people still lived by foraging. Little is recorded here in this period.' }
   }
-  return { who: 'Chiefdoms and villages', title: 'Bronze Age peoples', text: 'Farmers, herders and chiefdoms without written records. Little is recorded here in this period.' }
+  if (t < -799) return { who: 'Chiefdoms and villages', title: 'Bronze Age peoples', text: 'Farmers, herders and chiefdoms without written records. Little is recorded here in this period.' }
+  return { who: 'Peoples without written records', title: 'Iron Age peoples', text: 'Farming and herding communities known mainly from archaeology. Little is recorded here in this period.' }
 }
 
 export function geologyAt(t: number) {

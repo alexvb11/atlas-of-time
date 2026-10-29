@@ -27,7 +27,7 @@ export async function getJSON(url) {
     for (let attempt = 0; ; attempt++) {
       let r
       try {
-        r = await fetch(url, { headers: UA })
+        r = await fetch(url, { headers: UA, signal: AbortSignal.timeout(30000) })
       } catch (e) {
         if (attempt > 6) throw e
         await new Promise((res) => setTimeout(res, 2000 * (attempt + 1)))
@@ -150,4 +150,35 @@ export function kmBetween([lon1, lat1], [lon2, lat2]) {
   const r = Math.PI / 180
   const d = Math.sin(lat1 * r) * Math.sin(lat2 * r) + Math.cos(lat1 * r) * Math.cos(lat2 * r) * Math.cos((lon2 - lon1) * r)
   return 6371 * Math.acos(Math.min(1, Math.max(-1, d)))
+}
+
+/** Wikidata Query Service (SPARQL), cached; POST so large VALUES blocks fit */
+export async function sparql(query) {
+  const file = path.join(cacheDir, 'sparql-' + createHash('sha1').update(query).digest('hex') + '.json')
+  try {
+    return JSON.parse(await fs.readFile(file, 'utf8'))
+  } catch {}
+  for (let attempt = 0; ; attempt++) {
+    const r = await fetch('https://query.wikidata.org/sparql', {
+      method: 'POST',
+      headers: { ...UA, Accept: 'application/sparql-results+json', 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ query }),
+    }).catch((e) => ({ ok: false, status: 0, e }))
+    if (r.ok) {
+      const j = await r.json()
+      const rows = j.results.bindings
+      await fs.writeFile(file, JSON.stringify(rows))
+      await new Promise((res) => setTimeout(res, 1000))
+      return rows
+    }
+    if (attempt > 8) throw new Error(`SPARQL failed: ${r.status}`)
+    const after = Number(r.headers?.get?.('retry-after'))
+    await new Promise((res) => setTimeout(res, (after > 0 ? after * 1000 : 10000) * Math.min(3, attempt + 1)))
+  }
+}
+
+/** SPARQL year from xsd:dateTime (WDQS uses astronomical numbering: 0000 = 1 BCE) */
+export const sparqlYear = (v) => {
+  const m = v?.match(/^(-?)(\d+)-/)
+  return m ? (m[1] ? -Number(m[2]) : Number(m[2])) : null
 }

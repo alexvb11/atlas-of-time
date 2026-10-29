@@ -15,7 +15,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   wikipediaPages,
-  wikipediaSearch,
+  sparql,
+  sparqlYear,
   wikidataEntities,
   wikidataLabels,
   wikidataSearchStatement,
@@ -145,33 +146,124 @@ for (const c of countries) {
 const pending = [...nameInfo.keys()].filter((n) => !curatedNames.has(n) && !countryNames.has(n))
 log(`tier 3: ${pending.length} names to match`)
 
-const candTitles = new Map() // name -> [{title, override}]
+// Candidate strings per name. No free-text search: Wikimedia rate-limits anonymous clients, and
+// exact label/alias matches validated by class, dates and place are more trustworthy anyway.
+const variants = new Map() // name -> [{label} | {title, override}]
 for (const n of pending) {
   if (n in nameMap) {
-    candTitles.set(n, nameMap[n] ? [{ title: nameMap[n], override: true }] : [])
+    variants.set(n, nameMap[n] ? [{ title: nameMap[n], override: true }] : [])
     continue
   }
   const clean = n.replace(/\s*\(.*?\)\s*/g, ' ').trim()
-  candTitles.set(n, [clean, `${clean} people`, `${clean} (people)`, `Kingdom of ${clean}`, `${clean} culture`].map((title) => ({ title })))
+  variants.set(n, [...new Set([n, clean, `${clean} people`, `${clean} culture`, `Kingdom of ${clean}`, `${clean} Empire`, `${clean} Sultanate`])].map((label) => ({ label })))
 }
-const exact = await wikipediaPages([...candTitles.values()].flat().map((c) => c.title))
-let done = 0
-await Promise.all(
-  pending
-    .filter((n) => !(n in nameMap))
-    .map(async (n) => {
-      const titles = await wikipediaSearch(n.replace(/\s*\(.*?\)\s*/g, ' '), 3)
-      candTitles.get(n).push(...titles.map((title) => ({ title, searched: true })))
-      if (++done % 300 === 0) log(`  searched ${done}`)
-    }),
-)
-const searchedPages = await wikipediaPages([...candTitles.values()].flat().filter((c) => c.searched).map((c) => c.title))
-const pageFor = (t) => exact.get(t) ?? searchedPages.get(t)
+const lit = (x) => JSON.stringify(x) + '@en'
+const SELECT = `?item ?article (GROUP_CONCAT(DISTINCT ?clsLabel; separator="|") AS ?classes) (MIN(?inc) AS ?from) (MAX(?dis) AS ?to) (SAMPLE(?coord) AS ?c)`
+const TAIL = `
+  OPTIONAL { ?item wdt:P31 ?cls . ?cls rdfs:label ?clsLabel . FILTER(LANG(?clsLabel) = "en") }
+  OPTIONAL { ?item wdt:P571|wdt:P580 ?inc }
+  OPTIONAL { ?item wdt:P576|wdt:P582 ?dis }
+  OPTIONAL { ?item wdt:P625 ?coord }`
+const hits = new Map() // label or title -> [{qid, title, classes, from, to, coord}]
+const addHit = (key, row) => {
+  const rec = {
+    qid: row.item.value.split('/').pop(),
+    title: decodeURIComponent(row.article.value.split('/wiki/')[1]).replaceAll('_', ' '),
+    classes: (row.classes?.value ?? '').split('|').filter(Boolean),
+    from: sparqlYear(row.from?.value),
+    to: sparqlYear(row.to?.value),
+    coord: row.c?.value ? row.c.value.match(/Point\((-?[\d.]+) (-?[\d.]+)\)/)?.slice(1, 3).map(Number) : null,
+  }
+  if (!hits.has(key)) hits.set(key, [])
+  if (!hits.get(key).some((h) => h.qid === rec.qid)) hits.get(key).push(rec)
+}
+const labelsWanted = [...new Set([...variants.values()].flat().filter((v) => v.label).map((v) => v.label))]
+for (let i = 0; i < labelsWanted.length; i += 150) {
+  const batch = labelsWanted.slice(i, i + 150)
+  const rows = await sparql(`SELECT ?name ${SELECT} WHERE {
+  VALUES ?name { ${batch.map(lit).join(' ')} }
+  { ?item rdfs:label ?name } UNION { ?item skos:altLabel ?name }
+  ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> .${TAIL}
+} GROUP BY ?name ?item ?article`)
+  for (const r of rows) addHit(r.name.value, r)
+  if ((i / 150) % 10 === 0) log(`  label queries ${i + batch.length}/${labelsWanted.length}`)
+}
+const titlesWanted = [...new Set([...variants.values()].flat().filter((v) => v.title).map((v) => v.title))]
+for (let i = 0; i < titlesWanted.length; i += 150) {
+  const batch = titlesWanted.slice(i, i + 150)
+  const rows = await sparql(`SELECT ?title ${SELECT} WHERE {
+  VALUES ?title { ${batch.map(lit).join(' ')} }
+  ?article schema:name ?title ; schema:isPartOf <https://en.wikipedia.org/> ; schema:about ?item .${TAIL}
+} GROUP BY ?title ?item ?article`)
+  for (const r of rows) addHit(r.title.value, r)
+}
+log(`  ${hits.size} candidate strings matched Wikidata items`)
 
-const t3Qids = new Set()
-for (const list of candTitles.values()) for (const c of list) { const p = pageFor(c.title); if (p?.qid) t3Qids.add(p.qid) }
-const t3Ents = await wikidataEntities([...t3Qids].filter((q) => !ents.has(q)), 'claims|labels|aliases|sitelinks')
+const decisions = []
+const t3Choice = new Map()
+for (const n of pending) {
+  const info = nameInfo.get(n)
+  const lo = Math.min(...info.years)
+  const hi = nextSnapshot(Math.max(...info.years))
+  let best = null
+  for (const v of variants.get(n)) {
+    for (const h of hits.get(v.label ?? v.title) ?? []) {
+      const reasons = []
+      let score = 0
+      if (v.override) {
+        if (h.classes.some((x) => /disambiguation/i.test(x))) continue
+        score = 10
+      }
+      else {
+        // places (cities, regions, counties as administrative units) are never polities here
+        const PLACE = /\b(city|town|village|municipality|comune|commune|settlement|county seat|capital|neighbourhood|district|region|landscape|state of the United States|U\.S\. state|province of|state of India|state of the German)\b/i
+        const STRONG = /\b(historical country|historical state|country|sovereign state|kingdom|empire|sultanate|khanate|caliphate|emirate|duchy|principality|colony|protectorate|confederation|people|ethnic group|tribe|indigenous|archaeological culture|civilization|horde|chiefdom|city-state)\b/i
+        const good = h.classes.filter((x) => GOOD.test(x) && !PLACE.test(x))
+        if (!good.length) continue
+        // overview articles about a place are not the polity itself
+        if (/^(culture|history|geography|demographics|economy|politics) of /i.test(h.title)) continue
+        // "Algeria (France)" is a colony, not today's sovereign state
+        if (/\(.+\)/.test(n) && h.classes.some((x) => /sovereign state|^country$/i.test(x))) continue
+        if (h.classes.some((x) => BAD.test(x) || PLACE.test(x)) && !h.classes.some((x) => STRONG.test(x) && !PLACE.test(x))) continue
+        const sim = Math.max(similarity(n, h.title), v.label === n ? 3 : 2)
+        score += sim
+        reasons.push(`label:${v.label}`)
+        if (h.from != null || h.to != null) {
+          // the item must exist during (or very close to) the snapshots that use the name
+          const a = h.from ?? -1e9
+          const b = h.to ?? NOW
+          if (a > hi + 50 || b < lo - 150) continue
+          if (a <= hi && b >= lo) { score += 1; reasons.push('dates') }
+        }
+        if (h.coord && info.centroid) {
+          const km = kmBetween(h.coord, info.centroid)
+          if (km > 4000) continue
+          score += km < 1500 ? 2 : 1
+          reasons.push(`${Math.round(km)}km`)
+        }
+        // an exact name with no corroboration is only accepted for peoples/cultures, not states
+        if (score < 4 && !h.classes.some((x) => /people|ethnic|tribe|culture|indigenous|nation/i.test(x))) score -= 1
+      }
+      if (!best || score > best.score) best = { ...h, score, reasons }
+    }
+  }
+  if (best && best.score >= 3) {
+    t3Choice.set(n, best)
+    decisions.push({ name: n, title: best.title, qid: best.qid, classes: best.classes.slice(0, 3), score: best.score, why: best.reasons.join(' ') })
+  } else
+    decisions.push({
+      name: n,
+      title: null,
+      reason: n in nameMap ? (nameMap[n] ? `mapped title "${nameMap[n]}" not found on Wikidata` : 'deliberately unmapped') : 'no candidate passed validation',
+    })
+}
+log(`  matched ${t3Choice.size}/${pending.length}`)
+
+// full claims for the chosen items (capitals, government, languages)
+const t3Ents = await wikidataEntities([...new Set([...t3Choice.values()].map((c) => c.qid))].filter((q) => !ents.has(q)), 'claims|labels|aliases|sitelinks')
 for (const [q, e] of t3Ents) ents.set(q, e)
+const t3Pages = await wikipediaPages([...t3Choice.values()].map((c) => c.title))
+const pageFor = (t) => t3Pages.get(t)
 
 // labels for every referenced item: classes, capitals, governments, languages, heads of state
 const refs = new Set()
@@ -187,76 +279,31 @@ function lifeOf(e) {
   return { from, to, latest: inc.length ? Math.max(...inc.map((x) => x.year)) : null }
 }
 
-const decisions = []
-const t3Choice = new Map()
-for (const n of pending) {
-  const info = nameInfo.get(n)
-  const lo = Math.min(...info.years)
-  const hi = nextSnapshot(Math.max(...info.years))
-  let best = null
-  for (const c of candTitles.get(n)) {
-    const p = pageFor(c.title)
-    if (!p || p.disambiguation || !p.qid) continue
-    const e = ents.get(p.qid)
-    if (!e) continue
-    const cls = ids(e, 'P31').map(L).filter(Boolean)
-    const reasons = []
-    let score = 0
-    if (c.override) score = 10
-    else {
-      if (cls.some((x) => BAD.test(x)) && !cls.some((x) => GOOD.test(x))) continue
-      if (!cls.some((x) => GOOD.test(x))) continue
-      const sim = Math.max(similarity(n, p.title), similarity(n, e.labels?.en?.value ?? ''))
-      if (!sim) continue
-      score += sim
-      reasons.push(`sim${sim}`)
-      const life = lifeOf(e)
-      if (life.from || life.to) {
-        const a = life.from?.year ?? -1e9
-        const b = life.to?.year ?? NOW
-        if (b < lo - 500 || a > hi + 500) continue
-        if (b >= lo - 300 && a <= hi + 300) { score += 1; reasons.push('dates') }
-      }
-      const cc = coord(e)
-      if (cc && info.centroid) {
-        const km = kmBetween(cc, info.centroid)
-        if (km > 4000) continue
-        score += km < 1500 ? 2 : 1
-        reasons.push(`${Math.round(km)}km`)
-      }
-      if (c.searched) score -= 0.5
-    }
-    if (!best || score > best.score) best = { title: p.title, qid: p.qid, score, reasons, page: p }
-  }
-  if (best && best.score >= 3) {
-    t3Choice.set(n, best)
-    decisions.push({ name: n, title: best.title, qid: best.qid, score: best.score, why: best.reasons.join(' ') })
-  } else decisions.push({ name: n, title: null, reason: n in nameMap ? 'deliberately unmapped' : 'no candidate passed validation' })
-}
-log(`  matched ${t3Choice.size}/${pending.length}`)
-
 // ---------- entity builders ----------
 const enTitle = (e) => e?.sitelinks?.enwiki?.title
-const spanList = (e, p, from, to, map = L) =>
+const spanList = (e, p, from, to, map = L, life = [-1e9, 1e9]) =>
   qualified(e, p)
-    .map((x) => [x.from ?? from, x.to ?? to, map(x.id), x.from == null ? 'estimated' : 'documented'])
+    .map((x) => [Math.max(x.from ?? from, life[0]), Math.min(x.to ?? to, life[1]), map(x.id), x.from == null ? 'estimated' : 'documented'])
     .filter((s) => s[2] && s[0] < s[1])
 
-function buildEntity({ id, e, name, match, from, to, conf, kind, tier, iso3, summary, wiki, modernFrom, datesFromMap }) {
-  const factFrom = modernFrom ?? from
-  const capitals = spanList(e, 'P36', factFrom, to)
+function buildEntity({ id, e, name, match, from, to, conf, kind, tier, iso3, summary, wiki, modernFrom, datesFromMap, factFloor = 0 }) {
+  // Unqualified Wikidata statements describe the present. For today's countries, apply them only
+  // from 1945 (or the current state's start if later) so e.g. Sweden's "representative democracy"
+  // never appears in the year 900. Qualified statements keep their own dates.
+  const factFrom = iso3 ? Math.max(modernFrom ?? from, 1945, factFloor) : (modernFrom ?? from)
+  const capitals = spanList(e, 'P36', factFrom, to, L, [from, to])
   const gov = (() => {
-    const list = spanList(e, 'P122', factFrom, to)
+    const list = spanList(e, 'P122', factFrom, to, L, [from, to])
     // collapse simultaneous unqualified forms into one line
     const un = list.filter((s) => s[3] === 'estimated').map((s) => s[2])
     const q = list.filter((s) => s[3] !== 'estimated')
     return un.length ? [...q, [factFrom, to, un.join(', '), 'documented']] : q
   })()
-  const rulers = qualified(e, 'P35').filter((x) => x.from != null).map((x) => [x.from, x.to ?? (iso3 ? NOW + 1 : to), L(x.id), 'documented']).filter((s) => s[2])
+  const rulers = qualified(e, 'P35').filter((x) => x.from != null && x.from >= from).map((x) => [x.from, Math.min(x.to ?? (iso3 ? NOW + 1 : to), to), L(x.id), 'documented']).filter((s) => s[2] && s[0] < s[1])
   const langs = ids(e, 'P37').map(L).filter(Boolean)
   return {
     id, name, kind, region: 'auto', from, to, conf, tier,
-    ...(iso3 ? { iso3, modernFrom: modernFrom ?? from } : {}),
+    ...(iso3 ? { iso3, modernFrom: factFrom } : {}),
     qid: e?.id,
     wiki,
     summary,
@@ -272,7 +319,7 @@ function buildEntity({ id, e, name, match, from, to, conf, kind, tier, iso3, sum
 const wantTitles = new Set()
 for (const q of [...countryQid.values(), ...allPred]) { const t = enTitle(ents.get(q)); if (t) wantTitles.add(t) }
 const summaries = await wikipediaPages([...wantTitles])
-const summaryOf = (t) => (t ? (summaries.get(t) ?? pageFor(t))?.extract : undefined)
+const summaryOf = (t) => (t ? summaries.get(t)?.extract : undefined)
 
 const out = []
 const lineages = {}
@@ -287,7 +334,6 @@ for (const c of countries) {
   const modernFrom = Math.max(life.latest ?? from, from)
   const wiki = enTitle(e)
   const match = [...new Set([c.name.common, c.name.official, e.labels?.en?.value, ...(e.aliases?.en ?? []).map((a) => a.value), ...(c.altSpellings ?? []).filter((s) => s.length > 3)].filter(Boolean))]
-  out.push(buildEntity({ id: `c-${c.cca3.toLowerCase()}`, e, name: c.name.common, match, from, to: NOW + 1, conf: life.from?.approx ? 'estimated' : 'documented', kind: 'country', tier: 2, iso3: c.cca3, summary: summaryOf(wiki), wiki, modernFrom }))
 
   // automated lineage from Wikidata predecessors (spans are never "override")
   const spans = []
@@ -299,19 +345,25 @@ for (const c of countries) {
       const pe = ents.get(pq)
       if (!pe || !isPolity(pe)) continue
       const pl = lifeOf(pe)
-      if (!pl.from || !pl.to || pl.to.year <= pl.from.year || pl.from.year > modernFrom) continue
+      if (!pl.from || !pl.to || pl.to.year - pl.from.year < 3 || pl.from.year > modernFrom) continue
+      // predecessors elsewhere on the globe (Wikidata chains sometimes run through the colonial power)
+      const pc = coord(pe)
+      if (pc && kmBetween(pc, [c.latlng[1], c.latlng[0]]) > 3000) continue
       const pid = `w-${pq.toLowerCase()}`
       if (!out.some((x) => x.id === pid)) {
         const pw = enTitle(pe)
         out.push(buildEntity({ id: pid, e: pe, name: pe.labels?.en?.value ?? pq, match: [pe.labels?.en?.value, ...(pe.aliases?.en ?? []).map((a) => a.value)].filter(Boolean), from: pl.from.year, to: pl.to.year, conf: pl.from.approx || pl.to.approx ? 'estimated' : 'documented', kind: kindFrom(ids(pe, 'P31').map(L).filter(Boolean)), tier: 2, summary: summaryOf(pw), wiki: pw }))
       }
-      spans.push([pl.from.year, Math.min(pl.to.year, modernFrom), pid, false])
+      spans.push([pl.from.year, pl.to.year, pid, false])
       if (depth < 1) walk(pq, depth + 1)
     }
   }
   walk(q, 0)
+  // the country entity itself; its unqualified facts start after its last predecessor ends
+  out.push(buildEntity({ id: `c-${c.cca3.toLowerCase()}`, e, name: c.name.common, match, from, to: NOW + 1, conf: life.from?.approx ? 'estimated' : 'documented', kind: 'country', tier: 2, iso3: c.cca3, summary: summaryOf(wiki), wiki, modernFrom, factFloor: Math.max(0, ...spans.map((x) => x[1]).filter((y) => y <= NOW)) }))
   spans.push([modernFrom, NOW + 1, `c-${c.cca3.toLowerCase()}`, false])
-  spans.sort((a, b) => a[0] - b[0])
+  // predecessors before the country itself when they overlap, so they win in lineage lookup
+  spans.sort((a, b) => a[0] - b[0] || (a[2].startsWith('c-') ? 1 : -1))
   lineages[c.cca3] = { name: c.name.common, spans, auto: true }
 }
 
@@ -336,7 +388,7 @@ for (const [n, best] of t3Choice) {
       to: hasDates ? life.to.year : mapTo,
       conf: hasDates && !life.from.approx && !life.to.approx ? 'documented' : 'estimated',
       kind: kindFrom(cls), tier: 3,
-      summary: best.page.extract, wiki: best.title,
+      summary: pageFor(best.title)?.extract, wiki: best.title,
       datesFromMap: !hasDates,
     }),
   )

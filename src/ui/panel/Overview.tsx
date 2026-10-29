@@ -7,6 +7,9 @@ import { ConfTag, Stat, Ticker } from './bits'
 import { formatNumber, formatPopulation } from '../../time/format'
 import { periodAt } from '../../time/eras'
 
+/** Wikipedia extracts lose their pronunciation spans and leave "()" or "( ; )" behind */
+const cleanSummary = (t?: string) => t?.replace(/\s*\(\s*[;,]?\s*\)/g, '').replace(/\s{2,}/g, ' ')
+
 function popFor(res: Resolution, idx: EntityIndex, t: number): { value: number; conf: Conf; label: string } | null {
   if (res.kind === 'entity') {
     const e = res.entity
@@ -43,7 +46,11 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
 
   if (res.kind === 'entity') {
     const e = res.entity
-    summary = e.summary
+    // automated country summaries describe the present day; never show them in the past
+    summary =
+      e.tier === 2 && e.iso3 && !isModernAt(e, t)
+        ? `The territory of present-day ${e.name}. A detailed history of this period is not yet in this atlas; the lineage above shows its predecessors where known.`
+        : cleanSummary(e.summary)
     const cap = spanAt(e.capitals, t)
     const gov = spanAt(e.gov, t)
     const ruler = spanAt(e.rulers, t)
@@ -153,7 +160,7 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
       {res.kind === 'entity' && res.entity.sources.length > 0 && (
         <p className="text-[11px] text-dim">
           Sources:{' '}
-          {res.entity.sources.map((s, i) => (
+          {res.entity.sources.filter((s) => !s.includes('wikidata.org')).map((s, i) => (
             <a key={s} href={s} target="_blank" rel="noreferrer" className="text-mist underline-offset-2 hover:text-cyan hover:underline">
               {i ? ', ' : ''}
               {decodeURIComponent(s.split('/').pop() ?? s).replaceAll('_', ' ')}

@@ -177,7 +177,7 @@ export const entities = [
     events: [[bce(612), 'Fall of Nineveh']],
   }),
   entity({
-    id: 'british-mandate-iraq', name: 'Mandatory Iraq and the Kingdom of Iraq', kind: 'kingdom', region: 'mesopotamia', from: ce(1920), to: ce(1958.5), wiki: 'Mandatory Iraq',
+    id: 'british-mandate-iraq', name: 'Mandatory Iraq and the Kingdom of Iraq', kind: 'kingdom', region: 'mesopotamia', from: ce(1920), to: ce(1958.5), wiki: 'Mandatory Iraq', match: ['Mesopotamia (GB)', 'Iraq'],
     names: [[ce(1920), ce(1932.8), 'British Mandate of Mesopotamia'], [ce(1932.8), ce(1958.5), 'Kingdom of Iraq']],
     capitals: [[ce(1920), ce(1958.5), 'Baghdad']],
     gov: [[ce(1920), ce(1932.8), 'League of Nations mandate under Britain; Hashemite king from 1921'], [ce(1932.8), ce(1958.5), 'Constitutional monarchy']],

@@ -1,5 +1,50 @@
 # Changelog
 
+## 0.3.0 — 2026-10-28
+
+### Phase 6: data coverage in three tiers
+- **Tier 1, curated**: 160 entities and 26 dated lineages, up from 77 and 10. New lineages cover
+  Persia/Iran (Elam to the Islamic Republic), Mesopotamia/Iraq (Sumer, Akkad, Ur III, Babylonia,
+  Assyria to the Republic), Anatolia/Türkiye, Russia, India, Japan, both Koreas, the caliphates and
+  Arabia, Spain, France, Germany, Peru, Mali and the Mongols, plus the United States. Egypt's
+  lineage now runs through the caliphates, the Fatimids and the Mamluks.
+- **Language catalogue**: 91 languages, up from 57. Shares are sourced where possible: the 1897
+  census for the Russian Empire and the 1989 census for the USSR, with the source shown under the
+  chart.
+- **Tier 2, automated**: all 250 present-day countries identified on Wikidata by ISO code, each
+  with a predecessor chain (P1365/P155, two steps). Unqualified modern facts (government, capital,
+  languages, flag, area, currency, summary) only appear from 1945, or after the last predecessor
+  ends if that is later. Sweden's "representative democracy" never shows in the year 900, and
+  Egypt's "republic" starts in 1953, not 1922.
+- **Tier 3, automated**: 821 border-data names matched to Wikipedia/Wikidata. Each match is
+  validated by Wikidata class (polity, people or culture; never a city, region or "Culture of X"
+  overview), date overlap with the snapshots that use the name, and distance from the polygon.
+  Colonial labels such as "Algeria (France)" are never matched to today's sovereign state. 25
+  generic labels are deliberately unmapped.
+- **Coverage**: 50% of border-data names and 62% of polygon appearances now link to an entity.
+  `scripts/reports/tier3-decisions.json` records the evidence for every match;
+  `unmatched-basemap-names.json` is the remaining work list.
+- **UI**: automated entities carry a quiet "assembled/matched automatically; not yet reviewed" note,
+  "c." dates when the dates come from the maps, and language lists without invented shares. Where
+  a catalogue language matches, a greeting is shown.
+
+### Fixes
+- Province-level entities no longer claim imperial polygon names. Before, a click anywhere in the
+  Roman, Sasanian or Russian empires could resolve to Roman Britain, Persarmenia or the Erivan
+  Governorate. "Celts" polygons no longer resolve to Iron Age Britons.
+- Coastal clicks that miss simplified country polygons (Stockholm) no longer read as open sea;
+  ocean names are more specific (Baltic, North Sea, Black Sea, Caspian, Red Sea, Persian Gulf).
+- Prehistory fallback after 800 BCE says "Iron Age peoples" instead of "Bronze Age peoples".
+
+### Engineering notes
+- Wikimedia rate-limits anonymous clients (HTTP 429). The pipeline was redesigned around about 100
+  batched Wikidata SPARQL queries instead of thousands of search calls. It honours `Retry-After`,
+  has request timeouts, and caches every response, so rebuilds are offline.
+- `entities-auto.json` is 437 KB gzipped and loads in parallel with the textures. Frame rate is
+  unchanged (60 fps idle, 58 fps scrubbing).
+- The consistency audit now covers 17 places across all tiers (34 random dates plus deep time); all
+  checks pass.
+
 ## 0.2.0 — 2026-10-28
 
 ### Phases 5–8 (partial)
