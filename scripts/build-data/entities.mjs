@@ -10,6 +10,7 @@ import * as med from './curated/mediterranean.mjs'
 import * as china from './curated/china.mjs'
 import * as ab from './curated/americas-britain.mjs'
 import { events, routes } from './curated/events.mjs'
+import * as tier1 from './curated/tier1.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const cacheDir = path.join(root, 'scripts/.cache/wiki')
@@ -17,7 +18,7 @@ await fs.mkdir(cacheDir, { recursive: true })
 await fs.mkdir(path.join(root, 'scripts/reports'), { recursive: true })
 const UA = { 'User-Agent': 'AtlasOfTime/0.1 (build-time data script)' }
 
-const modules = [caucasus, med, china, ab]
+const modules = [caucasus, med, china, ab, tier1]
 const entities = modules.flatMap((m) => m.entities)
 const lineages = Object.assign({}, ...modules.map((m) => m.lineages))
 

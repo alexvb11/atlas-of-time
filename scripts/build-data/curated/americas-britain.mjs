@@ -96,7 +96,7 @@ export const entities = [
   }),
   entity({
     id: 'iron-age-britain', name: 'Iron Age Britons', kind: 'culture', region: 'britain',
-    from: bce(800), to: ce(43), conf: E, wiki: 'Celtic Britons', match: ['Celts', 'Britons'],
+    from: bce(800), to: ce(43), conf: E, wiki: 'Celtic Britons', match: ['Britons'],
     gov: [[bce(800), ce(43), 'Tribal kingdoms (Catuvellauni, Iceni, Brigantes…)']],
     religion: [[bce(800), ce(43), 'Celtic polytheism; druids']],
     langs: [[bce(800), ce(43), [['brittonic', 0.9], ['pictish', 0.1]]]],
@@ -104,7 +104,7 @@ export const entities = [
   }),
   entity({
     id: 'roman-britain', name: 'Roman Britain', kind: 'province', region: 'britain',
-    from: ce(43), to: ce(410), wiki: 'Roman Britain', match: ['Roman Empire', 'Western Roman Empire', 'Rome (Constantinus)'],
+    from: ce(43), to: ce(410), wiki: 'Roman Britain',
     capitals: [[ce(43), ce(60), 'Camulodunum (Colchester)'], [ce(60), ce(410), 'Londinium (London)']],
     gov: [[ce(43), ce(410), 'Province of the Roman Empire']],
     religion: [[ce(43), ce(313), 'Roman and Celtic gods'], [ce(313), ce(410), 'Christianity spreading']],

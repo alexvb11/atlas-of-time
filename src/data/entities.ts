@@ -31,6 +31,17 @@ export type Entity = {
   facts: [number | null, number | null, string][]
   match: string[]
   sources: string[]
+  /** 1 = curated (default), 2 = automated from Wikidata (modern countries and predecessors),
+   *  3 = automated match of a border-data name to Wikipedia/Wikidata */
+  tier?: 1 | 2 | 3
+  /** where the language shares come from, shown under the chart */
+  langsSource?: string
+  /** languages without known speaker shares (automated tiers) */
+  langNames?: [number, number, string[]][]
+  /** for present-day countries: when today's state began; modern facts are gated on it */
+  modernFrom?: number
+  /** dates are the span of border-data snapshots using this name, not documented dates */
+  datesFromMap?: boolean
 }
 export type Language = {
   id: string
@@ -44,7 +55,7 @@ export type Language = {
   reconstructed?: boolean
 }
 export type LineageSpan = [number, number, string, boolean, [number, number, number, number]?]
-export type Lineage = { name: string; spans: LineageSpan[]; related?: [number, number, string][] }
+export type Lineage = { name: string; spans: LineageSpan[]; related?: [number, number, string][]; auto?: boolean }
 export type Country = {
   iso3: string
   iso2: string
@@ -108,13 +119,21 @@ let ready: EntityIndex | null = null
 
 export function loadEntityIndex(): Promise<EntityIndex> {
   promise ??= (async () => {
-    const [ents, ctry, topo, pop] = await Promise.all([
+    const [ents, auto, ctry, topo, pop] = await Promise.all([
       fetch('/data/entities.json').then((r) => r.json()),
+      fetch('/data/entities-auto.json')
+        .then((r) => (r.ok ? r.json() : { entities: [], lineages: {} }))
+        .catch(() => ({ entities: [], lineages: {} })),
       fetch('/data/countries.json').then((r) => r.json()),
       fetch('/data/countries-50m.json').then((r) => r.json() as Promise<Topology>),
       fetch('/data/population.json').then((r) => r.json()),
     ])
-    const entities = new Map<string, Entity>((ents.entities as Entity[]).map((e) => [e.id, e]))
+    const entities = new Map<string, Entity>()
+    for (const e of auto.entities as Entity[]) entities.set(e.id, e)
+    // curated entities win over automated ones with the same id
+    for (const e of ents.entities as Entity[]) entities.set(e.id, { ...e, tier: 1 })
+    // curated lineages replace automated ones for the same country
+    const lineages: Record<string, Lineage> = { ...auto.lineages, ...ents.lineages }
     const languages = new Map<string, Language>((ents.languages as Language[]).map((l) => [l.id, l]))
     const byName = new Map<string, Entity[]>()
     for (const e of entities.values())
@@ -122,6 +141,8 @@ export function loadEntityIndex(): Promise<EntityIndex> {
         if (!byName.has(n)) byName.set(n, [])
         byName.get(n)!.push(e)
       }
+    // when several entities claim a name at the same time, curated beats automated
+    for (const list of byName.values()) list.sort((a, b) => (a.tier ?? 1) - (b.tier ?? 1))
     const countries = new Map<string, Country>()
     const byNumeric = ctry.countries as Record<string, Country>
     for (const c of Object.values(byNumeric)) countries.set(c.iso3, c)
@@ -145,7 +166,7 @@ export function loadEntityIndex(): Promise<EntityIndex> {
     const idx: EntityIndex = {
       entities,
       languages,
-      lineages: ents.lineages,
+      lineages,
       countries,
       population: pop.series,
       all: [...entities.values()],
@@ -180,6 +201,9 @@ export function useEntityIndex(): EntityIndex | null {
 }
 
 export function flagFor(e: Entity, t: number): string | null {
-  if (!e.iso3 || t < e.from || !ready) return null
+  if (!e.iso3 || t < (e.modernFrom ?? e.from) || !ready) return null
   return ready.countries.get(e.iso3)?.flag ?? null
 }
+
+/** Is the entity in its present-day form at t (so modern facts like area or currency apply)? */
+export const isModernAt = (e: Entity, t: number) => !!e.iso3 && t >= (e.modernFrom ?? e.from)

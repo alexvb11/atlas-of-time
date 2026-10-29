@@ -90,12 +90,6 @@
   "last": 1700
  },
  {
-  "name": "France",
-  "snapshots": 28,
-  "first": 1279,
-  "last": 2010
- },
- {
   "name": "Plateau fichers and hunter gatherers",
   "snapshots": 27,
   "first": -1499,
@@ -150,12 +144,6 @@
   "last": 2010
  },
  {
-  "name": "Spain",
-  "snapshots": 24,
-  "first": 1530,
-  "last": 2010
- },
- {
   "name": "Arctic marine mammal hunters",
   "snapshots": 23,
   "first": -1999,
@@ -189,12 +177,6 @@
   "name": "Philippines",
   "snapshots": 20,
   "first": 1492,
-  "last": 2010
- },
- {
-  "name": "United States",
-  "snapshots": 20,
-  "first": 1815,
   "last": 2010
  },
  {
@@ -294,22 +276,10 @@
   "last": 2010
  },
  {
-  "name": "Holy Roman Empire",
-  "snapshots": 16,
-  "first": 1000,
-  "last": 1715
- },
- {
   "name": "Kanem-Bornu",
   "snapshots": 16,
   "first": 1279,
   "last": 1900
- },
- {
-  "name": "Mali",
-  "snapshots": 16,
-  "first": 1000,
-  "last": 2010
  },
  {
   "name": "Merina Kingdom",
@@ -358,12 +328,6 @@
   "snapshots": 15,
   "first": 1715,
   "last": 2010
- },
- {
-  "name": "Korea",
-  "snapshots": 15,
-  "first": 1000,
-  "last": 1900
  },
  {
   "name": "Netherlands Antilles",
@@ -690,12 +654,6 @@
   "last": 2010
  },
  {
-  "name": "Peru",
-  "snapshots": 12,
-  "first": 1878,
-  "last": 2010
- },
- {
   "name": "Qatar",
   "snapshots": 12,
   "first": 1878,
@@ -748,12 +706,6 @@
   "snapshots": 11,
   "first": 800,
   "last": 1530
- },
- {
-  "name": "Germany",
-  "snapshots": 11,
-  "first": 1878,
-  "last": 2010
  },
  {
   "name": "Ghana",
@@ -850,12 +802,6 @@
   "snapshots": 10,
   "first": 1000,
   "last": 1600
- },
- {
-  "name": "Japan",
-  "snapshots": 10,
-  "first": 800,
-  "last": 2010
  },
  {
   "name": "Luba",
@@ -1038,12 +984,6 @@
   "last": 100
  },
  {
-  "name": "Mongolia",
-  "snapshots": 9,
-  "first": 1914,
-  "last": 2010
- },
- {
   "name": "Mozambique",
   "snapshots": 9,
   "first": 1878,
@@ -1096,18 +1036,6 @@
   "snapshots": 9,
   "first": 1279,
   "last": 1715
- },
- {
-  "name": "Silla",
-  "snapshots": 9,
-  "first": 0,
-  "last": 900
- },
- {
-  "name": "Songhai",
-  "snapshots": 9,
-  "first": 1492,
-  "last": 1800
  },
  {
   "name": "Suriname",
@@ -1200,12 +1128,6 @@
   "last": 2010
  },
  {
-  "name": "Iran",
-  "snapshots": 8,
-  "first": 1920,
-  "last": 2010
- },
- {
   "name": "Ivory Coast",
   "snapshots": 8,
   "first": 1878,
@@ -1216,12 +1138,6 @@
   "snapshots": 8,
   "first": 1920,
   "last": 2010
- },
- {
-  "name": "Koguryo",
-  "snapshots": 8,
-  "first": 0,
-  "last": 700
  },
  {
   "name": "Lithuania",
@@ -1341,12 +1257,6 @@
   "name": "Togo",
   "snapshots": 8,
   "first": 1920,
-  "last": 2010
- },
- {
-  "name": "Turkey",
-  "snapshots": 8,
-  "first": 1930,
   "last": 2010
  },
  {
@@ -1488,12 +1398,6 @@
   "last": 1815
  },
  {
-  "name": "British Raj",
-  "snapshots": 7,
-  "first": 1878,
-  "last": 1938
- },
- {
   "name": "Bukurnidja",
   "snapshots": 7,
   "first": 1600,
@@ -1555,12 +1459,6 @@
  },
  {
   "name": "Dravidians",
-  "snapshots": 7,
-  "first": -4999,
-  "last": -699
- },
- {
-  "name": "Elam",
   "snapshots": 7,
   "first": -4999,
   "last": -699
@@ -1660,12 +1558,6 @@
   "snapshots": 7,
   "first": 600,
   "last": 1200
- },
- {
-  "name": "India",
-  "snapshots": 7,
-  "first": 1783,
-  "last": 2010
  },
  {
   "name": "Inupiaq",
@@ -2200,12 +2092,6 @@
   "snapshots": 7,
   "first": 1530,
   "last": 1800
- },
- {
-  "name": "Paekche",
-  "snapshots": 7,
-  "first": 100,
-  "last": 700
  },
  {
   "name": "Paleo-Inuit",
@@ -3210,12 +3096,6 @@
   "last": 1800
  },
  {
-  "name": "Jōmon",
-  "snapshots": 6,
-  "first": -9999,
-  "last": -1999
- },
- {
   "name": "Kaantju",
   "snapshots": 6,
   "first": 1600,
@@ -3738,12 +3618,6 @@
   "last": 1783
  },
  {
-  "name": "Saudi Arabia",
-  "snapshots": 6,
-  "first": 1938,
-  "last": 2010
- },
- {
   "name": "Somalia",
   "snapshots": 6,
   "first": 1815,
@@ -3760,12 +3634,6 @@
   "snapshots": 6,
   "first": -9999,
   "last": -7999
- },
- {
-  "name": "Sultanate of Delhi",
-  "snapshots": 6,
-  "first": 1200,
-  "last": 1500
  },
  {
   "name": "Takalak",
@@ -3822,12 +3690,6 @@
   "last": 1938
  },
  {
-  "name": "Tsardom of Muscovy",
-  "snapshots": 6,
-  "first": 1530,
-  "last": 1715
- },
- {
   "name": "Tunica",
   "snapshots": 6,
   "first": 1492,
@@ -3862,12 +3724,6 @@
   "snapshots": 6,
   "first": 1600,
   "last": 1800
- },
- {
-  "name": "Viceroyalty of Peru",
-  "snapshots": 6,
-  "first": 1650,
-  "last": 1815
  },
  {
   "name": "Waanyi",
@@ -4446,12 +4302,6 @@
   "last": 400
  },
  {
-  "name": "Empire of Ghana",
-  "snapshots": 5,
-  "first": 300,
-  "last": 700
- },
- {
   "name": "Fox",
   "snapshots": 5,
   "first": 1530,
@@ -4510,12 +4360,6 @@
   "snapshots": 5,
   "first": 1530,
   "last": 1715
- },
- {
-  "name": "Iraq",
-  "snapshots": 5,
-  "first": 1945,
-  "last": 2010
  },
  {
   "name": "Jordan",
@@ -4578,12 +4422,6 @@
   "last": 1715
  },
  {
-  "name": "Late Jomon culture",
-  "snapshots": 5,
-  "first": -1499,
-  "last": -399
- },
- {
   "name": "Lebanon",
   "snapshots": 5,
   "first": 1945,
@@ -4600,12 +4438,6 @@
   "snapshots": 5,
   "first": 1530,
   "last": 1715
- },
- {
-  "name": "Mamluke Sultanate",
-  "snapshots": 5,
-  "first": 1279,
-  "last": 1500
  },
  {
   "name": "Mandan",
@@ -4657,12 +4489,6 @@
  },
  {
   "name": "Montagnais Innu",
-  "snapshots": 5,
-  "first": 1530,
-  "last": 1715
- },
- {
-  "name": "Mughal Empire",
   "snapshots": 5,
   "first": 1530,
   "last": 1715
@@ -4806,12 +4632,6 @@
   "last": 1800
  },
  {
-  "name": "Russia",
-  "snapshots": 5,
-  "first": 1994,
-  "last": 2010
- },
- {
   "name": "Santee",
   "snapshots": 5,
   "first": 1492,
@@ -4918,12 +4738,6 @@
   "snapshots": 5,
   "first": 1945,
   "last": 2010
- },
- {
-  "name": "United States of America",
-  "snapshots": 5,
-  "first": 1783,
-  "last": 1900
  },
  {
   "name": "Ute",
@@ -5094,12 +4908,6 @@
   "last": 1600
  },
  {
-  "name": "Carolingian Empire",
-  "snapshots": 4,
-  "first": 800,
-  "last": 900
- },
- {
   "name": "Carthaginian Empire",
   "snapshots": 4,
   "first": -499,
@@ -5158,12 +4966,6 @@
   "snapshots": 4,
   "first": -1499,
   "last": -499
- },
- {
-  "name": "Empire of Japan",
-  "snapshots": 4,
-  "first": 1914,
-  "last": 1938
  },
  {
   "name": "Finnmark",
@@ -5238,12 +5040,6 @@
   "last": 1700
  },
  {
-  "name": "Hittites",
-  "snapshots": 4,
-  "first": -1999,
-  "last": -699
- },
- {
   "name": "Hohenzollern",
   "snapshots": 4,
   "first": 1715,
@@ -5286,12 +5082,6 @@
   "last": 1700
  },
  {
-  "name": "Kingdom of France",
-  "snapshots": 4,
-  "first": 1000,
-  "last": 1200
- },
- {
   "name": "Kingdom of Hawaii",
   "snapshots": 4,
   "first": 1815,
@@ -5302,18 +5092,6 @@
   "snapshots": 4,
   "first": 1783,
   "last": 1880
- },
- {
-  "name": "Korea, Democratic People's Republic of",
-  "snapshots": 4,
-  "first": 1960,
-  "last": 2010
- },
- {
-  "name": "Korea, Republic of",
-  "snapshots": 4,
-  "first": 1960,
-  "last": 2010
  },
  {
   "name": "Koryaks",
@@ -5448,12 +5226,6 @@
   "last": -199
  },
  {
-  "name": "Parthian Empire",
-  "snapshots": 4,
-  "first": 0,
-  "last": 300
- },
- {
   "name": "Pegu",
   "snapshots": 4,
   "first": 1492,
@@ -5562,12 +5334,6 @@
   "last": 0
  },
  {
-  "name": "Yamato",
-  "snapshots": 4,
-  "first": 500,
-  "last": 900
- },
- {
   "name": "Yavapai",
   "snapshots": 4,
   "first": 1530,
@@ -5646,12 +5412,6 @@
   "last": -699
  },
  {
-  "name": "Assyria",
-  "snapshots": 3,
-  "first": -1499,
-  "last": -699
- },
- {
   "name": "Athabascan",
   "snapshots": 3,
   "first": 1700,
@@ -5686,12 +5446,6 @@
   "snapshots": 3,
   "first": 1279,
   "last": 1400
- },
- {
-  "name": "Babylonia",
-  "snapshots": 3,
-  "first": -1499,
-  "last": -699
  },
  {
   "name": "Baltic tribes",
@@ -5770,18 +5524,6 @@
   "snapshots": 3,
   "first": 1878,
   "last": 1900
- },
- {
-  "name": "Castile",
-  "snapshots": 3,
-  "first": 1279,
-  "last": 1400
- },
- {
-  "name": "Castilla",
-  "snapshots": 3,
-  "first": 1000,
-  "last": 1200
  },
  {
   "name": "Cayenne",
@@ -5874,12 +5616,6 @@
   "last": 1200
  },
  {
-  "name": "Fatimid Caliphate",
-  "snapshots": 3,
-  "first": 1000,
-  "last": 1200
- },
- {
   "name": "French Cameroons",
   "snapshots": 3,
   "first": 1920,
@@ -5946,12 +5682,6 @@
   "last": 1400
  },
  {
-  "name": "Grand Duchy of Moscow",
-  "snapshots": 3,
-  "first": 1300,
-  "last": 1500
- },
- {
   "name": "Greek colonies",
   "snapshots": 3,
   "first": -399,
@@ -5968,12 +5698,6 @@
   "snapshots": 3,
   "first": 1650,
   "last": 1715
- },
- {
-  "name": "Gupta Empire",
-  "snapshots": 3,
-  "first": 300,
-  "last": 500
  },
  {
   "name": "Harer (Egypt)",
@@ -6004,30 +5728,6 @@
   "snapshots": 3,
   "first": 1878,
   "last": 1900
- },
- {
-  "name": "Imperial Japan (Fujiwara)",
-  "snapshots": 3,
-  "first": 1000,
-  "last": 1200
- },
- {
-  "name": "Imperial Japan",
-  "snapshots": 3,
-  "first": 1878,
-  "last": 1900
- },
- {
-  "name": "Inca Empire",
-  "snapshots": 3,
-  "first": 1500,
-  "last": 1600
- },
- {
-  "name": "Indus valley civilization",
-  "snapshots": 3,
-  "first": -3999,
-  "last": -1999
  },
  {
   "name": "Iranian pastoralists",
@@ -6172,18 +5872,6 @@
   "snapshots": 3,
   "first": 1920,
   "last": 1945
- },
- {
-  "name": "Maratha Confederacy",
-  "snapshots": 3,
-  "first": 1783,
-  "last": 1815
- },
- {
-  "name": "Mauryan Empire",
-  "snapshots": 3,
-  "first": -299,
-  "last": -99
  },
  {
   "name": "Mbailundu",
@@ -6396,18 +6084,6 @@
   "last": 1800
  },
  {
-  "name": "Seleucid Kingdom",
-  "snapshots": 3,
-  "first": -299,
-  "last": -99
- },
- {
-  "name": "Seljuk Caliphate",
-  "snapshots": 3,
-  "first": 1279,
-  "last": 1400
- },
- {
   "name": "Semites",
   "snapshots": 3,
   "first": -3999,
@@ -6415,12 +6091,6 @@
  },
  {
   "name": "Shoa",
-  "snapshots": 3,
-  "first": 1279,
-  "last": 1400
- },
- {
-  "name": "Shogun Japan (Kamakura)",
   "snapshots": 3,
   "first": 1279,
   "last": 1400
@@ -6550,12 +6220,6 @@
   "snapshots": 3,
   "first": 1492,
   "last": 1600
- },
- {
-  "name": "Tokugawa shogunate",
-  "snapshots": 3,
-  "first": 1650,
-  "last": 1715
  },
  {
   "name": "Transvaal",
@@ -6906,12 +6570,6 @@
   "last": 1800
  },
  {
-  "name": "Castille",
-  "snapshots": 2,
-  "first": 1492,
-  "last": 1500
- },
- {
   "name": "Caxcane",
   "snapshots": 2,
   "first": 1530,
@@ -7056,16 +6714,16 @@
   "last": 1930
  },
  {
-  "name": "Emirate of Córdoba",
-  "snapshots": 2,
-  "first": 800,
-  "last": 900
- },
- {
   "name": "Emirate of Sicily",
   "snapshots": 2,
   "first": 900,
   "last": 1000
+ },
+ {
+  "name": "Emirate of the White Sheep Turks",
+  "snapshots": 2,
+  "first": 1492,
+  "last": 1500
  },
  {
   "name": "Enets",
@@ -7116,18 +6774,6 @@
   "last": 1700
  },
  {
-  "name": "Frankish Kingdom",
-  "snapshots": 2,
-  "first": 600,
-  "last": 700
- },
- {
-  "name": "Franks",
-  "snapshots": 2,
-  "first": 400,
-  "last": 500
- },
- {
   "name": "Frisians",
   "snapshots": 2,
   "first": 600,
@@ -7144,12 +6790,6 @@
   "snapshots": 2,
   "first": 1878,
   "last": 1880
- },
- {
-  "name": "Golden Horde",
-  "snapshots": 2,
-  "first": 1492,
-  "last": 1500
  },
  {
   "name": "Gooty",
@@ -7266,12 +6906,6 @@
   "last": 1600
  },
  {
-  "name": "Japan (Warring States)",
-  "snapshots": 2,
-  "first": 1530,
-  "last": 1600
- },
- {
   "name": "Kalmar Union",
   "snapshots": 2,
   "first": 1400,
@@ -7320,18 +6954,6 @@
   "last": 900
  },
  {
-  "name": "Khanate of the Golden Horde",
-  "snapshots": 2,
-  "first": 1279,
-  "last": 1300
- },
- {
-  "name": "Kievan Rus",
-  "snapshots": 2,
-  "first": 1100,
-  "last": 1100
- },
- {
   "name": "Kijkitat",
   "snapshots": 2,
   "first": 1530,
@@ -7360,12 +6982,6 @@
   "snapshots": 2,
   "first": 1530,
   "last": 1600
- },
- {
-  "name": "Kyivan Rus",
-  "snapshots": 2,
-  "first": 900,
-  "last": 1000
  },
  {
   "name": "Lagunero",
@@ -7668,12 +7284,6 @@
   "last": 1600
  },
  {
-  "name": "Parthia",
-  "snapshots": 2,
-  "first": -199,
-  "last": -99
- },
- {
   "name": "Peshemegs",
   "snapshots": 2,
   "first": 1000,
@@ -7816,12 +7426,6 @@
   "snapshots": 2,
   "first": -499,
   "last": -399
- },
- {
-  "name": "Sasanian dependencies",
-  "snapshots": 2,
-  "first": 600,
-  "last": 700
  },
  {
   "name": "Saunan",
@@ -7968,12 +7572,6 @@
   "last": 900
  },
  {
-  "name": "Timurid Emirates",
-  "snapshots": 2,
-  "first": 1492,
-  "last": 1500
- },
- {
   "name": "Toboso",
   "snapshots": 2,
   "first": 1530,
@@ -8020,18 +7618,6 @@
   "snapshots": 2,
   "first": 1650,
   "last": 1700
- },
- {
-  "name": "Visigothic Kingdom",
-  "snapshots": 2,
-  "first": 600,
-  "last": 700
- },
- {
-  "name": "Visigoths",
-  "snapshots": 2,
-  "first": 400,
-  "last": 500
  },
  {
   "name": "Wadai Empire",
@@ -8802,12 +8388,6 @@
   "last": 1914
  },
  {
-  "name": "British East India Company",
-  "snapshots": 1,
-  "first": 1815,
-  "last": 1815
- },
- {
   "name": "British Protectorate",
   "snapshots": 1,
   "first": 1914,
@@ -8878,12 +8458,6 @@
   "snapshots": 1,
   "first": 1492,
   "last": 1492
- },
- {
-  "name": "Caliphate of Córdoba",
-  "snapshots": 1,
-  "first": 1000,
-  "last": 1000
  },
  {
   "name": "Calusa",
@@ -9522,12 +9096,6 @@
   "last": 900
  },
  {
-  "name": "East Germany",
-  "snapshots": 1,
-  "first": 1960,
-  "last": 1960
- },
- {
   "name": "East Getaes",
   "snapshots": 1,
   "first": 700,
@@ -9792,31 +9360,13 @@
   "last": 1914
  },
  {
-  "name": "German Empire",
-  "snapshots": 1,
-  "first": 1914,
-  "last": 1914
- },
- {
   "name": "German South-West Africa",
   "snapshots": 1,
   "first": 1914,
   "last": 1914
  },
  {
-  "name": "Germanic tribes",
-  "snapshots": 1,
-  "first": -399,
-  "last": -399
- },
- {
   "name": "Germany (France)",
-  "snapshots": 1,
-  "first": 1945,
-  "last": 1945
- },
- {
-  "name": "Germany (Soviet)",
   "snapshots": 1,
   "first": 1945,
   "last": 1945
@@ -9870,12 +9420,6 @@
   "last": 1100
  },
  {
-  "name": "Gojoseon",
-  "snapshots": 1,
-  "first": -399,
-  "last": -399
- },
- {
   "name": "Golconda",
   "snapshots": 1,
   "first": 1783,
@@ -9886,12 +9430,6 @@
   "snapshots": 1,
   "first": 1492,
   "last": 1492
- },
- {
-  "name": "Goryeo",
-  "snapshots": 1,
-  "first": 1200,
-  "last": 1200
  },
  {
   "name": "Goshute",
@@ -11460,12 +10998,6 @@
   "last": 1878
  },
  {
-  "name": "Maratha",
-  "snapshots": 1,
-  "first": 1715,
-  "last": 1715
- },
- {
   "name": "Mari",
   "snapshots": 1,
   "first": 800,
@@ -12384,12 +11916,6 @@
   "last": 1492
  },
  {
-  "name": "Other Rus Principalities",
-  "snapshots": 1,
-  "first": 1200,
-  "last": 1200
- },
- {
   "name": "Oxus",
   "snapshots": 1,
   "first": -1999,
@@ -13014,12 +12540,6 @@
   "last": 1815
  },
  {
-  "name": "Republic of Turkey",
-  "snapshots": 1,
-  "first": 1930,
-  "last": 1930
- },
- {
   "name": "Rikbaktsá",
   "snapshots": 1,
   "first": 1492,
@@ -13030,12 +12550,6 @@
   "snapshots": 1,
   "first": 1492,
   "last": 1492
- },
- {
-  "name": "Rus' Khaganate",
-  "snapshots": 1,
-  "first": 800,
-  "last": 800
  },
  {
   "name": "S'Klallam",
@@ -13222,12 +12736,6 @@
   "snapshots": 1,
   "first": 1492,
   "last": 1492
- },
- {
-  "name": "Seljuk Empire",
-  "snapshots": 1,
-  "first": 1100,
-  "last": 1100
  },
  {
   "name": "Selk'nam",
@@ -14242,12 +13750,6 @@
   "snapshots": 1,
   "first": 900,
   "last": 900
- },
- {
-  "name": "West Germany",
-  "snapshots": 1,
-  "first": 1960,
-  "last": 1960
  },
  {
   "name": "West Getaes",

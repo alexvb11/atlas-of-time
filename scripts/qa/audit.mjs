@@ -2,14 +2,20 @@
 // agrees with the date. Writes a contact sheet of screenshots. Usage: node scripts/qa/audit.mjs [n]
 import { chromium } from 'playwright'
 import fs from 'node:fs'
-const N = Number(process.argv[2] ?? 20)
+const N = Number(process.argv[2] ?? 34)
 const out = 'scripts/qa/audit'
 fs.mkdirSync(out, { recursive: true })
 const data = JSON.parse(fs.readFileSync('public/data/entities.json', 'utf8'))
+const auto = fs.existsSync('public/data/entities-auto.json') ? JSON.parse(fs.readFileSync('public/data/entities-auto.json', 'utf8')) : { entities: [] }
 const byName = new Map()
-for (const e of data.entities) for (const n of [e.name, ...e.names.map((x) => x[2])]) byName.set(n, e)
+for (const e of [...auto.entities, ...data.entities]) for (const n of [e.name, ...e.names.map((x) => x[2])]) byName.set(n, e)
 
-const places = [['Yerevan', [44.5, 40.18]], ['Rome', [12.5, 41.9]], ["Xi'an", [108.9, 34.3]], ['Mexico City', [-99.1, 19.4]], ['London', [-0.1, 51.5]]]
+const places = [
+  ['Yerevan', [44.5, 40.18]], ['Rome', [12.5, 41.9]], ["Xi'an", [108.9, 34.3]], ['Mexico City', [-99.1, 19.4]], ['London', [-0.1, 51.5]],
+  ['Tehran', [51.39, 35.69]], ['Baghdad', [44.37, 33.31]], ['Moscow', [37.62, 55.75]], ['Delhi', [77.21, 28.61]], ['Kyoto', [135.77, 35.01]],
+  ['Madrid', [-3.7, 40.42]], ['Paris', [2.35, 48.86]], ['Berlin', [13.4, 52.52]], ['Cusco', [-71.97, -13.53]], ['Timbuktu', [-3.0, 16.77]],
+  ['Stockholm', [18.07, 59.33]], ['Alice Springs', [133.88, -23.7]],
+]
 let seed = 42
 const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647)
 

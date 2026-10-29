@@ -60,6 +60,17 @@ Notes from verification:
 - KTX2: there is no toktx on this machine; textures ship as mozjpeg JPEG/PNG with a 2k mobile
   variant. KTX2 conversion is a documented follow-up.
 
+## Data tiers (phase 6)
+| Tier | What | How | Trust signal in UI |
+|---|---|---|---|
+| 1 | Major powers + slice regions: dated lineages for 26 present-day countries | hand-curated (`scripts/build-data/curated/*.mjs`), Wikipedia/Wikidata for summaries and QIDs | none needed |
+| 2 | Every present-day country + its Wikidata predecessors (2 steps) | `tiers.mjs`: ISO code (P297) → Wikidata; P1365/P155 chains; facts gated on `modernFrom` | "assembled automatically" note |
+| 3 | Every other border-data polygon name | `tiers.mjs`: hand-checked name map → exact titles → search; accepted only if the Wikidata class is a polity/people/culture, dates overlap and coordinates are near | "matched automatically" note; "c." dates when taken from the maps |
+
+Precedence when several entities claim the same polygon name at time T: curated, then Tier 2, then
+Tier 3. Curated lineages replace automated ones for the same country. Province-level entities never
+claim imperial polygon names; they apply only through their location-bound lineage.
+
 ## File structure
 ```
 src/

@@ -86,7 +86,8 @@ export function LanguagesTab({ res, idx }: { res: Resolution; idx: EntityIndex }
     if (res.kind === 'entity') {
       const sh = sharesAt(res.entity.langs, t)
       const list = [...sh.entries()].filter(([, s]) => s > 0.004).sort((a, b) => b[1] - a[1])
-      return { langs: list.map(([id]) => idx.languages.get(id)!).filter(Boolean), shares: sh, unranked: [] as string[] }
+      const named = res.entity.langNames?.find(([a, b]) => t >= a && t < b)?.[2] ?? []
+      return { langs: list.map(([id]) => idx.languages.get(id)!).filter(Boolean), shares: sh, unranked: list.length ? [] : named }
     }
     if (res.kind === 'country') return { langs: [], shares: new Map(), unranked: res.country.languages }
     return { langs: [], shares: new Map(), unranked: [] as string[] }
@@ -105,12 +106,28 @@ export function LanguagesTab({ res, idx }: { res: Resolution; idx: EntityIndex }
   }
 
   if (!langs.length) {
+    // names without shares (automated data): link to the catalogue where we can, for greetings
+    const known = [...idx.languages.values()]
+    const find = (n: string) => known.find((l) => l.name.toLowerCase() === n.toLowerCase() || n.toLowerCase().startsWith(l.name.toLowerCase() + ' '))
     return (
       <div className="space-y-2">
-        <p className="text-[12px] text-dim">Official languages today (speaker shares not yet in this atlas):</p>
-        {unranked.map((n) => (
-          <div key={n} className="glass-soft rounded-2xl px-3.5 py-2.5 text-[13.5px]">{n}</div>
-        ))}
+        <p className="text-[12px] text-dim">
+          {res.kind === 'country' ? 'Official languages today' : 'Official or recorded languages'}; speaker shares are not yet in this atlas.
+        </p>
+        {unranked.map((n) => {
+          const l = find(n)
+          const g = l?.hello ?? (l?.attested ? { text: l.attested.text, roman: l.attested.roman } : null)
+          return (
+            <div key={n} className="glass-soft rounded-2xl px-3.5 py-2.5">
+              <div className="text-[13.5px] text-ink">{n}</div>
+              {g && (
+                <div className="mt-0.5 text-[12.5px] text-ink/80">
+                  <span className="font-display text-[16px]">{g.text}</span> <span className="text-mist italic">{g.roman}</span>
+                </div>
+              )}
+            </div>
+          )
+        })}
       </div>
     )
   }
@@ -155,6 +172,7 @@ export function LanguagesTab({ res, idx }: { res: Resolution; idx: EntityIndex }
         </svg>
         <div className="absolute right-3 bottom-2 text-[9.5px] text-dim italic">approximate shares, estimated</div>
       </div>
+      {res.kind === 'entity' && res.entity.langsSource && <p className="-mt-2 text-[11px] text-dim italic">{res.entity.langsSource}</p>}
 
       <FamilyTree langs={langs} />
 

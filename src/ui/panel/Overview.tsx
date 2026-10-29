@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTime } from '../../time/store'
-import { interpSeries, spanAt, type Conf, type EntityIndex } from '../../data/entities'
+import { interpSeries, spanAt, type Conf, type EntityIndex, isModernAt } from '../../data/entities'
 import type { Resolution } from '../../data/resolve'
 import { ConfTag, Stat, Ticker } from './bits'
 import { formatNumber, formatPopulation } from '../../time/format'
@@ -10,8 +10,8 @@ import { periodAt } from '../../time/eras'
 function popFor(res: Resolution, idx: EntityIndex, t: number): { value: number; conf: Conf; label: string } | null {
   if (res.kind === 'entity') {
     const e = res.entity
-    if (e.iso3 && t >= e.from) {
-      const v = interpSeries(idx.population[e.iso3] ?? [], t)
+    if (isModernAt(e, t)) {
+      const v = interpSeries(idx.population[e.iso3!] ?? [], t)
       if (v) return { value: v, conf: t < 1950 ? 'estimated' : 'documented', label: 'Population' }
     }
     if (e.pop.length) {
@@ -52,7 +52,7 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
     if (ruler) stats.push(<Stat key="ruler" label="Ruler">{ruler[2]}<ConfTag conf={ruler[3]} /></Stat>)
     if (gov) stats.push(<Stat key="gov" label="Government" wide>{gov[2]}<ConfTag conf={gov[3]} /></Stat>)
     if (rel) stats.push(<Stat key="rel" label="Religion" wide>{rel[2]}</Stat>)
-    if (e.iso3 && t >= e.from && country) {
+    if (isModernAt(e, t) && country) {
       stats.push(<Stat key="area" label="Area"><span className="tnum">{formatNumber(country.area)}</span> km²</Stat>)
       if (country.currencies.length) stats.push(<Stat key="cur" label="Currency">{country.currencies[0]}</Stat>)
     }
@@ -111,7 +111,7 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
         </div>
       )}
 
-      {territory && country && (res.kind !== 'country' && !(res.kind === 'entity' && res.entity.iso3 && t >= res.entity.from)) && (
+      {territory && country && (res.kind !== 'country' && !(res.kind === 'entity' && isModernAt(res.entity, t))) && (
         <div className="glass-soft flex items-baseline justify-between gap-3 rounded-2xl px-3.5 py-2.5">
           <span className="text-[11.5px] text-mist">People within today's {country.name} <span className="text-dim">(HYDE est.)</span></span>
           <span className="text-[13px] text-ink">
@@ -140,6 +140,15 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
         </div>
       )}
 
+      {res.kind === 'entity' && (res.entity.tier ?? 1) > 1 && (
+        <p className="flex items-start gap-2 rounded-2xl border border-white/8 px-3 py-2 text-[11px] leading-relaxed text-dim">
+          <span className="mt-[3px] inline-block size-1.5 shrink-0 rounded-full bg-mist/60" />
+          {res.entity.tier === 2
+            ? 'Assembled automatically from Wikidata and Wikipedia; not yet reviewed by hand.'
+            : 'Matched automatically from the border data to Wikipedia and Wikidata; not yet reviewed by hand.'}
+          {res.entity.datesFromMap && ' Dates are those of the border maps that show it.'}
+        </p>
+      )}
       {note && <p className="text-[11px] text-dim italic">{note}</p>}
       {res.kind === 'entity' && res.entity.sources.length > 0 && (
         <p className="text-[11px] text-dim">

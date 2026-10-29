@@ -65,7 +65,7 @@ export const entities = [
   }),
   entity({
     id: 'satrapy-armenia', name: 'Satrapy of Armenia', kind: 'province', region: 'caucasus',
-    from: bce(570), to: bce(331), conf: E, wiki: 'Satrapy of Armenia', match: ['Achaemenid Empire'],
+    from: bce(570), to: bce(331), conf: E, wiki: 'Satrapy of Armenia', 
     capitals: [[bce(570), bce(331), 'Tushpa (Van), later Armavir', E]],
     rulers: [[bce(570), bce(331), 'Orontid (Yervanduni) satraps', E]],
     gov: [[bce(570), bce(550), 'Under the Median Empire', E], [bce(550), bce(331), 'Province (satrapy) of the Achaemenid Persian Empire']],
@@ -140,7 +140,7 @@ export const entities = [
   }),
   entity({
     id: 'persarmenia', name: 'Persarmenia (Sasanian Armenia)', kind: 'province', region: 'caucasus',
-    from: ce(428), to: ce(646), wiki: 'Sasanian Armenia', match: ['Sasanian Empire', 'Persia'],
+    from: ce(428), to: ce(646), wiki: 'Sasanian Armenia', 
     capitals: [[ce(428), ce(646), 'Dvin']],
     gov: [[ce(428), ce(646), 'Province (marzpanate) of the Sasanian Empire, governed by a marzban']],
     religion: [[ce(428), ce(646), 'Armenian Apostolic Christianity; Zoroastrian state religion of Persia']],
@@ -150,7 +150,7 @@ export const entities = [
   }),
   entity({
     id: 'arminiya', name: 'Arminiya', kind: 'province', region: 'caucasus',
-    from: ce(654), to: ce(885), conf: E, wiki: 'Arminiya', match: ['Abbasid Caliphate', 'Umayyad Caliphate'],
+    from: ce(654), to: ce(885), conf: E, wiki: 'Arminiya', 
     capitals: [[ce(654), ce(885), 'Dvin']],
     gov: [[ce(654), ce(750), 'Province of the Umayyad Caliphate', E], [ce(750), ce(885), 'Province of the Abbasid Caliphate']],
     religion: [[ce(654), ce(885), 'Armenian Christianity; Islam among rulers and garrisons']],
@@ -190,7 +190,7 @@ export const entities = [
   }),
   entity({
     id: 'zakarid-armenia', name: 'Zakarid Armenia', kind: 'principality', region: 'caucasus',
-    from: ce(1201), to: ce(1360), conf: E, wiki: 'Zakarid Armenia', match: ['Armenia', 'Georgia'],
+    from: ce(1201), to: ce(1360), conf: E, wiki: 'Zakarid Armenia', 
     capitals: [[ce(1201), ce(1360), 'Ani']],
     gov: [[ce(1201), ce(1236), 'Principality under the Kingdom of Georgia'], [ce(1236), ce(1360), 'Vassal of the Mongols', E]],
     religion: [[ce(1201), ce(1360), 'Armenian Apostolic and Georgian Orthodox Christianity']],
@@ -199,7 +199,7 @@ export const entities = [
   }),
   entity({
     id: 'mongol-turkmen-armenia', name: 'Armenia under the Ilkhanate and Turkmen dynasties', kind: 'province', region: 'caucasus',
-    from: ce(1360), to: ce(1501), conf: E, wiki: 'Kara Koyunlu', match: ['Ilkhanate', 'Timurid Empire', 'Emirate of the White Sheep Turks'],
+    from: ce(1360), to: ce(1501), conf: E, wiki: 'Kara Koyunlu', 
     gov: [[ce(1360), ce(1375), 'Successor states of the Ilkhanate'], [ce(1375), ce(1468), 'Kara Koyunlu (Black Sheep) confederation', E], [ce(1468), ce(1501), 'Aq Qoyunlu (White Sheep) confederation']],
     religion: [[ce(1360), ce(1501), 'Armenian Christianity; Islam among rulers']],
     langs: [[ce(1360), ce(1501), [['middle-armenian', 0.7], ['persian', 0.15], ['azerbaijani', 0.15]]]],
@@ -207,7 +207,7 @@ export const entities = [
   }),
   entity({
     id: 'safavid-armenia', name: 'Armenia under Safavid Persia', kind: 'province', region: 'caucasus',
-    from: ce(1501), to: ce(1747), wiki: 'Safavid Iran', match: ['Safavid Empire', 'Ottoman Empire'],
+    from: ce(1501), to: ce(1747), wiki: 'Safavid Iran', 
     capitals: [[ce(1501), ce(1747), 'Erivan (Yerevan)']],
     gov: [[ce(1501), ce(1747), 'Province of Safavid Persia, contested with the Ottomans']],
     religion: [[ce(1501), ce(1747), 'Armenian Christianity; Shia Islam of the rulers']],
@@ -227,7 +227,7 @@ export const entities = [
   }),
   entity({
     id: 'russian-armenia', name: 'Erivan Governorate (Russian Empire)', kind: 'province', region: 'caucasus',
-    from: ce(1828), to: ce(1918), wiki: 'Erivan Governorate', match: ['Russian Empire', 'Persia'],
+    from: ce(1828), to: ce(1918), wiki: 'Erivan Governorate', 
     names: [[ce(1828), ce(1849), 'Armenian Oblast (Russian Empire)'], [ce(1849), ce(1918), 'Erivan Governorate (Russian Empire)']],
     capitals: [[ce(1828), ce(1918), 'Erivan (Yerevan)']],
     gov: [[ce(1828), ce(1918), 'Province of the Russian Empire']],
@@ -256,7 +256,7 @@ export const entities = [
   }),
   entity({
     id: 'armenian-ssr', name: 'Armenian Soviet Socialist Republic', kind: 'republic', region: 'caucasus',
-    from: ce(1920.92), to: ce(1991.72), wiki: 'Armenian Soviet Socialist Republic', match: ['Armenia', 'USSR', 'Azerbaijan'],
+    from: ce(1920.92), to: ce(1991.72), wiki: 'Armenian Soviet Socialist Republic', match: ['Armenia'],
     capitals: [[ce(1920.92), ce(1991.72), 'Yerevan']],
     gov: [[ce(1920.92), ce(1922), 'Soviet republic'], [ce(1922), ce(1936), 'Part of the Transcaucasian SFSR within the USSR'], [ce(1936), ce(1991.72), 'Union republic of the USSR']],
     religion: [[ce(1920.92), ce(1991.72), 'Officially atheist state; the Armenian Church persisted']],

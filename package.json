@@ -8,10 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "data": "node scripts/build-data/textures.mjs && node scripts/build-data/drift.mjs && node scripts/build-data/history.mjs && node scripts/build-data/countries.mjs && node scripts/build-data/population.mjs && node scripts/build-data/entities.mjs",
-    "data:entities": "node scripts/build-data/entities.mjs",
+    "data": "node scripts/build-data/textures.mjs && node scripts/build-data/drift.mjs && node scripts/build-data/history.mjs && node scripts/build-data/countries.mjs && node scripts/build-data/population.mjs && node scripts/build-data/entities.mjs && node scripts/build-data/tiers.mjs",
+    "data:entities": "node scripts/build-data/entities.mjs && node scripts/build-data/tiers.mjs",
     "qa:shots": "node scripts/qa/shots.mjs",
-    "qa:audit": "node scripts/qa/audit.mjs 20",
+    "qa:audit": "node scripts/qa/audit.mjs 34",
     "qa:fps": "node scripts/qa/fps.mjs"
   },
   "dependencies": {

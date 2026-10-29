@@ -6,3 +6,4 @@ scripts/.cache
 .vercel
 scripts/qa/shots
 scripts/qa/audit
+scripts/qa/places

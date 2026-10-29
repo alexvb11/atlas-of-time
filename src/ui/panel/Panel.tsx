@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import { useResolution, resolutionKey } from '../../data/useResolution'
-import { nameAt, useEntityIndex, type EntityIndex } from '../../data/entities'
+import { nameAt, useEntityIndex, type EntityIndex, isModernAt } from '../../data/entities'
 import type { Resolution } from '../../data/resolve'
 import { OverviewTab } from './Overview'
 import { LanguagesTab } from './Languages'
@@ -19,7 +19,7 @@ type Tab = (typeof TABS)[number]
 export function titleOf(r: Resolution, t: number): { title: string; kicker: string; dates?: string } {
   switch (r.kind) {
     case 'entity':
-      return { title: nameAt(r.entity, t), kicker: r.entity.kind, dates: dateRange(r.entity.from, r.entity.to, r.entity.conf !== 'documented') }
+      return { title: nameAt(r.entity, t), kicker: r.entity.kind, dates: dateRange(r.entity.from, r.entity.to, r.entity.conf !== 'documented' || !!r.entity.datesFromMap) }
     case 'polity':
       return { title: r.polity.name, kicker: r.polity.subjectTo ? `under ${r.polity.subjectTo}` : 'polity' }
     case 'country':
@@ -124,7 +124,7 @@ export function Panel() {
 function Header({ res, idx, closeRef }: { res: Resolution; idx: EntityIndex; closeRef: React.RefObject<HTMLButtonElement | null> }) {
   const time = useTime((s) => s.time)
   const { title, kicker, dates } = titleOf(res, time)
-  const flag = res.kind === 'country' ? res.country.flag : res.kind === 'entity' && res.entity.iso3 && time >= res.entity.from ? idx.countries.get(res.entity.iso3)?.flag : null
+  const flag = res.kind === 'country' ? res.country.flag : res.kind === 'entity' && isModernAt(res.entity, time) ? idx.countries.get(res.entity.iso3!)?.flag : null
   const lineage = 'lineage' in res ? res.lineage : null
   return (
     <div className="shrink-0 px-5 pt-4">

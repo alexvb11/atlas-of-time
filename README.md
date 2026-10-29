@@ -99,17 +99,19 @@ the project licence with that in mind.
 
 ## Coverage
 
-The vertical slice has rich, curated, dated data:
+Three tiers, shown honestly in the panel:
 
-- **Armenia and the Caucasus**: 19-step lineage from the Areni-1 cave culture to the Republic of
-  Armenia, plus Georgia and Azerbaijan anchors.
-- **Mediterranean**: Italy, Greece, Egypt.
-- **China**: Yangshao to the People's Republic of China.
-- **Mesoamerica**: Mexico, including the Maya.
-- **British Isles**: Britain and Ireland.
+- **Tier 1, curated**: dated lineages with rulers, capitals, language shares, facts and events for
+  26 present-day countries. Rich slice regions: Armenia and the Caucasus, the Mediterranean, China,
+  Mesoamerica, the British Isles. Major powers: Persia/Iran, Mesopotamia/Iraq, Anatolia/Turkey,
+  Russia, India, Japan, both Koreas, the caliphates and Arabia, Spain, France, Germany, Peru, Mali
+  and the Mongols, plus the United States.
+- **Tier 2, automated**: every present-day country, identified on Wikidata by ISO code, with its
+  predecessor states two steps back. Modern facts only appear after today's state began.
+- **Tier 3, automated**: every other name in the border data, matched to Wikipedia and Wikidata and
+  validated by class, dates and location. Generic labels such as "Savanna hunter-gatherers" are
+  deliberately left unmatched rather than tied to a loosely related article.
 
-Everywhere else you get the historical polygon name, present-day facts after 1945, regional
-prehistory, and deep time.
-
-`scripts/reports/unmatched-basemap-names.json` lists the 2,453 border-data names not yet linked to
-an entity. It is the work list for Tier 2/3 expansion.
+Rebuild order: `entities.mjs` (curated), then `tiers.mjs` (automated). Reports in `scripts/reports/`:
+`tier3-decisions.json` (every match with its evidence) and `unmatched-basemap-names.json` (the work
+list).
