@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { useFrame, useLoader, type ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
 import { atmosphereFragment, atmosphereVertex, cloudFragment, earthFragment, earthVertex } from './shaders'
@@ -23,43 +23,72 @@ const bitmapOk = (() => {
 
 class EarthTextureLoader extends THREE.Loader<THREE.Texture> {
   load(url: string, onLoad: (t: THREE.Texture) => void, onProgress?: (e: ProgressEvent) => void, onError?: (e: unknown) => void) {
-    if (!bitmapOk) return void new THREE.TextureLoader(this.manager).load(url, onLoad, onProgress, onError)
-    const l = new THREE.ImageBitmapLoader(this.manager)
-    // flipped at decode, since WebGL ignores flipY for bitmaps
-    l.setOptions({ imageOrientation: 'flipY', premultiplyAlpha: 'none' })
-    l.load(
-      url,
-      (bmp) => {
-        const t = new THREE.Texture(bmp)
-        t.flipY = false
-        t.needsUpdate = true
-        onLoad(t)
-      },
-      onProgress,
-      onError,
-    )
+    // a dropped request must not leave the loading screen up forever: retry twice before giving up
+    const attempt = (n: number) => {
+      const retry = (e: unknown) => (n < 2 ? setTimeout(() => attempt(n + 1), 800 * (n + 1)) : onError?.(e))
+      if (!bitmapOk) return void new THREE.TextureLoader(this.manager).load(url, onLoad, onProgress, retry)
+      const l = new THREE.ImageBitmapLoader(this.manager)
+      // flipped at decode, since WebGL ignores flipY for bitmaps
+      l.setOptions({ imageOrientation: 'flipY', premultiplyAlpha: 'none' })
+      l.load(
+        url,
+        (bmp) => {
+          const t = new THREE.Texture(bmp)
+          t.flipY = false
+          t.needsUpdate = true
+          onLoad(t)
+        },
+        onProgress,
+        retry,
+      )
+    }
+    attempt(0)
   }
 }
 
+const lateTexture = (colorSpace: THREE.ColorSpace) => {
+  const t = new THREE.Texture()
+  t.colorSpace = colorSpace
+  t.anisotropy = 8
+  t.wrapS = THREE.RepeatWrapping
+  return t
+}
+/**
+ * Night lights and clouds are not needed for the first frames, so the intro does not wait for them:
+ * they load once the critical textures are in (through their own loading manager, which the progress
+ * ring does not count) and fade in. Until then the shaders sample an empty texture.
+ */
+const late = {
+  night: lateTexture(THREE.SRGBColorSpace),
+  clouds: lateTexture(THREE.NoColorSpace),
+  ready: { night: false, clouds: false },
+  started: false,
+}
+function loadLateTextures() {
+  if (late.started) return
+  late.started = true
+  const loader = new EarthTextureLoader(new THREE.LoadingManager())
+  for (const [key, url] of [['night', `/textures/earth-night${sfx}.webp`], ['clouds', '/textures/clouds.webp']] as const)
+    loader.load(url, (t) => {
+      late[key].image = t.image
+      late[key].flipY = t.flipY
+      late[key].needsUpdate = true
+      late.ready[key] = true
+    })
+}
+
 export function useEarthTextures() {
-  const [day, night, data, ice, clouds] = useLoader(EarthTextureLoader, [
-    `/textures/earth-day${sfx}.webp`,
-    `/textures/earth-night${sfx}.webp`,
-    '/textures/earth-data.webp',
-    '/textures/ice.webp',
-    '/textures/clouds.webp',
-  ])
+  const [day, data, ice] = useLoader(EarthTextureLoader, [`/textures/earth-day${sfx}.webp`, '/textures/earth-data.webp', '/textures/ice.webp'])
   useMemo(() => {
     day.colorSpace = THREE.SRGBColorSpace
-    night.colorSpace = THREE.SRGBColorSpace
-    clouds.colorSpace = THREE.NoColorSpace
     data.colorSpace = THREE.NoColorSpace
-    for (const t of [day, night, data, ice, clouds]) {
+    for (const t of [day, data, ice]) {
       t.anisotropy = 8
       t.wrapS = THREE.RepeatWrapping
     }
-  }, [day, night, data, ice, clouds])
-  return { day, night, data, ice, clouds }
+  }, [day, data, ice])
+  useEffect(loadLateTextures, [])
+  return { day, night: late.night, data, ice, clouds: late.clouds }
 }
 
 export function Globe() {
@@ -67,6 +96,7 @@ export function Globe() {
   const earthMat = useRef<THREE.ShaderMaterial>(null)
   const cloudMat = useRef<THREE.ShaderMaterial>(null)
   const geo = useMemo(() => new THREE.SphereGeometry(1, 192, 128), [])
+  const fadeIn = useRef({ night: 0, clouds: 0 })
 
   const earthUniforms = useMemo(
     () => ({
@@ -97,12 +127,15 @@ export function Globe() {
   const atmoUniforms = useMemo(() => ({ uSun: { value: SUN }, uIntensity: { value: 1.25 }, uShell: { value: 1.065 } }), [])
 
   useFrame((state, dt) => {
+    const f = fadeIn.current
+    if (late.ready.night) f.night = Math.min(1, f.night + dt / 1.2)
+    if (late.ready.clouds) f.clouds = Math.min(1, f.clouds + dt / 1.2)
     const u = earthMat.current?.uniforms
     if (u) {
       u.uDrift.value = world.drift
       u.uSea.value = world.sea
       u.uIce.value = world.ice
-      u.uLights.value = world.lights
+      u.uLights.value = world.lights * f.night
       u.uDim.value = world.dim
       u.uTime.value = state.clock.elapsedTime
     }
@@ -110,7 +143,7 @@ export function Globe() {
     if (c) {
       c.uOffset.value = (c.uOffset.value + dt * 0.0016) % 1
       // clouds thin out in deep time so the drifting continents read clearly
-      c.uOpacity.value = 0.82 * (1 - world.drift * 0.75)
+      c.uOpacity.value = 0.82 * (1 - world.drift * 0.75) * f.clouds
       c.uDim.value = world.dim
     }
   })

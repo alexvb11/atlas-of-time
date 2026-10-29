@@ -33,7 +33,7 @@ These need the dev server running.
 npm run qa:shots   # screenshot tour of major states → scripts/qa/shots
 npm run qa:audit   # 20 random dates × 5 places: does every visible element agree with the date?
 npm run qa:fps     # frame rate idle / scrubbing / panel open (real GPU via headless Chromium)
-node scripts/qa/perf.mjs "http://localhost:4173/?qa" --mobile   # cold load + first scrub on a production build
+node scripts/qa/perf.mjs "http://localhost:4173/?qa" --mobile --slow   # cold load + first scrub on a production build (phone CPU, slow 4G)
 node scripts/qa/a11y.mjs   # touch targets, focus indicators, Escape
 ```
 

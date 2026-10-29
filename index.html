@@ -10,11 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
-    <!-- as/crossorigin match the fetch() in three's ImageBitmapLoader, so the preload is reused rather
-         than downloaded twice; media matches the phone check in src/scene/Globe.tsx -->
-    <link rel="preload" href="/textures/earth-day.webp" as="fetch" type="image/webp" crossorigin="anonymous" media="(min-width: 700px) and (min-height: 700px)" />
-    <link rel="preload" href="/textures/earth-day-2k.webp" as="fetch" type="image/webp" crossorigin="anonymous" media="(max-width: 699.98px), (max-height: 699.98px)" />
-    <link rel="preload" href="/textures/earth-data.webp" as="fetch" type="image/webp" crossorigin="anonymous" />
   </head>
   <body>
     <div id="root"></div>

@@ -2,7 +2,7 @@
 // Reports bytes transferred before the globe is interactive, time to interactive, and main-thread
 // long tasks (> 50 ms) and worst frames during a first scrub across all time, when every border and
 // drift snapshot is fetched and decoded for the first time.
-// Usage: node scripts/qa/perf.mjs [url] [--mobile]
+// Usage: node scripts/qa/perf.mjs [url] [--mobile] [--slow]
 import { chromium } from 'playwright'
 const url = process.argv.find((a) => a.startsWith('http')) ?? 'http://localhost:5173/'
 const mobile = process.argv.includes('--mobile')
@@ -13,8 +13,12 @@ const ctx = await browser.newContext(
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 },
 )
 const page = await ctx.newPage()
-// --mobile also slows the CPU 4x (Lighthouse's mobile profile) so decode hitches show up
-if (mobile) await (await ctx.newCDPSession(page)).send('Emulation.setCPUThrottlingRate', { rate: 4 })
+// --mobile also slows the CPU 4x (Lighthouse's mobile profile) so decode hitches show up;
+// --slow adds Lighthouse's slow-4G network (1.6 Mbps down, 150 ms round trip)
+const cdp = await ctx.newCDPSession(page)
+if (mobile) await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 })
+const slow = process.argv.includes('--slow')
+if (slow) await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 150, downloadThroughput: (1.6e6 / 8) * 0.9, uploadThroughput: (750e3 / 8) * 0.9 })
 page.on('pageerror', (e) => console.log('pageerror', e.message))
 let bytes = 0
 const byType = {}
@@ -35,7 +39,7 @@ await page.addInitScript(() => {
 })
 const t0 = Date.now()
 await page.goto(url)
-await page.waitForFunction(() => window.__time?.getState().introDone, null, { timeout: 60000 })
+await page.waitForFunction(() => window.__time?.getState().introDone, null, { timeout: 180000 })
 const tti = Date.now() - t0
 await page.waitForTimeout(1500)
 const loadBytes = bytes
@@ -67,7 +71,7 @@ const scrub = await page.evaluate(async () => {
 const scrubLong = await page.evaluate(() => window.__long.splice(0))
 const kb = (b) => `${(b / 1024).toFixed(0)} KB`
 const sum = (a) => a.reduce((x, y) => x + y, 0)
-console.log(`${mobile ? 'mobile 390x844@3, CPU 4x slower' : 'desktop 1440x900@2'}`)
+console.log(`${mobile ? 'mobile 390x844@3, CPU 4x slower' : 'desktop 1440x900@2'}${slow ? ', slow 4G' : ''}`)
 console.log(`load: ${kb(loadBytes)} transferred, interactive in ${tti} ms, ${loadLong.length} long tasks (${sum(loadLong).toFixed(0)} ms, worst ${Math.max(0, ...loadLong).toFixed(0)} ms)`)
 console.log(`first scrub (6 s, all time): ${scrub.fps.toFixed(1)} fps, p99 ${scrub.p99.toFixed(1)} ms, worst ${scrub.max.toFixed(0)} ms, ${scrub.over50} frames > 50 ms`)
 console.log(`  ${scrubLong.length} long tasks (${sum(scrubLong).toFixed(0)} ms, worst ${Math.max(0, ...scrubLong).toFixed(0)} ms), ${kb(bytes - loadBytes)} fetched`)

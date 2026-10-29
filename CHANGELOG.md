@@ -10,7 +10,7 @@ Measured with `scripts/qa/perf.mjs` (real GPU, empty cache; `--mobile` = 390×84
   speed and tab pills no longer trigger Framer Motion layout measurement on every frame.
 - **First-visit download**: 6.3 → 3.7 MB on phones, 6.2 → 4.5 MB on desktop. Textures are WebP (data
   textures lossless and bit-identical; the unused elevation channel is dropped). The 4K day texture
-  was preloaded on phones and downloaded twice on desktop; preloads now match the loader. Automated
+  was preloaded on phones and downloaded twice on desktop; texture preloads are gone (see below). Automated
   entity summaries load after the intro, on demand (index 437 → 114 KB gzipped). Population series
   are thinned losslessly at their stored precision. The command palette is its own chunk.
 - **Load stalls**: textures decode via `createImageBitmap` off the main thread (upload stall 411 → 72 ms
@@ -18,6 +18,13 @@ Measured with `scripts/qa/perf.mjs` (real GPU, empty cache; `--mobile` = 390×84
 - **Lighthouse** (mobile / desktop): performance 49 → 57 / 72 → 78, total blocking time 720 → 370 ms /
   230 → 100 ms, accessibility 100, best practices 100, SEO 91 → 100 (robots.txt). Mobile LCP stays
   high (17 s on simulated slow 4G) because the largest paint is the intro title, shown after textures load.
+- **Night lights and clouds no longer hold the intro**: they load after the critical textures, with their
+  own loading manager, and fade in. On a phone over slow 4G (CPU 4× slower) the globe is interactive
+  after 12.3 s and 1.8 MB.
+- **Fix: a stuck loading screen on slow connections.** Under slow 4G, three's `fetch()` attached to an
+  in-flight `<link rel="preload">` and failed with "Failed to fetch" when the preload completed, and a
+  failed texture left the loading screen up forever. The texture preloads are removed (0.5 s later
+  textures on slow 4G, no failure), and texture loads retry twice before giving up.
 - **Accessibility**: globe labels are at least 12 px; faded-out event markers leave the tab order and
   the accessibility tree; event markers and "More" have 24 px hit targets (WCAG 2.2).
   `scripts/qa/a11y.mjs` checks target sizes on a phone, focus indicators and Escape.
