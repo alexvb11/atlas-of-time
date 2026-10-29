@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTime } from '../../time/store'
-import { interpSeries, spanAt, type Conf, type EntityIndex, isModernAt } from '../../data/entities'
+import { interpSeries, spanAt, type Conf, type EntityIndex, isModernAt, useEntityText } from '../../data/entities'
 import type { Resolution } from '../../data/resolve'
 import { ConfTag, Stat, Ticker } from './bits'
 import { formatNumber, formatPopulation } from '../../time/format'
@@ -34,6 +34,7 @@ function popFor(res: Resolution, idx: EntityIndex, t: number): { value: number; 
 export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex }) {
   const t = useTime((s) => s.time)
   const [more, setMore] = useState(false)
+  useEntityText() // re-render when automated summaries arrive
   const country = 'country' in res ? res.country : null
   const pop = popFor(res, idx, t)
   // people living within today's borders (HYDE), a consistent comparison for every era
@@ -97,7 +98,7 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
         <div>
           <p className={`text-[13.5px] leading-relaxed text-ink/85 ${more ? '' : 'line-clamp-5'}`}>{summary}</p>
           {summary.length > 320 && (
-            <button type="button" onClick={() => setMore(!more)} className="mt-1 text-[12px] text-cyan hover:underline">
+            <button type="button" onClick={() => setMore(!more)} className="mt-0.5 py-1 text-[12px] text-cyan hover:underline">
               {more ? 'Less' : 'More'}
             </button>
           )}

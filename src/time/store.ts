@@ -76,4 +76,5 @@ export const useTime = create<State>()(
 /** Non-reactive read for render loops */
 export const timeNow = () => useTime.getState().time
 
-if (import.meta.env.DEV) (window as unknown as { __time: typeof useTime }).__time = useTime
+// dev, or ?qa in production builds for the performance probes
+if (import.meta.env.DEV || new URLSearchParams(location.search).has('qa')) (window as unknown as { __time: typeof useTime }).__time = useTime

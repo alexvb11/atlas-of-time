@@ -1,12 +1,13 @@
 // Builds the globe textures from NASA Visible Earth sources (see README for credits).
-//   earth-day.jpg    Blue Marble Next Generation, topography + bathymetry, Dec 2004
-//   earth-night.jpg  Black Marble 2016
-//   clouds.jpg       cloud_combined_2048 (luminance only)
-//   earth-data.png   R = present-day land mask (Natural Earth 50m)
+//   earth-day.webp   Blue Marble Next Generation, topography + bathymetry, Dec 2004
+//   earth-night.webp Black Marble 2016
+//   clouds.webp      cloud_combined_2048 (luminance only)
+//   earth-data.webp  lossless. R = present-day land mask (Natural Earth 50m)
 //                    G = ocean depth (GEBCO 08 bathymetry, 255 = shallow / land)
-//                    B = land elevation (GEBCO 08)
-//   ice.png          approximate Last Glacial Maximum ice-sheet extent (hand-drawn, coarse)
-// Each 1x / mobile size pair keeps the live page off third-party hosts.
+//                    B = unused (0, so it costs almost nothing compressed)
+//   ice.webp         lossless, approximate Last Glacial Maximum ice-sheet extent (hand-drawn, coarse)
+// Each 1x / mobile size pair keeps the live page off third-party hosts. WebP is 30-40% smaller than
+// the mozjpeg / PNG files it replaced (lossless for the data textures, so sea levels are unchanged).
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -24,7 +25,6 @@ const src = {
   night: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/144000/144898/BlackMarble_2016_3km.jpg',
   clouds: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57747/cloud_combined_2048.jpg',
   bath: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73963/gebco_08_rev_bath_21600x10800.png',
-  elev: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73934/gebco_08_rev_elev_21600x10800.png',
   land: 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-50m.json',
 }
 async function get(url) {
@@ -42,10 +42,10 @@ async function get(url) {
 const big = { limitInputPixels: false }
 
 for (const [w, suffix] of [[4096, ''], [2048, '-2k']]) {
-  await sharp(await get(src.day), big).resize(w, w / 2).jpeg({ quality: 88, mozjpeg: true }).toFile(path.join(out, `earth-day${suffix}.jpg`))
-  await sharp(await get(src.night), big).resize(w, w / 2).jpeg({ quality: 85, mozjpeg: true }).toFile(path.join(out, `earth-night${suffix}.jpg`))
+  await sharp(await get(src.day), big).resize(w, w / 2).webp({ quality: 86, effort: 6 }).toFile(path.join(out, `earth-day${suffix}.webp`))
+  await sharp(await get(src.night), big).resize(w, w / 2).webp({ quality: 84, effort: 6 }).toFile(path.join(out, `earth-night${suffix}.webp`))
 }
-await sharp(await get(src.clouds)).greyscale().jpeg({ quality: 85 }).toFile(path.join(out, 'clouds.jpg'))
+await sharp(await get(src.clouds)).greyscale().webp({ quality: 82, effort: 6 }).toFile(path.join(out, 'clouds.webp'))
 
 // ---- data texture ----
 const W = 4096
@@ -81,17 +81,15 @@ const icePath = ice.map((r) => `M${r.map(proj).join('L')}Z`).join('')
 const iceMask = await sharp(svg(`<path d="${icePath}" fill="white"/>`)).blur(10).greyscale().raw().toBuffer()
 
 const bath = await sharp(await get(src.bath), big).resize(W, H).greyscale().raw().toBuffer()
-const elev = await sharp(await get(src.elev), big).resize(W, H).greyscale().raw().toBuffer()
 const rgb = Buffer.alloc(W * H * 3)
 for (let i = 0; i < W * H; i++) {
   rgb[i * 3] = mask[i]
   rgb[i * 3 + 1] = bath[i]
-  rgb[i * 3 + 2] = elev[i]
 }
-await sharp(iceMask, { raw: { width: W, height: H, channels: 1 } }).resize(1024, 512).png().toFile(path.join(out, 'ice.png'))
+await sharp(iceMask, { raw: { width: W, height: H, channels: 1 } }).resize(1024, 512).webp({ lossless: true, effort: 6 }).toFile(path.join(out, 'ice.webp'))
 // 2048 is plenty: the mask only drives specular and sea-level changes; the day texture draws coasts
 await sharp(rgb, { raw: { width: W, height: H, channels: 3 } })
   .resize(2048, 1024)
-  .png({ compressionLevel: 9 })
-  .toFile(path.join(out, 'earth-data.png'))
+  .webp({ lossless: true, effort: 6 })
+  .toFile(path.join(out, 'earth-data.webp'))
 for (const f of await fs.readdir(out)) console.log(f, ((await fs.stat(path.join(out, f))).size / 1024).toFixed(0), 'KB')

@@ -33,6 +33,8 @@ These need the dev server running.
 npm run qa:shots   # screenshot tour of major states → scripts/qa/shots
 npm run qa:audit   # 20 random dates × 5 places: does every visible element agree with the date?
 npm run qa:fps     # frame rate idle / scrubbing / panel open (real GPU via headless Chromium)
+node scripts/qa/perf.mjs "http://localhost:4173/?qa" --mobile   # cold load + first scrub on a production build
+node scripts/qa/a11y.mjs   # touch targets, focus indicators, Escape
 ```
 
 ## Controls
@@ -95,7 +97,7 @@ the project licence with that in mind.
   `mledoze/countries`, the open dataset REST Countries was built on, plus OWID for population.
 - `gws.gplates.org/info/model_names` returns 404, but `reconstruct_points` with `MERDITH2021` works.
 - The Blue Marble link used in many tutorials (record 74418) returns 404; record 73909 works.
-- **KTX2**: no `toktx` was available, so textures ship as mozjpeg JPEG/PNG with 2k mobile variants.
+- **KTX2**: not used. Textures ship as WebP (lossless for data textures) with 2k mobile variants, decoded off the main thread with `createImageBitmap`; KTX2's lossy block compression would disturb the sea-level data channels.
 
 ## Coverage
 

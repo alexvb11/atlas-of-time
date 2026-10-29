@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.4.0 — 2026-10-28
+
+### Performance pass
+Measured with `scripts/qa/perf.mjs` (real GPU, empty cache; `--mobile` = 390×844 with a 4× slower CPU) and Lighthouse 12, against the previous commit on the same compressed server.
+- **First scrub across all time on a throttled phone**: 42 → 60 fps, worst frame 142 → 27 ms, 12 → 0 long tasks.
+  Border snapshot geometry (bbox, area, label point) is precomputed at build time; snapshot parsing,
+  border line building and drift decoding (plus the plate-stretch check) run in Web Workers; the
+  speed and tab pills no longer trigger Framer Motion layout measurement on every frame.
+- **First-visit download**: 6.3 → 3.7 MB on phones, 6.2 → 4.5 MB on desktop. Textures are WebP (data
+  textures lossless and bit-identical; the unused elevation channel is dropped). The 4K day texture
+  was preloaded on phones and downloaded twice on desktop; preloads now match the loader. Automated
+  entity summaries load after the intro, on demand (index 437 → 114 KB gzipped). Population series
+  are thinned losslessly at their stored precision. The command palette is its own chunk.
+- **Load stalls**: textures decode via `createImageBitmap` off the main thread (upload stall 411 → 72 ms
+  on a throttled phone).
+- **Lighthouse** (mobile / desktop): performance 49 → 57 / 72 → 78, total blocking time 720 → 370 ms /
+  230 → 100 ms, accessibility 100, best practices 100, SEO 91 → 100 (robots.txt). Mobile LCP stays
+  high (17 s on simulated slow 4G) because the largest paint is the intro title, shown after textures load.
+- **Accessibility**: globe labels are at least 12 px; faded-out event markers leave the tab order and
+  the accessibility tree; event markers and "More" have 24 px hit targets (WCAG 2.2).
+  `scripts/qa/a11y.mjs` checks target sizes on a phone, focus indicators and Escape.
+
 ## 0.3.0 — 2026-10-28
 
 ### Phase 6: data coverage in three tiers

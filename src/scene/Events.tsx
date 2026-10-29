@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { lonLatToVec3 } from '../geo/sphere'
-import { loadEntityIndex } from '../data/entities'
+import { loadCurated, loadEntityIndex } from '../data/entities'
 import { yearsAgo } from '../time/scale'
 import { useTime } from '../time/store'
 import { world } from './world'
@@ -24,7 +24,7 @@ export type Route = { id: string; name: string; from: number; to: number; text: 
 
 let dataPromise: Promise<{ events: GeoEvent[]; routes: Route[] }> | null = null
 export const loadEvents = () =>
-  (dataPromise ??= loadEntityIndex().then(() => fetch('/data/entities.json').then((r) => r.json()).then((j) => ({ events: j.events, routes: j.routes }))))
+  (dataPromise ??= loadEntityIndex().then(() => loadCurated()).then((j) => ({ events: j.events as GeoEvent[], routes: j.routes as Route[] })))
 
 /** 0..1: how present an event is at time t. The window scales with how long ago it was. */
 export function eventPresence(ev: GeoEvent, t: number) {
@@ -63,6 +63,7 @@ function Markers({ events }: { events: GeoEvent[] }) {
       b.innerHTML = `<span class="dot"></span><span class="txt">${ev.title}</span>`
       b.style.opacity = '0'
       b.style.pointerEvents = 'none'
+      b.classList.add('off')
       b.addEventListener('click', (e) => {
         e.stopPropagation()
         useTime.getState().set({ activeEvent: ev.id })
@@ -90,6 +91,7 @@ function Markers({ events }: { events: GeoEvent[] }) {
         if (el.style.opacity !== '0') {
           el.style.opacity = '0'
           el.style.pointerEvents = 'none'
+          el.classList.add('off')
         }
         continue
       }
@@ -100,6 +102,7 @@ function Markers({ events }: { events: GeoEvent[] }) {
       v.copy(pos).project(camera)
       el.style.opacity = a.toFixed(2)
       el.style.pointerEvents = a > 0.3 ? 'auto' : 'none'
+      el.classList.toggle('off', a < 0.05)
       el.style.transform = `translate(${((v.x * 0.5 + 0.5) * size.width).toFixed(1)}px, ${((-v.y * 0.5 + 0.5) * size.height).toFixed(1)}px)`
       el.classList.toggle('near', p > 0.8)
       // what comes next is previewed quietly; what has happened is shown fully

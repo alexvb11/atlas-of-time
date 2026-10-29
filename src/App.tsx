@@ -4,7 +4,7 @@ import { TimeBar, useTimeKeys } from './ui/TimeBar'
 import { Hud, Readout } from './ui/Readout'
 import { HoverLabel } from './ui/HoverLabel'
 import { Panel } from './ui/panel/Panel'
-import { CommandPalette } from './ui/CommandPalette'
+import { PaletteHost } from './ui/PaletteHost'
 import { Corner } from './ui/Corner'
 import { Intro } from './app/Intro'
 import { EventCard } from './ui/EventCard'
@@ -35,7 +35,7 @@ export default function App() {
           </>
         )}
       </AnimatePresence>
-      <CommandPalette />
+      <PaletteHost />
       <Intro />
     </main>
   )

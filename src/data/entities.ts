@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { feature } from 'topojson-client'
 import type { Topology, GeometryCollection } from 'topojson-specification'
 import { pointInPolygon } from '../geo/sphere'
+import { useTime } from '../time/store'
 
 export type Conf = 'documented' | 'estimated' | 'disputed'
 export type Span = [number, number, string, Conf?]
@@ -116,11 +117,15 @@ export function interpSeries(series: [number, number, ...unknown[]][], t: number
 
 let promise: Promise<EntityIndex> | null = null
 let ready: EntityIndex | null = null
+let curated: Promise<{ entities: Entity[]; lineages: Record<string, Lineage>; languages: Language[]; events: unknown[]; routes: unknown[] }> | null = null
+
+/** The curated file (entities, lineages, languages, events, routes), fetched once for every reader */
+export const loadCurated = () => (curated ??= fetch('/data/entities.json').then((r) => r.json()))
 
 export function loadEntityIndex(): Promise<EntityIndex> {
   promise ??= (async () => {
     const [ents, auto, ctry, topo, pop] = await Promise.all([
-      fetch('/data/entities.json').then((r) => r.json()),
+      loadCurated(),
       fetch('/data/entities-auto.json')
         .then((r) => (r.ok ? r.json() : { entities: [], lineages: {} }))
         .catch(() => ({ entities: [], lineages: {} })),
@@ -129,7 +134,8 @@ export function loadEntityIndex(): Promise<EntityIndex> {
       fetch('/data/population.json').then((r) => r.json()),
     ])
     const entities = new Map<string, Entity>()
-    for (const e of auto.entities as Entity[]) entities.set(e.id, e)
+    // summaries and sources for automated entities arrive later (loadEntityText)
+    for (const e of auto.entities as Entity[]) entities.set(e.id, { ...e, sources: [] })
     // curated entities win over automated ones with the same id
     for (const e of ents.entities as Entity[]) entities.set(e.id, { ...e, tier: 1 })
     // curated lineages replace automated ones for the same country
@@ -187,9 +193,62 @@ export function loadEntityIndex(): Promise<EntityIndex> {
       countryShape: (iso3) => shapeById.get(iso3) ?? null,
     }
     ready = idx
+    // warm the panel text once the intro is over and the page is idle, so the first click usually
+    // has it without competing with the textures for bandwidth
+    const idle = window.requestIdleCallback ?? ((f: () => void) => setTimeout(f, 1500))
+    const warm = () => idle(() => void loadEntityText())
+    if (useTime.getState().introDone) warm()
+    else {
+      const off = useTime.subscribe((st) => {
+        if (st.introDone) {
+          off()
+          warm()
+        }
+      })
+    }
     return idx
   })()
   return promise
+}
+
+let textPromise: Promise<void> | null = null
+let textReady = false
+const textListeners = new Set<() => void>()
+
+/**
+ * Summaries and source links of automated entities. They are half the automated data and only the
+ * panel reads them, so they live in a separate file (written by scripts/build-data/tiers.mjs).
+ */
+export function loadEntityText(): Promise<void> {
+  textPromise ??= Promise.all([
+    loadEntityIndex(),
+    fetch('/data/entities-auto-text.json')
+      .then((r) => (r.ok ? r.json() : {}))
+      .catch(() => ({})),
+  ]).then(([idx, text]: [EntityIndex, Record<string, [string | null, string[]]>]) => {
+    for (const [id, [summary, sources]] of Object.entries(text)) {
+      const e = idx.entities.get(id)
+      if (!e || e.tier === 1) continue // curated entity with the same id
+      if (summary) e.summary = summary
+      e.sources = sources
+    }
+    textReady = true
+    textListeners.forEach((l) => l())
+  })
+  return textPromise
+}
+
+/** Loads automated entity text if needed; true once it is in place */
+export function useEntityText(): boolean {
+  const [ok, setOk] = useState(textReady)
+  useEffect(() => {
+    if (ok) return
+    const l = () => setOk(true)
+    textListeners.add(l)
+    loadEntityText()
+    return () => void textListeners.delete(l)
+  }, [ok])
+  return ok
 }
 
 export function useEntityIndex(): EntityIndex | null {

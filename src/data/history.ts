@@ -1,7 +1,7 @@
 // Historical border snapshots (historical-basemaps). Lazy-loaded per snapshot and indexed with
 // bounding boxes so "which polity is at this point at time T" is a handful of ring tests.
-import { geoArea, geoCentroid } from 'd3-geo'
 import { pointInPolygon } from '../geo/sphere'
+import type { Parsed } from './history.worker'
 
 export type Polity = {
   id: string
@@ -15,13 +15,17 @@ export type Polity = {
   area: number
   label: [number, number]
 }
-export type Snapshot = { year: number; polities: Polity[] }
+/** segments: border lines on the unit sphere, built in the worker */
+export type Snapshot = { year: number; polities: Polity[]; segments: Float32Array }
 type Index = { snapshots: { year: number; features: number; bytes: number }[] }
 
 let indexPromise: Promise<number[]> | null = null
 const cache = new Map<number, Snapshot>()
 const pending = new Map<number, Promise<Snapshot>>()
 const listeners = new Set<() => void>()
+// parsing and border line building run in a worker
+let worker: Worker | null = null
+const resolvers = new Map<number, (p: Parsed) => void>()
 
 export const historyYears: number[] = []
 
@@ -73,58 +77,17 @@ export function loadSnapshot(year: number): Promise<Snapshot> {
   if (have) return Promise.resolve(have)
   let p = pending.get(year)
   if (!p) {
-    p = fetch(`/data/history/${year}.json`)
-      .then((r) => r.json())
-      .then((g: GeoJSON.FeatureCollection) => {
-        const polities: Polity[] = []
-        g.features.forEach((f, i) => {
-          const geom = f.geometry as GeoJSON.Polygon | GeoJSON.MultiPolygon
-          if (!geom) return
-          const polys = (geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates) as number[][][][]
-          let minX = 180, minY = 90, maxX = -180, maxY = -90
-          for (const poly of polys)
-            for (const [x, y] of poly[0]) {
-              if (x < minX) minX = x
-              if (x > maxX) maxX = x
-              if (y < minY) minY = y
-              if (y > maxY) maxY = y
-            }
-          // label at the centroid of the largest part
-          // rings are RFC 7946 (counter-clockwise) but d3-geo expects clockwise, so it measures the
-          // complement: areas come out as 4π - a and centroids as antipodes. Correct for both.
-          let best = polys[0]
-          let bestA = -1
-          let flipped = false
-          for (const poly of polys) {
-            const raw = geoArea({ type: 'Polygon', coordinates: poly })
-            const a = raw > 2 * Math.PI ? 4 * Math.PI - raw : raw
-            if (a > bestA) {
-              bestA = a
-              best = poly
-              flipped = raw > 2 * Math.PI
-            }
-          }
-          const c = geoCentroid({ type: 'Polygon', coordinates: best }) as [number, number]
-          const label: [number, number] = flipped ? [c[0] > 0 ? c[0] - 180 : c[0] + 180, -c[1]] : c
-          let area = 0
-          for (const poly of polys) {
-            const raw = geoArea({ type: 'Polygon', coordinates: poly })
-            area += raw > 2 * Math.PI ? 4 * Math.PI - raw : raw
-          }
-          const props = f.properties ?? {}
-          polities.push({
-            id: `${year}:${i}`,
-            name: props.NAME,
-            subjectTo: props.SUBJECTO && props.SUBJECTO !== props.NAME ? props.SUBJECTO : null,
-            partOf: props.PARTOF && props.PARTOF !== props.NAME ? props.PARTOF : null,
-            precision: props.BORDERPRECISION ?? 1,
-            polys,
-            bbox: [minX, minY, maxX, maxY],
-            area,
-            label,
-          })
-        })
-        const snap = { year, polities }
+    if (!worker) {
+      worker = new Worker(new URL('./history.worker.ts', import.meta.url), { type: 'module' })
+      worker.onmessage = (e: MessageEvent<Parsed>) => resolvers.get(e.data.year)?.(e.data)
+    }
+    p = new Promise<Parsed>((resolve) => {
+      resolvers.set(year, resolve)
+      worker!.postMessage({ year, url: new URL(`/data/history/${year}.json`, location.href).href })
+    })
+      .then(({ polities, segments }) => {
+        resolvers.delete(year)
+        const snap = { year, polities, segments }
         cache.set(year, snap)
         pending.delete(year)
         listeners.forEach((l) => l())

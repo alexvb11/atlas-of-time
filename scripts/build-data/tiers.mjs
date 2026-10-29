@@ -9,7 +9,7 @@
 //   search; they are accepted only if the Wikidata class is a polity / people / culture, the dates
 //   overlap the snapshots that use the name, and (when known) the coordinates lie near the polygon.
 //
-// Output: public/data/entities-auto.json, reports in scripts/reports/.
+// Output: public/data/entities-auto.json and entities-auto-text.json, reports in scripts/reports/.
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -395,10 +395,19 @@ for (const [n, best] of t3Choice) {
 }
 
 // ---------- write ----------
-await fs.writeFile(path.join(root, 'public/data/entities-auto.json'), JSON.stringify({ generated: new Date().toISOString().slice(0, 10), entities: out, lineages }))
+// Summaries and source links are only read by the panel, and are half the bytes: they go in a
+// separate file the app loads on demand, so the index needed for hover and selection stays small.
+const text = {}
+const index = out.map(({ summary, sources, ...e }) => {
+  text[e.id] = [summary ?? null, sources]
+  return e
+})
+await fs.writeFile(path.join(root, 'public/data/entities-auto.json'), JSON.stringify({ generated: new Date().toISOString().slice(0, 10), entities: index, lineages }))
+await fs.writeFile(path.join(root, 'public/data/entities-auto-text.json'), JSON.stringify(text))
 await fs.writeFile(path.join(root, 'scripts/reports/tier3-decisions.json'), JSON.stringify(decisions, null, 1))
 const stillUnmatched = decisions.filter((d) => !d.title).map((d) => ({ name: d.name, reason: d.reason, snapshots: nameInfo.get(d.name).years.length })).sort((a, b) => b.snapshots - a.snapshots)
 await fs.writeFile(path.join(root, 'scripts/reports/unmatched-basemap-names.json'), JSON.stringify(stillUnmatched, null, 1))
 const size = (await fs.stat(path.join(root, 'public/data/entities-auto.json'))).size
-log(`wrote ${out.length} automated entities (${out.filter((x) => x.tier === 2).length} tier 2, ${out.filter((x) => x.tier === 3).length} tier 3), ${Object.keys(lineages).length} lineages, ${(size / 1024).toFixed(0)} KB`)
+const textSize = (await fs.stat(path.join(root, 'public/data/entities-auto-text.json'))).size
+log(`wrote ${out.length} automated entities (${out.filter((x) => x.tier === 2).length} tier 2, ${out.filter((x) => x.tier === 3).length} tier 3), ${Object.keys(lineages).length} lineages, ${(size / 1024).toFixed(0)} KB + ${(textSize / 1024).toFixed(0)} KB text`)
 log(`still unmatched: ${stillUnmatched.length} names (${stillUnmatched.filter((x) => x.snapshots >= 3).length} appear in 3+ snapshots)`)

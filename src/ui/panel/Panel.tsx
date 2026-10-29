@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import { useResolution, resolutionKey } from '../../data/useResolution'
@@ -43,6 +43,28 @@ function useIsMobile() {
   return m
 }
 
+/** Memoized so the shared-layout pill is only measured when the tab changes, not on every panel update */
+const TabBar = memo(function TabBar({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
+  return (
+    <div className="relative mx-5 mt-3 flex shrink-0 gap-1 rounded-full bg-black/20 p-1" role="tablist">
+      {TABS.map((t) => (
+        <button
+          key={t}
+          role="tab"
+          aria-selected={tab === t}
+          onClick={() => setTab(t)}
+          className={`relative flex-1 rounded-full py-1.5 text-[12px] font-medium transition-colors ${tab === t ? 'text-void' : 'text-mist hover:text-ink'}`}
+        >
+          {tab === t && (
+            <motion.span layoutId="tab-pill" className="absolute inset-0 rounded-full bg-gradient-to-b from-cyan to-cyan-deep shadow-[0_0_16px_-2px_rgba(127,216,255,.6)]" transition={{ type: 'spring', stiffness: 420, damping: 32 }} />
+          )}
+          <span className="relative">{t}</span>
+        </button>
+      ))}
+    </div>
+  )
+})
+
 export function Panel() {
   const selection = useTime((s) => s.selection)
   const res = useResolution()
@@ -83,22 +105,7 @@ export function Panel() {
         >
           {mobile && <div className="mx-auto mt-2.5 h-1 w-10 rounded-full bg-white/20" />}
           <Header res={res} idx={idx} closeRef={closeRef} />
-          <div className="relative mx-5 mt-3 flex shrink-0 gap-1 rounded-full bg-black/20 p-1" role="tablist">
-            {TABS.map((t) => (
-              <button
-                key={t}
-                role="tab"
-                aria-selected={tab === t}
-                onClick={() => setTab(t)}
-                className={`relative flex-1 rounded-full py-1.5 text-[12px] font-medium transition-colors ${tab === t ? 'text-void' : 'text-mist hover:text-ink'}`}
-              >
-                {tab === t && (
-                  <motion.span layoutId="tab-pill" className="absolute inset-0 rounded-full bg-gradient-to-b from-cyan to-cyan-deep shadow-[0_0_16px_-2px_rgba(127,216,255,.6)]" transition={{ type: 'spring', stiffness: 420, damping: 32 }} />
-                )}
-                <span className="relative">{t}</span>
-              </button>
-            ))}
-          </div>
+          <TabBar tab={tab} setTab={setTab} />
           <div className="scroll-thin relative mt-3 min-h-0 flex-1 overflow-y-auto px-5 pb-5" role="tabpanel">
             <AnimatePresence mode="wait">
               <motion.div

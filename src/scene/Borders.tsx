@@ -28,40 +28,11 @@ void main() { gl_FragColor = vec4(uColor, uOpacity * smoothstep(0.02, 0.3, vFaci
 
 const geoCache = new Map<number, THREE.BufferGeometry>()
 
-/** Ring list -> line segments on the unit sphere, densified so long edges follow the curve */
-export function ringsToSegments(rings: number[][][], maxStep = 1.2): Float32Array {
-  const out: number[] = []
-  const a = new THREE.Vector3()
-  const b = new THREE.Vector3()
-  const p = new THREE.Vector3()
-  const q = new THREE.Vector3()
-  for (const ring of rings) {
-    for (let i = 0; i < ring.length - 1; i++) {
-      const [x1, y1] = ring[i]
-      const [x2, y2] = ring[i + 1]
-      // skip edges that run along the antimeridian / pole cut lines
-      if ((Math.abs(x1) === 180 && x1 === x2) || (Math.abs(y1) >= 89.9 && Math.abs(y2) >= 89.9)) continue
-      lonLatToVec3(x1, y1, 1, a)
-      lonLatToVec3(x2, y2, 1, b)
-      const steps = Math.max(1, Math.ceil((a.angleTo(b) * 180) / Math.PI / maxStep))
-      p.copy(a)
-      for (let s = 1; s <= steps; s++) {
-        q.copy(a).lerp(b, s / steps).normalize()
-        out.push(p.x, p.y, p.z, q.x, q.y, q.z)
-        p.copy(q)
-      }
-    }
-  }
-  return new Float32Array(out)
-}
-
 function snapshotGeometry(snap: Snapshot) {
   let g = geoCache.get(snap.year)
   if (!g) {
-    const rings: number[][][] = []
-    for (const pol of snap.polities) for (const poly of pol.polys) rings.push(...poly)
     g = new THREE.BufferGeometry()
-    g.setAttribute('position', new THREE.BufferAttribute(ringsToSegments(rings), 3))
+    g.setAttribute('position', new THREE.BufferAttribute(snap.segments, 3))
     g.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 1.01)
     geoCache.set(snap.year, g)
   }

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { motion } from 'framer-motion'
 import { useTime, type Speed } from '../time/store'
@@ -48,7 +48,6 @@ export function TimeBar() {
   const u = useTime((s) => s.u)
   const time = useTime((s) => s.time)
   const playing = useTime((s) => s.playing)
-  const speed = useTime((s) => s.speed)
   const track = useRef<HTMLDivElement>(null)
   const dragging = useRef(false)
 
@@ -129,23 +128,7 @@ export function TimeBar() {
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3.5 1.8v10.4c0 .6.7 1 1.2.7l8.2-5.2a.8.8 0 0 0 0-1.4L4.7 1.1c-.5-.3-1.2 0-1.2.7Z"/></svg>
           )}
         </button>
-        <div className="glass-soft hidden shrink-0 items-center rounded-full p-0.5 sm:flex" role="radiogroup" aria-label="Playback speed">
-          {([1, 5, 25] as Speed[]).map((sp) => (
-            <button
-              key={sp}
-              type="button"
-              role="radio"
-              aria-checked={speed === sp}
-              onClick={() => useTime.getState().setSpeed(sp)}
-              className={`relative rounded-full px-2.5 py-1 text-[11px] font-medium tnum transition-colors ${speed === sp ? 'text-void' : 'text-mist hover:text-ink'}`}
-            >
-              {speed === sp && (
-                <motion.span layoutId="speed-pill" className="absolute inset-0 rounded-full bg-cyan" transition={{ type: 'spring', stiffness: 400, damping: 30 }} />
-              )}
-              <span className="relative">{sp}×</span>
-            </button>
-          ))}
-        </div>
+        <SpeedPicker />
 
         {/* track */}
         <div className="relative min-w-0 flex-1">
@@ -236,3 +219,30 @@ export function useTimeKeys() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 }
+
+/**
+ * Its own component so the shared-layout pill is not re-rendered (and re-measured by Framer Motion)
+ * on every frame while the time bar scrubs.
+ */
+const SpeedPicker = memo(function SpeedPicker() {
+  const speed = useTime((s) => s.speed)
+  return (
+    <div className="glass-soft hidden shrink-0 items-center rounded-full p-0.5 sm:flex" role="radiogroup" aria-label="Playback speed">
+      {([1, 5, 25] as Speed[]).map((sp) => (
+        <button
+          key={sp}
+          type="button"
+          role="radio"
+          aria-checked={speed === sp}
+          onClick={() => useTime.getState().setSpeed(sp)}
+          className={`relative rounded-full px-2.5 py-1 text-[11px] font-medium tnum transition-colors ${speed === sp ? 'text-void' : 'text-mist hover:text-ink'}`}
+        >
+          {speed === sp && (
+            <motion.span layoutId="speed-pill" className="absolute inset-0 rounded-full bg-cyan" transition={{ type: 'spring', stiffness: 400, damping: 30 }} />
+          )}
+          <span className="relative">{sp}×</span>
+        </button>
+      ))}
+    </div>
+  )
+})

@@ -3,6 +3,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { thinSeries } from './lib/thin-series.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const file = path.join(root, 'scripts/.cache/owid-pop.csv')
@@ -28,7 +29,7 @@ for (const row of rows) {
   const t = year <= 0 ? year + 1 : year
   ;(series[key === 'OWID_WRL' ? 'WORLD' : key] ??= []).push([t, Number(v.toPrecision(3))])
 }
-for (const s of Object.values(series)) s.sort((a, b) => a[0] - b[0])
+for (const [k, s] of Object.entries(series)) series[k] = thinSeries(s.sort((a, b) => a[0] - b[0]))
 await fs.writeFile(
   path.join(root, 'public/data/population.json'),
   JSON.stringify({ source: 'Our World in Data, population (HYDE 3.2 & UN WPP 2024)', series }),

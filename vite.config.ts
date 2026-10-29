@@ -9,7 +9,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 1500,
     rolldownOptions: {
       output: {
-        advancedChunks: {
+        codeSplitting: {
           groups: [{ name: 'three', test: /node_modules[\\/](three|@react-three|postprocessing)/ }],
         },
       },

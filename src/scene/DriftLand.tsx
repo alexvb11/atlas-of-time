@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useFrame, type ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
-import { availablePair, bracket, loadDriftMesh, loadSnapshot, placedMask, type DriftMesh } from '../data/drift'
+import { availablePair, bracket, driftOk, loadDriftMesh, loadSnapshot, type DriftMesh } from '../data/drift'
 import { driftFragment, driftVertex } from './shaders'
 import { SUN, world } from './world'
 import { useEarthTextures } from './Globe'
@@ -28,39 +28,6 @@ void main() {
   gl_Position = projectionMatrix * viewMatrix * w;
 }
 `
-/**
- * Per-vertex visibility for a snapshot: primitives (triangles or segments) whose edges stretched far
- * beyond their present-day length straddle two plates; fade them so rifts read as gaps, not streaks.
- */
-const okCache = new WeakMap<Float32Array, Map<Uint32Array, Float32Array>>()
-function stretchOk(mesh: DriftMesh, snap: Float32Array, index: Uint32Array, k: 2 | 3): Float32Array {
-  let byIndex = okCache.get(snap)
-  if (!byIndex) okCache.set(snap, (byIndex = new Map()))
-  const hit = byIndex.get(index)
-  if (hit) return hit
-  const P = mesh.present
-  const placed = placedMask.get(snap)
-  const ok = new Float32Array(mesh.n).fill(1)
-  const len = (A: Float32Array, i: number, j: number) => Math.hypot(A[i * 3] - A[j * 3], A[i * 3 + 1] - A[j * 3 + 1], A[i * 3 + 2] - A[j * 3 + 2])
-  for (let p = 0; p < index.length; p += k) {
-    let ratio = 0
-    for (let e = 0; e < k; e++) {
-      const i = index[p + e]
-      const j = index[p + ((e + 1) % k)]
-      ratio = Math.max(ratio, len(snap, i, j) / Math.max(len(P, i, j), 0.0015))
-    }
-    let v = 1 - THREE.MathUtils.smoothstep(ratio, 1.5, 2.2)
-    // crust the plate model does not place at this time: shown only as a faint ghost
-    if (placed) for (let e = 0; e < k; e++) if (!placed[index[p + e]]) v = Math.min(v, 0.12)
-    for (let e = 0; e < k; e++) {
-      const i = index[p + e]
-      if (v < ok[i]) ok[i] = v
-    }
-  }
-  byIndex.set(index, ok)
-  return ok
-}
-
 const lineFragment = /* glsl */ `
 uniform vec3 uColor;
 uniform float uOpacity;
@@ -78,7 +45,7 @@ export function DriftLand() {
       driftNow.mesh = m
       setMesh(m)
       // warm the most visited snapshots
-      for (const t of [0, 5, 100, 200, 250]) loadSnapshot(m, t)
+      for (const t of [0, 5, 100, 200, 250]) loadSnapshot(t)
     })
   }, [])
   if (!mesh) return null
@@ -162,16 +129,17 @@ function DriftLayers({ mesh }: { mesh: DriftMesh }) {
     const ia = mesh.times.indexOf(a)
     for (const k of [ia, ia + 1, ia + 1 + dir, ia + 2 * dir]) {
       const t = mesh.times[k]
-      if (t !== undefined) loadSnapshot(mesh, t)
+      if (t !== undefined) loadSnapshot(t)
     }
     void b
 
     const pair = availablePair(mesh, ma)
     if (!pair) return
     const setOk = (which: 'aOkA' | 'aOkB', snap: Float32Array) => {
-      for (const [g, idx, k] of [[land, mesh.tris, 3], [coast, mesh.coast, 2], [borders, mesh.borders, 2]] as const) {
+      const ok = driftOk.get(snap)!
+      for (const [g, key] of [[land, 'tris'], [coast, 'coast'], [borders, 'borders']] as const) {
         const attr = g.attributes[which] as THREE.BufferAttribute
-        ;(attr.array as Float32Array).set(stretchOk(mesh, snap, idx, k))
+        ;(attr.array as Float32Array).set(ok[key])
         attr.needsUpdate = true
       }
     }

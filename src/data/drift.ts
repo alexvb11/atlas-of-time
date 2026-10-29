@@ -2,6 +2,7 @@
 // renderer interpolates between the two snapshots bracketing the current time on the GPU.
 import { lonLatToVec3 } from '../geo/sphere'
 import * as THREE from 'three'
+import type { Decoded } from './drift.worker'
 
 export type DriftMesh = {
   n: number
@@ -16,9 +17,11 @@ export type DriftMesh = {
 
 let meshPromise: Promise<DriftMesh> | null = null
 const snaps = new Map<number, Float32Array>()
-/** per snapshot: 1 where GPlates placed the vertex, 0 where it was inferred from neighbours */
-export const placedMask = new WeakMap<Float32Array, Uint8Array>()
+/** per snapshot: vertex visibility for each index buffer (stretch across plates, unplaced crust) */
+export const driftOk = new WeakMap<Float32Array, Decoded['ok']>()
 const pending = new Map<number, Promise<Float32Array>>()
+const resolvers = new Map<number, (d: Decoded) => void>()
+let worker: Worker | null = null
 
 export function loadDriftMesh(): Promise<DriftMesh> {
   meshPromise ??= (async () => {
@@ -44,6 +47,10 @@ export function loadDriftMesh(): Promise<DriftMesh> {
       present[i * 3 + 1] = v.y
       present[i * 3 + 2] = v.z
     }
+    // decoding runs in a worker; it keeps its own copies of the mesh it needs
+    worker = new Worker(new URL('./drift.worker.ts', import.meta.url), { type: 'module' })
+    worker.onmessage = (e: MessageEvent<Decoded>) => resolvers.get(e.data.ma)?.(e.data)
+    worker.postMessage({ type: 'init', n, present: present.slice(), tris: tris.slice(), coast: coast.slice(), borders: borders.slice() })
     return { n, lonlat, present, tris, borders, coast, times: index.times as number[] }
   })()
   return meshPromise
@@ -53,28 +60,21 @@ export function getSnapshot(ma: number): Float32Array | undefined {
   return snaps.get(ma)
 }
 
-export function loadSnapshot(mesh: DriftMesh, ma: number): Promise<Float32Array> {
+export function loadSnapshot(ma: number): Promise<Float32Array> {
   const have = snaps.get(ma)
   if (have) return Promise.resolve(have)
   let p = pending.get(ma)
   if (!p) {
-    p = fetch(`/data/drift/t${ma}.bin`)
-      .then((r) => r.arrayBuffer())
-      .then((b) => {
-        const q = new Int16Array(b, 0, mesh.n * 2)
-        const out = new Float32Array(mesh.n * 3)
-        const v = new THREE.Vector3()
-        for (let i = 0; i < mesh.n; i++) {
-          lonLatToVec3((q[i * 2] / 32767) * 180, (q[i * 2 + 1] / 32767) * 90, 1, v)
-          out[i * 3] = v.x
-          out[i * 3 + 1] = v.y
-          out[i * 3 + 2] = v.z
-        }
-        if (b.byteLength >= mesh.n * 5) placedMask.set(out, new Uint8Array(b, mesh.n * 4, mesh.n))
-        snaps.set(ma, out)
-        pending.delete(ma)
-        return out
-      })
+    p = new Promise<Decoded>((resolve) => {
+      resolvers.set(ma, resolve)
+      worker!.postMessage({ type: 'decode', ma, url: new URL(`/data/drift/t${ma}.bin`, location.href).href })
+    }).then(({ pos, ok }) => {
+      resolvers.delete(ma)
+      driftOk.set(pos, ok)
+      snaps.set(ma, pos)
+      pending.delete(ma)
+      return pos
+    })
     pending.set(ma, p)
   }
   return p

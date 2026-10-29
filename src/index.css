@@ -114,7 +114,8 @@ body {
   opacity: 0;
   white-space: nowrap;
   font-family: var(--font-display);
-  font-size: calc(13px * var(--s, 1));
+  /* scaled by polity area, but never below a legible 12px */
+  font-size: max(12px, calc(13px * var(--s, 1)));
   letter-spacing: 0.04em;
   color: rgb(232 241 251 / 0.82);
   text-shadow: 0 1px 6px rgb(0 0 0 / 0.95), 0 0 16px rgb(0 0 0 / 0.6);
@@ -148,7 +149,18 @@ body {
   text-shadow: 0 1px 6px rgb(0 0 0 / 0.95);
   white-space: nowrap;
   will-change: transform, opacity;
-  transition: opacity 0.25s;
+  transition: opacity 0.25s, visibility 0s;
+}
+/* faded-out markers leave the tab order and the accessibility tree once their fade finishes */
+.globe-event.off {
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0s 0.25s;
+}
+/* invisible padding: a hit target of at least 24px (WCAG 2.2) without moving the dot */
+.globe-event::before {
+  content: '';
+  position: absolute;
+  inset: -7px -8px -7px -12px;
 }
 .globe-event .dot {
   width: 9px;

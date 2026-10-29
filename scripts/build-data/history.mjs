@@ -6,6 +6,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
+import { annotate } from './lib/annotate-history.mjs'
 
 const run = promisify(execFile)
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
@@ -45,7 +46,8 @@ for (const name of files) {
     '-clean',
     '-o', dest, 'format=geojson', 'precision=0.01', 'force',
   ])
-  const g = JSON.parse(await fs.readFile(dest, 'utf8'))
+  const g = annotate(JSON.parse(await fs.readFile(dest, 'utf8')))
+  await fs.writeFile(dest, `{"type":"FeatureCollection","features":[\n${g.features.map((f) => JSON.stringify(f)).join(',\n')}\n]}`)
   for (const f of g.features) {
     const n = f.properties.NAME
     if (!names.has(n)) names.set(n, [])

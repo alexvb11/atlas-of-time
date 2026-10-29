@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Fuse from 'fuse.js'
 import { useTime } from '../time/store'
-import { loadEntityIndex, nameAt, useEntityIndex, type Entity, type EntityIndex } from '../data/entities'
+import { nameAt, useEntityIndex, type Entity, type EntityIndex } from '../data/entities'
 import { getSnapshot, historyYears, snapshotIndexAt } from '../data/history'
 import { formatYear } from '../time/format'
 import { animateTo } from './TimeBar'
@@ -73,17 +73,6 @@ export function CommandPalette() {
   const [active, setActive] = useState(0)
   const input = useRef<HTMLInputElement>(null)
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault()
-        loadEntityIndex()
-        useTime.getState().set({ paletteOpen: !useTime.getState().paletteOpen })
-      }
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [])
   useEffect(() => {
     if (open) {
       setQ('')

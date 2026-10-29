@@ -7,16 +7,47 @@ import { vec3ToLonLat } from '../geo/sphere'
 import { useTime } from '../time/store'
 import { pointerOnGlobe } from './CameraRig'
 
+// keep in step with the preload media queries in index.html
 const mobile = typeof window !== 'undefined' && Math.min(window.innerWidth, window.innerHeight) < 700
 const sfx = mobile ? '-2k' : ''
 
+// createImageBitmap decodes off the main thread; uploading a plain <img> forces a synchronous decode
+// (WebP made that a 400 ms stall on phones). Same support check as three's GLTFLoader.
+const bitmapOk = (() => {
+  if (typeof createImageBitmap === 'undefined') return false
+  const ua = navigator.userAgent
+  const safari = /^((?!chrome|android).)*safari/i.test(ua) ? parseInt(ua.match(/Version\/(\d+)/)?.[1] ?? '0', 10) : -1
+  const firefox = ua.includes('Firefox') ? parseInt(ua.match(/Firefox\/([0-9]+)\./)?.[1] ?? '0', 10) : -1
+  return !(safari >= 0 && safari < 17) && !(firefox >= 0 && firefox < 98)
+})()
+
+class EarthTextureLoader extends THREE.Loader<THREE.Texture> {
+  load(url: string, onLoad: (t: THREE.Texture) => void, onProgress?: (e: ProgressEvent) => void, onError?: (e: unknown) => void) {
+    if (!bitmapOk) return void new THREE.TextureLoader(this.manager).load(url, onLoad, onProgress, onError)
+    const l = new THREE.ImageBitmapLoader(this.manager)
+    // flipped at decode, since WebGL ignores flipY for bitmaps
+    l.setOptions({ imageOrientation: 'flipY', premultiplyAlpha: 'none' })
+    l.load(
+      url,
+      (bmp) => {
+        const t = new THREE.Texture(bmp)
+        t.flipY = false
+        t.needsUpdate = true
+        onLoad(t)
+      },
+      onProgress,
+      onError,
+    )
+  }
+}
+
 export function useEarthTextures() {
-  const [day, night, data, ice, clouds] = useLoader(THREE.TextureLoader, [
-    `/textures/earth-day${sfx}.jpg`,
-    `/textures/earth-night${sfx}.jpg`,
-    '/textures/earth-data.png',
-    '/textures/ice.png',
-    '/textures/clouds.jpg',
+  const [day, night, data, ice, clouds] = useLoader(EarthTextureLoader, [
+    `/textures/earth-day${sfx}.webp`,
+    `/textures/earth-night${sfx}.webp`,
+    '/textures/earth-data.webp',
+    '/textures/ice.webp',
+    '/textures/clouds.webp',
   ])
   useMemo(() => {
     day.colorSpace = THREE.SRGBColorSpace
