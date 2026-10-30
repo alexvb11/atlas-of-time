@@ -299,7 +299,13 @@ function buildEntity({ id, e, name, match, from, to, conf, kind, tier, iso3, sum
     const q = list.filter((s) => s[3] !== 'estimated')
     return un.length ? [...q, [factFrom, to, un.join(', '), 'documented']] : q
   })()
-  const rulers = qualified(e, 'P35').filter((x) => x.from != null && x.from >= from).map((x) => [x.from, Math.min(x.to ?? (iso3 ? NOW + 1 : to), to), L(x.id), 'documented']).filter((s) => s[2] && s[0] < s[1])
+  // a head of state without an end date is only trusted as the current one of a present-day country;
+  // otherwise the reign would silently run to the state's end (As-Saffah "ruling" until 1258)
+  const rulers = qualified(e, 'P35')
+    .filter((x) => x.from != null && x.from >= from && (x.to != null || (iso3 && to > NOW)))
+    .sort((a, b) => a.from - b.from)
+    .map((x, i, all) => [x.from, Math.min(x.to ?? Math.min(NOW + 1, all.find((y) => y.from > x.from)?.from ?? Infinity), to), L(x.id), 'documented'])
+    .filter((s) => s[2] && s[0] < s[1])
   const langs = ids(e, 'P37').map(L).filter(Boolean)
   return {
     id, name, kind, region: 'auto', from, to, conf, tier,
@@ -349,10 +355,13 @@ for (const c of countries) {
       // predecessors elsewhere on the globe (Wikidata chains sometimes run through the colonial power)
       const pc = coord(pe)
       if (pc && kmBetween(pc, [c.latlng[1], c.latlng[0]]) > 3000) continue
+      // a predecessor with neither an English label nor an English article cannot be named honestly
+      const pname = pe.labels?.en?.value ?? enTitle(pe)
+      if (!pname) continue
       const pid = `w-${pq.toLowerCase()}`
       if (!out.some((x) => x.id === pid)) {
         const pw = enTitle(pe)
-        out.push(buildEntity({ id: pid, e: pe, name: pe.labels?.en?.value ?? pq, match: [pe.labels?.en?.value, ...(pe.aliases?.en ?? []).map((a) => a.value)].filter(Boolean), from: pl.from.year, to: pl.to.year, conf: pl.from.approx || pl.to.approx ? 'estimated' : 'documented', kind: kindFrom(ids(pe, 'P31').map(L).filter(Boolean)), tier: 2, summary: summaryOf(pw), wiki: pw }))
+        out.push(buildEntity({ id: pid, e: pe, name: pname, match: [pe.labels?.en?.value, ...(pe.aliases?.en ?? []).map((a) => a.value)].filter(Boolean), from: pl.from.year, to: pl.to.year, conf: pl.from.approx || pl.to.approx ? 'estimated' : 'documented', kind: kindFrom(ids(pe, 'P31').map(L).filter(Boolean)), tier: 2, summary: summaryOf(pw), wiki: pw }))
       }
       spans.push([pl.from.year, pl.to.year, pid, false])
       if (depth < 1) walk(pq, depth + 1)

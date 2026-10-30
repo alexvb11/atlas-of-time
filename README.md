@@ -118,7 +118,7 @@ the project licence with that in mind.
 
 Three tiers, shown honestly in the panel:
 
-- **Tier 1, curated**: dated lineages with rulers, capitals, language shares, facts and events for
+- **Tier 1, curated**: dated lineages with rulers, capitals, languages, facts and events for
   26 present-day countries. Rich slice regions: Armenia and the Caucasus, the Mediterranean, China,
   Mesoamerica, the British Isles. Major powers: Persia/Iran, Mesopotamia/Iraq, Anatolia/Turkey,
   Russia, India, Japan, both Koreas, the caliphates and Arabia, Spain, France, Germany, Peru, Mali
@@ -129,6 +129,22 @@ Three tiers, shown honestly in the panel:
   validated by class, dates and location. Generic labels such as "Savanna hunter-gatherers" are
   deliberately left unmatched rather than tied to a loosely related article.
 
-Rebuild order: `entities.mjs` (curated), then `tiers.mjs` (automated). Reports in `scripts/reports/`:
+- **Country events**: every present-day country's History tab lists its most widely covered wars,
+  battles, sieges, treaties, revolutions, coups, rebellions, declarations of independence,
+  assassinations, massacres, genocides, famines, epidemics, earthquakes and eruptions, from
+  Wikidata (`country-events.mjs`). Titles are the Wikipedia article titles word for word and dates
+  come straight from Wikidata, so nothing is paraphrased; each one opens its article in the reader.
+
+### Fact checking
+
+`node scripts/qa/fact-check.mjs` checks what the atlas states against Wikidata and the articles it
+cites, and writes every disagreement to `scripts/reports/fact-check.json` for review by hand:
+event years (Wikidata dates or the article's lead), entity spans (inception and dissolution),
+reigns that fall outside the ruler's lifetime, and raw Wikidata ids where a name should be.
+Language shares are only shown where a census backs them (the Russian Empire's 1897 census);
+elsewhere the panel lists the languages without inventing percentages.
+
+Rebuild order: `entities.mjs` (curated), then `tiers.mjs` (automated), then `country-events.mjs`
+and `articles.mjs`. Reports in `scripts/reports/`:
 `tier3-decisions.json` (every match with its evidence) and `unmatched-basemap-names.json` (the work
 list).

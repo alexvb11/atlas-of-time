@@ -49,7 +49,7 @@ export const entities = [
     gov: [[bce(247), ce(224), 'Feudal monarchy of the Arsacid dynasty']],
     religion: [[bce(247), ce(224), 'Zoroastrianism alongside Greek and Babylonian cults']],
     langs: [[bce(247), ce(224), [['parthian', 0.4], ['aramaic', 0.35], ['koine-greek', 0.15], ['middle-persian', 0.1]]]],
-    facts: [[null, null, 'The "Parthian shot", firing backwards from a retreating horse, gave English the phrase "parting shot".']],
+    facts: [[null, null, 'The "Parthian shot", fired backwards from a retreating horse, is often said to be the origin of the English "parting shot".']],
     events: [[bce(53), 'Battle of Carrhae', 'Parthian horse archers destroy the army of Crassus.']],
   }),
   entity({
@@ -66,7 +66,7 @@ export const entities = [
     id: 'iranian-intermezzo', name: 'Iranian dynasties under the Caliphate', kind: 'period', region: 'persia', from: ce(821), to: ce(1037), wiki: 'Iranian Intermezzo',
     gov: [[ce(821), ce(1037), 'Tahirid, Saffarid, Samanid and Buyid dynasties, nominally under the Abbasids']],
     religion: [[ce(821), ce(1037), 'Islam (Sunni and Shia)']],
-    langs: [[ce(821), ce(1037), [['persian', 0.6], ['arabic', 0.3], ['azerbaijani', 0.1]]]],
+    langs: [[ce(821), ce(1037), [['persian', 0.6], ['arabic', 0.4]]]],
     facts: [[ce(1010), null, 'Ferdowsi completed the Shahnameh, the Persian national epic, around 1010.']],
   }),
   entity({
@@ -89,7 +89,7 @@ export const entities = [
   }),
   entity({
     id: 'timurid', name: 'Timurid Empire', kind: 'empire', region: 'persia', from: ce(1370), to: ce(1507), wiki: 'Timurid Empire', match: ['Timurid Empire', 'Timurid Emirates'],
-    capitals: [[ce(1370), ce(1405), 'Samarkand'], [ce(1405), ce(1507), 'Herat']],
+    capitals: [[ce(1370), ce(1409), 'Samarkand'], [ce(1409), ce(1507), 'Herat']],
     rulers: [[ce(1370), ce(1405), 'Timur (Tamerlane)'], [ce(1409), ce(1447), 'Shah Rukh']],
     gov: [[ce(1370), ce(1507), 'Turco-Mongol empire']],
     religion: [[ce(1370), ce(1507), 'Sunni Islam']],
@@ -107,7 +107,7 @@ export const entities = [
   }),
   entity({
     id: 'afsharid-zand', name: 'Afsharid and Zand Iran', kind: 'kingdom', region: 'persia', from: ce(1736), to: ce(1789), wiki: 'Afsharid Iran',
-    capitals: [[ce(1736), ce(1750), 'Mashhad'], [ce(1750), ce(1789), 'Shiraz']],
+    capitals: [[ce(1736), ce(1747), 'Mashhad'], [ce(1765), ce(1789), 'Shiraz']],
     rulers: [[ce(1736), ce(1747), 'Nader Shah'], [ce(1751), ce(1779), 'Karim Khan Zand (regent)']],
     gov: [[ce(1736), ce(1789), 'Monarchy']],
     langs: [[ce(1736), ce(1789), [['persian', 0.65], ['azerbaijani', 0.25], ['kurdish', 0.1]]]],
@@ -169,7 +169,7 @@ export const entities = [
   entity({
     id: 'assyria', name: 'Assyria', kind: 'empire', region: 'mesopotamia', from: bce(2025), to: bce(609), conf: E, wiki: 'Assyria', match: ['Assyria'],
     names: [[bce(2025), bce(1363), 'Old Assyria'], [bce(1363), bce(912), 'Middle Assyrian Empire'], [bce(912), bce(609), 'Neo-Assyrian Empire']],
-    capitals: [[bce(2025), bce(879), 'Assur'], [bce(879), bce(706), 'Nimrud (Kalhu)'], [bce(706), bce(612), 'Nineveh']],
+    capitals: [[bce(2025), bce(879), 'Assur'], [bce(879), bce(706), 'Nimrud (Kalhu)'], [bce(706), bce(705), 'Dur-Sharrukin'], [bce(705), bce(612), 'Nineveh']],
     rulers: [[bce(745), bce(727), 'Tiglath-Pileser III'], [bce(705), bce(681), 'Sennacherib'], [bce(669), bce(631), 'Ashurbanipal', E]],
     gov: [[bce(2025), bce(609), 'Monarchy; from the 9th century a militarised empire with provinces']],
     langs: [[bce(2025), bce(900), [['akkadian', 0.9], ['hurrian', 0.1]]], [bce(900), bce(609), [['akkadian', 0.45], ['aramaic', 0.55]]]],
@@ -250,18 +250,18 @@ export const entities = [
     events: [[ce(1480), 'Great Stand on the Ugra River', 'End of tribute to the Horde.'], [ce(1552), 'Ivan IV takes Kazan'], [ce(1703), 'Saint Petersburg founded']],
   }),
   entity({
-    id: 'russian-empire', name: 'Russian Empire', kind: 'empire', region: 'russia', from: ce(1721), to: ce(1917.7), wiki: 'Russian Empire', langsSource: 'Shares from the 1897 census, the only full census of the empire; earlier mixes differed.', match: ['Russian Empire', 'Russia'],
-    capitals: [[ce(1721), ce(1917.7), 'Saint Petersburg']],
+    id: 'russian-empire', name: 'Russian Empire', kind: 'empire', region: 'russia', from: ce(1721), to: ce(1917.85), wiki: 'Russian Empire', langsSource: 'Mother-tongue shares from the 1897 census, the only full census of the empire; earlier mixes differed. Selected languages only: Belarusian (4.7%), the Turkic languages and others are not shown.', match: ['Russian Empire', 'Russia'],
+    capitals: [[ce(1721), ce(1917.85), 'Saint Petersburg']],
     rulers: [[ce(1721), ce(1725), 'Peter I the Great'], [ce(1762), ce(1796), 'Catherine II the Great'], [ce(1801), ce(1825), 'Alexander I'], [ce(1855), ce(1881), 'Alexander II'], [ce(1894), ce(1917.2), 'Nicholas II']],
-    gov: [[ce(1721), ce(1905), 'Autocratic monarchy'], [ce(1905), ce(1917.2), 'Monarchy with an elected Duma'], [ce(1917.2), ce(1917.7), 'Provisional Government']],
-    religion: [[ce(1721), ce(1917.7), 'Russian Orthodox Christianity']],
-    langs: [[ce(1721), ce(1917.7), [['russian', 0.443], ['ukrainian', 0.178], ['polish', 0.063], ['yiddish', 0.04], ['tatar', 0.019], ['german', 0.014], ['azerbaijani', 0.015], ['georgian', 0.011], ['armenian', 0.009]]]],
+    gov: [[ce(1721), ce(1905), 'Autocratic monarchy'], [ce(1905), ce(1917.2), 'Monarchy with an elected Duma'], [ce(1917.2), ce(1917.85), 'Provisional Government']],
+    religion: [[ce(1721), ce(1917.85), 'Russian Orthodox Christianity']],
+    langs: [[ce(1721), ce(1917.85), [['russian', 0.443], ['ukrainian', 0.178], ['polish', 0.063], ['yiddish', 0.04], ['german', 0.014], ['georgian', 0.011], ['armenian', 0.009]]]],
     pop: [[ce(1897), 1.25e8, D]],
     facts: [[ce(1897), null, 'The census of 1897 counted 125.6 million people; only 44% gave Russian as their mother tongue.'], [null, null, 'At its peak it covered about 22.8 million km², a sixth of the world\'s land.'], [ce(1861), null, 'Alexander II emancipated some 23 million serfs in 1861.']],
-    events: [[ce(1812), 'Napoleon\'s invasion and retreat from Moscow'], [ce(1861), 'Emancipation of the serfs'], [ce(1917.7), 'October Revolution']],
+    events: [[ce(1812), 'Napoleon\'s invasion and retreat from Moscow'], [ce(1861), 'Emancipation of the serfs'], [ce(1917.85), 'October Revolution']],
   }),
   entity({
-    id: 'ussr', name: 'Soviet Union', kind: 'republic', region: 'russia', from: ce(1922.99), to: ce(1991.99), wiki: 'Soviet Union', langsSource: 'Native-language shares from the 1989 Soviet census (rounded).', match: ['USSR', 'Soviet Union'],
+    id: 'ussr', name: 'Soviet Union', kind: 'republic', region: 'russia', from: ce(1922.99), to: ce(1991.99), wiki: 'Soviet Union', match: ['USSR', 'Soviet Union'],
     capitals: [[ce(1922.99), ce(1991.99), 'Moscow']],
     rulers: [[ce(1922.99), ce(1924.06), 'Vladimir Lenin'], [ce(1924.06), ce(1953.2), 'Joseph Stalin'], [ce(1953.7), ce(1964.8), 'Nikita Khrushchev'], [ce(1964.8), ce(1982.9), 'Leonid Brezhnev'], [ce(1985.2), ce(1991.99), 'Mikhail Gorbachev']],
     gov: [[ce(1922.99), ce(1991.99), 'One-party socialist federation led by the Communist Party']],
@@ -292,7 +292,7 @@ export const entities = [
     id: 'vedic', name: 'Vedic period', kind: 'culture', region: 'india', from: bce(1500), to: bce(500), conf: E, wiki: 'Vedic period',
     gov: [[bce(1500), bce(500), 'Tribal chiefdoms (janas), later kingdoms (mahajanapadas)']],
     religion: [[bce(1500), bce(500), 'Vedic religion']],
-    langs: [[bce(1500), bce(500), [['sanskrit', 0.7], ['tamil', 0.3]]]],
+    langs: [[bce(1500), bce(500), [['sanskrit', 1]]]],
     facts: [[null, null, 'The Rigveda was composed and transmitted orally for centuries before it was written down.']],
   }),
   entity({
@@ -301,7 +301,7 @@ export const entities = [
     rulers: [[bce(322), bce(298), 'Chandragupta Maurya', E], [bce(268), bce(232), 'Ashoka', E]],
     gov: [[bce(322), bce(185), 'Centralised monarchy']],
     religion: [[bce(322), bce(185), 'Hinduism, Jainism and Buddhism; Ashoka promoted Buddhism']],
-    langs: [[bce(322), bce(185), [['prakrit', 0.6], ['sanskrit', 0.15], ['tamil', 0.15], ['aramaic', 0.05], ['koine-greek', 0.05]]]],
+    langs: [[bce(322), bce(185), [['prakrit', 0.7], ['sanskrit', 0.2], ['aramaic', 0.05], ['koine-greek', 0.05]]]],
     pop: [[bce(250), 5e7, X]],
     facts: [[bce(261), null, 'After the bloody conquest of Kalinga (c. 261 BCE), Ashoka turned to Buddhism and carved edicts across the empire.'], [null, null, 'The Lion Capital of Ashoka is India\'s national emblem.']],
     events: [[bce(261), 'Ashoka conquers Kalinga', null, E]],
@@ -312,7 +312,7 @@ export const entities = [
     rulers: [[ce(335), ce(375), 'Samudragupta', E], [ce(375), ce(415), 'Chandragupta II', E]],
     gov: [[ce(320), ce(550), 'Monarchy with feudatory kingdoms']],
     religion: [[ce(320), ce(550), 'Hinduism (Vaishnavism) with Buddhism and Jainism']],
-    langs: [[ce(320), ce(550), [['sanskrit', 0.35], ['prakrit', 0.45], ['tamil', 0.2]]]],
+    langs: [[ce(320), ce(550), [['sanskrit', 0.45], ['prakrit', 0.55]]]],
     facts: [[null, null, 'Often called India\'s classical age: Kalidasa wrote, and Aryabhata worked on astronomy and zero-based place value.']],
   }),
   entity({
@@ -320,7 +320,7 @@ export const entities = [
     capitals: [[ce(1206), ce(1526), 'Delhi']],
     gov: [[ce(1206), ce(1526), 'Sultanate under five successive dynasties']],
     religion: [[ce(1206), ce(1526), 'Sunni Islam (rulers); Hindu majority']],
-    langs: [[ce(1206), ce(1526), [['persian', 0.15], ['hindi', 0.6], ['bengali', 0.15], ['arabic', 0.1]]]],
+    langs: [[ce(1206), ce(1526), [['hindi', 0.65], ['persian', 0.15], ['bengali', 0.2]]]],
     facts: [[null, null, 'The Qutb Minar in Delhi, begun around 1199, is the tallest brick minaret in the world.']],
   }),
   entity({
@@ -329,7 +329,7 @@ export const entities = [
     rulers: [[ce(1526), ce(1530), 'Babur'], [ce(1556), ce(1605), 'Akbar'], [ce(1628), ce(1658), 'Shah Jahan'], [ce(1658), ce(1707), 'Aurangzeb'], [ce(1837), ce(1857), 'Bahadur Shah II']],
     gov: [[ce(1526), ce(1707), 'Centralised imperial monarchy'], [ce(1707), ce(1857), 'Declining empire, effectively regional after the 1750s']],
     religion: [[ce(1526), ce(1857), 'Sunni Islam (dynasty); Hindu majority; Akbar promoted tolerance']],
-    langs: [[ce(1526), ce(1857), [['persian', 0.1], ['hindi', 0.6], ['bengali', 0.2], ['tamil', 0.1]]]],
+    langs: [[ce(1526), ce(1857), [['hindi', 0.65], ['bengali', 0.2], ['persian', 0.15]]]],
     pop: [[ce(1600), 1.25e8, E]],
     facts: [[ce(1653), null, 'Shah Jahan\'s Taj Mahal was completed around 1653.'], [ce(1700), ce(1707), 'Around 1700 the empire produced perhaps a quarter of the world\'s economic output.']],
     events: [[ce(1526), 'First Battle of Panipat'], [ce(1632), 'Taj Mahal begun', null, E], [ce(1857), 'Indian Rebellion; last emperor exiled']],
@@ -339,12 +339,12 @@ export const entities = [
     capitals: [[ce(1674), ce(1818), 'Raigad, later Pune']],
     rulers: [[ce(1674), ce(1680), 'Shivaji']],
     gov: [[ce(1674), ce(1818), 'Kingdom, later a confederacy led by the Peshwa']],
-    langs: [[ce(1674), ce(1818), [['hindi', 0.5], ['persian', 0.1], ['sanskrit', 0.05], ['tamil', 0.35]]]],
+    langs: [[ce(1674), ce(1818), [['marathi', 0.85], ['persian', 0.1], ['sanskrit', 0.05]]]],
   }),
   entity({
     id: 'british-raj', name: 'British India', kind: 'colony', region: 'india', from: ce(1757), to: ce(1947.62), wiki: 'British Raj', match: ['British Raj', 'British East India Company'],
     names: [[ce(1757), ce(1858), 'East India Company rule'], [ce(1858), ce(1947.62), 'British Raj']],
-    capitals: [[ce(1757), ce(1911), 'Calcutta'], [ce(1911), ce(1947.62), 'New Delhi (from 1931)']],
+    capitals: [[ce(1757), ce(1911), 'Calcutta'], [ce(1911), ce(1931.1), 'Delhi'], [ce(1931.1), ce(1947.62), 'New Delhi']],
     gov: [[ce(1757), ce(1858), 'Rule by the British East India Company'], [ce(1858), ce(1947.62), 'Crown colony under a Viceroy; princely states under suzerainty']],
     langs: [[ce(1757), ce(1947.62), [['hindi', 0.45], ['bengali', 0.2], ['tamil', 0.1], ['english', 0.02], ['persian', 0.02]]]],
     pop: [[ce(1881), 2.54e8, D], [ce(1941), 3.89e8, D]],
@@ -380,7 +380,7 @@ export const entities = [
     id: 'nara-heian', name: 'Nara and Heian Japan', kind: 'state', region: 'japan', from: ce(710), to: ce(1185), wiki: 'Heian period', match: ['Imperial Japan (Fujiwara)'],
     names: [[ce(710), ce(794), 'Nara period'], [ce(794), ce(1185), 'Heian period']],
     capitals: [[ce(710), ce(794), 'Heijō-kyō (Nara)'], [ce(794), ce(1185), 'Heian-kyō (Kyoto)']],
-    gov: [[ce(710), ce(1185), 'Imperial court, dominated by the Fujiwara regents']],
+    gov: [[ce(710), ce(858), 'Imperial court (ritsuryō state)'], [ce(858), ce(1086), 'Imperial court dominated by Fujiwara regents'], [ce(1086), ce(1185), 'Retired (cloistered) emperors, then the Taira clan']],
     religion: [[ce(710), ce(1185), 'Buddhism and Shinto']],
     langs: [[ce(710), ce(1185), [['old-japanese', 0.9], ['middle-chinese', 0.1]]]],
     facts: [[ce(1008), null, 'The Tale of Genji, by the court lady Murasaki Shikibu, is often called the world\'s first novel.']],
@@ -402,7 +402,7 @@ export const entities = [
     religion: [[ce(1603), ce(1868), 'Buddhism and Shinto; Christianity banned']],
     langs: [[ce(1603), ce(1868), [['japanese', 1]]]],
     pop: [[ce(1721), 3.1e7, E]],
-    facts: [[ce(1639), ce(1853), 'Under sakoku, foreign trade was restricted to the Dutch and Chinese at Nagasaki.'], [null, null, 'Edo was probably the largest city in the world in the 18th century, with about a million people.']],
+    facts: [[ce(1639), ce(1853), 'Under sakoku, European trade was limited to the Dutch at Nagasaki; Chinese merchants also traded there.'], [null, null, 'Edo was probably the largest city in the world in the 18th century, with about a million people.']],
     events: [[ce(1853.5), 'Commodore Perry\'s "Black Ships" arrive']],
   }),
   entity({
@@ -434,14 +434,14 @@ export const entities = [
     id: 'three-kingdoms-korea', name: 'Three Kingdoms of Korea', kind: 'kingdoms', region: 'korea', from: bce(57), to: ce(668), conf: E, wiki: 'Three Kingdoms of Korea', match: ['Silla', 'Koguryo', 'Paekche'],
     gov: [[bce(57), ce(668), 'Rival kingdoms: Goguryeo, Baekje and Silla']],
     religion: [[ce(372), ce(668), 'Buddhism arriving from China; shamanism']],
-    langs: [[bce(57), ce(668), [['middle-korean', 0.8], ['middle-chinese', 0.2]]]],
+    langs: [[bce(57), ce(668), [['old-korean', 0.8], ['middle-chinese', 0.2]]]],
   }),
   entity({
     id: 'unified-silla', name: 'Unified Silla', kind: 'kingdom', region: 'korea', from: ce(668), to: ce(935), wiki: 'Unified Silla', match: ['Silla'],
     capitals: [[ce(668), ce(935), 'Gyeongju']],
     gov: [[ce(668), ce(935), 'Monarchy with an aristocratic "bone-rank" system']],
     religion: [[ce(668), ce(935), 'Buddhism']],
-    langs: [[ce(668), ce(935), [['middle-korean', 0.85], ['middle-chinese', 0.15]]]],
+    langs: [[ce(668), ce(935), [['old-korean', 0.85], ['middle-chinese', 0.15]]]],
     facts: [[null, null, 'Seokguram grotto and Bulguksa temple near Gyeongju date from the 8th century.']],
   }),
   entity({
@@ -460,7 +460,7 @@ export const entities = [
     gov: [[ce(1392), ce(1910.6), 'Confucian monarchy']],
     religion: [[ce(1392), ce(1910.6), 'Neo-Confucianism (state ideology); Buddhism; shamanism']],
     langs: [[ce(1392), ce(1910.6), [['korean', 0.9], ['middle-chinese', 0.1]]]],
-    facts: [[ce(1446), null, 'King Sejong promulgated the Hangul alphabet in 1446.'], [ce(1592), ce(1598), 'Admiral Yi Sun-sin\'s ironclad "turtle ships" fought the Japanese invasions of 1592–98.']],
+    facts: [[ce(1446), null, 'King Sejong promulgated the Hangul alphabet in 1446.'], [ce(1592), ce(1598), 'Admiral Yi Sun-sin\'s "turtle ships" fought the Japanese invasions of 1592–98; whether they were iron-clad is debated.']],
     events: [[ce(1446), 'Hangul promulgated'], [ce(1592), 'Japanese invasion of Korea'], [ce(1910.6), 'Annexed by Japan']],
   }),
   entity({
@@ -506,7 +506,7 @@ export const entities = [
   }),
   entity({
     id: 'fatimid', name: 'Fatimid Caliphate', kind: 'caliphate', region: 'arabia', from: ce(909), to: ce(1171), wiki: 'Fatimid Caliphate', match: ['Fatimid Caliphate'],
-    capitals: [[ce(909), ce(969), 'Mahdia'], [ce(969), ce(1171), 'Cairo']],
+    capitals: [[ce(909), ce(921), 'Raqqada'], [ce(921), ce(948), 'Mahdia'], [ce(948), ce(973), 'al-Mansuriya'], [ce(973), ce(1171), 'Cairo']],
     gov: [[ce(909), ce(1171), 'Ismaili Shia caliphate']],
     religion: [[ce(909), ce(1171), 'Ismaili Shia Islam (rulers); Sunni, Christian and Jewish subjects']],
     langs: [[ce(909), ce(1171), [['arabic', 0.85], ['coptic', 0.15]]]],
@@ -533,7 +533,7 @@ export const entities = [
   // ================= Iberia =================
   entity({
     id: 'visigoths', name: 'Visigothic Kingdom', kind: 'kingdom', region: 'iberia', from: ce(418), to: ce(721), wiki: 'Visigothic Kingdom', match: ['Visigoths', 'Visigothic Kingdom'],
-    capitals: [[ce(418), ce(507), 'Toulouse'], [ce(507), ce(721), 'Toledo']],
+    capitals: [[ce(418), ce(507), 'Toulouse'], [ce(507), ce(560), 'Narbonne, then Barcelona', E], [ce(560), ce(721), 'Toledo']],
     gov: [[ce(418), ce(721), 'Elective monarchy']],
     religion: [[ce(418), ce(587), 'Arian Christianity (rulers)'], [ce(587), ce(721), 'Catholic Christianity']],
     langs: [[ce(418), ce(721), [['latin', 0.92], ['gothic', 0.08]]]],
@@ -559,10 +559,10 @@ export const entities = [
   }),
   entity({
     id: 'spain', name: 'Spain', kind: 'kingdom', region: 'iberia', iso3: 'ESP', from: ce(1479), to: NOW + 1, wiki: 'Spain', match: ['Spain'],
-    names: [[ce(1479), ce(1716), 'Monarchy of Spain'], [ce(1716), ce(1931.3), 'Kingdom of Spain'], [ce(1931.3), ce(1939.25), 'Second Spanish Republic'], [ce(1939.25), ce(1975.9), 'Francoist Spain'], [ce(1975.9), NOW + 1, 'Kingdom of Spain']],
+    names: [[ce(1479), ce(1716), 'Monarchy of Spain'], [ce(1716), ce(1873.11), 'Kingdom of Spain'], [ce(1873.11), ce(1874.99), 'First Spanish Republic'], [ce(1874.99), ce(1931.3), 'Kingdom of Spain'], [ce(1931.3), ce(1939.25), 'Second Spanish Republic'], [ce(1939.25), ce(1975.9), 'Francoist Spain'], [ce(1975.9), NOW + 1, 'Kingdom of Spain']],
     capitals: [[ce(1479), ce(1561), 'Itinerant court (Toledo, Valladolid)'], [ce(1561), NOW + 1, 'Madrid']],
     rulers: [[ce(1479), ce(1504), 'Isabella I and Ferdinand II'], [ce(1516), ce(1556), 'Charles I (Emperor Charles V)'], [ce(1556), ce(1598), 'Philip II'], [ce(1939.25), ce(1975.9), 'Francisco Franco'], [ce(2014.47), NOW + 1, 'Felipe VI']],
-    gov: [[ce(1479), ce(1812), 'Absolute monarchy'], [ce(1812), ce(1931.3), 'Monarchy, intermittently constitutional'], [ce(1931.3), ce(1939.25), 'Republic (civil war from 1936)'], [ce(1939.25), ce(1975.9), 'Dictatorship'], [ce(1975.9), NOW + 1, 'Parliamentary monarchy']],
+    gov: [[ce(1479), ce(1812), 'Absolute monarchy'], [ce(1812), ce(1873.11), 'Monarchy, intermittently constitutional'], [ce(1873.11), ce(1874.99), 'Republic'], [ce(1874.99), ce(1931.3), 'Constitutional monarchy'], [ce(1931.3), ce(1939.25), 'Republic (civil war from 1936)'], [ce(1939.25), ce(1975.9), 'Dictatorship'], [ce(1975.9), NOW + 1, 'Parliamentary monarchy']],
     religion: [[ce(1479), NOW + 1, 'Catholic Christianity']],
     langs: [[ce(1479), ce(1609), [['spanish', 0.68], ['catalan', 0.17], ['galician', 0.07], ['basque', 0.03], ['arabic', 0.05]]], [ce(1609), NOW + 1, [['spanish', 0.74], ['catalan', 0.16], ['galician', 0.07], ['basque', 0.03]]]],
     facts: [[ce(1580), ce(1640), 'In union with Portugal (1580–1640), it ruled "an empire on which the sun never sets".'], [ce(1492), null, 'In 1492 Granada fell, Jews were expelled, and Columbus sailed under the Castilian crown.']],
@@ -587,7 +587,7 @@ export const entities = [
   entity({
     id: 'franks', name: 'Frankish Kingdom', kind: 'kingdom', region: 'france', from: ce(481), to: ce(843), wiki: 'Francia', match: ['Franks', 'Frankish Kingdom', 'Carolingian Empire'],
     names: [[ce(481), ce(751), 'Merovingian Francia'], [ce(751), ce(800), 'Carolingian Francia'], [ce(800), ce(843), 'Carolingian Empire']],
-    capitals: [[ce(481), ce(768), 'Paris, Soissons and other royal seats'], [ce(768), ce(843), 'Aachen']],
+    capitals: [[ce(481), ce(794), 'Paris, Soissons and other royal seats'], [ce(794), ce(843), 'Aachen']],
     rulers: [[ce(481), ce(511), 'Clovis I'], [ce(751), ce(768), 'Pepin the Short'], [ce(768), ce(814), 'Charlemagne'], [ce(814), ce(840), 'Louis the Pious']],
     gov: [[ce(481), ce(843), 'Germanic kingship; empire from 800']],
     religion: [[ce(496), ce(843), 'Catholic Christianity']],
@@ -597,7 +597,7 @@ export const entities = [
   entity({
     id: 'kingdom-france', name: 'Kingdom of France', kind: 'kingdom', region: 'france', from: ce(843), to: ce(1792.72), wiki: 'Kingdom of France', match: ['Kingdom of France', 'France'],
     names: [[ce(843), ce(987), 'West Francia'], [ce(987), ce(1792.72), 'Kingdom of France']],
-    capitals: [[ce(843), ce(1682), 'Paris'], [ce(1682), ce(1789.8), 'Versailles'], [ce(1789.8), ce(1792.72), 'Paris']],
+    capitals: [[ce(843), ce(987), 'Laon, Paris and other royal seats', E], [ce(987), ce(1682), 'Paris'], [ce(1682), ce(1789.8), 'Versailles'], [ce(1789.8), ce(1792.72), 'Paris']],
     rulers: [[ce(987), ce(996), 'Hugh Capet'], [ce(1226), ce(1270), 'Louis IX'], [ce(1589), ce(1610), 'Henry IV'], [ce(1643), ce(1715), 'Louis XIV'], [ce(1774), ce(1792.72), 'Louis XVI']],
     gov: [[ce(843), ce(1500), 'Feudal monarchy'], [ce(1500), ce(1789.5), 'Absolute monarchy'], [ce(1789.5), ce(1792.72), 'Constitutional monarchy (Revolution)']],
     religion: [[ce(843), ce(1792.72), 'Catholic Christianity; Huguenot Protestants tolerated 1598–1685']],
@@ -621,7 +621,7 @@ export const entities = [
   entity({
     id: 'germanic-tribes', name: 'Germanic peoples', kind: 'culture', region: 'germany', from: bce(500), to: ce(481), conf: E, wiki: 'Germanic peoples', match: ['Germanic tribes', 'Germans', 'Germanic peoples'],
     gov: [[bce(500), ce(481), 'Tribes and confederations (Cherusci, Suebi, Alamanni, Franks, Saxons, Goths…)']],
-    langs: [[bce(500), ce(481), [['gothic', 0.3], ['old-high-german', 0.7]]]],
+    langs: [[ce(300), ce(481), [['gothic', 1]]]],
     events: [[ce(9), 'Battle of the Teutoburg Forest', 'Arminius destroys three Roman legions.']],
   }),
   entity({
@@ -727,7 +727,7 @@ export const entities = [
   // ================= Mongols =================
   entity({
     id: 'mongol-empire', name: 'Mongol Empire', kind: 'empire', region: 'mongolia', from: ce(1206), to: ce(1368), wiki: 'Mongol Empire', match: ['Mongol Empire'],
-    capitals: [[ce(1206), ce(1235), 'Avarga'], [ce(1235), ce(1260), 'Karakorum'], [ce(1260), ce(1368), 'Khanbaliq (Beijing)']],
+    capitals: [[ce(1206), ce(1235), 'Avarga'], [ce(1235), ce(1260), 'Karakorum'], [ce(1260), ce(1272), 'Shangdu (Xanadu)'], [ce(1272), ce(1368), 'Khanbaliq (Beijing)']],
     rulers: [[ce(1206), ce(1227), 'Genghis Khan'], [ce(1229), ce(1241), 'Ögedei Khan'], [ce(1260), ce(1294), 'Kublai Khan']],
     gov: [[ce(1206), ce(1260), 'Unified khanate (Great Khan elected by kurultai)'], [ce(1260), ce(1368), 'Four successor khanates under nominal Yuan supremacy']],
     religion: [[ce(1206), ce(1368), 'Tengrism; religious tolerance']],
@@ -746,7 +746,7 @@ export const entities = [
   // ================= United States =================
   entity({
     id: 'usa', name: 'United States of America', kind: 'republic', region: 'america', iso3: 'USA', from: ce(1776.5), to: NOW + 1, wiki: 'United States', match: ['United States', 'United States of America'],
-    capitals: [[ce(1776.5), ce(1790), 'Philadelphia and other cities (Continental Congress)'], [ce(1790), ce(1800), 'Philadelphia'], [ce(1800), NOW + 1, 'Washington, D.C.']],
+    capitals: [[ce(1776.5), ce(1785), 'Philadelphia and other cities (Continental Congress)'], [ce(1785), ce(1790.5), 'New York City'], [ce(1790.5), ce(1800.4), 'Philadelphia'], [ce(1800.4), NOW + 1, 'Washington, D.C.']],
     rulers: [[ce(1789.3), ce(1797.2), 'George Washington'], [ce(1861.2), ce(1865.3), 'Abraham Lincoln'], [ce(1933.2), ce(1945.3), 'Franklin D. Roosevelt']],
     gov: [[ce(1776.5), ce(1789.3), 'Confederation of states'], [ce(1789.3), NOW + 1, 'Federal presidential republic']],
     religion: [[ce(1776.5), NOW + 1, 'No established religion; Protestant Christianity historically largest']],
@@ -805,7 +805,8 @@ export const lineages = {
     spans: [
       [bce(1650), bce(1180), 'hittite', false],
       [bce(546), bce(330), 'achaemenid', false],
-      [bce(133), ce(395), 'roman-empire', false],
+      [bce(133), bce(27), 'roman-republic', false],
+      [bce(27), ce(395), 'roman-empire', false],
       [ce(395), ce(1077), 'byzantine-empire', false],
       [ce(1077), ce(1308), 'rum', false],
       [ce(1299), ce(1922.9), 'ottoman-empire', false],
@@ -818,7 +819,7 @@ export const lineages = {
       [ce(882), ce(1240), 'kievan-rus', false],
       [ce(1242), ce(1480), 'golden-horde', false],
       [ce(1480), ce(1721), 'muscovy', false],
-      [ce(1721), ce(1917.7), 'russian-empire', false],
+      [ce(1721), ce(1917.85), 'russian-empire', false],
       [ce(1922.99), ce(1991.99), 'ussr', true],
       [ce(1991.99), NOW + 1, 'russia', true],
     ],
@@ -883,7 +884,8 @@ export const lineages = {
   ESP: {
     name: 'Spain',
     spans: [
-      [bce(218), ce(418), 'roman-empire', false],
+      [bce(218), bce(27), 'roman-republic', false],
+      [bce(27), ce(418), 'roman-empire', false],
       [ce(418), ce(711), 'visigoths', true],
       [ce(756), ce(1031), 'al-andalus', false, [-9.5, 36, 0, 41.5]],
       [ce(1065), ce(1479), 'castile', false, [-9.5, 38, 0, 43.8]],

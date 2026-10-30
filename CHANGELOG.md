@@ -1,5 +1,58 @@
 # Changelog
 
+## 0.6.0 — 2026-10-30
+
+### Accuracy audit
+Every hand-written statement (160 entities, 304 events, 218 reigns, 214 capitals, 215 facts) was
+read against standard references, and `scripts/qa/fact-check.mjs` now cross-checks event years,
+entity spans and reigns against Wikidata and the cited articles. Corrections:
+- **Wrong periods in lineages**: Spain, Greece and Türkiye showed the *Roman Empire* during the
+  Roman Republic; Armenia showed Safavid rule after the Safavids fell (1736–47 is now Afsharid).
+- **Dates**: Kingdom of Macedon began c. 808 BCE (not 338) and ended at Pydna, 168 BCE; Ottoman
+  capital Bursa from 1326 (not 1335); Timurid capital Herat from 1409; Zand capital Shiraz from 1765;
+  Ptolemy I reigned to 282 BCE; Pyramid of the Sun c. 200 CE in both places it appears; October
+  Revolution dated to November 1917 (New Style); the UK's present name dates from 1927.
+- **Capitals**: New York (1785–90) added for the United States; the Visigoths reached Toledo
+  c. 560, not 507; Aachen became Charlemagne's seat in the 790s; Fatimid capitals Raqqada, Mahdia
+  and al-Mansuriya before Cairo; Dur-Sharrukin for Assyria; Shangdu before Khanbaliq; Delhi, then
+  New Delhi from 1931.
+- **Names and governments**: Egypt was the Republic of Egypt and the United Arab Republic before
+  1971; Mexico's centralist republic (1835–46), Spain's First Republic (1873–74) and Georgia's
+  presidential and semi-presidential periods are now shown; Russian Armenia was the Armenian Oblast
+  only until 1840; Heian Japan is no longer described as Fujiwara-run throughout; Mary I's Catholic
+  restoration (1553–58) is shown for England.
+- **Languages**: the Marathas spoke Marathi (not Hindi and Tamil); Tamil is no longer listed for
+  the Vedic, Maurya and Gupta periods; the Goths spoke Gothic (not Old Norse); Old High German is no
+  longer used for ancient Germanic peoples; Old Korean replaces Middle Korean before 935; Caucasian
+  Albania has its own language; "Mongolian" is gone from 3rd–6th century China.
+- **Language shares**: percentages are only shown where a census backs them (the Russian Empire's
+  1897 census, now labelled as selected languages), and shown as recorded: the chart used to rescale
+  the listed languages to 100%, which showed Russian at ~58% instead of the census's 44%. Elsewhere the panel lists the languages without
+  numbers instead of estimates that looked like facts.
+- **Wording**: Italy and China now share the lead in World Heritage Sites; Sutton Hoo is "one of"
+  the richest finds; the Black Death killed a third to a half of Europe; Caesar died in the Curia of
+  Pompey; Toba is "one of the largest" eruptions; whether Korea's turtle ships were iron-clad is
+  marked as debated; the Aztec Empire no longer shows Tenochtitlan's population as its own; the
+  Armenian genocide toll is given as the range scholars use.
+- **Wrong article**: "Hittites sack Babylon" (1595 BCE) opened the article on Babylon's fall in
+  539 BCE; it now opens *Mursili I*.
+- **Automated data**: heads of state without an end date no longer stretch to the end of their
+  state (As-Saffah no longer "rules" the Abbasids until 1258); a name that Wikidata could not label
+  is taken from its English article, or left out, instead of shown as a raw id ("Q2105" for
+  Jacques Chirac, whose Wikidata item has lost its English label).
+
+### History for every country
+- Every present-day country's History tab now lists its most widely covered dated events from
+  Wikidata (`country-events.mjs`): wars, battles, sieges, treaties, revolutions, coups, rebellions,
+  declarations of independence, assassinations, massacres, genocides, famines, epidemics,
+  earthquakes and eruptions. Titles are the Wikipedia article titles word for word; every one opens
+  as an article with its film and hover cards. Two filters keep it honest: events tagged to more
+  than three countries (pandemics, world wars, UN conventions) are left out, and an event is kept
+  only if its Wikidata year also appears in the article's own lead. That second check caught real
+  Wikidata errors, such as the Convention of Kanagawa dated 1864 instead of 1854.
+- Every period heading in the History tab (automated predecessor states too) opens its article, and
+  the Overview tab has *Read the story of …* for every entity.
+
 ## 0.5.0 — 2026-10-30
 
 ### The reader: history in depth

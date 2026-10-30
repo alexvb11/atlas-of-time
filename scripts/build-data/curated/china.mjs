@@ -75,7 +75,7 @@ export const entities = [
     from: ce(220), to: ce(581), wiki: 'Six Dynasties', match: ['Jin', 'Sixteen Kingdoms', 'Toba Wei', 'Wei', 'Shu', 'Wu'],
     gov: [[ce(220), ce(280), 'Three rival kingdoms: Wei, Shu, Wu'], [ce(280), ce(420), 'Jin dynasty, then northern kingdoms'], [ce(420), ce(581), 'Northern and Southern dynasties']],
     religion: [[ce(220), ce(581), 'Buddhism spreads widely; Daoism; Confucianism']],
-    langs: [[ce(220), ce(581), [['middle-chinese', 0.92], ['mongolian', 0.08]]]],
+    langs: [[ce(220), ce(581), [['middle-chinese', 1]]]],
     facts: [[null, null, 'The period inspired the novel "Romance of the Three Kingdoms", written over a thousand years later.']],
   }),
   entity({
@@ -146,7 +146,7 @@ export const entities = [
     id: 'roc', name: 'Republic of China', kind: 'republic', region: 'china',
     from: ce(1912.1), to: ce(1949.75), wiki: 'Republic of China (1912–1949)', match: ['Chinese Warlords', 'Chinese warlords', 'China'],
     capitals: [[ce(1912.1), ce(1928), 'Beijing'], [ce(1928), ce(1937.9), 'Nanjing'], [ce(1937.9), ce(1946), 'Chongqing (wartime)'], [ce(1946), ce(1949.75), 'Nanjing']],
-    rulers: [[ce(1912.1), ce(1912.2), 'Sun Yat-sen (provisional)'], [ce(1928), ce(1949.75), 'Chiang Kai-shek']],
+    rulers: [[ce(1912.1), ce(1912.2), 'Sun Yat-sen (provisional)'], [ce(1928), ce(1949.75), 'Chiang Kai-shek (Nationalist leader)']],
     gov: [[ce(1912.1), ce(1916), 'Republic'], [ce(1916), ce(1928), 'Warlord era'], [ce(1928), ce(1949.75), 'Nationalist (Kuomintang) one-party state']],
     langs: [[ce(1912.1), ce(1949.75), [['mandarin', 0.7], ['wu', 0.12], ['cantonese', 0.13], ['mongolian', 0.05]]]],
     events: [[ce(1937.5), 'Full-scale war with Japan begins'], [ce(1945.6), 'Japan surrenders']],

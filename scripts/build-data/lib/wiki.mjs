@@ -98,7 +98,26 @@ export async function wikidataEntities(ids, props = 'claims|labels|aliases') {
 export async function wikidataLabels(ids) {
   const ents = await wikidataEntities(ids, 'labels')
   const out = new Map()
-  for (const [id, e] of ents) out.set(id, e.labels?.en?.value ?? id)
+  for (const [id, e] of ents) if (e.labels?.en?.value) out.set(id, e.labels.en.value)
+  // a batch can come back without some items (rate limiting): ask again in small batches, under
+  // a different cache key; an item still without an English label is left out, never shown as "Q123"
+  const missing = [...new Set(ids)].filter((id) => id && !out.has(id))
+  for (const batch of chunks(missing, 7)) {
+    const again = await wikidataEntities(batch, 'labels|descriptions')
+    for (const [id, e] of again) if (e.labels?.en?.value) out.set(id, e.labels.en.value)
+  }
+  // last resort: the query service, a separate endpoint with its own limits
+  const still = missing.filter((id) => !out.has(id))
+  for (const batch of chunks(still, 200)) {
+    const rows = await sparql(`SELECT ?i ?l WHERE { VALUES ?i { ${batch.map((q) => `wd:${q}`).join(' ')} } ?i rdfs:label ?l FILTER(lang(?l) = 'en') }`)
+    for (const r of rows) out.set(r.i.value.split('/').pop(), r.l.value)
+  }
+  // some items have lost their English label but keep their English article: use its title
+  const unlabelled = missing.filter((id) => !out.has(id))
+  for (const batch of chunks(unlabelled, 50)) {
+    const j = await getJSON(`https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=sitelinks&sitefilter=enwiki&ids=${batch.join('|')}`)
+    for (const [id, e] of Object.entries(j.entities ?? {})) if (e.sitelinks?.enwiki?.title) out.set(id, e.sitelinks.enwiki.title)
+  }
   return out
 }
 

@@ -70,6 +70,23 @@ export function useArticleIndex() {
   return idx
 }
 
+// ---------- country events from Wikidata (scripts/build-data/country-events.mjs) ----------
+type CountryEvents = Record<string, [number, string][]>
+let countryP: Promise<CountryEvents> | null = null
+export function useCountryEvents() {
+  const [ev, setEv] = useState<CountryEvents | null>(null)
+  useEffect(() => {
+    ;(countryP ??= fetch('/data/events-auto.json')
+      .then((r) => r.json())
+      .then((j) => j.events as CountryEvents)
+      .catch((e) => {
+        countryP = null
+        throw e
+      })).then(setEv, () => {})
+  }, [])
+  return ev
+}
+
 // ---------- HTML -> blocks ----------
 const DROP = [
   '.infobox', 'table', '.navbox', '.hatnote', '.shortdescription', 'sup', '.mw-ref', '.reference', 'style', 'link', 'figure',

@@ -3,19 +3,20 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import { nameAt, type Conf, type EntityIndex } from '../../data/entities'
 import type { Resolution } from '../../data/resolve'
-import { useArticleIndex } from '../../data/wiki'
+import { useArticleIndex, useCountryEvents } from '../../data/wiki'
 import { ArticleView } from '../wiki/ArticleView'
 import { ConfTag } from './bits'
 import { formatYear, formatDate } from '../../time/format'
 import { animateTo } from '../TimeBar'
 import { timeToU } from '../../time/scale'
 
-type Ev = { t: number; title: string; detail: string | null; conf?: Conf; entity: string; era?: boolean; article?: string }
+type Ev = { t: number; title: string; detail: string | null; conf?: Conf; entity: string; era?: boolean; article?: string; auto?: boolean }
 
 export function HistoryTab({ res, idx }: { res: Resolution; idx: EntityIndex }) {
   const t = useTime((s) => s.time)
   const listRef = useRef<HTMLOListElement>(null)
   const articles = useArticleIndex()
+  const countryEvents = useCountryEvents()
   const [open, setOpen] = useState<string | null>(null)
 
   const events = useMemo(() => {
@@ -26,12 +27,14 @@ export function HistoryTab({ res, idx }: { res: Resolution; idx: EntityIndex }) 
     for (const id of ids) {
       const e = idx.entities.get(id)
       if (!e) continue
-      out.push({ t: e.from, title: nameAt(e, e.from), detail: null, conf: e.conf, entity: e.name, era: true, article: articles?.entities[id] })
+      out.push({ t: e.from, title: nameAt(e, e.from), detail: null, conf: e.conf, entity: e.name, era: true, article: articles?.entities[id] ?? e.wiki })
       for (const [et, title, detail, conf] of e.events) out.push({ t: et, title, detail, conf, entity: e.name, article: articles?.events[`${id}|${title}`] })
+      // dated events from Wikidata: titles are the Wikipedia article titles
+      for (const [et, title] of countryEvents?.[id] ?? []) out.push({ t: et, title, detail: null, entity: e.name, article: articles?.events[`${id}|${title}`] ?? title, auto: true })
     }
     out.sort((a, b) => a.t - b.t)
     return out
-  }, [res, idx, articles])
+  }, [res, idx, articles, countryEvents])
 
   const nowIndex = events.findIndex((e) => e.t > t)
   const ni = nowIndex < 0 ? events.length : nowIndex
@@ -109,6 +112,11 @@ export function HistoryTab({ res, idx }: { res: Resolution; idx: EntityIndex }) 
         )
       })}
       {ni === events.length && <NowMarker t={t} />}
+      {events.some((e) => e.auto) && (
+        <li className="mt-3 list-none text-[11px] leading-relaxed text-dim">
+          Includes dated events Wikidata records for this country, kept only when the Wikipedia article gives the same year.
+        </li>
+      )}
     </ol>
   )
 }

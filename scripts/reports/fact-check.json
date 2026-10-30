@@ -1,0 +1,7299 @@
+{
+ "events": [
+  {
+   "key": "kura-araxes|Kura–Araxes settlements spread across the South Caucasus",
+   "year": "3500 BC",
+   "conf": "estimated",
+   "article": "Kura–Araxes culture",
+   "wikidataYears": [
+    "3400 BC",
+    "2000 BC"
+   ]
+  },
+  {
+   "key": "areni-chalcolithic|Wine is pressed and fermented in Areni-1 cave",
+   "year": "4100 BC",
+   "conf": "estimated",
+   "article": "Areni-1 winery",
+   "wikidataYears": []
+  },
+  {
+   "key": "areni-chalcolithic|A leather shoe is left in Areni-1 cave",
+   "year": "3500 BC",
+   "conf": "estimated",
+   "article": "Areni-1 shoe",
+   "wikidataYears": [
+    "4000 BC"
+   ]
+  },
+  {
+   "key": "urartu|Aramu unites the tribes of the Armenian Highlands",
+   "year": "860 BC",
+   "conf": "estimated",
+   "article": "Arame of Urartu",
+   "wikidataYears": []
+  },
+  {
+   "key": "urartu|Sargon II of Assyria sacks Musasir",
+   "year": "714 BC",
+   "conf": "documented",
+   "article": "Musasir",
+   "wikidataYears": []
+  },
+  {
+   "key": "artaxiad-armenia|Tigranes takes Syria",
+   "year": "83 BC",
+   "conf": "estimated",
+   "article": "Tigranes the Great",
+   "wikidataYears": []
+  },
+  {
+   "key": "artaxiad-armenia|Tigranes submits to Pompey",
+   "year": "66 BC",
+   "conf": "documented",
+   "article": "Third Mithridatic War",
+   "wikidataYears": [
+    "73 BC",
+    "63 BC"
+   ]
+  },
+  {
+   "key": "bagratid-armenia|Ashot I recognised as king of Armenia",
+   "year": "885",
+   "conf": "estimated",
+   "article": "Ashot I of Armenia",
+   "wikidataYears": []
+  },
+  {
+   "key": "erivan-khanate|Russian troops take Erivan fortress",
+   "year": "1827",
+   "conf": "documented",
+   "article": "Russo-Persian War (1826–1828)",
+   "wikidataYears": [
+    "1826",
+    "1828"
+   ]
+  },
+  {
+   "key": "armenia|1700th anniversary of Christianity as state religion",
+   "year": "2001",
+   "conf": "documented",
+   "article": "Christianization of Armenia",
+   "wikidataYears": [
+    "301"
+   ]
+  },
+  {
+   "key": "kingdom-georgia|David the Builder takes Tbilisi",
+   "year": "1122",
+   "conf": "documented",
+   "article": "David IV",
+   "wikidataYears": []
+  },
+  {
+   "key": "shang|Earliest oracle-bone inscriptions",
+   "year": "1250 BC",
+   "conf": "estimated",
+   "article": "Oracle bone",
+   "wikidataYears": []
+  },
+  {
+   "key": "han|Zhang Qian's mission to Central Asia opens the Silk Road",
+   "year": "138 BC",
+   "conf": "estimated",
+   "article": "Zhang Qian",
+   "wikidataYears": []
+  },
+  {
+   "key": "archaic-mesoamerica|Maize domesticated from teosinte in the Balsas valley",
+   "year": "7000 BC",
+   "conf": "estimated",
+   "article": "Maize",
+   "wikidataYears": []
+  },
+  {
+   "key": "maya|Earliest dated Long Count stela at Tikal",
+   "year": "292",
+   "conf": "documented",
+   "article": "Maya stelae",
+   "wikidataYears": []
+  },
+  {
+   "key": "anglo-saxon|Vikings raid Lindisfarne",
+   "year": "793",
+   "conf": "documented",
+   "article": "Lindisfarne",
+   "wikidataYears": []
+  },
+  {
+   "key": "achaemenid|Cyrus overthrows the Medes",
+   "year": "550 BC",
+   "conf": "documented",
+   "article": "Cyrus the Great",
+   "wikidataYears": []
+  },
+  {
+   "key": "babylonia|Hittites sack Babylon",
+   "year": "1595 BC",
+   "conf": "documented",
+   "article": "Mursili I",
+   "wikidataYears": []
+  },
+  {
+   "key": "mughal|Taj Mahal begun",
+   "year": "1632",
+   "conf": "estimated",
+   "article": "Taj Mahal",
+   "wikidataYears": []
+  },
+  {
+   "key": "ev:chicxulub",
+   "year": "65997975 BC",
+   "conf": "documented",
+   "article": "Chicxulub crater",
+   "wikidataYears": [
+    "66000000 BC"
+   ]
+  },
+  {
+   "key": "ev:jebel-irhoud",
+   "year": "297975 BC",
+   "conf": "estimated",
+   "article": "Jebel Irhoud",
+   "wikidataYears": []
+  },
+  {
+   "key": "ev:lascaux",
+   "year": "14975 BC",
+   "conf": "estimated",
+   "article": "Lascaux",
+   "wikidataYears": []
+  },
+  {
+   "key": "ev:jericho",
+   "year": "8000 BC",
+   "conf": "estimated",
+   "article": "Tell es-Sultan",
+   "wikidataYears": [
+    "9600 BC",
+    "500 BC"
+   ]
+  },
+  {
+   "key": "ev:catalhoyuk",
+   "year": "7100 BC",
+   "conf": "estimated",
+   "article": "Çatalhöyük",
+   "wikidataYears": [
+    "7500 BC",
+    "5700 BC"
+   ]
+  },
+  {
+   "key": "ev:areni",
+   "year": "4100 BC",
+   "conf": "estimated",
+   "article": "Areni-1 winery",
+   "wikidataYears": []
+  },
+  {
+   "key": "ev:uruk",
+   "year": "3300 BC",
+   "conf": "estimated",
+   "article": "Cuneiform",
+   "wikidataYears": [
+    "3000 BC",
+    "50 BC"
+   ]
+  },
+  {
+   "key": "ev:oracle-bones",
+   "year": "1250 BC",
+   "conf": "estimated",
+   "article": "Oracle bone script",
+   "wikidataYears": [
+    "1500 BC",
+    "1050 BC"
+   ]
+  },
+  {
+   "key": "ev:tikal",
+   "year": "695",
+   "conf": "documented",
+   "article": "Tikal–Calakmul wars",
+   "wikidataYears": [
+    "537",
+    "838"
+   ]
+  },
+  {
+   "key": "ev:lindisfarne",
+   "year": "793",
+   "conf": "documented",
+   "article": "Lindisfarne",
+   "wikidataYears": []
+  },
+  {
+   "key": "ev:black-death",
+   "year": "1347",
+   "conf": "documented",
+   "article": "Black Death",
+   "wikidataYears": [
+    "1346",
+    "1352"
+   ]
+  }
+ ],
+ "spans": [
+  {
+   "id": "artaxiad-armenia",
+   "ours": "189 BC–12",
+   "wikidataStart": [
+    "189 BC"
+   ],
+   "wikidataEnd": [
+    "12 BC"
+   ]
+  },
+  {
+   "id": "arsacid-armenia",
+   "ours": "12–428",
+   "wikidataStart": [
+    "66"
+   ],
+   "wikidataEnd": [
+    "428"
+   ]
+  },
+  {
+   "id": "persarmenia",
+   "ours": "428–646",
+   "wikidataStart": [
+    "428"
+   ],
+   "wikidataEnd": [
+    "642"
+   ]
+  },
+  {
+   "id": "cilicia",
+   "ours": "1198–1375",
+   "wikidataStart": [
+    "1080"
+   ],
+   "wikidataEnd": [
+    "1375"
+   ]
+  },
+  {
+   "id": "russian-armenia",
+   "ours": "1828–1918",
+   "wikidataStart": [
+    "1849"
+   ],
+   "wikidataEnd": [
+    "1920"
+   ]
+  },
+  {
+   "id": "kingdom-georgia",
+   "ours": "1008–1490",
+   "wikidataStart": [
+    "1008"
+   ],
+   "wikidataEnd": [
+    "1466"
+   ]
+  },
+  {
+   "id": "byzantine-italy",
+   "ours": "553–756",
+   "wikidataStart": [
+    "584"
+   ],
+   "wikidataEnd": [
+    "751"
+   ]
+  },
+  {
+   "id": "greece",
+   "ours": "1830–today",
+   "wikidataStart": [
+    "1821"
+   ],
+   "wikidataEnd": []
+  },
+  {
+   "id": "egypt",
+   "ours": "1953–today",
+   "wikidataStart": [
+    "1922"
+   ],
+   "wikidataEnd": []
+  },
+  {
+   "id": "han",
+   "ours": "202 BC–220",
+   "wikidataStart": [
+    "206 BC"
+   ],
+   "wikidataEnd": [
+    "220"
+   ]
+  },
+  {
+   "id": "six-dynasties",
+   "ours": "220–581",
+   "wikidataStart": [
+    "220"
+   ],
+   "wikidataEnd": [
+    "589"
+   ]
+  },
+  {
+   "id": "aztec",
+   "ours": "1428–1521",
+   "wikidataStart": [
+    "1325",
+    "1367"
+   ],
+   "wikidataEnd": [
+    "1521"
+   ]
+  },
+  {
+   "id": "uk",
+   "ours": "1707–today",
+   "wikidataStart": [
+    "1921",
+    "1927"
+   ],
+   "wikidataEnd": []
+  },
+  {
+   "id": "iranian-intermezzo",
+   "ours": "821–1037",
+   "wikidataStart": [
+    "821"
+   ],
+   "wikidataEnd": [
+    "1055"
+   ]
+  },
+  {
+   "id": "afsharid-zand",
+   "ours": "1736–1789",
+   "wikidataStart": [
+    "1736"
+   ],
+   "wikidataEnd": [
+    "1796"
+   ]
+  },
+  {
+   "id": "british-mandate-iraq",
+   "ours": "1920–1958",
+   "wikidataStart": [
+    "1920"
+   ],
+   "wikidataEnd": [
+    "1932"
+   ]
+  },
+  {
+   "id": "iraq",
+   "ours": "1958–today",
+   "wikidataStart": [
+    "1932"
+   ],
+   "wikidataEnd": []
+  },
+  {
+   "id": "muscovy",
+   "ours": "1283–1721",
+   "wikidataStart": [
+    "1547"
+   ],
+   "wikidataEnd": [
+    "1721",
+    "1721"
+   ]
+  },
+  {
+   "id": "british-raj",
+   "ours": "1757–1947",
+   "wikidataStart": [
+    "1858"
+   ],
+   "wikidataEnd": [
+    "1947"
+   ]
+  },
+  {
+   "id": "nara-heian",
+   "ours": "710–1185",
+   "wikidataStart": [
+    "794"
+   ],
+   "wikidataEnd": [
+    "1185"
+   ]
+  },
+  {
+   "id": "shogunates",
+   "ours": "1185–1603",
+   "wikidataStart": [
+    "1200"
+   ],
+   "wikidataEnd": [
+    "1333"
+   ]
+  },
+  {
+   "id": "unified-silla",
+   "ours": "668–935",
+   "wikidataStart": [
+    "668"
+   ],
+   "wikidataEnd": [
+    "892"
+   ]
+  },
+  {
+   "id": "joseon",
+   "ours": "1392–1910",
+   "wikidataStart": [
+    "1392"
+   ],
+   "wikidataEnd": [
+    "1897"
+   ]
+  },
+  {
+   "id": "saudi-arabia",
+   "ours": "1932–today",
+   "wikidataStart": [
+    "1727",
+    "1447",
+    "622"
+   ],
+   "wikidataEnd": []
+  },
+  {
+   "id": "visigoths",
+   "ours": "418–721",
+   "wikidataStart": [
+    "476"
+   ],
+   "wikidataEnd": [
+    "718"
+   ]
+  },
+  {
+   "id": "al-andalus",
+   "ours": "756–1031",
+   "wikidataStart": [
+    "756"
+   ],
+   "wikidataEnd": [
+    "929"
+   ]
+  },
+  {
+   "id": "spain",
+   "ours": "1479–today",
+   "wikidataStart": [
+    "1715",
+    "1812",
+    "1931",
+    "1978",
+    "1516"
+   ],
+   "wikidataEnd": []
+  },
+  {
+   "id": "kingdom-france",
+   "ours": "843–1792",
+   "wikidataStart": [
+    "987"
+   ],
+   "wikidataEnd": [
+    "1791"
+   ]
+  },
+  {
+   "id": "france",
+   "ours": "1792–today",
+   "wikidataStart": [
+    "843",
+    "481",
+    "1804"
+   ],
+   "wikidataEnd": []
+  },
+  {
+   "id": "german-reich",
+   "ours": "1871–1945",
+   "wikidataStart": [
+    "1871"
+   ],
+   "wikidataEnd": [
+    "1918"
+   ]
+  }
+ ],
+ "rulers": [
+  {
+   "id": "arsacid-armenia",
+   "from": "389",
+   "to": "414",
+   "name": "Vramshapuh",
+   "born": "400",
+   "died": "414",
+   "page": "Vramshapuh"
+  },
+  {
+   "id": "ptolemaic-egypt",
+   "from": "305 BC",
+   "to": "282 BC",
+   "name": "Ptolemy I Soter",
+   "born": "365 BC",
+   "died": "285 BC",
+   "page": "Ptolemy I Soter"
+  },
+  {
+   "id": "sasanian",
+   "from": "240",
+   "to": "270",
+   "name": "Shapur I",
+   "born": "300",
+   "died": "270",
+   "page": "Shapur I"
+  },
+  {
+   "id": "akkad",
+   "from": "2334 BC",
+   "to": "2279 BC",
+   "name": "Sargon of Akkad",
+   "born": "2350 BC",
+   "died": "2300 BC",
+   "page": "Sargon of Akkad"
+  },
+  {
+   "id": "hittite",
+   "from": "1344 BC",
+   "to": "1322 BC",
+   "name": "Suppiluliuma I",
+   "born": "1375 BC",
+   "died": "1335 BC",
+   "page": "Šuppiluliuma I"
+  },
+  {
+   "id": "hittite",
+   "from": "1267 BC",
+   "to": "1237 BC",
+   "name": "Hattusili III",
+   "born": "1300 BC",
+   "died": "1300 BC",
+   "page": "Ḫattušili III"
+  },
+  {
+   "id": "gupta",
+   "from": "375",
+   "to": "415",
+   "name": "Chandragupta II",
+   "born": "400",
+   "died": "500",
+   "page": "Chandragupta II"
+  },
+  {
+   "id": "c-bel",
+   "from": "1944",
+   "to": "1950",
+   "name": "Prince Charles",
+   "born": "1948",
+   "died": null,
+   "page": "Charles III"
+  }
+ ],
+ "ids": [
+  {
+   "where": "text:w-q25227[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q25227"
+  },
+  {
+   "where": "text:w-q1953333[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1953333"
+  },
+  {
+   "where": "text:c-abw[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q21203"
+  },
+  {
+   "where": "text:c-afg[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q889"
+  },
+  {
+   "where": "text:w-q2208280[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2208280"
+  },
+  {
+   "where": "text:c-ago[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q916"
+  },
+  {
+   "where": "text:c-aia[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q25228"
+  },
+  {
+   "where": "text:c-ala[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5689"
+  },
+  {
+   "where": "text:c-alb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q222"
+  },
+  {
+   "where": "text:w-q1514510[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1514510"
+  },
+  {
+   "where": "text:w-q15581[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q15581"
+  },
+  {
+   "where": "text:w-q1233672[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1233672"
+  },
+  {
+   "where": "text:w-q1541699[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1541699"
+  },
+  {
+   "where": "text:c-and[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q228"
+  },
+  {
+   "where": "text:w-q1852345[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1852345"
+  },
+  {
+   "where": "text:c-are[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q878"
+  },
+  {
+   "where": "text:w-q738144[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q738144"
+  },
+  {
+   "where": "text:w-q210551[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q210551"
+  },
+  {
+   "where": "text:c-arg[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q414"
+  },
+  {
+   "where": "text:w-q132856[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q132856"
+  },
+  {
+   "where": "text:w-q90579326[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q90579326"
+  },
+  {
+   "where": "text:c-arm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q399"
+  },
+  {
+   "where": "text:w-q136527950[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q136527950"
+  },
+  {
+   "where": "text:w-q137517992[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q137517992"
+  },
+  {
+   "where": "text:c-asm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16641"
+  },
+  {
+   "where": "text:c-ata[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q51"
+  },
+  {
+   "where": "text:c-atf[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q129003"
+  },
+  {
+   "where": "text:w-q111939938[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q111939938"
+  },
+  {
+   "where": "text:c-atg[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q781"
+  },
+  {
+   "where": "text:c-aus[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q408"
+  },
+  {
+   "where": "text:w-q28513[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28513"
+  },
+  {
+   "where": "text:w-q131964[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q131964"
+  },
+  {
+   "where": "text:w-q253094[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q253094"
+  },
+  {
+   "where": "text:c-aut[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q40"
+  },
+  {
+   "where": "text:w-q131337[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q131337"
+  },
+  {
+   "where": "text:w-q140889072[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q140889072"
+  },
+  {
+   "where": "text:c-aze[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q227"
+  },
+  {
+   "where": "text:w-q1192936[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1192936"
+  },
+  {
+   "where": "text:c-bdi[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q967"
+  },
+  {
+   "where": "text:w-q15864[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q15864"
+  },
+  {
+   "where": "text:w-q3044803[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q3044803"
+  },
+  {
+   "where": "text:c-bel[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q31"
+  },
+  {
+   "where": "text:w-q210682[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q210682"
+  },
+  {
+   "where": "text:w-q536476[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q536476"
+  },
+  {
+   "where": "text:w-q568712[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q568712"
+  },
+  {
+   "where": "text:c-ben[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q962"
+  },
+  {
+   "where": "text:w-q797422[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q797422"
+  },
+  {
+   "where": "text:w-q797440[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q797440"
+  },
+  {
+   "where": "text:w-q58053082[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q58053082"
+  },
+  {
+   "where": "text:c-bfa[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q965"
+  },
+  {
+   "where": "text:c-bgd[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q902"
+  },
+  {
+   "where": "text:c-bgr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q219"
+  },
+  {
+   "where": "text:w-q16826607[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16826607"
+  },
+  {
+   "where": "text:w-q17061755[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17061755"
+  },
+  {
+   "where": "text:c-bhr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q398"
+  },
+  {
+   "where": "text:w-q920396[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q920396"
+  },
+  {
+   "where": "text:c-bhs[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q778"
+  },
+  {
+   "where": "text:c-bih[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q225"
+  },
+  {
+   "where": "text:c-blm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q25362"
+  },
+  {
+   "where": "text:c-shn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q192184"
+  },
+  {
+   "where": "text:w-q2895[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2895"
+  },
+  {
+   "where": "text:c-blr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q184"
+  },
+  {
+   "where": "text:w-q1643555[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1643555"
+  },
+  {
+   "where": "text:c-blz[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q242"
+  },
+  {
+   "where": "text:c-bmu[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q23635"
+  },
+  {
+   "where": "text:c-bol[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q750"
+  },
+  {
+   "where": "text:c-bes[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q27561"
+  },
+  {
+   "where": "text:w-q217230[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q217230"
+  },
+  {
+   "where": "text:w-q903779[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q903779"
+  },
+  {
+   "where": "text:w-q3932042[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3932042"
+  },
+  {
+   "where": "text:w-q2088324[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2088324"
+  },
+  {
+   "where": "text:c-bra[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q155"
+  },
+  {
+   "where": "text:c-brb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q244"
+  },
+  {
+   "where": "text:c-brn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q921"
+  },
+  {
+   "where": "text:c-btn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q917"
+  },
+  {
+   "where": "text:c-bvt[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q23408"
+  },
+  {
+   "where": "text:w-q747314[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q747314"
+  },
+  {
+   "where": "text:c-bwa[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q963"
+  },
+  {
+   "where": "text:c-caf[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q929"
+  },
+  {
+   "where": "text:w-q1121436[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1121436"
+  },
+  {
+   "where": "text:w-q1134180[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1134180"
+  },
+  {
+   "where": "text:w-q795427[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q795427"
+  },
+  {
+   "where": "text:w-q7721124[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7721124"
+  },
+  {
+   "where": "text:c-can[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16"
+  },
+  {
+   "where": "text:c-cck[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q36004"
+  },
+  {
+   "where": "text:c-che[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39"
+  },
+  {
+   "where": "text:w-q763808[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q763808"
+  },
+  {
+   "where": "text:w-q2608040[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2608040"
+  },
+  {
+   "where": "text:w-q3820238[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3820238"
+  },
+  {
+   "where": "text:w-q113559950[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q113559950"
+  },
+  {
+   "where": "text:c-chl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q298"
+  },
+  {
+   "where": "text:w-q13426199[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q13426199"
+  },
+  {
+   "where": "text:w-q8733[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8733"
+  },
+  {
+   "where": "text:w-q30623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q30623"
+  },
+  {
+   "where": "text:w-q12060881[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12060881"
+  },
+  {
+   "where": "text:w-q15905301[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q15905301"
+  },
+  {
+   "where": "text:c-chn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q148"
+  },
+  {
+   "where": "text:w-q39074482[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q39074482"
+  },
+  {
+   "where": "text:c-civ[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1008"
+  },
+  {
+   "where": "text:w-q668294[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q668294"
+  },
+  {
+   "where": "text:c-cmr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1009"
+  },
+  {
+   "where": "text:c-cod[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q974"
+  },
+  {
+   "where": "text:c-cog[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q971"
+  },
+  {
+   "where": "text:c-cok[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q26988"
+  },
+  {
+   "where": "text:w-q6037274[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q6037274"
+  },
+  {
+   "where": "text:c-col[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q739"
+  },
+  {
+   "where": "text:w-q16674377[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16674377"
+  },
+  {
+   "where": "text:w-q16685842[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16685842"
+  },
+  {
+   "where": "text:w-q5501842[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5501842"
+  },
+  {
+   "where": "text:w-q25424205[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q25424205"
+  },
+  {
+   "where": "text:w-q16540904[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q16540904"
+  },
+  {
+   "where": "text:w-q1071439[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1071439"
+  },
+  {
+   "where": "text:c-com[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q970"
+  },
+  {
+   "where": "text:w-q200464[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q200464"
+  },
+  {
+   "where": "text:c-cpv[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1011"
+  },
+  {
+   "where": "text:c-cri[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q800"
+  },
+  {
+   "where": "text:w-q2039931[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2039931"
+  },
+  {
+   "where": "text:c-cub[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q241"
+  },
+  {
+   "where": "text:c-cuw[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q25279"
+  },
+  {
+   "where": "text:c-cxr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q31063"
+  },
+  {
+   "where": "text:c-cym[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5785"
+  },
+  {
+   "where": "text:w-q15240466[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q15240466"
+  },
+  {
+   "where": "text:c-cyp[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q229"
+  },
+  {
+   "where": "text:c-cze[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q213"
+  },
+  {
+   "where": "text:w-q713750[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q713750"
+  },
+  {
+   "where": "text:w-q1206012[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1206012"
+  },
+  {
+   "where": "text:w-q698099[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q698099"
+  },
+  {
+   "where": "text:w-q16957[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16957"
+  },
+  {
+   "where": "text:w-q55300[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55300"
+  },
+  {
+   "where": "text:c-deu[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q183"
+  },
+  {
+   "where": "text:w-q1450765[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1450765"
+  },
+  {
+   "where": "text:w-q333126[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q333126"
+  },
+  {
+   "where": "text:c-dji[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q977"
+  },
+  {
+   "where": "text:w-q652560[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q652560"
+  },
+  {
+   "where": "text:w-q116282722[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q116282722"
+  },
+  {
+   "where": "text:w-q2526023[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2526023"
+  },
+  {
+   "where": "text:w-q2660774[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2660774"
+  },
+  {
+   "where": "text:w-q1796551[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1796551"
+  },
+  {
+   "where": "text:c-dma[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q784"
+  },
+  {
+   "where": "text:c-dnk[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q35"
+  },
+  {
+   "where": "text:c-dom[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q786"
+  },
+  {
+   "where": "text:c-dza[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q262"
+  },
+  {
+   "where": "text:w-q199821[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q199821"
+  },
+  {
+   "where": "text:w-q8965[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8965"
+  },
+  {
+   "where": "text:c-ecu[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q736"
+  },
+  {
+   "where": "text:w-q124943[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q124943"
+  },
+  {
+   "where": "text:w-q370173[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q370173"
+  },
+  {
+   "where": "text:c-egy[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q79"
+  },
+  {
+   "where": "text:c-eri[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q986"
+  },
+  {
+   "where": "text:c-esh[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6250"
+  },
+  {
+   "where": "text:w-q766543[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q766543"
+  },
+  {
+   "where": "text:w-q21088788[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q21088788"
+  },
+  {
+   "where": "text:w-q204920[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q204920"
+  },
+  {
+   "where": "text:w-q199442[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q199442"
+  },
+  {
+   "where": "text:w-q80702[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q80702"
+  },
+  {
+   "where": "text:w-q217196[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q217196"
+  },
+  {
+   "where": "text:c-esp[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29"
+  },
+  {
+   "where": "text:w-q1419584[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1419584"
+  },
+  {
+   "where": "text:w-q18520073[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q18520073"
+  },
+  {
+   "where": "text:w-q720496[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q720496"
+  },
+  {
+   "where": "text:w-q719840[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q719840"
+  },
+  {
+   "where": "text:w-q1458686[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1458686"
+  },
+  {
+   "where": "text:w-q2566158[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2566158"
+  },
+  {
+   "where": "text:w-q2347987[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2347987"
+  },
+  {
+   "where": "text:c-est[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q191"
+  },
+  {
+   "where": "text:c-eth[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q115"
+  },
+  {
+   "where": "text:c-fin[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q33"
+  },
+  {
+   "where": "text:w-q5291089[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5291089"
+  },
+  {
+   "where": "text:w-q5148320[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5148320"
+  },
+  {
+   "where": "text:w-q17515160[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17515160"
+  },
+  {
+   "where": "text:c-fji[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q712"
+  },
+  {
+   "where": "text:c-flk[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q9648"
+  },
+  {
+   "where": "text:w-q70972[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q70972"
+  },
+  {
+   "where": "text:w-q3456417[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q3456417"
+  },
+  {
+   "where": "text:w-q46370[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q46370"
+  },
+  {
+   "where": "text:w-q63021609[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q63021609"
+  },
+  {
+   "where": "text:w-q100272879[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q100272879"
+  },
+  {
+   "where": "text:w-q538677[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q538677"
+  },
+  {
+   "where": "text:c-fra[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q142"
+  },
+  {
+   "where": "text:c-fro[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4628"
+  },
+  {
+   "where": "text:c-fsm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q702"
+  },
+  {
+   "where": "text:c-gab[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1000"
+  },
+  {
+   "where": "text:w-q174193[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q174193"
+  },
+  {
+   "where": "text:w-q161885[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q161885"
+  },
+  {
+   "where": "text:w-q215530[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q215530"
+  },
+  {
+   "where": "text:c-gbr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q145"
+  },
+  {
+   "where": "text:w-q130229[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q130229"
+  },
+  {
+   "where": "text:w-q55659450[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55659450"
+  },
+  {
+   "where": "text:c-geo[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q230"
+  },
+  {
+   "where": "text:c-ggy[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q25230"
+  },
+  {
+   "where": "text:w-q5555325[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5555325"
+  },
+  {
+   "where": "text:w-q503623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q503623"
+  },
+  {
+   "where": "text:w-q797527[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q797527"
+  },
+  {
+   "where": "text:c-gha[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q117"
+  },
+  {
+   "where": "text:w-q1796239[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1796239"
+  },
+  {
+   "where": "text:w-q199688[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q199688"
+  },
+  {
+   "where": "text:c-gib[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1410"
+  },
+  {
+   "where": "text:w-q797433[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q797433"
+  },
+  {
+   "where": "text:w-q760741[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q760741"
+  },
+  {
+   "where": "text:w-q98605707[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q98605707"
+  },
+  {
+   "where": "text:c-gin[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1006"
+  },
+  {
+   "where": "text:c-glp[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17012"
+  },
+  {
+   "where": "text:w-q7735661[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7735661"
+  },
+  {
+   "where": "text:c-gmb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1005"
+  },
+  {
+   "where": "text:w-q2002279[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2002279"
+  },
+  {
+   "where": "text:c-gnb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1007"
+  },
+  {
+   "where": "text:w-q1232509[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1232509"
+  },
+  {
+   "where": "text:c-gnq[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q983"
+  },
+  {
+   "where": "text:c-grc[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q41"
+  },
+  {
+   "where": "text:c-grd[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q769"
+  },
+  {
+   "where": "text:c-grl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q223"
+  },
+  {
+   "where": "text:c-gtm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q774"
+  },
+  {
+   "where": "text:w-q1440788[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1440788"
+  },
+  {
+   "where": "text:c-guf[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3769"
+  },
+  {
+   "where": "text:c-gum[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16635"
+  },
+  {
+   "where": "text:w-q5622720[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5622720"
+  },
+  {
+   "where": "text:w-q918126[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q918126"
+  },
+  {
+   "where": "text:c-guy[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q734"
+  },
+  {
+   "where": "text:w-q1054923[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1054923"
+  },
+  {
+   "where": "text:c-hkg[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8646"
+  },
+  {
+   "where": "text:c-hmd[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q131198"
+  },
+  {
+   "where": "text:c-hnd[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q783"
+  },
+  {
+   "where": "text:w-q209062[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q209062"
+  },
+  {
+   "where": "text:c-hrv[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q224"
+  },
+  {
+   "where": "text:w-q861551[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q861551"
+  },
+  {
+   "where": "text:w-q2919465[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2919465"
+  },
+  {
+   "where": "text:c-hti[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q790"
+  },
+  {
+   "where": "text:c-hun[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28"
+  },
+  {
+   "where": "text:w-q188161[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q188161"
+  },
+  {
+   "where": "text:w-q4118614[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4118614"
+  },
+  {
+   "where": "text:w-q25459978[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q25459978"
+  },
+  {
+   "where": "text:w-q1794655[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1794655"
+  },
+  {
+   "where": "text:w-q98115359[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q98115359"
+  },
+  {
+   "where": "text:w-q3233989[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3233989"
+  },
+  {
+   "where": "text:w-q20427320[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q20427320"
+  },
+  {
+   "where": "text:w-q1061057[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1061057"
+  },
+  {
+   "where": "text:w-q12491027[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12491027"
+  },
+  {
+   "where": "text:w-q4969562[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4969562"
+  },
+  {
+   "where": "text:w-q5317276[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5317276"
+  },
+  {
+   "where": "text:w-q3177715[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3177715"
+  },
+  {
+   "where": "text:w-q3503548[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3503548"
+  },
+  {
+   "where": "text:w-q422065[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q422065"
+  },
+  {
+   "where": "text:w-q1660566[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1660566"
+  },
+  {
+   "where": "text:w-q892292[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q892292"
+  },
+  {
+   "where": "text:w-q11950939[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q11950939"
+  },
+  {
+   "where": "text:w-q2988765[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2988765"
+  },
+  {
+   "where": "text:w-q19746028[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q19746028"
+  },
+  {
+   "where": "text:w-q2030015[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2030015"
+  },
+  {
+   "where": "text:c-idn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q252"
+  },
+  {
+   "where": "text:c-imn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q9676"
+  },
+  {
+   "where": "text:w-q129286[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q129286"
+  },
+  {
+   "where": "text:w-q2001966[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2001966"
+  },
+  {
+   "where": "text:w-q1335260[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1335260"
+  },
+  {
+   "where": "text:w-q1678787[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1678787"
+  },
+  {
+   "where": "text:w-q6427080[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6427080"
+  },
+  {
+   "where": "text:w-q28913445[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28913445"
+  },
+  {
+   "where": "text:w-q917553[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q917553"
+  },
+  {
+   "where": "text:w-q83618[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q83618"
+  },
+  {
+   "where": "text:w-q932370[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q932370"
+  },
+  {
+   "where": "text:w-q1588594[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1588594"
+  },
+  {
+   "where": "text:w-q14491604[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q14491604"
+  },
+  {
+   "where": "text:w-q16829581[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16829581"
+  },
+  {
+   "where": "text:w-q16852121[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16852121"
+  },
+  {
+   "where": "text:w-q922317[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q922317"
+  },
+  {
+   "where": "text:w-q649310[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q649310"
+  },
+  {
+   "where": "text:w-q85774522[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q85774522"
+  },
+  {
+   "where": "text:w-q2056970[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2056970"
+  },
+  {
+   "where": "text:w-q14552167[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q14552167"
+  },
+  {
+   "where": "text:w-q914031[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q914031"
+  },
+  {
+   "where": "text:w-q17342164[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17342164"
+  },
+  {
+   "where": "text:w-q1620265[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1620265"
+  },
+  {
+   "where": "text:w-q5301066[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5301066"
+  },
+  {
+   "where": "text:w-q3963975[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3963975"
+  },
+  {
+   "where": "text:w-q4726842[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4726842"
+  },
+  {
+   "where": "text:w-q4726858[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4726858"
+  },
+  {
+   "where": "text:w-q1553143[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1553143"
+  },
+  {
+   "where": "text:w-q11905286[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11905286"
+  },
+  {
+   "where": "text:w-q104151568[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104151568"
+  },
+  {
+   "where": "text:w-q2869051[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2869051"
+  },
+  {
+   "where": "text:w-q17513838[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17513838"
+  },
+  {
+   "where": "text:w-q2871819[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2871819"
+  },
+  {
+   "where": "text:w-q2879034[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2879034"
+  },
+  {
+   "where": "text:w-q520403[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q520403"
+  },
+  {
+   "where": "text:w-q17514653[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17514653"
+  },
+  {
+   "where": "text:w-q104152096[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152096"
+  },
+  {
+   "where": "text:w-q806019[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q806019"
+  },
+  {
+   "where": "text:w-q13389050[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q13389050"
+  },
+  {
+   "where": "text:w-q4857117[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4857117"
+  },
+  {
+   "where": "text:w-q806963[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q806963"
+  },
+  {
+   "where": "text:w-q918500[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q918500"
+  },
+  {
+   "where": "text:w-q807069[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q807069"
+  },
+  {
+   "where": "text:w-q807288[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q807288"
+  },
+  {
+   "where": "text:w-q2884562[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2884562"
+  },
+  {
+   "where": "text:w-q808575[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q808575"
+  },
+  {
+   "where": "text:w-q19605411[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q19605411"
+  },
+  {
+   "where": "text:w-q809652[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q809652"
+  },
+  {
+   "where": "text:w-q809955[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q809955"
+  },
+  {
+   "where": "text:w-q810432[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q810432"
+  },
+  {
+   "where": "text:w-q810557[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q810557"
+  },
+  {
+   "where": "text:w-q894995[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q894995"
+  },
+  {
+   "where": "text:w-q2902467[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2902467"
+  },
+  {
+   "where": "text:w-q1375154[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1375154"
+  },
+  {
+   "where": "text:w-q11909106[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11909106"
+  },
+  {
+   "where": "text:w-q11909259[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11909259"
+  },
+  {
+   "where": "text:w-q642037[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q642037"
+  },
+  {
+   "where": "text:w-q854850[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q854850"
+  },
+  {
+   "where": "text:w-q854917[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q854917"
+  },
+  {
+   "where": "text:w-q855044[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q855044"
+  },
+  {
+   "where": "text:w-q855058[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q855058"
+  },
+  {
+   "where": "text:w-q104152097[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152097"
+  },
+  {
+   "where": "text:w-q7905915[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7905915"
+  },
+  {
+   "where": "text:w-q859966[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q859966"
+  },
+  {
+   "where": "text:w-q892061[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q892061"
+  },
+  {
+   "where": "text:w-q4997536[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4997536"
+  },
+  {
+   "where": "text:w-q1028095[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1028095"
+  },
+  {
+   "where": "text:w-q33296[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q33296"
+  },
+  {
+   "where": "text:w-q3277580[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3277580"
+  },
+  {
+   "where": "text:w-q1060520[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1060520"
+  },
+  {
+   "where": "text:w-q2624304[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2624304"
+  },
+  {
+   "where": "text:w-q11927113[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11927113"
+  },
+  {
+   "where": "text:w-q1071493[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1071493"
+  },
+  {
+   "where": "text:w-q17986421[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17986421"
+  },
+  {
+   "where": "text:w-q2963204[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2963204"
+  },
+  {
+   "where": "text:w-q509572[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q509572"
+  },
+  {
+   "where": "text:w-q1720882[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1720882"
+  },
+  {
+   "where": "text:w-q5088561[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5088561"
+  },
+  {
+   "where": "text:w-q18211496[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18211496"
+  },
+  {
+   "where": "text:w-q17513023[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17513023"
+  },
+  {
+   "where": "text:w-q3016348[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3016348"
+  },
+  {
+   "where": "text:w-q11916643[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11916643"
+  },
+  {
+   "where": "text:w-q11916665[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11916665"
+  },
+  {
+   "where": "text:w-q17311418[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17311418"
+  },
+  {
+   "where": "text:w-q1172600[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1172600"
+  },
+  {
+   "where": "text:w-q11916768[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11916768"
+  },
+  {
+   "where": "text:w-q1207105[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1207105"
+  },
+  {
+   "where": "text:w-q3025690[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3025690"
+  },
+  {
+   "where": "text:w-q1207561[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1207561"
+  },
+  {
+   "where": "text:w-q5269129[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5269129"
+  },
+  {
+   "where": "text:w-q1207641[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1207641"
+  },
+  {
+   "where": "text:w-q657861[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q657861"
+  },
+  {
+   "where": "text:w-q18111824[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18111824"
+  },
+  {
+   "where": "text:w-q1545942[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1545942"
+  },
+  {
+   "where": "text:w-q11917045[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11917045"
+  },
+  {
+   "where": "text:w-q973433[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q973433"
+  },
+  {
+   "where": "text:w-q1396700[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1396700"
+  },
+  {
+   "where": "text:w-q16838406[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16838406"
+  },
+  {
+   "where": "text:w-q1381495[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1381495"
+  },
+  {
+   "where": "text:w-q11923882[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11923882"
+  },
+  {
+   "where": "text:w-q16839606[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16839606"
+  },
+  {
+   "where": "text:w-q1557792[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1557792"
+  },
+  {
+   "where": "text:w-q17297442[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17297442"
+  },
+  {
+   "where": "text:w-q11925661[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11925661"
+  },
+  {
+   "where": "text:w-q1240096[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1240096"
+  },
+  {
+   "where": "text:w-q716890[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q716890"
+  },
+  {
+   "where": "text:w-q16849282[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16849282"
+  },
+  {
+   "where": "text:w-q6124144[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6124144"
+  },
+  {
+   "where": "text:w-q1678784[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1678784"
+  },
+  {
+   "where": "text:w-q1395011[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1395011"
+  },
+  {
+   "where": "text:w-q18126183[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18126183"
+  },
+  {
+   "where": "text:w-q11927151[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11927151"
+  },
+  {
+   "where": "text:w-q1681450[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1681450"
+  },
+  {
+   "where": "text:w-q2571484[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2571484"
+  },
+  {
+   "where": "text:w-q18126222[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18126222"
+  },
+  {
+   "where": "text:w-q1683106[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1683106"
+  },
+  {
+   "where": "text:w-q1683780[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1683780"
+  },
+  {
+   "where": "text:w-q11927206[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11927206"
+  },
+  {
+   "where": "text:w-q104151575[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q104151575"
+  },
+  {
+   "where": "text:w-q6164350[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6164350"
+  },
+  {
+   "where": "text:w-q3192661[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3192661"
+  },
+  {
+   "where": "text:w-q933413[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q933413"
+  },
+  {
+   "where": "text:w-q11927430[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11927430"
+  },
+  {
+   "where": "text:w-q1688822[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1688822"
+  },
+  {
+   "where": "text:w-q1261339[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1261339"
+  },
+  {
+   "where": "text:w-q11927544[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11927544"
+  },
+  {
+   "where": "text:w-q11927549[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11927549"
+  },
+  {
+   "where": "text:w-q1252744[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1252744"
+  },
+  {
+   "where": "text:w-q6206774[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6206774"
+  },
+  {
+   "where": "text:w-q6207845[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6207845"
+  },
+  {
+   "where": "text:w-q860407[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q860407"
+  },
+  {
+   "where": "text:w-q1535236[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1535236"
+  },
+  {
+   "where": "text:w-q932359[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q932359"
+  },
+  {
+   "where": "text:w-q11929623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11929623"
+  },
+  {
+   "where": "text:w-q12816977[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12816977"
+  },
+  {
+   "where": "text:w-q11929645[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11929645"
+  },
+  {
+   "where": "text:w-q1728782[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1728782"
+  },
+  {
+   "where": "text:w-q2578028[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2578028"
+  },
+  {
+   "where": "text:w-q6368814[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6368814"
+  },
+  {
+   "where": "text:w-q18126687[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18126687"
+  },
+  {
+   "where": "text:w-q19792051[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q19792051"
+  },
+  {
+   "where": "text:w-q3195357[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3195357"
+  },
+  {
+   "where": "text:w-q11929746[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11929746"
+  },
+  {
+   "where": "text:w-q11929762[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11929762"
+  },
+  {
+   "where": "text:w-q18126780[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18126780"
+  },
+  {
+   "where": "text:w-q6401617[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6401617"
+  },
+  {
+   "where": "text:w-q6416549[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6416549"
+  },
+  {
+   "where": "text:w-q150056[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q150056"
+  },
+  {
+   "where": "text:w-q877155[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q877155"
+  },
+  {
+   "where": "text:w-q657946[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q657946"
+  },
+  {
+   "where": "text:w-q1784316[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1784316"
+  },
+  {
+   "where": "text:w-q1785349[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1785349"
+  },
+  {
+   "where": "text:w-q104152099[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152099"
+  },
+  {
+   "where": "text:w-q104152100[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152100"
+  },
+  {
+   "where": "text:w-q23136942[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q23136942"
+  },
+  {
+   "where": "text:w-q104152101[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152101"
+  },
+  {
+   "where": "text:w-q104152102[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152102"
+  },
+  {
+   "where": "text:w-q18127026[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18127026"
+  },
+  {
+   "where": "text:w-q18127028[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18127028"
+  },
+  {
+   "where": "text:w-q3200690[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3200690"
+  },
+  {
+   "where": "text:w-q6448442[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6448442"
+  },
+  {
+   "where": "text:w-q11931118[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11931118"
+  },
+  {
+   "where": "text:w-q104152103[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152103"
+  },
+  {
+   "where": "text:w-q6503547[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6503547"
+  },
+  {
+   "where": "text:w-q21075471[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q21075471"
+  },
+  {
+   "where": "text:w-q3241025[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3241025"
+  },
+  {
+   "where": "text:w-q3258086[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3258086"
+  },
+  {
+   "where": "text:w-q18127558[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18127558"
+  },
+  {
+   "where": "text:w-q104152104[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152104"
+  },
+  {
+   "where": "text:w-q999297[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q999297"
+  },
+  {
+   "where": "text:w-q18127719[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18127719"
+  },
+  {
+   "where": "text:w-q11934705[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11934705"
+  },
+  {
+   "where": "text:w-q17618911[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17618911"
+  },
+  {
+   "where": "text:w-q6747689[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6747689"
+  },
+  {
+   "where": "text:w-q6748050[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6748050"
+  },
+  {
+   "where": "text:w-q889030[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q889030"
+  },
+  {
+   "where": "text:w-q104151601[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104151601"
+  },
+  {
+   "where": "text:w-q18127928[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18127928"
+  },
+  {
+   "where": "text:w-q3315863[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3315863"
+  },
+  {
+   "where": "text:w-q932487[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q932487"
+  },
+  {
+   "where": "text:w-q1951905[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1951905"
+  },
+  {
+   "where": "text:w-q11937172[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11937172"
+  },
+  {
+   "where": "text:w-q104152105[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152105"
+  },
+  {
+   "where": "text:w-q1951726[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1951726"
+  },
+  {
+   "where": "text:w-q11937876[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11937876"
+  },
+  {
+   "where": "text:w-q104152106[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152106"
+  },
+  {
+   "where": "text:w-q266923[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q266923"
+  },
+  {
+   "where": "text:w-q167639[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q167639"
+  },
+  {
+   "where": "text:w-q929357[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q929357"
+  },
+  {
+   "where": "text:w-q1963593[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1963593"
+  },
+  {
+   "where": "text:w-q1964552[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1964552"
+  },
+  {
+   "where": "text:w-q976913[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q976913"
+  },
+  {
+   "where": "text:w-q19669126[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q19669126"
+  },
+  {
+   "where": "text:w-q10797411[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q10797411"
+  },
+  {
+   "where": "text:w-q16932578[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q16932578"
+  },
+  {
+   "where": "text:w-q7037080[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7037080"
+  },
+  {
+   "where": "text:w-q668415[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q668415"
+  },
+  {
+   "where": "text:w-q15630982[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q15630982"
+  },
+  {
+   "where": "text:w-q18129046[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18129046"
+  },
+  {
+   "where": "text:w-q11939770[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11939770"
+  },
+  {
+   "where": "text:w-q7126114[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7126114"
+  },
+  {
+   "where": "text:w-q7126720[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7126720"
+  },
+  {
+   "where": "text:w-q7127047[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7127047"
+  },
+  {
+   "where": "text:w-q7127625[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7127625"
+  },
+  {
+   "where": "text:w-q11940483[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q11940483"
+  },
+  {
+   "where": "text:w-q104152107[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152107"
+  },
+  {
+   "where": "text:w-q17991935[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17991935"
+  },
+  {
+   "where": "text:w-q104152108[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152108"
+  },
+  {
+   "where": "text:w-q7180358[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7180358"
+  },
+  {
+   "where": "text:w-q7197455[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7197455"
+  },
+  {
+   "where": "text:w-q175934[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q175934"
+  },
+  {
+   "where": "text:w-q3535371[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3535371"
+  },
+  {
+   "where": "text:w-q18164260[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18164260"
+  },
+  {
+   "where": "text:w-q2623902[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2623902"
+  },
+  {
+   "where": "text:w-q11944481[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11944481"
+  },
+  {
+   "where": "text:w-q932393[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q932393"
+  },
+  {
+   "where": "text:w-q2128542[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2128542"
+  },
+  {
+   "where": "text:w-q2128715[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2128715"
+  },
+  {
+   "where": "text:w-q2128743[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2128743"
+  },
+  {
+   "where": "text:w-q7286362[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7286362"
+  },
+  {
+   "where": "text:w-q918204[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q918204"
+  },
+  {
+   "where": "text:w-q28179897[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28179897"
+  },
+  {
+   "where": "text:w-q1776972[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1776972"
+  },
+  {
+   "where": "text:w-q3454186[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3454186"
+  },
+  {
+   "where": "text:w-q11944704[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11944704"
+  },
+  {
+   "where": "text:w-q17399594[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17399594"
+  },
+  {
+   "where": "text:w-q1604981[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1604981"
+  },
+  {
+   "where": "text:w-q176466[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q176466"
+  },
+  {
+   "where": "text:w-q1476723[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1476723"
+  },
+  {
+   "where": "text:w-q1400780[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1400780"
+  },
+  {
+   "where": "text:w-q7403120[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7403120"
+  },
+  {
+   "where": "text:w-q17315177[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17315177"
+  },
+  {
+   "where": "text:w-q1261743[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1261743"
+  },
+  {
+   "where": "text:w-q532048[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q532048"
+  },
+  {
+   "where": "text:w-q2221701[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2221701"
+  },
+  {
+   "where": "text:w-q17198610[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17198610"
+  },
+  {
+   "where": "text:w-q7422962[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7422962"
+  },
+  {
+   "where": "text:w-q7423761[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7423761"
+  },
+  {
+   "where": "text:w-q1607154[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1607154"
+  },
+  {
+   "where": "text:w-q18164343[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18164343"
+  },
+  {
+   "where": "text:w-q2276431[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2276431"
+  },
+  {
+   "where": "text:w-q11949691[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11949691"
+  },
+  {
+   "where": "text:w-q1541353[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1541353"
+  },
+  {
+   "where": "text:w-q104152110[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152110"
+  },
+  {
+   "where": "text:w-q7530545[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7530545"
+  },
+  {
+   "where": "text:w-q2290502[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2290502"
+  },
+  {
+   "where": "text:w-q3488924[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3488924"
+  },
+  {
+   "where": "text:w-q104152111[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152111"
+  },
+  {
+   "where": "text:w-q1798703[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1798703"
+  },
+  {
+   "where": "text:w-q3503368[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3503368"
+  },
+  {
+   "where": "text:w-q17298275[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17298275"
+  },
+  {
+   "where": "text:w-q2368545[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2368545"
+  },
+  {
+   "where": "text:w-q17244162[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17244162"
+  },
+  {
+   "where": "text:w-q18008280[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18008280"
+  },
+  {
+   "where": "text:w-q3530610[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3530610"
+  },
+  {
+   "where": "text:w-q1588434[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1588434"
+  },
+  {
+   "where": "text:w-q11951827[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11951827"
+  },
+  {
+   "where": "text:w-q7825423[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7825423"
+  },
+  {
+   "where": "text:w-q11952191[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11952191"
+  },
+  {
+   "where": "text:w-q150058[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q150058"
+  },
+  {
+   "where": "text:w-q3532158[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3532158"
+  },
+  {
+   "where": "text:w-q5915498[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5915498"
+  },
+  {
+   "where": "text:w-q17319155[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17319155"
+  },
+  {
+   "where": "text:w-q1457519[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1457519"
+  },
+  {
+   "where": "text:w-q1534153[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1534153"
+  },
+  {
+   "where": "text:w-q101242375[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q101242375"
+  },
+  {
+   "where": "text:w-q17267634[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17267634"
+  },
+  {
+   "where": "text:w-q104152343[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152343"
+  },
+  {
+   "where": "text:w-q104152246[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104152246"
+  },
+  {
+   "where": "text:w-q11954352[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11954352"
+  },
+  {
+   "where": "text:w-q180235[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q180235"
+  },
+  {
+   "where": "text:w-q2548416[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2548416"
+  },
+  {
+   "where": "text:w-q11953949[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q11953949"
+  },
+  {
+   "where": "text:w-q1775277[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1775277"
+  },
+  {
+   "where": "text:w-q11944509[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q11944509"
+  },
+  {
+   "where": "text:c-ind[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q668"
+  },
+  {
+   "where": "text:c-iot[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q43448"
+  },
+  {
+   "where": "text:w-q31747[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q31747"
+  },
+  {
+   "where": "text:w-q1140152[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1140152"
+  },
+  {
+   "where": "text:w-q57695350[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q57695350"
+  },
+  {
+   "where": "text:c-irl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q27"
+  },
+  {
+   "where": "text:w-q107258515[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q107258515"
+  },
+  {
+   "where": "text:w-q63158027[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q63158027"
+  },
+  {
+   "where": "text:c-irn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q794"
+  },
+  {
+   "where": "text:w-q149805[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q149805"
+  },
+  {
+   "where": "text:w-q146720[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q146720"
+  },
+  {
+   "where": "text:c-irq[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q796"
+  },
+  {
+   "where": "text:w-q62567[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q62567"
+  },
+  {
+   "where": "text:w-q16427214[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q16427214"
+  },
+  {
+   "where": "text:c-isl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q189"
+  },
+  {
+   "where": "text:w-q193714[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q193714"
+  },
+  {
+   "where": "text:w-q2909425[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2909425"
+  },
+  {
+   "where": "text:c-isr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q801"
+  },
+  {
+   "where": "text:w-q172579[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q172579"
+  },
+  {
+   "where": "text:w-q6006584[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6006584"
+  },
+  {
+   "where": "text:w-q548114[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q548114"
+  },
+  {
+   "where": "text:w-q180393[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q180393"
+  },
+  {
+   "where": "text:w-q2577303[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2577303"
+  },
+  {
+   "where": "text:w-q165154[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q165154"
+  },
+  {
+   "where": "text:w-q209857[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q209857"
+  },
+  {
+   "where": "text:w-q170174[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q170174"
+  },
+  {
+   "where": "text:c-ita[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q38"
+  },
+  {
+   "where": "text:c-jam[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q766"
+  },
+  {
+   "where": "text:c-jey[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q785"
+  },
+  {
+   "where": "text:c-jor[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q810"
+  },
+  {
+   "where": "text:w-q188712[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q188712"
+  },
+  {
+   "where": "text:w-q205662[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q205662"
+  },
+  {
+   "where": "text:c-jpn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17"
+  },
+  {
+   "where": "text:w-q168811[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q168811"
+  },
+  {
+   "where": "text:w-q2332797[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2332797"
+  },
+  {
+   "where": "text:w-q15180[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q15180"
+  },
+  {
+   "where": "text:w-q2305208[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2305208"
+  },
+  {
+   "where": "text:w-q2369784[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q2369784"
+  },
+  {
+   "where": "text:w-q2184[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2184"
+  },
+  {
+   "where": "text:w-q133356[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q133356"
+  },
+  {
+   "where": "text:w-q545205[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q545205"
+  },
+  {
+   "where": "text:c-kaz[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q232"
+  },
+  {
+   "where": "text:c-ken[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q114"
+  },
+  {
+   "where": "text:w-q130276[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q130276"
+  },
+  {
+   "where": "text:w-q8212144[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8212144"
+  },
+  {
+   "where": "text:c-kgz[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q813"
+  },
+  {
+   "where": "text:c-khm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q424"
+  },
+  {
+   "where": "text:c-kir[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q710"
+  },
+  {
+   "where": "text:c-kna[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q763"
+  },
+  {
+   "where": "text:c-kor[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q884"
+  },
+  {
+   "where": "text:c-unk[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1246"
+  },
+  {
+   "where": "text:c-kwt[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q817"
+  },
+  {
+   "where": "text:c-lao[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q819"
+  },
+  {
+   "where": "text:w-q108865218[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q108865218"
+  },
+  {
+   "where": "text:w-q108865226[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q108865226"
+  },
+  {
+   "where": "text:c-lbn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q822"
+  },
+  {
+   "where": "text:w-q104830524[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q104830524"
+  },
+  {
+   "where": "text:c-lbr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1014"
+  },
+  {
+   "where": "text:w-q4843701[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4843701"
+  },
+  {
+   "where": "text:w-q2347668[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2347668"
+  },
+  {
+   "where": "text:c-lby[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1016"
+  },
+  {
+   "where": "text:c-lca[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q760"
+  },
+  {
+   "where": "text:w-q66087897[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q66087897"
+  },
+  {
+   "where": "text:c-lie[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q347"
+  },
+  {
+   "where": "text:w-q2670092[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2670092"
+  },
+  {
+   "where": "text:w-q918153[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q918153"
+  },
+  {
+   "where": "text:c-lka[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q854"
+  },
+  {
+   "where": "text:w-q2340665[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2340665"
+  },
+  {
+   "where": "text:c-lso[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1013"
+  },
+  {
+   "where": "text:w-q173761[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q173761"
+  },
+  {
+   "where": "text:w-q8272919[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8272919"
+  },
+  {
+   "where": "text:c-ltu[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q37"
+  },
+  {
+   "where": "text:w-q151624[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q151624"
+  },
+  {
+   "where": "text:w-q154741[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q154741"
+  },
+  {
+   "where": "text:w-q27306[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q27306"
+  },
+  {
+   "where": "text:c-lux[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q32"
+  },
+  {
+   "where": "text:c-lva[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q211"
+  },
+  {
+   "where": "text:w-q3916279[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3916279"
+  },
+  {
+   "where": "text:c-mac[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q14773"
+  },
+  {
+   "where": "text:c-maf[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q126125"
+  },
+  {
+   "where": "text:w-q457242[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q457242"
+  },
+  {
+   "where": "text:w-q12183875[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12183875"
+  },
+  {
+   "where": "text:w-q37102[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q37102"
+  },
+  {
+   "where": "text:w-q907234[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q907234"
+  },
+  {
+   "where": "text:w-q131429368[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q131429368"
+  },
+  {
+   "where": "text:w-q689837[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q689837"
+  },
+  {
+   "where": "text:c-mar[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1028"
+  },
+  {
+   "where": "text:c-mco[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q235"
+  },
+  {
+   "where": "text:w-q170895[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q170895"
+  },
+  {
+   "where": "text:w-q1143148[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1143148"
+  },
+  {
+   "where": "text:w-q203493[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q203493"
+  },
+  {
+   "where": "text:w-q2504040[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2504040"
+  },
+  {
+   "where": "text:c-mda[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q217"
+  },
+  {
+   "where": "text:c-mdg[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1019"
+  },
+  {
+   "where": "text:w-q11344632[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11344632"
+  },
+  {
+   "where": "text:w-q150069[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q150069"
+  },
+  {
+   "where": "text:c-mdv[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q826"
+  },
+  {
+   "where": "text:w-q170603[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q170603"
+  },
+  {
+   "where": "text:w-q20978063[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q20978063"
+  },
+  {
+   "where": "text:c-mex[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q96"
+  },
+  {
+   "where": "text:c-mhl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q709"
+  },
+  {
+   "where": "text:w-q240592[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q240592"
+  },
+  {
+   "where": "text:c-mkd[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q221"
+  },
+  {
+   "where": "text:w-q508014[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q508014"
+  },
+  {
+   "where": "text:w-q3090194[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3090194"
+  },
+  {
+   "where": "text:c-mli[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q912"
+  },
+  {
+   "where": "text:w-q7603765[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7603765"
+  },
+  {
+   "where": "text:w-q6744657[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6744657"
+  },
+  {
+   "where": "text:c-mlt[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q233"
+  },
+  {
+   "where": "text:w-q2376315[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2376315"
+  },
+  {
+   "where": "text:c-mmr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q836"
+  },
+  {
+   "where": "text:w-q37024[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q37024"
+  },
+  {
+   "where": "text:w-q838261[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q838261"
+  },
+  {
+   "where": "text:w-q934644[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q934644"
+  },
+  {
+   "where": "text:c-mne[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q236"
+  },
+  {
+   "where": "text:c-mng[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q711"
+  },
+  {
+   "where": "text:c-mnp[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16644"
+  },
+  {
+   "where": "text:c-moz[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1029"
+  },
+  {
+   "where": "text:c-mrt[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1025"
+  },
+  {
+   "where": "text:c-msr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q13353"
+  },
+  {
+   "where": "text:c-mtq[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17054"
+  },
+  {
+   "where": "text:w-q14759030[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q14759030"
+  },
+  {
+   "where": "text:w-q12053604[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12053604"
+  },
+  {
+   "where": "text:c-mus[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1027"
+  },
+  {
+   "where": "text:c-mwi[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1020"
+  },
+  {
+   "where": "text:w-q1479726[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1479726"
+  },
+  {
+   "where": "text:w-q16933920[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16933920"
+  },
+  {
+   "where": "text:w-q1147441[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1147441"
+  },
+  {
+   "where": "text:w-q5589708[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5589708"
+  },
+  {
+   "where": "text:w-q1658411[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1658411"
+  },
+  {
+   "where": "text:c-mys[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q833"
+  },
+  {
+   "where": "text:c-myt[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17063"
+  },
+  {
+   "where": "text:w-q953068[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q953068"
+  },
+  {
+   "where": "text:w-q153665[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q153665"
+  },
+  {
+   "where": "text:c-nam[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1030"
+  },
+  {
+   "where": "text:c-ncl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q33788"
+  },
+  {
+   "where": "text:c-ner[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1032"
+  },
+  {
+   "where": "text:c-nfk[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q31057"
+  },
+  {
+   "where": "text:w-q5440850[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5440850"
+  },
+  {
+   "where": "text:w-q2046345[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2046345"
+  },
+  {
+   "where": "text:c-nga[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1033"
+  },
+  {
+   "where": "text:w-q1165546[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1165546"
+  },
+  {
+   "where": "text:c-nic[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q811"
+  },
+  {
+   "where": "text:c-niu[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q34020"
+  },
+  {
+   "where": "text:c-nld[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55"
+  },
+  {
+   "where": "text:c-nor[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q20"
+  },
+  {
+   "where": "text:w-q1078602[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1078602"
+  },
+  {
+   "where": "text:c-npl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q837"
+  },
+  {
+   "where": "text:w-q21816219[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q21816219"
+  },
+  {
+   "where": "text:w-q104177909[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q104177909"
+  },
+  {
+   "where": "text:c-nru[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q697"
+  },
+  {
+   "where": "text:w-q5148518[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5148518"
+  },
+  {
+   "where": "text:w-q2594990[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2594990"
+  },
+  {
+   "where": "text:c-nzl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q664"
+  },
+  {
+   "where": "text:w-q2342282[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2342282"
+  },
+  {
+   "where": "text:c-omn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q842"
+  },
+  {
+   "where": "text:w-q2006542[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2006542"
+  },
+  {
+   "where": "text:w-q139948[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q139948"
+  },
+  {
+   "where": "text:w-q28172756[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28172756"
+  },
+  {
+   "where": "text:w-q3243592[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3243592"
+  },
+  {
+   "where": "text:w-q2841472[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2841472"
+  },
+  {
+   "where": "text:w-q800236[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q800236"
+  },
+  {
+   "where": "text:w-q11317232[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11317232"
+  },
+  {
+   "where": "text:w-q14957246[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q14957246"
+  },
+  {
+   "where": "text:w-q2989491[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2989491"
+  },
+  {
+   "where": "text:w-q3249587[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3249587"
+  },
+  {
+   "where": "text:w-q1806438[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1806438"
+  },
+  {
+   "where": "text:w-q2989469[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2989469"
+  },
+  {
+   "where": "text:w-q372426[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q372426"
+  },
+  {
+   "where": "text:w-q3246273[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3246273"
+  },
+  {
+   "where": "text:w-q3246260[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3246260"
+  },
+  {
+   "where": "text:c-pak[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q843"
+  },
+  {
+   "where": "text:w-q1061488[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1061488"
+  },
+  {
+   "where": "text:w-q1141215[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1141215"
+  },
+  {
+   "where": "text:c-pan[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q804"
+  },
+  {
+   "where": "text:c-pcn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q35672"
+  },
+  {
+   "where": "text:c-per[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q419"
+  },
+  {
+   "where": "text:w-q146328[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q146328"
+  },
+  {
+   "where": "text:w-q6042084[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6042084"
+  },
+  {
+   "where": "text:c-phl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q928"
+  },
+  {
+   "where": "text:c-plw[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q695"
+  },
+  {
+   "where": "text:w-q2301972[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2301972"
+  },
+  {
+   "where": "text:w-q1443945[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1443945"
+  },
+  {
+   "where": "text:w-q530560[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q530560"
+  },
+  {
+   "where": "text:c-png[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q691"
+  },
+  {
+   "where": "text:w-q221457[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q221457"
+  },
+  {
+   "where": "text:w-q152115[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q152115"
+  },
+  {
+   "where": "text:w-q211274[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q211274"
+  },
+  {
+   "where": "text:w-q207272[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q207272"
+  },
+  {
+   "where": "text:c-pol[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q36"
+  },
+  {
+   "where": "text:c-pri[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1183"
+  },
+  {
+   "where": "text:c-prk[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q423"
+  },
+  {
+   "where": "text:w-q45670[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q45670"
+  },
+  {
+   "where": "text:w-q1139807[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1139807"
+  },
+  {
+   "where": "text:c-prt[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q45"
+  },
+  {
+   "where": "text:c-pry[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q733"
+  },
+  {
+   "where": "text:c-pse[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q219060"
+  },
+  {
+   "where": "text:c-pyf[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q30971"
+  },
+  {
+   "where": "text:c-qat[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q846"
+  },
+  {
+   "where": "text:c-reu[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17070"
+  },
+  {
+   "where": "text:c-rou[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q218"
+  },
+  {
+   "where": "text:c-rus[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q159"
+  },
+  {
+   "where": "text:c-rwa[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1037"
+  },
+  {
+   "where": "text:w-q56885910[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56885910"
+  },
+  {
+   "where": "text:c-sau[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q851"
+  },
+  {
+   "where": "text:w-q541455[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q541455"
+  },
+  {
+   "where": "text:w-q3125368[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3125368"
+  },
+  {
+   "where": "text:c-sdn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1049"
+  },
+  {
+   "where": "text:c-sen[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1041"
+  },
+  {
+   "where": "text:c-sgp[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q334"
+  },
+  {
+   "where": "text:w-q5431953[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5431953"
+  },
+  {
+   "where": "text:c-sgs[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q35086"
+  },
+  {
+   "where": "text:c-sjm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q842829"
+  },
+  {
+   "where": "text:w-q13410267[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q13410267"
+  },
+  {
+   "where": "text:w-q165008[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q165008"
+  },
+  {
+   "where": "text:c-slb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q685"
+  },
+  {
+   "where": "text:w-q14920623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q14920623"
+  },
+  {
+   "where": "text:w-q30059027[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q30059027"
+  },
+  {
+   "where": "text:c-sle[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1044"
+  },
+  {
+   "where": "text:w-q65182752[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q65182752"
+  },
+  {
+   "where": "text:w-q6088881[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6088881"
+  },
+  {
+   "where": "text:c-slv[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q792"
+  },
+  {
+   "where": "text:c-smr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q238"
+  },
+  {
+   "where": "text:c-som[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1045"
+  },
+  {
+   "where": "text:c-spm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q34617"
+  },
+  {
+   "where": "text:c-srb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q403"
+  },
+  {
+   "where": "text:c-ssd[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q958"
+  },
+  {
+   "where": "text:w-q7232692[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7232692"
+  },
+  {
+   "where": "text:c-stp[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1039"
+  },
+  {
+   "where": "text:w-q19901436[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q19901436"
+  },
+  {
+   "where": "text:w-q7646305[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7646305"
+  },
+  {
+   "where": "text:c-sur[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q730"
+  },
+  {
+   "where": "text:c-svk[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q214"
+  },
+  {
+   "where": "text:w-q211092[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q211092"
+  },
+  {
+   "where": "text:c-svn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q215"
+  },
+  {
+   "where": "text:c-swe[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q34"
+  },
+  {
+   "where": "text:w-q21815946[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q21815946"
+  },
+  {
+   "where": "text:c-swz[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1050"
+  },
+  {
+   "where": "text:c-sxm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q26273"
+  },
+  {
+   "where": "text:c-syc[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1042"
+  },
+  {
+   "where": "text:c-syr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q858"
+  },
+  {
+   "where": "text:c-tca[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q18221"
+  },
+  {
+   "where": "text:c-tcd[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q657"
+  },
+  {
+   "where": "text:w-q797214[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q797214"
+  },
+  {
+   "where": "text:c-tgo[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q945"
+  },
+  {
+   "where": "text:c-tha[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q869"
+  },
+  {
+   "where": "text:w-q199711[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q199711"
+  },
+  {
+   "where": "text:w-q76077[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q76077"
+  },
+  {
+   "where": "text:c-tjk[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q863"
+  },
+  {
+   "where": "text:c-tkl[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q36823"
+  },
+  {
+   "where": "text:c-tkm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q874"
+  },
+  {
+   "where": "text:w-q1732464[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1732464"
+  },
+  {
+   "where": "text:w-q142965[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q142965"
+  },
+  {
+   "where": "text:c-tls[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q574"
+  },
+  {
+   "where": "text:c-ton[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q678"
+  },
+  {
+   "where": "text:w-q7842409[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7842409"
+  },
+  {
+   "where": "text:w-q63973349[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q63973349"
+  },
+  {
+   "where": "text:c-tto[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q754"
+  },
+  {
+   "where": "text:w-q2017684[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2017684"
+  },
+  {
+   "where": "text:w-q4899891[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4899891"
+  },
+  {
+   "where": "text:c-tun[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q948"
+  },
+  {
+   "where": "text:w-q12560[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12560"
+  },
+  {
+   "where": "text:w-q12536[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12536"
+  },
+  {
+   "where": "text:w-q12544[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12544"
+  },
+  {
+   "where": "text:w-q4338046[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4338046"
+  },
+  {
+   "where": "text:w-q6753657[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6753657"
+  },
+  {
+   "where": "text:w-q127607963[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q127607963"
+  },
+  {
+   "where": "text:w-q178913[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q178913"
+  },
+  {
+   "where": "text:c-tur[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q43"
+  },
+  {
+   "where": "text:w-q3593530[1][0]",
+   "text": "https://www.wikidata.org/wiki/Q3593530"
+  },
+  {
+   "where": "text:c-tuv[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q672"
+  },
+  {
+   "where": "text:w-q137816[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q137816"
+  },
+  {
+   "where": "text:w-q391189[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q391189"
+  },
+  {
+   "where": "text:c-twn[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q865"
+  },
+  {
+   "where": "text:w-q431731[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q431731"
+  },
+  {
+   "where": "text:c-tza[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q924"
+  },
+  {
+   "where": "text:c-uga[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1036"
+  },
+  {
+   "where": "text:w-q243610[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q243610"
+  },
+  {
+   "where": "text:w-q1136962[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1136962"
+  },
+  {
+   "where": "text:c-ukr[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q212"
+  },
+  {
+   "where": "text:c-umi[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16645"
+  },
+  {
+   "where": "text:w-q616523[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q616523"
+  },
+  {
+   "where": "text:w-q2625228[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2625228"
+  },
+  {
+   "where": "text:c-ury[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q77"
+  },
+  {
+   "where": "text:c-usa[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q30"
+  },
+  {
+   "where": "text:w-q484578[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q484578"
+  },
+  {
+   "where": "text:w-q68682[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q68682"
+  },
+  {
+   "where": "text:w-q61291[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q61291"
+  },
+  {
+   "where": "text:w-q75903[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q75903"
+  },
+  {
+   "where": "text:c-uzb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q265"
+  },
+  {
+   "where": "text:w-q2393278[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2393278"
+  },
+  {
+   "where": "text:w-q2829270[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2829270"
+  },
+  {
+   "where": "text:w-q848383[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q848383"
+  },
+  {
+   "where": "text:w-q5154037[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5154037"
+  },
+  {
+   "where": "text:w-q694740[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q694740"
+  },
+  {
+   "where": "text:c-vat[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q237"
+  },
+  {
+   "where": "text:c-vct[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q757"
+  },
+  {
+   "where": "text:c-ven[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q717"
+  },
+  {
+   "where": "text:w-q61996551[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q61996551"
+  },
+  {
+   "where": "text:c-vgb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q25305"
+  },
+  {
+   "where": "text:w-q829655[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q829655"
+  },
+  {
+   "where": "text:c-vir[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11703"
+  },
+  {
+   "where": "text:w-q430309[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q430309"
+  },
+  {
+   "where": "text:w-q1072362[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1072362"
+  },
+  {
+   "where": "text:w-q180573[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q180573"
+  },
+  {
+   "where": "text:w-q172640[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q172640"
+  },
+  {
+   "where": "text:w-q185682[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q185682"
+  },
+  {
+   "where": "text:c-vnm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q881"
+  },
+  {
+   "where": "text:w-q752431[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q752431"
+  },
+  {
+   "where": "text:c-vut[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q686"
+  },
+  {
+   "where": "text:c-wlf[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q35555"
+  },
+  {
+   "where": "text:c-wsm[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q683"
+  },
+  {
+   "where": "text:w-q267584[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q267584"
+  },
+  {
+   "where": "text:w-q580188[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q580188"
+  },
+  {
+   "where": "text:w-q199841[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q199841"
+  },
+  {
+   "where": "text:w-q1517772[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1517772"
+  },
+  {
+   "where": "text:w-q834486[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q834486"
+  },
+  {
+   "where": "text:c-yem[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q805"
+  },
+  {
+   "where": "text:c-zaf[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q258"
+  },
+  {
+   "where": "text:w-q953903[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q953903"
+  },
+  {
+   "where": "text:w-q20312596[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q20312596"
+  },
+  {
+   "where": "text:c-zmb[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q953"
+  },
+  {
+   "where": "text:w-q750583[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q750583"
+  },
+  {
+   "where": "text:c-zwe[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q954"
+  },
+  {
+   "where": "text:w-q861225[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q861225"
+  },
+  {
+   "where": "text:w-q265730[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q265730"
+  },
+  {
+   "where": "text:w-q459387[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q459387"
+  },
+  {
+   "where": "text:w-q12060728[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12060728"
+  },
+  {
+   "where": "text:w-q173371[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q173371"
+  },
+  {
+   "where": "text:w-q1755426[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1755426"
+  },
+  {
+   "where": "text:w-q101828[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q101828"
+  },
+  {
+   "where": "text:w-q69798[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q69798"
+  },
+  {
+   "where": "text:w-q203663[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q203663"
+  },
+  {
+   "where": "text:w-q245156[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q245156"
+  },
+  {
+   "where": "text:w-q16545225[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16545225"
+  },
+  {
+   "where": "text:w-q181459[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q181459"
+  },
+  {
+   "where": "text:w-q1739282[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1739282"
+  },
+  {
+   "where": "text:w-q134178[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q134178"
+  },
+  {
+   "where": "text:w-q318144[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q318144"
+  },
+  {
+   "where": "text:w-q80974[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q80974"
+  },
+  {
+   "where": "text:w-q426737[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q426737"
+  },
+  {
+   "where": "text:w-q41642[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q41642"
+  },
+  {
+   "where": "text:w-q1090987[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1090987"
+  },
+  {
+   "where": "text:w-q2659059[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2659059"
+  },
+  {
+   "where": "text:w-q775089[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q775089"
+  },
+  {
+   "where": "text:w-q952057[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q952057"
+  },
+  {
+   "where": "text:w-q11038987[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11038987"
+  },
+  {
+   "where": "text:w-q459376[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q459376"
+  },
+  {
+   "where": "text:w-q1511519[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1511519"
+  },
+  {
+   "where": "text:w-q484464[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q484464"
+  },
+  {
+   "where": "text:w-q940785[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q940785"
+  },
+  {
+   "where": "text:w-q241790[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q241790"
+  },
+  {
+   "where": "text:w-q175064[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q175064"
+  },
+  {
+   "where": "text:w-q219995[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q219995"
+  },
+  {
+   "where": "text:w-q1076565[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1076565"
+  },
+  {
+   "where": "text:w-q907924[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q907924"
+  },
+  {
+   "where": "text:w-q966966[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q966966"
+  },
+  {
+   "where": "text:w-q1474169[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1474169"
+  },
+  {
+   "where": "text:w-q735064[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q735064"
+  },
+  {
+   "where": "text:w-q726722[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q726722"
+  },
+  {
+   "where": "text:w-q210561[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q210561"
+  },
+  {
+   "where": "text:w-q5011445[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5011445"
+  },
+  {
+   "where": "text:w-q45315[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q45315"
+  },
+  {
+   "where": "text:w-q192730[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q192730"
+  },
+  {
+   "where": "text:w-q187985[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q187985"
+  },
+  {
+   "where": "text:w-q48199[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48199"
+  },
+  {
+   "where": "text:w-q41741[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q41741"
+  },
+  {
+   "where": "text:w-q146715[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q146715"
+  },
+  {
+   "where": "text:w-q149386[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q149386"
+  },
+  {
+   "where": "text:w-q605601[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q605601"
+  },
+  {
+   "where": "text:w-q129282[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q129282"
+  },
+  {
+   "where": "text:w-q2625916[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2625916"
+  },
+  {
+   "where": "text:w-q2636498[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2636498"
+  },
+  {
+   "where": "text:w-q611017[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q611017"
+  },
+  {
+   "where": "text:w-q2446445[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2446445"
+  },
+  {
+   "where": "text:w-q208247[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q208247"
+  },
+  {
+   "where": "text:w-q2429397[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2429397"
+  },
+  {
+   "where": "text:w-q5780[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5780"
+  },
+  {
+   "where": "text:w-q234009[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q234009"
+  },
+  {
+   "where": "text:w-q157676[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q157676"
+  },
+  {
+   "where": "text:w-q500272[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q500272"
+  },
+  {
+   "where": "text:w-q934374[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q934374"
+  },
+  {
+   "where": "text:w-q972472[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q972472"
+  },
+  {
+   "where": "text:w-q756922[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q756922"
+  },
+  {
+   "where": "text:w-q4827705[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4827705"
+  },
+  {
+   "where": "text:w-q558603[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q558603"
+  },
+  {
+   "where": "text:w-q1331184[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1331184"
+  },
+  {
+   "where": "text:w-q1376303[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1376303"
+  },
+  {
+   "where": "text:w-q1330149[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1330149"
+  },
+  {
+   "where": "text:w-q844750[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q844750"
+  },
+  {
+   "where": "text:w-q19921451[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q19921451"
+  },
+  {
+   "where": "text:w-q1127723[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1127723"
+  },
+  {
+   "where": "text:w-q13341477[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q13341477"
+  },
+  {
+   "where": "text:w-q2065259[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2065259"
+  },
+  {
+   "where": "text:w-q131802[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q131802"
+  },
+  {
+   "where": "text:w-q188836[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q188836"
+  },
+  {
+   "where": "text:w-q202165[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q202165"
+  },
+  {
+   "where": "text:w-q464899[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q464899"
+  },
+  {
+   "where": "text:w-q748595[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q748595"
+  },
+  {
+   "where": "text:w-q321371[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q321371"
+  },
+  {
+   "where": "text:w-q1137403[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1137403"
+  },
+  {
+   "where": "text:w-q260437[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q260437"
+  },
+  {
+   "where": "text:w-q29654286[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29654286"
+  },
+  {
+   "where": "text:w-q108356[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q108356"
+  },
+  {
+   "where": "text:w-q373189[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q373189"
+  },
+  {
+   "where": "text:w-q35323[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q35323"
+  },
+  {
+   "where": "text:w-q488880[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q488880"
+  },
+  {
+   "where": "text:w-q309272[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q309272"
+  },
+  {
+   "where": "text:w-q827501[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q827501"
+  },
+  {
+   "where": "text:w-q2022162[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2022162"
+  },
+  {
+   "where": "text:w-q1211290[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1211290"
+  },
+  {
+   "where": "text:w-q142702[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q142702"
+  },
+  {
+   "where": "text:w-q467985[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q467985"
+  },
+  {
+   "where": "text:w-q868179[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q868179"
+  },
+  {
+   "where": "text:w-q233838[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q233838"
+  },
+  {
+   "where": "text:w-q102679[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q102679"
+  },
+  {
+   "where": "text:w-q210570[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q210570"
+  },
+  {
+   "where": "text:w-q212853[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q212853"
+  },
+  {
+   "where": "text:w-q25979[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q25979"
+  },
+  {
+   "where": "text:w-q5257[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5257"
+  },
+  {
+   "where": "text:w-q42200[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q42200"
+  },
+  {
+   "where": "text:w-q208188[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q208188"
+  },
+  {
+   "where": "text:w-q139377[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q139377"
+  },
+  {
+   "where": "text:w-q173082[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q173082"
+  },
+  {
+   "where": "text:w-q1003997[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1003997"
+  },
+  {
+   "where": "text:w-q154923[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q154923"
+  },
+  {
+   "where": "text:w-q178054[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q178054"
+  },
+  {
+   "where": "text:w-q1075938[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1075938"
+  },
+  {
+   "where": "text:w-q220643[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q220643"
+  },
+  {
+   "where": "text:w-q1574107[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1574107"
+  },
+  {
+   "where": "text:w-q201706[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q201706"
+  },
+  {
+   "where": "text:w-q1539360[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1539360"
+  },
+  {
+   "where": "text:w-q150412[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q150412"
+  },
+  {
+   "where": "text:w-q1496339[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1496339"
+  },
+  {
+   "where": "text:w-q603749[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q603749"
+  },
+  {
+   "where": "text:w-q829356[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q829356"
+  },
+  {
+   "where": "text:w-q216786[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q216786"
+  },
+  {
+   "where": "text:w-q1027416[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1027416"
+  },
+  {
+   "where": "text:w-q155085[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q155085"
+  },
+  {
+   "where": "text:w-q126756[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q126756"
+  },
+  {
+   "where": "text:w-q101985[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q101985"
+  },
+  {
+   "where": "text:w-q42211[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q42211"
+  },
+  {
+   "where": "text:w-q4249093[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4249093"
+  },
+  {
+   "where": "text:w-q151148[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q151148"
+  },
+  {
+   "where": "text:w-q867782[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q867782"
+  },
+  {
+   "where": "text:w-q842390[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q842390"
+  },
+  {
+   "where": "text:w-q449639[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q449639"
+  },
+  {
+   "where": "text:w-q568523[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q568523"
+  },
+  {
+   "where": "text:w-q1194765[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1194765"
+  },
+  {
+   "where": "text:w-q169977[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q169977"
+  },
+  {
+   "where": "text:w-q110117[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q110117"
+  },
+  {
+   "where": "text:w-q139406808[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q139406808"
+  },
+  {
+   "where": "text:w-q313136[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q313136"
+  },
+  {
+   "where": "text:w-q106577[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q106577"
+  },
+  {
+   "where": "text:w-q68962[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q68962"
+  },
+  {
+   "where": "text:w-q106416[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q106416"
+  },
+  {
+   "where": "text:w-q173282[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q173282"
+  },
+  {
+   "where": "text:w-q3123073[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3123073"
+  },
+  {
+   "where": "text:w-q205466[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q205466"
+  },
+  {
+   "where": "text:w-q923516[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q923516"
+  },
+  {
+   "where": "text:w-q24897370[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q24897370"
+  },
+  {
+   "where": "text:w-q1268307[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1268307"
+  },
+  {
+   "where": "text:w-q808139[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q808139"
+  },
+  {
+   "where": "text:w-q129254753[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q129254753"
+  },
+  {
+   "where": "text:w-q668412[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q668412"
+  },
+  {
+   "where": "text:w-q46118[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q46118"
+  },
+  {
+   "where": "text:w-q815677[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q815677"
+  },
+  {
+   "where": "text:w-q170217[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q170217"
+  },
+  {
+   "where": "text:w-q756716[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q756716"
+  },
+  {
+   "where": "text:w-q6792792[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6792792"
+  },
+  {
+   "where": "text:w-q137367476[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q137367476"
+  },
+  {
+   "where": "text:w-q133032[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q133032"
+  },
+  {
+   "where": "text:w-q640444[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q640444"
+  },
+  {
+   "where": "text:w-q428713[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q428713"
+  },
+  {
+   "where": "text:w-q42193[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q42193"
+  },
+  {
+   "where": "text:w-q45813[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q45813"
+  },
+  {
+   "where": "text:w-q370957[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q370957"
+  },
+  {
+   "where": "text:w-q207600[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q207600"
+  },
+  {
+   "where": "text:w-q231392[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q231392"
+  },
+  {
+   "where": "text:w-q188353[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q188353"
+  },
+  {
+   "where": "text:w-q1045322[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1045322"
+  },
+  {
+   "where": "text:w-q28322[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28322"
+  },
+  {
+   "where": "text:w-q844910[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q844910"
+  },
+  {
+   "where": "text:w-q72813[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q72813"
+  },
+  {
+   "where": "text:w-q661423[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q661423"
+  },
+  {
+   "where": "text:w-q1500702[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1500702"
+  },
+  {
+   "where": "text:w-q478805[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q478805"
+  },
+  {
+   "where": "text:w-q310983[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q310983"
+  },
+  {
+   "where": "text:w-q424129[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q424129"
+  },
+  {
+   "where": "text:w-q328818[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q328818"
+  },
+  {
+   "where": "text:w-q1537016[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1537016"
+  },
+  {
+   "where": "text:w-q497568[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q497568"
+  },
+  {
+   "where": "text:w-q102891[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q102891"
+  },
+  {
+   "where": "text:w-q181634[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q181634"
+  },
+  {
+   "where": "text:w-q2431480[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2431480"
+  },
+  {
+   "where": "text:w-q327[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q327"
+  },
+  {
+   "where": "text:w-q485348[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q485348"
+  },
+  {
+   "where": "text:w-q33543[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q33543"
+  },
+  {
+   "where": "text:w-q170284[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q170284"
+  },
+  {
+   "where": "text:w-q6760875[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6760875"
+  },
+  {
+   "where": "text:w-q2634718[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2634718"
+  },
+  {
+   "where": "text:w-q213470[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q213470"
+  },
+  {
+   "where": "text:w-q37556[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q37556"
+  },
+  {
+   "where": "text:w-q888574[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q888574"
+  },
+  {
+   "where": "text:w-q6608704[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6608704"
+  },
+  {
+   "where": "text:w-q118780154[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q118780154"
+  },
+  {
+   "where": "text:w-q193152[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q193152"
+  },
+  {
+   "where": "text:w-q153080[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q153080"
+  },
+  {
+   "where": "text:w-q201705[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q201705"
+  },
+  {
+   "where": "text:w-q218332[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q218332"
+  },
+  {
+   "where": "text:w-q494462[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q494462"
+  },
+  {
+   "where": "text:w-q4955540[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4955540"
+  },
+  {
+   "where": "text:w-q856691[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q856691"
+  },
+  {
+   "where": "text:w-q12150341[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12150341"
+  },
+  {
+   "where": "text:w-q58843[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q58843"
+  },
+  {
+   "where": "text:w-q813961[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q813961"
+  },
+  {
+   "where": "text:w-q180688[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q180688"
+  },
+  {
+   "where": "text:w-q181752[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q181752"
+  },
+  {
+   "where": "text:w-q55599391[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55599391"
+  },
+  {
+   "where": "text:w-q2739014[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2739014"
+  },
+  {
+   "where": "text:w-q4948[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4948"
+  },
+  {
+   "where": "text:w-q14112[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q14112"
+  },
+  {
+   "where": "text:w-q17252[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17252"
+  },
+  {
+   "where": "text:w-q4958[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4958"
+  },
+  {
+   "where": "text:w-q3826[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3826"
+  },
+  {
+   "where": "text:w-q12844800[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12844800"
+  },
+  {
+   "where": "text:w-q267816[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q267816"
+  },
+  {
+   "where": "text:w-q2272880[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2272880"
+  },
+  {
+   "where": "text:w-q581741[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q581741"
+  },
+  {
+   "where": "text:w-q1042001[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1042001"
+  },
+  {
+   "where": "text:w-q200262[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q200262"
+  },
+  {
+   "where": "text:w-q175276[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q175276"
+  },
+  {
+   "where": "text:w-q210623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q210623"
+  },
+  {
+   "where": "text:w-q693980[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q693980"
+  },
+  {
+   "where": "text:w-q638064[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q638064"
+  },
+  {
+   "where": "text:w-q62389[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q62389"
+  },
+  {
+   "where": "text:w-q62651[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q62651"
+  },
+  {
+   "where": "text:w-q22048[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q22048"
+  },
+  {
+   "where": "text:w-q255931[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q255931"
+  },
+  {
+   "where": "text:w-q878276[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q878276"
+  },
+  {
+   "where": "text:w-q75613[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q75613"
+  },
+  {
+   "where": "text:w-q517333[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q517333"
+  },
+  {
+   "where": "text:w-q276315[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q276315"
+  },
+  {
+   "where": "text:w-q41975[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q41975"
+  },
+  {
+   "where": "text:w-q1550130[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1550130"
+  },
+  {
+   "where": "text:w-q15916991[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q15916991"
+  },
+  {
+   "where": "text:w-q7216494[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7216494"
+  },
+  {
+   "where": "text:w-q3653113[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3653113"
+  },
+  {
+   "where": "text:w-q486918[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q486918"
+  },
+  {
+   "where": "text:w-q239502[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q239502"
+  },
+  {
+   "where": "text:w-q1483430[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1483430"
+  },
+  {
+   "where": "text:w-q83546[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q83546"
+  },
+  {
+   "where": "text:w-q157727[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q157727"
+  },
+  {
+   "where": "text:w-q6122670[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6122670"
+  },
+  {
+   "where": "text:w-q1139762[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1139762"
+  },
+  {
+   "where": "text:w-q623215[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q623215"
+  },
+  {
+   "where": "text:w-q6104778[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6104778"
+  },
+  {
+   "where": "text:w-q3267264[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3267264"
+  },
+  {
+   "where": "text:w-q487829[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q487829"
+  },
+  {
+   "where": "text:w-q188586[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q188586"
+  },
+  {
+   "where": "text:w-q238445[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q238445"
+  },
+  {
+   "where": "text:w-q863279[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q863279"
+  },
+  {
+   "where": "text:w-q1296766[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1296766"
+  },
+  {
+   "where": "text:w-q2980623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2980623"
+  },
+  {
+   "where": "text:w-q171150[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q171150"
+  },
+  {
+   "where": "text:w-q389004[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q389004"
+  },
+  {
+   "where": "text:w-q717112[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q717112"
+  },
+  {
+   "where": "text:w-q27106[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q27106"
+  },
+  {
+   "where": "text:w-q55522[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55522"
+  },
+  {
+   "where": "text:w-q55521[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55521"
+  },
+  {
+   "where": "text:w-q55523[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55523"
+  },
+  {
+   "where": "text:w-q172107[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q172107"
+  },
+  {
+   "where": "text:w-q62623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q62623"
+  },
+  {
+   "where": "text:w-q644979[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q644979"
+  },
+  {
+   "where": "text:w-q2553863[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2553863"
+  },
+  {
+   "where": "text:w-q841364[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q841364"
+  },
+  {
+   "where": "text:w-q46652[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q46652"
+  },
+  {
+   "where": "text:w-q2365048[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2365048"
+  },
+  {
+   "where": "text:w-q1475713[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1475713"
+  },
+  {
+   "where": "text:w-q1796232[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1796232"
+  },
+  {
+   "where": "text:w-q849623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q849623"
+  },
+  {
+   "where": "text:w-q415693[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q415693"
+  },
+  {
+   "where": "text:w-q4083686[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4083686"
+  },
+  {
+   "where": "text:w-q1572529[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1572529"
+  },
+  {
+   "where": "text:w-q160440[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q160440"
+  },
+  {
+   "where": "text:w-q928605[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q928605"
+  },
+  {
+   "where": "text:w-q1991133[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1991133"
+  },
+  {
+   "where": "text:w-q480290[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q480290"
+  },
+  {
+   "where": "text:w-q1279673[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1279673"
+  },
+  {
+   "where": "text:w-q1455628[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1455628"
+  },
+  {
+   "where": "text:w-q34188[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q34188"
+  },
+  {
+   "where": "text:w-q918556[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q918556"
+  },
+  {
+   "where": "text:w-q7530960[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7530960"
+  },
+  {
+   "where": "text:w-q134936[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q134936"
+  },
+  {
+   "where": "text:w-q1389123[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1389123"
+  },
+  {
+   "where": "text:w-q1993608[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1993608"
+  },
+  {
+   "where": "text:w-q1074448[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1074448"
+  },
+  {
+   "where": "text:w-q1755154[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1755154"
+  },
+  {
+   "where": "text:w-q1252992[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1252992"
+  },
+  {
+   "where": "text:w-q1937531[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1937531"
+  },
+  {
+   "where": "text:w-q34344[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q34344"
+  },
+  {
+   "where": "text:w-q2518090[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2518090"
+  },
+  {
+   "where": "text:w-q1258619[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1258619"
+  },
+  {
+   "where": "text:w-q24251468[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q24251468"
+  },
+  {
+   "where": "text:w-q113947627[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q113947627"
+  },
+  {
+   "where": "text:w-q1085692[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1085692"
+  },
+  {
+   "where": "text:w-q607558[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q607558"
+  },
+  {
+   "where": "text:w-q2349522[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2349522"
+  },
+  {
+   "where": "text:w-q11689928[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11689928"
+  },
+  {
+   "where": "text:w-q3312501[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3312501"
+  },
+  {
+   "where": "text:w-q2649810[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2649810"
+  },
+  {
+   "where": "text:w-q1534429[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1534429"
+  },
+  {
+   "where": "text:w-q16110373[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16110373"
+  },
+  {
+   "where": "text:w-q8039112[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8039112"
+  },
+  {
+   "where": "text:w-q2745405[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2745405"
+  },
+  {
+   "where": "text:w-q3857302[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3857302"
+  },
+  {
+   "where": "text:w-q491709[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q491709"
+  },
+  {
+   "where": "text:w-q16148367[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16148367"
+  },
+  {
+   "where": "text:w-q3512896[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3512896"
+  },
+  {
+   "where": "text:w-q2585783[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2585783"
+  },
+  {
+   "where": "text:w-q3445752[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3445752"
+  },
+  {
+   "where": "text:w-q1275920[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1275920"
+  },
+  {
+   "where": "text:w-q7826239[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7826239"
+  },
+  {
+   "where": "text:w-q189975[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q189975"
+  },
+  {
+   "where": "text:w-q1493185[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1493185"
+  },
+  {
+   "where": "text:w-q17091328[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17091328"
+  },
+  {
+   "where": "text:w-q958274[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q958274"
+  },
+  {
+   "where": "text:w-q491693[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q491693"
+  },
+  {
+   "where": "text:w-q978494[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q978494"
+  },
+  {
+   "where": "text:w-q5379255[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5379255"
+  },
+  {
+   "where": "text:w-q2884551[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2884551"
+  },
+  {
+   "where": "text:w-q2469268[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2469268"
+  },
+  {
+   "where": "text:w-q1076202[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1076202"
+  },
+  {
+   "where": "text:w-q545219[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q545219"
+  },
+  {
+   "where": "text:w-q3817508[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3817508"
+  },
+  {
+   "where": "text:w-q332976[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q332976"
+  },
+  {
+   "where": "text:w-q429921[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q429921"
+  },
+  {
+   "where": "text:w-q17063138[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17063138"
+  },
+  {
+   "where": "text:w-q49291[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q49291"
+  },
+  {
+   "where": "text:w-q3443961[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3443961"
+  },
+  {
+   "where": "text:w-q3435610[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3435610"
+  },
+  {
+   "where": "text:w-q4206785[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4206785"
+  },
+  {
+   "where": "text:w-q3510043[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3510043"
+  },
+  {
+   "where": "text:w-q1453913[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1453913"
+  },
+  {
+   "where": "text:w-q3376343[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3376343"
+  },
+  {
+   "where": "text:w-q1138224[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1138224"
+  },
+  {
+   "where": "text:w-q1566605[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1566605"
+  },
+  {
+   "where": "text:w-q3513576[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3513576"
+  },
+  {
+   "where": "text:w-q1479279[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1479279"
+  },
+  {
+   "where": "text:w-q826591[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q826591"
+  },
+  {
+   "where": "text:w-q2708837[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2708837"
+  },
+  {
+   "where": "text:w-q1540453[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1540453"
+  },
+  {
+   "where": "text:w-q2566194[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2566194"
+  },
+  {
+   "where": "text:w-q56535[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56535"
+  },
+  {
+   "where": "text:w-q1582227[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1582227"
+  },
+  {
+   "where": "text:w-q56389[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56389"
+  },
+  {
+   "where": "text:w-q609726[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q609726"
+  },
+  {
+   "where": "text:w-q1440932[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1440932"
+  },
+  {
+   "where": "text:w-q17110101[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q17110101"
+  },
+  {
+   "where": "text:w-q1058397[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1058397"
+  },
+  {
+   "where": "text:w-q267512[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q267512"
+  },
+  {
+   "where": "text:w-q474202[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q474202"
+  },
+  {
+   "where": "text:w-q1542754[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1542754"
+  },
+  {
+   "where": "text:w-q1359718[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1359718"
+  },
+  {
+   "where": "text:w-q2094820[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2094820"
+  },
+  {
+   "where": "text:w-q617636[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q617636"
+  },
+  {
+   "where": "text:w-q1467683[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1467683"
+  },
+  {
+   "where": "text:w-q3525261[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3525261"
+  },
+  {
+   "where": "text:w-q30288560[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q30288560"
+  },
+  {
+   "where": "text:w-q1257154[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1257154"
+  },
+  {
+   "where": "text:w-q109402[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q109402"
+  },
+  {
+   "where": "text:w-q1496300[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1496300"
+  },
+  {
+   "where": "text:w-q1886046[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1886046"
+  },
+  {
+   "where": "text:w-q56813[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56813"
+  },
+  {
+   "where": "text:w-q7404641[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7404641"
+  },
+  {
+   "where": "text:w-q2165898[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2165898"
+  },
+  {
+   "where": "text:w-q541788[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q541788"
+  },
+  {
+   "where": "text:w-q2299931[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2299931"
+  },
+  {
+   "where": "text:w-q1757881[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1757881"
+  },
+  {
+   "where": "text:w-q3513012[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3513012"
+  },
+  {
+   "where": "text:w-q432324[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q432324"
+  },
+  {
+   "where": "text:w-q776280[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q776280"
+  },
+  {
+   "where": "text:w-q117191[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q117191"
+  },
+  {
+   "where": "text:w-q1572622[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1572622"
+  },
+  {
+   "where": "text:w-q1124697[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1124697"
+  },
+  {
+   "where": "text:w-q659307[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q659307"
+  },
+  {
+   "where": "text:w-q1026107[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1026107"
+  },
+  {
+   "where": "text:w-q358250[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q358250"
+  },
+  {
+   "where": "text:w-q1417088[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1417088"
+  },
+  {
+   "where": "text:w-q3811213[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3811213"
+  },
+  {
+   "where": "text:w-q1104182[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1104182"
+  },
+  {
+   "where": "text:w-q5055256[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5055256"
+  },
+  {
+   "where": "text:w-q2520279[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2520279"
+  },
+  {
+   "where": "text:w-q527478[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q527478"
+  },
+  {
+   "where": "text:w-q5099254[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5099254"
+  },
+  {
+   "where": "text:w-q307014[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q307014"
+  },
+  {
+   "where": "text:w-q1074730[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1074730"
+  },
+  {
+   "where": "text:w-q498640[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q498640"
+  },
+  {
+   "where": "text:w-q2664567[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2664567"
+  },
+  {
+   "where": "text:w-q3485276[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3485276"
+  },
+  {
+   "where": "text:w-q1515972[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1515972"
+  },
+  {
+   "where": "text:w-q1825474[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1825474"
+  },
+  {
+   "where": "text:w-q3661759[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3661759"
+  },
+  {
+   "where": "text:w-q726665[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q726665"
+  },
+  {
+   "where": "text:w-q16242432[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16242432"
+  },
+  {
+   "where": "text:w-q27943532[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q27943532"
+  },
+  {
+   "where": "text:w-q1394162[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1394162"
+  },
+  {
+   "where": "text:w-q791835[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q791835"
+  },
+  {
+   "where": "text:w-q769092[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q769092"
+  },
+  {
+   "where": "text:w-q3513639[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3513639"
+  },
+  {
+   "where": "text:w-q3502382[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3502382"
+  },
+  {
+   "where": "text:w-q225469[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q225469"
+  },
+  {
+   "where": "text:w-q7041208[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7041208"
+  },
+  {
+   "where": "text:w-q3099764[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3099764"
+  },
+  {
+   "where": "text:w-q1091090[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1091090"
+  },
+  {
+   "where": "text:w-q1142249[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1142249"
+  },
+  {
+   "where": "text:w-q1757507[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1757507"
+  },
+  {
+   "where": "text:w-q498844[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q498844"
+  },
+  {
+   "where": "text:w-q2876746[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2876746"
+  },
+  {
+   "where": "text:w-q2025212[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2025212"
+  },
+  {
+   "where": "text:w-q572484[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q572484"
+  },
+  {
+   "where": "text:w-q35170[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q35170"
+  },
+  {
+   "where": "text:w-q258571[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q258571"
+  },
+  {
+   "where": "text:w-q1099072[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1099072"
+  },
+  {
+   "where": "text:w-q978982[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q978982"
+  },
+  {
+   "where": "text:w-q598406[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q598406"
+  },
+  {
+   "where": "text:w-q1072155[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1072155"
+  },
+  {
+   "where": "text:w-q1270351[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1270351"
+  },
+  {
+   "where": "text:w-q3508898[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3508898"
+  },
+  {
+   "where": "text:w-q536116[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q536116"
+  },
+  {
+   "where": "text:w-q1813500[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1813500"
+  },
+  {
+   "where": "text:w-q1807851[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1807851"
+  },
+  {
+   "where": "text:w-q2065318[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2065318"
+  },
+  {
+   "where": "text:w-q3508816[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3508816"
+  },
+  {
+   "where": "text:w-q2031854[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2031854"
+  },
+  {
+   "where": "text:w-q3049373[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3049373"
+  },
+  {
+   "where": "text:w-q487759[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q487759"
+  },
+  {
+   "where": "text:w-q5192813[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5192813"
+  },
+  {
+   "where": "text:w-q2143064[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2143064"
+  },
+  {
+   "where": "text:w-q28842834[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28842834"
+  },
+  {
+   "where": "text:w-q2329815[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2329815"
+  },
+  {
+   "where": "text:w-q821901[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q821901"
+  },
+  {
+   "where": "text:w-q9093719[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q9093719"
+  },
+  {
+   "where": "text:w-q3138755[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3138755"
+  },
+  {
+   "where": "text:w-q4300220[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4300220"
+  },
+  {
+   "where": "text:w-q1476741[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1476741"
+  },
+  {
+   "where": "text:w-q2259862[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2259862"
+  },
+  {
+   "where": "text:w-q201711[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q201711"
+  },
+  {
+   "where": "text:w-q128038[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q128038"
+  },
+  {
+   "where": "text:w-q2520155[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2520155"
+  },
+  {
+   "where": "text:w-q2549328[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2549328"
+  },
+  {
+   "where": "text:w-q6418242[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6418242"
+  },
+  {
+   "where": "text:w-q4811101[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4811101"
+  },
+  {
+   "where": "text:w-q301064[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q301064"
+  },
+  {
+   "where": "text:w-q56534[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56534"
+  },
+  {
+   "where": "text:w-q3512882[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3512882"
+  },
+  {
+   "where": "text:w-q956264[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q956264"
+  },
+  {
+   "where": "text:w-q2222837[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2222837"
+  },
+  {
+   "where": "text:w-q159073[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q159073"
+  },
+  {
+   "where": "text:w-q3436900[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3436900"
+  },
+  {
+   "where": "text:w-q1385649[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1385649"
+  },
+  {
+   "where": "text:w-q151227[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q151227"
+  },
+  {
+   "where": "text:w-q56168[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56168"
+  },
+  {
+   "where": "text:w-q1886240[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1886240"
+  },
+  {
+   "where": "text:w-q1349118[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1349118"
+  },
+  {
+   "where": "text:w-q2892063[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2892063"
+  },
+  {
+   "where": "text:w-q120264743[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q120264743"
+  },
+  {
+   "where": "text:w-q547748[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q547748"
+  },
+  {
+   "where": "text:w-q487795[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q487795"
+  },
+  {
+   "where": "text:w-q322951[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q322951"
+  },
+  {
+   "where": "text:w-q51716[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q51716"
+  },
+  {
+   "where": "text:w-q2124289[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2124289"
+  },
+  {
+   "where": "text:w-q6418335[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6418335"
+  },
+  {
+   "where": "text:w-q5655029[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5655029"
+  },
+  {
+   "where": "text:w-q793196[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q793196"
+  },
+  {
+   "where": "text:w-q2859546[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2859546"
+  },
+  {
+   "where": "text:w-q56585[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56585"
+  },
+  {
+   "where": "text:w-q255872[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q255872"
+  },
+  {
+   "where": "text:w-q56188[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56188"
+  },
+  {
+   "where": "text:w-q846133[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q846133"
+  },
+  {
+   "where": "text:w-q589718[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q589718"
+  },
+  {
+   "where": "text:w-q6899035[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6899035"
+  },
+  {
+   "where": "text:w-q809707[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q809707"
+  },
+  {
+   "where": "text:w-q7206513[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7206513"
+  },
+  {
+   "where": "text:w-q5360868[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5360868"
+  },
+  {
+   "where": "text:w-q1261048[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1261048"
+  },
+  {
+   "where": "text:w-q56875[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56875"
+  },
+  {
+   "where": "text:w-q7142295[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7142295"
+  },
+  {
+   "where": "text:w-q1936651[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1936651"
+  },
+  {
+   "where": "text:w-q7998466[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7998466"
+  },
+  {
+   "where": "text:w-q3228749[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3228749"
+  },
+  {
+   "where": "text:w-q2293341[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2293341"
+  },
+  {
+   "where": "text:w-q3557450[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3557450"
+  },
+  {
+   "where": "text:w-q3258734[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3258734"
+  },
+  {
+   "where": "text:w-q913374[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q913374"
+  },
+  {
+   "where": "text:w-q901198[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q901198"
+  },
+  {
+   "where": "text:w-q1255768[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1255768"
+  },
+  {
+   "where": "text:w-q1117594[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1117594"
+  },
+  {
+   "where": "text:w-q1789087[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1789087"
+  },
+  {
+   "where": "text:w-q202860[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q202860"
+  },
+  {
+   "where": "text:w-q3514801[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3514801"
+  },
+  {
+   "where": "text:w-q3097871[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3097871"
+  },
+  {
+   "where": "text:w-q3512367[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3512367"
+  },
+  {
+   "where": "text:w-q1434198[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1434198"
+  },
+  {
+   "where": "text:w-q7993643[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7993643"
+  },
+  {
+   "where": "text:w-q8026655[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8026655"
+  },
+  {
+   "where": "text:w-q201024[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q201024"
+  },
+  {
+   "where": "text:w-q3155979[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3155979"
+  },
+  {
+   "where": "text:w-q828578[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q828578"
+  },
+  {
+   "where": "text:w-q815763[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q815763"
+  },
+  {
+   "where": "text:w-q4001119[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4001119"
+  },
+  {
+   "where": "text:w-q56701[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56701"
+  },
+  {
+   "where": "text:w-q2592663[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2592663"
+  },
+  {
+   "where": "text:w-q2276596[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2276596"
+  },
+  {
+   "where": "text:w-q10356498[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q10356498"
+  },
+  {
+   "where": "text:w-q4332415[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4332415"
+  },
+  {
+   "where": "text:w-q507796[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q507796"
+  },
+  {
+   "where": "text:w-q400998[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q400998"
+  },
+  {
+   "where": "text:w-q818666[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q818666"
+  },
+  {
+   "where": "text:w-q669317[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q669317"
+  },
+  {
+   "where": "text:w-q83821[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q83821"
+  },
+  {
+   "where": "text:w-q4141623[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4141623"
+  },
+  {
+   "where": "text:w-q102090[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q102090"
+  },
+  {
+   "where": "text:w-q51782[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q51782"
+  },
+  {
+   "where": "text:w-q117255[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q117255"
+  },
+  {
+   "where": "text:w-q108266[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q108266"
+  },
+  {
+   "where": "text:w-q33388[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q33388"
+  },
+  {
+   "where": "text:w-q1123923[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1123923"
+  },
+  {
+   "where": "text:w-q2571194[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2571194"
+  },
+  {
+   "where": "text:w-q117133[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q117133"
+  },
+  {
+   "where": "text:w-q68518[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q68518"
+  },
+  {
+   "where": "text:w-q135863[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q135863"
+  },
+  {
+   "where": "text:w-q56962[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q56962"
+  },
+  {
+   "where": "text:w-q1132786[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1132786"
+  },
+  {
+   "where": "text:w-q1474791[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1474791"
+  },
+  {
+   "where": "text:w-q173065[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q173065"
+  },
+  {
+   "where": "text:w-q210163[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q210163"
+  },
+  {
+   "where": "text:w-q1885093[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1885093"
+  },
+  {
+   "where": "text:w-q1728967[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1728967"
+  },
+  {
+   "where": "text:w-q318674[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q318674"
+  },
+  {
+   "where": "text:w-q38872[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q38872"
+  },
+  {
+   "where": "text:w-q174306[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q174306"
+  },
+  {
+   "where": "text:w-q253436[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q253436"
+  },
+  {
+   "where": "text:w-q499687[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q499687"
+  },
+  {
+   "where": "text:w-q49306[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q49306"
+  },
+  {
+   "where": "text:w-q1425238[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1425238"
+  },
+  {
+   "where": "text:w-q1543791[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1543791"
+  },
+  {
+   "where": "text:w-q932241[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q932241"
+  },
+  {
+   "where": "text:w-q626136[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q626136"
+  },
+  {
+   "where": "text:w-q117100[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q117100"
+  },
+  {
+   "where": "text:w-q1894736[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1894736"
+  },
+  {
+   "where": "text:w-q1256681[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1256681"
+  },
+  {
+   "where": "text:w-q1940863[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1940863"
+  },
+  {
+   "where": "text:w-q1137355[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1137355"
+  },
+  {
+   "where": "text:w-q1092654[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1092654"
+  },
+  {
+   "where": "text:w-q26774[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q26774"
+  },
+  {
+   "where": "text:w-q16823244[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16823244"
+  },
+  {
+   "where": "text:w-q494691[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q494691"
+  },
+  {
+   "where": "text:w-q1939219[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1939219"
+  },
+  {
+   "where": "text:w-q1723904[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1723904"
+  },
+  {
+   "where": "text:w-q947650[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q947650"
+  },
+  {
+   "where": "text:w-q1268882[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1268882"
+  },
+  {
+   "where": "text:w-q851585[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q851585"
+  },
+  {
+   "where": "text:w-q30587641[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q30587641"
+  },
+  {
+   "where": "text:w-q231317[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q231317"
+  },
+  {
+   "where": "text:w-q2393129[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2393129"
+  },
+  {
+   "where": "text:w-q1253290[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1253290"
+  },
+  {
+   "where": "text:w-q1680351[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1680351"
+  },
+  {
+   "where": "text:w-q510032[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q510032"
+  },
+  {
+   "where": "text:w-q1790907[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1790907"
+  },
+  {
+   "where": "text:w-q1517496[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1517496"
+  },
+  {
+   "where": "text:w-q120601[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q120601"
+  },
+  {
+   "where": "text:w-q1754891[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1754891"
+  },
+  {
+   "where": "text:w-q333049[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q333049"
+  },
+  {
+   "where": "text:w-q510048[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q510048"
+  },
+  {
+   "where": "text:w-q1440169[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1440169"
+  },
+  {
+   "where": "text:w-q1065583[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1065583"
+  },
+  {
+   "where": "text:w-q1542882[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1542882"
+  },
+  {
+   "where": "text:w-q324516[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q324516"
+  },
+  {
+   "where": "text:w-q622728[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q622728"
+  },
+  {
+   "where": "text:w-q1269663[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1269663"
+  },
+  {
+   "where": "text:w-q492901[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q492901"
+  },
+  {
+   "where": "text:w-q568625[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q568625"
+  },
+  {
+   "where": "text:w-q491747[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q491747"
+  },
+  {
+   "where": "text:w-q12642162[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12642162"
+  },
+  {
+   "where": "text:w-q12635135[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12635135"
+  },
+  {
+   "where": "text:w-q1500686[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1500686"
+  },
+  {
+   "where": "text:w-q209148[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q209148"
+  },
+  {
+   "where": "text:w-q1754503[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1754503"
+  },
+  {
+   "where": "text:w-q51705[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q51705"
+  },
+  {
+   "where": "text:w-q153529[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q153529"
+  },
+  {
+   "where": "text:w-q3473124[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3473124"
+  },
+  {
+   "where": "text:w-q4222938[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4222938"
+  },
+  {
+   "where": "text:w-q281117[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q281117"
+  },
+  {
+   "where": "text:w-q1141752[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1141752"
+  },
+  {
+   "where": "text:w-q166176[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q166176"
+  },
+  {
+   "where": "text:w-q1163044[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1163044"
+  },
+  {
+   "where": "text:w-q203319[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q203319"
+  },
+  {
+   "where": "text:w-q476030[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q476030"
+  },
+  {
+   "where": "text:w-q106991[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q106991"
+  },
+  {
+   "where": "text:w-q631210[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q631210"
+  },
+  {
+   "where": "text:w-q257174[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q257174"
+  },
+  {
+   "where": "text:w-q48779136[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48779136"
+  },
+  {
+   "where": "text:w-q28224431[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28224431"
+  },
+  {
+   "where": "text:w-q48806156[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48806156"
+  },
+  {
+   "where": "text:w-q48779739[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48779739"
+  },
+  {
+   "where": "text:w-q6166227[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6166227"
+  },
+  {
+   "where": "text:w-q28224440[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28224440"
+  },
+  {
+   "where": "text:w-q3245102[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3245102"
+  },
+  {
+   "where": "text:w-q55616272[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55616272"
+  },
+  {
+   "where": "text:w-q1130350[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1130350"
+  },
+  {
+   "where": "text:w-q48803991[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48803991"
+  },
+  {
+   "where": "text:w-q61055296[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q61055296"
+  },
+  {
+   "where": "text:w-q1290677[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1290677"
+  },
+  {
+   "where": "text:w-q48800854[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48800854"
+  },
+  {
+   "where": "text:w-q2664002[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2664002"
+  },
+  {
+   "where": "text:w-q6754471[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6754471"
+  },
+  {
+   "where": "text:w-q4989843[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4989843"
+  },
+  {
+   "where": "text:w-q39090957[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39090957"
+  },
+  {
+   "where": "text:w-q7708820[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7708820"
+  },
+  {
+   "where": "text:w-q8055853[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8055853"
+  },
+  {
+   "where": "text:w-q3339282[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3339282"
+  },
+  {
+   "where": "text:w-q48790436[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48790436"
+  },
+  {
+   "where": "text:w-q28219832[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28219832"
+  },
+  {
+   "where": "text:w-q2884627[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2884627"
+  },
+  {
+   "where": "text:w-q30602825[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q30602825"
+  },
+  {
+   "where": "text:w-q29305707[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29305707"
+  },
+  {
+   "where": "text:w-q62098205[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q62098205"
+  },
+  {
+   "where": "text:w-q16209713[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16209713"
+  },
+  {
+   "where": "text:w-q55637422[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55637422"
+  },
+  {
+   "where": "text:w-q48805138[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48805138"
+  },
+  {
+   "where": "text:w-q39087884[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39087884"
+  },
+  {
+   "where": "text:w-q48801298[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48801298"
+  },
+  {
+   "where": "text:w-q1492906[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1492906"
+  },
+  {
+   "where": "text:w-q1317329[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1317329"
+  },
+  {
+   "where": "text:w-q48811930[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48811930"
+  },
+  {
+   "where": "text:w-q2415617[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2415617"
+  },
+  {
+   "where": "text:w-q29325695[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29325695"
+  },
+  {
+   "where": "text:w-q48783531[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48783531"
+  },
+  {
+   "where": "text:w-q48767841[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48767841"
+  },
+  {
+   "where": "text:w-q24189166[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q24189166"
+  },
+  {
+   "where": "text:w-q16209668[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16209668"
+  },
+  {
+   "where": "text:w-q6362916[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6362916"
+  },
+  {
+   "where": "text:w-q11267380[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q11267380"
+  },
+  {
+   "where": "text:w-q28224701[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28224701"
+  },
+  {
+   "where": "text:w-q48802909[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48802909"
+  },
+  {
+   "where": "text:w-q48815841[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48815841"
+  },
+  {
+   "where": "text:w-q7068903[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7068903"
+  },
+  {
+   "where": "text:w-q47633254[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q47633254"
+  },
+  {
+   "where": "text:w-q28224441[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28224441"
+  },
+  {
+   "where": "text:w-q28225080[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28225080"
+  },
+  {
+   "where": "text:w-q28224447[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28224447"
+  },
+  {
+   "where": "text:w-q48796437[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48796437"
+  },
+  {
+   "where": "text:w-q16210895[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16210895"
+  },
+  {
+   "where": "text:w-q8034515[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8034515"
+  },
+  {
+   "where": "text:w-q48796909[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48796909"
+  },
+  {
+   "where": "text:w-q29325982[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29325982"
+  },
+  {
+   "where": "text:w-q12636147[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q12636147"
+  },
+  {
+   "where": "text:w-q28219748[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28219748"
+  },
+  {
+   "where": "text:w-q5225799[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5225799"
+  },
+  {
+   "where": "text:w-q48814088[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48814088"
+  },
+  {
+   "where": "text:w-q24190276[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q24190276"
+  },
+  {
+   "where": "text:w-q62107406[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q62107406"
+  },
+  {
+   "where": "text:w-q39090749[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39090749"
+  },
+  {
+   "where": "text:w-q48806915[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48806915"
+  },
+  {
+   "where": "text:w-q28224503[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28224503"
+  },
+  {
+   "where": "text:w-q957298[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q957298"
+  },
+  {
+   "where": "text:w-q8039197[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q8039197"
+  },
+  {
+   "where": "text:w-q1693045[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1693045"
+  },
+  {
+   "where": "text:w-q48769238[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48769238"
+  },
+  {
+   "where": "text:w-q699483[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q699483"
+  },
+  {
+   "where": "text:w-q5767417[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5767417"
+  },
+  {
+   "where": "text:w-q29325988[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29325988"
+  },
+  {
+   "where": "text:w-q7856348[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7856348"
+  },
+  {
+   "where": "text:w-q450252[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q450252"
+  },
+  {
+   "where": "text:w-q29325035[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29325035"
+  },
+  {
+   "where": "text:w-q55613048[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55613048"
+  },
+  {
+   "where": "text:w-q24190280[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q24190280"
+  },
+  {
+   "where": "text:w-q6430648[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6430648"
+  },
+  {
+   "where": "text:w-q55614727[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55614727"
+  },
+  {
+   "where": "text:w-q370543[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q370543"
+  },
+  {
+   "where": "text:w-q808014[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q808014"
+  },
+  {
+   "where": "text:w-q28225101[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28225101"
+  },
+  {
+   "where": "text:w-q28220115[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28220115"
+  },
+  {
+   "where": "text:w-q39090920[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39090920"
+  },
+  {
+   "where": "text:w-q29325997[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29325997"
+  },
+  {
+   "where": "text:w-q403092[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q403092"
+  },
+  {
+   "where": "text:w-q175823[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q175823"
+  },
+  {
+   "where": "text:w-q2601713[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2601713"
+  },
+  {
+   "where": "text:w-q4906776[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4906776"
+  },
+  {
+   "where": "text:w-q4708893[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4708893"
+  },
+  {
+   "where": "text:w-q1554625[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1554625"
+  },
+  {
+   "where": "text:w-q48796868[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48796868"
+  },
+  {
+   "where": "text:w-q48815936[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48815936"
+  },
+  {
+   "where": "text:w-q39091154[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39091154"
+  },
+  {
+   "where": "text:w-q1683456[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1683456"
+  },
+  {
+   "where": "text:w-q6489790[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6489790"
+  },
+  {
+   "where": "text:w-q28224451[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28224451"
+  },
+  {
+   "where": "text:w-q16211292[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16211292"
+  },
+  {
+   "where": "text:w-q5617663[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5617663"
+  },
+  {
+   "where": "text:w-q3339258[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3339258"
+  },
+  {
+   "where": "text:w-q1375066[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1375066"
+  },
+  {
+   "where": "text:w-q24189583[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q24189583"
+  },
+  {
+   "where": "text:w-q29324694[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q29324694"
+  },
+  {
+   "where": "text:w-q39090882[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39090882"
+  },
+  {
+   "where": "text:w-q4740131[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4740131"
+  },
+  {
+   "where": "text:w-q1793131[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1793131"
+  },
+  {
+   "where": "text:w-q39091101[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39091101"
+  },
+  {
+   "where": "text:w-q1166813[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1166813"
+  },
+  {
+   "where": "text:w-q7969102[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7969102"
+  },
+  {
+   "where": "text:w-q39090910[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39090910"
+  },
+  {
+   "where": "text:w-q48818098[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48818098"
+  },
+  {
+   "where": "text:w-q3120839[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3120839"
+  },
+  {
+   "where": "text:w-q16114951[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q16114951"
+  },
+  {
+   "where": "text:w-q39088198[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q39088198"
+  },
+  {
+   "where": "text:w-q7710757[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7710757"
+  },
+  {
+   "where": "text:w-q1820260[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1820260"
+  },
+  {
+   "where": "text:w-q961201[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q961201"
+  },
+  {
+   "where": "text:w-q1555188[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1555188"
+  },
+  {
+   "where": "text:w-q557936[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q557936"
+  },
+  {
+   "where": "text:w-q4998122[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4998122"
+  },
+  {
+   "where": "text:w-q48799200[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48799200"
+  },
+  {
+   "where": "text:w-q48799525[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48799525"
+  },
+  {
+   "where": "text:w-q3569807[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3569807"
+  },
+  {
+   "where": "text:w-q48790537[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q48790537"
+  },
+  {
+   "where": "text:w-q2874654[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2874654"
+  },
+  {
+   "where": "text:w-q170072[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q170072"
+  },
+  {
+   "where": "text:w-q1235720[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1235720"
+  },
+  {
+   "where": "text:w-q154849[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q154849"
+  },
+  {
+   "where": "text:w-q252580[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q252580"
+  },
+  {
+   "where": "text:w-q933592[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q933592"
+  },
+  {
+   "where": "text:w-q986822[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q986822"
+  },
+  {
+   "where": "text:w-q889394[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q889394"
+  },
+  {
+   "where": "text:w-q2500952[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2500952"
+  },
+  {
+   "where": "text:w-q2513167[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2513167"
+  },
+  {
+   "where": "text:w-q1368792[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1368792"
+  },
+  {
+   "where": "text:w-q2603091[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2603091"
+  },
+  {
+   "where": "text:w-q170604[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q170604"
+  },
+  {
+   "where": "text:w-q1530762[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1530762"
+  },
+  {
+   "where": "text:w-q221357[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q221357"
+  },
+  {
+   "where": "text:w-q699446[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q699446"
+  },
+  {
+   "where": "text:w-q10791211[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q10791211"
+  },
+  {
+   "where": "text:w-q23366230[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q23366230"
+  },
+  {
+   "where": "text:w-q1151288[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1151288"
+  },
+  {
+   "where": "text:w-q700283[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q700283"
+  },
+  {
+   "where": "text:w-q128323[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q128323"
+  },
+  {
+   "where": "text:w-q157013[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q157013"
+  },
+  {
+   "where": "text:w-q1209[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1209"
+  },
+  {
+   "where": "text:w-q370736[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q370736"
+  },
+  {
+   "where": "text:w-q157904[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q157904"
+  },
+  {
+   "where": "text:w-q697084[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q697084"
+  },
+  {
+   "where": "text:w-q706018[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q706018"
+  },
+  {
+   "where": "text:w-q2861674[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2861674"
+  },
+  {
+   "where": "text:w-q2920081[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2920081"
+  },
+  {
+   "where": "text:w-q738395[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q738395"
+  },
+  {
+   "where": "text:w-q748300[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q748300"
+  },
+  {
+   "where": "text:w-q650489[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q650489"
+  },
+  {
+   "where": "text:w-q165763[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q165763"
+  },
+  {
+   "where": "text:w-q830084[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q830084"
+  },
+  {
+   "where": "text:w-q155578[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q155578"
+  },
+  {
+   "where": "text:w-q704288[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q704288"
+  },
+  {
+   "where": "text:w-q310650[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q310650"
+  },
+  {
+   "where": "text:w-q7561298[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7561298"
+  },
+  {
+   "where": "text:w-q207996[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q207996"
+  },
+  {
+   "where": "text:w-q729768[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q729768"
+  },
+  {
+   "where": "text:w-q55630375[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q55630375"
+  },
+  {
+   "where": "text:w-q924833[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q924833"
+  },
+  {
+   "where": "text:w-q1587244[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1587244"
+  },
+  {
+   "where": "text:w-q577576[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q577576"
+  },
+  {
+   "where": "text:w-q161215[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q161215"
+  },
+  {
+   "where": "text:w-q256961[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q256961"
+  },
+  {
+   "where": "text:w-q158445[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q158445"
+  },
+  {
+   "where": "text:w-q1205[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1205"
+  },
+  {
+   "where": "text:w-q153015[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q153015"
+  },
+  {
+   "where": "text:w-q159626[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q159626"
+  },
+  {
+   "where": "text:w-q1155700[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1155700"
+  },
+  {
+   "where": "text:w-q1081620[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1081620"
+  },
+  {
+   "where": "text:w-q206696[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q206696"
+  },
+  {
+   "where": "text:w-q188553[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q188553"
+  },
+  {
+   "where": "text:w-q80389[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q80389"
+  },
+  {
+   "where": "text:w-q2147860[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2147860"
+  },
+  {
+   "where": "text:w-q20135[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q20135"
+  },
+  {
+   "where": "text:w-q61813408[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q61813408"
+  },
+  {
+   "where": "text:w-q600524[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q600524"
+  },
+  {
+   "where": "text:w-q3960459[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3960459"
+  },
+  {
+   "where": "text:w-q473748[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q473748"
+  },
+  {
+   "where": "text:w-q889897[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q889897"
+  },
+  {
+   "where": "text:w-q538636[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q538636"
+  },
+  {
+   "where": "text:w-q5675285[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5675285"
+  },
+  {
+   "where": "text:w-q301533[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q301533"
+  },
+  {
+   "where": "text:w-q3224[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3224"
+  },
+  {
+   "where": "text:w-q156418[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q156418"
+  },
+  {
+   "where": "text:w-q35715[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q35715"
+  },
+  {
+   "where": "text:w-q1301901[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1301901"
+  },
+  {
+   "where": "text:w-q218023[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q218023"
+  },
+  {
+   "where": "text:w-q1187978[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1187978"
+  },
+  {
+   "where": "text:w-q2547918[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2547918"
+  },
+  {
+   "where": "text:w-q2628797[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2628797"
+  },
+  {
+   "where": "text:w-q642613[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q642613"
+  },
+  {
+   "where": "text:w-q1267805[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1267805"
+  },
+  {
+   "where": "text:w-q2401958[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2401958"
+  },
+  {
+   "where": "text:w-q1268405[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1268405"
+  },
+  {
+   "where": "text:w-q60775599[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q60775599"
+  },
+  {
+   "where": "text:w-q358860[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q358860"
+  },
+  {
+   "where": "text:w-q2826232[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2826232"
+  },
+  {
+   "where": "text:w-q1257799[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1257799"
+  },
+  {
+   "where": "text:w-q811078[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q811078"
+  },
+  {
+   "where": "text:w-q2749225[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q2749225"
+  },
+  {
+   "where": "text:w-q221353[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q221353"
+  },
+  {
+   "where": "text:w-q5502051[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q5502051"
+  },
+  {
+   "where": "text:w-q3527954[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3527954"
+  },
+  {
+   "where": "text:w-q4154364[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4154364"
+  },
+  {
+   "where": "text:w-q3206[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3206"
+  },
+  {
+   "where": "text:w-q36687[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q36687"
+  },
+  {
+   "where": "text:w-q36074[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q36074"
+  },
+  {
+   "where": "text:w-q3235[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q3235"
+  },
+  {
+   "where": "text:w-q761103[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q761103"
+  },
+  {
+   "where": "text:w-q746558[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q746558"
+  },
+  {
+   "where": "text:w-q178484[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q178484"
+  },
+  {
+   "where": "text:w-q852486[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q852486"
+  },
+  {
+   "where": "text:w-q213510[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q213510"
+  },
+  {
+   "where": "text:w-q207521[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q207521"
+  },
+  {
+   "where": "text:w-q161062[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q161062"
+  },
+  {
+   "where": "text:w-q271894[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q271894"
+  },
+  {
+   "where": "text:w-q876185[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q876185"
+  },
+  {
+   "where": "text:w-q662653[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q662653"
+  },
+  {
+   "where": "text:w-q319984[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q319984"
+  },
+  {
+   "where": "text:w-q217169[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q217169"
+  },
+  {
+   "where": "text:w-q1197219[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1197219"
+  },
+  {
+   "where": "text:w-q157734[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q157734"
+  },
+  {
+   "where": "text:w-q6500954[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q6500954"
+  },
+  {
+   "where": "text:w-q889884[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q889884"
+  },
+  {
+   "where": "text:w-q1028848[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1028848"
+  },
+  {
+   "where": "text:w-q31454[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q31454"
+  },
+  {
+   "where": "text:w-q36704[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q36704"
+  },
+  {
+   "where": "text:w-q193619[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q193619"
+  },
+  {
+   "where": "text:w-q184[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q184"
+  },
+  {
+   "where": "text:w-q33946[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q33946"
+  },
+  {
+   "where": "text:w-q4533605[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q4533605"
+  },
+  {
+   "where": "text:w-q38610[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q38610"
+  },
+  {
+   "where": "text:w-q7075820[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q7075820"
+  },
+  {
+   "where": "text:w-q1050859[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1050859"
+  },
+  {
+   "where": "text:w-q28179[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q28179"
+  },
+  {
+   "where": "text:w-q1649306[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q1649306"
+  },
+  {
+   "where": "text:w-q310293[1][1]",
+   "text": "https://www.wikidata.org/wiki/Q310293"
+  }
+ ],
+ "checked": {
+  "events": "274/304 confirmed by Wikidata or the article lead",
+  "spans": "75 documented spans agree with Wikidata (±3 years)",
+  "rulers": "1152 reigns fall within the ruler's lifetime"
+ }
+}

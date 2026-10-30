@@ -172,7 +172,7 @@ export const eventArticles = {
   'afsharid-zand|Nader Shah sacks Delhi': "Nader Shah's invasion of the Mughal Empire",
   'qajar|Persian Constitutional Revolution': 'Persian Constitutional Revolution',
   'iran|Iranian Revolution': 'Iranian revolution',
-  'babylonia|Hittites sack Babylon': 'Fall of Babylon',
+  'babylonia|Hittites sack Babylon': 'Mursili I',
   'babylonia|Destruction of Jerusalem': 'Siege of Jerusalem (587 BC)',
   'babylonia|Cyrus takes Babylon': 'Fall of Babylon',
   'assyria|Fall of Nineveh': 'Battle of Nineveh (612 BC)',

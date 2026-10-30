@@ -82,15 +82,17 @@ export function LanguagesTab({ res, idx }: { res: Resolution; idx: EntityIndex }
   const t = useTime((s) => s.time)
   const voices = useVoices()
 
-  const { langs, shares, unranked } = useMemo(() => {
+  const { langs, shares, unranked, recorded } = useMemo(() => {
     if (res.kind === 'entity') {
       const sh = sharesAt(res.entity.langs, t)
       const list = [...sh.entries()].filter(([, s]) => s > 0.004).sort((a, b) => b[1] - a[1])
       const named = res.entity.langNames?.find(([a, b]) => t >= a && t < b)?.[2] ?? []
-      return { langs: list.map(([id]) => idx.languages.get(id)!).filter(Boolean), shares: sh, unranked: list.length ? [] : named }
+      // speaker shares only where a census backs them; otherwise the languages, without numbers
+      if (!res.entity.langsSource && list.length) return { langs: [], shares: new Map(), unranked: list.map(([id]) => idx.languages.get(id)?.name).filter((n): n is string => !!n), recorded: true }
+      return { langs: list.map(([id]) => idx.languages.get(id)!).filter(Boolean), shares: sh, unranked: list.length ? [] : named, recorded: false }
     }
-    if (res.kind === 'country') return { langs: [], shares: new Map(), unranked: res.country.languages }
-    return { langs: [], shares: new Map(), unranked: [] as string[] }
+    if (res.kind === 'country') return { langs: [], shares: new Map(), unranked: res.country.languages, recorded: false }
+    return { langs: [], shares: new Map(), unranked: [] as string[], recorded: false }
   }, [res, idx, t])
 
   if (!langs.length && !unranked.length) {
@@ -112,7 +114,9 @@ export function LanguagesTab({ res, idx }: { res: Resolution; idx: EntityIndex }
     return (
       <div className="space-y-2">
         <p className="text-[12px] text-dim">
-          {res.kind === 'country' ? 'Official languages today' : 'Official or recorded languages'}; speaker shares are not yet in this atlas.
+          {recorded
+            ? 'Languages spoken or written here in this period, most widespread first. How many people spoke each is known only from censuses, so no shares are shown.'
+            : `${res.kind === 'country' ? 'Official languages today' : 'Official or recorded languages'}; speaker shares are not yet in this atlas.`}
         </p>
         {unranked.map((n) => {
           const l = find(n)
@@ -132,7 +136,8 @@ export function LanguagesTab({ res, idx }: { res: Resolution; idx: EntityIndex }
     )
   }
 
-  const total = [...shares.values()].reduce((a, b) => a + b, 0) || 1
+  // census shares are shown as recorded, not rescaled to fill 100% across the languages listed
+  const total = 1
   const items = langs.map((l) => ({ id: l.id, r: 14 + Math.sqrt((shares.get(l.id) ?? 0) / total) * 70 }))
   const placed = pack(items)
 
@@ -170,7 +175,7 @@ export function LanguagesTab({ res, idx }: { res: Resolution; idx: EntityIndex }
             )
           })}
         </svg>
-        <div className="absolute right-3 bottom-2 text-[9.5px] text-dim italic">approximate shares, estimated</div>
+        <div className="absolute right-3 bottom-2 text-[9.5px] text-dim italic">share of the population, census</div>
       </div>
       {res.kind === 'entity' && res.entity.langsSource && <p className="-mt-2 text-[11px] text-dim italic">{res.entity.langsSource}</p>}
 

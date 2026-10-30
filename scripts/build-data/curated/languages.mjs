@@ -13,6 +13,8 @@ export const languages = [
   // Kartvelian
   { id: 'georgian', name: 'Georgian', native: 'ქართული', family: ['Kartvelian', 'Georgian'], hello: { text: 'გამარჯობა', roman: 'gamarjoba' }, voice: 'ka-GE' },
   { id: 'old-georgian', name: 'Old Georgian', native: 'ძველი ქართული', family: ['Kartvelian', 'Old Georgian'], note: 'Written from the 5th century CE; no everyday greeting recorded.', reconstructed: true },
+  // Northeast Caucasian
+  { id: 'caucasian-albanian', name: 'Caucasian Albanian', native: '—', family: ['Northeast Caucasian', 'Lezgic', 'Caucasian Albanian'], note: 'Known mainly from palimpsests found at Saint Catherine\'s Monastery, Sinai; ancestor of modern Udi. No greeting recorded.', reconstructed: true },
   // Turkic
   { id: 'azerbaijani', name: 'Azerbaijani', native: 'Azərbaycan dili', family: ['Turkic', 'Oghuz', 'Azerbaijani'], hello: { text: 'Salam', roman: 'salam' }, voice: 'az-AZ' },
   { id: 'turkish', name: 'Turkish', native: 'Türkçe', family: ['Turkic', 'Oghuz', 'Turkish'], hello: { text: 'Merhaba', roman: 'merhaba' }, voice: 'tr-TR' },
@@ -79,12 +81,14 @@ export const languages = [
   { id: 'hittite', name: 'Hittite', native: '𒉈𒅆𒇷', family: ['Indo-European', 'Anatolian', 'Hittite'], attested: { text: 'ḫaššuš', roman: 'ḫaššuš', meaning: '"king"' }, reconstructed: true },
   { id: 'sanskrit', name: 'Sanskrit', native: 'संस्कृतम्', family: ['Indo-European', 'Indo-Iranian', 'Indo-Aryan', 'Sanskrit'], hello: { text: 'नमस्ते', roman: 'namaste' } },
   { id: 'prakrit', name: 'Prakrit', native: 'प्राकृत', family: ['Indo-European', 'Indo-Iranian', 'Indo-Aryan', 'Prakrit'], attested: { text: '𑀥𑀁𑀫', roman: 'dhaṃma', meaning: '"dharma", from the edicts of Ashoka' }, reconstructed: true },
+  { id: 'marathi', name: 'Marathi', native: 'मराठी', family: ['Indo-European', 'Indo-Iranian', 'Indo-Aryan', 'Marathi'], hello: { text: 'नमस्कार', roman: 'namaskār' }, voice: 'mr-IN' },
   { id: 'hindi', name: 'Hindi', native: 'हिन्दी', family: ['Indo-European', 'Indo-Iranian', 'Indo-Aryan', 'Hindi'], hello: { text: 'नमस्ते', roman: 'namaste' }, voice: 'hi-IN' },
   { id: 'bengali', name: 'Bengali', native: 'বাংলা', family: ['Indo-European', 'Indo-Iranian', 'Indo-Aryan', 'Bengali'], hello: { text: 'নমস্কার', roman: 'nômoshkar' }, voice: 'bn-IN' },
   { id: 'tamil', name: 'Tamil', native: 'தமிழ்', family: ['Dravidian', 'Tamil'], hello: { text: 'வணக்கம்', roman: 'vaṇakkam' }, voice: 'ta-IN' },
   { id: 'japanese', name: 'Japanese', native: '日本語', family: ['Japonic', 'Japanese'], hello: { text: 'こんにちは', roman: 'konnichiwa' }, voice: 'ja-JP' },
   { id: 'old-japanese', name: 'Old Japanese', native: '上代日本語', family: ['Japonic', 'Old Japanese'], note: 'Written with Chinese characters (man\'yōgana) from the 8th century; pronunciation reconstructed.', reconstructed: true },
   { id: 'korean', name: 'Korean', native: '한국어', family: ['Koreanic', 'Korean'], hello: { text: '안녕하세요', roman: 'annyeonghaseyo' }, voice: 'ko-KR' },
+  { id: 'old-korean', name: 'Old Korean', native: '—', family: ['Koreanic', 'Old Korean'], note: 'Written only with Chinese characters (idu and hyangchal); no greeting recorded.', reconstructed: true },
   { id: 'middle-korean', name: 'Middle Korean', native: '중세 한국어', family: ['Koreanic', 'Middle Korean'], note: 'The Hangul alphabet was promulgated in 1446; earlier Korean was written in Chinese characters.', reconstructed: true },
   { id: 'quechua', name: 'Quechua', native: 'Runa Simi', family: ['Quechuan', 'Quechua'], hello: { text: 'Allillanchu?', roman: 'a-yee-yan-choo', note: '"are you well?", a common greeting' } },
   { id: 'aymara', name: 'Aymara', native: 'Aymar aru', family: ['Aymaran', 'Aymara'], hello: { text: 'Kamisaraki', roman: 'kamisaraki' } },

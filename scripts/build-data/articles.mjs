@@ -50,9 +50,13 @@ for (const e of curated.entities) {
   else entities[e.id] = c.title
 }
 
+// country events from Wikidata (country-events.mjs) already carry their English article's exact title
+const generated = JSON.parse(await fs.readFile(path.join(root, 'scripts/build-data/generated-event-articles.json'), 'utf8').catch(() => '{}'))
+Object.assign(events, generated)
+
 await fs.writeFile(path.join(root, 'public/data/articles.json'), JSON.stringify({ events, entities }))
 await fs.writeFile(path.join(root, 'scripts/reports/event-articles.json'), JSON.stringify({ rejected, stale, withoutArticle: missingKeys }, null, 1))
-console.log(`articles: ${Object.keys(events).length}/${known.size} events, ${Object.keys(entities).length} entities`)
+console.log(`articles: ${Object.keys(events).length - Object.keys(generated).length}/${known.size} curated events, ${Object.keys(generated).length} country events, ${Object.keys(entities).length} entities`)
 if (rejected.length) console.log('rejected:', rejected)
 if (stale.length) console.log('stale keys:', stale)
 if (missingKeys.length) console.log('events without an article:', missingKeys)

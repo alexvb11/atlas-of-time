@@ -1,0 +1,3103 @@
+{
+ "report": [
+  {
+   "country": "Afghanistan",
+   "entity": "c-afg",
+   "events": [
+    "1880 Battle of Maiwand (Q548625)",
+    "1978 Afghan conflict (Q1519107)",
+    "1988 Battle for Hill 3234 (Q1392933)",
+    "1992 Afghan Civil War (1992–1996) (Q1980081)",
+    "1996 Afghan Civil War (1996–2001) (Q12302518)",
+    "2001 Battle of Tora Bora (Q2237280)",
+    "2002 Operation Anaconda (Q1476042)",
+    "2005 Operation Red Wings (Q3354826)",
+    "2005 2005 Kashmir earthquake (Q210137)",
+    "2016 July 2016 Kabul bombing (Q25995756)",
+    "2021 Fall of Kabul (2021) (Q108102583)",
+    "2021 Republican insurgency in Afghanistan (Q108137226)",
+    "2022 June 2022 Afghanistan earthquake (Q112666390)",
+    "2023 2023 Herat earthquakes (Q122971939)",
+    "2025 2025 Kunar earthquake (Q136033573)",
+    "2026 2026 Afghanistan–Pakistan war (Q138414208)"
+   ]
+  },
+  {
+   "country": "Angola",
+   "entity": "c-ago",
+   "events": [
+    "1904 Battle of the Cunene (Q1674550)",
+    "1975 Angolan Civil War (Q12055176)",
+    "1977 1977 Angolan coup attempt (Q60792490)",
+    "1992 Halloween Massacre (Angola) (Q5643106)",
+    "1993 55 Day War (Q3429692)"
+   ]
+  },
+  {
+   "country": "Albania",
+   "entity": "c-alb",
+   "events": [
+    "-197 Battle of the Aous (198 BC) (Q3233509)",
+    "-47 Battle of Dyrrhachium (48 BC) (Q525325)",
+    "1018 Battle of Dyrrhachium (1018) (Q3436319)",
+    "1081 Battle of Dyrrhachium (1081) (Q1987213)",
+    "1385 Battle of Savra (Q2603935)",
+    "1447 Albanian–Venetian War (Q60489)",
+    "1450 Siege of Krujë (1450) (Q73670)",
+    "1455 Siege of Berat (1455) (Q3300177)",
+    "1457 Battle of Albulena (Q74072)",
+    "1466 Siege of Krujë (1466–1467) (Q960449)",
+    "1684 Morean War (Q2309409)",
+    "1912 Albanian revolt of 1912 (Q1280245)",
+    "1912 Siege of Scutari (1912–1913) (Q2149254)",
+    "1939 Italian invasion of Albania (Q714644)",
+    "1999 Battle of Košare (Q3303959)",
+    "2019 2019 Albania earthquake (Q76529995)"
+   ]
+  },
+  {
+   "country": "United Arab Emirates",
+   "entity": "c-are",
+   "events": [
+    "1987 Operation Earnest Will (Q1687078)",
+    "1988 Operation Praying Mantis (Q2026308)",
+    "2020 Israel–United Arab Emirates normalization agreement (Q98371472)"
+   ]
+  },
+  {
+   "country": "Argentina",
+   "entity": "c-arg",
+   "events": [
+    "1810 Argentine War of Independence (Q617409)",
+    "1810 Primera Junta (Q2511385)",
+    "1813 Battle of San Lorenzo (Q3268356)",
+    "1814 Argentine Civil Wars (Q2697981)",
+    "1845 Battle of Vuelta de Obligado (Q2890596)",
+    "1851 Platine War (Q3042457)",
+    "1852 Battle of Caseros (Q616931)",
+    "1861 Battle of Pavón (Q832683)",
+    "1865 Battle of Riachuelo (Q2236812)",
+    "1914 Battle of the Falkland Islands (Q160011)",
+    "1920 Patagonia Rebelde (Q6553389)",
+    "1943 1943 Argentine Revolution (Q4565209)",
+    "1944 1944 San Juan earthquake (Q3505891)",
+    "1955 Bombing of Plaza de Mayo (Q891808)",
+    "1973 Ezeiza massacre (Q1210277)",
+    "1976 1976 Argentine coup d'état (Q1048750)"
+   ]
+  },
+  {
+   "country": "Armenia",
+   "entity": "armenia",
+   "events": [
+    "-67 Battle of Artaxata (Q647463)",
+    "62 Battle of Rhandeia (Q2263382)",
+    "1048 Battle of Kapetron (Q2628015)",
+    "1225 Battle of Garni (Q2916261)",
+    "1679 1679 Armenia earthquake (Q4551791)",
+    "1827 Capture of Erivan (Q4110457)",
+    "1918 Battle of Abaran (Q791185)",
+    "1918 Battle of Karakilisa (Q651391)",
+    "1920 Treaty of Alexandropol (Q1347812)",
+    "1921 February Uprising (Q5439864)",
+    "1999 Armenian parliament shooting (Q1975720)",
+    "2009 Zurich Protocols (Q20512994)",
+    "2015 Gyumri massacre (Q18758263)",
+    "2020 Second Nagorno-Karabakh War (Q99659280)",
+    "2020 2020 Nagorno-Karabakh ceasefire agreement (Q101429497)",
+    "2021 2021 Armenian political crisis (Q105672621)"
+   ]
+  },
+  {
+   "country": "Australia",
+   "entity": "c-aus",
+   "events": [
+    "1808 Rum Rebellion (Q2065299)",
+    "1834 Pinjarra massacre (Q1550913)",
+    "1835 Batman's Treaty (Q810862)",
+    "1838 Myall Creek massacre (Q1785309)",
+    "1854 Eureka Rebellion (Q2164870)",
+    "1914 Battle of Cocos (Q2981856)",
+    "1941 Sinking of HMAS Sydney (Q58459)",
+    "1942 Bombing of Darwin (Q696557)",
+    "1942 Battle of Christmas Island (Q1361210)",
+    "1989 1989 Newcastle earthquake (Q4585341)",
+    "2010 2010 Kalgoorlie–Boulder earthquake (Q4216844)",
+    "2021 2021 Mansfield earthquake (Q108647613)"
+   ]
+  },
+  {
+   "country": "Austria",
+   "entity": "c-aut",
+   "events": [
+    "-111 Battle of Noreia (Q657620)",
+    "1499 Battle of Frastanz (Q477778)",
+    "1679 Great Plague of Vienna (Q448015)",
+    "1725 Treaty of Vienna (1725) (Q698176)",
+    "1805 Battle of Amstetten (Q697034)",
+    "1805 Battle of Dürenstein (Q699665)",
+    "1805 Battle of Schöngrabern (Q948810)",
+    "1809 Battle of Ebelsberg (Q744035)",
+    "1809 Battle of Aspern–Essling (Q541626)",
+    "1809 Battle of Wagram (Q467777)",
+    "1927 July Revolt of 1927 (Q684762)",
+    "1938 First Vienna Award (Q126604)",
+    "1945 Bleiburg repatriations (Q312388)",
+    "1945 Battle of Castle Itter (Q14303815)",
+    "1955 Austrian State Treaty (Q306535)",
+    "1979 Strategic Arms Limitation Talks (Q623994)"
+   ]
+  },
+  {
+   "country": "Azerbaijan",
+   "entity": "azerbaijan",
+   "events": [
+    "1139 1139 Ganja earthquake (Q4191053)",
+    "1195 Battle of Shamkor (Q1048657)",
+    "1511 Şahkulu rebellion (Q6569289)",
+    "1918 Battle of Goychay (Q31291891)",
+    "1918 Battle of Baku (Q2568851)",
+    "1992 Battle of Shusha (1992) (Q2621289)",
+    "1992 Maraga massacre (Q2273348)",
+    "1993 Battle of Kalbajar (Q629096)",
+    "1993 1993 Azerbaijani coup d'état (Q20744392)",
+    "1995 1995 Azerbaijani coup attempt (Q16156196)",
+    "2000 2000 Baku earthquake (Q4597199)",
+    "2008 2008 Mardakert clashes (Q1754030)",
+    "2010 2010 Mardakert clashes (Q1753755)",
+    "2018 2018 Armenian–Azerbaijani clashes (Q54448834)",
+    "2020 Second Nagorno-Karabakh War (Q99659280)",
+    "2020 2020 Nagorno-Karabakh ceasefire agreement (Q101429497)"
+   ]
+  },
+  {
+   "country": "Burundi",
+   "entity": "c-bdi",
+   "events": [
+    "1965 1965 Burundian coup attempt (Q17750099)",
+    "1966 July 1966 Burundian coup d'état (Q25043458)",
+    "1966 November 1966 Burundian coup d'état (Q25043404)",
+    "1972 Ikiza (Q65067658)",
+    "1987 1987 Burundian coup d'état (Q4583594)",
+    "1993 1993 Burundian coup attempt (Q65049211)",
+    "1993 Burundian Civil War (Q647239)",
+    "1996 1996 Burundian coup d'état (Q4591257)",
+    "2015 2015 Burundian coup attempt (Q19905149)"
+   ]
+  },
+  {
+   "country": "Belgium",
+   "entity": "c-bel",
+   "events": [
+    "1302 Battle of the Golden Spurs (Q44732)",
+    "1579 Union of Arras (Q700027)",
+    "1745 Battle of Fontenoy (Q569953)",
+    "1794 Battle of Fleurus (1794) (Q678227)",
+    "1814 Treaty of Ghent (Q1324198)",
+    "1914 Siege of Antwerp (1914) (Q426099)",
+    "1914 Battle of Liège (Q671594)",
+    "1914 First Battle of Ypres (Q853976)",
+    "1915 Second Battle of Ypres (Q233219)",
+    "1917 Battle of Messines (1917) (Q1144824)",
+    "1917 Battle of Passchendaele (Q426227)",
+    "1940 German invasion of Belgium (1940) (Q697625)",
+    "1944 Battle of the Scheldt (Q697022)",
+    "1944 Malmedy massacre (Q162228)",
+    "1945 Operation Bodenplatte (Q835881)",
+    "1948 Treaty of Brussels (Q845737)"
+   ]
+  },
+  {
+   "country": "Benin",
+   "entity": "c-ben",
+   "events": [
+    "1972 1972 Dahomeyan coup d'état (Q63123297)",
+    "1977 1977 Beninese coup attempt (Q28441384)",
+    "2025 2025 Beninese coup attempt (Q137266485)"
+   ]
+  },
+  {
+   "country": "Burkina Faso",
+   "entity": "c-bfa",
+   "events": [
+    "1987 1987 Burkina Faso coup d'état (Q60764387)",
+    "1989 1989 Burkina Faso coup attempt (Q18600449)",
+    "2014 2014 Burkina Faso uprising (Q18380506)",
+    "2015 Islamist insurgency in Burkina Faso (Q89035147)",
+    "2015 2015 Burkina Faso coup attempt (Q20977821)",
+    "2016 2016 Burkina Faso coup attempt (Q40890413)",
+    "2019 Arbinda attack (Q79830671)",
+    "2021 Solhan and Tadaryat massacres (Q107113646)",
+    "2022 January 2022 Burkina Faso coup d'état (Q110663445)",
+    "2022 September 2022 Burkina Faso coup d'état (Q114341504)",
+    "2023 2023 Burkina Faso coup attempt (Q123004839)",
+    "2024 Barsalogho massacre (Q129811621)"
+   ]
+  },
+  {
+   "country": "Bangladesh",
+   "entity": "c-bgd",
+   "events": [
+    "1817 Treaty of Titalia (Q7837260)",
+    "1971 1971 Dhaka University massacre (Q1430144)",
+    "1971 Bangladesh Liberation War (Q371394)",
+    "1971 Bangladesh genocide (Q2916113)",
+    "1971 Chuknagar massacre (Q5116036)",
+    "1974 Bangladesh famine of 1974 (Q4855418)",
+    "1975 15 August 1975 Bangladeshi coup d'état (Q39086822)",
+    "1975 3 November 1975 Bangladeshi coup d'état (Q48733969)",
+    "2009 Bangladesh Rifles revolt (Q2385882)",
+    "2012 2012 Indian Ocean earthquakes (Q383991)",
+    "2015 April 2015 Nepal earthquake (Q19830062)",
+    "2017 2017 Tripura earthquake (Q28128756)",
+    "2025 2025 Bangladesh earthquake (Q136891140)"
+   ]
+  },
+  {
+   "country": "Bulgaria",
+   "entity": "c-bgr",
+   "events": [
+    "708 Battle of Anchialus (708) (Q602880)",
+    "811 Battle of Pliska (Q403416)",
+    "813 Battle of Versinikia (Q1048401)",
+    "917 Battle of Achelous (917) (Q658731)",
+    "971 Siege of Dorostolon (Q737655)",
+    "986 Battle of the Gates of Trajan (Q2292026)",
+    "1122 Battle of Beroia (Q153702)",
+    "1230 Battle of Klokotnitsa (Q1459494)",
+    "1330 Battle of Velbazhd (Q1400440)",
+    "1396 Battle of Nicopolis (Q212220)",
+    "1444 Battle of Varna (Q32832)",
+    "1774 Treaty of Küçük Kaynarca (Q123227)",
+    "1876 April Uprising of 1876 (Q622059)",
+    "1877 Battle of Shipka Pass (Q116004)",
+    "1877 Siege of Plevna (Q780367)",
+    "1944 1944 Bulgarian coup d'état (Q618048)"
+   ]
+  },
+  {
+   "country": "Bahrain",
+   "entity": "c-bhr",
+   "events": [
+    "1559 Siege of Bahrain (Q55633151)",
+    "1867 Qatari–Bahraini War (Q7267163)",
+    "2011 2011 Bahraini uprising (Q242864)",
+    "2020 Bahrain–Israel normalization agreement (Q99207513)"
+   ]
+  },
+  {
+   "country": "Bosnia and Herzegovina",
+   "entity": "c-bih",
+   "events": [
+    "1388 Battle of Bileća (Q700874)",
+    "1875 Herzegovina uprising (1875–1877) (Q2258726)",
+    "1943 Operation Weiss (Q127872674)",
+    "1943 Operation Schwarz (Q1419973)",
+    "1945 Battle of Odžak (Q3501165)",
+    "1992 Višegrad massacres (Q3042255)",
+    "1992 Siege of Mostar (Q3724348)",
+    "1992 Siege of Sarajevo (Q175653)",
+    "1992 Foča ethnic cleansing (Q3268036)",
+    "1992 Lašva Valley ethnic cleansing (Q2504602)",
+    "1993 Ahmići massacre (Q1387922)",
+    "1994 Markale massacres (Q1482369)",
+    "1994 1994 Serb J-21 Jastreb shootdown (Q1984410)",
+    "1995 25 May 1995 Tuzla massacre (Q2097350)",
+    "1995 Srebrenica massacre (Q170334)",
+    "1995 Operation Storm (Q769377)"
+   ]
+  },
+  {
+   "country": "Belarus",
+   "entity": "c-blr",
+   "events": [
+    "1385 Union of Krewo (Q1121044)",
+    "1514 Battle of Orsha (Q1207310)",
+    "1708 Battle of Holowczyn (Q663359)",
+    "1708 Battle of Lesnaya (Q166015)",
+    "1812 Battle of Mir (1812) (Q2889345)",
+    "1812 Battle of Saltanovka (Q840790)",
+    "1812 First Battle of Polotsk (Q903248)",
+    "1812 Battle of Berezina (Q555839)",
+    "1916 Baranovichi offensive (Q4077792)",
+    "1939 Battle of Brześć Litewski (Q694416)",
+    "1941 Defense of Brest Fortress (Q611789)",
+    "1943 Battle of Lenino (Q2341305)",
+    "1943 Khatyn massacre (Q430700)",
+    "1991 Belovezha Accords (Q76986)",
+    "2014 Russo-Ukrainian war (Q15860072)",
+    "2014 Minsk Protocol (Q18001626)"
+   ]
+  },
+  {
+   "country": "Belize",
+   "entity": "c-blz",
+   "events": [
+    "1798 Battle of St. George's Caye (Q2890055)"
+   ]
+  },
+  {
+   "country": "Bolivia",
+   "entity": "c-bol",
+   "events": [
+    "1809 Bolivian War of Independence (Q68475)",
+    "1809 La Paz revolution (Q6464343)",
+    "1809 Chuquisaca Revolution (Q5116509)",
+    "1810 Battle of Suipacha (Q2890073)",
+    "1825 Bolivian Declaration of Independence (Q2918225)",
+    "1841 Peruvian–Bolivian War of 1841–42 (Q495202)",
+    "1841 Battle of Ingavi (Q1782533)",
+    "1879 Battle of Topáter (Q3320910)",
+    "1879 War of the Pacific (Q152004)",
+    "1899 Acre War (Q2606574)",
+    "1904 Treaty of Peace and Friendship (1904) (Q473661)",
+    "1929 Treaty of Lima (1929) (Q2990714)",
+    "1932 Chaco War (Q223126)",
+    "1952 Bolivian National Revolution (Q4414118)",
+    "2014 2014 Iquique earthquake (Q16004619)",
+    "2024 2024 Bolivian coup attempt (Q126913477)"
+   ]
+  },
+  {
+   "country": "Brazil",
+   "entity": "c-bra",
+   "events": [
+    "1631 Battle of Abrolhos (Q2890640)",
+    "1711 Battle of Rio de Janeiro (Q820269)",
+    "1776 Spanish–Portuguese War (1776–1777) (Q4204142)",
+    "1789 Inconfidência Mineira (Q2558843)",
+    "1835 Cabanagem (Q2590269)",
+    "1835 Malê revolt (Q6745211)",
+    "1899 Acre War (Q2606574)",
+    "1930 Revolution of 1930 (Q2634783)",
+    "1932 Constitutionalist Revolution (Q2592295)",
+    "1935 Brazilian communist uprising (Q2027494)",
+    "1964 1964 Brazilian coup d'état (Q4571496)",
+    "1992 Carandiru massacre (Q2341407)",
+    "2011 Rio de Janeiro school shooting (Q473897)",
+    "2015 2015–16 Zika virus epidemic (Q21686043)",
+    "2022 2022–2023 Brazilian coup plot (Q118906917)",
+    "2023 8 January Brasília attacks (Q116142348)"
+   ]
+  },
+  {
+   "country": "Barbados",
+   "entity": "c-brb",
+   "events": [
+    "1816 Bussa's rebellion (Q29914504)"
+   ]
+  },
+  {
+   "country": "Brunei",
+   "entity": "c-brn",
+   "events": [
+    "1945 Battle of North Borneo (Q1934591)",
+    "1962 Brunei revolt (Q3299246)"
+   ]
+  },
+  {
+   "country": "Bhutan",
+   "entity": "c-btn",
+   "events": [
+    "1634 Second Battle of Simtokha Dzong (Q2564494)",
+    "2009 2009 Bhutan earthquake (Q2663230)"
+   ]
+  },
+  {
+   "country": "Central African Republic",
+   "entity": "c-caf",
+   "events": [
+    "1965 Saint-Sylvestre coup d'état (Q781029)",
+    "2003 2003 Central African Republic coup d'état (Q17512048)",
+    "2004 Central African Bush War (Q3118963)",
+    "2012 Central African Republic Civil War (Q3411181)",
+    "2013 Central African Republic conflict (2013–2014) (Q15287550)",
+    "2022 Aïgbado massacre (Q110714848)"
+   ]
+  },
+  {
+   "country": "Canada",
+   "entity": "c-can",
+   "events": [
+    "1609 Beaver Wars (Q856216)",
+    "1700 1700 Cascadia earthquake (Q1735004)",
+    "1701 Great Peace of Montreal (Q326028)",
+    "1744 King George's War (Q517578)",
+    "1759 Battle of the Plains of Abraham (Q311726)",
+    "1762 Battle of Signal Hill (Q251184)",
+    "1775 Battle of Quebec (1775) (Q1840117)",
+    "1776 Battle of Trois-Rivières (Q1247957)",
+    "1812 Battle of Queenston Heights (Q200682)",
+    "1813 Battle of Lake Erie (Q990715)",
+    "1813 Battle of the Thames (Q645288)",
+    "1837 Rebellions of 1837–1838 (Q1560445)",
+    "1838 Pastry War (Q856168)",
+    "1869 Red River Rebellion (Q765499)",
+    "1987 Montreal Protocol (Q219438)",
+    "1997 Ottawa Treaty (Q570224)"
+   ]
+  },
+  {
+   "country": "Switzerland",
+   "entity": "c-che",
+   "events": [
+    "1315 Battle of Morgarten (Q326989)",
+    "1356 1356 Basel earthquake (Q672705)",
+    "1386 Battle of Sempach (Q661759)",
+    "1476 Battle of Morat (Q688502)",
+    "1499 Swabian War (Q165136)",
+    "1499 Treaty of Basel (1499) (Q685164)",
+    "1795 Peace of Basel (Q667080)",
+    "1799 Battle of Winterthur (Q685798)",
+    "1847 Sonderbund War (Q688297)",
+    "1864 First Geneva Convention (Q610272)",
+    "1925 Geneva Protocol (Q605626)",
+    "1925 Locarno Treaties (Q152925)",
+    "1926 1926 Slavery Convention (Q589276)",
+    "1934 Baltic Entente (Q167759)",
+    "1949 Second Geneva Convention (Q583921)",
+    "1954 1954 Geneva Conference (Q482407)"
+   ]
+  },
+  {
+   "country": "Chile",
+   "entity": "c-chl",
+   "events": [
+    "1812 Chilean War of Independence (Q1072889)",
+    "1814 Battle of Rancagua (Q1310755)",
+    "1817 Battle of Chacabuco (Q1425658)",
+    "1818 Battle of Maipú (Q1073849)",
+    "1836 War of the Confederation (Q601811)",
+    "1861 Occupation of Araucanía (Q2422135)",
+    "1879 War of the Pacific (Q152004)",
+    "1883 Treaty of Ancón (Q1475005)",
+    "1907 Santa María School massacre (Q583937)",
+    "1915 Battle of Más a Tierra (Q4871836)",
+    "1960 1960 Valdivia earthquake (Q212618)",
+    "1973 1973 Chilean coup d'état (Q856670)",
+    "2010 2010 Chile earthquake (Q151835)",
+    "2010 2010 Pichilemu earthquakes (Q842621)",
+    "2014 2014 Iquique earthquake (Q16004619)",
+    "2015 2015 Illapel earthquake (Q20978169)"
+   ]
+  },
+  {
+   "country": "China",
+   "entity": "prc",
+   "events": [
+    "208 Battle of Red Cliffs (Q830059)",
+    "1351 Red Turban Rebellions (Q112524)",
+    "1839 Opium Wars (Q220984)",
+    "1911 Wuchang Uprising (Q339291)",
+    "1914 World War I (Q361)",
+    "1914 Siege of Tsingtao (Q706563)",
+    "1927 Nanchang Uprising (Q476634)",
+    "1941 Battle of Hong Kong (Q697059)",
+    "1959 Great Chinese Famine (Q2454958)",
+    "1962 Sino-Indian War (Q208694)",
+    "1976 1976 Tangshan earthquake (Q462195)",
+    "1989 1989 Tiananmen Square protests and massacre (Q99717)",
+    "2008 2008 Sichuan earthquake (Q152033)",
+    "2014 Persecution of Uyghurs in China (Q85754778)",
+    "2020 2020–2021 China–India skirmishes (Q93879586)",
+    "2025 2025 Tibet earthquake (Q131692964)"
+   ]
+  },
+  {
+   "country": "Ivory Coast",
+   "entity": "c-civ",
+   "events": [
+    "2002 First Ivorian Civil War (Q1021175)",
+    "2010 2010–2011 Ivorian crisis (Q909819)",
+    "2017 2017 Ivory Coast mutinies (Q28234538)"
+   ]
+  },
+  {
+   "country": "Cameroon",
+   "entity": "c-cmr",
+   "events": [
+    "1899 Adamawa Wars (Q137339918)",
+    "1900 Battle of Kousséri (Q1164601)",
+    "2018 Battle of Batibo (Q60524385)",
+    "2020 Kumba school massacre (Q100891384)"
+   ]
+  },
+  {
+   "country": "DR Congo",
+   "entity": "c-cod",
+   "events": [
+    "1892 Congo Arab war (Q2935437)",
+    "1961 Siege of Jadotville (Q2404547)",
+    "1963 Katanga insurgency (Q18648982)",
+    "1963 Kwilu rebellion (Q85775188)",
+    "1964 Simba rebellion (Q2656683)",
+    "1978 Battle of Kolwezi (Q2745987)",
+    "2000 Six-Day War (2000) (Q3119043)",
+    "2008 2008 Lake Kivu earthquake (Q1744007)",
+    "2008 2008 Christmas massacres (Q4610765)",
+    "2009 Makombo massacre (Q3050534)",
+    "2012 M23 rebellion (2012–2013) (Q82962)",
+    "2014 2014 Democratic Republic of the Congo Ebola outbreak (Q17999999)",
+    "2018 Kivu Ebola epidemic (Q55887234)",
+    "2021 Murder of Luca Attanasio (Q105629905)",
+    "2021 2021 Mount Nyiragongo eruption (Q106959869)",
+    "2024 2024 Democratic Republic of the Congo coup attempt (Q125988461)"
+   ]
+  },
+  {
+   "country": "Congo",
+   "entity": "c-cog",
+   "events": [
+    "1993 Republic of the Congo Civil War (1993–1994) (Q20982378)",
+    "1997 Republic of the Congo Civil War (1997–1999) (Q1021172)"
+   ]
+  },
+  {
+   "country": "Colombia",
+   "entity": "c-col",
+   "events": [
+    "1741 Battle of Cartagena de Indias (Q2366970)",
+    "1810 Colombian War of Independence (Q3063789)",
+    "1819 Battle of Boyacá (Q1150410)",
+    "1899 Thousand Days' War (Q43378)",
+    "1903 Hay–Herrán Treaty (Q2131701)",
+    "1903 Secession of Panama from Colombia (Q3089201)",
+    "1906 1906 Ecuador–Colombia earthquake (Q4558519)",
+    "1922 Salomón–Lozano Treaty (Q1786875)",
+    "1928 Banana Massacre (Q1134821)",
+    "1932 Colombia–Peru War (Q1536533)",
+    "1949 La Violencia (Q185407)",
+    "1964 Colombian conflict (Q169072)",
+    "1985 Armero tragedy (Q2532815)",
+    "1999 1999 Colombia earthquake (Q497145)",
+    "2025 Assassination of Miguel Uribe Turbay (Q134734156)",
+    "2026 2026 Colombia earthquake (Q140984463)"
+   ]
+  },
+  {
+   "country": "Cape Verde",
+   "entity": "c-cpv",
+   "events": [
+    "1781 Battle of Porto Praya (Q2732287)"
+   ]
+  },
+  {
+   "country": "Costa Rica",
+   "entity": "c-cri",
+   "events": [
+    "1917 1917 Costa Rican coup d'état (Q21002917)",
+    "1921 Coto War (Q5887735)",
+    "1948 Costa Rican Civil War (Q3434218)",
+    "2009 2009 Cinchona earthquake (Q3299278)",
+    "2012 2012 Costa Rica earthquake (Q2702014)"
+   ]
+  },
+  {
+   "country": "Cuba",
+   "entity": "c-cub",
+   "events": [
+    "1748 Battle of Havana (1748) (Q1136414)",
+    "1762 Anglo-Spanish War (1762–1763) (Q616846)",
+    "1762 Siege of Havana (Q562277)",
+    "1868 Ten Years' War (Q184637)",
+    "1870 Battle of Havana (1870) (Q1529375)",
+    "1895 Cuban War of Independence (Q1514908)",
+    "1895 Battle of Mal Tiempo (Q2889200)",
+    "1898 Battle of Las Guásimas (Q2889110)",
+    "1898 Battle of San Juan Hill (Q1215310)",
+    "1898 Battle of El Caney (Q2887938)",
+    "1898 Battle of Santiago de Cuba (Q1999889)",
+    "1952 1952 Cuban coup d'état (Q8964623)",
+    "1953 Cuban Revolution (Q11264)",
+    "1953 Attack on the Moncada Barracks (Q11211553)",
+    "1958 Battle of Santa Clara (Q2153101)",
+    "1959 Escambray rebellion (Q2507413)"
+   ]
+  },
+  {
+   "country": "Cyprus",
+   "entity": "c-cyp",
+   "events": [
+    "-305 Battle of Salamis (306 BC) (Q1247317)",
+    "1228 Sixth Crusade (Q51660)",
+    "1878 Cyprus Convention (Q3555069)",
+    "1955 Cyprus Emergency (Q16146587)",
+    "1964 Battle of Tillyria (Q3434446)",
+    "1974 1974 Cypriot coup d'état (Q2069434)",
+    "1974 Turkish invasion of Cyprus (Q1050999)",
+    "1974 Maratha, Santalaris and Aloda massacre (Q1862197)",
+    "1974 Tochni massacre (Q6044625)"
+   ]
+  },
+  {
+   "country": "Czechia",
+   "entity": "c-cze",
+   "events": [
+    "1434 Battle of Lipany (Q935088)",
+    "1618 Siege of Pilsen (Q944855)",
+    "1620 Battle of White Mountain (Q4373)",
+    "1648 Battle of Prague (1648) (Q3494380)",
+    "1756 Battle of Lobositz (Q694478)",
+    "1757 Battle of Reichenberg (Q694061)",
+    "1757 Battle of Štěrboholy (Q223622)",
+    "1757 Battle of Kolín (Q127299)",
+    "1758 Siege of Olomouc (Q508088)",
+    "1805 Battle of Austerlitz (Q134114)",
+    "1813 Battle of Kulm (Q48253)",
+    "1866 Battle of Trautenau (Q689374)",
+    "1866 Battle of Gitschin (Q574365)",
+    "1866 Battle of Königgrätz (Q154942)",
+    "1866 Peace of Prague (1866) (Q168268)",
+    "1945 Prague uprising (Q666778)"
+   ]
+  },
+  {
+   "country": "Germany",
+   "entity": "germany",
+   "events": [
+    "955 Battle of Lechfeld (Q273069)",
+    "1632 Battle of Lützen (1632) (Q167259)",
+    "1748 Treaty of Aix-la-Chapelle (1748) (Q156086)",
+    "1806 Battle of Jena–Auerstedt (Q154426)",
+    "1813 Battle of Leipzig (Q151005)",
+    "1814 Treaty of Kiel (Q156556)",
+    "1871 Treaty of Frankfurt (1871) (Q158021)",
+    "1938 Munich Agreement (Q154255)",
+    "1940 Tripartite Pact (Q153122)",
+    "1944 Battle of Aachen (Q327052)",
+    "1945 Battle of Berlin (Q154182)",
+    "1945 Potsdam Conference (Q151187)",
+    "1945 Potsdam Declaration (Q163244)",
+    "1953 East German uprising of 1953 (Q157682)",
+    "1968 Treaty on the Non-Proliferation of Nuclear Weapons (Q186444)",
+    "2016 2016 Berlin truck attack (Q28036573)"
+   ]
+  },
+  {
+   "country": "Djibouti",
+   "entity": "c-dji",
+   "events": [
+    "2008 Djiboutian–Eritrean border conflict (Q1354920)"
+   ]
+  },
+  {
+   "country": "Dominica",
+   "entity": "c-dma",
+   "events": [
+    "1761 Invasion of Dominica (1761) (Q74009)",
+    "1778 Invasion of Dominica (1778) (Q2890526)",
+    "1782 Battle of the Saintes (Q1850800)",
+    "1981 Operation Red Dog (Q2743454)"
+   ]
+  },
+  {
+   "country": "Denmark",
+   "entity": "c-dnk",
+   "events": [
+    "1520 Battle of Bogesund (Q1606958)",
+    "1534 Count's Feud (Q707364)",
+    "1644 Battle of Colberger Heide (Q423522)",
+    "1658 Battle of the Sound (Q1275200)",
+    "1658 Siege of Kolding (1658) (Q541566)",
+    "1659 Battle of Nyborg (Q641989)",
+    "1660 Treaty of Copenhagen (1660) (Q829702)",
+    "1677 Battle of Køge Bay (1677) (Q2265621)",
+    "1709 Treaty of Copenhagen (1709) (Q2331686)",
+    "1712 Battle of Gadebusch (Q708866)",
+    "1769 Dano-Algerian War (Q28949606)",
+    "1801 Battle of Copenhagen (1801) (Q755955)",
+    "1807 Battle of Copenhagen (1807) (Q376154)",
+    "1813 Battle of Sehested (Q514504)",
+    "1864 Second Schleswig War (Q154981)",
+    "1864 Battle of Dybbøl (Q695107)"
+   ]
+  },
+  {
+   "country": "Dominican Republic",
+   "entity": "c-dom",
+   "events": [
+    "1844 Dominican War of Independence (Q3439047)",
+    "1844 Battle of Santiago (1844) (Q4872308)",
+    "1946 1946 Dominican Republic earthquake (Q1348841)",
+    "1965 Dominican Civil War (Q955457)"
+   ]
+  },
+  {
+   "country": "Algeria",
+   "entity": "c-dza",
+   "events": [
+    "-202 Battle of Cirta (Q1660792)",
+    "-109 Battle of Suthul (Q2890102)",
+    "-48 Battle of the Bagradas (49 BC) (Q619030)",
+    "682 Battle of Vescera (Q2237785)",
+    "1505 Capture of Mers-el-Kébir (1505) (Q603279)",
+    "1516 Capture of Algiers (1516) (Q4188858)",
+    "1518 Fall of Tlemcen (1518) (Q4090268)",
+    "1830 Invasion of Algiers (1830) (Q3317226)",
+    "1830 Battle of Staouéli (Q2890049)",
+    "1843 Battle of the Smala (Q3403872)",
+    "1940 Attack on Mers-el-Kébir (Q503347)",
+    "1954 Algerian War (Q200790)",
+    "1962 Oran massacre of 1962 (Q2546598)",
+    "1992 Algerian Civil War (Q142529)",
+    "1997 Bentalha massacre (Q507359)",
+    "2003 2003 Boumerdès earthquake (Q116688)"
+   ]
+  },
+  {
+   "country": "Ecuador",
+   "entity": "c-ecu",
+   "events": [
+    "1797 1797 Riobamba earthquake (Q4553468)",
+    "1820 Ecuadorian War of Independence (Q5334383)",
+    "1821 Battle of Yaguachi (Q2890399)",
+    "1822 Battle of Pichincha (Q1402751)",
+    "1906 1906 Ecuador–Colombia earthquake (Q4558519)",
+    "1941 Ecuadorian–Peruvian War (Q1500631)",
+    "1942 Rio Protocol (Q1801868)",
+    "1949 1949 Ambato earthquake (Q774314)",
+    "1979 1979 Tumaco earthquake (Q5942412)",
+    "1981 Paquisha War (Q1760930)",
+    "1987 1987 Ecuador earthquakes (Q4583671)",
+    "1995 Cenepa War (Q2337340)",
+    "2016 2016 Ecuador earthquake (Q23835355)",
+    "2019 2019 Peru earthquake (Q64031974)",
+    "2023 2023 Guayas earthquake (Q117202252)",
+    "2023 Assassination of Fernando Villavicencio (Q121334219)"
+   ]
+  },
+  {
+   "country": "Egypt",
+   "entity": "egypt",
+   "events": [
+    "-524 Battle of Pelusium (Q544239)",
+    "-216 Battle of Raphia (Q630781)",
+    "-31 War of Actium (Q2116320)",
+    "1248 Seventh Crusade (Q51661)",
+    "1250 Battle of Fariskur (1250) (Q1148862)",
+    "1516 Ottoman–Mamluk War (1516–1517) (Q4338038)",
+    "1798 Battle of the Pyramids (Q332543)",
+    "1798 Battle of the Nile (Q243979)",
+    "1799 Battle of Abukir (1799) (Q778800)",
+    "1940 Italian invasion of Egypt (Q698421)",
+    "1942 First Battle of El Alamein (Q162250)",
+    "1942 Battle of Alam el Halfa (Q541997)",
+    "1942 Second Battle of El Alamein (Q153376)",
+    "1973 Yom Kippur War (Q49100)",
+    "1979 Egypt–Israel peace treaty (Q1129412)",
+    "2013 2013 Egyptian coup d'état (Q13605743)"
+   ]
+  },
+  {
+   "country": "Eritrea",
+   "entity": "c-eri",
+   "events": [
+    "1887 Italo-Ethiopian War of 1887–1889 (Q3778598)",
+    "1890 First Battle of Agordat (Q3921576)",
+    "1893 Second Battle of Agordat (Q665983)",
+    "1895 Battle of Coatit (Q2888324)",
+    "1921 1921 Massawa earthquake (Q2330932)",
+    "1941 Battle of Agordat (1941) (Q3636314)",
+    "1941 Battle of Keren (Q1970005)",
+    "1974 Eritrean Civil Wars (Q2139988)"
+   ]
+  },
+  {
+   "country": "Western Sahara",
+   "entity": "c-esh",
+   "events": [
+    "1976 First Battle of Amgala (Q3401898)"
+   ]
+  },
+  {
+   "country": "Spain",
+   "entity": "spain",
+   "events": [
+    "-205 Battle of Ilipa (Q1055755)",
+    "-44 Battle of Munda (Q516760)",
+    "711 Battle of Guadalete (Q504172)",
+    "1086 Battle of Sagrajas (Q392538)",
+    "1520 Revolt of the Comuneros (Q151663)",
+    "1529 Treaty of Zaragoza (Q1147471)",
+    "1659 Treaty of the Pyrenees (Q221670)",
+    "1667 War of Devolution (Q25857)",
+    "1805 Battle of Trafalgar (Q171416)",
+    "1808 Dos de Mayo Uprising (Q181146)",
+    "1813 Battle of Vitoria (Q276059)",
+    "1833 Carlist Wars (Q1178424)",
+    "1833 First Carlist War (Q2341073)",
+    "1981 1981 Spanish coup attempt (Q215337)",
+    "2011 2011 Lorca earthquake (Q584613)",
+    "2017 Catalan declaration of independence (Q41796018)"
+   ]
+  },
+  {
+   "country": "Estonia",
+   "entity": "c-est",
+   "events": [
+    "1217 Battle of St. Matthew's Day (Q1082410)",
+    "1219 Battle of Lyndanisse (Q1341824)",
+    "1220 Battle of Lihula (Q2692278)",
+    "1268 Battle of Wesenberg (1268) (Q252698)",
+    "1600 Polish–Swedish War (1600–1611) (Q598774)",
+    "1661 Treaty of Cardis (Q1456449)",
+    "1702 Battle of Hummelshof (Q620947)",
+    "1704 Siege of Narva (1704) (Q694054)",
+    "1918 Estonian War of Independence (Q1127302)",
+    "1919 Battle of Paju (Q1720027)",
+    "1924 1924 Estonian coup attempt (Q2602809)",
+    "1939 Orzeł incident (Q2032413)",
+    "1939 Soviet–Estonian Mutual Assistance Treaty (Q3739093)",
+    "1941 Baltic operation (Q1324428)",
+    "1944 Battle of Narva (1944) (Q7885422)",
+    "1944 Battle of Tannenberg Line (Q2026904)"
+   ]
+  },
+  {
+   "country": "Ethiopia",
+   "entity": "c-eth",
+   "events": [
+    "1529 Ethiopian–Adal War (Q2915203)",
+    "1868 Battle of Magdala (Q947667)",
+    "1895 Battle of Amba Alagi (1895) (Q1398069)",
+    "1896 Siege of Mekelle (Q2237609)",
+    "1896 Battle of Adwa (Q302519)",
+    "1941 Battle of Amba Alagi (1941) (Q1410792)",
+    "1941 Battle of Gondar (Q1970141)",
+    "1960 1960 Ethiopian coup attempt (Q4569951)",
+    "1974 Ethiopian Civil War (Q257724)",
+    "1977 Ogaden War (Q318250)",
+    "1983 1983–1985 famine in Ethiopia (Q1637896)",
+    "1998 Eritrean–Ethiopian War (Q832273)",
+    "2019 Amhara Region coup attempt (Q64787084)",
+    "2020 Mekelle offensive (Q102133730)",
+    "2022 Ethiopia–Tigray peace agreement (Q115124248)",
+    "2026 2026 Ethiopian offensive (Q141544931)"
+   ]
+  },
+  {
+   "country": "Finland",
+   "entity": "c-fin",
+   "events": [
+    "1596 Cudgel War (Q974160)",
+    "1741 Russo-Swedish War (1741–1743) (Q682482)",
+    "1807 Anglo-Russian War (1807–1812) (Q2441248)",
+    "1808 Finnish War (Q736268)",
+    "1867 Finnish famine of 1866–1868 (Q1558846)",
+    "1918 Battle of Tampere (Q2043711)",
+    "1939 Winter War (Q134949)",
+    "1939 Battle of Suomussalmi (Q477095)",
+    "1939 Battle of Tolvajärvi (Q639989)",
+    "1940 Battle of Raate Road (Q2446643)",
+    "1940 Moscow Peace Treaty (Q695285)",
+    "1941 Continuation War (Q122100)",
+    "1944 Battle of Tali–Ihantala (Q697680)",
+    "1944 Battle of Ilomantsi (1944) (Q2354840)",
+    "1944 Lapland War (Q154940)",
+    "2007 Jokela school shooting (Q600836)"
+   ]
+  },
+  {
+   "country": "Fiji",
+   "entity": "c-fji",
+   "events": [
+    "1987 1987 Fijian coups d'état (Q2998924)",
+    "2000 2000 Fijian coup d'état (Q4597438)",
+    "2006 2006 Fijian coup d'état (Q2567468)",
+    "2018 2018 Fiji earthquakes (Q56593652)"
+   ]
+  },
+  {
+   "country": "France",
+   "entity": "france",
+   "events": [
+    "1209 Albigensian Crusade (Q51657)",
+    "1356 Battle of Poitiers (Q201692)",
+    "1415 Battle of Agincourt (Q188495)",
+    "1562 French Wars of Religion (Q673175)",
+    "1789 French Revolution (Q6534)",
+    "1802 Treaty of Amiens (Q112183)",
+    "1848 French Revolution of 1848 (Q622774)",
+    "1870 Franco-Prussian War (Q46083)",
+    "1914 First Battle of the Marne (Q190712)",
+    "1916 Battle of Verdun (Q130847)",
+    "1916 Battle of the Somme (Q132568)",
+    "1920 Treaty of Trianon (Q181902)",
+    "1920 Treaty of Sèvres (Q182515)",
+    "1928 Kellogg–Briand Pact (Q205073)",
+    "1940 Dunkirk evacuation (Q911972)",
+    "2016 2016 Nice truck attack (Q25893254)"
+   ]
+  },
+  {
+   "country": "Gabon",
+   "entity": "c-gab",
+   "events": [
+    "1940 Battle of Gabon (Q714684)",
+    "1964 1964 Gabonese coup d'état (Q3305494)",
+    "2019 2019 Gabonese coup attempt (Q60474140)",
+    "2023 2023 Gabonese coup d'état (Q122053772)"
+   ]
+  },
+  {
+   "country": "United Kingdom",
+   "entity": "uk",
+   "events": [
+    "83 Battle of Mons Graupius (Q1127337)",
+    "1066 Battle of Stamford Bridge (Q203225)",
+    "1066 Battle of Fulford (Q1113659)",
+    "1297 Battle of Stirling Bridge (Q499626)",
+    "1298 Battle of Falkirk (Q589318)",
+    "1381 Peasants' Revolt (Q498871)",
+    "1461 Battle of Towton (Q634629)",
+    "1471 Battle of Tewkesbury (Q1337059)",
+    "1485 Battle of Bosworth Field (Q222013)",
+    "1746 Battle of Culloden (Q651919)",
+    "1839 Treaty of London (1839) (Q1160895)",
+    "1915 Treaty of London (1915) (Q824165)",
+    "1921 Anglo-Irish Treaty (Q541191)",
+    "1963 Partial Nuclear Test Ban Treaty (Q278960)",
+    "1972 Bloody Sunday (1972) (Q190819)",
+    "1982 Falklands War (Q48249)"
+   ]
+  },
+  {
+   "country": "Georgia",
+   "entity": "georgia",
+   "events": [
+    "555 Siege of Phasis (Q7510308)",
+    "627 Siege of Tbilisi (627–628) (Q16379713)",
+    "1770 Battle of Aspindza (Q2887900)",
+    "1795 Battle of Krtsanisi (Q2615347)",
+    "1924 August Uprising (Q760629)",
+    "1956 1956 Georgian demonstrations (Q1185525)",
+    "1991 Georgian civil war of 1991–1993 (Q1070890)",
+    "1993 Fall of Sukhumi (Q137167469)",
+    "1993 Ethnic cleansing of Georgians in Sukhumi (Q609510)",
+    "1998 1998 Georgian attempted mutiny (Q2902647)",
+    "1998 1998 Gali clashes (Q959303)",
+    "2000 Battle for Height 776 (Q1530585)",
+    "2003 Rose Revolution (Q219470)",
+    "2008 Russo-Georgian War (Q620735)",
+    "2008 Battle of Tskhinvali (Q1813378)",
+    "2008 Battle of the Kodori Valley (Q2344156)"
+   ]
+  },
+  {
+   "country": "Ghana",
+   "entity": "c-gha",
+   "events": [
+    "1625 Battle of Elmina (1625) (Q1140266)"
+   ]
+  },
+  {
+   "country": "Gibraltar",
+   "entity": "c-gib",
+   "events": [
+    "1506 Tenth siege of Gibraltar (Q9078107)",
+    "1779 Great Siege of Gibraltar (Q815145)"
+   ]
+  },
+  {
+   "country": "Guinea",
+   "entity": "c-gin",
+   "events": [
+    "1984 1984 Guinean coup d'état (Q60750351)",
+    "2008 2008 Guinean coup d'état (Q2282672)",
+    "2021 2021 Guinean coup d'état (Q108419092)"
+   ]
+  },
+  {
+   "country": "Gambia",
+   "entity": "c-gmb",
+   "events": [
+    "1994 1994 Gambian coup d'état (Q4589458)",
+    "2014 2014 Gambian coup attempt (Q20312530)"
+   ]
+  },
+  {
+   "country": "Guinea-Bissau",
+   "entity": "c-gnb",
+   "events": [
+    "1980 1980 Guinea-Bissau coup d'état (Q60750764)",
+    "1998 Guinea-Bissau Civil War (Q1781457)",
+    "2003 2003 Guinea-Bissau coup d'état (Q61946226)",
+    "2010 2010 Guinea-Bissau military unrest (Q4617394)",
+    "2012 2012 Guinea-Bissau coup d'état (Q621827)",
+    "2022 2022 Guinea-Bissau coup attempt (Q110778876)",
+    "2025 2025 Guinea-Bissau coup d'état (Q137036104)"
+   ]
+  },
+  {
+   "country": "Equatorial Guinea",
+   "entity": "c-gnq",
+   "events": [
+    "1936 1936 uprising in Spanish Guinea (Q16636394)",
+    "1979 1979 Equatorial Guinea coup d'état (Q20977839)",
+    "2004 2004 Equatorial Guinea coup attempt (Q4372932)"
+   ]
+  },
+  {
+   "country": "Greece",
+   "entity": "greece",
+   "events": [
+    "-479 Battle of Salamis (Q178850)",
+    "-478 Battle of Plataea (Q204636)",
+    "-370 Battle of Leuctra (Q461599)",
+    "-199 Second Macedonian War (Q75665)",
+    "-196 Battle of Cynoscephalae (Q391087)",
+    "-47 Battle of Pharsalus (Q203681)",
+    "-41 Battle of Philippi (Q335330)",
+    "1371 Battle of Maritsa (Q939570)",
+    "1522 Siege of Rhodes (1522) (Q767935)",
+    "1538 Battle of Preveza (Q1054975)",
+    "1827 Battle of Navarino (Q238440)",
+    "1897 Greco-Turkish War (1897) (Q657055)",
+    "1918 Armistice of Mudros (Q328499)",
+    "1941 German invasion of Greece (Q2888837)",
+    "1941 Battle of Crete (Q153316)",
+    "1946 Greek Civil War (Q188972)"
+   ]
+  },
+  {
+   "country": "Grenada",
+   "entity": "c-grd",
+   "events": [
+    "1779 Capture of Grenada (1779) (Q3403859)",
+    "1779 Battle of Grenada (Q1970159)",
+    "1983 United States invasion of Grenada (Q501866)"
+   ]
+  },
+  {
+   "country": "Guatemala",
+   "entity": "c-gtm",
+   "events": [
+    "1902 1902 Guatemala earthquake (Q4557994)",
+    "1944 Guatemalan Revolution (Q5614269)",
+    "1954 1954 Guatemalan coup d'état (Q976887)",
+    "1976 1976 Guatemala earthquake (Q1847006)",
+    "1980 1980 Spanish embassy burning in Guatemala City (Q4999926)",
+    "1982 Plan de Sánchez massacre (Q2523448)",
+    "1982 Dos Erres massacre (Q740534)",
+    "2012 2012 Guatemala earthquake (Q27608)",
+    "2018 2018 Volcán de Fuego eruption (Q54802312)",
+    "2022 2022 Guatemala earthquake (Q110940947)"
+   ]
+  },
+  {
+   "country": "Guyana",
+   "entity": "c-guy",
+   "events": [
+    "1978 Jonestown massacre (Q1907560)"
+   ]
+  },
+  {
+   "country": "Honduras",
+   "entity": "c-hnd",
+   "events": [
+    "1963 1963 Honduran coup d'état (Q4571109)",
+    "2005 Electronic Communications Convention (Q7888366)",
+    "2009 2009 Honduran coup d'état (Q1073488)",
+    "2018 2018 Swan Islands earthquake (Q47161142)"
+   ]
+  },
+  {
+   "country": "Croatia",
+   "entity": "c-hrv",
+   "events": [
+    "351 Battle of Mursa Major (Q1424076)",
+    "454 Battle of Nedao (Q841211)",
+    "1202 Siege of Zara (Q604739)",
+    "1593 Battle of Sisak (Q701335)",
+    "1880 1880 Zagreb earthquake (Q2618441)",
+    "1991 Plitvice Lakes incident (Q852157)",
+    "1991 Croatian War of Independence (Q68969)",
+    "1991 Battle of Vukovar (Q505939)",
+    "1991 Siege of Dubrovnik (Q815140)",
+    "1991 Gospić massacre (Q1243060)",
+    "1991 Vukovar massacre (Q520741)",
+    "1993 Operation Medak Pocket (Q1639136)",
+    "1995 Operation Flash (Q1374443)",
+    "1995 Operation Storm (Q769377)",
+    "2020 2020 Zagreb earthquake (Q88259708)",
+    "2020 2020 Petrinja earthquake (Q104535090)"
+   ]
+  },
+  {
+   "country": "Haiti",
+   "entity": "c-hti",
+   "events": [
+    "1793 Siege of Port-au-Prince (1793) (Q3485993)",
+    "1793 Battle of Cap-Français (1793) (Q2890742)",
+    "1802 Battle of Crête-à-Pierrot (Q3486058)",
+    "1803 Battle of Vertières (Q2484240)",
+    "1844 Dominican War of Independence (Q3439047)",
+    "1988 June 1988 Haitian coup d'état (Q6312034)",
+    "1991 1991 Haitian coup d'état (Q4586873)",
+    "1994 Raboteau massacre (Q1531692)",
+    "2004 2004 Haitian coup d'état (Q2883469)",
+    "2010 2010 Haiti earthquake (Q43777)",
+    "2018 2018 Haiti earthquake (Q56976152)",
+    "2021 Assassination of Jovenel Moïse (Q107442287)",
+    "2021 2021 Haiti earthquake (Q108091634)"
+   ]
+  },
+  {
+   "country": "Hungary",
+   "entity": "c-hun",
+   "events": [
+    "1526 Battle of Mohács (Q178510)",
+    "1527 Hungarian campaign of 1527–1528 (Q1049956)",
+    "1532 Siege of Kőszeg (Q673641)",
+    "1540 Treaty of Nagyvárad (Q622844)",
+    "1541 Siege of Buda (1541) (Q604587)",
+    "1552 Siege of Eger (1552) (Q3321519)",
+    "1566 Siege of Szigetvár (Q606621)",
+    "1596 Battle of Keresztes (Q690495)",
+    "1664 Battle of Saint Gotthard (1664) (Q170113)",
+    "1686 Siege of Buda (1686) (Q697654)",
+    "1687 Battle of Mohács (1687) (Q690470)",
+    "1848 Hungarian Revolution of 1848 (Q473716)",
+    "1918 Hungarian–Romanian War (Q252298)",
+    "1944 Siege of Budapest (Q155103)",
+    "1956 Hungarian Revolution of 1956 (Q164348)",
+    "1994 Budapest Memorandum (Q1000658)"
+   ]
+  },
+  {
+   "country": "Indonesia",
+   "entity": "c-idn",
+   "events": [
+    "1942 Battle of Timor (Q1440764)",
+    "1942 Battle of Sunda Strait (Q1536686)",
+    "1945 Indonesian National Revolution (Q1332160)",
+    "1945 Proclamation of Indonesian Independence (Q1661772)",
+    "1965 Indonesian mass killings of 1965–66 (Q799299)",
+    "1965 30 September Movement (Q1643006)",
+    "2006 2006 Yogyakarta earthquake (Q867691)",
+    "2009 2009 Sumatra earthquakes (Q815718)",
+    "2010 2010 Mentawai earthquake and tsunami (Q1049092)",
+    "2012 2012 Indian Ocean earthquakes (Q383991)",
+    "2018 5 August 2018 Lombok earthquake (Q55974069)",
+    "2018 2018 Sulawesi earthquake and tsunami (Q56768333)",
+    "2018 2018 Sunda Strait tsunami (Q60042839)",
+    "2021 2021 West Sulawesi earthquake (Q104828966)",
+    "2022 2022 West Java earthquake (Q115322003)",
+    "2026 2026 Flores earthquake (Q141072401)"
+   ]
+  },
+  {
+   "country": "India",
+   "entity": "india",
+   "events": [
+    "1556 Second Battle of Panipat (Q233414)",
+    "1761 Third Battle of Panipat (Q1259218)",
+    "1775 First Anglo-Maratha War (Q1362209)",
+    "1944 Battle of Kohima (Q383614)",
+    "1944 Battle of Imphal (Q707238)",
+    "1947 Kashmir conflict (Q1413732)",
+    "1962 Sino-Indian War (Q208694)",
+    "1965 India–Pakistan war of 1965 (Q233583)",
+    "1967 Naxalite–Maoist insurgency (Q979845)",
+    "1984 Assassination of Indira Gandhi (Q3347903)",
+    "1999 Kargil War (Q404517)",
+    "2001 2001 Gujarat earthquake (Q2441400)",
+    "2005 2005 Kashmir earthquake (Q210137)",
+    "2012 2012 Indian Ocean earthquakes (Q383991)",
+    "2015 April 2015 Nepal earthquake (Q19830062)",
+    "2020 2020–2021 China–India skirmishes (Q93879586)"
+   ]
+  },
+  {
+   "country": "Ireland",
+   "entity": "ireland",
+   "events": [
+    "1014 Battle of Clontarf (Q868027)",
+    "1318 Battle of Faughart (Q2011697)",
+    "1599 Battle of Curlew Pass (Q1459058)",
+    "1601 Siege of Kinsale (Q491255)",
+    "1641 Irish Confederate Wars (Q1672808)",
+    "1641 Irish Rebellion of 1641 (Q1461147)",
+    "1649 Siege of Drogheda (Q815234)",
+    "1690 Battle of the Boyne (Q644960)",
+    "1691 Treaty of Limerick (Q1860162)",
+    "1691 Battle of Aughrim (Q2887916)",
+    "1798 Battle of Vinegar Hill (Q2890346)",
+    "1916 Easter Rising (Q193689)",
+    "1920 Bloody Sunday (1920) (Q886799)",
+    "1922 Irish Civil War (Q748042)",
+    "1922 Battle of Dublin (Q645776)",
+    "1985 Anglo-Irish Agreement (Q2708643)"
+   ]
+  },
+  {
+   "country": "Iran",
+   "entity": "iran",
+   "events": [
+    "-329 Battle of the Persian Gate (Q112016)",
+    "642 Battle of Nahavand (Q603549)",
+    "869 Zanj Rebellion (Q759988)",
+    "1514 Battle of Chaldiran (Q745110)",
+    "1963 White Revolution (Q1068139)",
+    "2003 2003 Bam earthquake (Q1990627)",
+    "2013 2013 Saravan earthquake (Q11158136)",
+    "2017 2017 Iran–Iraq earthquake (Q43041167)",
+    "2022 Mahsa Amini protests (Q114065797)",
+    "2024 Assassination of Ismail Haniyeh (Q128172378)",
+    "2025 Twelve-Day War (Q134900605)",
+    "2025 June 2025 Israeli strikes on Iran (Q134884640)",
+    "2025 2025–2026 Iranian protests (Q137612545)",
+    "2025 2025–2026 Iran massacres (Q137703947)",
+    "2026 Assassination of Ali Khamenei (Q138507700)",
+    "2026 2026 Minab school attack (Q138505873)"
+   ]
+  },
+  {
+   "country": "Iraq",
+   "entity": "iraq",
+   "events": [
+    "-611 Fall of Nineveh (Q612286)",
+    "-400 Battle of Cunaxa (Q431205)",
+    "627 Battle of Nineveh (627) (Q755966)",
+    "634 Battle of Firaz (Q738132)",
+    "634 Battle of the Bridge (Q2067496)",
+    "656 Battle of the Camel (Q1133574)",
+    "680 Battle of Karbala (Q626058)",
+    "1915 Siege of Kut (Q815166)",
+    "1933 Simele massacre (Q1481878)",
+    "2003 Iraqi insurgency (2003–2011) (Q926905)",
+    "2004 First Battle of Fallujah (Q1537159)",
+    "2004 Second Battle of Fallujah (Q1330136)",
+    "2005 Haditha massacre (Q981327)",
+    "2014 Yazidi genocide (Q21190910)",
+    "2016 Battle of Mosul (2016–2017) (Q27429856)",
+    "2020 Assassination of Qasem Soleimani (Q80754846)"
+   ]
+  },
+  {
+   "country": "Iceland",
+   "entity": "c-isl",
+   "events": [
+    "1238 Battle of Örlygsstaðir (Q2427731)",
+    "1246 Battle of Haugsnes (Q2888805)",
+    "1615 Slaying of the Basques (Q3480202)",
+    "1627 Turkish Abductions (Q2149737)",
+    "2008 2008 Iceland earthquake (Q2607760)",
+    "2010 2010 eruptions of Eyjafjallajökull (Q269442)",
+    "2023 2023–2025 Sundhnúkur eruptions (Q123992305)"
+   ]
+  },
+  {
+   "country": "Israel",
+   "entity": "c-isr",
+   "events": [
+    "1153 Siege of Ascalon (Q677982)",
+    "1799 Battle of Mount Tabor (1799) (Q2420811)",
+    "1918 Battle of Megiddo (1918) (Q199371)",
+    "1956 Kafr Qasim massacre (Q1642045)",
+    "1972 Lod Airport massacre (Q1154073)",
+    "1979 Egypt–Israel peace treaty (Q1129412)",
+    "1994 Israel–Jordan peace treaty (Q620988)",
+    "1995 Assassination of Yitzhak Rabin (Q2608162)",
+    "2006 2006 Lebanon War (Q49104)",
+    "2020 COVID-19 pandemic in Israel (Q87070975)",
+    "2020 Israel–United Arab Emirates normalization agreement (Q98371472)",
+    "2023 October 7 attacks (Q122976243)",
+    "2023 Nova music festival massacre (Q122975233)",
+    "2023 Kfar Aza massacre (Q123003698)",
+    "2024 2024 Lebanon war (Q130388076)",
+    "2025 Twelve-Day War (Q134900605)"
+   ]
+  },
+  {
+   "country": "Italy",
+   "entity": "italy",
+   "events": [
+    "-217 Battle of the Trebia (Q271873)",
+    "-216 Battle of Lake Trasimene (Q207250)",
+    "312 Battle of the Milvian Bridge (Q339321)",
+    "1515 Battle of Marignano (Q330)",
+    "1525 Battle of Pavia (Q63468)",
+    "1800 Battle of Marengo (Q273011)",
+    "1848 Five Days of Milan (Q623164)",
+    "1859 Battle of Solferino (Q324916)",
+    "1917 Battle of Caporetto (Q242644)",
+    "1929 Lateran Treaty (Q193270)",
+    "1940 Tripartite Pact (Q153122)",
+    "1940 Battle of Taranto (Q543255)",
+    "1944 Battle of Monte Cassino (Q335288)",
+    "1998 Rome Statute (Q838958)",
+    "2009 2009 L'Aquila earthquake (Q207918)",
+    "2016 August 2016 Central Italy earthquake (Q26689701)"
+   ]
+  },
+  {
+   "country": "Jamaica",
+   "entity": "c-jam",
+   "events": [
+    "1728 First Maroon War (Q5453254)",
+    "1760 Tacky's Revolt (Q2386936)",
+    "1831 Baptist War (Q4077534)",
+    "1907 1907 Kingston earthquake (Q4558694)"
+   ]
+  },
+  {
+   "country": "Jersey",
+   "entity": "c-jey",
+   "events": [
+    "1781 Battle of Jersey (Q2501743)"
+   ]
+  },
+  {
+   "country": "Jordan",
+   "entity": "c-jor",
+   "events": [
+    "629 Battle of Mu'tah (Q1639459)",
+    "635 Battle of Fahl (Q1030249)",
+    "1183 Siege of Kerak (1183) (Q815156)",
+    "1918 First Battle of Amman (Q5452498)",
+    "1918 Second Battle of Amman (Q7443068)",
+    "1918 Battle of Jisr Benat Yakub (Q4871340)",
+    "1948 Battle of Gesher (Q12406957)",
+    "1968 Battle of Karameh (Q1930278)",
+    "1970 Black September (Q154288)",
+    "1994 Israel–Jordan peace treaty (Q620988)",
+    "2021 2021 arrests in Jordan (Q106357052)"
+   ]
+  },
+  {
+   "country": "Japan",
+   "entity": "japan",
+   "events": [
+    "1180 Genpei War (Q737542)",
+    "1274 Mongol invasions of Japan (Q208156)",
+    "1467 Ōnin War (Q385676)",
+    "1575 Battle of Nagashino (Q428369)",
+    "1614 Siege of Osaka (Q475780)",
+    "1918 Rice riots of 1918 (Q696111)",
+    "1932 Soviet–Japanese border conflicts (Q696389)",
+    "1940 Tripartite Pact (Q153122)",
+    "1944 Battle of the Philippine Sea (Q504347)",
+    "1945 Battle of Iwo Jima (Q180182)",
+    "1995 Kobe earthquake (Q214866)",
+    "2011 2011 Tōhoku earthquake and tsunami (Q36204)",
+    "2014 Nagoya Protocol (Q1963613)",
+    "2016 2016 Kumamoto earthquakes (Q23825118)",
+    "2022 Assassination of Shinzo Abe (Q112967003)",
+    "2024 2024 Noto earthquake (Q124060919)"
+   ]
+  },
+  {
+   "country": "Kazakhstan",
+   "entity": "c-kaz",
+   "events": [
+    "-35 Battle of Zhizhi (Q870947)",
+    "751 Battle of Talas (Q492415)",
+    "1219 Otrar Catastrophe (Q111943842)",
+    "1911 1911 Kebin earthquake (Q4219257)",
+    "1919 Kazakh famine of 1919–1922 (Q4142067)",
+    "2011 Zhanaozen massacre (Q1087721)",
+    "2013 Sleeping sickness of Kalachi, Kazakhstan (Q25052814)"
+   ]
+  },
+  {
+   "country": "Kenya",
+   "entity": "c-ken",
+   "events": [
+    "1696 Siege of Mombasa (1696–1698) (Q17070460)",
+    "1952 Mau Mau rebellion (Q476855)"
+   ]
+  },
+  {
+   "country": "Kyrgyzstan",
+   "entity": "c-kgz",
+   "events": [
+    "751 Battle of Talas (Q492415)",
+    "1911 1911 Kebin earthquake (Q4219257)",
+    "1990 1990 Osh clashes (Q2997012)",
+    "2005 Tulip Revolution (Q459162)",
+    "2008 2008 Kyrgyzstan earthquake (Q2470182)",
+    "2010 2010 Kyrgyz Revolution (Q236023)",
+    "2011 2011 Fergana Valley earthquake (Q501106)",
+    "2021 2021 Kyrgyzstan–Tajikistan clashes (Q106647377)"
+   ]
+  },
+  {
+   "country": "Cambodia",
+   "entity": "c-khm",
+   "events": [
+    "1591 Siamese–Cambodian War (1591–1594) (Q1373706)",
+    "1593 Cambodian–Spanish War (Q27627985)",
+    "1771 Siamese–Vietnamese War (1771–1773) (Q2280725)",
+    "1841 Siamese–Vietnamese War (1840–1845) (Q641185)",
+    "1951 Battle of the Day River (Q4872904)",
+    "1969 Operation Menu (Q683271)",
+    "1970 1970 Cambodian coup d'état (Q4919446)",
+    "1975 Cambodian genocide (Q2885072)",
+    "1975 Fall of Phnom Penh (Q85760415)",
+    "2025 Kuala Lumpur Peace Accord (Q136659001)"
+   ]
+  },
+  {
+   "country": "Kiribati",
+   "entity": "c-kir",
+   "events": [
+    "1979 Treaty of Tarawa (Q484826)"
+   ]
+  },
+  {
+   "country": "Saint Kitts and Nevis",
+   "entity": "c-kna",
+   "events": [
+    "1626 Kalinago genocide of 1626 (Q6352828)",
+    "1782 Siege of Brimstone Hill (Q11794849)"
+   ]
+  },
+  {
+   "country": "South Korea",
+   "entity": "south-korea",
+   "events": [
+    "1592 Battle of Okpo (Q484256)",
+    "1597 Battle of Myeongnyang (Q385677)",
+    "1598 Battle of Noryang (Q484271)",
+    "1875 Ganghwa Island incident (Q496905)",
+    "1894 Battle of Pungdo (Q701890)",
+    "1904 Battle off Ulsan (Q702150)",
+    "1950 First Battle of Seoul (Q18016068)",
+    "1950 Battle of Osan (Q484494)",
+    "1950 Battle of Taejon (Q492880)",
+    "1950 No Gun Ri massacre (Q495446)",
+    "1950 Battle of the Pusan Perimeter (Q482979)",
+    "1950 Battle of Inchon (Q483039)",
+    "1965 Treaty on Basic Relations Between Japan and the Republic of Korea (Q485343)",
+    "1968 Siege of Khe Sanh (Q247253)",
+    "1980 Gwangju Uprising (Q174990)",
+    "2010 Sinking of ROKS Cheonan (Q494058)"
+   ]
+  },
+  {
+   "country": "Kosovo",
+   "entity": "c-unk",
+   "events": [
+    "1389 Battle of Kosovo (Q179288)",
+    "1998 Attacks on Likošane and Ćirez (Q3438672)",
+    "1998 Klecka case (Q10546229)",
+    "1999 Račak massacre (Q1463237)",
+    "1999 Krusha massacres (Q3438679)",
+    "1999 Suva Reka massacre (Q3271831)",
+    "1999 Podujevo massacre (Q7207166)",
+    "1999 Vushtrri massacre (Q7943742)",
+    "1999 Staro Gracko massacre (Q2759439)",
+    "2008 2008 Kosovo declaration of independence (Q861510)"
+   ]
+  },
+  {
+   "country": "Kuwait",
+   "entity": "c-kwt",
+   "events": [
+    "1900 Kuwaiti–Rashidi war (Q65066872)",
+    "1919 Kuwait–Najd War (Q6449024)",
+    "1990 Battle of Dasman Palace (Q4870849)",
+    "1990 Battle of the Bridges (Q4872876)",
+    "1990 Battle of Failaka (Q4870995)",
+    "1991 Battle of Kuwait International Airport (Q19428991)"
+   ]
+  },
+  {
+   "country": "Laos",
+   "entity": "c-lao",
+   "events": [
+    "1951 Battle of the Day River (Q4872904)",
+    "1971 Operation Lam Son 719 (Q2095768)"
+   ]
+  },
+  {
+   "country": "Lebanon",
+   "entity": "c-lbn",
+   "events": [
+    "-331 Siege of Tyre (332 BC) (Q815233)",
+    "1110 Siege of Sidon (Q3431465)",
+    "1179 Battle of Marj Ayyun (Q636520)",
+    "1187 Siege of Tyre (1187) (Q2176345)",
+    "1958 1958 Lebanon crisis (Q1542222)",
+    "1973 1973 Israeli raid in Lebanon (Q654777)",
+    "1976 Damour massacre (Q1351462)",
+    "1976 Tel al-Zaatar massacre (Q2359563)",
+    "1982 Siege of Beirut (Q2617818)",
+    "1982 Sabra and Shatila massacre (Q208199)",
+    "1985 South Lebanon conflict (1985–2000) (Q2479435)",
+    "1996 Operation Grapes of Wrath (Q1473919)",
+    "2005 Cedar Revolution (Q184310)",
+    "2006 2006 Lebanon War (Q49104)",
+    "2024 2024 Hezbollah headquarters strike (Q130374882)",
+    "2024 2024 Lebanon war (Q130388076)"
+   ]
+  },
+  {
+   "country": "Liberia",
+   "entity": "c-lbr",
+   "events": [
+    "1989 First Liberian Civil War (Q1477500)",
+    "1999 Second Liberian Civil War (Q1960733)"
+   ]
+  },
+  {
+   "country": "Libya",
+   "entity": "c-lby",
+   "events": [
+    "1551 Siege of Tripoli (1551) (Q2860095)",
+    "1805 Battle of Derna (1805) (Q2888407)",
+    "1941 Battle of Bardia (Q2426368)",
+    "1941 Operation Sonnenblume (Q708223)",
+    "1941 Siege of Tobruk (Q611089)",
+    "1942 Battle of Gazala (Q327035)",
+    "1942 Battle of Bir Hakeim (Q836128)",
+    "1942 Battle of El Agheila (Q2371769)",
+    "1981 Gulf of Sidra incident (1981) (Q2604253)",
+    "2011 Libyan civil war (2011) (Q81545)",
+    "2011 Libyan crisis (Q18702324)",
+    "2011 First Battle of Brega (Q989081)",
+    "2011 Battle of Ras Lanuf (Q1089511)",
+    "2011 Battle of Tripoli (2011) (Q609013)",
+    "2014 Libyan civil war (2014–2020) (Q16911838)",
+    "2015 21 Coptic Christian Martyrs of Libya (Q19283494)"
+   ]
+  },
+  {
+   "country": "Saint Lucia",
+   "entity": "c-lca",
+   "events": [
+    "1778 Battle of St. Lucia (Q2671443)"
+   ]
+  },
+  {
+   "country": "Sri Lanka",
+   "entity": "c-lka",
+   "events": [
+    "1410 Ming–Kotte War (Q6864869)",
+    "1782 Battle of Providien (Q2601189)",
+    "1782 Battle of Trincomalee (Q2601158)",
+    "1817 Great Rebellion of 1817–1818 (Q3534806)",
+    "1942 Indian Ocean raid (Q757871)",
+    "1983 Sri Lankan civil war (Q213394)",
+    "1983 Eelam War I (Q1814745)",
+    "1987 1987–1989 JVP insurrection (Q4584263)",
+    "1990 Eelam War II (Q11050383)",
+    "1990 1990 massacre of Sri Lankan Police officers (Q4586462)",
+    "1990 Kattankudy mosque massacre (Q3522435)",
+    "1995 Eelam War III (Q11154636)",
+    "2006 Eelam War IV (Q16151540)",
+    "2006 2006 Trincomalee massacre of NGO workers (Q4570436)",
+    "2008 Battle of Kilinochchi (2008–2009) (Q2572835)",
+    "2009 Battle of Mullaitivu (2009) (Q373857)"
+   ]
+  },
+  {
+   "country": "Lesotho",
+   "entity": "c-lso",
+   "events": [
+    "1970 1970 Lesotho coup d'état (Q60769179)",
+    "1986 1986 Lesotho coup d'état (Q39046971)",
+    "1991 1991 Lesotho coup d'état (Q25043351)",
+    "1998 South African intervention in Lesotho (Q4335258)",
+    "2014 2014 Lesotho political crisis (Q17684684)"
+   ]
+  },
+  {
+   "country": "Lithuania",
+   "entity": "c-ltu",
+   "events": [
+    "1435 Battle of Wiłkomierz (Q1411508)",
+    "1499 Union of Kraków and Vilna (Q653379)",
+    "1561 Treaty of Vilnius (1561) (Q1267481)",
+    "1655 Battle of Vilnius (1655) (Q4087367)",
+    "1656 Truce of Vilna (Q1502680)",
+    "1915 Battle of Vilnius (1915) (Q620222)",
+    "1918 Lithuanian Wars of Independence (Q2742886)",
+    "1918 Lithuanian–Soviet War (Q1604816)",
+    "1923 Klaipėda Revolt (Q3358934)",
+    "1941 June Uprising in Lithuania (Q4205775)",
+    "1941 Rainiai massacre (Q931639)",
+    "1941 Battle of Raseiniai (Q1528565)",
+    "1941 Kaunas pogrom (Q2669609)",
+    "1941 Baltic operation (Q1324428)",
+    "1944 Šiauliai offensive (Q3077958)",
+    "1944 Battle of Memel (Q3620958)"
+   ]
+  },
+  {
+   "country": "Luxembourg",
+   "entity": "c-lux",
+   "events": [
+    "1684 Siege of Luxembourg (1684) (Q815171)",
+    "1794 Siege of Luxembourg (1794–1795) (Q904495)",
+    "1856 Luxembourg coup of 1856 (Q6706220)",
+    "1857 Ecuadorian–Peruvian War (1857–1860) (Q3119117)",
+    "1940 German invasion of Luxembourg (Q13435464)"
+   ]
+  },
+  {
+   "country": "Latvia",
+   "entity": "c-lva",
+   "events": [
+    "1260 Battle of Durbe (Q600609)",
+    "1279 Battle of Aizkraukle (Q1640209)",
+    "1560 Battle of Ērģeme (Q497806)",
+    "1578 Battles of Wenden (1577–1578) (Q2364604)",
+    "1605 Battle of Kircholm (Q937332)",
+    "1656 Siege of Riga (1656) (Q595785)",
+    "1701 Crossing of the Düna (Q826133)",
+    "1704 Battle of Jakobstadt (Q169602)",
+    "1705 Battle of Gemauerthof (Q704567)",
+    "1917 Riga offensive (1917) (Q11347885)",
+    "1919 Battle of Cēsis (1919) (Q183286)",
+    "1920 Latvian–Soviet Peace Treaty (Q1377536)",
+    "1934 1934 Latvian coup d'état (Q3182543)",
+    "1941 Liepāja massacres (Q2915791)",
+    "1941 Baltic operation (Q1324428)",
+    "1944 Courland Pocket (Q697172)"
+   ]
+  },
+  {
+   "country": "Morocco",
+   "entity": "c-mar",
+   "events": [
+    "1415 Portuguese conquest of Ceuta (Q2888296)",
+    "1576 Capture of Fez (1576) (Q30745598)",
+    "1578 Battle of Alcácer Quibir (Q1121532)",
+    "1844 Franco-Moroccan War (Q3062439)",
+    "1844 Battle of Isly (Q348998)",
+    "1859 Hispano-Moroccan War (1859–1860) (Q1540737)",
+    "1860 Battle of Tétouan (Q4872623)",
+    "1860 Battle of Wad Ras (Q2890359)",
+    "1907 French conquest of Morocco (Q2935421)",
+    "1921 Battle of Annual (Q1138460)",
+    "1960 1960 Agadir earthquake (Q698056)",
+    "1971 1971 Moroccan coup attempt (Q1136770)",
+    "1972 1972 Moroccan coup attempt (Q742728)",
+    "2004 2004 Al Hoceima earthquake (Q4115048)",
+    "2022 2022 Melilla border incident (Q112725255)",
+    "2023 2023 Al Haouz earthquake (Q122351413)"
+   ]
+  },
+  {
+   "country": "Monaco",
+   "entity": "c-mco",
+   "events": [
+    "1861 Franco-Monégasque Treaties (Q2201387)"
+   ]
+  },
+  {
+   "country": "Moldova",
+   "entity": "c-mda",
+   "events": [
+    "1595 Battle of Cecora (1595) (Q720801)",
+    "1713 Skirmish at Bender (Q638601)",
+    "1739 Treaty of Niš (1739) (Q702189)",
+    "1770 Battle of Kagul (Q700218)",
+    "1821 Battle of Sculeni (Q2093780)",
+    "1919 Bender Uprising (Q4083702)",
+    "1977 1977 Vrancea earthquake (Q751139)",
+    "1990 Transnistrian War (Q285280)",
+    "1992 Battle of Bender (1992) (Q4087298)"
+   ]
+  },
+  {
+   "country": "Madagascar",
+   "entity": "c-mdg",
+   "events": [
+    "1895 Menalamba rebellion (Q3305728)",
+    "1942 Battle of Madagascar (Q1052651)",
+    "1947 Malagasy Uprising (Q2506639)",
+    "2006 2006 Malagasy coup attempt (Q3518181)",
+    "2025 2025 Malagasy coup d'état (Q136487699)"
+   ]
+  },
+  {
+   "country": "Maldives",
+   "entity": "c-mdv",
+   "events": [
+    "1988 1988 Maldives coup attempt (Q1634613)"
+   ]
+  },
+  {
+   "country": "Mexico",
+   "entity": "mexico",
+   "events": [
+    "1810 Grito de Dolores (Q1145411)",
+    "1821 Plan of Iguala (Q1606520)",
+    "1821 Treaty of Córdoba (Q767450)",
+    "1846 Battle of Monterrey (Q1628057)",
+    "1847 Battle of Chapultepec (Q1536618)",
+    "1853 Gadsden Purchase (Q827212)",
+    "1857 Reform War (Q2091916)",
+    "1862 Battle of Puebla (Q1061228)",
+    "1863 Battle of Camarón (Q399224)",
+    "1926 Cristero War (Q279662)",
+    "1968 Tlatelolco massacre (Q909737)",
+    "1985 1985 Mexico City earthquake (Q1798567)",
+    "2006 Mexican drug war (Q475678)",
+    "2017 2017 Chiapas earthquake (Q38982786)",
+    "2017 2017 Puebla earthquake (Q40355642)",
+    "2018 United States–Mexico–Canada Agreement (Q56839716)"
+   ]
+  },
+  {
+   "country": "North Macedonia",
+   "entity": "c-mkd",
+   "events": [
+    "1004 Battle of Skopje (Q1896360)",
+    "1446 Battle of Otonetë (Q3302743)",
+    "1448 Siege of Svetigrad (Q3302682)",
+    "1456 Battle of Oranik (1456) (Q3298782)",
+    "1464 Battle of Ohrid (Q3338499)",
+    "1912 Battle of Kumanovo (Q2346983)",
+    "1912 Battle of Prilep (Q3393985)",
+    "1912 Battle of Monastir (Q3392743)",
+    "1913 Ohrid–Debar uprising (Q1534814)",
+    "1915 Battle of Krivolak (Q4087436)",
+    "1915 Battle of Kosturino (Q16253672)",
+    "1916 Battle of the Crna Bend (1916) (Q2583507)",
+    "1918 Battle of Dobro Pole (Q506916)",
+    "1999 Kumanovo Agreement (Q28479)",
+    "2001 Battle of Tetovo (Q4872534)",
+    "2001 Aračinovo crisis (Q20563350)"
+   ]
+  },
+  {
+   "country": "Mali",
+   "entity": "mali-republic",
+   "events": [
+    "1962 Tuareg rebellion (1962–1964) (Q3178794)",
+    "1968 1968 Malian coup d'état (Q4146911)",
+    "1991 1991 Malian coup d'état (Q19955933)",
+    "2012 Tuareg rebellion (2012) (Q1525846)",
+    "2012 Mali War (Q2946372)",
+    "2012 2012 Malian coup d'état (Q875912)",
+    "2012 Battle of Gao (Q3181123)",
+    "2013 Battle of Konna (Q3018708)",
+    "2013 Battle of In Khalil (Q5420456)",
+    "2019 Ogossagou massacre (Q62389968)",
+    "2019 Sobane Da massacre (Q64526276)",
+    "2020 2020 Malian coup d'état (Q98457371)",
+    "2021 2021 Malian coup d'état (Q106975429)",
+    "2022 Moura massacre (Q111480185)",
+    "2024 Battle of Tinzaouaten (2024) (Q128007033)"
+   ]
+  },
+  {
+   "country": "Malta",
+   "entity": "c-mlt",
+   "events": [
+    "870 Siege of Melite (870) (Q28162861)",
+    "1091 Norman invasion of Malta (Q56276752)",
+    "1429 Siege of Malta (1429) (Q20706642)",
+    "1565 Great Siege of Malta (Q58732)",
+    "1592 1592–1593 Malta plague epidemic (Q20723260)",
+    "1675 1675–1676 Malta plague epidemic (Q20723261)",
+    "1749 1749 Muslim slave revolt plot in Malta (Q20556343)",
+    "1775 Rising of the Priests (Q20204978)",
+    "1798 Siege of Malta (1798–1800) (Q2493908)",
+    "1807 Froberg mutiny (Q20050680)",
+    "1940 Siege of Malta (World War II) (Q682452)"
+   ]
+  },
+  {
+   "country": "Myanmar",
+   "entity": "c-mmr",
+   "events": [
+    "1385 Forty Years' War (Q3119006)",
+    "1824 Anglo-Burmese Wars (Q2248139)",
+    "1885 Third Anglo-Burmese War (Q1209946)",
+    "1947 Myanmar conflict (Q852088)",
+    "1961 Kachin conflict (Q2652686)",
+    "1962 1962 Burmese coup d'état (Q4350095)",
+    "2003 Depayin massacre (Q5260602)",
+    "2011 2011 Yunnan earthquake (Q576390)",
+    "2016 2016 Chauk earthquake (Q26690160)",
+    "2016 Rohingya genocide (Q28136551)",
+    "2021 2021 Myanmar coup d'état (Q105180889)",
+    "2021 Bago massacre (Q116944530)",
+    "2021 Myanmar civil war (2021–present) (Q110613097)",
+    "2022 Hpakant massacre (Q114841701)",
+    "2023 Pazigyi massacre (Q117595454)",
+    "2025 2025 Myanmar earthquake (Q133574091)"
+   ]
+  },
+  {
+   "country": "Montenegro",
+   "entity": "c-mne",
+   "events": [
+    "1042 Battle of Bar (Q3442989)",
+    "1858 Battle of Grahovac (Q3545065)",
+    "1861 Montenegrin–Ottoman War (1861–1862) (Q16724471)",
+    "1876 Montenegrin–Ottoman War (1876–1878) (Q4513932)",
+    "1876 Battle of Vučji Do (Q2586933)",
+    "1876 Battle of Fundina (Q286420)",
+    "1879 Battle of Novšiće (Q1001069)",
+    "1914 Battle of Antivari (Q1778176)",
+    "1916 Battle of Mojkovac (Q2451530)",
+    "1924 Šahovići massacre (Q12747413)",
+    "1941 Battle of Pljevlja (Q4087316)",
+    "1945 Bar massacre (Q3300974)",
+    "1979 1979 Montenegro earthquake (Q3505185)"
+   ]
+  },
+  {
+   "country": "Mongolia",
+   "entity": "mongolia",
+   "events": [
+    "-118 Battle of Mobei (Q280345)",
+    "1187 Battle of Dalan Baljut (Q9172907)",
+    "1696 Battle of Jao Modo (Q3874305)",
+    "1913 Treaty of friendship and alliance between the Government of Mongolia and Tibet (Q152533)",
+    "1921 Battle of Urga (Q4527029)",
+    "1939 Battles of Khalkhin Gol (Q188925)"
+   ]
+  },
+  {
+   "country": "Mozambique",
+   "entity": "c-moz",
+   "events": [
+    "1977 Mozambican Civil War (Q657661)"
+   ]
+  },
+  {
+   "country": "Mauritania",
+   "entity": "c-mrt",
+   "events": [
+    "1056 Battle of Tabfarilla (Q2890092)",
+    "1978 1978 Mauritanian coup d'état (Q96363593)",
+    "1984 1984 Mauritanian coup d'état (Q63111212)",
+    "2003 2003 Mauritanian coup attempt (Q85728158)",
+    "2005 2005 Mauritanian coup d'état (Q3495710)",
+    "2008 2008 Mauritanian coup d'état (Q2465567)"
+   ]
+  },
+  {
+   "country": "Malawi",
+   "entity": "c-mwi",
+   "events": [
+    "1915 Chilembwe uprising (Q16056284)"
+   ]
+  },
+  {
+   "country": "Malaysia",
+   "entity": "c-mys",
+   "events": [
+    "1511 Capture of Malacca (1511) (Q4110453)",
+    "1568 Siege of Malacca (1568) (Q4273940)",
+    "1606 Siege of Malacca (1606) (Q7510222)",
+    "1640 Siege of Malacca (1640–1641) (Q4337398)",
+    "1894 Mat Salleh Rebellion (Q1908014)",
+    "1941 Battle of Kampar (Q4871375)",
+    "1942 Battle of Gemas (Q4871087)",
+    "1945 Battle of North Borneo (Q1934591)",
+    "1945 Battle of Labuan (Q18920234)",
+    "1948 Malayan Emergency (Q2354629)",
+    "1962 Communist insurgency in Sarawak (Q17017491)",
+    "1965 Independence of Singapore Agreement 1965 (Q15991222)",
+    "1968 Communist insurgency in Malaysia (1968–1989) (Q3446062)",
+    "2009 2009 Sumatra earthquakes (Q815718)",
+    "2015 2015 Sabah earthquake (Q20051451)",
+    "2017 Assassination of Kim Jong-nam (Q28798841)"
+   ]
+  },
+  {
+   "country": "Namibia",
+   "entity": "c-nam",
+   "events": [
+    "1904 Battle of Waterberg (Q178842)",
+    "1914 Battle of Sandfontein (Q689490)",
+    "1966 South African Border War (Q1993848)"
+   ]
+  },
+  {
+   "country": "Niger",
+   "entity": "c-ner",
+   "events": [
+    "1916 Kaocen revolt (Q2335525)",
+    "1974 1974 Nigerien coup d'état (Q4114547)",
+    "1996 1996 Nigerien coup d'état (Q4114548)",
+    "1999 1999 Nigerien coup d'état (Q16266489)",
+    "2010 2010 Nigerien coup d'état (Q924625)",
+    "2013 Agadez and Arlit attacks (Q13548627)",
+    "2014 2014 Gamboru Ngala massacre (Q16761579)",
+    "2015 30 June and 1 July 2015 Borno massacres (Q20639688)",
+    "2021 Tchoma Bangou and Zaroumdareye massacres (Q104635416)",
+    "2021 2021 Nigerien coup attempt (Q106305106)",
+    "2023 2023 Nigerien coup d'état (Q117100709)",
+    "2026 2026 Nigerien coup attempt (Q141214672)"
+   ]
+  },
+  {
+   "country": "Nigeria",
+   "entity": "c-nga",
+   "events": [
+    "1915 Bussa rebellion (Q16825060)",
+    "1966 1966 Nigerian coup d'état (Q16205928)",
+    "1966 1966 anti-Igbo pogrom (Q4572480)",
+    "1967 Nigerian Civil War (Q829875)",
+    "2004 Yelwa massacre (Q3297470)",
+    "2009 Boko Haram insurgency (Q1569328)",
+    "2009 2009 Boko Haram uprising (Q2411274)",
+    "2013 2013 Baga massacre (Q13580335)",
+    "2014 April 2014 Nyanya bombing (Q16334391)",
+    "2015 2015 Baga massacre (Q18732673)",
+    "2015 Battle of Damasak (Q19517778)",
+    "2015 2015 Zaria massacre (Q21730772)",
+    "2020 2020 Lekki shooting (Q100769993)",
+    "2021 Insurgency in Southeastern Nigeria (Q105453271)",
+    "2022 2022 Zamfara massacres (Q110502982)",
+    "2023 2023 Plateau State massacres (Q124020336)"
+   ]
+  },
+  {
+   "country": "Nicaragua",
+   "entity": "c-nic",
+   "events": [
+    "1855 Filibuster War (Q5027839)",
+    "1860 Treaty of Managua (Q7837136)",
+    "1912 Battle of Coyotepe Hill (Q3636296)",
+    "1926 Nicaraguan Civil War (1926–1927) (Q1553256)",
+    "1931 1931 Nicaragua earthquake (Q4562866)",
+    "1972 1972 Nicaragua earthquake (Q924446)",
+    "2014 April 2014 Nicaragua earthquake (Q16300302)"
+   ]
+  },
+  {
+   "country": "Netherlands",
+   "entity": "c-nld",
+   "events": [
+    "1661 Treaty of The Hague (1661) (Q2383784)",
+    "1672 Siege of Groningen (1672) (Q681814)",
+    "1673 Siege of Maastricht (1673) (Q540121)",
+    "1713 Peace of Utrecht (Q154674)",
+    "1720 Treaty of The Hague (1720) (Q1893619)",
+    "1795 Capture of the Dutch fleet at Den Helder (Q183447)",
+    "1809 Walcheren Campaign (Q1080899)",
+    "1912 First International Opium Convention (Q751398)",
+    "1914 Action of 22 September 1914 (Q2636209)",
+    "1940 German invasion of the Netherlands (Q2649081)",
+    "1940 Battle of the Hague (1940) (Q1891631)",
+    "1940 Battle of Rotterdam (Q3532325)",
+    "1944 Dutch famine of 1944–1945 (Q2562594)",
+    "1944 Battle of Arnhem (Q387093)",
+    "1944 Battle of the Scheldt (Q697022)",
+    "1945 Georgian uprising on Texel (Q161391)"
+   ]
+  },
+  {
+   "country": "Norway",
+   "entity": "c-nor",
+   "events": [
+    "961 Battle of Fitjar (Q738768)",
+    "1016 Battle of Nesjar (Q1288012)",
+    "1030 Battle of Stiklestad (Q830878)",
+    "1184 Battle of Fimreite (Q653707)",
+    "1665 Battle of Vågen (Q1501750)",
+    "1751 Lapp Codicil of 1751 (Q48551)",
+    "1812 Battle of Lyngør (Q2266114)",
+    "1852 Kautokeino rebellion (Q3274081)",
+    "1920 Svalbard Treaty (Q461891)",
+    "1940 Altmark incident (Q177283)",
+    "1940 Battles of Narvik (Q708217)",
+    "1940 Battle of Drøbak Sound (Q567787)",
+    "1940 Battle of Midtskogen (Q1061048)",
+    "1940 Battle of Vinjesvingen (Q2890351)",
+    "1943 Battle of the North Cape (Q715886)",
+    "1945 Black Friday (1945) (Q2748375)"
+   ]
+  },
+  {
+   "country": "Nepal",
+   "entity": "c-npl",
+   "events": [
+    "1744 Unification of Nepal (Q7884900)",
+    "1767 Battle of Kirtipur (Q4871446)",
+    "1768 Battle of Kathmandu (Q4871400)",
+    "1846 Kot massacre (Q11138461)",
+    "1934 1934 Nepal–India earthquake (Q3492593)",
+    "1990 1990 Nepalese revolution (Q1783955)",
+    "1996 Nepalese Civil War (Q2002975)",
+    "2001 Nepalese royal massacre (Q487163)",
+    "2015 April 2015 Nepal earthquake (Q19830062)",
+    "2015 May 2015 Nepal earthquake (Q19898749)",
+    "2023 2023 Nepal earthquake (Q123308737)"
+   ]
+  },
+  {
+   "country": "Nauru",
+   "entity": "c-nru",
+   "events": [
+    "1878 Nauruan Civil War (Q519546)",
+    "2022 COVID-19 pandemic in Nauru (Q89277064)"
+   ]
+  },
+  {
+   "country": "New Zealand",
+   "entity": "c-nzl",
+   "events": [
+    "1809 Boyd massacre (Q895905)",
+    "1845 New Zealand Wars (Q1545405)",
+    "1848 1848 Marlborough earthquake (Q929108)",
+    "1886 1886 eruption of Mount Tarawera (Q16685818)",
+    "1901 1901 Cheviot earthquake (Q4557855)",
+    "1931 1931 Hawke's Bay earthquake (Q722402)",
+    "1968 1968 Inangahua earthquake (Q5933027)",
+    "1990 Aramoana massacre (Q473868)",
+    "2007 2007 Gisborne earthquake (Q1527224)",
+    "2009 2009 Dusky Sound earthquake (Q1131956)",
+    "2010 2010 Canterbury earthquake (Q750144)",
+    "2011 2011 Christchurch earthquake (Q151850)",
+    "2011 June 2011 Christchurch earthquake (Q2801192)",
+    "2016 2016 Kaikōura earthquake (Q27850765)",
+    "2019 2019 Whakaari / White Island eruption (Q77929275)",
+    "2021 2021 Kermadec Islands earthquakes (Q105758009)"
+   ]
+  },
+  {
+   "country": "Oman",
+   "entity": "c-omn",
+   "events": [
+    "1552 Capture of Muscat (1552) (Q5037040)",
+    "1970 1970 Omani coup d'état (Q48815086)"
+   ]
+  },
+  {
+   "country": "Pakistan",
+   "entity": "c-pak",
+   "events": [
+    "1897 Siege of Malakand (Q64879)",
+    "1897 Battle of Saragarhi (Q383067)",
+    "1947 Kashmir conflict (Q1413732)",
+    "1999 Kargil War (Q404517)",
+    "1999 1999 Pakistani coup d'état (Q2352036)",
+    "2005 2005 Kashmir earthquake (Q210137)",
+    "2007 Assassination of Benazir Bhutto (Q1784968)",
+    "2008 2008 Ziarat earthquakes (Q517941)",
+    "2011 Killing of Osama bin Laden (Q19085)",
+    "2013 2013 Balochistan earthquakes (Q14944216)",
+    "2014 2014 Peshawar school massacre (Q18641076)",
+    "2015 October 2015 Hindu Kush earthquake (Q21201293)",
+    "2021 2021 Balochistan earthquake (Q108822258)",
+    "2022 June 2022 Afghanistan earthquake (Q112666390)",
+    "2026 2026 Afghanistan–Pakistan war (Q138414208)",
+    "2026 Mecca Defence Alliance (Q140932341)"
+   ]
+  },
+  {
+   "country": "Panama",
+   "entity": "c-pan",
+   "events": [
+    "1670 Henry Morgan's Panama expedition (Q11688154)",
+    "1821 Independence Act of Panama (Q5656901)",
+    "1903 Secession of Panama from Colombia (Q3089201)",
+    "1914 Thomson–Urrutia Treaty (Q7795915)",
+    "1977 Torrijos–Carter Treaties (Q277343)",
+    "1989 United States invasion of Panama (Q459282)",
+    "2026 2026 Panama earthquake (Q141681530)"
+   ]
+  },
+  {
+   "country": "Peru",
+   "entity": "peru",
+   "events": [
+    "1536 Siege of Cusco (Q2398589)",
+    "1824 Battle of Junín (Q1508820)",
+    "1824 Battle of Ayacucho (Q934157)",
+    "1836 War of the Confederation (Q601811)",
+    "1868 1868 Arica earthquake (Q3271607)",
+    "1879 War of the Pacific (Q152004)",
+    "1879 Battle of Iquique (Q472672)",
+    "1932 Colombia–Peru War (Q1536533)",
+    "1941 Ecuadorian–Peruvian War (Q1500631)",
+    "1942 Rio Protocol (Q1801868)",
+    "1970 1970 Ancash earthquake (Q3245204)",
+    "1995 Cenepa War (Q2337340)",
+    "2007 2007 Peru earthquake (Q210981)",
+    "2014 2014 Iquique earthquake (Q16004619)",
+    "2019 2019 Peru earthquake (Q64031974)",
+    "2022 2022 Peruvian self-coup attempt (Q115626981)"
+   ]
+  },
+  {
+   "country": "Philippines",
+   "entity": "c-phl",
+   "events": [
+    "1896 Philippine Revolution (Q422082)",
+    "1898 Battle of Manila Bay (Q528550)",
+    "1898 Philippine Declaration of Independence (Q69772)",
+    "1898 Siege of Baler (Q778699)",
+    "1942 Battle of Bataan (Q703482)",
+    "1944 Battle of Mindoro (Q711223)",
+    "1944 Battle of Leyte (Q717004)",
+    "1944 Battle of Ormoc Bay (Q718805)",
+    "1945 Battle of Manila (1945) (Q696931)",
+    "1945 Manila massacre (Q699787)",
+    "1945 Battle of Luzon (Q703962)",
+    "2009 Maguindanao massacre (Q1518023)",
+    "2013 2013 Bohol earthquake (Q15071846)",
+    "2017 Siege of Marawi (Q30041564)",
+    "2025 2025 Cebu earthquake (Q136409338)",
+    "2026 2026 Mindanao earthquake (Q140119396)"
+   ]
+  },
+  {
+   "country": "Palau",
+   "entity": "c-plw",
+   "events": [
+    "1944 Battle of Peleliu (Q609030)"
+   ]
+  },
+  {
+   "country": "Papua New Guinea",
+   "entity": "c-png",
+   "events": [
+    "1914 Siege of Toma (Q4745032)",
+    "1942 Battle of Rabaul (1942) (Q1572785)",
+    "1942 Battle of Milne Bay (Q113621)",
+    "1942 Battle of Buna–Gona (Q2917077)",
+    "1943 Battle of Wau (Q743889)",
+    "1943 Landing at Nadzab (Q6484626)",
+    "1943 Bougainville campaign (Q704785)",
+    "1943 Battle of Empress Augusta Bay (Q2165486)",
+    "1943 Battle of Cape St. George (Q700530)",
+    "1943 Battle of Cape Gloucester (Q3293566)",
+    "1944 Battle of Driniumor River (Q4870924)",
+    "1988 Bougainville conflict (Q10360270)",
+    "1998 1998 Papua New Guinea earthquake (Q3133143)",
+    "2018 2018 Papua New Guinea earthquake (Q50178713)",
+    "2022 2022 Papua New Guinea earthquake (Q113900838)",
+    "2023 2023 Papua New Guinea earthquake (Q117424624)"
+   ]
+  },
+  {
+   "country": "Poland",
+   "entity": "c-pol",
+   "events": [
+    "1241 Battle of Legnica (Q159512)",
+    "1605 Polish–Russian War (1609–1618) (Q1044829)",
+    "1733 War of the Polish Succession (Q212658)",
+    "1759 Battle of Kunersdorf (Q170400)",
+    "1806 War of the Fourth Coalition (Q605977)",
+    "1914 Battle of Tannenberg (Q153858)",
+    "1914 Siege of Przemyśl (Q698828)",
+    "1915 Gorlice–Tarnów offensive (Q670489)",
+    "1919 Polish–Lithuanian War (Q1495944)",
+    "1920 Battle of Warsaw (1920) (Q821283)",
+    "1939 Battle of Westerplatte (Q533034)",
+    "1939 Battle of the Bzura (Q165549)",
+    "1939 Soviet invasion of Poland (Q2305266)",
+    "1943 Warsaw Ghetto Uprising (Q160161)",
+    "1944 20 July plot (Q105570)",
+    "1944 Warsaw Uprising (Q1402078)"
+   ]
+  },
+  {
+   "country": "North Korea",
+   "entity": "north-korea",
+   "events": [
+    "1231 Siege of Kuju (Q7510172)",
+    "1592 Battle of Imjin River (1592) (Q4871272)",
+    "1592 Siege of Pyongyang (1592) (Q3420016)",
+    "1593 Siege of Pyongyang (1593) (Q14475856)",
+    "1894 Battle of Pyongyang (1894) (Q715791)",
+    "1937 Battle of Pochonbo (Q575510)",
+    "1950 Battle of Kaesong–Munsan (Q4871363)",
+    "1950 Battle of the Ch'ongch'on River (Q493313)",
+    "1950 Battle of Chosin Reservoir (Q277337)",
+    "1951 Battle of Heartbreak Ridge (Q489561)",
+    "1951 First Battle of Maryang-san (Q2889283)",
+    "1953 Korean Armistice Agreement (Q2862267)",
+    "1956 August faction incident (Q10854408)",
+    "1967 Kapsan faction incident (Q10855109)",
+    "1994 1990s North Korean famine (Q698323)",
+    "2024 North Korean–Russian Treaty on Comprehensive Strategic Partnership (Q126896555)"
+   ]
+  },
+  {
+   "country": "Portugal",
+   "entity": "c-prt",
+   "events": [
+    "1128 Battle of São Mamede (Q2733432)",
+    "1139 Battle of Ourique (Q1328537)",
+    "1147 Siege of Lisbon (Q815177)",
+    "1383 1383–1385 Portuguese interregnum (Q2105495)",
+    "1385 Battle of Aljubarrota (Q1341972)",
+    "1529 Treaty of Zaragoza (Q1147471)",
+    "1703 Methuen Treaty (Q1435156)",
+    "1755 1755 Lisbon earthquake (Q191055)",
+    "1759 Battle of Lagos (Q464226)",
+    "1780 Battle of Cape St. Vincent (1780) (Q178912)",
+    "1797 Battle of Cape St. Vincent (1797) (Q373401)",
+    "1808 Battle of Vimeiro (Q209359)",
+    "1820 Liberal Revolution of 1820 (Q1822923)",
+    "1828 Liberal Wars (Q1237867)",
+    "1910 5 October 1910 revolution (Q638903)",
+    "1974 Carnation Revolution (Q193245)"
+   ]
+  },
+  {
+   "country": "Paraguay",
+   "entity": "c-pry",
+   "events": [
+    "1721 Revolt of the Comuneros (Paraguay) (Q5851623)",
+    "1866 Battle of Curuzú (Q3289878)",
+    "1866 Battle of Estero Bellaco (Q3646790)",
+    "1866 Battle of Curupayty (Q2305019)",
+    "1868 Battle of Lomas Valentinas (Q5722546)",
+    "1868 Passage of Humaitá (Q7510095)",
+    "1868 Battle of Ytororó (Q3505334)",
+    "1868 Battle of Avay (Q3647744)",
+    "1869 Battle of Acosta Ñu (Q2717440)",
+    "1870 Battle of Cerro Corá (Q3504617)",
+    "1922 Paraguayan Civil War (1922–1923) (Q4147509)",
+    "1932 Battle of Boquerón (1932) (Q1122487)",
+    "1936 February Revolution (Paraguay) (Q25340151)",
+    "1947 Paraguayan Civil War (1947) (Q1122422)",
+    "1954 1954 Paraguayan coup d'état (Q30586190)",
+    "1989 1989 Paraguayan coup d'état (Q19601700)"
+   ]
+  },
+  {
+   "country": "Palestine",
+   "entity": "c-pse",
+   "events": [
+    "1948 Hadassah medical convoy massacre (Q1929123)",
+    "1948 Safsaf massacre (Q3297456)",
+    "1953 Qibya massacre (Q1139615)",
+    "1974 Kiryat Shmona massacre (Q2705622)",
+    "1988 Palestinian Declaration of Independence (Q1816561)",
+    "2002 Battle of Jenin (2002) (Q4871330)",
+    "2007 Battle of Gaza (2007) (Q373655)",
+    "2008 Gaza War (2008–2009) (Q170682)",
+    "2023 Israeli invasion of the Gaza Strip (Q123036458)",
+    "2023 Gaza genocide (Q124086054)",
+    "2023 Al-Shifa Hospital siege (Q123422121)",
+    "2024 Killing of Hind Rajab (Q124477340)",
+    "2024 Flour Massacre (Q124695144)",
+    "2024 World Central Kitchen aid convoy attack (Q125273168)",
+    "2024 Tel al-Sultan attack (Q126140767)",
+    "2025 Rafah paramedic massacre (Q133818618)"
+   ]
+  },
+  {
+   "country": "Qatar",
+   "entity": "c-qat",
+   "events": [
+    "1893 Battle of Al Wajbah (Q20988318)",
+    "1995 1995 Qatari coup d'état (Q104530713)",
+    "1996 1996 Qatari coup attempt (Q25450330)"
+   ]
+  },
+  {
+   "country": "Romania",
+   "entity": "c-rou",
+   "events": [
+    "101 Third Battle of Tapae (Q2707263)",
+    "1330 Battle of Posada (Q1076246)",
+    "1475 Battle of Vaslui (Q1073358)",
+    "1479 Battle of Breadfield (Q690291)",
+    "1788 Battle of Karánsebes (Q2309898)",
+    "1789 Battle of Focșani (Q1025134)",
+    "1789 Battle of Rymnik (Q2234632)",
+    "1853 Battle of Oltenița (Q601152)",
+    "1916 Treaty of Bucharest (1916) (Q2268427)",
+    "1916 Battle of Transylvania (Q2633083)",
+    "1916 Battle of Bucharest (Q2628859)",
+    "1917 Battle of Mărășești (Q2889252)",
+    "1918 Treaty of Bucharest (1918) (Q165755)",
+    "1940 Treaty of Craiova (Q2292449)",
+    "1977 1977 Vrancea earthquake (Q751139)",
+    "1989 Romanian revolution (Q204213)"
+   ]
+  },
+  {
+   "country": "Russia",
+   "entity": "russia",
+   "events": [
+    "1223 Battle of the Kalka River (Q570204)",
+    "1240 Battle of the Neva (Q521799)",
+    "1380 Battle of Kulikovo (Q210354)",
+    "1568 Russo-Turkish War (1568–1570) (Q631799)",
+    "1807 Battle of Friedland (Q241108)",
+    "1812 Battle of Borodino (Q184320)",
+    "1914 First Battle of the Masurian Lakes (Q660655)",
+    "1921 Kronstadt rebellion (Q208300)",
+    "1939 Molotov–Ribbentrop Pact (Q130796)",
+    "1942 Battle of Stalingrad (Q38789)",
+    "1991 Belovezha Accords (Q76986)",
+    "1999 Second Chechen War (Q120843)",
+    "2004 Beslan school siege (Q193733)",
+    "2014 Russo-Ukrainian war (Q15860072)",
+    "2020 2020 Nagorno-Karabakh ceasefire agreement (Q101429497)",
+    "2023 Wagner Group rebellion (Q119860532)"
+   ]
+  },
+  {
+   "country": "Rwanda",
+   "entity": "c-rwa",
+   "events": [
+    "1973 1973 Rwandan coup d'état (Q4575699)",
+    "1990 Rwandan Civil War (Q426722)",
+    "1994 Nyarubuye massacre (Q655304)"
+   ]
+  },
+  {
+   "country": "Saudi Arabia",
+   "entity": "saudi-arabia",
+   "events": [
+    "624 Siege of Banu Qaynuqa (Q3079892)",
+    "624 Battle of Badr (Q486124)",
+    "625 Battle of Uhud (Q488278)",
+    "626 Expedition of Dumat al-Jandal (Q3153830)",
+    "627 Battle of the Trench (Q826083)",
+    "630 Siege of Ta'if (Q3087968)",
+    "632 Battle of Buzakha (Q3696185)",
+    "656 Assassination of Uthman (Q3625539)",
+    "683 Battle of al-Harra (Q514382)",
+    "683 Siege of Mecca (683) (Q3023525)",
+    "692 Siege of Mecca (692) (Q17019401)",
+    "1916 Siege of Medina (Q2089011)",
+    "1916 Battle of Mecca (1916) (Q2089020)",
+    "1934 Saudi–Yemeni war (1934) (Q1367731)",
+    "1991 Battle of Khafji (Q718770)",
+    "2026 Mecca Defence Alliance (Q140932341)"
+   ]
+  },
+  {
+   "country": "Sudan",
+   "entity": "c-sdn",
+   "events": [
+    "642 First battle of Dongola (Q5452509)",
+    "652 Second battle of Dongola (Q7443083)",
+    "1881 Mahdist War (Q31944)",
+    "1883 Battle of Shaykan (Q478597)",
+    "1884 Siege of Khartoum (Q815159)",
+    "1885 Battle of Abu Klea (Q1288821)",
+    "1889 Battle of Gallabat (Q1785947)",
+    "1898 Battle of Omdurman (Q1137302)",
+    "2003 Darfur genocide (2003–2005) (Q42915906)",
+    "2019 2019 Sudanese coup d'état (Q63096026)",
+    "2019 Khartoum massacre (Q64481622)",
+    "2021 September 2021 Sudanese coup attempt (Q108622320)",
+    "2021 2021 Sudanese coup d'état (Q109229068)",
+    "2023 Sudanese civil war (2023–present) (Q117716414)",
+    "2023 Battle of Khartoum (2023–2025) (Q117747625)",
+    "2025 El Fasher massacre (Q136673545)"
+   ]
+  },
+  {
+   "country": "Senegal",
+   "entity": "c-sen",
+   "events": [
+    "1940 Battle of Dakar (Q696829)",
+    "1944 Thiaroye massacre (Q303059)",
+    "1982 Casamance conflict (Q209965)"
+   ]
+  },
+  {
+   "country": "Singapore",
+   "entity": "c-sgp",
+   "events": [
+    "1819 1819 Singapore Treaty (Q111032472)",
+    "1915 1915 Singapore Mutiny (Q4560078)",
+    "1942 Fall of Singapore (Q296754)",
+    "1942 Battle of Kranji (Q632926)",
+    "1965 Independence of Singapore Agreement 1965 (Q15991222)",
+    "2009 2009 Sumatra earthquakes (Q815718)"
+   ]
+  },
+  {
+   "country": "Solomon Islands",
+   "entity": "c-slb",
+   "events": [
+    "1942 Battle of Savo Island (Q700032)",
+    "1942 Invasion of Tulagi (May 1942) (Q2673191)",
+    "1942 Battle of the Eastern Solomons (Q696479)",
+    "2007 2007 Solomon Islands earthquake (Q924005)",
+    "2010 2010 Solomon Islands earthquake (Q2666377)"
+   ]
+  },
+  {
+   "country": "Sierra Leone",
+   "entity": "c-sle",
+   "events": [
+    "1991 Sierra Leone Civil War (Q795269)",
+    "1992 1992 Sierra Leonean coup d'état (Q16822144)",
+    "2023 2023 Sierra Leone coup plot (Q121703811)"
+   ]
+  },
+  {
+   "country": "El Salvador",
+   "entity": "c-slv",
+   "events": [
+    "1885 Battle of Chalchuapa (Q2888283)",
+    "1932 La Matanza (Q939859)",
+    "1979 Salvadoran Civil War (Q1783607)",
+    "1979 1979 Salvadoran coup d'état (Q84806169)",
+    "1981 El Mozote massacre (Q1414900)",
+    "2021 2021 Salvadoran political crisis (Q106906095)"
+   ]
+  },
+  {
+   "country": "San Marino",
+   "entity": "c-smr",
+   "events": [
+    "1544 Battle of Serravalle (1544) (Q3822861)",
+    "1944 Battle of San Marino (Q2280517)"
+   ]
+  },
+  {
+   "country": "Somalia",
+   "entity": "c-som",
+   "events": [
+    "1963 Shifta War (Q1271059)",
+    "1964 1964 Ethiopian–Somali Border War (Q55600802)",
+    "1969 1969 Somali coup d'état (Q48733987)",
+    "1982 1982 Ethiopian–Somali Border War (Q652284)",
+    "1991 Somali Civil War (Q243620)",
+    "1993 Battle of Mogadishu (1993) (Q52226)",
+    "2006 Battle of Baidoa (Q3495636)",
+    "2006 Battle of Mogadishu (2006) (Q2275247)",
+    "2006 Fall of Mogadishu (Q1323183)",
+    "2006 Battle of Jilib (Q1478359)",
+    "2009 Somali Civil War (2009–present) (Q1052332)",
+    "2012 Battle of Kismayo (2012) (Q4871455)",
+    "2017 2017 Somali drought (Q28913639)"
+   ]
+  },
+  {
+   "country": "Serbia",
+   "entity": "c-srb",
+   "events": [
+    "268 Battle of Naissus (Q929265)",
+    "1167 Battle of Sirmium (Q172368)",
+    "1385 Battle of Pločnik (Q612288)",
+    "1448 Battle of Kosovo (1448) (Q698706)",
+    "1456 Siege of Belgrade (1456) (Q244980)",
+    "1521 Siege of Belgrade (1521) (Q535542)",
+    "1691 Battle of Slankamen (Q690481)",
+    "1697 Battle of Zenta (Q517486)",
+    "1716 Austro-Turkish War (1716–1718) (Q26799687)",
+    "1716 Battle of Petrovaradin (Q690391)",
+    "1739 Treaty of Belgrade (Q11821309)",
+    "1804 First Serbian Uprising (Q368689)",
+    "1886 Treaty of Bucharest (1886) (Q1300440)",
+    "1914 Battle of Cer (Q697748)",
+    "1914 Battle of Kolubara (Q682699)",
+    "1941 German bombing of Belgrade (Q472100)"
+   ]
+  },
+  {
+   "country": "South Sudan",
+   "entity": "c-ssd",
+   "events": [
+    "1955 First Sudanese Civil War (Q823730)",
+    "2006 Battle of Malakal (Q4871647)",
+    "2011 2011 East Africa drought (Q223390)",
+    "2013 South Sudanese Civil War (Q15353665)",
+    "2014 Bentiu massacre (Q16956086)",
+    "2016 Battle of Juba (2016) (Q25753955)",
+    "2017 Food insecurity and famine in South Sudan (Q28810727)"
+   ]
+  },
+  {
+   "country": "São Tomé and Príncipe",
+   "entity": "c-stp",
+   "events": [
+    "1953 Batepá massacre (Q1851212)",
+    "2003 2003 São Tomé and Príncipe coup d'état (Q27860366)",
+    "2022 2022 São Tomé and Príncipe coup attempt (Q115438612)"
+   ]
+  },
+  {
+   "country": "Suriname",
+   "entity": "c-sur",
+   "events": [
+    "1804 Invasion of Surinam (1804) (Q593085)",
+    "1980 1980 Surinamese coup d'état (Q967981)",
+    "1982 December murders (Q583569)",
+    "1986 Surinamese Civil War (Q1915188)",
+    "1986 Moiwana massacre (Q2134739)",
+    "1990 1990 Surinamese coup d'état (Q14466700)"
+   ]
+  },
+  {
+   "country": "Slovakia",
+   "entity": "c-svk",
+   "events": [
+    "907 Battle of Pressburg (Q697722)",
+    "1312 Battle of Rozgony (Q181293)",
+    "1430 Battle of Trnava (1430) (Q3277009)",
+    "1619 Battle of Humenné (Q723957)",
+    "1664 Siege of Léva (Q1160506)",
+    "1683 Battle of Párkány (Q694911)",
+    "1685 Siege of Érsekújvár (1685) (Q3273985)",
+    "1685 Battle of Kassa (Q4871398)",
+    "1866 Battle of Blumenau (Q561512)",
+    "1907 Černová massacre (Q686944)"
+   ]
+  },
+  {
+   "country": "Slovenia",
+   "entity": "c-svn",
+   "events": [
+    "388 Battle of Poetovio (Q389540)",
+    "394 Battle of the Frigidus (Q836944)",
+    "1915 Battles of the Isonzo (Q681517)",
+    "1919 Marburg's Bloody Sunday (Q674647)",
+    "1945 Barbara Pit massacre (Q807324)"
+   ]
+  },
+  {
+   "country": "Sweden",
+   "entity": "c-swe",
+   "events": [
+    "1208 Battle of Lena (Q367025)",
+    "1361 Battle of Visby (Q624937)",
+    "1471 Battle of Brunkeberg (Q1638031)",
+    "1520 Stockholm Bloodbath (Q846876)",
+    "1598 Battle of Stångebro (Q371409)",
+    "1613 Treaty of Knäred (Q2138526)",
+    "1676 Battle of Lund (Q1536103)",
+    "1710 Battle of Helsingborg (Q705409)",
+    "1714 Battle of Napue (Q694122)",
+    "1721 Treaty of Nystad (Q153286)",
+    "1788 Anjala League (Q551350)",
+    "1809 Treaty of Fredrikshamn (Q1130792)",
+    "1867 Finnish famine of 1866–1868 (Q1558846)",
+    "1918 Invasion of Åland (Q4060498)",
+    "1986 Assassination of Olof Palme (Q3284177)",
+    "2015 2015 Trollhättan school attack (Q21171141)"
+   ]
+  },
+  {
+   "country": "Seychelles",
+   "entity": "c-syc",
+   "events": [
+    "1977 1977 Seychelles coup d'état (Q63121298)",
+    "1981 1981 Seychelles coup attempt (Q29378733)"
+   ]
+  },
+  {
+   "country": "Syria",
+   "entity": "c-syr",
+   "events": [
+    "-852 Battle of Qarqar (Q849474)",
+    "-604 Battle of Carchemish (Q633560)",
+    "634 Siege of Damascus (634) (Q639827)",
+    "657 Battle of Siffin (Q735876)",
+    "1119 Battle of the Field of Blood (Q622184)",
+    "1516 Battle of Marj Dabiq (Q971248)",
+    "1916 Arab Revolt (Q239060)",
+    "1920 Battle of Maysalun (Q994316)",
+    "1982 1982 Hama massacre (Q730878)",
+    "2012 Battle of Aleppo (2012–2016) (Q1842866)",
+    "2014 Siege of Kobanî (Q18071930)",
+    "2018 Operation Olive Branch (Q47465940)",
+    "2023 2023 Turkey–Syria earthquakes (Q116691303)",
+    "2024 2024 Lebanon war (Q130388076)",
+    "2024 Fall of Damascus (2024) (Q131401087)",
+    "2024 Israeli invasion of Syria (2024–present) (Q131405504)"
+   ]
+  },
+  {
+   "country": "Chad",
+   "entity": "c-tcd",
+   "events": [
+    "1965 Chadian Civil War (1965–1979) (Q782474)",
+    "1975 1975 Chadian coup d'état (Q4271747)",
+    "1978 Chadian–Libyan War (Q611071)",
+    "1987 Battle of Fada (Q2502062)",
+    "1990 1990 Chadian coup d'état (Q65047871)",
+    "2005 Chadian Civil War (2005–2010) (Q945700)",
+    "2005 Battle of Adré (Q2887811)",
+    "2006 2006 Zakouma elephant slaughter (Q4607213)",
+    "2006 2006 Chadian coup attempt (Q4605943)",
+    "2006 Battle of N'Djamena (2006) (Q2889481)",
+    "2008 Battle of N'Djamena (2008) (Q2889305)",
+    "2009 Battle of Am Dam (Q2887839)",
+    "2016 Insurgency in Chad (2016–present) (Q106575438)"
+   ]
+  },
+  {
+   "country": "Togo",
+   "entity": "c-tgo",
+   "events": [
+    "1963 1963 Togolese coup d'état (Q4571240)",
+    "1967 1967 Togolese coup d'état (Q16639048)",
+    "1986 1986 Togolese coup attempt (Q63125602)",
+    "1999 Lomé Peace Agreement (Q728770)"
+   ]
+  },
+  {
+   "country": "Thailand",
+   "entity": "c-tha",
+   "events": [
+    "1855 Bowring Treaty (Q745728)",
+    "1893 Paknam incident (Q4924112)",
+    "1904 Franco-Siamese Treaty of 1904 (Q13021956)",
+    "1912 Palace Revolt of 1912 (Q6407111)",
+    "1933 June 1933 Siamese coup d'état (Q2119303)",
+    "1941 Japanese invasion of Thailand (Q1200928)",
+    "1941 Battle of Prachuap Khiri Khan (Q1280169)",
+    "1967 ASEAN Declaration (Q3042723)",
+    "1973 1973 Thai popular uprising (Q4575745)",
+    "1976 6 October 1976 massacre (Q1907348)",
+    "1977 October 1977 Thai coup d'état (Q65086996)",
+    "1991 1991 Thai coup d'état (Q6585266)",
+    "1992 Black May (Thailand) (Q1037676)",
+    "2006 2006 Thai coup d'état (Q860423)",
+    "2011 Mekong River massacre (Q6161350)",
+    "2014 2014 Thai coup d'état (Q16914766)"
+   ]
+  },
+  {
+   "country": "Tajikistan",
+   "entity": "c-tjk",
+   "events": [
+    "-328 Siege of Cyropolis (Q7509958)",
+    "-328 Battle of Jaxartes (Q123215)",
+    "724 Day of Thirst (Q5242954)",
+    "1907 1907 Qaratog earthquake (Q4558717)",
+    "1989 1989 Gissar earthquake (Q5937456)",
+    "1992 Tajikistani Civil War (Q1122110)",
+    "2021 2021 Kyrgyzstan–Tajikistan clashes (Q106647377)"
+   ]
+  },
+  {
+   "country": "Turkmenistan",
+   "entity": "c-tkm",
+   "events": [
+    "1040 Battle of Dandanaqan (Q26493)",
+    "1221 Siege of Merv (1221) (Q39081822)",
+    "1510 Battle of Merv (Q4132831)",
+    "1880 Battle of Geok Tepe (Q3636447)",
+    "1948 1948 Ashgabat earthquake (Q2391429)"
+   ]
+  },
+  {
+   "country": "Timor-Leste",
+   "entity": "c-tls",
+   "events": [
+    "1989 Timor Gap Treaty (Q197916)",
+    "1991 Santa Cruz massacre (Q782441)",
+    "2008 2008 East Timorese assassination attempts (Q757980)"
+   ]
+  },
+  {
+   "country": "Tonga",
+   "entity": "c-ton",
+   "events": [
+    "2006 2006 Tonga earthquake (Q3510578)"
+   ]
+  },
+  {
+   "country": "Trinidad and Tobago",
+   "entity": "c-tto",
+   "events": [
+    "1990 Jamaat al Muslimeen coup attempt (Q6127215)"
+   ]
+  },
+  {
+   "country": "Tunisia",
+   "entity": "c-tun",
+   "events": [
+    "-254 Battle of the Bagradas River (255 BC) (Q6891)",
+    "-254 Battle of Adys (Q963839)",
+    "-239 Mercenary War (Q1132393)",
+    "-202 Battle of the Great Plains (Q1353773)",
+    "-201 Battle of Zama (Q200056)",
+    "-148 Third Punic War (Q6334)",
+    "-148 Siege of Carthage (Third Punic War) (Q815160)",
+    "-45 Battle of Ruspina (Q762458)",
+    "-45 Battle of Thapsus (Q849653)",
+    "533 Battle of Ad Decimum (Q1127353)",
+    "533 Battle of Tricamarum (Q598261)",
+    "1270 Eighth Crusade (Q243684)",
+    "1535 Conquest of Tunis (1535) (Q700893)",
+    "1574 Conquest of Tunis (1574) (Q2664371)",
+    "1881 Treaty of Bardo (Q808027)",
+    "1943 Battle of Kasserine Pass (Q327099)"
+   ]
+  },
+  {
+   "country": "Türkiye",
+   "entity": "turkey",
+   "events": [
+    "-333 Battle of the Granicus (Q192938)",
+    "-332 Battle of Issus (Q201526)",
+    "-300 Battle of Ipsus (Q319124)",
+    "378 Battle of Adrianople (Q192473)",
+    "532 Nika riots (Q162665)",
+    "674 Siege of Constantinople (674–678) (Q399482)",
+    "717 Siege of Constantinople (717–718) (Q27900)",
+    "1097 Siege of Antioch (Q741098)",
+    "1914 Battle of Sarikamish (Q250652)",
+    "1936 Montreux Convention Regarding the Regime of the Straits (Q869500)",
+    "1999 1999 İzmit earthquake (Q367449)",
+    "2016 2016 Turkish coup d'état attempt (Q25906338)",
+    "2016 Assassination of Andrei Karlov (Q28036166)",
+    "2017 Istanbul nightclub shooting (Q28094271)",
+    "2020 2020 Aegean Sea earthquake (Q101003145)",
+    "2023 2023 Turkey–Syria earthquakes (Q116691303)"
+   ]
+  },
+  {
+   "country": "Taiwan",
+   "entity": "c-twn",
+   "events": [
+    "1661 Siege of Fort Zeelandia (Q697621)",
+    "1683 Battle of Penghu (Q276656)",
+    "1884 Battle of Tamsui (Q728355)",
+    "1937 Battle of Shanghai (Q254599)",
+    "1949 Battle of Guningtou (Q699096)",
+    "1949 Yangtze River Crossing campaign (Q15896860)",
+    "1952 Treaty of Taipei (Q707269)",
+    "1955 Battle of Yijiangshan Islands (Q2890719)",
+    "1999 1999 Jiji earthquake (Q714320)",
+    "2006 2006 Hengchun earthquakes (Q698921)",
+    "2010 2010 Kaohsiung earthquake (Q2097061)",
+    "2016 2016 southern Taiwan earthquake (Q22662663)",
+    "2018 2018 Hualien earthquake (Q47756250)",
+    "2019 2019 Hualien earthquake (Q63199418)",
+    "2022 2022 Taitung earthquakes (Q114024810)",
+    "2024 2024 Hualien earthquake (Q125289722)"
+   ]
+  },
+  {
+   "country": "Tanzania",
+   "entity": "c-tza",
+   "events": [
+    "1914 Battle of Tanga (Q704921)",
+    "1915 Battle of Jassin (Q1174179)",
+    "1916 Battle of Tabora (Q20724066)",
+    "1978 Uganda–Tanzania War (Q202465)"
+   ]
+  },
+  {
+   "country": "Uganda",
+   "entity": "c-uga",
+   "events": [
+    "1971 1971 Ugandan coup d'état (Q3653895)",
+    "1979 Fall of Kampala (Q5432160)",
+    "1980 Ugandan Bush War (Q3119017)",
+    "1986 War in Uganda (1986–1994) (Q105587935)",
+    "1996 Allied Democratic Forces insurgency (Q16960307)",
+    "2015 Ngogo Chimpanzee War (Q139236054)",
+    "2018 Kivu Ebola epidemic (Q55887234)",
+    "2023 Mpondwe school massacre (Q119616154)"
+   ]
+  },
+  {
+   "country": "Ukraine",
+   "entity": "c-ukr",
+   "events": [
+    "1648 Khmelnytsky Uprising (Q641479)",
+    "1654 Pereiaslav Agreement (Q525758)",
+    "1709 Battle of Poltava (Q152486)",
+    "1941 Battle of Kiev (1941) (Q162284)",
+    "1942 Massacres of Poles in Volhynia and Eastern Galicia (Q695020)",
+    "1942 Second Battle of Kharkov (Q155620)",
+    "1943 Third Battle of Kharkov (Q157873)",
+    "1991 Belovezha Accords (Q76986)",
+    "2004 Orange Revolution (Q836386)",
+    "2013 Revolution of Dignity (Q15733401)",
+    "2013 Euromaidan (Q15224558)",
+    "2014 Russo-Ukrainian war (Q15860072)",
+    "2022 Snake Island campaign (Q111012552)",
+    "2022 Siege of Mariupol (Q111017791)",
+    "2022 Bucha massacre (Q111467700)",
+    "2022 Battle of Bakhmut (Q112114958)"
+   ]
+  },
+  {
+   "country": "Uruguay",
+   "entity": "c-ury",
+   "events": [
+    "1704 Siege of Colonia del Sacramento (Q12717499)",
+    "1811 Battle of Las Piedras (1811) (Q2889112)",
+    "1812 Battle of Cerrito (Q4870695)",
+    "1814 Battle of Buceo (Q2890940)",
+    "1816 Portuguese conquest of the Banda Oriental (Q2356791)",
+    "1825 Battle of Sarandí (Q2387020)",
+    "1827 Battle of Juncal (Q2984801)",
+    "1831 Massacre of Salsipuedes (Q3816808)",
+    "1839 Uruguayan Civil War (Q2672972)",
+    "1843 Great Siege of Montevideo (Q6130117)",
+    "1864 Siege of Paysandú (Q3820712)",
+    "1888 1888 Río de la Plata earthquake (Q634483)",
+    "1904 Battle of Masoller (Q492464)",
+    "1933 Montevideo Convention (Q210862)",
+    "1973 1973 Uruguayan coup d'état (Q389853)"
+   ]
+  },
+  {
+   "country": "United States",
+   "entity": "usa",
+   "events": [
+    "1688 Nine Years' War (Q152218)",
+    "1763 American Revolution (Q192769)",
+    "1846 Mexican–American War (Q6683)",
+    "1863 Battle of Gettysburg (Q33132)",
+    "1867 Alaska Purchase (Q309029)",
+    "1876 Battle of the Little Bighorn (Q205422)",
+    "1886 Haymarket affair (Q214148)",
+    "1890 Wounded Knee Massacre (Q108413)",
+    "1905 Treaty of Portsmouth (Q548067)",
+    "1906 1906 San Francisco earthquake (Q211386)",
+    "1942 Battle of Midway (Q173034)",
+    "1951 Treaty of San Francisco (Q392541)",
+    "1963 Assassination of John F. Kennedy (Q193484)",
+    "1987 Intermediate-Range Nuclear Forces Treaty (Q169401)",
+    "2017 2017 Las Vegas shooting (Q41522095)",
+    "2021 January 6 United States Capitol attack (Q104705419)"
+   ]
+  },
+  {
+   "country": "Uzbekistan",
+   "entity": "c-uzb",
+   "events": [
+    "729 Battle of Baykand (Q4870429)",
+    "1141 Battle of Qatwan (Q3950956)",
+    "1220 Siege of Samarkand (1220) (Q7510363)",
+    "1220 Siege of Bukhara (Q110970851)",
+    "1365 Battle of Tashkent (1365) (Q19848817)",
+    "1494 Siege of Samarkand (1490s) (Q76995101)",
+    "1497 Siege of Samarkand (1497) (Q7510367)",
+    "1501 Siege of Samarkand (1501) (Q7510370)",
+    "1512 Battle of Ghazdewan (Q4138186)",
+    "1740 Capture of Samarkand (1740) (Q65168385)",
+    "1902 1902 Andijan earthquake (Q4065335)",
+    "1907 1907 Qaratog earthquake (Q4558717)",
+    "1966 Tashkent Declaration (Q2321680)",
+    "2005 Andijan massacre (Q764967)",
+    "2011 2011 Fergana Valley earthquake (Q501106)"
+   ]
+  },
+  {
+   "country": "Vatican City",
+   "entity": "c-vat",
+   "events": [
+    "1059 Treaty of Melfi (Q3536834)",
+    "1153 Treaty of Constance (1153) (Q7837023)",
+    "1156 Treaty of Benevento (Q1566410)",
+    "1177 Treaty of Venice (Q788050)",
+    "1230 Treaty of San Germano (Q1748198)",
+    "1295 Treaty of Anagni (Q1456414)",
+    "1516 Concordat of Bologna (Q1627409)",
+    "1518 Treaty of London (1518) (Q2600616)",
+    "1856 Paris Declaration Respecting Maritime Law (Q684311)",
+    "1929 Lateran Treaty (Q193270)",
+    "1933 Reichskonkordat (Q126528)",
+    "1949 Fourth Geneva Convention (Q973748)",
+    "1949 Third Geneva Convention (Q3984882)",
+    "1968 Treaty on the Non-Proliferation of Nuclear Weapons (Q186444)",
+    "1977 Protocol II to the Geneva Conventions (Q2401715)",
+    "2008 Convention on Cluster Munitions (Q331588)"
+   ]
+  },
+  {
+   "country": "Venezuela",
+   "entity": "c-ven",
+   "events": [
+    "1810 Venezuelan independence (Q8953)",
+    "1812 1812 Caracas earthquake (Q3646645)",
+    "1821 Battle of Carabobo (Q388210)",
+    "1823 Battle of Lake Maracaibo (Q2890925)",
+    "1859 Federal War (Q1479636)",
+    "1875 1875 Cúcuta earthquake (Q3510584)",
+    "1899 Restorative Liberal Revolution (Q3727804)",
+    "1945 1945 Venezuelan coup d'état (Q4565608)",
+    "1958 1958 Venezuelan coup d'état (Q3798246)",
+    "1966 Geneva Agreement (1966) (Q8187829)",
+    "1967 1967 Caracas earthquake (Q26293)",
+    "1999 Bolivarian Revolution (Q891367)",
+    "2002 2002 Venezuelan coup attempt (Q8807)",
+    "2018 August 2018 Venezuela earthquake (Q56224430)",
+    "2019 2019 Venezuelan uprising attempt (Q63395926)",
+    "2026 2026 Venezuela earthquakes (Q140352499)"
+   ]
+  },
+  {
+   "country": "Vietnam",
+   "entity": "c-vnm",
+   "events": [
+    "965 Anarchy of the 12 Warlords (Q1154466)",
+    "1945 August Revolution (Q769960)",
+    "1954 Battle of Dien Bien Phu (Q604897)",
+    "1965 Battle of Ia Drang (Q714749)",
+    "1966 Battle of Long Tan (Q259526)",
+    "1967 Operation Cedar Falls (Q859217)",
+    "1967 Operation Junction City (Q220882)",
+    "1967 Battle of Dak To (Q901263)",
+    "1967 Đắk Sơn massacre (Q709365)",
+    "1968 Battle of Huế (Q697053)",
+    "1969 Battle of Hamburger Hill (Q247395)",
+    "1970 Operation Ivory Coast (Q692885)",
+    "1972 Operation Linebacker II (Q486866)",
+    "1975 Battle of Xuân Lộc (Q487076)",
+    "1975 Fall of Saigon (Q482456)",
+    "1978 Ba Chúc massacre (Q796398)"
+   ]
+  },
+  {
+   "country": "Vanuatu",
+   "entity": "c-vut",
+   "events": [
+    "1980 Coconut War (Q3446722)",
+    "2024 2024 Port Vila earthquake (Q131457095)"
+   ]
+  },
+  {
+   "country": "Yemen",
+   "entity": "c-yem",
+   "events": [
+    "570 Aksumite–Persian wars (Q15211574)",
+    "632 Battle of Zafar (Q3696172)",
+    "1548 Aden Revolt (Q3049873)",
+    "1982 1982 North Yemen earthquake (Q3504562)",
+    "1994 Yemeni civil war (1994) (Q2461485)",
+    "2009 South Yemen insurgency (Q632663)",
+    "2011 Yemeni revolution (Q210005)",
+    "2011 Battle of Zinjibar (2011–2012) (Q1091576)",
+    "2014 Houthi takeover of Yemen (Q18145759)",
+    "2014 Battle of Sanaa (2014) (Q19121521)",
+    "2016 2016–2022 Yemen cholera outbreak (Q30682954)",
+    "2016 Famine in Yemen (2016–present) (Q28220588)",
+    "2018 Battle of Hodeidah (Q48735086)",
+    "2025 August 2025 Israeli attack on Sanaa (Q136001786)",
+    "2026 Fall of Aden (2026) (Q137757212)",
+    "2026 2026 Yemen offensives (Q141349562)"
+   ]
+  },
+  {
+   "country": "South Africa",
+   "entity": "c-zaf",
+   "events": [
+    "1838 Battle of Blood River (Q1392699)",
+    "1879 Battle of Kambula (Q949635)",
+    "1879 Battle of Ulundi (Q2166177)",
+    "1880 Basuto Gun War (Q1348785)",
+    "1899 Siege of Mafeking (Q2090584)",
+    "1899 Siege of Ladysmith (Q2543997)",
+    "1899 Battle of Stormberg (Q431849)",
+    "1899 Battle of Magersfontein (Q1388058)",
+    "1899 Second Battle of Colenso (Q868249)",
+    "1900 Battle of Spion Kop (Q1072592)",
+    "1900 Battle of Paardeberg (Q2237713)",
+    "1906 Bambatha Rebellion (Q3274751)",
+    "1914 Maritz rebellion (Q767368)",
+    "1960 Sharpeville massacre (Q518753)",
+    "1976 Soweto uprising (Q153081)",
+    "2012 Marikana massacre (Q1203203)"
+   ]
+  },
+  {
+   "country": "Zimbabwe",
+   "entity": "c-zwe",
+   "events": [
+    "1896 First Chimurenga (Q233657)",
+    "1983 Gukurahundi (Q490844)",
+    "2008 2008 Zimbabwean cholera outbreak (Q153678)",
+    "2017 2017 Zimbabwean coup d'état (Q43172549)"
+   ]
+  }
+ ],
+ "rejectedDateNotInArticle": [
+  "Afghanistan: 2010 Operation Moshtarak",
+  "Albania: -334 Siege of Pelium",
+  "Argentina: 1880 Selkʼnam genocide",
+  "Australia: 1794 Australian frontier wars",
+  "Azerbaijan: 2020 Battle of Shusha (2020)",
+  "Belgium: 1914 Battle of the Frontiers",
+  "Belize: 2005 2005 Belize unrest",
+  "Brazil: 1893 Brazilian Naval Revolts",
+  "Chile: 1546 Arauco War",
+  "Chile: 1880 Selkʼnam genocide",
+  "Ivory Coast: 2010 Second Ivorian Civil War",
+  "Cuba: 1895 Battle of Dos Ríos",
+  "Cyprus: 1570 Siege of Famagusta",
+  "Denmark: 1644 Battle of Fehmarn (1644)",
+  "Algeria: 1529 Capture of Peñón of Algiers (1529)",
+  "Algeria: 1956 Battle of Algiers (1956–1957)",
+  "Algeria: 1840 Battle of Mazagran",
+  "Algeria: 1398 Crusade of Tedelis",
+  "Eritrea: 1894 First Italo-Ethiopian War",
+  "Spain: 718 Battle of Covadonga",
+  "Ethiopia: 1936 Battle of Amba Aradam",
+  "Finland: 1939 Battle of Salla (1939)",
+  "Georgia: 1914 Bergmann Offensive",
+  "Georgia: 2008 Battle off the coast of Abkhazia",
+  "Gibraltar: 1727 Thirteenth siege of Gibraltar",
+  "Guatemala: 1965 Guatemalan Civil War",
+  "Honduras: 1950 Convention for the Suppression of the Traffic in Persons and of the Exploitation of the Prostitution of Others",
+  "Haiti: 1792 Battle of Croix-des-Bouquets",
+  "India: 1767 Anglo-Mysore wars",
+  "Iran: 1905 Constitutionalization attempts in Iran",
+  "Israel: 2023 Be'eri massacre",
+  "Jordan: 1917 Battle of Aqaba",
+  "Jordan: 1967 Battle of Ammunition Hill",
+  "Kenya: 1953 Lari massacre",
+  "Cambodia: 1967 Cambodian Civil War",
+  "Cambodia: 1643 Cambodian–Dutch War",
+  "Cambodia: 1831 Siamese–Vietnamese War (1833–1834)",
+  "Kosovo: 1999 Izbica massacre",
+  "Kuwait: 2009 Iraqi invasion of Kuwait",
+  "Laos: 1975 Insurgency in Laos",
+  "Libya: 2011 Battle of Misrata (2011)",
+  "Latvia: 1917 Christmas Battles",
+  "Morocco: 1942 Naval Battle of Casablanca",
+  "Monaco: 1910 Monégasque Revolution",
+  "Moldova: 1366 Hungarian–Ottoman Wars",
+  "Moldova: 1941 The Holocaust in Romania",
+  "Madagascar: 1895 Franco-Hova Wars",
+  "Mexico: 1520 La Noche Triste",
+  "North Macedonia: 1015 Battle of Bitola (1015)",
+  "Mali: 2013 Battle of Diabaly",
+  "Myanmar: 1942 Rohingya conflict",
+  "Myanmar: 2016 2016 Kani earthquake",
+  "Myanmar: 1944 Siege of Myitkyina",
+  "Mongolia: -138 Han–Xiongnu wars",
+  "Mozambique: 1972 Wiriyamu Massacre",
+  "Malawi: 2012 Food security in Malawi",
+  "Malaysia: 1969 Moro conflict",
+  "Nigeria: 2003 Conflict in the Niger Delta",
+  "Netherlands: 1995 Agreement on the Conservation of African-Eurasian Migratory Waterbirds",
+  "Netherlands: 734 Battle of the Boarn",
+  "Norway: 984 Battle of Hjörungavágr",
+  "Norway: 1612 Battle of Kringen",
+  "Norway: 1718 Siege of Fredriksten",
+  "Nepal: 2005 2005 Nepal coup d'état",
+  "New Zealand: 1807 Musket Wars",
+  "New Zealand: 180 Hatepe eruption",
+  "Oman: 1963 Dhofar rebellion",
+  "Pakistan: 664 Umayyad campaigns in India",
+  "Philippines: 1969 Moro conflict",
+  "Philippines: 1941 Battle of Corregidor",
+  "Philippines: 1945 Battle of Mindanao",
+  "North Korea: 1953 Battle of Kumsong",
+  "Paraguay: 1866 Battle of Tuyutí",
+  "Palestine: 2023 Gaza Strip famine",
+  "Russia: 1992 1993 Russian constitutional crisis",
+  "Saudi Arabia: 624 Invasion of Buhran",
+  "Somalia: 1991 1992 famine in Somalia",
+  "Serbia: 1815 Second Serbian Uprising",
+  "Sweden: 1710 Great Northern War plague outbreak",
+  "Timor-Leste: 2002 Timor-Leste independence",
+  "Tanzania: 1915 Battle of Bukoba",
+  "Tanzania: 2016 2016 Tanzania earthquake",
+  "Uruguay: 1820 Battle of Tacuarembó",
+  "Uruguay: 1816 Battle of India Muerta",
+  "United States: 2001 Battle of the Alamo",
+  "Uzbekistan: 560 Battle of Gol-Zarriun",
+  "Uzbekistan: 1220 Siege of Gurganj",
+  "Vietnam: 1977 Cambodian–Vietnamese War",
+  "Vietnam: 1975 Insurgency in Laos",
+  "Yemen: 1972 First Yemenite War",
+  "Yemen: 2018 Battle of Aden (2018)",
+  "South Africa: 1899 Boer Wars"
+ ]
+}

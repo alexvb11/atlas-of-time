@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTime } from '../../time/store'
+import { useReader } from '../wiki/store'
 import { interpSeries, spanAt, type Conf, type EntityIndex, isModernAt, useEntityText } from '../../data/entities'
 import type { Resolution } from '../../data/resolve'
 import { ConfTag, Stat, Ticker } from './bits'
@@ -50,7 +51,7 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
     // automated country summaries describe the present day; never show them in the past
     summary =
       e.tier === 2 && e.iso3 && !isModernAt(e, t)
-        ? `The territory of present-day ${e.name}. A detailed history of this period is not yet in this atlas; the lineage above shows its predecessors where known.`
+        ? `The territory of present-day ${e.name}. The lineage above shows its predecessors where known, and the History tab lists dated events.`
         : cleanSummary(e.summary)
     const cap = spanAt(e.capitals, t)
     const gov = spanAt(e.gov, t)
@@ -100,6 +101,11 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
           {summary.length > 320 && (
             <button type="button" onClick={() => setMore(!more)} className="mt-0.5 py-1 text-[12px] text-cyan hover:underline">
               {more ? 'Less' : 'More'}
+            </button>
+          )}
+          {res.kind === 'entity' && res.entity.wiki && (
+            <button type="button" onClick={() => useReader.getState().open(res.entity.wiki!)} className="bubble mt-2 block px-3.5 py-1.5 text-[12.5px] font-medium text-ink">
+              Read the story of {res.entity.name} →
             </button>
           )}
         </div>
