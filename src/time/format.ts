@@ -16,7 +16,8 @@ export function dateParts(t: number): DateParts {
     const k = ya / 1000
     return { value: k >= 100 ? nf.format(Math.round(k)) : k.toFixed(1), unit: 'thousand years ago', approx: true }
   }
-  const y = Math.round(t)
+  // a year runs from y.0 to y.999: 1776.5 is July 1776, not 1777
+  const y = Math.floor(t + 1e-6)
   if (y <= 0) return { value: nf.format(1 - y), unit: 'BCE', approx: y < -3000 }
   if (y >= PRESENT) return { value: String(PRESENT), unit: 'CE · today', approx: false }
   return { value: String(y), unit: 'CE', approx: false }
@@ -29,7 +30,7 @@ export function formatDate(t: number): string {
 
 /** Short year label for timelines: "44 BCE", "1914", "c. 860 BCE" */
 export function formatYear(t: number, approx = false): string {
-  const y = Math.round(t)
+  const y = Math.floor(t + 1e-6)
   const ya = yearsAgo(t)
   if (ya >= 12000) return dateParts(t).value + (ya >= 1e6 ? ' Ma' : ' ka')
   const s = y <= 0 ? `${nf.format(1 - y)} BCE` : `${y}`

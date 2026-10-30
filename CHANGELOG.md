@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.5.0 — 2026-10-30
+
+### The reader: history in depth
+- **Every event opens.** In the History tab, clicking an event (or a period heading) drops down a
+  short article: a film of its pictures, the whole Wikipedia lead, and folding *Background* and
+  *Aftermath* / *Legacy* (or *Early life* for people). The year still jumps the slider. All 304
+  events and 160 entities have a hand-picked article, checked to exist and not be a
+  disambiguation page (`npm run data:articles`). Event cards on the globe get *Read the story*.
+- **Hover cards.** Every link in an article is underlined and opens a card on hover, focus or tap:
+  one bubble with a picture film on top and the definition below, plus *Read the story*, *Show on
+  globe* (for places) and the atlas's own date when the subject is one of its entities.
+- **Picture films.** A title card, then up to eight of the article's own pictures with slow Ken
+  Burns moves (portraits drift toward the face, with a soft fill on the sides), captions and dates
+  as lower thirds, film grain, an old-stock grade and flicker on pictures dated before 1900, and,
+  for people, their real signature written onto parchment as the closing shot (Wikidata P109).
+  Click to pause; segments jump between shots. Reduced motion keeps cuts but drops movement.
+  Every frame is a real image with a link to its Commons page; nothing is generated.
+- **Reading trail.** Clicking any link reads it in a sheet beside the globe (full screen on
+  phones). The trail shows the path (Declaration → Thomas Jefferson → Monticello…); Back and any
+  crumb walk it.
+- **Live, not bundled.** Article text and pictures come from Wikipedia when opened, cached for the
+  session; the build only ships the 22 KB event → article map. Bulk build-time fetching was ruled
+  out: Wikipedia rate-limits anonymous scripts after a few hundred requests, and readers can follow
+  any of millions of links.
+- **Fix**: years with a fraction (1776.5 = July 1776) were rounded up, so the Declaration of
+  Independence and the United States showed 1777. Years now floor.
+- `scripts/qa/reader.mjs` walks the whole path on desktop and phone (article 1.9–2.4 s, card
+  0.34 s on a warm connection; no console errors).
+
 ## 0.4.0 — 2026-10-28
 
 ### Performance pass

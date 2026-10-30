@@ -42,13 +42,14 @@ limit of reconstructing today's features. Documented in the UI caption for deep 
 4. Lineage: per-region chains (e.g. Urartu → Kingdom of Armenia → … → Republic of Armenia),
    breadcrumb is clickable to jump time.
 
-## Data pipeline (`scripts/build-data`, build-time only; the site never calls third-party APIs)
+## Data pipeline (`scripts/build-data`, build-time only; the only live calls are the reader's, to Wikipedia)
 | Script | Source (verified 2026-10-28) | Output |
 |---|---|---|
 | `textures.mjs` | NASA Visible Earth: Blue Marble NG (73909), Black Marble 2016 (144898), clouds (57747), GEBCO 08 elevation + bathymetry (73934/73963); Natural Earth 50m land | `public/textures/*` |
 | `drift.mjs` | gws.gplates.org `reconstruct_points`, model `MERDITH2021` (POST, `return_null_points`) | `public/data/drift/*.bin` |
 | `history.mjs` | aourednik/historical-basemaps (55 snapshots, 123 000 BCE → 2010) + mapshaper | `public/data/history/*.json` |
 | `countries.mjs` | REST Countries v3.1 (`/all?fields=…`, currently redirects to a static file) | `public/data/countries.json` |
+| `articles.mjs` | hand-picked event → Wikipedia article map, checked for existence and disambiguation | `public/data/articles.json` |
 | `entities` | curated JSON for the vertical slice; Wikidata SPARQL + Wikipedia REST for tiers 2–3 | `public/data/entities/*.json` |
 
 Notes from verification:

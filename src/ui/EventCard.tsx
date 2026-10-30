@@ -7,10 +7,13 @@ import { formatYear } from '../time/format'
 import { ConfTag } from './panel/bits'
 import { animateTo } from './TimeBar'
 import { timeToU } from '../time/scale'
+import { useArticleIndex } from '../data/wiki'
+import { useReader } from './wiki/store'
 
 export function EventCard() {
   const id = useTime((s) => s.activeEvent)
   const idx = useEntityIndex()
+  const articles = useArticleIndex()
   const [events, setEvents] = useState<GeoEvent[]>([])
   useEffect(() => {
     loadEvents().then((d) => setEvents(d.events))
@@ -50,6 +53,18 @@ export function EventCard() {
             </button>
           </div>
           <p className="mt-2 text-[13px] leading-relaxed text-ink/85">{ev.text}</p>
+          {articles?.events[`ev:${ev.id}`] && (
+            <button
+              type="button"
+              onClick={() => {
+                useReader.getState().open(articles.events[`ev:${ev.id}`])
+                close()
+              }}
+              className="bubble mt-3 px-3.5 py-1.5 text-[12.5px] font-medium text-ink"
+            >
+              Read the story →
+            </button>
+          )}
           {idx && ev.entities && ev.entities.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-1.5">
               {ev.entities.map((eid) => {

@@ -9,6 +9,8 @@ import { Corner } from './ui/Corner'
 import { Intro } from './app/Intro'
 import { EventCard } from './ui/EventCard'
 import { useTime } from './time/store'
+import { Reader } from './ui/wiki/Reader'
+import { HoverCardHost } from './ui/wiki/HoverCard'
 
 export default function App() {
   useTimeKeys()
@@ -32,6 +34,8 @@ export default function App() {
             </header>
             <Corner key="corner" />
             <EventCard key="event" />
+            <Reader key="reader" />
+            <HoverCardHost key="cards" />
           </>
         )}
       </AnimatePresence>

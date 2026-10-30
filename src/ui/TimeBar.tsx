@@ -204,6 +204,8 @@ export function useTimeKeys() {
     const onKey = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement)?.tagName
       if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement)?.getAttribute?.('role') === 'slider') return
+      // the reader and hover cards keep arrows, space and Escape for themselves
+      if ((e.target as HTMLElement)?.closest?.('[data-keys-local]')) return
       const s = useTime.getState()
       if (s.paletteOpen) return
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {

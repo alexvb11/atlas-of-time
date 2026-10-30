@@ -35,6 +35,7 @@ npm run qa:audit   # 20 random dates × 5 places: does every visible element agr
 npm run qa:fps     # frame rate idle / scrubbing / panel open (real GPU via headless Chromium)
 node scripts/qa/perf.mjs "http://localhost:4173/?qa" --mobile --slow   # cold load + first scrub on a production build (phone CPU, slow 4G)
 node scripts/qa/a11y.mjs   # touch targets, focus indicators, Escape
+node scripts/qa/reader.mjs [--mobile]   # History dropdown → hover card → reader → signature (needs network)
 ```
 
 ## Controls
@@ -46,6 +47,8 @@ node scripts/qa/a11y.mjs   # touch targets, focus indicators, Escape
 | Deselect | Esc or click empty space |
 | Move through time | drag the time bar, ← / → nudge, Shift+← / → jump eras, Space play/pause |
 | Search | ⌘K / Ctrl+K |
+| Read an event | History tab: click the title (the year jumps the slider) · event cards: *Read the story* |
+| Look something up | hover (or focus, or tap) an underlined name; click it to read on, Back walks the trail |
 
 ## How it works
 
@@ -61,14 +64,24 @@ See [PLAN.md](PLAN.md) for the architecture. Short version:
   triangle of crust. At each time it resolves to an entity through dated lineages per present-day
   country, the historical border polygon under it, or regional prehistory. It never shows an empty
   panel.
+- **Reader**: every dated event (304) has a hand-picked Wikipedia article
+  (`scripts/build-data/curated/event-articles.mjs`, checked by `articles.mjs`). The History tab
+  shows its whole lead plus *Background* and *Aftermath*/*Legacy*. Every link in it gets a hover
+  card: a short film on top, the definition below. The film is cut only from the real pictures the
+  article itself uses (portraits, paintings, photos, documents), with Ken Burns moves, captions,
+  grain, an old-stock grade on pictures dated before 1900, and the person's real signature from
+  Wikidata as the last shot. Nothing is generated: an AI-made "Jefferson" would be an invented fact.
 - **Honesty**: every dated fact has a confidence (documented / estimated / disputed) shown as "c.",
   "est." or a "disputed" tag. When the border data carries a name past its time (for example "Sui
   Empire" in 700 CE), the dated lineage wins.
 
 ## Data sources and credits
 
-Every source was checked on 2026-10-28. The live site calls no third-party APIs; everything is
-precomputed into `public/`.
+Every source was checked on 2026-10-28. The globe, borders, panel and data are precomputed into
+`public/`. The one exception is the reader: article text, hover-card definitions and film pictures
+are fetched by the browser from Wikipedia (en.wikipedia.org, upload.wikimedia.org, wikidata.org)
+when someone opens or hovers them, so any link in any article works. If Wikipedia can't be reached,
+the reader says so and everything else keeps working.
 
 | Data | Source | Licence |
 |---|---|---|
@@ -82,6 +95,8 @@ precomputed into `public/`.
 | Country facts | [mledoze/countries](https://github.com/mledoze/countries) | ODbL |
 | Population | [Our World in Data](https://ourworldindata.org/population-sources), HYDE 3.2 + UN WPP | CC BY 4.0 |
 | Entity summaries | Wikipedia REST summary API | CC BY-SA 4.0 (linked per entity) |
+| Reader articles, definitions | English Wikipedia (parse, REST summary and media-list APIs), fetched live | CC BY-SA 4.0 (credited and linked in every card) |
+| Film pictures and signatures | Wikimedia Commons, via the article's own images and Wikidata P109 | per file (each frame links to its Commons page) |
 | Entity IDs | Wikidata (QIDs via Wikipedia page props) | CC0 |
 | LGM sea level | rounded from Spratt & Lisiecki (2016) | cited |
 | LGM ice extent | hand-drawn approximation after Dyke (2004), Hughes et al. (2016) | — |
