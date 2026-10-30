@@ -9,7 +9,8 @@ export function annotate(g) {
   for (const f of g.features) {
     const geom = f.geometry
     if (!geom) continue
-    const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates
+    const polys = (geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates).filter((p) => p?.[0]?.length >= 4)
+    if (!polys.length) continue
     let minX = 180, minY = 90, maxX = -180, maxY = -90
     for (const poly of polys)
       for (const [x, y] of poly[0]) {

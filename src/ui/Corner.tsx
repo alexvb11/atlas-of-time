@@ -57,7 +57,9 @@ export function Corner() {
               ? toMa(t) > 500
                 ? 'Reconstructions this old are highly uncertain · Merdith et al. 2021'
                 : "Plate reconstruction: Merdith et al. 2021 · today's coastlines carried back in time"
-              : 'Historical borders are approximate'}
+              : t >= 1886
+                ? 'Borders: CShapes 2.0 (ETH Zürich), each change dated to the day'
+                : 'Borders before 1886 are approximate reconstructions'}
           </motion.span>
         )}
       </AnimatePresence>

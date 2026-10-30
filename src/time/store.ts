@@ -27,6 +27,8 @@ type State = {
   /** id of the event whose card is open */
   activeEvent: string | null
   soundOn: boolean
+  /** places of the events listed in the Here tab, drawn as numbered pins; hot = the one pointed at */
+  herePins: { lon: number; lat: number; n: number; hot: boolean }[]
   reducedMotion: boolean
 
   setU: (u: number) => void
@@ -57,6 +59,7 @@ export const useTime = create<State>()(
     paletteOpen: false,
     activeEvent: null,
     soundOn: false,
+    herePins: [],
     reducedMotion: !!reduced,
 
     setU: (u) => {

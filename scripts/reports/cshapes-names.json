@@ -1,0 +1,4972 @@
+[
+ {
+  "cshapes": "United States of America",
+  "from": "1886.00",
+  "to": "1959.00",
+  "names": "1886.00 United States of America",
+  "how": "state"
+ },
+ {
+  "cshapes": "United States of America",
+  "from": "1959.01",
+  "to": "1959.64",
+  "names": "1959.01 United States of America",
+  "how": "state"
+ },
+ {
+  "cshapes": "United States of America",
+  "from": "1959.64",
+  "to": "today",
+  "names": "1959.64 United States of America",
+  "how": "state"
+ },
+ {
+  "cshapes": "Alaska",
+  "from": "1886.00",
+  "to": "1959.00",
+  "names": "1886.00 District of Alaska [United States] → 1912.60 Territory of Alaska [United States]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Hawaii",
+  "from": "1898.51",
+  "to": "1959.64",
+  "names": "1898.51 Hawaii (annexed by the United States) [United States] → 1900.45 Territory of Hawaii [United States]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Puerto Rico",
+  "from": "1886.00",
+  "to": "1898.94",
+  "names": "1886.00 Puerto Rico (Spanish colony) [Spain] → 1898.60 Puerto Rico (US territory) [United States]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Puerto Rico",
+  "from": "1898.94",
+  "to": "today",
+  "names": "1898.94 Puerto Rico (US territory) [United States]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Canada",
+  "from": "1886.00",
+  "to": "1948.55",
+  "names": "1886.00 Canada",
+  "how": "state"
+ },
+ {
+  "cshapes": "Canada",
+  "from": "1948.56",
+  "to": "today",
+  "names": "1948.56 Canada",
+  "how": "state"
+ },
+ {
+  "cshapes": "Newfoundland",
+  "from": "1886.00",
+  "to": "1948.55",
+  "names": "1886.00 Colony of Newfoundland [United Kingdom] → 1907.70 Dominion of Newfoundland [United Kingdom] → 1934.10 Newfoundland (Commission of Government) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Bahamas",
+  "from": "1886.00",
+  "to": "1973.52",
+  "names": "1886.00 Colony of the Bahamas [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Bahamas",
+  "from": "1973.52",
+  "to": "today",
+  "names": "1973.52 Bahamas",
+  "how": "state"
+ },
+ {
+  "cshapes": "Cuba",
+  "from": "1886.00",
+  "to": "1898.94",
+  "names": "1886.00 Captaincy General of Cuba [Spain]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cuba",
+  "from": "1898.94",
+  "to": "1902.38",
+  "names": "1898.94 Captaincy General of Cuba [Spain] → 1898.95 US military government of Cuba [United States]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cuba",
+  "from": "1902.39",
+  "to": "today",
+  "names": "1902.39 Cuba",
+  "how": "state"
+ },
+ {
+  "cshapes": "Haiti",
+  "from": "1886.00",
+  "to": "1915.51",
+  "names": "1886.00 Haiti",
+  "how": "state"
+ },
+ {
+  "cshapes": "Haiti",
+  "from": "1915.51",
+  "to": "1934.62",
+  "names": "1915.51 Haiti under US occupation [United States]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Haiti",
+  "from": "1934.62",
+  "to": "today",
+  "names": "1934.62 Haiti",
+  "how": "state"
+ },
+ {
+  "cshapes": "Dominican Republic",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Dominican Republic",
+  "how": "state"
+ },
+ {
+  "cshapes": "Jamaica",
+  "from": "1886.00",
+  "to": "1962.59",
+  "names": "1886.00 Colony of Jamaica [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Jamaica",
+  "from": "1962.60",
+  "to": "today",
+  "names": "1962.60 Jamaica",
+  "how": "state"
+ },
+ {
+  "cshapes": "Trinidad and Tobago",
+  "from": "1886.00",
+  "to": "1962.66",
+  "names": "1886.00 Colony of Trinidad [United Kingdom] → 1889.00 Colony of Trinidad and Tobago [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Trinidad and Tobago",
+  "from": "1962.67",
+  "to": "today",
+  "names": "1962.67 Trinidad and Tobago",
+  "how": "state"
+ },
+ {
+  "cshapes": "Barbados",
+  "from": "1886.00",
+  "to": "1966.91",
+  "names": "1886.00 Colony of Barbados [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Barbados",
+  "from": "1966.91",
+  "to": "today",
+  "names": "1966.91 Barbados",
+  "how": "state"
+ },
+ {
+  "cshapes": "Guadeloupe",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Guadeloupe (French colony) [France] → 1946.20 Guadeloupe (French overseas department) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Martinique",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Martinique (French colony) [France] → 1946.20 Martinique (French overseas department) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mexico",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Mexico",
+  "how": "state"
+ },
+ {
+  "cshapes": "Belize",
+  "from": "1886.00",
+  "to": "1970.59",
+  "names": "1886.00 British Honduras [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Belize",
+  "from": "1970.59",
+  "to": "1981.72",
+  "names": "1970.59 British Honduras [United Kingdom] → 1973.42 Belize (British colony) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Belize",
+  "from": "1981.72",
+  "to": "today",
+  "names": "1981.72 Belize",
+  "how": "state"
+ },
+ {
+  "cshapes": "Guatemala",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Guatemala",
+  "how": "state"
+ },
+ {
+  "cshapes": "Honduras",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Honduras",
+  "how": "state"
+ },
+ {
+  "cshapes": "El Salvador",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 El Salvador",
+  "how": "state"
+ },
+ {
+  "cshapes": "Nicaragua",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Nicaragua",
+  "how": "state"
+ },
+ {
+  "cshapes": "Costa Rica",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Costa Rica",
+  "how": "state"
+ },
+ {
+  "cshapes": "Panama",
+  "from": "1903.84",
+  "to": "today",
+  "names": "1903.84 Panama",
+  "how": "state"
+ },
+ {
+  "cshapes": "Colombia",
+  "from": "1886.00",
+  "to": "1903.84",
+  "names": "1886.00 Colombia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Colombia",
+  "from": "1903.84",
+  "to": "1922.23",
+  "names": "1903.84 Colombia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Colombia",
+  "from": "1922.23",
+  "to": "today",
+  "names": "1922.23 Colombia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Venezuela",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Venezuela",
+  "how": "state"
+ },
+ {
+  "cshapes": "Guyana",
+  "from": "1886.00",
+  "to": "1966.40",
+  "names": "1886.00 British Guiana [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Guyana",
+  "from": "1966.40",
+  "to": "today",
+  "names": "1966.40 Guyana",
+  "how": "state"
+ },
+ {
+  "cshapes": "Surinam",
+  "from": "1886.00",
+  "to": "1954.95",
+  "names": "1886.00 Surinam (Dutch colony) [Netherlands]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Surinam",
+  "from": "1954.95",
+  "to": "1975.90",
+  "names": "1954.95 Surinam (Dutch colony) [Netherlands] → 1954.96 Suriname (country of the Kingdom of the Netherlands) [Netherlands]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Surinam",
+  "from": "1975.90",
+  "to": "today",
+  "names": "1975.90 Suriname",
+  "how": "state"
+ },
+ {
+  "cshapes": "French Guyana",
+  "from": "1886.00",
+  "to": "1930.51",
+  "names": "1886.00 French Guiana (French colony) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "French Guyana",
+  "from": "1930.51",
+  "to": "1946.21",
+  "names": "1930.51 French Guiana (French colony) [France] → 1946.20 French Guiana (French overseas department) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "French Guyana",
+  "from": "1946.22",
+  "to": "today",
+  "names": "1946.22 French Guiana (French overseas department) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Ecuador",
+  "from": "1886.00",
+  "to": "1942.07",
+  "names": "1886.00 Ecuador",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ecuador",
+  "from": "1942.08",
+  "to": "today",
+  "names": "1942.08 Ecuador",
+  "how": "state"
+ },
+ {
+  "cshapes": "Peru",
+  "from": "1886.00",
+  "to": "1909.52",
+  "names": "1886.00 Peru",
+  "how": "state"
+ },
+ {
+  "cshapes": "Peru",
+  "from": "1909.52",
+  "to": "1922.23",
+  "names": "1909.52 Peru",
+  "how": "state"
+ },
+ {
+  "cshapes": "Peru",
+  "from": "1922.23",
+  "to": "1942.07",
+  "names": "1922.23 Peru",
+  "how": "state"
+ },
+ {
+  "cshapes": "Peru",
+  "from": "1942.08",
+  "to": "today",
+  "names": "1942.08 Peru",
+  "how": "state"
+ },
+ {
+  "cshapes": "Brazil",
+  "from": "1886.00",
+  "to": "1903.87",
+  "names": "1886.00 Brazil",
+  "how": "state"
+ },
+ {
+  "cshapes": "Brazil",
+  "from": "1903.88",
+  "to": "1909.52",
+  "names": "1903.88 Brazil",
+  "how": "state"
+ },
+ {
+  "cshapes": "Brazil",
+  "from": "1909.52",
+  "to": "1960.30",
+  "names": "1909.52 Brazil",
+  "how": "state"
+ },
+ {
+  "cshapes": "Brazil",
+  "from": "1960.30",
+  "to": "today",
+  "names": "1960.30 Brazil",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bolivia",
+  "from": "1886.00",
+  "to": "1903.87",
+  "names": "1886.00 Bolivia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bolivia",
+  "from": "1903.88",
+  "to": "1909.52",
+  "names": "1903.88 Bolivia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bolivia",
+  "from": "1909.52",
+  "to": "1938.55",
+  "names": "1909.52 Bolivia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bolivia",
+  "from": "1938.55",
+  "to": "today",
+  "names": "1938.55 Bolivia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Paraguay",
+  "from": "1886.00",
+  "to": "1938.55",
+  "names": "1886.00 Paraguay",
+  "how": "state"
+ },
+ {
+  "cshapes": "Paraguay",
+  "from": "1938.55",
+  "to": "today",
+  "names": "1938.55 Paraguay",
+  "how": "state"
+ },
+ {
+  "cshapes": "Chile",
+  "from": "1886.00",
+  "to": "1899.23",
+  "names": "1886.00 Chile",
+  "how": "state"
+ },
+ {
+  "cshapes": "Chile",
+  "from": "1899.23",
+  "to": "1902.88",
+  "names": "1899.23 Chile",
+  "how": "state"
+ },
+ {
+  "cshapes": "Chile",
+  "from": "1902.89",
+  "to": "today",
+  "names": "1902.89 Chile",
+  "how": "state"
+ },
+ {
+  "cshapes": "Argentina",
+  "from": "1886.00",
+  "to": "1899.23",
+  "names": "1886.00 Argentina",
+  "how": "state"
+ },
+ {
+  "cshapes": "Argentina",
+  "from": "1899.23",
+  "to": "1902.88",
+  "names": "1899.23 Argentina",
+  "how": "state"
+ },
+ {
+  "cshapes": "Argentina",
+  "from": "1902.89",
+  "to": "today",
+  "names": "1902.89 Argentina",
+  "how": "state"
+ },
+ {
+  "cshapes": "Uruguay",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Uruguay",
+  "how": "state"
+ },
+ {
+  "cshapes": "United Kingdom",
+  "from": "1886.00",
+  "to": "1921.93",
+  "names": "1886.00 United Kingdom",
+  "how": "state"
+ },
+ {
+  "cshapes": "United Kingdom",
+  "from": "1921.93",
+  "to": "today",
+  "names": "1921.93 United Kingdom",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ireland",
+  "from": "1921.93",
+  "to": "today",
+  "names": "1921.93 Ireland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Netherlands",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Netherlands",
+  "how": "state"
+ },
+ {
+  "cshapes": "Belgium",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Belgium",
+  "how": "state"
+ },
+ {
+  "cshapes": "Luxembourg",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Luxembourg",
+  "how": "state"
+ },
+ {
+  "cshapes": "France",
+  "from": "1886.00",
+  "to": "1919.49",
+  "names": "1886.00 France",
+  "how": "state"
+ },
+ {
+  "cshapes": "France",
+  "from": "1919.49",
+  "to": "today",
+  "names": "1919.49 France",
+  "how": "state"
+ },
+ {
+  "cshapes": "Switzerland",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Switzerland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Spain",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Spain",
+  "how": "state"
+ },
+ {
+  "cshapes": "Portugal",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Portugal",
+  "how": "state"
+ },
+ {
+  "cshapes": "Germany (Prussia)",
+  "from": "1886.00",
+  "to": "1919.49",
+  "names": "1886.00 German Empire → 1918.86 Germany",
+  "how": "state"
+ },
+ {
+  "cshapes": "Germany (Prussia)",
+  "from": "1919.49",
+  "to": "1920.11",
+  "names": "1919.49 Germany",
+  "how": "state"
+ },
+ {
+  "cshapes": "Germany (Prussia)",
+  "from": "1920.11",
+  "to": "1938.74",
+  "names": "1920.11 Germany",
+  "how": "state"
+ },
+ {
+  "cshapes": "Germany (Prussia)",
+  "from": "1938.75",
+  "to": "1945.35",
+  "names": "1938.75 Germany",
+  "how": "state"
+ },
+ {
+  "cshapes": "German Federal Republic",
+  "from": "1945.35",
+  "to": "1949.72",
+  "names": "1945.35 Allied-occupied Germany (western zones) [United States, United Kingdom and France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "German Federal Republic",
+  "from": "1949.72",
+  "to": "1990.75",
+  "names": "1949.72 West Germany → 1990.75 Germany",
+  "how": "state"
+ },
+ {
+  "cshapes": "German Federal Republic",
+  "from": "1990.76",
+  "to": "today",
+  "names": "1990.76 Germany",
+  "how": "state"
+ },
+ {
+  "cshapes": "German Democratic Republic",
+  "from": "1945.35",
+  "to": "1949.76",
+  "names": "1945.35 Allied-occupied Germany (Soviet zone) [Soviet Union]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "German Democratic Republic",
+  "from": "1949.76",
+  "to": "1990.75",
+  "names": "1949.76 East Germany",
+  "how": "state"
+ },
+ {
+  "cshapes": "Poland",
+  "from": "1918.86",
+  "to": "1919.49",
+  "names": "1918.86 Poland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Poland",
+  "from": "1919.49",
+  "to": "1919.69",
+  "names": "1919.49 Poland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Poland",
+  "from": "1919.69",
+  "to": "1920.76",
+  "names": "1919.69 Poland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Poland",
+  "from": "1920.77",
+  "to": "1921.21",
+  "names": "1920.77 Poland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Poland",
+  "from": "1921.21",
+  "to": "1945.35",
+  "names": "1921.21 Poland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Poland",
+  "from": "1945.35",
+  "to": "today",
+  "names": "1945.35 Poland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Danzig",
+  "from": "1919.49",
+  "to": "1938.67",
+  "names": "1919.49 Free City of Danzig",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Austria-Hungary",
+  "from": "1886.00",
+  "to": "1908.76",
+  "names": "1886.00 Austria-Hungary",
+  "how": "state"
+ },
+ {
+  "cshapes": "Austria-Hungary",
+  "from": "1908.77",
+  "to": "1918.84",
+  "names": "1908.77 Austria-Hungary",
+  "how": "state"
+ },
+ {
+  "cshapes": "Austria",
+  "from": "1918.84",
+  "to": "1919.69",
+  "names": "1918.84 Former Austrian crown lands (borders until the Treaty of Saint-Germain)",
+  "how": "piece"
+ },
+ {
+  "cshapes": "Austria",
+  "from": "1919.69",
+  "to": "today",
+  "names": "1919.69 Austria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Hungary",
+  "from": "1918.84",
+  "to": "1918.91",
+  "names": "1918.84 Hungary (pre-war borders, until the Treaty of Trianon)",
+  "how": "piece"
+ },
+ {
+  "cshapes": "Hungary",
+  "from": "1918.92",
+  "to": "1919.69",
+  "names": "1918.92 Hungary (pre-war borders, until the Treaty of Trianon)",
+  "how": "piece"
+ },
+ {
+  "cshapes": "Hungary",
+  "from": "1919.69",
+  "to": "1920.42",
+  "names": "1919.69 Hungary (borders until the Treaty of Trianon)",
+  "how": "piece"
+ },
+ {
+  "cshapes": "Hungary",
+  "from": "1920.42",
+  "to": "1938.83",
+  "names": "1920.42 Hungary",
+  "how": "state"
+ },
+ {
+  "cshapes": "Hungary",
+  "from": "1938.84",
+  "to": "1947.11",
+  "names": "1938.84 Hungary",
+  "how": "state"
+ },
+ {
+  "cshapes": "Hungary",
+  "from": "1947.11",
+  "to": "today",
+  "names": "1947.11 Hungary",
+  "how": "state"
+ },
+ {
+  "cshapes": "Czechoslovakia",
+  "from": "1918.86",
+  "to": "1938.74",
+  "names": "1918.86 Czechoslovakia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Czechoslovakia",
+  "from": "1938.75",
+  "to": "1938.83",
+  "names": "1938.75 Czechoslovakia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Czechoslovakia",
+  "from": "1938.84",
+  "to": "1945.35",
+  "names": "1938.84 Czechoslovakia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Czechoslovakia",
+  "from": "1945.35",
+  "to": "1947.11",
+  "names": "1945.35 Czechoslovakia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Czechoslovakia",
+  "from": "1947.11",
+  "to": "1993.00",
+  "names": "1947.11 Czechoslovakia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Czech Republic",
+  "from": "1993.00",
+  "to": "today",
+  "names": "1993.00 Czech Republic",
+  "how": "state"
+ },
+ {
+  "cshapes": "Slovakia",
+  "from": "1993.00",
+  "to": "today",
+  "names": "1993.00 Slovakia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Italy/Sardinia",
+  "from": "1886.00",
+  "to": "1919.69",
+  "names": "1886.00 Italy",
+  "how": "state"
+ },
+ {
+  "cshapes": "Italy/Sardinia",
+  "from": "1919.69",
+  "to": "today",
+  "names": "1919.69 Italy",
+  "how": "state"
+ },
+ {
+  "cshapes": "Malta",
+  "from": "1886.00",
+  "to": "1964.72",
+  "names": "1886.00 Crown Colony of Malta [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Malta",
+  "from": "1964.72",
+  "to": "today",
+  "names": "1964.72 Malta",
+  "how": "state"
+ },
+ {
+  "cshapes": "Albania",
+  "from": "1913.00",
+  "to": "1914.18",
+  "names": "1913.00 Albania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Albania",
+  "from": "1914.18",
+  "to": "1920.11",
+  "names": "1914.18 Albania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Albania",
+  "from": "1920.11",
+  "to": "today",
+  "names": "1920.11 Albania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Serbia",
+  "from": "1886.00",
+  "to": "1913.61",
+  "names": "1886.00 Serbia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Serbia",
+  "from": "1913.61",
+  "to": "1915.75",
+  "names": "1913.61 Serbia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Serbia",
+  "from": "1915.75",
+  "to": "1918.91",
+  "names": "1915.75 Serbia under Central Powers occupation [Austria-Hungary, Germany and Bulgaria]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Serbia",
+  "from": "2006.43",
+  "to": "2008.12",
+  "names": "2006.43 Serbia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Serbia",
+  "from": "2008.13",
+  "to": "today",
+  "names": "2008.13 Serbia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Montenegro",
+  "from": "1886.00",
+  "to": "1913.61",
+  "names": "1886.00 Montenegro",
+  "how": "state"
+ },
+ {
+  "cshapes": "Montenegro",
+  "from": "1913.61",
+  "to": "1915.50",
+  "names": "1913.61 Montenegro",
+  "how": "state"
+ },
+ {
+  "cshapes": "Montenegro",
+  "from": "1915.50",
+  "to": "1918.91",
+  "names": "1915.50 Montenegro under Austro-Hungarian occupation [Austria-Hungary]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Montenegro",
+  "from": "2006.45",
+  "to": "today",
+  "names": "2006.45 Montenegro",
+  "how": "state"
+ },
+ {
+  "cshapes": "Macedonia (FYROM/North Macedonia)",
+  "from": "1991.89",
+  "to": "today",
+  "names": "1991.89 Macedonia → 2019.12 North Macedonia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Croatia",
+  "from": "1992.32",
+  "to": "today",
+  "names": "1992.32 Croatia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yugoslavia",
+  "from": "1918.92",
+  "to": "1919.69",
+  "names": "1918.92 Kingdom of Serbs, Croats and Slovenes",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yugoslavia",
+  "from": "1919.69",
+  "to": "1920.42",
+  "names": "1919.69 Kingdom of Serbs, Croats and Slovenes",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yugoslavia",
+  "from": "1920.42",
+  "to": "1991.88",
+  "names": "1920.42 Kingdom of Serbs, Croats and Slovenes → 1929.76 Yugoslavia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yugoslavia",
+  "from": "1991.89",
+  "to": "1992.32",
+  "names": "1991.89 Yugoslavia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yugoslavia",
+  "from": "1992.32",
+  "to": "2006.42",
+  "names": "1992.32 Yugoslavia → 2003.10 Serbia and Montenegro",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bosnia-Herzegovina",
+  "from": "1992.32",
+  "to": "today",
+  "names": "1992.32 Bosnia-Herzegovina",
+  "how": "state"
+ },
+ {
+  "cshapes": "Kosovo",
+  "from": "2008.14",
+  "to": "today",
+  "names": "2008.14 Kosovo",
+  "how": "state"
+ },
+ {
+  "cshapes": "Slovenia",
+  "from": "1992.32",
+  "to": "today",
+  "names": "1992.32 Slovenia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Greece",
+  "from": "1886.00",
+  "to": "1913.61",
+  "names": "1886.00 Greece",
+  "how": "state"
+ },
+ {
+  "cshapes": "Greece",
+  "from": "1913.61",
+  "to": "1919.90",
+  "names": "1913.61 Greece",
+  "how": "state"
+ },
+ {
+  "cshapes": "Greece",
+  "from": "1919.90",
+  "to": "today",
+  "names": "1919.90 Greece",
+  "how": "state"
+ },
+ {
+  "cshapes": "Cyprus",
+  "from": "1914.84",
+  "to": "1960.62",
+  "names": "1914.84 British Cyprus [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cyprus",
+  "from": "1960.62",
+  "to": "today",
+  "names": "1960.62 Cyprus",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bulgaria",
+  "from": "1886.00",
+  "to": "1913.61",
+  "names": "1886.00 Bulgaria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bulgaria",
+  "from": "1913.61",
+  "to": "1918.35",
+  "names": "1913.61 Bulgaria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bulgaria",
+  "from": "1918.35",
+  "to": "1919.90",
+  "names": "1918.35 Bulgaria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bulgaria",
+  "from": "1919.90",
+  "to": "1940.68",
+  "names": "1919.90 Bulgaria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bulgaria",
+  "from": "1940.68",
+  "to": "today",
+  "names": "1940.68 Bulgaria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Moldova",
+  "from": "1991.65",
+  "to": "today",
+  "names": "1991.65 Moldova → 1991.65 Moldova",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1886.00",
+  "to": "1913.61",
+  "names": "1886.00 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1913.61",
+  "to": "1916.93",
+  "names": "1913.61 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1916.93",
+  "to": "1918.35",
+  "names": "1916.93 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1918.35",
+  "to": "1918.83",
+  "names": "1918.35 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1918.83",
+  "to": "1919.69",
+  "names": "1918.83 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1919.69",
+  "to": "1919.90",
+  "names": "1919.69 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1919.90",
+  "to": "1920.42",
+  "names": "1919.90 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1920.42",
+  "to": "1920.82",
+  "names": "1920.42 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1920.82",
+  "to": "1940.49",
+  "names": "1920.82 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1940.49",
+  "to": "1940.68",
+  "names": "1940.49 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rumania",
+  "from": "1940.68",
+  "to": "today",
+  "names": "1940.68 Romania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1886.00",
+  "to": "1905.67",
+  "names": "1886.00 Russian Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1905.68",
+  "to": "1914.29",
+  "names": "1905.68 Russian Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1914.29",
+  "to": "1917.93",
+  "names": "1914.29 Russian Empire → 1917.85 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1917.93",
+  "to": "1918.12",
+  "names": "1917.93 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1918.12",
+  "to": "1918.17",
+  "names": "1918.12 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1918.17",
+  "to": "1918.19",
+  "names": "1918.17 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1918.19",
+  "to": "1918.86",
+  "names": "1918.19 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1918.86",
+  "to": "1920.08",
+  "names": "1918.86 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1920.09",
+  "to": "1920.67",
+  "names": "1920.09 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1920.67",
+  "to": "1920.82",
+  "names": "1920.67 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1920.82",
+  "to": "1921.21",
+  "names": "1920.82 Soviet Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1921.21",
+  "to": "1940.19",
+  "names": "1921.21 Soviet Russia → 1922.99 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1940.20",
+  "to": "1940.42",
+  "names": "1940.20 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1940.42",
+  "to": "1940.49",
+  "names": "1940.42 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1940.49",
+  "to": "1945.35",
+  "names": "1940.49 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1945.35",
+  "to": "1945.62",
+  "names": "1945.35 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1945.62",
+  "to": "1991.65",
+  "names": "1945.62 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1991.65",
+  "to": "1991.67",
+  "names": "1991.65 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1991.67",
+  "to": "1991.68",
+  "names": "1991.67 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1991.68",
+  "to": "1991.82",
+  "names": "1991.68 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1991.82",
+  "to": "1991.91",
+  "names": "1991.82 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1991.92",
+  "to": "1991.97",
+  "names": "1991.92 Soviet Union",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "1991.97",
+  "to": "2014.21",
+  "names": "1991.97 Soviet Union → 1991.98 Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Russia (Soviet Union)",
+  "from": "2014.21",
+  "to": "today",
+  "names": "2014.21 Russia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Estonia",
+  "from": "1918.86",
+  "to": "1940.42",
+  "names": "1918.86 Estonia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Estonia",
+  "from": "1991.68",
+  "to": "today",
+  "names": "1991.68 Estonia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Latvia",
+  "from": "1918.88",
+  "to": "1940.42",
+  "names": "1918.88 Latvia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Latvia",
+  "from": "1991.68",
+  "to": "today",
+  "names": "1991.68 Latvia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Lithuania",
+  "from": "1918.12",
+  "to": "1920.76",
+  "names": "1918.12 Lithuania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Lithuania",
+  "from": "1920.77",
+  "to": "1922.29",
+  "names": "1920.77 Lithuania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Lithuania",
+  "from": "1922.30",
+  "to": "1939.75",
+  "names": "1922.30 Lithuania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Lithuania",
+  "from": "1939.75",
+  "to": "1940.42",
+  "names": "1939.75 Lithuania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Lithuania",
+  "from": "1991.68",
+  "to": "today",
+  "names": "1991.68 Lithuania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ukraine",
+  "from": "1991.99",
+  "to": "2014.21",
+  "names": "1991.99 Ukraine",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ukraine",
+  "from": "2014.21",
+  "to": "today",
+  "names": "2014.21 Ukraine",
+  "how": "state"
+ },
+ {
+  "cshapes": "Belarus (Byelorussia)",
+  "from": "1991.65",
+  "to": "today",
+  "names": "1991.65 Belarus",
+  "how": "state"
+ },
+ {
+  "cshapes": "Armenia",
+  "from": "1991.99",
+  "to": "today",
+  "names": "1991.99 Armenia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Georgia",
+  "from": "1991.68",
+  "to": "today",
+  "names": "1991.68 Georgian SSR [Soviet Union] → 1991.97 Georgia",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Azerbaijan",
+  "from": "1991.99",
+  "to": "today",
+  "names": "1991.99 Azerbaijan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Finland",
+  "from": "1917.93",
+  "to": "1940.19",
+  "names": "1917.93 Finland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Finland",
+  "from": "1940.20",
+  "to": "today",
+  "names": "1940.20 Finland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Sweden",
+  "from": "1886.00",
+  "to": "1905.65",
+  "names": "1886.00 Sweden",
+  "how": "state"
+ },
+ {
+  "cshapes": "Sweden",
+  "from": "1905.65",
+  "to": "today",
+  "names": "1905.65 Sweden",
+  "how": "state"
+ },
+ {
+  "cshapes": "Norway",
+  "from": "1905.65",
+  "to": "today",
+  "names": "1905.65 Norway",
+  "how": "state"
+ },
+ {
+  "cshapes": "Denmark",
+  "from": "1886.00",
+  "to": "1920.11",
+  "names": "1886.00 Denmark",
+  "how": "state"
+ },
+ {
+  "cshapes": "Denmark",
+  "from": "1920.11",
+  "to": "today",
+  "names": "1920.11 Denmark",
+  "how": "state"
+ },
+ {
+  "cshapes": "Iceland",
+  "from": "1886.00",
+  "to": "1918.91",
+  "names": "1886.00 Iceland (Danish dependency) [Denmark]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Iceland",
+  "from": "1918.92",
+  "to": "1942.30",
+  "names": "1918.92 Iceland (Danish dependency) [Denmark] → 1918.92 Kingdom of Iceland (in union with Denmark) [Denmark]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Iceland",
+  "from": "1942.31",
+  "to": "1944.46",
+  "names": "1942.31 Kingdom of Iceland (in union with Denmark) [Denmark]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Iceland",
+  "from": "1944.46",
+  "to": "today",
+  "names": "1944.46 Iceland",
+  "how": "state"
+ },
+ {
+  "cshapes": "Cape Verde",
+  "from": "1886.00",
+  "to": "1975.51",
+  "names": "1886.00 Portuguese Cape Verde [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cape Verde",
+  "from": "1975.51",
+  "to": "today",
+  "names": "1975.51 Cape Verde",
+  "how": "state"
+ },
+ {
+  "cshapes": "Guinea-Bissau",
+  "from": "1886.00",
+  "to": "1886.36",
+  "names": "1886.00 Portuguese Guinea [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Guinea-Bissau",
+  "from": "1886.36",
+  "to": "1942.50",
+  "names": "1886.36 Portuguese Guinea [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Guinea-Bissau",
+  "from": "1942.50",
+  "to": "1974.69",
+  "names": "1942.50 Portuguese Guinea [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Guinea-Bissau",
+  "from": "1974.69",
+  "to": "today",
+  "names": "1974.69 Guinea-Bissau",
+  "how": "state"
+ },
+ {
+  "cshapes": "Equatorial Guinea",
+  "from": "1886.00",
+  "to": "1900.49",
+  "names": "1886.00 Spanish Guinea [Spain]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Equatorial Guinea",
+  "from": "1900.49",
+  "to": "1968.78",
+  "names": "1900.49 Spanish Guinea [Spain]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Equatorial Guinea",
+  "from": "1968.78",
+  "to": "today",
+  "names": "1968.78 Equatorial Guinea",
+  "how": "state"
+ },
+ {
+  "cshapes": "Gambia",
+  "from": "1889.61",
+  "to": "1965.13",
+  "names": "1889.61 Gambia Colony and Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Gambia",
+  "from": "1965.13",
+  "to": "today",
+  "names": "1965.13 Gambia",
+  "how": "state"
+ },
+ {
+  "cshapes": "French West Africa",
+  "from": "1895.46",
+  "to": "1898.45",
+  "names": "1895.46 French West Africa",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "French West Africa",
+  "from": "1898.45",
+  "to": "1902.98",
+  "names": "1898.45 French West Africa",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "French West Africa",
+  "from": "1902.98",
+  "to": "1904.27",
+  "names": "1902.98 French West Africa",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1905.00",
+  "to": "1913.31",
+  "names": "1905.00 Upper Senegal and Niger [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1913.31",
+  "to": "1919.16",
+  "names": "1913.31 Upper Senegal and Niger [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1919.17",
+  "to": "1932.67",
+  "names": "1919.17 Upper Senegal and Niger [France] → 1920.90 French Sudan [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1932.68",
+  "to": "1944.51",
+  "names": "1932.68 French Sudan [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1944.51",
+  "to": "1947.01",
+  "names": "1944.51 French Sudan [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1947.01",
+  "to": "1959.26",
+  "names": "1947.01 French Sudan [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1959.26",
+  "to": "1960.47",
+  "names": "1959.26 French Sudan [France] → 1959.30 Sudanese Republic (Mali Federation)",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1960.47",
+  "to": "1960.72",
+  "names": "1960.47 Sudanese Republic (Mali Federation)",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mali",
+  "from": "1960.72",
+  "to": "today",
+  "names": "1960.72 Mali",
+  "how": "state"
+ },
+ {
+  "cshapes": "Senegal",
+  "from": "1886.00",
+  "to": "1959.26",
+  "names": "1886.00 French Senegal [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Senegal",
+  "from": "1960.47",
+  "to": "today",
+  "names": "1960.47 Senegal",
+  "how": "state"
+ },
+ {
+  "cshapes": "Benin",
+  "from": "1895.00",
+  "to": "1897.56",
+  "names": "1895.00 French Dahomey [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Benin",
+  "from": "1897.56",
+  "to": "1898.45",
+  "names": "1897.56 French Dahomey [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Benin",
+  "from": "1898.45",
+  "to": "1960.58",
+  "names": "1898.45 French Dahomey [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Benin",
+  "from": "1960.58",
+  "to": "today",
+  "names": "1960.58 Dahomey → 1975.92 Benin",
+  "how": "state"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1904.27",
+  "to": "1904.75",
+  "names": "1904.27 French Mauritania [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1904.76",
+  "to": "1912.90",
+  "names": "1904.76 French Mauritania [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1912.90",
+  "to": "1913.31",
+  "names": "1912.90 French Mauritania [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1913.31",
+  "to": "1920.03",
+  "names": "1913.31 French Mauritania [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1920.03",
+  "to": "1944.51",
+  "names": "1920.03 French Mauritania [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1944.51",
+  "to": "1960.90",
+  "names": "1944.51 French Mauritania [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1960.91",
+  "to": "1975.87",
+  "names": "1960.91 Mauritania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1975.87",
+  "to": "1979.59",
+  "names": "1975.87 Mauritania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Mauritania",
+  "from": "1979.59",
+  "to": "today",
+  "names": "1979.59 Mauritania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Niger",
+  "from": "1905.00",
+  "to": "1926.99",
+  "names": "1905.00 Military Territory of Niger [France] → 1922.80 Colony of Niger [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Niger",
+  "from": "1926.99",
+  "to": "1932.67",
+  "names": "1926.99 Colony of Niger [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Niger",
+  "from": "1932.68",
+  "to": "1947.01",
+  "names": "1932.68 Colony of Niger [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Niger",
+  "from": "1947.01",
+  "to": "1960.59",
+  "names": "1947.01 Colony of Niger [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Niger",
+  "from": "1960.59",
+  "to": "today",
+  "names": "1960.59 Niger",
+  "how": "state"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1889.02",
+  "to": "1893.19",
+  "names": "1889.02 French Ivory Coast [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1893.19",
+  "to": "1900.87",
+  "names": "1893.19 French Ivory Coast [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1900.87",
+  "to": "1902.22",
+  "names": "1900.87 French Ivory Coast [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1902.22",
+  "to": "1932.67",
+  "names": "1902.22 French Ivory Coast [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1932.68",
+  "to": "1933.61",
+  "names": "1932.68 French Ivory Coast [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1933.61",
+  "to": "1947.01",
+  "names": "1933.61 French Ivory Coast [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1947.01",
+  "to": "1960.60",
+  "names": "1947.01 French Ivory Coast [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1960.60",
+  "to": "1983.22",
+  "names": "1960.60 Côte d'Ivoire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Cote D'Ivoire",
+  "from": "1983.22",
+  "to": "today",
+  "names": "1983.22 Côte d'Ivoire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Guinea",
+  "from": "1894.00",
+  "to": "1958.75",
+  "names": "1894.00 French Guinea [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Guinea",
+  "from": "1958.75",
+  "to": "today",
+  "names": "1958.75 Guinea",
+  "how": "state"
+ },
+ {
+  "cshapes": "Burkina Faso (Upper Volta)",
+  "from": "1919.17",
+  "to": "1932.67",
+  "names": "1919.17 French Upper Volta [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Burkina Faso (Upper Volta)",
+  "from": "1947.01",
+  "to": "1960.59",
+  "names": "1947.01 French Upper Volta [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Burkina Faso (Upper Volta)",
+  "from": "1960.59",
+  "to": "today",
+  "names": "1960.59 Upper Volta → 1984.60 Burkina Faso",
+  "how": "state"
+ },
+ {
+  "cshapes": "Liberia",
+  "from": "1886.00",
+  "to": "1892.93",
+  "names": "1886.00 Liberia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Liberia",
+  "from": "1892.94",
+  "to": "today",
+  "names": "1892.94 Liberia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Sierra Leone",
+  "from": "1886.00",
+  "to": "1889.61",
+  "names": "1886.00 Colony and Protectorate of Sierra Leone [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sierra Leone",
+  "from": "1889.61",
+  "to": "1895.64",
+  "names": "1889.61 Colony and Protectorate of Sierra Leone [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sierra Leone",
+  "from": "1895.65",
+  "to": "1961.32",
+  "names": "1895.65 Colony and Protectorate of Sierra Leone [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sierra Leone",
+  "from": "1961.32",
+  "to": "today",
+  "names": "1961.32 Sierra Leone",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ghana",
+  "from": "1886.00",
+  "to": "1888.91",
+  "names": "1886.00 Gold Coast [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Ghana",
+  "from": "1888.92",
+  "to": "1898.45",
+  "names": "1888.92 Gold Coast [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Ghana",
+  "from": "1898.45",
+  "to": "1956.18",
+  "names": "1898.45 Gold Coast [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Ghana",
+  "from": "1956.18",
+  "to": "1957.18",
+  "names": "1956.18 Gold Coast [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Ghana",
+  "from": "1957.18",
+  "to": "today",
+  "names": "1957.18 Ghana",
+  "how": "state"
+ },
+ {
+  "cshapes": "German Togoland",
+  "from": "1886.00",
+  "to": "1887.00",
+  "names": "1886.00 German Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "German Togoland",
+  "from": "1887.00",
+  "to": "1888.91",
+  "names": "1887.00 German Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "German Togoland",
+  "from": "1888.92",
+  "to": "1897.00",
+  "names": "1888.92 German Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "German Togoland",
+  "from": "1897.00",
+  "to": "1897.52",
+  "names": "1897.00 German Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "German Togoland",
+  "from": "1897.52",
+  "to": "1897.56",
+  "names": "1897.52 German Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "German Togoland",
+  "from": "1897.56",
+  "to": "1914.66",
+  "names": "1897.56 German Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "German Togoland",
+  "from": "1914.67",
+  "to": "1919.49",
+  "names": "1914.67 German Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "German Togoland",
+  "from": "1919.49",
+  "to": "1922.55",
+  "names": "1919.49 German Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Togo",
+  "from": "1922.55",
+  "to": "1960.32",
+  "names": "1922.55 French Togoland [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Togo",
+  "from": "1960.32",
+  "to": "today",
+  "names": "1960.32 Togo",
+  "how": "state"
+ },
+ {
+  "cshapes": "British Togoland",
+  "from": "1922.55",
+  "to": "1956.00",
+  "names": "1922.55 British Togoland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Kamerun",
+  "from": "1886.00",
+  "to": "1894.20",
+  "names": "1886.00 Kamerun",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Kamerun",
+  "from": "1894.20",
+  "to": "1901.00",
+  "names": "1894.20 Kamerun",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Kamerun",
+  "from": "1901.00",
+  "to": "1912.24",
+  "names": "1901.00 Kamerun",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Kamerun",
+  "from": "1912.25",
+  "to": "1916.17",
+  "names": "1912.25 Kamerun",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Kamerun",
+  "from": "1916.17",
+  "to": "1919.49",
+  "names": "1916.17 Kamerun",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Cameroon",
+  "from": "1919.49",
+  "to": "1922.55",
+  "names": "1919.49 French Cameroons [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cameroon",
+  "from": "1922.55",
+  "to": "1960.00",
+  "names": "1922.55 French Cameroons [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cameroon",
+  "from": "1960.00",
+  "to": "1961.75",
+  "names": "1960.00 Cameroon",
+  "how": "state"
+ },
+ {
+  "cshapes": "Cameroon",
+  "from": "1961.75",
+  "to": "today",
+  "names": "1961.75 Cameroon",
+  "how": "state"
+ },
+ {
+  "cshapes": "British Cameroons",
+  "from": "1919.49",
+  "to": "1922.55",
+  "names": "1919.49 British Cameroons",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "British Cameroons",
+  "from": "1922.55",
+  "to": "1961.75",
+  "names": "1922.55 British Cameroons",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Nigeria",
+  "from": "1914.00",
+  "to": "1960.75",
+  "names": "1914.00 Colony and Protectorate of Nigeria [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Nigeria",
+  "from": "1960.75",
+  "to": "1961.75",
+  "names": "1960.75 Nigeria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Nigeria",
+  "from": "1961.75",
+  "to": "today",
+  "names": "1961.75 Nigeria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Gabon",
+  "from": "1886.00",
+  "to": "1903.99",
+  "names": "1886.00 French Gabon [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Gabon",
+  "from": "1903.99",
+  "to": "1906.11",
+  "names": "1903.99 French Gabon [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Gabon",
+  "from": "1906.11",
+  "to": "1912.24",
+  "names": "1906.11 French Gabon [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Gabon",
+  "from": "1912.25",
+  "to": "1919.49",
+  "names": "1912.25 French Gabon [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Gabon",
+  "from": "1919.49",
+  "to": "1960.62",
+  "names": "1919.49 French Gabon [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Gabon",
+  "from": "1960.63",
+  "to": "today",
+  "names": "1960.63 Gabon",
+  "how": "state"
+ },
+ {
+  "cshapes": "Central African Republic",
+  "from": "1906.11",
+  "to": "1912.24",
+  "names": "1906.11 Ubangi-Shari [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Central African Republic",
+  "from": "1912.25",
+  "to": "1919.49",
+  "names": "1912.25 Ubangi-Shari [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Central African Republic",
+  "from": "1919.49",
+  "to": "1960.61",
+  "names": "1919.49 Ubangi-Shari [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Central African Republic",
+  "from": "1960.62",
+  "to": "today",
+  "names": "1960.62 Central African Republic → 1976.92 Central African Empire → 1979.72 Central African Republic",
+  "how": "state"
+ },
+ {
+  "cshapes": "Chad",
+  "from": "1900.68",
+  "to": "1912.24",
+  "names": "1900.68 French Chad [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Chad",
+  "from": "1912.25",
+  "to": "1919.49",
+  "names": "1912.25 French Chad [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Chad",
+  "from": "1919.49",
+  "to": "1920.21",
+  "names": "1919.49 French Chad [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Chad",
+  "from": "1920.21",
+  "to": "1960.61",
+  "names": "1920.21 French Chad [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Chad",
+  "from": "1960.61",
+  "to": "today",
+  "names": "1960.61 Chad",
+  "how": "state"
+ },
+ {
+  "cshapes": "Congo",
+  "from": "1886.00",
+  "to": "1898.45",
+  "names": "1886.00 French Congo [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo",
+  "from": "1898.45",
+  "to": "1900.67",
+  "names": "1898.45 French Congo [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo",
+  "from": "1900.68",
+  "to": "1906.11",
+  "names": "1900.68 French Congo [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo",
+  "from": "1906.11",
+  "to": "1912.24",
+  "names": "1906.11 French Congo [France] → 1910.10 Middle Congo (French Equatorial Africa) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo",
+  "from": "1912.25",
+  "to": "1919.49",
+  "names": "1912.25 Middle Congo (French Equatorial Africa) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo",
+  "from": "1919.49",
+  "to": "1960.62",
+  "names": "1919.49 Middle Congo (French Equatorial Africa) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo",
+  "from": "1960.62",
+  "to": "today",
+  "names": "1960.62 Republic of the Congo",
+  "how": "state"
+ },
+ {
+  "cshapes": "Congo, Democratic Republic of (Zaire)",
+  "from": "1886.00",
+  "to": "1891.40",
+  "names": "1886.00 Congo Free State [Leopold II of Belgium]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo, Democratic Republic of (Zaire)",
+  "from": "1891.40",
+  "to": "1891.44",
+  "names": "1891.40 Congo Free State [Leopold II of Belgium]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo, Democratic Republic of (Zaire)",
+  "from": "1891.44",
+  "to": "1894.62",
+  "names": "1891.44 Congo Free State [Leopold II of Belgium]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo, Democratic Republic of (Zaire)",
+  "from": "1894.62",
+  "to": "1908.79",
+  "names": "1894.62 Congo Free State [Leopold II of Belgium]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo, Democratic Republic of (Zaire)",
+  "from": "1908.80",
+  "to": "1910.45",
+  "names": "1908.80 Congo Free State [Leopold II of Belgium] → 1908.88 Belgian Congo [Belgium]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo, Democratic Republic of (Zaire)",
+  "from": "1910.46",
+  "to": "1960.49",
+  "names": "1910.46 Belgian Congo [Belgium]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Congo, Democratic Republic of (Zaire)",
+  "from": "1960.50",
+  "to": "today",
+  "names": "1960.50 Congo-Léopoldville → 1964.60 Democratic Republic of the Congo → 1971.82 Zaire → 1997.38 Democratic Republic of the Congo",
+  "how": "state"
+ },
+ {
+  "cshapes": "Uganda",
+  "from": "1894.44",
+  "to": "1902.37",
+  "names": "1894.44 Uganda Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Uganda",
+  "from": "1902.37",
+  "to": "1910.45",
+  "names": "1902.37 Uganda Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Uganda",
+  "from": "1910.46",
+  "to": "1914.30",
+  "names": "1910.46 Uganda Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Uganda",
+  "from": "1914.30",
+  "to": "1926.74",
+  "names": "1914.30 Uganda Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Uganda",
+  "from": "1926.74",
+  "to": "1962.77",
+  "names": "1926.74 Uganda Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Uganda",
+  "from": "1962.77",
+  "to": "today",
+  "names": "1962.77 Uganda",
+  "how": "state"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1888.79",
+  "to": "1891.23",
+  "names": "1888.79 Imperial British East Africa Company territory [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1891.23",
+  "to": "1894.43",
+  "names": "1891.23 Imperial British East Africa Company territory [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1894.44",
+  "to": "1902.37",
+  "names": "1894.44 Imperial British East Africa Company territory [United Kingdom] → 1895.50 East Africa Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1902.37",
+  "to": "1907.00",
+  "names": "1902.37 East Africa Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1907.00",
+  "to": "1907.93",
+  "names": "1907.00 East Africa Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1907.93",
+  "to": "1914.30",
+  "names": "1907.93 East Africa Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1914.30",
+  "to": "1920.56",
+  "names": "1914.30 East Africa Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1920.56",
+  "to": "1924.50",
+  "names": "1920.56 Kenya Colony and Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1924.50",
+  "to": "1926.74",
+  "names": "1924.50 Kenya Colony and Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1926.74",
+  "to": "1963.94",
+  "names": "1926.74 Kenya Colony and Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kenya",
+  "from": "1963.95",
+  "to": "today",
+  "names": "1963.95 Kenya",
+  "how": "state"
+ },
+ {
+  "cshapes": "Tanzania (Tanganyika)",
+  "from": "1891.00",
+  "to": "1916.77",
+  "names": "1891.00 German East Africa [German Empire]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Tanzania (Tanganyika)",
+  "from": "1916.77",
+  "to": "1919.49",
+  "names": "1916.77 German East Africa [German Empire]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Tanzania (Tanganyika)",
+  "from": "1919.49",
+  "to": "1920.49",
+  "names": "1919.49 German East Africa [German Empire]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Tanzania (Tanganyika)",
+  "from": "1920.49",
+  "to": "1922.55",
+  "names": "1920.49 German East Africa [German Empire] → 1920.56 Tanganyika Territory [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Tanzania (Tanganyika)",
+  "from": "1922.55",
+  "to": "1961.94",
+  "names": "1922.55 Tanganyika Territory [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Tanzania (Tanganyika)",
+  "from": "1961.94",
+  "to": "1964.32",
+  "names": "1961.94 Tanganyika",
+  "how": "state"
+ },
+ {
+  "cshapes": "Tanzania (Tanganyika)",
+  "from": "1964.32",
+  "to": "today",
+  "names": "1964.32 Tanganyika → 1964.32 Tanzania",
+  "how": "state"
+ },
+ {
+  "cshapes": "Zanzibar",
+  "from": "1890.50",
+  "to": "1895.50",
+  "names": "1890.50 Sultanate of Zanzibar (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Zanzibar",
+  "from": "1895.50",
+  "to": "1963.96",
+  "names": "1895.50 Sultanate of Zanzibar (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Zanzibar",
+  "from": "1963.97",
+  "to": "1964.32",
+  "names": "1963.97 Zanzibar",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rwanda-Urundi",
+  "from": "1920.49",
+  "to": "1922.55",
+  "names": "1920.49 Rwanda-Urundi",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Rwanda-Urundi",
+  "from": "1922.55",
+  "to": "1962.50",
+  "names": "1922.55 Rwanda-Urundi",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Burundi",
+  "from": "1962.50",
+  "to": "today",
+  "names": "1962.50 Burundi",
+  "how": "state"
+ },
+ {
+  "cshapes": "Rwanda",
+  "from": "1962.50",
+  "to": "today",
+  "names": "1962.50 Rwanda",
+  "how": "state"
+ },
+ {
+  "cshapes": "Somalia",
+  "from": "1960.50",
+  "to": "today",
+  "names": "1960.50 Somalia",
+  "how": "state"
+ },
+ {
+  "cshapes": "British Somaliland (Somaliland Republic)",
+  "from": "1886.00",
+  "to": "1897.28",
+  "names": "1886.00 British Somaliland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "British Somaliland (Somaliland Republic)",
+  "from": "1897.29",
+  "to": "1960.50",
+  "names": "1897.29 British Somaliland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Djibouti",
+  "from": "1886.00",
+  "to": "1900.06",
+  "names": "1886.00 Obock (French Somali Coast) [France] → 1896.50 French Somaliland [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Djibouti",
+  "from": "1900.06",
+  "to": "1977.49",
+  "names": "1900.06 French Somaliland [France] → 1967.50 French Territory of the Afars and the Issas [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Djibouti",
+  "from": "1977.49",
+  "to": "today",
+  "names": "1977.49 Djibouti",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ethiopia",
+  "from": "1886.00",
+  "to": "1889.33",
+  "names": "1886.00 Ethiopia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ethiopia",
+  "from": "1889.34",
+  "to": "1897.37",
+  "names": "1889.34 Ethiopia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ethiopia",
+  "from": "1897.37",
+  "to": "1902.37",
+  "names": "1897.37 Ethiopia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ethiopia",
+  "from": "1902.37",
+  "to": "1907.93",
+  "names": "1902.37 Ethiopia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ethiopia",
+  "from": "1907.93",
+  "to": "1952.70",
+  "names": "1907.93 Ethiopia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ethiopia",
+  "from": "1952.70",
+  "to": "1993.39",
+  "names": "1952.70 Ethiopia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Ethiopia",
+  "from": "1993.40",
+  "to": "today",
+  "names": "1993.40 Ethiopia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Eritrea",
+  "from": "1886.00",
+  "to": "1889.33",
+  "names": "1886.00 Italian Eritrea [Italy]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Eritrea",
+  "from": "1889.34",
+  "to": "1900.06",
+  "names": "1889.34 Italian Eritrea [Italy]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Eritrea",
+  "from": "1900.06",
+  "to": "1941.38",
+  "names": "1900.06 Italian Eritrea [Italy] → 1941.30 Eritrea under British administration [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Eritrea",
+  "from": "1941.38",
+  "to": "1952.70",
+  "names": "1941.38 Eritrea under British administration [United Kingdom] → 1952.70 Eritrea (federated with Ethiopia) [Ethiopia]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Eritrea",
+  "from": "1993.40",
+  "to": "today",
+  "names": "1993.40 Eritrea",
+  "how": "state"
+ },
+ {
+  "cshapes": "Angola",
+  "from": "1886.00",
+  "to": "1890.63",
+  "names": "1886.00 Portuguese Angola [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Angola",
+  "from": "1890.64",
+  "to": "1891.44",
+  "names": "1890.64 Portuguese Angola [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Angola",
+  "from": "1891.44",
+  "to": "1905.41",
+  "names": "1891.44 Portuguese Angola [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Angola",
+  "from": "1905.41",
+  "to": "1975.86",
+  "names": "1905.41 Portuguese Angola [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Angola",
+  "from": "1975.86",
+  "to": "today",
+  "names": "1975.86 Angola",
+  "how": "state"
+ },
+ {
+  "cshapes": "Mozambique",
+  "from": "1886.00",
+  "to": "1891.44",
+  "names": "1886.00 Portuguese Mozambique [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mozambique",
+  "from": "1891.44",
+  "to": "1975.48",
+  "names": "1891.44 Portuguese Mozambique [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mozambique",
+  "from": "1975.48",
+  "to": "today",
+  "names": "1975.48 Mozambique",
+  "how": "state"
+ },
+ {
+  "cshapes": "Federation of Rhodesia and Nyasaland",
+  "from": "1953.58",
+  "to": "1964.05",
+  "names": "1953.58 Federation of Rhodesia and Nyasaland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Zambia",
+  "from": "1911.63",
+  "to": "1953.58",
+  "names": "1911.63 Northern Rhodesia [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Zambia",
+  "from": "1964.06",
+  "to": "today",
+  "names": "1964.06 Northern Rhodesia [United Kingdom] → 1964.81 Zambia",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Zimbabwe (Rhodesia)",
+  "from": "1889.00",
+  "to": "1891.44",
+  "names": "1889.00 British South Africa Company territory [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Zimbabwe (Rhodesia)",
+  "from": "1891.44",
+  "to": "1900.07",
+  "names": "1891.44 British South Africa Company territory [United Kingdom] → 1898.00 Southern Rhodesia [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Zimbabwe (Rhodesia)",
+  "from": "1900.08",
+  "to": "1953.58",
+  "names": "1900.08 Southern Rhodesia [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Zimbabwe (Rhodesia)",
+  "from": "1964.06",
+  "to": "1965.86",
+  "names": "1964.06 Southern Rhodesia [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Zimbabwe (Rhodesia)",
+  "from": "1965.86",
+  "to": "today",
+  "names": "1965.86 Zimbabwe",
+  "how": "state"
+ },
+ {
+  "cshapes": "Malawi",
+  "from": "1891.44",
+  "to": "1953.58",
+  "names": "1891.44 British Central Africa Protectorate [United Kingdom] → 1907.50 Nyasaland [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Malawi",
+  "from": "1964.06",
+  "to": "1964.51",
+  "names": "1964.06 Nyasaland [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Malawi",
+  "from": "1964.51",
+  "to": "today",
+  "names": "1964.51 Malawi",
+  "how": "state"
+ },
+ {
+  "cshapes": "South Africa",
+  "from": "1910.42",
+  "to": "today",
+  "names": "1910.42 South Africa",
+  "how": "state"
+ },
+ {
+  "cshapes": "Cape Colony",
+  "from": "1886.00",
+  "to": "1895.87",
+  "names": "1886.00 Cape Colony",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Cape Colony",
+  "from": "1895.87",
+  "to": "1910.41",
+  "names": "1895.87 Cape Colony",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Natal",
+  "from": "1886.00",
+  "to": "1895.31",
+  "names": "1886.00 Natal",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Natal",
+  "from": "1895.31",
+  "to": "1910.41",
+  "names": "1895.31 Natal",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Transvaal",
+  "from": "1886.00",
+  "to": "1910.41",
+  "names": "1886.00 Transvaal",
+  "how": "state"
+ },
+ {
+  "cshapes": "Orange Free State",
+  "from": "1886.00",
+  "to": "1910.41",
+  "names": "1886.00 Orange Free State",
+  "how": "state"
+ },
+ {
+  "cshapes": "Namibia",
+  "from": "1886.00",
+  "to": "1886.99",
+  "names": "1886.00 German South West Africa [German Empire]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Namibia",
+  "from": "1887.00",
+  "to": "1915.62",
+  "names": "1887.00 German South West Africa [German Empire] → 1915.50 South West Africa [South Africa]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Namibia",
+  "from": "1915.62",
+  "to": "1920.96",
+  "names": "1915.62 South West Africa [South Africa]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Namibia",
+  "from": "1920.96",
+  "to": "1966.82",
+  "names": "1920.96 South West Africa [South Africa]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Namibia",
+  "from": "1966.82",
+  "to": "1990.22",
+  "names": "1966.82 South West Africa [South Africa]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Namibia",
+  "from": "1990.22",
+  "to": "today",
+  "names": "1990.22 Namibia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Lesotho",
+  "from": "1886.00",
+  "to": "1966.76",
+  "names": "1886.00 Basutoland [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Lesotho",
+  "from": "1966.76",
+  "to": "today",
+  "names": "1966.76 Lesotho",
+  "how": "state"
+ },
+ {
+  "cshapes": "Botswana",
+  "from": "1886.00",
+  "to": "1890.50",
+  "names": "1886.00 Bechuanaland Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Botswana",
+  "from": "1890.50",
+  "to": "1895.87",
+  "names": "1890.50 Bechuanaland Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Botswana",
+  "from": "1895.87",
+  "to": "1966.74",
+  "names": "1895.87 Bechuanaland Protectorate [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Botswana",
+  "from": "1966.75",
+  "to": "today",
+  "names": "1966.75 Botswana",
+  "how": "state"
+ },
+ {
+  "cshapes": "Swaziland (Eswatini)",
+  "from": "1895.14",
+  "to": "1902.60",
+  "names": "1895.14 Swaziland (protectorate of the South African Republic) [South African Republic] → 1902.40 Swaziland (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Swaziland (Eswatini)",
+  "from": "1902.60",
+  "to": "1968.68",
+  "names": "1902.60 Swaziland (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Swaziland (Eswatini)",
+  "from": "1968.68",
+  "to": "today",
+  "names": "1968.68 Swaziland → 2018.30 Eswatini",
+  "how": "state"
+ },
+ {
+  "cshapes": "Madagascar (Malagasy)",
+  "from": "1886.00",
+  "to": "1896.59",
+  "names": "1886.00 Madagascar",
+  "how": "state"
+ },
+ {
+  "cshapes": "Madagascar (Malagasy)",
+  "from": "1896.60",
+  "to": "1912.56",
+  "names": "1896.60 Kingdom of Madagascar (French protectorate) [France] → 1897.10 French Madagascar [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Madagascar (Malagasy)",
+  "from": "1912.57",
+  "to": "1946.82",
+  "names": "1912.57 French Madagascar [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Madagascar (Malagasy)",
+  "from": "1946.82",
+  "to": "1960.48",
+  "names": "1946.82 French Madagascar [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Madagascar (Malagasy)",
+  "from": "1960.49",
+  "to": "today",
+  "names": "1960.49 Madagascar",
+  "how": "state"
+ },
+ {
+  "cshapes": "Comoros",
+  "from": "1946.82",
+  "to": "1975.51",
+  "names": "1946.82 Comoros (French overseas territory) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Comoros",
+  "from": "1975.51",
+  "to": "today",
+  "names": "1975.51 Comoros",
+  "how": "state"
+ },
+ {
+  "cshapes": "Reunion",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Réunion (French colony) [France] → 1946.20 Réunion (French overseas department) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mauritius",
+  "from": "1886.00",
+  "to": "1968.19",
+  "names": "1886.00 British Mauritius [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Mauritius",
+  "from": "1968.20",
+  "to": "today",
+  "names": "1968.20 Mauritius",
+  "how": "state"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1886.00",
+  "to": "1902.98",
+  "names": "1886.00 Morocco",
+  "how": "state"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1902.98",
+  "to": "1904.00",
+  "names": "1902.98 Morocco",
+  "how": "state"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1904.00",
+  "to": "1904.75",
+  "names": "1904.00 Sultanate of Morocco",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1904.76",
+  "to": "1912.90",
+  "names": "1904.76 Sultanate of Morocco → 1912.25 French protectorate in Morocco [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1912.90",
+  "to": "1956.17",
+  "names": "1912.90 French protectorate in Morocco [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1956.17",
+  "to": "1956.26",
+  "names": "1956.17 Morocco",
+  "how": "state"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1956.27",
+  "to": "1958.27",
+  "names": "1956.27 Morocco",
+  "how": "state"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1958.27",
+  "to": "1975.87",
+  "names": "1958.27 Morocco",
+  "how": "state"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1975.87",
+  "to": "1979.59",
+  "names": "1975.87 Morocco",
+  "how": "state"
+ },
+ {
+  "cshapes": "Morocco",
+  "from": "1979.59",
+  "to": "today",
+  "names": "1979.59 Morocco",
+  "how": "state"
+ },
+ {
+  "cshapes": "Spanish Morocco",
+  "from": "1912.90",
+  "to": "1956.26",
+  "names": "1912.90 Spanish Morocco",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Spanish Sahara",
+  "from": "1958.77",
+  "to": "1975.87",
+  "names": "1958.77 Spanish Sahara",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Spanish West Africa",
+  "from": "1886.00",
+  "to": "1900.49",
+  "names": "1886.00 Spanish Sahara (Río de Oro) [Spain]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Spanish West Africa",
+  "from": "1900.49",
+  "to": "1912.90",
+  "names": "1900.49 Spanish Sahara (Río de Oro) [Spain]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Spanish West Africa",
+  "from": "1912.90",
+  "to": "1958.77",
+  "names": "1912.90 Spanish Sahara (Río de Oro) [Spain] → 1946.55 Spanish West Africa [Spain]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Algeria",
+  "from": "1886.00",
+  "to": "1901.10",
+  "names": "1886.00 French Algeria [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Algeria",
+  "from": "1901.10",
+  "to": "1902.98",
+  "names": "1901.10 French Algeria [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Algeria",
+  "from": "1902.98",
+  "to": "1919.69",
+  "names": "1902.98 French Algeria [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Algeria",
+  "from": "1919.70",
+  "to": "1962.51",
+  "names": "1919.70 French Algeria [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Algeria",
+  "from": "1962.51",
+  "to": "today",
+  "names": "1962.51 Algeria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Tunisia",
+  "from": "1886.00",
+  "to": "1956.00",
+  "names": "1886.00 French protectorate of Tunisia [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Tunisia",
+  "from": "1956.00",
+  "to": "today",
+  "names": "1956.00 Tunisia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Libya",
+  "from": "1912.80",
+  "to": "1919.69",
+  "names": "1912.80 Italian Libya [Italy]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Libya",
+  "from": "1919.70",
+  "to": "1925.93",
+  "names": "1919.70 Italian Libya [Italy]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Libya",
+  "from": "1925.93",
+  "to": "1934.55",
+  "names": "1925.93 Italian Libya [Italy]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Libya",
+  "from": "1934.55",
+  "to": "1943.36",
+  "names": "1934.55 Italian Libya [Italy] → 1943.10 Libya under Allied administration [United Kingdom and France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Libya",
+  "from": "1943.37",
+  "to": "1949.89",
+  "names": "1943.37 Libya under Allied administration [United Kingdom and France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Libya",
+  "from": "1949.89",
+  "to": "1951.98",
+  "names": "1949.89 Libya under Allied administration [United Kingdom and France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Libya",
+  "from": "1951.98",
+  "to": "today",
+  "names": "1951.98 Libya",
+  "how": "state"
+ },
+ {
+  "cshapes": "Sudan",
+  "from": "1899.05",
+  "to": "1902.37",
+  "names": "1899.05 Anglo-Egyptian Sudan [United Kingdom and Egypt]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sudan",
+  "from": "1902.37",
+  "to": "1910.45",
+  "names": "1902.37 Anglo-Egyptian Sudan [United Kingdom and Egypt]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sudan",
+  "from": "1910.46",
+  "to": "1914.30",
+  "names": "1910.46 Anglo-Egyptian Sudan [United Kingdom and Egypt]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sudan",
+  "from": "1914.30",
+  "to": "1934.55",
+  "names": "1914.30 Anglo-Egyptian Sudan [United Kingdom and Egypt]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sudan",
+  "from": "1934.55",
+  "to": "1956.00",
+  "names": "1934.55 Anglo-Egyptian Sudan [United Kingdom and Egypt]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sudan",
+  "from": "1956.00",
+  "to": "2011.52",
+  "names": "1956.00 Sudan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Sudan",
+  "from": "2011.52",
+  "to": "today",
+  "names": "2011.52 Sudan",
+  "how": "state"
+ },
+ {
+  "cshapes": "South Sudan",
+  "from": "2011.52",
+  "to": "today",
+  "names": "2011.52 South Sudan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Iran (Persia)",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Persia → 1935.22 Iran",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1886.00",
+  "to": "1912.79",
+  "names": "1886.00 Ottoman Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1912.80",
+  "to": "1913.00",
+  "names": "1912.80 Ottoman Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1913.00",
+  "to": "1913.41",
+  "names": "1913.00 Ottoman Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1913.41",
+  "to": "1914.84",
+  "names": "1913.41 Ottoman Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1914.84",
+  "to": "1918.17",
+  "names": "1914.84 Ottoman Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1918.17",
+  "to": "1918.83",
+  "names": "1918.17 Ottoman Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1918.83",
+  "to": "1920.32",
+  "names": "1918.83 Ottoman Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1920.32",
+  "to": "1923.78",
+  "names": "1920.32 Ottoman Empire → 1922.84 Turkey",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkey (Ottoman Empire)",
+  "from": "1923.79",
+  "to": "today",
+  "names": "1923.79 Turkey",
+  "how": "state"
+ },
+ {
+  "cshapes": "Iraq",
+  "from": "1920.32",
+  "to": "1920.98",
+  "names": "1920.32 British-occupied Mesopotamia [United Kingdom] → 1920.60 Mandatory Iraq [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Iraq",
+  "from": "1920.98",
+  "to": "1922.92",
+  "names": "1920.98 Mandatory Iraq [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Iraq",
+  "from": "1922.92",
+  "to": "1932.72",
+  "names": "1922.92 Mandatory Iraq [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Iraq",
+  "from": "1932.73",
+  "to": "1932.75",
+  "names": "1932.73 Mandatory Iraq [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Iraq",
+  "from": "1932.76",
+  "to": "today",
+  "names": "1932.76 Iraq",
+  "how": "state"
+ },
+ {
+  "cshapes": "Egypt",
+  "from": "1886.00",
+  "to": "1899.05",
+  "names": "1886.00 Khedivate of Egypt (under British occupation) [Ottoman Empire]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Egypt",
+  "from": "1899.05",
+  "to": "1914.96",
+  "names": "1899.05 Khedivate of Egypt (under British occupation) [Ottoman Empire] → 1914.96 Sultanate of Egypt (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Egypt",
+  "from": "1914.96",
+  "to": "1922.15",
+  "names": "1914.96 Sultanate of Egypt (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Egypt",
+  "from": "1922.16",
+  "to": "1925.93",
+  "names": "1922.16 Kingdom of Egypt",
+  "how": "state"
+ },
+ {
+  "cshapes": "Egypt",
+  "from": "1925.93",
+  "to": "1967.44",
+  "names": "1925.93 Kingdom of Egypt → 1953.46 Egypt → 1958.15 United Arab Republic",
+  "how": "state"
+ },
+ {
+  "cshapes": "Egypt",
+  "from": "1967.44",
+  "to": "1979.40",
+  "names": "1967.44 United Arab Republic → 1971.70 Egypt",
+  "how": "state"
+ },
+ {
+  "cshapes": "Egypt",
+  "from": "1979.40",
+  "to": "today",
+  "names": "1979.40 Egypt",
+  "how": "state"
+ },
+ {
+  "cshapes": "Syria",
+  "from": "1920.32",
+  "to": "1920.98",
+  "names": "1920.32 French Mandate for Syria [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Syria",
+  "from": "1920.98",
+  "to": "1922.92",
+  "names": "1920.98 French Mandate for Syria [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Syria",
+  "from": "1922.92",
+  "to": "1946.00",
+  "names": "1922.92 French Mandate for Syria [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Syria",
+  "from": "1946.00",
+  "to": "1967.44",
+  "names": "1946.00 Syria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Syria",
+  "from": "1967.44",
+  "to": "today",
+  "names": "1967.44 Syria",
+  "how": "state"
+ },
+ {
+  "cshapes": "Lebanon",
+  "from": "1920.32",
+  "to": "1920.98",
+  "names": "1920.32 Greater Lebanon (French Mandate) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Lebanon",
+  "from": "1920.98",
+  "to": "1944.89",
+  "names": "1920.98 Greater Lebanon (French Mandate) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Lebanon",
+  "from": "1944.89",
+  "to": "today",
+  "names": "1944.89 Lebanon",
+  "how": "state"
+ },
+ {
+  "cshapes": "Jordan",
+  "from": "1920.32",
+  "to": "1920.98",
+  "names": "1920.32 Emirate of Transjordan [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Jordan",
+  "from": "1920.98",
+  "to": "1923.74",
+  "names": "1920.98 Emirate of Transjordan [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Jordan",
+  "from": "1923.74",
+  "to": "1925.83",
+  "names": "1923.74 Emirate of Transjordan [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Jordan",
+  "from": "1925.84",
+  "to": "1946.40",
+  "names": "1925.84 Emirate of Transjordan [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Jordan",
+  "from": "1946.40",
+  "to": "today",
+  "names": "1946.40 Jordan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Palestine",
+  "from": "1920.32",
+  "to": "1920.98",
+  "names": "1920.32 Mandatory Palestine [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Palestine",
+  "from": "1920.98",
+  "to": "1923.74",
+  "names": "1920.98 Mandatory Palestine [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Palestine",
+  "from": "1923.74",
+  "to": "1948.37",
+  "names": "1923.74 Mandatory Palestine [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Israel",
+  "from": "1948.37",
+  "to": "1967.44",
+  "names": "1948.37 Israel",
+  "how": "state"
+ },
+ {
+  "cshapes": "Israel",
+  "from": "1967.44",
+  "to": "1979.40",
+  "names": "1967.44 Israel",
+  "how": "state"
+ },
+ {
+  "cshapes": "Israel",
+  "from": "1979.40",
+  "to": "today",
+  "names": "1979.40 Israel",
+  "how": "state"
+ },
+ {
+  "cshapes": "Saudi Arabia",
+  "from": "1932.73",
+  "to": "1935.00",
+  "names": "1932.73 Saudi Arabia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Saudi Arabia",
+  "from": "1935.00",
+  "to": "2000.44",
+  "names": "1935.00 Saudi Arabia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Saudi Arabia",
+  "from": "2000.45",
+  "to": "today",
+  "names": "2000.45 Saudi Arabia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yemen (Arab Republic of Yemen)",
+  "from": "1918.83",
+  "to": "1934.45",
+  "names": "1918.83 North Yemen",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yemen (Arab Republic of Yemen)",
+  "from": "1934.45",
+  "to": "1990.39",
+  "names": "1934.45 North Yemen",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yemen (Arab Republic of Yemen)",
+  "from": "1990.39",
+  "to": "2000.44",
+  "names": "1990.39 Yemen",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yemen (Arab Republic of Yemen)",
+  "from": "2000.45",
+  "to": "today",
+  "names": "2000.45 Yemen",
+  "how": "state"
+ },
+ {
+  "cshapes": "Yemen, People's Republic of",
+  "from": "1967.91",
+  "to": "1990.39",
+  "names": "1967.91 South Yemen",
+  "how": "state"
+ },
+ {
+  "cshapes": "Aden",
+  "from": "1937.25",
+  "to": "1962.26",
+  "names": "1937.25 Aden",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Kuwait",
+  "from": "1961.47",
+  "to": "today",
+  "names": "1961.47 Kuwait",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bahrain",
+  "from": "1971.62",
+  "to": "today",
+  "names": "1971.62 Bahrain",
+  "how": "state"
+ },
+ {
+  "cshapes": "Qatar",
+  "from": "1916.84",
+  "to": "1971.67",
+  "names": "1916.84 Qatar (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Qatar",
+  "from": "1971.67",
+  "to": "today",
+  "names": "1971.67 Qatar",
+  "how": "state"
+ },
+ {
+  "cshapes": "United Arab Emirates",
+  "from": "1892.19",
+  "to": "1913.57",
+  "names": "1892.19 Trucial States [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "United Arab Emirates",
+  "from": "1913.58",
+  "to": "1971.92",
+  "names": "1913.58 Trucial States [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "United Arab Emirates",
+  "from": "1971.92",
+  "to": "today",
+  "names": "1971.92 United Arab Emirates",
+  "how": "state"
+ },
+ {
+  "cshapes": "Oman",
+  "from": "1886.00",
+  "to": "1990.14",
+  "names": "1886.00 Oman",
+  "how": "state"
+ },
+ {
+  "cshapes": "Oman",
+  "from": "1990.14",
+  "to": "today",
+  "names": "1990.14 Oman",
+  "how": "state"
+ },
+ {
+  "cshapes": "Afghanistan",
+  "from": "1886.00",
+  "to": "1889.00",
+  "names": "1886.00 Afghanistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Afghanistan",
+  "from": "1889.00",
+  "to": "1893.86",
+  "names": "1889.00 Emirate of Afghanistan (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Afghanistan",
+  "from": "1893.86",
+  "to": "1919.33",
+  "names": "1893.86 Emirate of Afghanistan (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Afghanistan",
+  "from": "1919.33",
+  "to": "today",
+  "names": "1919.33 Afghanistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Turkmenistan",
+  "from": "1991.82",
+  "to": "today",
+  "names": "1991.82 Turkmenistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Tajikistan",
+  "from": "1991.68",
+  "to": "today",
+  "names": "1991.68 Tajik SSR [Soviet Union] → 1991.69 Tajikistan",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Kyrgyz Republic",
+  "from": "1991.67",
+  "to": "today",
+  "names": "1991.67 Kyrgyzstan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Uzbekistan",
+  "from": "1991.67",
+  "to": "today",
+  "names": "1991.67 Uzbekistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Kazakhstan",
+  "from": "1991.99",
+  "to": "1997.94",
+  "names": "1991.99 Kazakhstan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Kazakhstan",
+  "from": "1997.94",
+  "to": "today",
+  "names": "1997.94 Kazakhstan",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1886.00",
+  "to": "1895.29",
+  "names": "1886.00 Qing China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1895.29",
+  "to": "1899.00",
+  "names": "1895.29 Qing China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1899.00",
+  "to": "1913.00",
+  "names": "1899.00 Qing China → 1912.10 Republic of China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1913.00",
+  "to": "1914.29",
+  "names": "1913.00 Republic of China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1914.29",
+  "to": "1921.20",
+  "names": "1914.29 Republic of China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1921.20",
+  "to": "1945.62",
+  "names": "1921.20 Republic of China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1945.62",
+  "to": "1947.62",
+  "names": "1945.62 Republic of China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1947.62",
+  "to": "1949.93",
+  "names": "1947.62 Republic of China → 1949.75 People's Republic of China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1949.94",
+  "to": "1950.75",
+  "names": "1949.94 People's Republic of China",
+  "how": "state"
+ },
+ {
+  "cshapes": "China",
+  "from": "1950.75",
+  "to": "today",
+  "names": "1950.75 People's Republic of China",
+  "how": "state"
+ },
+ {
+  "cshapes": "Tibet",
+  "from": "1913.00",
+  "to": "1914.50",
+  "names": "1913.00 Tibet",
+  "how": "state"
+ },
+ {
+  "cshapes": "Tibet",
+  "from": "1914.51",
+  "to": "1950.75",
+  "names": "1914.51 Tibet",
+  "how": "state"
+ },
+ {
+  "cshapes": "Mongolia",
+  "from": "1921.20",
+  "to": "today",
+  "names": "1921.20 Mongolia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Taiwan",
+  "from": "1895.29",
+  "to": "1945.62",
+  "names": "1895.29 Taiwan under Japanese rule [Empire of Japan]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Taiwan",
+  "from": "1949.94",
+  "to": "today",
+  "names": "1949.94 Taiwan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Korea",
+  "from": "1886.00",
+  "to": "1910.64",
+  "names": "1886.00 Joseon → 1897.78 Korean Empire",
+  "how": "state"
+ },
+ {
+  "cshapes": "Korea",
+  "from": "1910.64",
+  "to": "1945.62",
+  "names": "1910.64 Korea under Japanese rule [Empire of Japan]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Korea, People's Republic of",
+  "from": "1945.62",
+  "to": "1948.69",
+  "names": "1945.62 Soviet Civil Administration in Korea [Soviet Union]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Korea, People's Republic of",
+  "from": "1948.69",
+  "to": "today",
+  "names": "1948.69 North Korea",
+  "how": "state"
+ },
+ {
+  "cshapes": "Korea, Republic of",
+  "from": "1945.62",
+  "to": "1948.62",
+  "names": "1945.62 US Army Military Government in Korea [United States]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Korea, Republic of",
+  "from": "1948.62",
+  "to": "today",
+  "names": "1948.62 South Korea",
+  "how": "state"
+ },
+ {
+  "cshapes": "Japan",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Empire of Japan → 1947.34 Japan",
+  "how": "state"
+ },
+ {
+  "cshapes": "India",
+  "from": "1886.00",
+  "to": "1893.86",
+  "names": "1886.00 British Raj [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "India",
+  "from": "1893.86",
+  "to": "1899.00",
+  "names": "1893.86 British Raj [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "India",
+  "from": "1899.00",
+  "to": "1914.50",
+  "names": "1899.00 British Raj [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "India",
+  "from": "1914.51",
+  "to": "1931.11",
+  "names": "1914.51 British Raj [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "India",
+  "from": "1931.12",
+  "to": "1937.25",
+  "names": "1931.12 British Raj [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "India",
+  "from": "1937.25",
+  "to": "1947.62",
+  "names": "1937.25 British Raj [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "India",
+  "from": "1947.62",
+  "to": "1949.01",
+  "names": "1947.62 India",
+  "how": "state"
+ },
+ {
+  "cshapes": "India",
+  "from": "1949.01",
+  "to": "today",
+  "names": "1949.01 India",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bhutan",
+  "from": "1886.00",
+  "to": "1947.62",
+  "names": "1886.00 Bhutan",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Bhutan",
+  "from": "1947.62",
+  "to": "1949.00",
+  "names": "1947.62 Bhutan",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Bhutan",
+  "from": "1949.00",
+  "to": "today",
+  "names": "1949.00 Bhutan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Pakistan",
+  "from": "1947.62",
+  "to": "1949.01",
+  "names": "1947.62 Pakistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Pakistan",
+  "from": "1949.01",
+  "to": "1959.75",
+  "names": "1949.01 Pakistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Pakistan",
+  "from": "1959.75",
+  "to": "1967.62",
+  "names": "1959.75 Pakistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Pakistan",
+  "from": "1967.62",
+  "to": "1971.95",
+  "names": "1967.62 Pakistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Pakistan",
+  "from": "1971.96",
+  "to": "today",
+  "names": "1971.96 Pakistan",
+  "how": "state"
+ },
+ {
+  "cshapes": "Bangladesh",
+  "from": "1971.96",
+  "to": "today",
+  "names": "1971.96 Bangladesh",
+  "how": "state"
+ },
+ {
+  "cshapes": "Myanmar (Burma)",
+  "from": "1937.25",
+  "to": "1948.01",
+  "names": "1937.25 British Burma [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Myanmar (Burma)",
+  "from": "1948.01",
+  "to": "2005.84",
+  "names": "1948.01 Burma → 1989.47 Myanmar",
+  "how": "state"
+ },
+ {
+  "cshapes": "Myanmar (Burma)",
+  "from": "2005.85",
+  "to": "today",
+  "names": "2005.85 Myanmar",
+  "how": "state"
+ },
+ {
+  "cshapes": "Sri Lanka (Ceylon)",
+  "from": "1886.00",
+  "to": "1948.09",
+  "names": "1886.00 British Ceylon [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sri Lanka (Ceylon)",
+  "from": "1948.09",
+  "to": "today",
+  "names": "1948.09 Ceylon → 1972.39 Sri Lanka",
+  "how": "state"
+ },
+ {
+  "cshapes": "Maldives",
+  "from": "1887.96",
+  "to": "1965.40",
+  "names": "1887.96 Maldives (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Maldives",
+  "from": "1965.40",
+  "to": "today",
+  "names": "1965.40 Maldives",
+  "how": "state"
+ },
+ {
+  "cshapes": "Nepal",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 Nepal",
+  "how": "state"
+ },
+ {
+  "cshapes": "Thailand",
+  "from": "1886.00",
+  "to": "1893.75",
+  "names": "1886.00 Siam",
+  "how": "state"
+ },
+ {
+  "cshapes": "Thailand",
+  "from": "1893.76",
+  "to": "1904.13",
+  "names": "1893.76 Siam",
+  "how": "state"
+ },
+ {
+  "cshapes": "Thailand",
+  "from": "1904.13",
+  "to": "1907.22",
+  "names": "1904.13 Siam",
+  "how": "state"
+ },
+ {
+  "cshapes": "Thailand",
+  "from": "1907.23",
+  "to": "1909.19",
+  "names": "1907.23 Siam",
+  "how": "state"
+ },
+ {
+  "cshapes": "Thailand",
+  "from": "1909.19",
+  "to": "today",
+  "names": "1909.19 Siam → 1939.47 Thailand → 1945.70 Siam → 1949.37 Thailand",
+  "how": "state"
+ },
+ {
+  "cshapes": "Cambodia (Kampuchea)",
+  "from": "1886.00",
+  "to": "1893.75",
+  "names": "1886.00 French protectorate of Cambodia [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cambodia (Kampuchea)",
+  "from": "1893.76",
+  "to": "1904.13",
+  "names": "1893.76 French protectorate of Cambodia [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cambodia (Kampuchea)",
+  "from": "1904.13",
+  "to": "1907.22",
+  "names": "1904.13 French protectorate of Cambodia [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cambodia (Kampuchea)",
+  "from": "1907.23",
+  "to": "1953.85",
+  "names": "1907.23 French protectorate of Cambodia [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Cambodia (Kampuchea)",
+  "from": "1953.86",
+  "to": "today",
+  "names": "1953.86 Cambodia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Laos",
+  "from": "1893.76",
+  "to": "1896.04",
+  "names": "1893.76 Laos under Siam [Siam] → 1893.80 French Laos [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Laos",
+  "from": "1896.04",
+  "to": "1954.33",
+  "names": "1896.04 French Laos [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Laos",
+  "from": "1954.33",
+  "to": "today",
+  "names": "1954.33 Laos",
+  "how": "state"
+ },
+ {
+  "cshapes": "Vietnam (Annam/Cochin China/Tonkin)",
+  "from": "1886.00",
+  "to": "1887.42",
+  "names": "1886.00 Vietnam (Nguyễn dynasty)",
+  "how": "state"
+ },
+ {
+  "cshapes": "Vietnam (Annam/Cochin China/Tonkin)",
+  "from": "1887.42",
+  "to": "1893.00",
+  "names": "1887.42 Vietnam (Nguyễn dynasty)",
+  "how": "state"
+ },
+ {
+  "cshapes": "Vietnam (Annam/Cochin China/Tonkin)",
+  "from": "1893.00",
+  "to": "1893.75",
+  "names": "1893.00 French Indochina (Annam, Tonkin, Cochinchina) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Vietnam (Annam/Cochin China/Tonkin)",
+  "from": "1893.76",
+  "to": "1954.33",
+  "names": "1893.76 French Indochina (Annam, Tonkin, Cochinchina) [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Vietnam, Democratic Republic of",
+  "from": "1954.33",
+  "to": "1975.33",
+  "names": "1954.33 North Vietnam",
+  "how": "state"
+ },
+ {
+  "cshapes": "Vietnam, Democratic Republic of",
+  "from": "1975.33",
+  "to": "today",
+  "names": "1975.33 North Vietnam → 1976.50 Vietnam",
+  "how": "state"
+ },
+ {
+  "cshapes": "Vietnam, Republic of",
+  "from": "1954.33",
+  "to": "1975.33",
+  "names": "1954.33 South Vietnam",
+  "how": "state"
+ },
+ {
+  "cshapes": "Malaysia",
+  "from": "1946.25",
+  "to": "1957.66",
+  "names": "1946.25 Malayan Union [United Kingdom] → 1948.08 Federation of Malaya [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Malaysia",
+  "from": "1957.67",
+  "to": "1963.70",
+  "names": "1957.67 Malaya → 1963.70 Malaysia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Malaysia",
+  "from": "1963.71",
+  "to": "1965.60",
+  "names": "1963.71 Malaysia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Malaysia",
+  "from": "1965.61",
+  "to": "today",
+  "names": "1965.61 Malaysia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Federated Malay States",
+  "from": "1896.50",
+  "to": "1909.19",
+  "names": "1896.50 Federated Malay States",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Federated Malay States",
+  "from": "1909.19",
+  "to": "1946.25",
+  "names": "1909.19 Federated Malay States",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Unfederated Malay States",
+  "from": "1886.00",
+  "to": "1909.19",
+  "names": "1886.00 Unfederated Malay States",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Unfederated Malay States",
+  "from": "1909.19",
+  "to": "1946.25",
+  "names": "1909.19 Unfederated Malay States",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Sabah (North Borneo)",
+  "from": "1888.36",
+  "to": "1889.47",
+  "names": "1888.36 North Borneo [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sabah (North Borneo)",
+  "from": "1889.47",
+  "to": "1946.54",
+  "names": "1889.47 North Borneo [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sabah (North Borneo)",
+  "from": "1946.54",
+  "to": "1963.70",
+  "names": "1946.54 North Borneo [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sarawak",
+  "from": "1888.45",
+  "to": "1889.47",
+  "names": "1888.45 Raj of Sarawak (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sarawak",
+  "from": "1889.47",
+  "to": "1946.50",
+  "names": "1889.47 Raj of Sarawak (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Sarawak",
+  "from": "1946.50",
+  "to": "1963.70",
+  "names": "1946.50 Crown Colony of Sarawak [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Straits Settlements",
+  "from": "1886.00",
+  "to": "1946.25",
+  "names": "1886.00 Straits Settlements",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Singapore",
+  "from": "1946.25",
+  "to": "1963.00",
+  "names": "1946.25 Colony of Singapore [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Singapore",
+  "from": "1965.61",
+  "to": "today",
+  "names": "1965.61 Singapore",
+  "how": "state"
+ },
+ {
+  "cshapes": "Brunei",
+  "from": "1888.71",
+  "to": "1984.00",
+  "names": "1888.71 Brunei (British protectorate) [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Brunei",
+  "from": "1984.00",
+  "to": "today",
+  "names": "1984.00 Brunei",
+  "how": "state"
+ },
+ {
+  "cshapes": "Philippines",
+  "from": "1886.00",
+  "to": "1898.94",
+  "names": "1886.00 Captaincy General of the Philippines [Spain]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Philippines",
+  "from": "1898.94",
+  "to": "1946.51",
+  "names": "1898.94 Captaincy General of the Philippines [Spain] → 1898.95 Philippines under US rule [United States]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Philippines",
+  "from": "1946.51",
+  "to": "1948.54",
+  "names": "1946.51 Philippines",
+  "how": "state"
+ },
+ {
+  "cshapes": "Philippines",
+  "from": "1948.54",
+  "to": "1976.41",
+  "names": "1948.54 Philippines",
+  "how": "state"
+ },
+ {
+  "cshapes": "Philippines",
+  "from": "1976.41",
+  "to": "today",
+  "names": "1976.41 Philippines",
+  "how": "state"
+ },
+ {
+  "cshapes": "Indonesia",
+  "from": "1886.00",
+  "to": "1889.47",
+  "names": "1886.00 Dutch East Indies [Netherlands]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Indonesia",
+  "from": "1889.47",
+  "to": "1945.62",
+  "names": "1889.47 Dutch East Indies [Netherlands]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Indonesia",
+  "from": "1945.63",
+  "to": "1949.99",
+  "names": "1945.63 Indonesia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Indonesia",
+  "from": "1949.99",
+  "to": "1969.71",
+  "names": "1949.99 Indonesia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Indonesia",
+  "from": "1969.71",
+  "to": "1976.54",
+  "names": "1969.71 Indonesia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Indonesia",
+  "from": "1976.54",
+  "to": "2002.38",
+  "names": "1976.54 Indonesia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Indonesia",
+  "from": "2002.39",
+  "to": "today",
+  "names": "2002.39 Indonesia",
+  "how": "state"
+ },
+ {
+  "cshapes": "West Irian (Dutch New Guinea)",
+  "from": "1949.99",
+  "to": "1962.62",
+  "names": "1949.99 Netherlands New Guinea [Netherlands]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "West Irian (Dutch New Guinea)",
+  "from": "1962.62",
+  "to": "1963.33",
+  "names": "1962.62 Netherlands New Guinea [Netherlands] → 1962.75 West New Guinea (UN administration) [United Nations]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "West Irian (Dutch New Guinea)",
+  "from": "1963.33",
+  "to": "1969.71",
+  "names": "1963.33 West Irian (Indonesian administration) [Indonesia]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "East Timor",
+  "from": "1886.00",
+  "to": "1976.54",
+  "names": "1886.00 Portuguese Timor [Portugal]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "East Timor",
+  "from": "2002.39",
+  "to": "today",
+  "names": "2002.39 East Timor",
+  "how": "state"
+ },
+ {
+  "cshapes": "Australia",
+  "from": "1901.00",
+  "to": "1927.35",
+  "names": "1901.00 Australia",
+  "how": "state"
+ },
+ {
+  "cshapes": "Australia",
+  "from": "1927.36",
+  "to": "today",
+  "names": "1927.36 Australia",
+  "how": "state"
+ },
+ {
+  "cshapes": "New South Wales",
+  "from": "1886.00",
+  "to": "1901.00",
+  "names": "1886.00 New South Wales",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Western Australia",
+  "from": "1886.00",
+  "to": "1901.00",
+  "names": "1886.00 Western Australia",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "South Australia",
+  "from": "1886.00",
+  "to": "1901.00",
+  "names": "1886.00 South Australia",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Victoria",
+  "from": "1886.00",
+  "to": "1901.00",
+  "names": "1886.00 Victoria",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Queensland",
+  "from": "1886.00",
+  "to": "1901.00",
+  "names": "1886.00 Queensland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Tasmania",
+  "from": "1886.00",
+  "to": "1901.00",
+  "names": "1886.00 Tasmania",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Papua New Guinea",
+  "from": "1949.50",
+  "to": "1975.70",
+  "names": "1949.50 Territory of Papua and New Guinea [Australia]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Papua New Guinea",
+  "from": "1975.71",
+  "to": "today",
+  "names": "1975.71 Papua New Guinea",
+  "how": "state"
+ },
+ {
+  "cshapes": "Papua",
+  "from": "1886.00",
+  "to": "1888.00",
+  "names": "1886.00 British New Guinea [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Papua",
+  "from": "1888.00",
+  "to": "1905.87",
+  "names": "1888.00 British New Guinea [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Papua",
+  "from": "1905.87",
+  "to": "1920.96",
+  "names": "1905.87 British New Guinea [United Kingdom] → 1906.70 Territory of Papua [Australia]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Papua",
+  "from": "1920.96",
+  "to": "1949.50",
+  "names": "1920.96 Territory of Papua [Australia]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "New Guinea (German New Guinea) (Kaiser Wilhelmsland)",
+  "from": "1886.00",
+  "to": "1891.00",
+  "names": "1886.00 German New Guinea [German Empire]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "New Guinea (German New Guinea) (Kaiser Wilhelmsland)",
+  "from": "1891.00",
+  "to": "1900.00",
+  "names": "1891.00 German New Guinea [German Empire]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "New Guinea (German New Guinea) (Kaiser Wilhelmsland)",
+  "from": "1900.00",
+  "to": "1910.00",
+  "names": "1900.00 German New Guinea [German Empire]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "New Guinea (German New Guinea) (Kaiser Wilhelmsland)",
+  "from": "1910.00",
+  "to": "1914.86",
+  "names": "1910.00 German New Guinea [German Empire] → 1914.70 Territory of New Guinea [Australia]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "New Guinea (German New Guinea) (Kaiser Wilhelmsland)",
+  "from": "1914.86",
+  "to": "1920.49",
+  "names": "1914.86 Territory of New Guinea [Australia]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "New Guinea (German New Guinea) (Kaiser Wilhelmsland)",
+  "from": "1920.49",
+  "to": "1949.50",
+  "names": "1920.49 Territory of New Guinea [Australia]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "New Zealand",
+  "from": "1886.00",
+  "to": "1907.67",
+  "names": "1886.00 Colony of New Zealand [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "New Zealand",
+  "from": "1907.67",
+  "to": "today",
+  "names": "1907.67 New Zealand",
+  "how": "state"
+ },
+ {
+  "cshapes": "New Caledonia and Dependencies",
+  "from": "1886.00",
+  "to": "today",
+  "names": "1886.00 New Caledonia and Dependencies",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Solomon Islands",
+  "from": "1893.20",
+  "to": "1899.87",
+  "names": "1893.20 British Solomon Islands [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Solomon Islands",
+  "from": "1899.87",
+  "to": "1952.00",
+  "names": "1899.87 British Solomon Islands [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Solomon Islands",
+  "from": "1952.00",
+  "to": "1978.51",
+  "names": "1952.00 British Solomon Islands [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Solomon Islands",
+  "from": "1978.52",
+  "to": "today",
+  "names": "1978.52 Solomon Islands",
+  "how": "state"
+ },
+ {
+  "cshapes": "Fiji",
+  "from": "1886.00",
+  "to": "1970.77",
+  "names": "1886.00 Colony of Fiji [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Fiji",
+  "from": "1970.77",
+  "to": "today",
+  "names": "1970.77 Fiji",
+  "how": "state"
+ },
+ {
+  "cshapes": "French Polynesia",
+  "from": "1903.38",
+  "to": "today",
+  "names": "1903.38 French Establishments in Oceania [France] → 1957.50 French Polynesia [France]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Inini",
+  "from": "1930.51",
+  "to": "1946.21",
+  "names": "1930.51 Inini",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Bosnia",
+  "from": "1886.00",
+  "to": "1908.76",
+  "names": "1886.00 Bosnia (under Austro-Hungarian administration) [Austria-Hungary]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Herzegovina",
+  "from": "1886.00",
+  "to": "1908.76",
+  "names": "1886.00 Herzegovina (under Austro-Hungarian administration) [Austria-Hungary]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Lagos",
+  "from": "1886.00",
+  "to": "1906.12",
+  "names": "1886.00 Colony of Lagos [United Kingdom]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Oil Rivers Protectorate",
+  "from": "1886.00",
+  "to": "1899.00",
+  "names": "1886.00 Oil Rivers Protectorate",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Southern Nigeria",
+  "from": "1899.00",
+  "to": "1906.12",
+  "names": "1899.00 Southern Nigeria",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Southern Nigeria",
+  "from": "1906.12",
+  "to": "1914.00",
+  "names": "1906.12 Southern Nigeria",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Northern Nigeria",
+  "from": "1899.00",
+  "to": "1903.00",
+  "names": "1899.00 Northern Nigeria",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Northern Nigeria",
+  "from": "1903.00",
+  "to": "1904.27",
+  "names": "1903.00 Northern Nigeria",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Northern Nigeria",
+  "from": "1904.27",
+  "to": "1914.00",
+  "names": "1904.27 Northern Nigeria",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Italian Somaliland",
+  "from": "1889.88",
+  "to": "1897.22",
+  "names": "1889.88 Italian Somaliland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Italian Somaliland",
+  "from": "1897.22",
+  "to": "1908.33",
+  "names": "1897.22 Italian Somaliland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Italian Somaliland",
+  "from": "1908.33",
+  "to": "1924.50",
+  "names": "1908.33 Italian Somaliland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Italian Somaliland",
+  "from": "1924.50",
+  "to": "1941.22",
+  "names": "1924.50 Italian Somaliland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Italian Somaliland",
+  "from": "1941.22",
+  "to": "1950.25",
+  "names": "1941.22 Italian Somaliland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Italian Somaliland",
+  "from": "1950.25",
+  "to": "1960.50",
+  "names": "1950.25 Italian Somaliland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Northeastern Rhodesia",
+  "from": "1900.08",
+  "to": "1911.63",
+  "names": "1900.08 Northeastern Rhodesia",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Northwestern Rhodesia",
+  "from": "1900.08",
+  "to": "1905.41",
+  "names": "1900.08 Northwestern Rhodesia",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Northwestern Rhodesia",
+  "from": "1905.41",
+  "to": "1911.63",
+  "names": "1905.41 Northwestern Rhodesia",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "British Bechuanaland",
+  "from": "1886.00",
+  "to": "1890.49",
+  "names": "1886.00 British Bechuanaland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "British Bechuanaland",
+  "from": "1890.50",
+  "to": "1895.87",
+  "names": "1890.50 British Bechuanaland",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Southern zone of Spanish Morocco",
+  "from": "1956.27",
+  "to": "1958.27",
+  "names": "1956.27 Southern zone of Spanish Morocco",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Gaza",
+  "from": "1948.37",
+  "to": "1967.44",
+  "names": "1948.37 Gaza Strip (Egyptian administration) [Egypt]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "West Bank",
+  "from": "1948.37",
+  "to": "1967.44",
+  "names": "1948.37 West Bank (annexed by Jordan) [Jordan]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Federation of South Arabia",
+  "from": "1962.26",
+  "to": "1967.91",
+  "names": "1962.26 Federation of South Arabia",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "East Aden Protectorate",
+  "from": "1937.25",
+  "to": "1962.26",
+  "names": "1937.25 East Aden Protectorate",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Bokhara",
+  "from": "1886.00",
+  "to": "1920.67",
+  "names": "1886.00 Emirate of Bukhara",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Khiva",
+  "from": "1886.00",
+  "to": "1920.08",
+  "names": "1886.00 Khanate of Khiva",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Southern Sakhalin Island",
+  "from": "1905.68",
+  "to": "1945.62",
+  "names": "1905.68 Karafuto [Empire of Japan]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Jammu and Kashmir",
+  "from": "1947.62",
+  "to": "1949.01",
+  "names": "1947.62 Jammu and Kashmir",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Kashmir (North, Azad)",
+  "from": "1947.62",
+  "to": "1949.01",
+  "names": "1947.62 Azad Kashmir [Pakistan]",
+  "how": "dependency table"
+ },
+ {
+  "cshapes": "Perak",
+  "from": "1886.00",
+  "to": "1896.50",
+  "names": "1886.00 Perak",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Selangore",
+  "from": "1886.00",
+  "to": "1896.50",
+  "names": "1886.00 Selangor",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "Pahang",
+  "from": "1888.00",
+  "to": "1896.50",
+  "names": "1888.00 Pahang",
+  "how": "cshapes"
+ },
+ {
+  "cshapes": "German Solomon Islands",
+  "from": "1886.00",
+  "to": "1899.87",
+  "names": "1886.00 German Solomon Islands",
+  "how": "cshapes"
+ }
+]

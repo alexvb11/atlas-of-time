@@ -67,7 +67,7 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
     }
     facts = e.facts.filter(([a, b]) => (a === null || t >= a) && (b === null || t < b)).map((f) => f[2])
     if (t < e.from || t >= e.to) note = 'Outside this entity\'s recorded lifetime.'
-    if (res.via === 'map' || res.polity) note = 'Borders are approximate reconstructions.'
+    if (res.via === 'map' || res.polity) note = t >= 1886 ? 'Borders from CShapes 2.0, dated to the day of each change.' : 'Borders are approximate reconstructions.'
     if (res.outlineFromCountry && res.via === 'lineage') note = 'Highlighted: today\'s borders, for reference. Historical extent differed.'
   } else if (res.kind === 'country') {
     const c = res.country
@@ -77,8 +77,8 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
     if (c.currencies.length) stats.push(<Stat key="cur" label="Currency">{c.currencies.join(', ')}</Stat>)
     summary = `${c.official}. Detailed history for this country is coming in a later data tier; present-day facts are shown.`
   } else if (res.kind === 'polity') {
-    summary = `${res.polity.name}${res.polity.subjectTo ? `, under ${res.polity.subjectTo}` : ''}, as drawn in the historical border data for this period. Little more is recorded here in this atlas yet.`
-    note = 'Borders are approximate reconstructions.'
+    summary = `${res.polity.name}${res.polity.subjectTo ? `, under ${res.polity.subjectTo}` : ''}, as drawn in the historical border data for this date. Little more is recorded here in this atlas yet.`
+    note = t >= 1886 ? 'Borders from CShapes 2.0, dated to the day of each change.' : 'Borders are approximate reconstructions.'
   } else if (res.kind === 'prehistory') {
     summary = res.text
   } else if (res.kind === 'deep') {

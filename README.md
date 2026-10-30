@@ -46,6 +46,7 @@ node scripts/qa/reader.mjs [--mobile]   # History dropdown → hover card → re
 | Select a place | click (deep time: click the drifting land itself) |
 | Deselect | Esc or click empty space |
 | Move through time | drag the time bar, ← / → nudge, Shift+← / → jump eras, Space play/pause |
+| Flip film pictures | ‹ › buttons, or ← / → while pointing at a film or with a hover card open |
 | Search | ⌘K / Ctrl+K |
 | Read an event | History tab: click the title (the year jumps the slider) · event cards: *Read the story* |
 | Look something up | hover (or focus, or tap) an underlined name; click it to read on, Back walks the trail |
@@ -64,6 +65,19 @@ See [PLAN.md](PLAN.md) for the architecture. Short version:
   triangle of crust. At each time it resolves to an entity through dated lineages per present-day
   country, the historical border polygon under it, or regional prehistory. It never shows an empty
   panel.
+- **Borders**: before 1886, historical-basemaps snapshots (a few per century), crossfaded near each
+  change. From 1886, CShapes 2.0: every territorial change is its own dated snapshot (765 of them),
+  assembled in a worker from one shared TopoJSON. CShapes gives a unit one modern name for its whole
+  history ("Kenya" from 1888), so `cshapes.mjs` names each piece for its date: independent states by
+  the Gleditsch–Ward lists (Russian Empire, Soviet Russia, Soviet Union, Russia), dependencies from a
+  dated, hand-checked table (Imperial British East Africa, East Africa Protectorate, Kenya Colony),
+  with the ruling power. CShapes moves borders on treaty dates, so a few pieces between the collapse
+  of empires and the peace treaties are named for what they were ("Former Austrian crown lands,
+  borders until the Treaty of Saint-Germain").
+- **Here**: click anywhere and the Here tab lists what happened near that point around that time,
+  from about 11,000 located, dated Wikidata events, numbered on the globe. The window scales with
+  time (a few years recently, up to 150 years in antiquity), and each year is confirmed against the
+  event's Wikipedia lead before it is shown.
 - **Reader**: every dated event (304) has a hand-picked Wikipedia article
   (`scripts/build-data/curated/event-articles.mjs`, checked by `articles.mjs`). The History tab
   shows its whole lead plus *Background* and *Aftermath*/*Legacy*. Every link in it gets a hover
@@ -91,7 +105,10 @@ the reader says so and everything else keeps working.
 | Elevation and bathymetry (sea-level changes) | GEBCO 08 via NASA Visible Earth, records 73934 / 73963 | GEBCO terms (free with attribution) |
 | Country polygons | Natural Earth via [world-atlas](https://github.com/topojson/world-atlas) 2.0.2 | Public domain / ISC |
 | Plate reconstructions | [GPlates Web Service](https://gws.gplates.org), model MERDITH2021: Merdith et al. (2021), *Earth-Science Reviews* 214 | CC BY 4.0 |
-| Historical borders | [historical-basemaps](https://github.com/aourednik/historical-basemaps) by André Ourednik et al. | **GPL-3.0** (see note) |
+| Historical borders before 1886 | [historical-basemaps](https://github.com/aourednik/historical-basemaps) by André Ourednik et al., kept at source detail down to 1 km | **GPL-3.0** (see note) |
+| Borders 1886–today | [CShapes 2.0](https://icr.ethz.ch/data/cshapes/): Schvitz, Girardin, Rüegger, Weidmann, Cederman & Gleditsch (2022), *Journal of Conflict Resolution* 66(1); simplified only below 200 m | **CC BY-NC-SA 4.0** (non-commercial; see note) |
+| Independence dates (naming CShapes units) | [Gleditsch & Ward](http://ksgleditsch.com/statelist.html) list of independent states and microstates | cited |
+| Located events ("Here" tab) | Wikidata (coordinates P625, dates P585/P580), years confirmed against each Wikipedia article in the browser | CC0 / CC BY-SA 4.0 |
 | Country facts | [mledoze/countries](https://github.com/mledoze/countries) | ODbL |
 | Population | [Our World in Data](https://ourworldindata.org/population-sources), HYDE 3.2 + UN WPP | CC BY 4.0 |
 | Entity summaries | Wikipedia REST summary API | CC BY-SA 4.0 (linked per entity) |
@@ -102,7 +119,12 @@ the reader says so and everything else keeps working.
 | LGM ice extent | hand-drawn approximation after Dyke (2004), Hughes et al. (2016) | — |
 | Fonts | Inter, Instrument Serif (Google Fonts) | OFL |
 
-**Licence note:** historical-basemaps is GPL-3.0. The simplified border files in
+**Licence note:** CShapes 2.0 is CC BY-NC-SA 4.0, so while `public/data/history/cshapes.topo.json` is
+included the atlas must not be used commercially (no sales, no ads), and adaptations of that file must
+be shared under the same licence. It is a separate file from the GPL border data below; if the
+project licence or any commercial use is ever considered, check the combination with a lawyer.
+
+historical-basemaps is GPL-3.0. The simplified border files in
 `public/data/history/` are derived from it and must stay under GPL-3.0 when redistributed. Decide on
 the project licence with that in mind.
 

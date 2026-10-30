@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.7.0 — 2026-10-30
+
+### Precise borders
+- **1886 to today: CShapes 2.0** (ETH Zürich, CC BY-NC-SA 4.0). Every territorial change is dated to
+  the day, and the map switches on that day: 765 dated border states instead of eleven snapshots.
+  Geometry is simplified only below 200 m and stored as one 2 MB TopoJSON (shared borders stored
+  once), assembled in the worker for each date. Scrubbing all of time still runs at 59 fps.
+- **Period-correct names.** CShapes gives a unit one modern name for its whole history, so each
+  piece is named for its date. Independent states follow the Gleditsch–Ward lists, with renames on the
+  day: Russian Empire → Soviet Russia → Soviet Union → Russia, Persia → Iran, Siam → Thailand → Siam →
+  Thailand, Upper Volta → Burkina Faso, Zaire. Dependencies take their period name and ruler from a
+  dated, hand-checked table: Congo Free State, then Belgian Congo; Imperial British East Africa,
+  East Africa Protectorate, then Kenya Colony; the Soviet republics as SSRs. Pieces CShapes keeps
+  between the end of an empire and its peace treaty are named for what they were ("Former Austrian
+  crown lands, borders until the Treaty of Saint-Germain"). An earlier attempt to borrow names from
+  the older border maps was dropped after review: it called French Senegal "Futa Toro" and Portuguese
+  Timor "Netherlands Indies".
+- **Before 1886**: historical-basemaps now keeps its full source detail down to 1 km (it kept 12% of
+  vertices), at a precision of 0.001°.
+- The panel and the corner note say which source draws the borders at the current date.
+
+### What happened here
+- New **Here** tab: click any point and it lists what happened near there around the current date,
+  from 11,133 dated Wikidata events with coordinates (battles, sieges, treaties, revolutions,
+  assassinations, massacres, earthquakes, eruptions, shipwrecks, fires, floods, expeditions…),
+  closest in time and space first, with distance and direction, numbered pins on the globe, a
+  "here, this year" tag, *Go there*, and the full article on click. The window scales with time
+  (±2 years recently, up to ±150 in antiquity). Each year is confirmed against the event's Wikipedia
+  lead before it is shown; events whose article gives a different year are left out and counted.
+
+### Picture films
+- Back and forward buttons on every film, and the arrow keys: with a hover card open, or while
+  pointing at or focused on a film. They no longer move the time slider while doing so.
+
+### Build
+- mapshaper runs through the current Node binary instead of the `.bin` shim, so `npm run data`
+  works without `node` on the PATH and on Windows.
+
 ## 0.6.0 — 2026-10-30
 
 ### Accuracy audit

@@ -1,5 +1,6 @@
-// Historical border snapshots (historical-basemaps). Lazy-loaded per snapshot and indexed with
-// bounding boxes so "which polity is at this point at time T" is a handful of ring tests.
+// Historical border snapshots: historical-basemaps before 1886, then CShapes 2.0, whose every dated
+// change is its own snapshot (built in the worker from one shared topology). Lazy-loaded per
+// snapshot and indexed with bounding boxes so "which polity is here at time T" is a few ring tests.
 import { pointInPolygon } from '../geo/sphere'
 import type { Parsed } from './history.worker'
 
@@ -17,7 +18,7 @@ export type Polity = {
 }
 /** segments: border lines on the unit sphere, built in the worker */
 export type Snapshot = { year: number; polities: Polity[]; segments: Float32Array }
-type Index = { snapshots: { year: number; features: number; bytes: number }[] }
+type Index = { snapshots: { year: number; features: number; bytes: number }[]; cshapes?: { url: string; from: number; keys: number[] } }
 
 let indexPromise: Promise<number[]> | null = null
 const cache = new Map<number, Snapshot>()
@@ -28,12 +29,20 @@ let worker: Worker | null = null
 const resolvers = new Map<number, (p: Parsed) => void>()
 
 export const historyYears: number[] = []
+const cshapesKeys = new Set<number>()
+let cshapesUrl = ''
 
 export function loadHistoryIndex(): Promise<number[]> {
   indexPromise ??= fetch('/data/history/index.json')
     .then((r) => r.json() as Promise<Index>)
     .then((j) => {
-      historyYears.splice(0, historyYears.length, ...j.snapshots.map((s) => s.year).sort((a, b) => a - b))
+      const years = j.snapshots.map((s) => s.year)
+      if (j.cshapes) {
+        cshapesUrl = new URL(`/data/history/${j.cshapes.url}`, location.href).href
+        for (const k of j.cshapes.keys) cshapesKeys.add(k)
+        years.push(...j.cshapes.keys)
+      }
+      historyYears.splice(0, historyYears.length, ...years.sort((a, b) => a - b))
       listeners.forEach((l) => l())
       return historyYears
     })
@@ -83,7 +92,9 @@ export function loadSnapshot(year: number): Promise<Snapshot> {
     }
     p = new Promise<Parsed>((resolve) => {
       resolvers.set(year, resolve)
-      worker!.postMessage({ year, url: new URL(`/data/history/${year}.json`, location.href).href })
+      worker!.postMessage(
+        cshapesKeys.has(year) ? { year, url: cshapesUrl, cshapes: true } : { year, url: new URL(`/data/history/${year}.json`, location.href).href },
+      )
     })
       .then(({ polities, segments }) => {
         resolvers.delete(year)
@@ -123,3 +134,6 @@ export function snapshotPair(t: number): { cur: number | null; next: number | nu
   const f = next === null ? 0 : (t - cur) / (next - cur)
   return { cur, next, f }
 }
+
+/** True for snapshots built from CShapes: precise borders, dated to the day, de facto control */
+export const isPreciseSnapshot = (year: number) => cshapesKeys.has(year)

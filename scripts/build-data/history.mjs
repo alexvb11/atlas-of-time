@@ -12,7 +12,8 @@ const run = promisify(execFile)
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const cache = path.join(root, 'scripts/.cache/history')
 const out = path.join(root, 'public/data/history')
-const mapshaper = path.join(root, 'node_modules/.bin/mapshaper')
+// run through this Node binary, not the .bin shim: works without node on PATH, and on Windows
+const mapshaper = path.join(root, 'node_modules/mapshaper/bin/mapshaper')
 await fs.mkdir(cache, { recursive: true })
 await fs.mkdir(out, { recursive: true })
 
@@ -38,13 +39,15 @@ for (const name of files) {
   }
   const year = parseYear(name)
   const dest = path.join(out, `${year}.json`)
-  await run(mapshaper, [
+  await run(process.execPath, [
+    mapshaper,
     '-i', raw,
     '-filter', 'NAME != null',
     '-filter-fields', 'NAME,SUBJECTO,PARTOF,BORDERPRECISION',
-    '-simplify', '12%', 'keep-shapes', 'planar',
+    // keep the source's own detail down to 1 km (it was 12% of vertices); finer than that adds nothing
+    '-simplify', 'interval=1000', 'keep-shapes',
     '-clean',
-    '-o', dest, 'format=geojson', 'precision=0.01', 'force',
+    '-o', dest, 'format=geojson', 'precision=0.001', 'force',
   ])
   const g = annotate(JSON.parse(await fs.readFile(dest, 'utf8')))
   await fs.writeFile(dest, `{"type":"FeatureCollection","features":[\n${g.features.map((f) => JSON.stringify(f)).join(',\n')}\n]}`)

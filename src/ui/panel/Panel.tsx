@@ -8,12 +8,13 @@ import { OverviewTab } from './Overview'
 import { LanguagesTab } from './Languages'
 import { HistoryTab } from './History'
 import { GeographyTab } from './Geography'
+import { HereTab } from './Here'
 import { dateRange } from './bits'
 import { animateTo } from '../TimeBar'
 import { timeToU, PRESENT } from '../../time/scale'
 import { formatYear } from '../../time/format'
 
-const TABS = ['Overview', 'Languages', 'History', 'Geography'] as const
+const TABS = ['Overview', 'Here', 'History', 'Languages', 'Geography'] as const
 type Tab = (typeof TABS)[number]
 
 export function titleOf(r: Resolution, t: number): { title: string; kicker: string; dates?: string } {
@@ -117,6 +118,7 @@ export function Panel() {
               >
                 {tab === 'Overview' && <OverviewTab res={res} idx={idx} />}
                 {tab === 'Languages' && <LanguagesTab res={res} idx={idx} />}
+                {tab === 'Here' && <HereTab />}
                 {tab === 'History' && <HistoryTab res={res} idx={idx} />}
                 {tab === 'Geography' && <GeographyTab res={res} idx={idx} />}
               </motion.div>

@@ -113,6 +113,50 @@ function Markers({ events }: { events: GeoEvent[] }) {
   return null
 }
 
+/** Numbered pins for the events listed in the panel's Here tab */
+export function HerePins() {
+  const { camera, size } = useThree()
+  const nodes = useRef<HTMLSpanElement[]>([])
+  const v = useMemo(() => new THREE.Vector3(), [])
+  const camDir = useMemo(() => new THREE.Vector3(), [])
+  useFrame(() => {
+    const host = document.getElementById('globe-events')
+    const pins = useTime.getState().herePins
+    if (!host) return
+    while (nodes.current.length < pins.length) {
+      const el = document.createElement('span')
+      el.className = 'here-pin'
+      el.setAttribute('aria-hidden', 'true')
+      host.appendChild(el)
+      nodes.current.push(el)
+    }
+    camDir.copy(camera.position).normalize()
+    nodes.current.forEach((el, i) => {
+      const p = pins[i]
+      if (!p) {
+        el.style.opacity = '0'
+        return
+      }
+      const pos = (world.drift > 0.05 && driftedPosition([p.lon, p.lat], v)) || lonLatToVec3(p.lon, p.lat, 1, v)
+      const facing = pos.dot(camDir)
+      pos.multiplyScalar(1.006)
+      v.copy(pos).project(camera)
+      el.textContent = String(p.n)
+      el.classList.toggle('hot', p.hot)
+      el.style.opacity = THREE.MathUtils.smoothstep(facing, 0.15, 0.4).toFixed(2)
+      el.style.transform = `translate(${((v.x * 0.5 + 0.5) * size.width).toFixed(1)}px, ${((-v.y * 0.5 + 0.5) * size.height).toFixed(1)}px)`
+    })
+  })
+  useEffect(
+    () => () => {
+      nodes.current.forEach((n) => n.remove())
+      nodes.current = []
+    },
+    [],
+  )
+  return null
+}
+
 const arcVertex = /* glsl */ `
 attribute float aS;
 varying float vS;

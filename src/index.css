@@ -297,3 +297,30 @@ body {
   from { background-position: 200% 0; }
   to { background-position: -200% 0; }
 }
+
+/* numbered pins for "what happened here" */
+.here-pin {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border-radius: 50%;
+  background: rgb(10 20 38 / 0.85);
+  box-shadow: 0 0 0 1.5px var(--color-cyan), 0 0 12px rgb(127 216 255 / 0.55);
+  color: var(--color-cyan);
+  font: 600 10px/1 var(--font-sans);
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: background 0.2s, color 0.2s, scale 0.25s var(--ease-spring);
+}
+.here-pin.hot {
+  background: var(--color-amber);
+  color: var(--color-void);
+  box-shadow: 0 0 0 2px #fff, 0 0 18px rgb(255 196 119 / 0.9);
+  scale: 1.35;
+  z-index: 1;
+}

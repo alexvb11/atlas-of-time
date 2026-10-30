@@ -28,9 +28,18 @@ const yearOf = (s: string) => {
   return m ? Number(m[1]) : null
 }
 
-type Props = { title: string; subtitle?: string | null; shots: Shot[] | undefined; poster?: string | null; failed?: boolean; className?: string }
+type Props = {
+  title: string
+  subtitle?: string | null
+  shots: Shot[] | undefined
+  poster?: string | null
+  failed?: boolean
+  className?: string
+  /** arrow keys flip pictures whenever this film is on screen (the hover card), not only when pointed at */
+  keys?: boolean
+}
 
-export function Film({ title, subtitle, shots, poster, failed, className = '' }: Props) {
+export function Film({ title, subtitle, shots, poster, failed, className = '', keys = false }: Props) {
   const reduced = useTime((s) => s.reducedMotion)
   // fall back to the summary's lead image when the article has no usable pictures
   const reel = useMemo<Shot[]>(() => {
@@ -77,6 +86,27 @@ export function Film({ title, subtitle, shots, poster, failed, className = '' }:
     return () => clearTimeout(timer.current)
   }, [i, playing, reel, ready])
 
+  // back / forward: by button or arrow keys; the title card sits before the first picture
+  const go = (d: number) => setI((k) => (reel.length ? (((k + d) % reel.length) + reel.length) % reel.length : -1))
+  const [hot, setHot] = useState(false)
+  const root = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (!keys && !hot) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return
+      const tag = (e.target as HTMLElement)?.tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement)?.getAttribute?.('role') === 'slider') return
+      // ahead of the time bar's own arrow keys, which would otherwise move the year
+      e.preventDefault()
+      e.stopImmediatePropagation()
+      go(e.key === 'ArrowRight' ? 1 : -1)
+    }
+    window.addEventListener('keydown', onKey, true)
+    return () => window.removeEventListener('keydown', onKey, true)
+    // go only reads reel through setI
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [keys, hot, reel.length])
+
   const shot = i >= 0 ? reel[i] : null
   const ar = shot ? aspect[i] : undefined
   const year = shot ? yearOf(shot.caption) ?? yearOf(shot.file) : null
@@ -87,10 +117,16 @@ export function Film({ title, subtitle, shots, poster, failed, className = '' }:
 
   return (
     <div
+      ref={root}
       className={`film group/film relative aspect-video overflow-hidden bg-[#050505] select-none ${className}`}
       onClick={() => setPlaying((p) => !p)}
-      role="img"
-      aria-label={`Picture film about ${title}${caption ? `: ${caption}` : ''}`}
+      onPointerEnter={() => setHot(true)}
+      onPointerLeave={() => setHot(false)}
+      onFocus={() => setHot(true)}
+      onBlur={(e) => !root.current?.contains(e.relatedTarget as Node) && setHot(false)}
+      role="region"
+      aria-roledescription="picture film"
+      aria-label={`${title}${caption ? `: ${caption}` : ''}. Left and right arrow keys flip pictures; click to pause.`}
     >
       <AnimatePresence initial={false}>
         {shot ? (
@@ -208,6 +244,24 @@ export function Film({ title, subtitle, shots, poster, failed, className = '' }:
           ))}
         </div>
       )}
+      {/* flip through by hand */}
+      {reel.length > 1 &&
+        ([-1, 1] as const).map((d) => (
+          <button
+            key={d}
+            type="button"
+            aria-label={d < 0 ? 'Previous picture' : 'Next picture'}
+            onClick={(e) => {
+              e.stopPropagation()
+              go(d)
+            }}
+            className={`absolute top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full bg-black/45 text-white/90 opacity-0 backdrop-blur transition-opacity group-hover/film:opacity-100 hover:bg-black/70 focus-visible:opacity-100 [@media(hover:none)]:opacity-80 ${d < 0 ? 'left-2' : 'right-2'}`}
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d={d < 0 ? 'M9 2L4 7l5 5' : 'M5 2l5 5-5 5'} />
+            </svg>
+          </button>
+        ))}
       {!playing && (
         <div className="pointer-events-none absolute inset-0 grid place-items-center">
           <span className="grid size-10 place-items-center rounded-full bg-black/55 text-white backdrop-blur">

@@ -103,7 +103,7 @@ function Card({ title, anchor }: { title: string; anchor: HTMLElement }) {
       style={{ left: pos?.left ?? -9999, top: pos?.top ?? 0, width: pos?.width ?? W, transformOrigin: pos?.below === false ? '50% 100%' : '50% 0%' }}
       className="glass pointer-events-auto fixed z-50 overflow-hidden rounded-[22px]"
     >
-      <Film title={d?.title ?? title} subtitle={d?.description} shots={f.data} poster={d?.thumb} failed={f.error} />
+      <Film title={d?.title ?? title} subtitle={d?.description} shots={f.data} poster={d?.thumb} failed={f.error} keys />
       <div className="px-4 pt-3 pb-3.5">
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="font-display text-[22px] leading-tight text-ink">{d?.title ?? title}</h3>

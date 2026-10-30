@@ -8,7 +8,7 @@ import { CameraRig } from './CameraRig'
 import { Effects } from './Effects'
 import { Borders } from './Borders'
 import { Highlight } from './Highlight'
-import { EventsLayer } from './Events'
+import { EventsLayer, HerePins } from './Events'
 import { updateWorld, world } from './world'
 import { useTime } from '../time/store'
 
@@ -66,6 +66,7 @@ export function Scene() {
         <Borders />
         <Highlight />
         <EventsLayer />
+        <HerePins />
       </Suspense>
       <Effects lite={lite} />
     </Canvas>
