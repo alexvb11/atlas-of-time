@@ -231,3 +231,17 @@ export function flyTo(toLon: number, toLat: number, toDist: number, reduced = fa
     },
   })
 }
+
+/** Ease in (never out) so a region of `radiusKm` around the view fills the frame, unless the user is steering */
+export function zoomToFit(radiusKm: number, tries = 12) {
+  // wait for a fly-to in progress to land first
+  if (rig.flying) {
+    if (tries > 0) setTimeout(() => zoomToFit(radiusKm, tries - 1), 250)
+    return
+  }
+  if (pointerOnGlobe.dragging) return
+  const want = THREE.MathUtils.clamp(1 + (radiusKm / 6371) * 4.2, MIN_DIST + 0.06, MAX_DIST)
+  if (want >= rig.dist - 0.02) return
+  rig.lastInput = performance.now()
+  gsap.to(rig, { dist: want, duration: useTime.getState().reducedMotion ? 0.01 : 1.2, ease: 'power2.inOut' })
+}

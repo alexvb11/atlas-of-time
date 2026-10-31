@@ -30,6 +30,10 @@
   (±2 years recently, up to ±150 in antiquity). Each year is confirmed against the event's Wikipedia
   lead before it is shown; events whose article gives a different year are left out and counted.
 
+- When results arrive, the camera eases in (never out, once per spot) until the numbered pins can be
+  told apart, and pins that would still overlap are nudged apart on screen. Up close, the selected
+  territory's raised rim lowers with the zoom instead of standing like a wall.
+
 ### Picture films
 - Back and forward buttons on every film, and the arrow keys: with a hover card open, or while
   pointing at or focused on a film. They no longer move the time slider while doing so.

@@ -131,20 +131,48 @@ export function HerePins() {
       nodes.current.push(el)
     }
     camDir.copy(camera.position).normalize()
+    // project, then push apart pins that would cover each other (by at most a pin's width)
+    const pts = pins.map((p) => {
+      const pos = (world.drift > 0.05 && driftedPosition([p.lon, p.lat], v)) || lonLatToVec3(p.lon, p.lat, 1, v)
+      const facing = pos.dot(camDir)
+      pos.multiplyScalar(1.006)
+      v.copy(pos).project(camera)
+      const x = (v.x * 0.5 + 0.5) * size.width
+      const y = (-v.y * 0.5 + 0.5) * size.height
+      return { x, y, x0: x, y0: y, facing }
+    })
+    const MIN = 20
+    for (let it = 0; it < 4; it++)
+      for (let i = 0; i < pts.length; i++)
+        for (let j = i + 1; j < pts.length; j++) {
+          let dx = pts[j].x - pts[i].x
+          let dy = pts[j].y - pts[i].y
+          let d = Math.hypot(dx, dy)
+          if (d >= MIN) continue
+          // identical points fan out by index
+          if (d < 0.01) {
+            dx = Math.cos(j * 2.4)
+            dy = Math.sin(j * 2.4)
+            d = 1
+          }
+          const push = (MIN - d) / 2
+          pts[i].x -= (dx / d) * push
+          pts[i].y -= (dy / d) * push
+          pts[j].x += (dx / d) * push
+          pts[j].y += (dy / d) * push
+        }
     nodes.current.forEach((el, i) => {
       const p = pins[i]
       if (!p) {
         el.style.opacity = '0'
         return
       }
-      const pos = (world.drift > 0.05 && driftedPosition([p.lon, p.lat], v)) || lonLatToVec3(p.lon, p.lat, 1, v)
-      const facing = pos.dot(camDir)
-      pos.multiplyScalar(1.006)
-      v.copy(pos).project(camera)
+      const q = pts[i]
+      const k = Math.min(1, 22 / Math.max(22, Math.hypot(q.x - q.x0, q.y - q.y0)))
       el.textContent = String(p.n)
       el.classList.toggle('hot', p.hot)
-      el.style.opacity = THREE.MathUtils.smoothstep(facing, 0.15, 0.4).toFixed(2)
-      el.style.transform = `translate(${((v.x * 0.5 + 0.5) * size.width).toFixed(1)}px, ${((-v.y * 0.5 + 0.5) * size.height).toFixed(1)}px)`
+      el.style.opacity = THREE.MathUtils.smoothstep(q.facing, 0.15, 0.4).toFixed(2)
+      el.style.transform = `translate(${(q.x0 + (q.x - q.x0) * k).toFixed(1)}px, ${(q.y0 + (q.y - q.y0) * k).toFixed(1)}px)`
     })
   })
   useEffect(

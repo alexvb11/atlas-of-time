@@ -225,10 +225,12 @@ export function Highlight() {
   const uHover = useMemo(() => ({ uColor: { value: cyan }, uOpacity: { value: 0 }, uLift: { value: 1.0024 } }), [cyan])
 
   useFrame((s, dt) => {
-    const target = selection && world.borders > 0.5 ? 0.011 : 0
+    // lower the extrusion as the camera closes in, so up close it stays a ledge, not a wall
+    const near = THREE.MathUtils.clamp((s.camera.position.length() - 1) / 1.2, 0.25, 1)
+    const target = selection && world.borders > 0.5 ? 0.011 * near : 0
     heightRef.current += (target - heightRef.current) * (1 - Math.exp(-dt * 3.2))
     const h = heightRef.current
-    const fade = Math.min(1, h / 0.006)
+    const fade = selection && world.borders > 0.5 ? Math.min(1, h / (0.006 * near)) : Math.min(1, h / 0.006)
     if (capMat.current) {
       capMat.current.uniforms.uHeight.value = h
       capMat.current.uniforms.uOpacity.value = fade

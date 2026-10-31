@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import { eventsNear, confirmYears, type Nearby } from '../../data/places'
@@ -6,6 +6,7 @@ import { formatYear } from '../../time/format'
 import { animateTo } from '../TimeBar'
 import { timeToU, PRESENT } from '../../time/scale'
 import { ArticleView } from '../wiki/ArticleView'
+import { zoomToFit } from '../../scene/CameraRig'
 
 type Result = { list: Nearby[]; unconfirmed: number; window: number; radius: number; widened: boolean }
 
@@ -50,6 +51,16 @@ export function HereTab() {
     useTime.getState().set({ herePins: (res?.list ?? []).slice(0, 12).map((e, i) => ({ lon: e.lon, lat: e.lat, n: i + 1, hot: i === hot })) })
   }, [res, hot])
   useEffect(() => () => useTime.getState().set({ herePins: [] }), [])
+
+  // the first results for a spot: ease in until their pins are told apart (once, so it never fights the user)
+  const framed = useRef<string | null>(null)
+  useEffect(() => {
+    const key = sel.join(',')
+    if (!res?.list.length || framed.current === key) return
+    framed.current = key
+    const far = Math.max(...res.list.slice(0, 12).map((e) => e.km))
+    zoomToFit(Math.max(40, far))
+  }, [res, sel])
 
   if (ancient) return <p className="text-[13.5px] leading-relaxed text-mist">No events are recorded at a date and place this long ago. Move closer to recorded history to see what happened here.</p>
 
