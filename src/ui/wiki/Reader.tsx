@@ -43,7 +43,7 @@ export function Reader() {
           animate={{ opacity: 1, x: 0, scale: 1 }}
           exit={{ opacity: 0, x: -30, scale: 0.98 }}
           transition={{ type: 'spring', stiffness: 200, damping: 24 }}
-          className="glass pointer-events-auto fixed inset-0 z-40 flex flex-col outline-none md:inset-auto md:top-[168px] md:bottom-4 md:left-4 md:w-[min(520px,calc(100vw-470px))] md:min-w-[380px] md:rounded-[30px]"
+          className="glass pointer-events-auto fixed inset-0 z-40 flex flex-col outline-none md:inset-auto md:top-[168px] md:bottom-[72px] md:left-4 md:w-[min(520px,calc(100vw-470px))] md:min-w-[380px] md:rounded-[30px]"
         >
           <div className="flex shrink-0 items-center gap-2 px-4 pt-[max(14px,env(safe-area-inset-top))] pb-2 md:pt-4">
             {stack.length > 1 && (

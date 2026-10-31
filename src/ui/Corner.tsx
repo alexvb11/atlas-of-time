@@ -2,6 +2,9 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../time/store'
 import { sound } from './sound'
+import { useState } from 'react'
+import { currentLink } from '../app/shareLink'
+import { ExploreMenu } from './ExploreMenu'
 import { toMa } from '../time/scale'
 
 export function Corner() {
@@ -15,7 +18,7 @@ export function Corner() {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5, type: 'spring', stiffness: 160, damping: 20 }}
-      className="pointer-events-auto fixed bottom-[max(16px,env(safe-area-inset-bottom))] left-4 z-20 flex items-center gap-2"
+      className="pointer-events-auto fixed bottom-[max(16px,env(safe-area-inset-bottom))] left-4 z-[45] flex items-center gap-2"
     >
       <button
         type="button"
@@ -27,6 +30,8 @@ export function Corner() {
         <span className="hidden sm:inline">Search</span>
         <kbd className="hidden rounded border border-white/12 px-1 text-[10px] text-dim sm:inline">{mac ? '⌘' : 'Ctrl'} K</kbd>
       </button>
+      <ExploreMenu />
+      <ShareButton />
       <button
         type="button"
         className="bubble grid size-9 place-items-center text-mist"
@@ -64,5 +69,38 @@ export function Corner() {
         )}
       </AnimatePresence>
     </motion.div>
+  )
+}
+
+/** Copies a link to exactly this view: year, place and the article being read */
+function ShareButton() {
+  const [done, setDone] = useState<string | null>(null)
+  const share = async () => {
+    const url = currentLink()
+    try {
+      if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+        await navigator.share({ title: 'Atlas of Time', url })
+        return
+      }
+      await navigator.clipboard.writeText(url)
+      setDone('Link copied')
+    } catch {
+      setDone('Copy failed')
+    }
+    setTimeout(() => setDone(null), 1800)
+  }
+  return (
+    <button type="button" onClick={share} className="bubble relative grid size-9 place-items-center text-mist" aria-label="Copy a link to this place, year and article">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5.5 8.5l3-3M6 3.5l1.2-1.2a2.5 2.5 0 0 1 3.5 3.5L9.5 7M8 10.5l-1.2 1.2a2.5 2.5 0 0 1-3.5-3.5L4.5 7" />
+      </svg>
+      <AnimatePresence>
+        {done && (
+          <motion.span initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} role="status" className="glass absolute bottom-11 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-[11.5px] whitespace-nowrap text-ink">
+            {done}
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </button>
   )
 }

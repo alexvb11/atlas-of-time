@@ -9,6 +9,7 @@ import { Effects } from './Effects'
 import { Borders } from './Borders'
 import { Highlight } from './Highlight'
 import { EventsLayer, HerePins } from './Events'
+import { JourneysLayer } from './Journeys'
 import { updateWorld, world } from './world'
 import { useTime } from '../time/store'
 
@@ -67,6 +68,7 @@ export function Scene() {
         <Highlight />
         <EventsLayer />
         <HerePins />
+        <JourneysLayer />
       </Suspense>
       <Effects lite={lite} />
     </Canvas>

@@ -7,7 +7,7 @@ import { PRESENT } from '../time/scale'
 export type PlaceEvent = { lon: number; lat: number; t: number; title: string; kind: string }
 export type Nearby = PlaceEvent & { km: number; bearing: string; dt: number }
 
-type Raw = { kinds: string[]; events: [number, number, number, string, number][] }
+type Raw = { kinds: string[]; events: [number, number, number, string, number, string?][] }
 let dataP: Promise<{ kinds: string[]; events: Raw['events'] }> | null = null
 export const loadPlaceEvents = () =>
   (dataP ??= fetch('/data/place-events.json')
@@ -99,8 +99,15 @@ export function mentionsYear(text: string, t: number) {
 }
 
 /** Splits events into those whose article confirms the year and those it does not */
-export async function confirmYears(list: Nearby[]): Promise<{ confirmed: Nearby[]; unconfirmed: number }> {
+export async function confirmYears<T extends { title: string; t: number }>(list: T[]): Promise<{ confirmed: T[]; unconfirmed: number }> {
   const text = await leads([...new Set(list.map((e) => e.title))])
   const confirmed = list.filter((e) => mentionsYear(text.get(e.title) ?? '', e.t))
   return { confirmed, unconfirmed: list.length - confirmed.length }
+}
+
+/** Events known to the day (Gregorian) that happened on this month and day, oldest first */
+export async function onThisDay(date = new Date()): Promise<(PlaceEvent & { day: string })[]> {
+  const { kinds, events } = await loadPlaceEvents()
+  const md = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+  return events.filter((e) => e[5] === md).map(([lon, lat, t, title, k, day]) => ({ lon, lat, t, title, kind: kinds[k], day: day! }))
 }

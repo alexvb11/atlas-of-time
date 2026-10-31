@@ -8,7 +8,8 @@
 // Titles are the article titles word for word. The browser confirms each year against the
 // article's own lead before showing it (src/data/places.ts), so a wrong Wikidata date is not shown.
 //
-// Output: public/data/place-events.json  { kinds: [...], events: [[lon, lat, t, title, kind], ...] }
+// Output: public/data/place-events.json  { kinds: [...], events: [[lon, lat, t, title, kind, "MM-DD"?], ...] }
+// ("MM-DD" only for dates known to the day in the Gregorian calendar)
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -64,10 +65,10 @@ const ids = [...items.keys()]
 const out = []
 for (let i = 0; i < ids.length; i += 250) {
   const rows = await sparql(`
-SELECT ?e ?title ?date ?prec WHERE {
+SELECT ?e ?title ?date ?prec ?cal WHERE {
   VALUES ?e { ${ids.slice(i, i + 250).map((q) => `wd:${q}`).join(' ')} }
   { ?e p:P585/psv:P585 ?v } UNION { ?e p:P580/psv:P580 ?v }
-  ?v wikibase:timeValue ?date ; wikibase:timePrecision ?prec . FILTER(?prec >= 9)
+  ?v wikibase:timeValue ?date ; wikibase:timePrecision ?prec ; wikibase:timeCalendarModel ?cal . FILTER(?prec >= 9)
   ?art schema:about ?e ; schema:isPartOf <https://en.wikipedia.org/> ; schema:name ?title .
 }`)
   const best = new Map()
@@ -79,11 +80,13 @@ SELECT ?e ?title ?date ?prec WHERE {
     const prec = Number(r.prec.value)
     const t = y + Math.min(0.99, prec >= 10 && m ? (Number(m[1]) - 1) / 12 + (prec >= 11 ? (Number(m[2]) - 1) / 365 : 0) : 0)
     const prev = best.get(id)
-    if (!prev || t < prev.t) best.set(id, { t, title: r.title.value })
+    // the exact day, for "on this day", only when known to the day and in the Gregorian calendar
+    const day = prec >= 11 && m && r.cal.value.endsWith('Q1985727') ? `${m[1]}-${m[2]}` : null
+    if (!prev || t < prev.t) best.set(id, { t, title: r.title.value, day })
   }
-  for (const [id, { t, title }] of best) {
+  for (const [id, { t, title, day }] of best) {
     const it = items.get(id)
-    out.push([Number(it.lon.toFixed(3)), Number(it.lat.toFixed(3)), Number(t.toFixed(3)), title, kinds.indexOf(it.kind)])
+    out.push([Number(it.lon.toFixed(3)), Number(it.lat.toFixed(3)), Number(t.toFixed(3)), title, kinds.indexOf(it.kind), ...(day ? [day] : [])])
   }
   if ((i / 250) % 10 === 0) process.stdout.write('.')
 }

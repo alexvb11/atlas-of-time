@@ -29,6 +29,8 @@ type State = {
   soundOn: boolean
   /** places of the events listed in the Here tab, drawn as numbered pins; hot = the one pointed at */
   herePins: { lon: number; lat: number; n: number; hot: boolean }[]
+  /** the left-hand sheet opened from the Explore menu */
+  side: 'tours' | 'quiz' | 'today' | 'journal' | null
   reducedMotion: boolean
 
   setU: (u: number) => void
@@ -60,6 +62,7 @@ export const useTime = create<State>()(
     activeEvent: null,
     soundOn: false,
     herePins: [],
+    side: null,
     reducedMotion: !!reduced,
 
     setU: (u) => {

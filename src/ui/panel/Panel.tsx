@@ -13,6 +13,8 @@ import { dateRange } from './bits'
 import { animateTo } from '../TimeBar'
 import { timeToU, PRESENT } from '../../time/scale'
 import { formatYear } from '../../time/format'
+import { recordPlace } from '../../data/journal'
+import { ageAt } from '../../time/eras'
 
 const TABS = ['Overview', 'Here', 'History', 'Languages', 'Geography'] as const
 type Tab = (typeof TABS)[number]
@@ -74,6 +76,18 @@ export function Panel() {
   const [tab, setTab] = useState<Tab>('Overview')
   const closeRef = useRef<HTMLButtonElement>(null)
   const asideRef = useRef<HTMLElement>(null)
+
+  // the journal remembers each place visited, once its view has settled
+  const resKey = res ? resolutionKey(res) : null
+  useEffect(() => {
+    if (!res || !selection) return
+    const id = setTimeout(() => {
+      const t = useTime.getState().time
+      recordPlace({ name: titleOf(res, t).title, t, at: selection }, ageAt(t)?.name ?? null)
+    }, 1500)
+    return () => clearTimeout(id)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [resKey, selection])
 
   // move focus into the dialog for keyboard and screen-reader users without drawing a ring
   useEffect(() => {

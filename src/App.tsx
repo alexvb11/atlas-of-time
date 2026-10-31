@@ -9,11 +9,15 @@ import { Corner } from './ui/Corner'
 import { Intro } from './app/Intro'
 import { EventCard } from './ui/EventCard'
 import { useTime } from './time/store'
+import { useShareLink } from './app/shareLink'
 import { Reader } from './ui/wiki/Reader'
 import { HoverCardHost } from './ui/wiki/HoverCard'
+import { SideSheet } from './ui/ExploreMenu'
+import { TourPlayer } from './ui/explore/Tours'
 
 export default function App() {
   useTimeKeys()
+  useShareLink()
   const introDone = useTime((s) => s.introDone)
   return (
     <main className="fixed inset-0 overflow-hidden bg-void">
@@ -34,6 +38,8 @@ export default function App() {
             </header>
             <Corner key="corner" />
             <EventCard key="event" />
+            <SideSheet key="side" />
+            <TourPlayer key="tour" />
             <Reader key="reader" />
             <HoverCardHost key="cards" />
           </>

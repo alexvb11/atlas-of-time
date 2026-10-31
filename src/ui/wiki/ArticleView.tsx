@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { recordArticle } from '../../data/journal'
 import { article, film, term, useAsync, type Block, type Inline } from '../../data/wiki'
 import { Film } from './Film'
 import { TermLink } from './Term'
@@ -60,6 +61,9 @@ export function ArticleView({ title, inline = false, subtitle }: { title: string
   const t = useAsync(title.split('#')[0], term)
   const [retry, setRetry] = useState(0)
   const [open, setOpen] = useState<Record<number, boolean>>({})
+  useEffect(() => {
+    if (a.data) recordArticle(a.data.title)
+  }, [a.data])
 
   return (
     <div>
