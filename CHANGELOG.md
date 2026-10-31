@@ -1,5 +1,48 @@
 # Changelog
 
+## 0.8.0 — 2026-10-31
+
+### Explore
+- **Share links.** The URL carries the year, the selected place and the article being read
+  (`#t=…&at=…&read=…`); the link button copies it (or opens the share sheet on phones).
+- **Search by place and year**: "Paris 1789", "Rome 44 BC" or just "1066" in ⌘K.
+- **Guided journeys**: the Silk Road (8 stops), the Mongol conquests (11), the Second World War
+  (12), each moving the time and camera with a caption, a link to the article and optional
+  narration by the browser's speech synthesis.
+- **Moving voyages and marches**: Hannibal (218–216 BCE), Columbus's first voyage, the
+  Magellan–Elcano circumnavigation, Lewis and Clark, and Napoleon in Russia are drawn as routes
+  with a moving marker whenever the time is within their dates. Positions are linear in time between
+  documented stops; uncertain dates and places (Hannibal's Alpine pass) are marked "c.".
+- **History quiz**: six rounds alternating "find the place" (scored by distance) and "name the
+  ruler" (four choices, answered by the atlas's border data for that date).
+- **On this day**: events Wikidata dates to today's day (Gregorian calendar only, so Julian dates
+  are not mismatched), each year confirmed by its article.
+- **Your journal**: places, eras and articles explored, quiz scores; kept in this browser only.
+
+### Richer
+- **Cities through time**: 949 major cities sized by their recorded populations (15,455 figures
+  from Wikidata), interpolated geometrically between figures at most 60 years apart, hidden across
+  longer silences rather than guessed, with labels on the largest.
+- **Reader in 20 languages**, following the browser or the reader's picker, via Wikipedia's
+  interlanguage links, with an English fallback that says so.
+
+### Coverage
+- Country events now reach 201 countries (2,126 events): countries with fewer than eight widely
+  covered events also get events covered in at least three Wikipedias, with the same year check.
+- 18 more border-data names linked by hand-checked canonical titles (Srivijaya, the Mossi and
+  Hausa kingdoms, Tiwanaku, the Hopewell tradition, the Lunda and Luba empires…). The old lookups
+  failed because the titles had become redirects. Annam, Athabaskan and the Western Australian
+  "Maya" are now deliberately unmapped: no single article fits their span.
+
+### Evaluated and not used
+- **CShapes-Europe (1816–1885)** would make pre-1886 European borders yearly, but it models only
+  states in the Gleditsch–Ward system: it shows Florence as Austrian in 1850 (Austria occupied
+  Tuscany) and leaves Hamburg in no state. Pre-1886 borders stay on the approximate maps, labelled
+  as such.
+
+### Fixes
+- The reader and the new side sheets no longer cover the search and Explore buttons.
+
 ## 0.7.0 — 2026-10-30
 
 ### Precise borders

@@ -30,11 +30,6 @@
   "snapshots": 26
  },
  {
-  "name": "Hadramaut",
-  "reason": "mapped title \"Kingdom of Hadramaut\" not found on Wikidata",
-  "snapshots": 21
- },
- {
   "name": "Eastern North American hunter-gatherers",
   "reason": "mapped title \"Eastern Woodlands\" not found on Wikidata",
   "snapshots": 19
@@ -45,53 +40,18 @@
   "snapshots": 18
  },
  {
-  "name": "Saint Barthelemy",
-  "reason": "no candidate passed validation",
-  "snapshots": 15
- },
- {
-  "name": "Simhala",
-  "reason": "mapped title \"Anuradhapura Kingdom\" not found on Wikidata",
-  "snapshots": 14
- },
- {
   "name": "Hindu kingdoms",
   "reason": "deliberately unmapped",
   "snapshots": 14
  },
  {
-  "name": "Mossi States",
-  "reason": "no candidate passed validation",
-  "snapshots": 13
- },
- {
   "name": "Athabaskan",
-  "reason": "mapped title \"Athabaskan-speaking peoples\" not found on Wikidata",
+  "reason": "deliberately unmapped",
   "snapshots": 12
- },
- {
-  "name": "Wallis and Futuna Islands",
-  "reason": "no candidate passed validation",
-  "snapshots": 12
- },
- {
-  "name": "Glades Culture",
-  "reason": "no candidate passed validation",
-  "snapshots": 11
- },
- {
-  "name": "Lunda",
-  "reason": "mapped title \"Kingdom of Lunda\" not found on Wikidata",
-  "snapshots": 11
  },
  {
   "name": "central Asian khanates",
   "reason": "deliberately unmapped",
-  "snapshots": 11
- },
- {
-  "name": "Luba",
-  "reason": "mapped title \"Kingdom of Luba\" not found on Wikidata",
   "snapshots": 10
  },
  {
@@ -102,16 +62,6 @@
  {
   "name": "Manioc farmers",
   "reason": "deliberately unmapped",
-  "snapshots": 9
- },
- {
-  "name": "Hausa States",
-  "reason": "no candidate passed validation",
-  "snapshots": 9
- },
- {
-  "name": "Gambia, The",
-  "reason": "no candidate passed validation",
   "snapshots": 9
  },
  {
@@ -145,42 +95,12 @@
   "snapshots": 8
  },
  {
-  "name": "Srivijaya Empire",
-  "reason": "no candidate passed validation",
-  "snapshots": 8
- },
- {
-  "name": "Marksville Culture",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Fourche Maline Culture",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
   "name": "Mill Creek Culture",
   "reason": "no candidate passed validation",
   "snapshots": 7
  },
  {
-  "name": "Swift Creek Culture",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
   "name": "Miller",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Laurel complex",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Copena",
   "reason": "no candidate passed validation",
   "snapshots": 7
  },
@@ -205,47 +125,7 @@
   "snapshots": 7
  },
  {
-  "name": "Point Peninsula",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Hopewell Culture",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Tiahuanaco Empire",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Arawaks",
-  "reason": "mapped title \"Arawak peoples\" not found on Wikidata",
-  "snapshots": 7
- },
- {
-  "name": "Annam",
-  "reason": "mapped title \"Annam (Chinese province)\" not found on Wikidata",
-  "snapshots": 7
- },
- {
-  "name": "Yup'ik & Cup'ik",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
   "name": "Suspiaq",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Inupiaq",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Eyaq",
   "reason": "no candidate passed validation",
   "snapshots": 7
  },
@@ -296,16 +176,11 @@
  },
  {
   "name": "Maya",
-  "reason": "mapped title \"Maya (Australian people)\" not found on Wikidata",
+  "reason": "deliberately unmapped",
   "snapshots": 7
  },
  {
   "name": "Kaytej",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Yawuru",
   "reason": "no candidate passed validation",
   "snapshots": 7
  },
@@ -361,11 +236,6 @@
  },
  {
   "name": "Kariyarra",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Nyul Nyul",
   "reason": "no candidate passed validation",
   "snapshots": 7
  },
@@ -501,11 +371,6 @@
  },
  {
   "name": "Ngalakan",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
-  "name": "Yindjibarndi",
   "reason": "no candidate passed validation",
   "snapshots": 7
  },
@@ -755,16 +620,6 @@
   "snapshots": 7
  },
  {
-  "name": "Asante",
-  "reason": "mapped title \"Ashanti Empire\" not found on Wikidata",
-  "snapshots": 7
- },
- {
-  "name": "Cochin China",
-  "reason": "no candidate passed validation",
-  "snapshots": 7
- },
- {
   "name": "Ethiopian highland farmers",
   "reason": "deliberately unmapped",
   "snapshots": 6
@@ -845,11 +700,6 @@
   "snapshots": 6
  },
  {
-  "name": "Wakaya",
-  "reason": "no candidate passed validation",
-  "snapshots": 6
- },
- {
   "name": "Madi Madi",
   "reason": "no candidate passed validation",
   "snapshots": 6
@@ -926,11 +776,6 @@
  },
  {
   "name": "Yinwum",
-  "reason": "no candidate passed validation",
-  "snapshots": 6
- },
- {
-  "name": "Gunggari",
   "reason": "no candidate passed validation",
   "snapshots": 6
  },
@@ -1120,11 +965,6 @@
   "snapshots": 6
  },
  {
-  "name": "Arabana",
-  "reason": "no candidate passed validation",
-  "snapshots": 6
- },
- {
   "name": "Nunggubuyu",
   "reason": "no candidate passed validation",
   "snapshots": 6
@@ -1206,11 +1046,6 @@
  },
  {
   "name": "Anguthimri",
-  "reason": "no candidate passed validation",
-  "snapshots": 6
- },
- {
-  "name": "Kunja",
   "reason": "no candidate passed validation",
   "snapshots": 6
  },
@@ -1355,11 +1190,6 @@
   "snapshots": 6
  },
  {
-  "name": "Yandruwandha",
-  "reason": "no candidate passed validation",
-  "snapshots": 6
- },
- {
   "name": "Malyangaba",
   "reason": "no candidate passed validation",
   "snapshots": 6
@@ -1406,11 +1236,6 @@
  },
  {
   "name": "Wuthathi",
-  "reason": "no candidate passed validation",
-  "snapshots": 6
- },
- {
-  "name": "Mingin",
   "reason": "no candidate passed validation",
   "snapshots": 6
  },
@@ -1560,13 +1385,8 @@
   "snapshots": 6
  },
  {
-  "name": "Lozi",
-  "reason": "mapped title \"Barotseland\" not found on Wikidata",
-  "snapshots": 6
- },
- {
-  "name": "Trucial Oman",
-  "reason": "no candidate passed validation",
+  "name": "Asante",
+  "reason": "mapped title \"Ashanti Empire\" not found on Wikidata",
   "snapshots": 6
  },
  {
@@ -1740,8 +1560,8 @@
   "snapshots": 5
  },
  {
-  "name": "Dahomey",
-  "reason": "mapped title \"Kingdom of Dahomey\" not found on Wikidata",
+  "name": "Lozi",
+  "reason": "mapped title \"Barotseland\" not found on Wikidata",
   "snapshots": 5
  },
  {
@@ -1782,6 +1602,11 @@
  {
   "name": "Danes",
   "reason": "mapped title \"Danes (Germanic tribe)\" not found on Wikidata",
+  "snapshots": 4
+ },
+ {
+  "name": "Annam",
+  "reason": "deliberately unmapped",
   "snapshots": 4
  },
  {
@@ -1870,18 +1695,8 @@
   "snapshots": 4
  },
  {
-  "name": "Sweden–Norway",
-  "reason": "no candidate passed validation",
-  "snapshots": 4
- },
- {
-  "name": "Rio De Oro",
-  "reason": "no candidate passed validation",
-  "snapshots": 4
- },
- {
-  "name": "French West Africa",
-  "reason": "no candidate passed validation",
+  "name": "Dahomey",
+  "reason": "mapped title \"Kingdom of Dahomey\" not found on Wikidata",
   "snapshots": 4
  },
  {
@@ -2110,6 +1925,11 @@
   "snapshots": 3
  },
  {
+  "name": "Cochin China",
+  "reason": "no candidate passed validation",
+  "snapshots": 3
+ },
+ {
   "name": "Venetia",
   "reason": "no candidate passed validation",
   "snapshots": 3
@@ -2120,87 +1940,7 @@
   "snapshots": 3
  },
  {
-  "name": "Kingdom of Brazil",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Ndebele",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Mirambo Unyanyembe Ukimbu",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Mbailundu",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Ibadan",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Lagos",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Cotonou",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Futa Toro",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Futa Jalon",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Ato trading confederacy",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Harer (Egypt)",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Borgu States",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Opobo",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Tukular Caliphate",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "French Indo-China",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Byelarus",
-  "reason": "no candidate passed validation",
-  "snapshots": 3
- },
- {
-  "name": "Turkish Cypriot-administered area",
+  "name": "Sweden–Norway",
   "reason": "no candidate passed validation",
   "snapshots": 3
  },
@@ -2765,7 +2505,77 @@
   "snapshots": 2
  },
  {
+  "name": "Kingdom of Brazil",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Ndebele",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Mirambo Unyanyembe Ukimbu",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Mbailundu",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Trucial Oman",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
   "name": "Algeria (FR)",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Ibadan",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Lagos",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Cotonou",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Futa Toro",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Futa Jalon",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Ato trading confederacy",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Harer (Egypt)",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Borgu States",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
+  "name": "Opobo",
   "reason": "no candidate passed validation",
   "snapshots": 2
  },
@@ -2775,27 +2585,12 @@
   "snapshots": 2
  },
  {
+  "name": "Tukular Caliphate",
+  "reason": "no candidate passed validation",
+  "snapshots": 2
+ },
+ {
   "name": "Rabih az-Zubayr",
-  "reason": "no candidate passed validation",
-  "snapshots": 2
- },
- {
-  "name": "East Prussia",
-  "reason": "no candidate passed validation",
-  "snapshots": 2
- },
- {
-  "name": "Far Eastern SSR",
-  "reason": "no candidate passed validation",
-  "snapshots": 2
- },
- {
-  "name": "Emirate of Bin Shal'an",
-  "reason": "no candidate passed validation",
-  "snapshots": 2
- },
- {
-  "name": "Hail",
   "reason": "no candidate passed validation",
   "snapshots": 2
  },
@@ -6241,121 +6036,6 @@
  },
  {
   "name": "Sultinate of Zanzibar",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Accra",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Second Samori Empire",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "First Samori Empire",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "German E. Africa (Tanganyika)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Sakhalin (RU)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "British Protectorate",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Danzig",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Dodecanese Islands",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Algeria (France)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Morocco (France)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Eritrea (Italy)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Ethiopia (Italy)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Walbis Bay",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Congo (France)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Saipan",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Tonkin",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Southern Cameroon",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Fezzan (Frech Lybia)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Guinea-Bissau (Portugal)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Martinique (France)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Cyraneica (UK Lybia)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Tripolitana (UK Lybia)",
-  "reason": "no candidate passed validation",
-  "snapshots": 1
- },
- {
-  "name": "Dutch Guinea",
   "reason": "no candidate passed validation",
   "snapshots": 1
  }

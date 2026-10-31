@@ -25,6 +25,17 @@ npm run data           # everything
 npm run data:entities  # only curated entities, events, Wikipedia/Wikidata enrichment
 ```
 
+### Put it online
+
+The site is static: `npm run build` writes `dist/`, which any static host can serve.
+
+1. **GitHub**: create an empty private repository, then
+   `git remote set-url origin https://github.com/<you>/atlas-of-time.git` and `git push -u origin main`.
+2. **Vercel**: import the repository at vercel.com/new. `vercel.json` already sets the build command,
+   the output folder and cache headers; no environment variables are needed.
+
+Keep the CShapes licence in mind: the site must stay non-commercial while it includes those borders.
+
 ### Quality checks
 
 These need the dev server running.
@@ -36,6 +47,7 @@ npm run qa:fps     # frame rate idle / scrubbing / panel open (real GPU via head
 node scripts/qa/perf.mjs "http://localhost:4173/?qa" --mobile --slow   # cold load + first scrub on a production build (phone CPU, slow 4G)
 node scripts/qa/a11y.mjs   # touch targets, focus indicators, Escape
 node scripts/qa/reader.mjs [--mobile]   # History dropdown → hover card → reader → signature (needs network)
+node scripts/qa/explore.mjs   # share link, journey, moving voyage, quiz, on this day, journal (needs network)
 ```
 
 ## Controls
@@ -49,6 +61,9 @@ node scripts/qa/reader.mjs [--mobile]   # History dropdown → hover card → re
 | Flip film pictures | ‹ › buttons, or ← / → while pointing at a film or with a hover card open |
 | Search | ⌘K / Ctrl+K |
 | Read an event | History tab: click the title (the year jumps the slider) · event cards: *Read the story* |
+| Search a place in a year | ⌘K, then e.g. "Paris 1789" or "Rome 44 BC" |
+| Share this view | link button (bottom left): copies a URL with the year, place and article |
+| Journeys, quiz, on this day, journal | Explore (bottom left) |
 | Look something up | hover (or focus, or tap) an underlined name; click it to read on, Back walks the trail |
 
 ## How it works
@@ -78,6 +93,21 @@ See [PLAN.md](PLAN.md) for the architecture. Short version:
   from about 11,000 located, dated Wikidata events, numbered on the globe. The window scales with
   time (a few years recently, up to 150 years in antiquity), and each year is confirmed against the
   event's Wikipedia lead before it is shown.
+- **Explore**: guided journeys (the Silk Road, the Mongol conquests, the Second World War) move
+  the time and camera stop by stop with a caption, optionally read aloud by the browser's speech
+  synthesis. Five dated movements (Hannibal, Columbus's first voyage, Magellan–Elcano, Lewis and
+  Clark, Napoleon in 1812) are also drawn moving on the globe whenever the time is within their
+  dates, linear in time between documented stops. The quiz asks where an event happened (scored by
+  distance) and who held a marked place in a given year (answers from the border data for that
+  date). "On this day" lists events Wikidata dates to today's day in the Gregorian calendar, years
+  confirmed by their articles. The journal remembers places, eras and articles in this browser only.
+- **Cities**: 949 major cities drawn by the populations recorded on Wikidata (censuses and official
+  estimates), interpolated only between figures at most 60 years apart and never extrapolated.
+- **Languages**: the reader, hover cards and films follow the browser language (20 languages, or
+  the reader's picker) through Wikipedia's interlanguage links, falling back to English with a
+  note. The rest of the interface is in English.
+- **Share links**: `#t=1789.54&at=2.369,48.853&read=Storming_of_the_Bastille` opens that year,
+  place and article.
 - **Reader**: every dated event (304) has a hand-picked Wikipedia article
   (`scripts/build-data/curated/event-articles.mjs`, checked by `articles.mjs`). The History tab
   shows its whole lead plus *Background* and *Aftermath*/*Legacy*. Every link in it gets a hover
@@ -108,6 +138,7 @@ the reader says so and everything else keeps working.
 | Historical borders before 1886 | [historical-basemaps](https://github.com/aourednik/historical-basemaps) by André Ourednik et al., kept at source detail down to 1 km | **GPL-3.0** (see note) |
 | Borders 1886–today | [CShapes 2.0](https://icr.ethz.ch/data/cshapes/): Schvitz, Girardin, Rüegger, Weidmann, Cederman & Gleditsch (2022), *Journal of Conflict Resolution* 66(1); simplified only below 200 m | **CC BY-NC-SA 4.0** (non-commercial; see note) |
 | Independence dates (naming CShapes units) | [Gleditsch & Ward](http://ksgleditsch.com/statelist.html) list of independent states and microstates | cited |
+| City populations | Wikidata (P1082 with P585 dates), as recorded | CC0 |
 | Located events ("Here" tab) | Wikidata (coordinates P625, dates P585/P580), years confirmed against each Wikipedia article in the browser | CC0 / CC BY-SA 4.0 |
 | Country facts | [mledoze/countries](https://github.com/mledoze/countries) | ODbL |
 | Population | [Our World in Data](https://ourworldindata.org/population-sources), HYDE 3.2 + UN WPP | CC BY 4.0 |

@@ -8,16 +8,17 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "data": "node scripts/build-data/textures.mjs && node scripts/build-data/drift.mjs && node scripts/build-data/history.mjs && node scripts/build-data/cshapes.mjs && node scripts/build-data/countries.mjs && node scripts/build-data/population.mjs && node scripts/build-data/entities.mjs && node scripts/build-data/tiers.mjs && node scripts/build-data/country-events.mjs && node scripts/build-data/articles.mjs && node scripts/build-data/place-events.mjs",
+    "data": "node scripts/build-data/textures.mjs && node scripts/build-data/drift.mjs && node scripts/build-data/history.mjs && node scripts/build-data/cshapes.mjs && node scripts/build-data/countries.mjs && node scripts/build-data/population.mjs && node scripts/build-data/entities.mjs && node scripts/build-data/tiers.mjs && node scripts/build-data/country-events.mjs && node scripts/build-data/articles.mjs && node scripts/build-data/place-events.mjs && node scripts/build-data/cities.mjs",
     "data:entities": "node scripts/build-data/entities.mjs && node scripts/build-data/tiers.mjs && node scripts/build-data/country-events.mjs && node scripts/build-data/articles.mjs",
     "data:articles": "node scripts/build-data/country-events.mjs && node scripts/build-data/articles.mjs",
-    "data:places": "node scripts/build-data/place-events.mjs",
+    "data:places": "node scripts/build-data/place-events.mjs && node scripts/build-data/cities.mjs",
     "data:borders": "node scripts/build-data/history.mjs && node scripts/build-data/cshapes.mjs",
     "qa:shots": "node scripts/qa/shots.mjs",
     "qa:audit": "node scripts/qa/audit.mjs 34",
     "qa:fps": "node scripts/qa/fps.mjs",
     "qa:reader": "node scripts/qa/reader.mjs",
-    "qa:facts": "node scripts/qa/fact-check.mjs"
+    "qa:facts": "node scripts/qa/fact-check.mjs",
+    "qa:explore": "node scripts/qa/explore.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",
