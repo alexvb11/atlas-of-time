@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useReader } from './store'
 import { ArticleView } from './ArticleView'
+import { displayTitle, LANGS, setLang, useLang } from '../../data/wiki'
 
 /**
  * The reader: a sheet beside the globe where any link can be read in full. Each click goes one step
@@ -38,7 +39,7 @@ export function Reader() {
           tabIndex={-1}
           data-keys-local
           role="dialog"
-          aria-label={`Reading: ${top.split('#')[0]}`}
+          aria-label={`Reading: ${displayTitle(top)}`}
           initial={{ opacity: 0, x: -40, scale: 0.98 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           exit={{ opacity: 0, x: -30, scale: 0.98 }}
@@ -62,11 +63,12 @@ export function Reader() {
                     onClick={() => useReader.setState({ stack: stack.slice(0, i + 1) })}
                     className={`rounded-full px-2 py-0.5 ${i === stack.length - 1 ? 'bg-amber/90 text-void' : 'text-mist hover:bg-white/8 hover:text-ink'}`}
                   >
-                    {s.split('#')[0]}
+                    {displayTitle(s)}
                   </button>
                 </span>
               ))}
             </nav>
+            <LangPicker />
             <button type="button" onClick={() => useReader.getState().close()} className="bubble grid size-9 shrink-0 place-items-center text-mist" aria-label="Close reader (Escape)">
               <svg width="12" height="12" viewBox="0 0 12 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M2 2l8 8M10 2l-8 8" /></svg>
             </button>
@@ -74,7 +76,7 @@ export function Reader() {
           <div ref={scroller} className="scroll-thin min-h-0 flex-1 overflow-y-auto px-5 pb-6">
             <AnimatePresence mode="wait">
               <motion.div key={top} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}>
-                <h2 className="mt-1 mb-3 font-display text-[32px] leading-[1.05] text-ink">{top.split('#')[0]}</h2>
+                <h2 className="mt-1 mb-3 font-display text-[32px] leading-[1.05] text-ink">{displayTitle(top)}</h2>
                 <ArticleView title={top} />
                 <p className="mt-6 text-center text-[11px] text-dim">Hover any underlined name for a quick look; click it to keep reading.</p>
               </motion.div>
@@ -83,5 +85,23 @@ export function Reader() {
         </motion.aside>
       )}
     </AnimatePresence>
+  )
+}
+
+/** Which Wikipedia the reader, hover cards and films read from */
+export function LangPicker() {
+  const l = useLang()
+  return (
+    <label className="bubble relative flex h-9 shrink-0 items-center gap-1 px-2.5 text-[11.5px] text-mist" title="Article language (the rest of the atlas stays in English)">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4"><circle cx="8" cy="8" r="6.5" /><path d="M1.5 8h13M8 1.5c2 2 2.8 4.2 2.8 6.5S10 12.5 8 14.5M8 1.5C6 3.5 5.2 5.7 5.2 8S6 12.5 8 14.5" /></svg>
+      <span className="uppercase">{l}</span>
+      <select value={l} onChange={(e) => setLang(e.target.value)} aria-label="Article language" className="absolute inset-0 cursor-pointer opacity-0">
+        {Object.entries(LANGS).map(([k, name]) => (
+          <option key={k} value={k}>
+            {name}
+          </option>
+        ))}
+      </select>
+    </label>
   )
 }

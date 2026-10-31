@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { recordArticle } from '../../data/journal'
-import { article, film, term, useAsync, type Block, type Inline } from '../../data/wiki'
+import { article, film, term, useAsync, LANGS, getLang, displayTitle, type Block, type Inline } from '../../data/wiki'
 import { Film } from './Film'
 import { TermLink } from './Term'
 import { useReader } from './store'
@@ -68,7 +68,7 @@ export function ArticleView({ title, inline = false, subtitle }: { title: string
   return (
     <div>
       <div className={`overflow-hidden ${inline ? 'rounded-2xl' : 'rounded-[22px]'} ring-1 ring-white/10`}>
-        <Film title={a.data?.title ?? title.split('#')[0]} subtitle={subtitle ?? t.data?.description} shots={f.data} poster={t.data?.thumb} failed={f.error} />
+        <Film title={a.data?.title ?? displayTitle(title)} subtitle={subtitle ?? t.data?.description} shots={f.data} poster={t.data?.thumb} failed={f.error} />
       </div>
       <div className="mt-3.5">
         {a.error ? (
@@ -89,6 +89,7 @@ export function ArticleView({ title, inline = false, subtitle }: { title: string
           <Skeleton />
         ) : (
           <>
+            {a.data.fallback && <p className="mb-2 text-[11.5px] text-dim italic">No {LANGS[getLang()]} article on this; showing the English one.</p>}
             <Blocks blocks={a.data.lead} />
             {a.data.sections.map((s, i) =>
               inline ? (
@@ -122,7 +123,7 @@ export function ArticleView({ title, inline = false, subtitle }: { title: string
                 </button>
               )}
               <a href={a.data.url} target="_blank" rel="noreferrer" className="ml-auto text-[10.5px] text-dim hover:text-mist">
-                From Wikipedia, CC BY-SA 4.0 · full article ↗
+                From Wikipedia ({LANGS[a.data.lang] ?? a.data.lang}), CC BY-SA 4.0 · full article ↗
               </a>
             </div>
           </>

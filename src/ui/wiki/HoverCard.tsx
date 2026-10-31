@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { term, film, useAsync } from '../../data/wiki'
+import { term, film, useAsync, displayTitle } from '../../data/wiki'
 import { useEntityIndex } from '../../data/entities'
 import { useTime } from '../../time/store'
 import { animateTo } from '../TimeBar'
@@ -92,7 +92,7 @@ function Card({ title, anchor }: { title: string; anchor: HTMLElement }) {
       ref={ref}
       data-keys-local
       role="dialog"
-      aria-label={title}
+      aria-label={displayTitle(title)}
       onPointerEnter={cancelClose}
       onPointerLeave={(e) => e.pointerType === 'mouse' && scheduleClose()}
       onFocus={cancelClose}
@@ -103,10 +103,10 @@ function Card({ title, anchor }: { title: string; anchor: HTMLElement }) {
       style={{ left: pos?.left ?? -9999, top: pos?.top ?? 0, width: pos?.width ?? W, transformOrigin: pos?.below === false ? '50% 100%' : '50% 0%' }}
       className="glass pointer-events-auto fixed z-50 overflow-hidden rounded-[22px]"
     >
-      <Film title={d?.title ?? title} subtitle={d?.description} shots={f.data} poster={d?.thumb} failed={f.error} keys />
+      <Film title={d?.title ?? displayTitle(title)} subtitle={d?.description} shots={f.data} poster={d?.thumb} failed={f.error} keys />
       <div className="px-4 pt-3 pb-3.5">
         <div className="flex items-baseline justify-between gap-3">
-          <h3 className="font-display text-[22px] leading-tight text-ink">{d?.title ?? title}</h3>
+          <h3 className="font-display text-[22px] leading-tight text-ink">{d?.title ?? displayTitle(title)}</h3>
           {entity && <span className="shrink-0 text-[11px] text-amber tnum">{formatYear(entity.from)}</span>}
         </div>
         {d?.description && <div className="mt-0.5 text-[10.5px] font-semibold tracking-[0.14em] text-amber/90 uppercase">{d.description}</div>}
@@ -122,7 +122,7 @@ function Card({ title, anchor }: { title: string; anchor: HTMLElement }) {
           </div>
         )}
         <div className="mt-3 flex flex-wrap items-center gap-1.5">
-          <button type="button" onClick={() => useReader.getState().open(d?.title ?? title)} className="bubble px-3 py-1.5 text-[12px] font-medium text-ink">
+          <button type="button" onClick={() => useReader.getState().open(title)} className="bubble px-3 py-1.5 text-[12px] font-medium text-ink">
             Read the story →
           </button>
           {d?.coords && (

@@ -21,7 +21,11 @@ const read = async (f) => JSON.parse(await fs.readFile(path.join(root, f), 'utf8
 const curated = await read('public/data/entities.json')
 const auto = await read('public/data/entities-auto.json')
 const PER_COUNTRY = 16
+// widely covered events first; countries with few of those also get less-covered ones (down to 3
+// language editions), still with the same year check against the article
 const MIN_SITELINKS = 6
+const MIN_SITELINKS_SPARSE = 3
+const SPARSE = 8
 const NOW = 2026
 
 // classes of event (instance of, or of a direct subclass)
@@ -54,7 +58,7 @@ for (const [cls, types] of subsOf) {
     const rows = await sparql(`
 SELECT ?e ?country ?sl WHERE {
   VALUES ?t { ${types.slice(i, i + 80).map((q) => `wd:${q}`).join(' ')} }
-  ?e wdt:P31 ?t ; wikibase:sitelinks ?sl . FILTER(?sl >= ${MIN_SITELINKS})
+  ?e wdt:P31 ?t ; wikibase:sitelinks ?sl . FILTER(?sl >= ${MIN_SITELINKS_SPARSE})
   ?e wdt:P17 ?country .
 }`)
     for (const r of rows) {
@@ -121,7 +125,8 @@ const ranked = new Map()
 for (const c of countries) {
   const all = [...(byCountry.get(c.qid)?.values() ?? [])].filter((e) => !curatedTitles.has(e.title) && local(e))
   all.sort((a, b) => b.sl - a.sl)
-  ranked.set(c.qid, all.slice(0, PER_COUNTRY + 8))
+  const wide = all.filter((e) => e.sl >= MIN_SITELINKS)
+  ranked.set(c.qid, (wide.length >= SPARSE ? wide : all).slice(0, PER_COUNTRY + 8))
 }
 
 // second source: the year must also appear in the article's own lead (Wikidata sometimes carries a

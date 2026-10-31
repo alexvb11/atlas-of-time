@@ -1,5 +1,7 @@
 // Cmd/Ctrl+K: jump to any place or entity. Things that exist at the current time rank first;
 // picking one from another era jumps the slider there (the row says so before you pick it).
+// A year in the query ("Paris 1789", "Rome 44 BC", "1066") goes to that place in that year: the
+// place comes from this atlas when it knows it, else from its Wikipedia article's coordinates.
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Fuse from 'fuse.js'
@@ -8,13 +10,14 @@ import { nameAt, useEntityIndex, type Entity, type EntityIndex } from '../data/e
 import { getSnapshot, historyYears, snapshotIndexAt } from '../data/history'
 import { formatYear } from '../time/format'
 import { animateTo } from './TimeBar'
-import { timeToU } from '../time/scale'
+import { timeToU, PRESENT } from '../time/scale'
+import { term } from '../data/wiki'
 
 type Item = {
   key: string
   label: string
   sub: string
-  kind: 'entity' | 'country' | 'polity'
+  kind: 'entity' | 'country' | 'polity' | 'goto'
   from: number
   to: number
   where: [number, number] | null
@@ -65,6 +68,18 @@ function buildItems(idx: EntityIndex, t: number): Item[] {
   return items
 }
 
+/** "Paris 1789" → { place: 'Paris', year: 1789 }; "44 BC" → astronomical -43; "1066" → year only */
+export function parseYearQuery(q: string): { place: string; year: number } | null {
+  const m = q.match(/(^|\s)(\d{1,4})\s*(bce|bc|b\.c\.|ce|ad|a\.d\.)?(?=\s|$)/i)
+  if (!m) return null
+  const n = Number(m[2])
+  const bc = /^b/i.test(m[3] ?? '')
+  const year = bc ? 1 - n : n
+  if (year > PRESENT || (!bc && n === 0)) return null
+  const place = (q.slice(0, m.index) + ' ' + q.slice((m.index ?? 0) + m[0].length)).replace(/\s+(in|at|of)\s*$|^\s*(in|at)\s+/i, ' ').trim()
+  return { place, year }
+}
+
 export function CommandPalette() {
   const open = useTime((s) => s.paletteOpen)
   const time = useTime((s) => s.time)
@@ -83,16 +98,32 @@ export function CommandPalette() {
 
   const items = useMemo(() => (idx && open ? buildItems(idx, time) : []), [idx, open, time])
   const fuse = useMemo(() => new Fuse(items, { keys: ['label', 'names'], threshold: 0.35, ignoreLocation: true }), [items])
+  const yq = useMemo(() => parseYearQuery(q), [q])
   const results = useMemo(() => {
-    const list = q.trim() ? fuse.search(q.trim(), { limit: 40 }).map((r) => r.item) : items.filter((i) => i.kind === 'entity')
+    const text = (yq ? yq.place : q).trim()
+    const list = text ? fuse.search(text, { limit: 40 }).map((r) => r.item) : yq ? [] : items.filter((i) => i.kind === 'entity')
     const now = (i: Item) => time >= i.from && time < i.to
-    return [...list.filter(now), ...list.filter((i) => !now(i))].slice(0, 12)
-  }, [q, fuse, items, time])
+    const ranked = [...list.filter(now), ...list.filter((i) => !now(i))].slice(0, yq ? 8 : 12)
+    if (!yq) return ranked
+    const go: Item = { key: `goto:${yq.place}:${yq.year}`, label: yq.place ? `${yq.place} in ${formatYear(yq.year)}` : `Go to ${formatYear(yq.year)}`, sub: 'jump there', kind: 'goto', from: yq.year, to: yq.year + 1, where: ranked[0]?.where ?? null, names: [yq.place] }
+    return [go, ...ranked]
+  }, [q, yq, fuse, items, time])
 
   const close = () => useTime.getState().set({ paletteOpen: false })
   const pick = (it: Item) => {
     close()
     const s = useTime.getState()
+    if (it.kind === 'goto') {
+      animateTo(timeToU(it.from), 1.2)
+      const place = it.names[0]
+      if (!place) return
+      // Wikipedia knows where most places are; the atlas's own match is the fallback
+      term(place)
+        .then((d) => d.coords ?? it.where)
+        .catch(() => it.where)
+        .then((at) => at && setTimeout(() => s.select(at), 500))
+      return
+    }
     const inEra = time >= it.from && time < it.to
     if (!inEra) animateTo(timeToU(Math.min(it.to - 1, it.from + Math.min(50, (it.to - it.from) / 3))), 1.2)
     if (it.where) setTimeout(() => s.select(it.where), inEra ? 0 : 500)
@@ -138,7 +169,7 @@ export function CommandPalette() {
                   } else if (e.key === 'Enter' && results[active]) pick(results[active])
                   else if (e.key === 'Escape') close()
                 }}
-                placeholder="Search a country, empire, kingdom…"
+                placeholder="Search a place, empire, or “Paris 1789”…"
                 className="flex-1 bg-transparent text-[15px] text-ink outline-none placeholder:text-dim"
                 aria-label="Search"
                 role="combobox"
@@ -170,7 +201,8 @@ export function CommandPalette() {
                         {it.kind === 'entity' && ` · ${formatYear(it.from)} – ${it.to > 2025 ? 'today' : formatYear(it.to)}`}
                       </div>
                     </div>
-                    {!inEra && <span className="shrink-0 rounded-full bg-amber/12 px-2.5 py-1 text-[11px] text-amber">Jump to {formatYear(it.from)}</span>}
+                    {!inEra && it.kind !== 'goto' && <span className="shrink-0 rounded-full bg-amber/12 px-2.5 py-1 text-[11px] text-amber">Jump to {formatYear(it.from)}</span>}
+                    {it.kind === 'goto' && <span className="shrink-0 rounded-full bg-cyan/12 px-2.5 py-1 text-[11px] text-cyan">↵ Go</span>}
                   </motion.li>
                 )
               })}
