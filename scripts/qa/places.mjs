@@ -7,7 +7,6 @@ const browser = await chromium.launch({ args: ['--use-angle=metal', '--enable-gp
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } })
 const errors = []
 page.on('pageerror', (e) => errors.push(e.message))
-await page.addInitScript(() => localStorage.setItem('atlas.introSeen.v1', '1'))
 await page.goto('http://localhost:5173/')
 await page.waitForFunction(() => window.__time?.getState().introDone, null, { timeout: 60000 })
 await page.waitForTimeout(1500)

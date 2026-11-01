@@ -1,5 +1,5 @@
-// Loading screen and the opening "movie" moment: drift in from deep space, sunrise over the limb,
-// title resolves, UI eases in. Full sequence on first visit only (remembered in localStorage).
+// Loading screen, then straight onto the globe: a short glide in with the sun coming round the
+// limb while the UI eases in. No title card.
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useProgress } from '@react-three/drei'
@@ -9,38 +9,20 @@ import { useTime } from '../time/store'
 import { rig, DEFAULT_DIST } from '../scene/CameraRig'
 import { SUN } from '../scene/world'
 
-const KEY = 'atlas.introSeen.v1'
-const seen = () => {
-  try {
-    return localStorage.getItem(KEY) === '1'
-  } catch {
-    return false
-  }
-}
-const markSeen = () => {
-  try {
-    localStorage.setItem(KEY, '1')
-  } catch {
-    /* private mode: replay next time, harmless */
-  }
-}
-
 const SUN_FINAL = SUN.clone()
 
 export function Intro() {
   const { progress, active } = useProgress()
   const [loaded, setLoaded] = useState(false)
   const [phase, setPhase] = useState<'loading' | 'intro' | 'done'>('loading')
-  const [showTitle, setShowTitle] = useState(false)
   const tl = useRef<gsap.core.Timeline | null>(null)
-  const full = useRef(!seen())
 
   // hold the camera far out and the sun behind the globe until assets are ready
   useEffect(() => {
-    rig.dist = 26
-    rig.lon = -40
-    rig.lat = 8
-    SUN.copy(SUN_FINAL).applyAxisAngle(new THREE.Vector3(0, 1, 0), 2.1).normalize()
+    rig.dist = DEFAULT_DIST * 1.8
+    rig.lon = -10
+    rig.lat = 14
+    SUN.copy(SUN_FINAL).applyAxisAngle(new THREE.Vector3(0, 1, 0), 0.9).normalize()
   }, [])
 
   useEffect(() => {
@@ -54,8 +36,8 @@ export function Intro() {
     if (!loaded || phase !== 'loading') return
     setPhase('intro')
     const reduced = useTime.getState().reducedMotion
-    const dur = reduced ? 0.01 : full.current ? 5.2 : 1.8
-    const sun = { a: 2.1 }
+    const dur = reduced ? 0.01 : 1.4
+    const sun = { a: 0.9 }
     const t = gsap.timeline({ onComplete: finish })
     tl.current = t
     t.to(rig, { dist: DEFAULT_DIST, lon: 20, lat: 22, duration: dur, ease: 'power3.inOut' }, 0)
@@ -63,16 +45,12 @@ export function Intro() {
       sun,
       {
         a: 0,
-        duration: dur * 0.85,
+        duration: dur,
         ease: 'power2.inOut',
         onUpdate: () => void SUN.copy(SUN_FINAL).applyAxisAngle(new THREE.Vector3(0, 1, 0), sun.a).normalize(),
       },
-      dur * 0.1,
+      0,
     )
-    if (full.current && !reduced) {
-      t.call(() => setShowTitle(true), [], 0.9)
-      t.call(() => setShowTitle(false), [], dur - 0.9)
-    }
     return () => void t.kill()
   }, [loaded])
 
@@ -83,9 +61,7 @@ export function Intro() {
     rig.lat = 22
     rig.lastInput = performance.now()
     SUN.copy(SUN_FINAL)
-    setShowTitle(false)
     setPhase('done')
-    markSeen()
     useTime.getState().set({ introDone: true })
   }
 
@@ -131,52 +107,6 @@ export function Intro() {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        {showTitle && (
-          <motion.div
-            key="title"
-            className="pointer-events-none fixed inset-0 z-40 grid place-items-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, filter: 'blur(10px)', transition: { duration: 1 } }}
-          >
-            <div className="text-center">
-              <motion.h1
-                className="font-display text-[clamp(48px,9vw,120px)] leading-none text-ink"
-                initial={{ letterSpacing: '0.5em', opacity: 0, filter: 'blur(14px)' }}
-                animate={{ letterSpacing: '0.04em', opacity: 1, filter: 'blur(0px)' }}
-                transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
-              >
-                Atlas of Time
-              </motion.h1>
-              <motion.p
-                className="mt-4 text-[13px] tracking-[0.4em] text-mist uppercase"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1, duration: 1.2 }}
-              >
-                750 million years · one planet
-              </motion.p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {phase === 'intro' && full.current && (
-          <motion.button
-            key="skip"
-            type="button"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0, transition: { delay: 0.6 } }}
-            exit={{ opacity: 0 }}
-            onClick={finish}
-            className="bubble fixed right-6 bottom-6 z-50 px-4 py-2 text-[12px] text-mist"
-          >
-            Skip intro
-          </motion.button>
-        )}
-      </AnimatePresence>
     </>
   )
 }

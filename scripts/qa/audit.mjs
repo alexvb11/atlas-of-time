@@ -24,7 +24,6 @@ const page = await browser.newPage({ viewport: { width: 1440, height: 900 } })
 const errors = []
 page.on('pageerror', (e) => errors.push(e.message))
 page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
-await page.addInitScript(() => localStorage.setItem('atlas.introSeen.v1', '1'))
 await page.goto('http://localhost:5173/')
 await page.waitForFunction(() => window.__time?.getState().introDone, null, { timeout: 60000 })
 await page.waitForTimeout(1500)

@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- The opening title card is gone: after loading, the camera glides straight onto the globe
+  (1.4 s) on every visit.
+
 ## 0.8.0 — 2026-10-31
 
 ### Explore

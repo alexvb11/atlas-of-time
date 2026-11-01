@@ -33,7 +33,6 @@ page.on('response', async (r) => {
   } catch {}
 })
 await page.addInitScript(() => {
-  localStorage.setItem('atlas.introSeen.v1', '1')
   window.__long = []
   new PerformanceObserver((l) => l.getEntries().forEach((e) => window.__long.push(e.duration))).observe({ entryTypes: ['longtask'] })
 })

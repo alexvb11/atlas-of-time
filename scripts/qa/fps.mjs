@@ -4,7 +4,6 @@ const url = process.argv[2] ?? 'http://localhost:5173/'
 const browser = await chromium.launch({ args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist'] })
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 })
 page.on('pageerror', (e) => console.log('pageerror', e.message))
-await page.addInitScript(() => localStorage.setItem('atlas.introSeen.v1', '1'))
 await page.goto(url)
 await page.waitForFunction(() => window.__time?.getState().introDone, null, { timeout: 60000 })
 await page.waitForTimeout(2500)

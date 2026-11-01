@@ -7,7 +7,6 @@ const browser = await chromium.launch({ args: ['--use-angle=metal', '--enable-gp
 const problems = []
 
 const phone = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true })
-await phone.addInitScript(() => localStorage.setItem('atlas.introSeen.v1', '1'))
 await phone.goto(url)
 await phone.waitForFunction(() => window.__time?.getState().introDone, null, { timeout: 60000 })
 await phone.evaluate(() => { const T = window.__time.getState(); T.setTime(-69); T.select([44.5, 40.18]) })
@@ -33,7 +32,6 @@ small.forEach((s) => problems.push(`phone: target under 24px: ${s}`))
 console.log(`phone: ${small.length} controls under 24x24 px`)
 
 const desk = await browser.newPage({ viewport: { width: 1440, height: 900 } })
-await desk.addInitScript(() => localStorage.setItem('atlas.introSeen.v1', '1'))
 await desk.goto(url)
 await desk.waitForFunction(() => window.__time?.getState().introDone, null, { timeout: 60000 })
 await desk.evaluate(() => { const T = window.__time.getState(); T.setTime(-69); T.select([44.5, 40.18]) })
