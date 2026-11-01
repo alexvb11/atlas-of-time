@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.10.0 — 2026-11-01
+
+- **Settings** replaces the Layers menu: 34 options in eight groups (layers, borders and labels,
+  earth and sky, camera and motion, time, interface, sound, performance), a search box, four
+  presets (Standard, Clean map, Everything, Calm), reset, and clearing the journal. Choices are
+  remembered in this browser; earlier Layers choices carry over.
+- New options include label size, border brightness, hiding approximate borders, cloud amount,
+  night lights, atmosphere, stars, ice ages, an "always day" sun, idle spin speed, motion, BC/AD
+  year labels, default playback speed and graphics quality.
+- On phones the corner buttons step aside while a sheet is open.
+
 ## 0.9.0 — 2026-11-01
 
 ### Borders

@@ -10,7 +10,7 @@ import { feature } from 'topojson-client'
 import type { GeometryCollection, Topology } from 'topojson-specification'
 import { geoArea, geoEquirectangular, geoPath } from 'd3-geo'
 import { interpSeries, type Country } from '../data/entities'
-import { useLayers } from '../time/layers'
+import { settings, useSettings } from '../time/settings'
 import { SUN, world } from './world'
 
 const R2 = 6371 * 6371
@@ -115,7 +115,7 @@ void main() {
 `
 
 export function DensityLayer() {
-  const on = useLayers((s) => s.density)
+  const on = useSettings((s) => s.density)
   const [data, setData] = useState<Data | null>(null)
   useEffect(() => {
     if (on && !data) load().then(setData, () => {})
@@ -147,7 +147,7 @@ export function DensityLayer() {
     if (!mat || !lut || !data) return
     const show = on && world.drift < 0.02 && world.t >= -9999 ? 1 : 0
     const u = mat.uniforms
-    u.uOpacity.value += (show * 0.62 * (1 - world.dim * 0.5) - u.uOpacity.value) * 0.1
+    u.uOpacity.value += (show * settings().densityOpacity * (1 - world.dim * 0.5) - u.uOpacity.value) * 0.1
     if (u.uOpacity.value < 0.003 || Math.abs(world.t - lastT.current) < 0.25) return
     lastT.current = world.t
     const px = lut.image.data as Uint8Array

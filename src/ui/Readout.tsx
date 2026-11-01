@@ -1,11 +1,13 @@
 // Big date readout, and the global HUD strip (world state at time T).
 import { motion } from 'framer-motion'
 import { useTime } from '../time/store'
+import { useSettings } from '../time/settings'
 import { dateParts, formatPopulation } from '../time/format'
 import { ageAt, periodAt, worldPopAt } from '../time/eras'
 
 export function Readout() {
   const time = useTime((s) => s.time)
+  useSettings((s) => s.era)
   const d = dateParts(time)
   return (
     <div className="pointer-events-none mt-4 flex flex-col items-center text-center select-none" aria-live="polite">
@@ -19,6 +21,7 @@ export function Readout() {
 }
 
 export function Hud() {
+  const on = useSettings((s) => s.hud)
   const time = useTime((s) => s.time)
   const period = periodAt(time)
   const age = ageAt(time)
@@ -30,6 +33,7 @@ export function Hud() {
   else if (period?.life) items.push({ k: 'Life', v: period.life })
   if (age?.powers) items.push({ k: 'Powers', v: age.powers })
   else if (period?.climate) items.push({ k: 'Climate', v: period.climate })
+  if (!on) return null
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}

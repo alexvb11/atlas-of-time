@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { settings } from '../../time/settings'
 
 type TourState = {
   tour: string | null
@@ -16,7 +17,7 @@ export const useTourStore = create<TourState>()((set) => ({
   tour: null,
   step: 0,
   playing: false,
-  narrate: false,
+  narrate: settings().narrate,
   start: (tour) => set({ tour, step: 0, playing: true }),
   go: (step) => set({ step }),
   stop: () => set({ tour: null, step: 0, playing: false }),

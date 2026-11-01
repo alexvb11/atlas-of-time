@@ -8,6 +8,7 @@ import { lonLatToVec3 } from '../geo/sphere'
 import { JOURNEYS, journeyAt, type Journey } from '../data/journeys'
 import { useTourStore } from '../ui/explore/tourStore'
 import { world } from './world'
+import { settings } from '../time/settings'
 
 const PER_LEG_MIN = 6
 
@@ -80,7 +81,7 @@ function JourneyPath({ j }: { j: Journey }) {
   useFrame(() => {
     const at = journeyAt(j, world.t)
     const tourOn = useTourStore.getState().tour === j.id
-    const show = (at || tourOn) && world.drift < 0.05 ? 1 : 0
+    const show = (at || tourOn) && (tourOn || settings().journeys) && world.drift < 0.05 ? 1 : 0
     ;(objs.all.material as THREE.LineBasicMaterial).opacity = 0.22 * show * (1 - world.dim * 0.5)
     ;(objs.done.material as THREE.LineBasicMaterial).opacity = 0.95 * show
     const el = head.current

@@ -19,7 +19,8 @@
     "qa:reader": "node scripts/qa/reader.mjs",
     "qa:facts": "node scripts/qa/fact-check.mjs",
     "qa:explore": "node scripts/qa/explore.mjs",
-    "qa:layers": "node scripts/qa/layers.mjs"
+    "qa:layers": "node scripts/qa/layers.mjs",
+    "qa:settings": "node scripts/qa/settings.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

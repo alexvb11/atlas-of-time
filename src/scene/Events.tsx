@@ -7,6 +7,7 @@ import { lonLatToVec3 } from '../geo/sphere'
 import { loadCurated, loadEntityIndex } from '../data/entities'
 import { yearsAgo } from '../time/scale'
 import { useTime } from '../time/store'
+import { settings } from '../time/settings'
 import { world } from './world'
 import { driftedPosition } from './selectionTrack'
 
@@ -83,10 +84,11 @@ function Markers({ events }: { events: GeoEvent[] }) {
     camDir.copy(camera.position).normalize()
     const t = world.t
     const active = useTime.getState().activeEvent
+    const showAll = settings().events
     for (const ev of events) {
       const el = nodes.current.get(ev.id)
       if (!el) continue
-      const p = eventPresence(ev, t)
+      const p = showAll ? eventPresence(ev, t) : 0
       if (p < 0.03 && ev.id !== active) {
         if (el.style.opacity !== '0') {
           el.style.opacity = '0'
@@ -259,7 +261,8 @@ function RouteArc({ route }: { route: Route }) {
     const span = route.to - route.from
     const edge = Math.max(10, span * 0.08)
     const vis = THREE.MathUtils.smoothstep(t, route.from - edge, route.from) * (1 - THREE.MathUtils.smoothstep(t, route.to, route.to + edge))
-    mat.current.uniforms.uOpacity.value = vis * world.borders * (1 - world.dim * 0.6)
+    // curated routes are trade routes too: they follow the Trade routes setting
+    mat.current.uniforms.uOpacity.value = (settings().trade ? vis : 0) * world.borders * (1 - world.dim * 0.6)
     mat.current.uniforms.uTime.value = st.clock.elapsedTime
   })
   return <primitive object={line} />

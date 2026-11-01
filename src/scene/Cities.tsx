@@ -8,7 +8,7 @@ import * as THREE from 'three'
 import { lonLatToVec3 } from '../geo/sphere'
 import { world } from './world'
 import { formatPopulation } from '../time/format'
-import { useLayers } from '../time/layers'
+import { settings } from '../time/settings'
 
 type City = [string, number, number, [number, number][]]
 const MAX_GAP = 60
@@ -117,7 +117,7 @@ export function CitiesLayer() {
   useFrame(() => {
     if (!obj || !cities) return
     const mat = obj.material as THREE.ShaderMaterial
-    const on = useLayers.getState().cities && world.drift < 0.02 && world.t > -700 ? 1 : 0
+    const on = settings().cities && world.drift < 0.02 && world.t > -700 ? 1 : 0
     mat.uniforms.uOpacity.value += (on * (1 - world.dim * 0.4) - mat.uniforms.uOpacity.value) * 0.1
     mat.uniforms.uScale.value = gl.getPixelRatio() * size.height * 0.012
     const t = world.t
@@ -143,7 +143,7 @@ export function CitiesLayer() {
     top.sort((a, b) => b.p - a.p)
     labels.current.forEach((el, k) => {
       const hit = top[k]
-      if (!hit || !on) {
+      if (!hit || !on || !settings().cityLabels) {
         el.style.opacity = '0'
         return
       }

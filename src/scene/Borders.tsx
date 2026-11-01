@@ -9,6 +9,7 @@ import { lonLatToVec3 } from '../geo/sphere'
 import { world } from './world'
 import { loadEntityIndex } from '../data/entities'
 import { useTime } from '../time/store'
+import { settings } from '../time/settings'
 
 const vtx = /* glsl */ `
 uniform float uLift;
@@ -115,13 +116,14 @@ export function Borders() {
   useFrame(() => {
     const { f } = snapshotPair(world.t)
     const fade = cur === null ? 0 : THREE.MathUtils.smoothstep(f, 0.82, 1)
-    const base = 0.3 * world.borders * (1 - world.dim * 0.45)
+    const prefs = settings()
+    const base = 0.3 * prefs.borderBrightness * world.borders * (1 - world.dim * 0.45)
     // dashes stay roughly the same size on screen as the camera zooms
     const dash = 0.0035 * Math.max(0.2, camera.position.length() - 1)
     for (const [m, k] of [[a, 1 - fade], [b, fade]] as const) {
       if (m.firm.current) m.firm.current.uniforms.uOpacity.value = base * k
       if (m.soft.current) {
-        m.soft.current.uniforms.uOpacity.value = base * 0.85 * k
+        m.soft.current.uniforms.uOpacity.value = prefs.approxBorders ? base * 0.85 * k : 0
         m.soft.current.uniforms.uDash.value = dash
       }
     }
@@ -209,7 +211,7 @@ function Labels({ snap }: { snap: Snapshot }) {
   const camDir = useMemo(() => new THREE.Vector3(), [])
   useFrame(() => {
     if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__labels = { nodes: nodes.current, cam: camera.position.toArray() }
-    const vis = world.borders * (1 - world.dim)
+    const vis = settings().borderLabels ? world.borders * (1 - world.dim) : 0
     const zoom = camera.position.length()
     camDir.copy(camera.position).normalize()
     for (const n of nodes.current) {

@@ -75,7 +75,8 @@ const Quiz = lazy(() => import('./explore/Quiz'))
 const Today = lazy(() => import('./explore/Today'))
 const JournalView = lazy(() => import('./explore/JournalView'))
 const Compare = lazy(() => import('./explore/Compare'))
-const TITLES: Record<Side, string> = { tours: 'Guided journeys', quiz: 'History quiz', today: 'On this day', journal: 'Your journal', compare: 'Compare two years' }
+const SettingsView = lazy(() => import('./explore/SettingsView'))
+const TITLES: Record<Side, string> = { tours: 'Guided journeys', quiz: 'History quiz', today: 'On this day', journal: 'Your journal', compare: 'Compare two years', settings: 'Settings' }
 
 /** The sheet the Explore menu opens, on the left of the globe (full screen on phones) */
 export function SideSheet() {
@@ -120,6 +121,7 @@ export function SideSheet() {
               {side === 'today' && <Today />}
               {side === 'journal' && <JournalView />}
               {side === 'compare' && <Compare />}
+              {side === 'settings' && <SettingsView />}
             </Suspense>
           </div>
         </motion.aside>

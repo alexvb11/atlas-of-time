@@ -11,7 +11,7 @@ const page = await ctx.newPage()
 const errors = []
 page.on('pageerror', (e) => errors.push(e.message))
 page.on('console', (m) => m.type() === 'error' && !/Failed to load resource/.test(m.text()) && errors.push(m.text()))
-const layers = (l) => page.evaluate((l) => localStorage.setItem('atlas.layers.v1', JSON.stringify(l)), l)
+const layers = ({ sun, ...l }) => page.evaluate((l) => localStorage.setItem('atlas.settings.v1', JSON.stringify(l)), { ...l, sun: sun ? 'seasons' : 'fixed' })
 const out = {}
 
 /** open at a year and place, then close the panel so nothing is dimmed */

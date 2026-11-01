@@ -5,7 +5,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { lonLatToVec3 } from '../geo/sphere'
 import { TRADE_ROUTES, routeAlpha, type TradeRoute } from '../data/trade'
-import { useLayers } from '../time/layers'
+import { settings } from '../time/settings'
 import { useReader } from '../ui/wiki/store'
 import { world } from './world'
 
@@ -125,7 +125,7 @@ function Route({ r }: { r: TradeRoute }) {
   const v = useMemo(() => new THREE.Vector3(), [])
   const camDir = useMemo(() => new THREE.Vector3(), [])
   useFrame((state) => {
-    const on = useLayers.getState().trade && world.drift < 0.02 ? 1 : 0
+    const on = settings().trade && world.drift < 0.02 ? 1 : 0
     const a = routeAlpha(r, world.t) * on * (1 - world.dim * 0.6)
     mat.uniforms.uOpacity.value += (a * 0.85 - mat.uniforms.uOpacity.value) * 0.12
     mat.uniforms.uTime.value = state.clock.elapsedTime

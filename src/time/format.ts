@@ -1,4 +1,9 @@
 import { PRESENT, yearsAgo } from './scale'
+import { settings } from './settings'
+
+/** BCE/CE or BC/AD, as chosen in Settings */
+const before = () => (settings().era === 'BC' ? 'BC' : 'BCE')
+const after = () => (settings().era === 'BC' ? 'AD' : 'CE')
 
 const nf = new Intl.NumberFormat('en-US')
 
@@ -18,9 +23,9 @@ export function dateParts(t: number): DateParts {
   }
   // a year runs from y.0 to y.999: 1776.5 is July 1776, not 1777
   const y = Math.floor(t + 1e-6)
-  if (y <= 0) return { value: nf.format(1 - y), unit: 'BCE', approx: y < -3000 }
-  if (y >= PRESENT) return { value: String(PRESENT), unit: 'CE · today', approx: false }
-  return { value: String(y), unit: 'CE', approx: false }
+  if (y <= 0) return { value: nf.format(1 - y), unit: before(), approx: y < -3000 }
+  if (y >= PRESENT) return { value: String(PRESENT), unit: `${after()} · today`, approx: false }
+  return { value: String(y), unit: after(), approx: false }
 }
 
 export function formatDate(t: number): string {
@@ -33,7 +38,7 @@ export function formatYear(t: number, approx = false): string {
   const y = Math.floor(t + 1e-6)
   const ya = yearsAgo(t)
   if (ya >= 12000) return dateParts(t).value + (ya >= 1e6 ? ' Ma' : ' ka')
-  const s = y <= 0 ? `${nf.format(1 - y)} BCE` : `${y}`
+  const s = y <= 0 ? `${nf.format(1 - y)} ${before()}` : `${y}`
   return approx ? `c. ${s}` : s
 }
 

@@ -1,17 +1,19 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../time/store'
+import { useSettings } from '../time/settings'
 import { usePolityAt } from '../scene/Highlight'
 import { supercontinentAt } from '../time/eras'
 import { toMa } from '../time/scale'
 import { useEntityIndex, flagFor } from '../data/entities'
 
 export function HoverLabel() {
+  const showLabel = useSettings((s) => s.hoverLabel)
   const hover = useTime((s) => s.hover)
   const deep = useTime((s) => toMa(s.time) > 2)
   const time = useTime((s) => s.time)
   const polity = usePolityAt(hover?.lonlat ?? null)
   const index = useEntityIndex()
-  if (!hover) return null
+  if (!hover || !showLabel) return null
   let title: string | null = null
   let sub: string | null = null
   let flag: string | null = null

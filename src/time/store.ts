@@ -30,7 +30,7 @@ type State = {
   /** places of the events listed in the Here tab, drawn as numbered pins; hot = the one pointed at */
   herePins: { lon: number; lat: number; n: number; hot: boolean }[]
   /** the left-hand sheet opened from the Explore menu */
-  side: 'tours' | 'quiz' | 'today' | 'journal' | 'compare' | null
+  side: 'tours' | 'quiz' | 'today' | 'journal' | 'compare' | 'settings' | null
   /** the second year of "Compare two years": its borders are drawn as a ghost over today's */
   compare: number | null
   reducedMotion: boolean

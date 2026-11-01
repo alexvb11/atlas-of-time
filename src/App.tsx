@@ -13,7 +13,7 @@ import { useShareLink } from './app/shareLink'
 import { Reader } from './ui/wiki/Reader'
 import { HoverCardHost } from './ui/wiki/HoverCard'
 import { SideSheet } from './ui/ExploreMenu'
-import { LayerNotes } from './ui/LayersMenu'
+import { LayerNotes } from './ui/LayerNotes'
 import { TourPlayer } from './ui/explore/Tours'
 
 export default function App() {

@@ -5,7 +5,7 @@ import { useTime } from '../time/store'
 import { PRESENT, toMa } from '../time/scale'
 import { greenSaharaAt, iceAt, seaLevelAt } from '../time/climate'
 import { periodAt } from '../time/eras'
-import { useLayers } from '../time/layers'
+import { settings } from '../time/settings'
 import { lonLatToVec3 } from '../geo/sphere'
 
 export const SUN = new THREE.Vector3(0.82, 0.32, 0.47).normalize()
@@ -24,6 +24,8 @@ export const world = {
   green: 0,
   /** where the sun is overhead when the seasons layer is on: [lon, lat] */
   subsolar: null as [number, number] | null,
+  /** where the camera looks from, [lon, lat] (written by the camera rig) */
+  view: [20, 22] as [number, number],
   /** modern electric lights 0..1 */
   lights: 1,
   /** focus dimming 0..1 */
@@ -95,11 +97,13 @@ export function updateWorld(dt: number) {
   world.t = t
   world.ma = toMa(t)
   world.drift = sstep(0.9, 3.2, world.ma)
-  world.sea = seaLevelAt(t)
-  world.ice = iceAt(t)
-  world.green = greenSaharaAt(t)
-  if (useLayers.getState().sun && s.introDone) {
-    world.subsolar = subsolarAt(t)
+  const set = settings()
+  world.sea = set.climate ? seaLevelAt(t) : 0
+  world.ice = set.climate ? iceAt(t) : 0
+  world.green = set.greenSahara ? greenSaharaAt(t) : 0
+  if (set.sun !== 'fixed' && s.introDone) {
+    // "always day": the sun stays behind the viewer's shoulder, so the face in view is lit
+    world.subsolar = set.sun === 'seasons' ? subsolarAt(t) : [world.view[0] - 22, Math.max(-60, Math.min(60, world.view[1] + 8))]
     lonLatToVec3(world.subsolar[0], world.subsolar[1], 1, sunTarget)
     // eased, so scrubbing across years does not strobe the seasons
     SUN.lerp(sunTarget, 1 - Math.exp(-(s.scrubbing ? 3 : 6) * dt)).normalize()
@@ -112,11 +116,11 @@ export function updateWorld(dt: number) {
   }
   world.lights = Math.pow(sstep(1870, 1985, t), 1.3)
   world.deepConf = 1 - 0.65 * sstep(480, 600, world.ma)
-  world.borders = t >= -122999 ? 1 - world.drift : 0
+  world.borders = set.borders && t >= -122999 ? 1 - world.drift : 0
   world.dim = smooth(world.dim, s.selection ? 1 : 0, 3, dt)
 
   const target = Math.min(1, Math.max(0, (s.velocity - 0.04) / 0.5))
-  world.warp = smooth(world.warp, s.reducedMotion ? 0 : target, target > world.warp ? 10 : 3, dt)
+  world.warp = smooth(world.warp, s.reducedMotion || !set.warpEffects ? 0 : target, target > world.warp ? 10 : 3, dt)
 
   const p = periodAt(t)
   const tint = (p && TINTS[p.name]) || [1, 1, 1]

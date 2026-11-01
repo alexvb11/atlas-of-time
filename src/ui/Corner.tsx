@@ -5,21 +5,24 @@ import { sound } from './sound'
 import { useState } from 'react'
 import { currentLink } from '../app/shareLink'
 import { ExploreMenu } from './ExploreMenu'
-import { LayersMenu } from './LayersMenu'
+import { useSettings } from '../time/settings'
 import { toMa } from '../time/scale'
 
 export function Corner() {
   const soundOn = useTime((s) => s.soundOn)
   const t = useTime((s) => s.time)
-  const showNote = t < 1994 && toMa(t) < 2 && t > -122999
-  const deep = toMa(t) > 2
+  const notesOn = useSettings((s) => s.sourceNotes)
+  // on phones a sheet fills the bottom of the screen; it has its own close button
+  const sheetOpen = useTime((s) => s.side !== null)
+  const showNote = notesOn && t < 1994 && toMa(t) < 2 && t > -122999
+  const deep = notesOn && toMa(t) > 2
   const mac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform)
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5, type: 'spring', stiffness: 160, damping: 20 }}
-      className="pointer-events-auto fixed bottom-[max(16px,env(safe-area-inset-bottom))] left-4 z-[45] flex items-center gap-2"
+      className={`pointer-events-auto fixed bottom-[max(16px,env(safe-area-inset-bottom))] left-4 z-[45] flex items-center gap-2 ${sheetOpen ? 'max-md:hidden' : ''}`}
     >
       <button
         type="button"
@@ -32,7 +35,15 @@ export function Corner() {
         <kbd className="hidden rounded border border-white/12 px-1 text-[10px] text-dim sm:inline">{mac ? '⌘' : 'Ctrl'} K</kbd>
       </button>
       <ExploreMenu />
-      <LayersMenu />
+      <button
+        type="button"
+        className="bubble flex items-center gap-2 px-3.5 py-2 text-[12px] text-mist"
+        aria-label="Settings: layers, map, display and more"
+        onClick={() => useTime.getState().set({ side: useTime.getState().side === 'settings' ? null : 'settings' })}
+      >
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="8" r="2.2" /><path d="M8 1.5v1.8M8 12.7v1.8M14.5 8h-1.8M3.3 8H1.5M12.6 3.4l-1.3 1.3M4.7 11.3l-1.3 1.3M12.6 12.6l-1.3-1.3M4.7 4.7 3.4 3.4" /></svg>
+        <span className="hidden sm:inline">Settings</span>
+      </button>
       <ShareButton />
       <button
         type="button"

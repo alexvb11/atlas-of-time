@@ -115,7 +115,7 @@ body {
   white-space: nowrap;
   font-family: var(--font-display);
   /* scaled by polity area, but never below a legible 12px */
-  font-size: max(12px, calc(13px * var(--s, 1)));
+  font-size: max(calc(12px * var(--label-scale, 1)), calc(13px * var(--s, 1) * var(--label-scale, 1)));
   letter-spacing: 0.04em;
   color: rgb(232 241 251 / 0.82);
   text-shadow: 0 1px 6px rgb(0 0 0 / 0.95), 0 0 16px rgb(0 0 0 / 0.6);
@@ -125,7 +125,7 @@ body {
 .globe-label-group {
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  font-size: max(11px, calc(11px * var(--s, 1)));
+  font-size: max(calc(11px * var(--label-scale, 1)), calc(11px * var(--s, 1) * var(--label-scale, 1)));
   color: rgb(246 226 190 / 0.78);
 }
 
@@ -152,7 +152,7 @@ body {
   background: none;
   cursor: pointer;
   color: rgb(255 228 190 / 0.92);
-  font: 500 11.5px/1 var(--font-sans);
+  font: 500 calc(11.5px * var(--label-scale, 1))/1 var(--font-sans);
   text-shadow: 0 1px 6px rgb(0 0 0 / 0.95);
   white-space: nowrap;
   will-change: transform, opacity;
@@ -370,7 +370,7 @@ body {
   border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
   background: rgb(4 10 20 / 0.45);
   color: var(--c);
-  font: italic 500 11px/1.2 var(--font-display);
+  font: italic 500 calc(11px * var(--label-scale, 1))/1.2 var(--font-display);
   letter-spacing: 0.03em;
   text-shadow: 0 1px 5px rgb(0 0 0 / 0.95);
   white-space: nowrap;
@@ -391,7 +391,7 @@ body {
   top: 0;
   pointer-events: none;
   color: rgb(255 230 190 / 0.95);
-  font: 500 11px/1 var(--font-sans);
+  font: 500 calc(11px * var(--label-scale, 1))/1 var(--font-sans);
   text-shadow: 0 1px 5px rgb(0 0 0 / 0.95);
   white-space: nowrap;
   opacity: 0;

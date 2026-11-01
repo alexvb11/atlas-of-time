@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { settings } from '../../time/settings'
 
 type ReaderState = {
   /** the article trail: each click on a link reads one step deeper; Back walks it */
@@ -18,6 +19,6 @@ export const useReader = create<ReaderState>()((set) => ({
   open: (title) => set((s) => ({ card: null, stack: s.stack[s.stack.length - 1] === title ? s.stack : [...s.stack, title] })),
   back: () => set((s) => ({ stack: s.stack.slice(0, -1) })),
   close: () => set({ stack: [], card: null }),
-  showCard: (title, anchor) => set({ card: { title, anchor } }),
+  showCard: (title, anchor) => settings().hoverCards && set({ card: { title, anchor } }),
   hideCard: () => set({ card: null }),
 }))

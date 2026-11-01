@@ -64,7 +64,7 @@ node scripts/qa/explore.mjs   # share link, journey, moving voyage, quiz, on thi
 | Search a place in a year | ⌘K, then e.g. "Paris 1789" or "Rome 44 BC" |
 | Share this view | link button (bottom left): copies a URL with the year, place and article |
 | Journeys, quiz, compare two years, on this day, journal | Explore (bottom left) |
-| Trade routes, population density, cities, seasons | Layers (bottom left) |
+| Layers, map, sky, motion, labels, language, quality… | Settings (bottom left): 34 options in 8 groups, searchable, with presets; remembered in this browser |
 | Who held a spot through time | click it, then the *Held by* tab |
 | Look something up | hover (or focus, or tap) an underlined name; click it to read on, Back walks the trail |
 
@@ -100,6 +100,12 @@ See [PLAN.md](PLAN.md) for the architecture. Short version:
   borders until the Treaty of Saint-Germain").
 - **Held by**: for any clicked spot, every polity the border sources put there, from the earliest
   map to today, with years and source, found in one worker pass over all of them.
+- **Settings** (`src/time/settings.ts`, sheet in `src/ui/explore/SettingsView.tsx`): every layer and
+  most of the display can be switched or tuned, including borders, approximate borders, label size,
+  clouds, night lights, atmosphere, stars, ice ages, Green Sahara, sunlight (fixed, seasons or always
+  day), idle spin, motion, time-warp effects, playback speed, BCE/CE or BC/AD, the era strip, source
+  notes, hover names and cards, reading language, narration and graphics quality. Presets: Standard,
+  Clean map, Everything, Calm.
 - **Layers**: *Trade routes* (11 routes, from the Royal Road to the Manila galleons) flow while in
   use, along schematic paths between attested stops, years from each route's article. *Population
   density* colours today's countries by people per km² from the HYDE 3.2 / UN series, back to

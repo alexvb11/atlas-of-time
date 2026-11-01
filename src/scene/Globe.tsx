@@ -6,6 +6,7 @@ import { SUN, world } from './world'
 import { vec3ToLonLat } from '../geo/sphere'
 import { useTime } from '../time/store'
 import { pointerOnGlobe } from './CameraRig'
+import { settings } from '../time/settings'
 
 // keep in step with the preload media queries in index.html
 const mobile = typeof window !== 'undefined' && Math.min(window.innerWidth, window.innerHeight) < 700
@@ -97,6 +98,8 @@ export function Globe() {
   const cloudMat = useRef<THREE.ShaderMaterial>(null)
   const geo = useMemo(() => new THREE.SphereGeometry(1, 192, 128), [])
   const fadeIn = useRef({ night: 0, clouds: 0 })
+  const atmo = useRef<THREE.Mesh>(null)
+  const cloudMesh = useRef<THREE.Mesh>(null)
 
   const earthUniforms = useMemo(
     () => ({
@@ -131,13 +134,16 @@ export function Globe() {
     const f = fadeIn.current
     if (late.ready.night) f.night = Math.min(1, f.night + dt / 1.2)
     if (late.ready.clouds) f.clouds = Math.min(1, f.clouds + dt / 1.2)
+    const prefs = settings()
+    if (atmo.current) atmo.current.visible = prefs.atmosphere
+    if (cloudMesh.current) cloudMesh.current.visible = prefs.clouds > 0.01
     const u = earthMat.current?.uniforms
     if (u) {
       u.uDrift.value = world.drift
       u.uSea.value = world.sea
       u.uIce.value = world.ice
       u.uGreen.value = world.green
-      u.uLights.value = world.lights * f.night
+      u.uLights.value = world.lights * f.night * (prefs.nightLights ? 1 : 0)
       u.uDim.value = world.dim
       u.uTime.value = state.clock.elapsedTime
     }
@@ -145,7 +151,7 @@ export function Globe() {
     if (c) {
       c.uOffset.value = (c.uOffset.value + dt * 0.0016) % 1
       // clouds thin out in deep time so the drifting continents read clearly
-      c.uOpacity.value = 0.82 * (1 - world.drift * 0.75) * f.clouds
+      c.uOpacity.value = 0.82 * (1 - world.drift * 0.75) * f.clouds * prefs.clouds
       c.uDim.value = world.dim
     }
   })
@@ -180,7 +186,7 @@ export function Globe() {
       >
         <shaderMaterial ref={earthMat} vertexShader={earthVertex} fragmentShader={earthFragment} uniforms={earthUniforms} />
       </mesh>
-      <mesh geometry={geo} scale={1.009} raycast={() => null}>
+      <mesh ref={cloudMesh} geometry={geo} scale={1.009} raycast={() => null}>
         <shaderMaterial
           ref={cloudMat}
           vertexShader={earthVertex}
@@ -190,7 +196,7 @@ export function Globe() {
           depthWrite={false}
         />
       </mesh>
-      <mesh geometry={geo} scale={1.065} raycast={() => null}>
+      <mesh ref={atmo} geometry={geo} scale={1.065} raycast={() => null}>
         <shaderMaterial
           vertexShader={atmosphereVertex}
           fragmentShader={atmosphereFragment}

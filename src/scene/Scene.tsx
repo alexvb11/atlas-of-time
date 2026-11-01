@@ -15,6 +15,7 @@ import { TradeRoutesLayer } from './TradeRoutes'
 import { DensityLayer } from './Density'
 import { updateWorld, world } from './world'
 import { useTime } from '../time/store'
+import { useSettings } from '../time/settings'
 
 const PLAY_RATE = { 1: 0.0055, 5: 0.0275, 25: 0.1375 } as const
 
@@ -45,11 +46,14 @@ function TimeDriver() {
 }
 
 export function Scene() {
-  const lite = world.isMobile
+  const quality = useSettings((s) => s.quality)
+  const showStars = useSettings((s) => s.stars)
+  const showNebula = useSettings((s) => s.nebula)
+  const lite = quality === 'low' || (quality === 'auto' && world.isMobile)
   return (
     <Canvas
       className="!fixed inset-0"
-      dpr={[1, lite ? 1.5 : 2]}
+      dpr={[1, quality === 'low' ? 1 : lite ? 1.5 : 2]}
       gl={{ antialias: false, powerPreference: 'high-performance', toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.05 }}
       camera={{ fov: 38, near: 0.01, far: 400, position: [0, 0, 30] }}
       onPointerMissed={() => {
@@ -62,8 +66,8 @@ export function Scene() {
       <color attach="background" args={['#020409']} />
       <TimeDriver />
       <CameraRig />
-      <Nebula />
-      <Stars count={lite ? 3000 : 6500} />
+      {showNebula && <Nebula />}
+      {showStars && <Stars count={lite ? 3000 : 6500} />}
       <Suspense fallback={null}>
         <Globe />
         <DensityLayer />

@@ -4,6 +4,8 @@
 import { useEffect, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
+import { settings } from '../time/settings'
+import { world } from './world'
 import gsap from 'gsap'
 import { lonLatToVec3, vec3ToLonLat } from '../geo/sphere'
 import { useTime } from '../time/store'
@@ -168,9 +170,12 @@ export function CameraRig() {
     }
 
     // idle auto-rotation
-    if (introDone && !state.selection && !rig.flying && now - rig.lastInput > 7000 && !state.reducedMotion) {
-      rig.lon += dt * 1.6 * Math.min(1, (now - rig.lastInput - 7000) / 3000)
+    const prefs = settings()
+    if (prefs.autoRotate && introDone && !state.selection && !rig.flying && now - rig.lastInput > 7000 && !state.reducedMotion) {
+      rig.lon += dt * 1.6 * prefs.rotateSpeed * Math.min(1, (now - rig.lastInput - 7000) / 3000)
     }
+    world.view[0] = rig.lon
+    world.view[1] = rig.lat
 
     // frame the globe below the time bar, and left of the panel when one is open
     const desktop = size.width >= 768
