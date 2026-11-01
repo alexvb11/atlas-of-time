@@ -403,6 +403,60 @@ for (const [n, best] of t3Choice) {
   )
 }
 
+// ---------- Cliopatria polities (3400 BCE to 1885) ----------
+// Cliopatria names each polity's Wikidata item and Wikipedia article itself, so no matching by name
+// is needed: a polity whose item is already an entity (curated or automated) becomes an alias of
+// it; any other becomes a new entity built from its Wikidata item, dated by Wikidata where it gives
+// both ends and by Cliopatria's own years otherwise.
+const clio = JSON.parse(await fs.readFile(path.join(root, 'scripts/.cache/cliopatria-names.json'), 'utf8').catch(() => '{}'))
+const curatedOut = JSON.parse(await fs.readFile(path.join(root, 'public/data/entities.json'), 'utf8')).entities
+const byQid = new Map()
+for (const e of out) if (e.qid) byQid.set(e.qid, e.id)
+for (const e of curatedOut) if (e.qid) byQid.set(e.qid, e.id)
+const claimed = new Set([...curatedNames, ...out.flatMap((e) => e.match)])
+const aliases = {}
+const fresh = []
+for (const [n, c] of Object.entries(clio)) {
+  if (claimed.has(n) || !c.qid) continue
+  if (byQid.has(c.qid)) aliases[n] = byQid.get(c.qid)
+  else fresh.push([n, c])
+}
+const clioEnts = await wikidataEntities([...new Set(fresh.map(([, c]) => c.qid))].filter((q) => !ents.has(q)), 'claims|labels|aliases|sitelinks')
+for (const [q, e] of clioEnts) ents.set(q, e)
+const clioRefs = new Set()
+for (const e of clioEnts.values()) for (const p of ['P31', 'P36', 'P122', 'P37', 'P35']) for (const v of ids(e, p)) if (!labels.has(v)) clioRefs.add(v)
+for (const [k, v] of await wikidataLabels([...clioRefs])) labels.set(k, v)
+const clioPages = await wikipediaPages(fresh.map(([, c]) => c.wiki).filter(Boolean))
+let clioNew = 0
+for (const [n, c] of fresh) {
+  const e = ents.get(c.qid)
+  const id = `w-${c.qid.toLowerCase()}`
+  const existing = out.find((x) => x.id === id)
+  if (existing) {
+    if (!existing.match.includes(n)) existing.match.push(n)
+    existing.from = Math.min(existing.from, c.from)
+    existing.to = Math.max(existing.to, c.to)
+    continue
+  }
+  const life = e ? lifeOf(e) : { from: null, to: null }
+  const hasDates = life.from && life.to && life.to.year > life.from.year
+  out.push(
+    buildEntity({
+      id, e, name: n, match: [n],
+      // never narrower than the years Cliopatria draws it, so the map and the panel agree
+      from: hasDates ? Math.min(life.from.year, c.from) : c.from,
+      to: hasDates ? Math.max(life.to.year, c.to) : c.to,
+      conf: hasDates && !life.from.approx && !life.to.approx ? 'documented' : 'estimated',
+      kind: kindFrom((e ? ids(e, 'P31') : []).map(L).filter(Boolean)), tier: 3,
+      summary: clioPages.get(c.wiki)?.extract, wiki: c.wiki || enTitle(e),
+      datesFromMap: !hasDates,
+    }),
+  )
+  byQid.set(c.qid, id)
+  clioNew++
+}
+log(`cliopatria: ${Object.keys(clio).length} polities, ${Object.keys(aliases).length} joined to existing entities, ${clioNew} new`)
+
 // ---------- write ----------
 // Summaries and source links are only read by the panel, and are half the bytes: they go in a
 // separate file the app loads on demand, so the index needed for hover and selection stays small.
@@ -411,7 +465,7 @@ const index = out.map(({ summary, sources, ...e }) => {
   text[e.id] = [summary ?? null, sources]
   return e
 })
-await fs.writeFile(path.join(root, 'public/data/entities-auto.json'), JSON.stringify({ generated: new Date().toISOString().slice(0, 10), entities: index, lineages }))
+await fs.writeFile(path.join(root, 'public/data/entities-auto.json'), JSON.stringify({ generated: new Date().toISOString().slice(0, 10), entities: index, lineages, aliases }))
 await fs.writeFile(path.join(root, 'public/data/entities-auto-text.json'), JSON.stringify(text))
 await fs.writeFile(path.join(root, 'scripts/reports/tier3-decisions.json'), JSON.stringify(decisions, null, 1))
 const stillUnmatched = decisions.filter((d) => !d.title).map((d) => ({ name: d.name, reason: d.reason, snapshots: nameInfo.get(d.name).years.length })).sort((a, b) => b.snapshots - a.snapshots)

@@ -147,6 +147,13 @@ export function loadEntityIndex(): Promise<EntityIndex> {
         if (!byName.has(n)) byName.set(n, [])
         byName.get(n)!.push(e)
       }
+    // Cliopatria polity names joined to an existing entity through their Wikidata item
+    for (const [n, id] of Object.entries((auto.aliases ?? {}) as Record<string, string>)) {
+      const e = entities.get(id)
+      if (!e) continue
+      if (!byName.has(n)) byName.set(n, [])
+      byName.get(n)!.push(e)
+    }
     // when several entities claim a name at the same time, curated beats automated
     for (const list of byName.values()) list.sort((a, b) => (a.tier ?? 1) - (b.tier ?? 1))
     const countries = new Map<string, Country>()

@@ -108,6 +108,7 @@ export function Globe() {
       uDrift: { value: 0 },
       uSea: { value: 0 },
       uIce: { value: 0 },
+      uGreen: { value: 0 },
       uLights: { value: 1 },
       uDim: { value: 0 },
       uTime: { value: 0 },
@@ -135,6 +136,7 @@ export function Globe() {
       u.uDrift.value = world.drift
       u.uSea.value = world.sea
       u.uIce.value = world.ice
+      u.uGreen.value = world.green
       u.uLights.value = world.lights * f.night
       u.uDim.value = world.dim
       u.uTime.value = state.clock.elapsedTime

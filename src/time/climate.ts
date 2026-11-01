@@ -34,3 +34,18 @@ export function iceAt(t: number): number {
   const s = seaLevelAt(t)
   return Math.min(1, Math.max(0, (-s - 20) / 100)) ** 1.1
 }
+
+/**
+ * Strength 0..1 of the African Humid Period, when grassland, lakes and wetlands covered much of the
+ * Sahara: onset about 14,800 years ago, a dry interruption in the Younger Dryas (12,900–11,700),
+ * then wet until it waned about 6,000–5,000 years ago (deMenocal & Tierney 2012; Shanahan et al.
+ * 2015). How far the green reached varied by region and is drawn approximately.
+ */
+export function greenSaharaAt(t: number): number {
+  const k = (PRESENT - t) / 1000
+  if (k < 5 || k > 15.5) return 0
+  const ramp = (x: number, a: number, b: number) => Math.min(1, Math.max(0, (x - a) / (b - a)))
+  let g = ramp(k, 5, 6.2) * (1 - ramp(k, 14.2, 15.2))
+  if (k > 11.7 && k < 12.9) g *= 0.35
+  return g
+}

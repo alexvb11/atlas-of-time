@@ -121,6 +121,13 @@ body {
   text-shadow: 0 1px 6px rgb(0 0 0 / 0.95), 0 0 16px rgb(0 0 0 / 0.6);
   will-change: transform, opacity;
 }
+/* a grouping over its member states (the Holy Roman Empire): spaced capitals, warmer */
+.globe-label-group {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: max(11px, calc(11px * var(--s, 1)));
+  color: rgb(246 226 190 / 0.78);
+}
 
 /* subtle flag wave */
 .flag-wave {
@@ -347,6 +354,34 @@ body {
   border-radius: 50%;
   background: var(--c);
   box-shadow: 0 0 0 3px rgb(0 0 0 / 0.35), 0 0 14px var(--c);
+}
+
+/* trade route names; click to read about the route */
+.route-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+  background: rgb(4 10 20 / 0.45);
+  color: var(--c);
+  font: italic 500 11px/1.2 var(--font-display);
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 5px rgb(0 0 0 / 0.95);
+  white-space: nowrap;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+.route-label:hover,
+.route-label:focus-visible {
+  background: rgb(4 10 20 / 0.8);
+  outline: none;
+  border-color: var(--c);
 }
 
 /* largest cities at the current date, with their recorded population */

@@ -59,6 +59,7 @@ uniform sampler2D uIceMap;
 uniform float uDrift;
 uniform float uSea;
 uniform float uIce;
+uniform float uGreen;
 uniform float uTime;
 varying vec2 vUv;
 varying vec3 vN;
@@ -84,6 +85,19 @@ void main() {
   float exposed = (1.0 - land) * smoothstep(depth - 12.0, depth + 12.0, -uSea);
   vec3 steppe = mix(vec3(0.30, 0.29, 0.20), vec3(0.42, 0.39, 0.28), noise(vUv * 900.0));
   vec3 albedo = mix(day, steppe * 0.75, exposed);
+
+  // Green Sahara: in the African Humid Period the desert belt (about 15-30 N, Atlantic to Red Sea)
+  // was grassland and lakes. Only sandy, bright desert pixels in that band are greened.
+  if (uGreen > 0.0) {
+    float lon = vUv.x * 360.0 - 180.0;
+    // ragged edges: the wet belt's limits are known only roughly, and were never straight lines
+    float lat = vUv.y * 180.0 - 90.0 + (noise(vUv * vec2(60.0, 30.0)) - 0.5) * 7.0;
+    float band = smoothstep(8.0, 13.0, lat) * (1.0 - smoothstep(27.0, 32.0, lat))
+               * smoothstep(-18.0, -14.0, lon) * (1.0 - smoothstep(33.0, 37.0, lon));
+    float sandy = smoothstep(0.02, 0.09, day.r - day.b) * smoothstep(0.16, 0.3, dot(day, vec3(0.333)));
+    vec3 savanna = mix(vec3(0.17, 0.27, 0.08), vec3(0.33, 0.36, 0.16), noise(vUv * 700.0) * 0.6 + noise(vUv * 90.0) * 0.4);
+    albedo = mix(albedo, savanna, uGreen * band * sandy * land * 0.92);
+  }
 
   // ice sheets at glacial maxima
   float ice = texture2D(uIceMap, vUv).r * uIce;

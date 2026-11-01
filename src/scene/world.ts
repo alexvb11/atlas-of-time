@@ -2,11 +2,16 @@
 // (plus UI focus), smoothed here once so every layer agrees within the same frame.
 import * as THREE from 'three'
 import { useTime } from '../time/store'
-import { toMa } from '../time/scale'
-import { iceAt, seaLevelAt } from '../time/climate'
+import { PRESENT, toMa } from '../time/scale'
+import { greenSaharaAt, iceAt, seaLevelAt } from '../time/climate'
 import { periodAt } from '../time/eras'
+import { useLayers } from '../time/layers'
+import { lonLatToVec3 } from '../geo/sphere'
 
 export const SUN = new THREE.Vector3(0.82, 0.32, 0.47).normalize()
+/** the fixed, flattering light used when the seasons layer is off */
+const SUN_DEFAULT = SUN.clone()
+const SUN_LON = (Math.atan2(-SUN_DEFAULT.z, SUN_DEFAULT.x) * 180) / Math.PI
 
 export const world = {
   t: 2026,
@@ -15,6 +20,10 @@ export const world = {
   drift: 0,
   sea: 0,
   ice: 0,
+  /** 0..1 strength of the African Humid Period ("Green Sahara") */
+  green: 0,
+  /** where the sun is overhead when the seasons layer is on: [lon, lat] */
+  subsolar: null as [number, number] | null,
   /** modern electric lights 0..1 */
   lights: 1,
   /** focus dimming 0..1 */
@@ -56,6 +65,29 @@ const TINTS: Record<string, [number, number, number]> = {
   Neogene: [0.55, 0.55, 0.4],
 }
 const tmp = new THREE.Color()
+const sunTarget = new THREE.Vector3()
+
+/** Earth's axial tilt in degrees (Laskar 1986, IAU), held at its ends outside ±6,000 years of 2000 */
+function obliquity(t: number) {
+  const T = Math.min(60, Math.max(-80, (t - 2000) / 100))
+  return 23.439291 - 0.0130042 * T - 1.64e-7 * T * T + 5.04e-7 * T * T * T
+}
+
+/**
+ * Subsolar point for the seasons layer. The day of the year comes from the fraction of the year,
+ * so the sun's latitude follows the seasons (Cooper's declination formula). At the present it is
+ * the real sun, overhead where it is noon right now (UTC); in the past the time of day is not
+ * known, so the sun keeps its usual longitude.
+ */
+export function subsolarAt(t: number): [number, number] {
+  const live = t >= PRESENT - 0.002
+  const now = new Date()
+  const frac = live ? (now.getTime() - Date.UTC(now.getUTCFullYear(), 0, 1)) / (365.25 * 864e5) : t - Math.floor(t)
+  const day = frac * 365.25
+  const decl = obliquity(t) * Math.sin((2 * Math.PI * (284 + day)) / 365.25)
+  const lon = live ? -15 * (now.getUTCHours() + now.getUTCMinutes() / 60 - 12) : SUN_LON
+  return [((lon + 540) % 360) - 180, decl]
+}
 
 export function updateWorld(dt: number) {
   const s = useTime.getState()
@@ -65,6 +97,19 @@ export function updateWorld(dt: number) {
   world.drift = sstep(0.9, 3.2, world.ma)
   world.sea = seaLevelAt(t)
   world.ice = iceAt(t)
+  world.green = greenSaharaAt(t)
+  if (useLayers.getState().sun && s.introDone) {
+    world.subsolar = subsolarAt(t)
+    lonLatToVec3(world.subsolar[0], world.subsolar[1], 1, sunTarget)
+    // eased, so scrubbing across years does not strobe the seasons
+    SUN.lerp(sunTarget, 1 - Math.exp(-(s.scrubbing ? 3 : 6) * dt)).normalize()
+  } else if (world.subsolar) {
+    SUN.lerp(SUN_DEFAULT, 1 - Math.exp(-5 * dt)).normalize()
+    if (SUN.distanceTo(SUN_DEFAULT) < 1e-3) {
+      SUN.copy(SUN_DEFAULT)
+      world.subsolar = null
+    }
+  }
   world.lights = Math.pow(sstep(1870, 1985, t), 1.3)
   world.deepConf = 1 - 0.65 * sstep(480, 600, world.ma)
   world.borders = t >= -122999 ? 1 - world.drift : 0

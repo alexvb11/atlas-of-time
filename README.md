@@ -63,7 +63,9 @@ node scripts/qa/explore.mjs   # share link, journey, moving voyage, quiz, on thi
 | Read an event | History tab: click the title (the year jumps the slider) · event cards: *Read the story* |
 | Search a place in a year | ⌘K, then e.g. "Paris 1789" or "Rome 44 BC" |
 | Share this view | link button (bottom left): copies a URL with the year, place and article |
-| Journeys, quiz, on this day, journal | Explore (bottom left) |
+| Journeys, quiz, compare two years, on this day, journal | Explore (bottom left) |
+| Trade routes, population density, cities, seasons | Layers (bottom left) |
+| Who held a spot through time | click it, then the *Held by* tab |
 | Look something up | hover (or focus, or tap) an underlined name; click it to read on, Back walks the trail |
 
 ## How it works
@@ -80,8 +82,15 @@ See [PLAN.md](PLAN.md) for the architecture. Short version:
   triangle of crust. At each time it resolves to an entity through dated lineages per present-day
   country, the historical border polygon under it, or regional prehistory. It never shows an empty
   panel.
-- **Borders**: before 1886, historical-basemaps snapshots (a few per century), crossfaded near each
-  change. From 1886, CShapes 2.0: every territorial change is its own dated snapshot (765 of them),
+- **Borders**: before 3400 BCE, historical-basemaps snapshots. From 3400 BCE to 1885,
+  [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) (Seshat, 2025): every
+  shape has its own range of years, so borders move in the year they changed (449 change years), and
+  every polity names its own Wikipedia article and Wikidata item. Groupings such as the Holy Roman
+  Empire are labelled over their member states. Where Cliopatria records no state (peoples, cultures,
+  a few states it omits), the historical-basemaps shape fills in when at least 70% of it lies outside
+  every Cliopatria state. The sources' certainty shows on the map: CShapes and Cliopatria borders
+  are solid, approximate ones (historical-basemaps) dashed. Cliopatria is split into eras so a visit
+  loads only its own period. From 1886, CShapes 2.0: every territorial change is its own dated snapshot (765 of them),
   assembled in a worker from one shared TopoJSON. CShapes gives a unit one modern name for its whole
   history ("Kenya" from 1888), so `cshapes.mjs` names each piece for its date: independent states by
   the Gleditsch–Ward lists (Russian Empire, Soviet Russia, Soviet Union, Russia), dependencies from a
@@ -89,17 +98,29 @@ See [PLAN.md](PLAN.md) for the architecture. Short version:
   with the ruling power. CShapes moves borders on treaty dates, so a few pieces between the collapse
   of empires and the peace treaties are named for what they were ("Former Austrian crown lands,
   borders until the Treaty of Saint-Germain").
+- **Held by**: for any clicked spot, every polity the border sources put there, from the earliest
+  map to today, with years and source, found in one worker pass over all of them.
+- **Layers**: *Trade routes* (11 routes, from the Royal Road to the Manila galleons) flow while in
+  use, along schematic paths between attested stops, years from each route's article. *Population
+  density* colours today's countries by people per km² from the HYDE 3.2 / UN series, back to
+  10,000 BCE; today's borders are a fixed frame, and the legend says so. *Seasons and daylight* puts
+  the sun over the latitude it has at that time of year (with the axial tilt of the period); at the
+  present it is the real sun, over wherever it is noon now. Ice sheets, sea level and the Green
+  Sahara (African Humid Period, about 14,800–5,000 years ago, with the Younger Dryas dry spell) follow
+  the date without a switch.
 - **Here**: click anywhere and the Here tab lists what happened near that point around that time,
   from about 11,000 located, dated Wikidata events, numbered on the globe. The window scales with
   time (a few years recently, up to 150 years in antiquity), and each year is confirmed against the
   event's Wikipedia lead before it is shown.
 - **Explore**: guided journeys (the Silk Road, the Mongol conquests, the Second World War) move
   the time and camera stop by stop with a caption, optionally read aloud by the browser's speech
-  synthesis. Five dated movements (Hannibal, Columbus's first voyage, Magellan–Elcano, Lewis and
-  Clark, Napoleon in 1812) are also drawn moving on the globe whenever the time is within their
+  synthesis. Seven dated movements (Hannibal, Columbus's first voyage, Magellan–Elcano, Lewis and
+  Clark, Napoleon in 1812, and the lives of Marco Polo and Ibn Battuta, dated from their Wikipedia
+  articles with uncertain dates marked) are also drawn moving on the globe whenever the time is within their
   dates, linear in time between documented stops. The quiz asks where an event happened (scored by
   distance) and who held a marked place in a given year (answers from the border data for that
-  date). "On this day" lists events Wikidata dates to today's day in the Gregorian calendar, years
+  date). *Compare two years* draws a second year's borders in pink over the globe and lists the
+  states on one map and not the other. "On this day" lists events Wikidata dates to today's day in the Gregorian calendar, years
   confirmed by their articles. The journal remembers places, eras and articles in this browser only.
 - **Cities**: 949 major cities drawn by the populations recorded on Wikidata (censuses and official
   estimates), interpolated only between figures at most 60 years apart and never extrapolated.
@@ -135,7 +156,8 @@ the reader says so and everything else keeps working.
 | Elevation and bathymetry (sea-level changes) | GEBCO 08 via NASA Visible Earth, records 73934 / 73963 | GEBCO terms (free with attribution) |
 | Country polygons | Natural Earth via [world-atlas](https://github.com/topojson/world-atlas) 2.0.2 | Public domain / ISC |
 | Plate reconstructions | [GPlates Web Service](https://gws.gplates.org), model MERDITH2021: Merdith et al. (2021), *Earth-Science Reviews* 214 | CC BY 4.0 |
-| Historical borders before 1886 | [historical-basemaps](https://github.com/aourednik/historical-basemaps) by André Ourednik et al., kept at source detail down to 1 km | **GPL-3.0** (see note) |
+| Borders 3400 BCE–1885 | [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) v0.2.1: Bennett et al. (2025), *Scientific Data* 12, doi:10.1038/s41597-025-04516-9; Seshat Global History Databank. Changed here: simplified below 3 km, split into eras, groupings kept as labels | CC BY 4.0 |
+| Historical borders before 3400 BCE, and peoples where Cliopatria has no state | [historical-basemaps](https://github.com/aourednik/historical-basemaps) by André Ourednik et al., kept at source detail down to 1 km | **GPL-3.0** (see note) |
 | Borders 1886–today | [CShapes 2.0](https://icr.ethz.ch/data/cshapes/): Schvitz, Girardin, Rüegger, Weidmann, Cederman & Gleditsch (2022), *Journal of Conflict Resolution* 66(1); simplified only below 200 m | **CC BY-NC-SA 4.0** (non-commercial; see note) |
 | Independence dates (naming CShapes units) | [Gleditsch & Ward](http://ksgleditsch.com/statelist.html) list of independent states and microstates | cited |
 | City populations | Wikidata (P1082 with P585 dates), as recorded | CC0 |
@@ -148,6 +170,9 @@ the reader says so and everything else keeps working.
 | Entity IDs | Wikidata (QIDs via Wikipedia page props) | CC0 |
 | LGM sea level | rounded from Spratt & Lisiecki (2016) | cited |
 | LGM ice extent | hand-drawn approximation after Dyke (2004), Hughes et al. (2016) | — |
+| Green Sahara timing | deMenocal & Tierney (2012), *Nature Education Knowledge*; Shanahan et al. (2015), *Nature Geoscience* 8; extent drawn approximately | cited |
+| Axial tilt | Laskar (1986) obliquity polynomial (IAU) | cited |
+| Trade routes | waypoints and years of use from each route's Wikipedia article; enslaved Africans figure from the Trans-Atlantic Slave Trade Database | cited |
 | Fonts | Inter, Instrument Serif (Google Fonts) | OFL |
 
 **Licence note:** CShapes 2.0 is CC BY-NC-SA 4.0, so while `public/data/history/cshapes.topo.json` is

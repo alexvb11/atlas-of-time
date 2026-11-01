@@ -1,9 +1,31 @@
 # Changelog
 
-## Unreleased
+## 0.9.0 — 2026-11-01
 
-- The opening title card is gone: after loading, the camera glides straight onto the globe
-  (1.4 s) on every visit.
+### Borders
+- **Cliopatria for 3400 BCE–1885** (Seshat Global History Databank, CC BY 4.0): borders change in
+  the year they changed (449 change years instead of about 40 snapshots), each polity linked to its
+  own Wikipedia article and Wikidata item. 836 polities became new entities and 177 were joined to
+  existing ones through their Wikidata items.
+- Groupings (Holy Roman Empire, Delhi Sultanate…) are labelled over their members.
+- historical-basemaps now fills only the places Cliopatria leaves empty (peoples, cultures).
+- **Certainty on the map**: dated and researched borders are solid; approximate ones are dashed.
+
+### Living world (new Layers menu)
+- **Trade routes**: 11 routes with caravans flowing along them while in use; click a name to read.
+- **Population density** by present-day country, 10,000 BCE to today, with a legend.
+- **Seasons and daylight**: the sun's latitude for the time of year; the live sun today.
+- **Green Sahara** during the African Humid Period, automatic with the date.
+- Cities can be switched off.
+
+### Stories
+- **Held by**: a panel tab listing every polity that held the clicked spot, from the earliest map.
+- **Compare two years**: another year's borders in pink over the globe, with what changed.
+- **Marco Polo** and **Ibn Battuta** journeys, moving on the globe and in the guided journeys.
+
+### Interface
+- The opening title card, the loading line and the era caption under the year are gone: the
+  camera glides straight onto the globe after loading.
 
 ## 0.8.0 — 2026-10-31
 

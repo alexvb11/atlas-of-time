@@ -5,6 +5,7 @@ import { sound } from './sound'
 import { useState } from 'react'
 import { currentLink } from '../app/shareLink'
 import { ExploreMenu } from './ExploreMenu'
+import { LayersMenu } from './LayersMenu'
 import { toMa } from '../time/scale'
 
 export function Corner() {
@@ -31,6 +32,7 @@ export function Corner() {
         <kbd className="hidden rounded border border-white/12 px-1 text-[10px] text-dim sm:inline">{mac ? '⌘' : 'Ctrl'} K</kbd>
       </button>
       <ExploreMenu />
+      <LayersMenu />
       <ShareButton />
       <button
         type="button"
@@ -64,7 +66,9 @@ export function Corner() {
                 : "Plate reconstruction: Merdith et al. 2021 · today's coastlines carried back in time"
               : t >= 1886
                 ? 'Borders: CShapes 2.0 (ETH Zürich), each change dated to the day'
-                : 'Borders before 1886 are approximate reconstructions'}
+                : t >= -3399
+                  ? 'Borders: Cliopatria (Seshat, 2025), by year · dashed = peoples and approximate borders'
+                  : 'Borders this early are approximate reconstructions (dashed)'}
           </motion.span>
         )}
       </AnimatePresence>

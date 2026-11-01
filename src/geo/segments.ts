@@ -45,3 +45,20 @@ export function ringsToSegments(rings: number[][][], maxStep = 1.2): Float32Arra
   }
   return out.slice(0, n)
 }
+
+/** Ray-casting point-in-ring in lon/lat (rings from GeoJSON) */
+export function pointInRing(lon: number, lat: number, ring: number[][]) {
+  let inside = false
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i]
+    const [xj, yj] = ring[j]
+    if (yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) inside = !inside
+  }
+  return inside
+}
+
+export function pointInPolygon(lon: number, lat: number, poly: number[][][]) {
+  if (!pointInRing(lon, lat, poly[0])) return false
+  for (let h = 1; h < poly.length; h++) if (pointInRing(lon, lat, poly[h])) return false
+  return true
+}

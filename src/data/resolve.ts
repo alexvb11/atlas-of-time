@@ -168,8 +168,33 @@ export function prehistoryAt(lon: number, lat: number, t: number): { title: stri
     if (fertile) return { who: 'Early farmers', title: 'Neolithic farmers of the Fertile Crescent', text: 'Among the first farmers anywhere: wheat, barley, sheep and goats were domesticated here from about 11,000 years ago.' }
     return { who: 'Foragers and early farmers', title: 'Neolithic and Mesolithic peoples', text: 'Farming was spreading from several centres; many people still lived by foraging. Little is recorded here in this period.' }
   }
-  if (t < -799) return { who: 'Chiefdoms and villages', title: 'Bronze Age peoples', text: 'Farmers, herders and chiefdoms without written records. Little is recorded here in this period.' }
+  const ages = metalAges(lon, lat, africa)
+  if (!ages) return { who: 'Peoples without written records', title: 'Peoples without written records', text: 'Communities known mainly from archaeology. Little is recorded here in this period.' }
+  const [bronze, iron, stone] = ages
+  if (t < iron && (bronze === null || t < bronze)) return { who: 'Farmers, herders and foragers', title: stone, text: 'Communities known from archaeology, before metalworking reached this region. Little is recorded here in this period.' }
+  if (t < iron) return { who: 'Chiefdoms and villages', title: 'Bronze Age peoples', text: 'Farmers, herders and chiefdoms without written records. Little is recorded here in this period.' }
   return { who: 'Peoples without written records', title: 'Iron Age peoples', text: 'Farming and herding communities known mainly from archaeology. Little is recorded here in this period.' }
+}
+
+/**
+ * When bronze and then iron came into use, by region, as conventionally dated by archaeologists
+ * (astronomical years; onsets were gradual and vary within each region). bronze null: no separate
+ * Bronze Age (iron arrived first, or with bronze). The third value names the people before metal.
+ */
+function metalAges(lon: number, lat: number, africa: boolean): [number | null, number, string] | null {
+  const box = (w: number, s: number, e: number, n: number) => lon >= w && lon <= e && lat >= s && lat <= n
+  if (africa) return lat >= 18 ? [-3149, -1099, 'Neolithic and Copper Age peoples'] : [null, -799, 'Later Stone Age peoples']
+  if (box(129, 30, 146, 46)) return [null, -299, 'Jōmon peoples']
+  if (box(124, 33, 131, 43)) return [-1499, -299, 'Neolithic peoples']
+  if (box(92, 20, 125, 45)) return [-1999, -599, 'Neolithic peoples']
+  if (box(92, -11, 130, 20)) return [-1499, -499, 'Neolithic peoples']
+  if (box(62, 5, 92, 37)) return [-3299, -1199, 'Neolithic and Copper Age peoples']
+  if (box(20, 28, 62, 45)) return [-3299, -1199, 'Neolithic and Copper Age peoples']
+  if (box(-11, 49.5, 2, 61)) return [-2499, -799, 'Neolithic peoples']
+  if (box(-10, 54, 40, 71)) return [-1699, -499, 'Neolithic peoples']
+  if (box(-12, 35, 40, 54)) return [-2199, -799, 'Neolithic and Copper Age peoples']
+  if (box(40, 45, 90, 60)) return [-2999, -899, 'Neolithic and Copper Age peoples']
+  return null
 }
 
 export function geologyAt(t: number) {

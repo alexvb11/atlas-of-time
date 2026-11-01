@@ -101,7 +101,6 @@ export function Intro() {
                 </defs>
               </svg>
               <div className="absolute top-[34px] text-[13px] text-mist tnum">{Math.round(progress)}%</div>
-              <div className="mt-6 font-display text-[22px] tracking-wide text-ink/80 italic">Gathering the ages…</div>
             </div>
           </motion.div>
         )}

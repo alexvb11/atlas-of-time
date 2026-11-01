@@ -11,6 +11,8 @@ import { Highlight } from './Highlight'
 import { EventsLayer, HerePins } from './Events'
 import { JourneysLayer } from './Journeys'
 import { CitiesLayer } from './Cities'
+import { TradeRoutesLayer } from './TradeRoutes'
+import { DensityLayer } from './Density'
 import { updateWorld, world } from './world'
 import { useTime } from '../time/store'
 
@@ -64,6 +66,7 @@ export function Scene() {
       <Stars count={lite ? 3000 : 6500} />
       <Suspense fallback={null}>
         <Globe />
+        <DensityLayer />
         <DriftLand />
         <Borders />
         <Highlight />
@@ -71,6 +74,7 @@ export function Scene() {
         <HerePins />
         <JourneysLayer />
         <CitiesLayer />
+        <TradeRoutesLayer />
       </Suspense>
       <Effects lite={lite} />
     </Canvas>

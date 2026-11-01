@@ -1,13 +1,12 @@
-// Big date readout + era caption, and the global HUD strip (world state at time T).
-import { AnimatePresence, motion } from 'framer-motion'
+// Big date readout, and the global HUD strip (world state at time T).
+import { motion } from 'framer-motion'
 import { useTime } from '../time/store'
 import { dateParts, formatPopulation } from '../time/format'
-import { ageAt, contextAt, periodAt, worldPopAt } from '../time/eras'
+import { ageAt, periodAt, worldPopAt } from '../time/eras'
 
 export function Readout() {
   const time = useTime((s) => s.time)
   const d = dateParts(time)
-  const ctx = contextAt(time)
   return (
     <div className="pointer-events-none mt-4 flex flex-col items-center text-center select-none" aria-live="polite">
       <div className="flex items-baseline gap-2.5 drop-shadow-[0_2px_18px_rgba(0,0,0,.7)]">
@@ -15,18 +14,6 @@ export function Readout() {
         <span className="font-display text-[44px] leading-none tracking-tight text-ink tnum sm:text-[60px]">{d.value}</span>
         <span className="font-display text-xl text-mist italic sm:text-2xl">{d.unit}</span>
       </div>
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={ctx.name}
-          initial={{ opacity: 0, y: 6, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          exit={{ opacity: 0, y: -4, filter: 'blur(4px)' }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-2 max-w-[560px] px-4 text-[13px] leading-relaxed text-mist/90 drop-shadow-[0_1px_8px_rgba(0,0,0,.9)]"
-        >
-          {ctx.caption}
-        </motion.p>
-      </AnimatePresence>
     </div>
   )
 }
