@@ -7,6 +7,7 @@ import type { Resolution } from '../../data/resolve'
 import { ConfTag, Stat, Ticker } from './bits'
 import { formatNumber, formatPopulation } from '../../time/format'
 import { periodAt } from '../../time/eras'
+import { Basics } from './Basics'
 
 /** Wikipedia extracts lose their pronunciation spans and leave "()" or "( ; )" behind */
 const cleanSummary = (t?: string) => t?.replace(/\s*\(\s*[;,]?\s*\)/g, '').replace(/\s{2,}/g, ' ')
@@ -95,6 +96,7 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
 
   return (
     <div className="space-y-4">
+      <Basics res={res} idx={idx} pop={pop} />
       {summary && (
         <div>
           <p className={`text-[13.5px] leading-relaxed text-ink/85 ${more ? '' : 'line-clamp-5'}`}>{summary}</p>

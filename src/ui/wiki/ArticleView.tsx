@@ -5,7 +5,7 @@ import { Film } from './Film'
 import { TermLink } from './Term'
 import { useReader } from './store'
 
-function Parts({ parts }: { parts: Inline[] }) {
+export function Parts({ parts }: { parts: Inline[] }) {
   return (
     <>
       {parts.map((p, i) => {

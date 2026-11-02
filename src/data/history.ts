@@ -207,3 +207,37 @@ export function borderSourceAt(t: number): 'cshapes' | 'cliopatria' | 'basemaps'
 
 /** True for snapshots built from CShapes: precise borders, dated to the day, de facto control */
 export const isPreciseSnapshot = (year: number) => cshapesKeys.has(year)
+
+/**
+ * Polities whose borders touch this one on the same map (outlines in neighbouring half-degree
+ * cells, so within roughly 50–100 km), largest first. Outlines are sampled, so tiny neighbours
+ * can be missed.
+ */
+export function neighboursOf(snap: Snapshot, p: Polity, max = 8): Polity[] {
+  const CELL = 0.5
+  const grid = new Set<string>()
+  const sample = (q: Polity, n: number) => {
+    const pts: number[][] = []
+    const total = q.polys.reduce((a, poly) => a + poly[0].length, 0)
+    const step = Math.max(1, Math.floor(total / n))
+    for (const poly of q.polys) for (let i = 0; i < poly[0].length; i += step) pts.push(poly[0][i])
+    return pts
+  }
+  for (const [x, y] of sample(p, 1500)) grid.add(`${Math.floor(x / CELL)},${Math.floor(y / CELL)}`)
+  const [a, b, c, d] = p.bbox
+  const out: Polity[] = []
+  for (const q of snap.polities) {
+    if (q === p || q.name === p.name || !q.name) continue
+    const [qa, qb, qc, qd] = q.bbox
+    if (qa > c + 1 || qc < a - 1 || qb > d + 1 || qd < b - 1) continue
+    // a point of q's outline in a cell next to p's outline counts as touching
+    const touches = sample(q, 600).some(([x, y]) => {
+      const cx = Math.floor(x / CELL)
+      const cy = Math.floor(y / CELL)
+      for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) if (grid.has(`${cx + i},${cy + j}`) ) return true
+      return false
+    })
+    if (touches && !out.some((o) => o.name === q.name)) out.push(q)
+  }
+  return out.sort((x, y) => y.area - x.area).slice(0, max)
+}

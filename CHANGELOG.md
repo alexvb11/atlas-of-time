@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.11.0 — 2026-11-01
+
+- **The basics**: clicking a place now opens with a plain overview for that date: what it was and
+  where, who ruled and from where, government, religion and languages, its age and lifespan (or
+  the period of a longer state), what came before and after on that spot, neighbours, size and
+  the wider world, plus "What was happening": the Wikipedia section covering that year.
+- Sharper prehistory labels already in 0.9 aside, the panel never states a founding year for an
+  automated modern country, since Wikidata often gives a predecessor's.
+
 ## 0.10.0 — 2026-11-01
 
 - **Settings** replaces the Layers menu: 34 options in eight groups (layers, borders and labels,

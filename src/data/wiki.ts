@@ -281,6 +281,70 @@ export function article(key: string): Promise<Article> {
   })
 }
 
+// ---------- the period section ("what was happening then") ----------
+export type PeriodSection = { article: string; heading: string; from: number; to: number; blocks: Block[]; url: string }
+
+/**
+ * Years a section heading covers, from forms Wikipedia uses: "Valois dynasty (1328–1589)",
+ * "27 BC – AD 476", "1958–present", "16th century", "5th–3rd centuries BC". Astronomical years
+ * (1 BC = 0); null when the heading names no period.
+ */
+export function headingYears(h: string): [number, number] | null {
+  const astro = (n: number, bc: boolean) => (bc ? 1 - n : n)
+  const r = h.match(/(?:c\.\s*|ca\.\s*)?(\d{1,4})\s*(BCE|BC|CE|AD)?\s*[–—-]\s*(?:c\.\s*|ca\.\s*)?(?:AD\s*)?(\d{1,4}|present)\s*(BCE|BC|CE|AD)?/i)
+  if (r) {
+    const bcB = /^BC/i.test(r[4] ?? '')
+    const bcA = r[2] ? /^BC/i.test(r[2]) : bcB
+    const a = astro(Number(r[1]), bcA)
+    const b = /present/i.test(r[3]) ? 2026 : astro(Number(r[3]), bcB)
+    // "1914–18": the second number shortens the first
+    const b2 = !bcB && r[3].length < r[1].length && b < a ? Number(r[1].slice(0, r[1].length - r[3].length) + r[3]) : b
+    return a <= b2 ? [a, b2 + 1] : null
+  }
+  const c = h.match(/(\d{1,2})(?:st|nd|rd|th)(?:\s*(?:[–—-]|to|and)\s*(\d{1,2})(?:st|nd|rd|th))?\s+centur(?:y|ies)(\s*(?:BCE|BC))?/i)
+  if (c) {
+    const bc = !!c[3]
+    const x = Number(c[1])
+    const y = Number(c[2] ?? c[1])
+    // century n BC runs from n×100 BC to (n−1)×100+1 BC
+    if (bc) return [1 - Math.max(x, y) * 100, -(Math.min(x, y) - 1) * 100 + 1]
+    return [Math.min(x, y) * 100 - 99, Math.max(x, y) * 100 + 1]
+  }
+  return null
+}
+
+/**
+ * The most specific section of these English Wikipedia articles whose heading's years contain t,
+ * with its opening paragraphs: the article's own account of that period. Null when no heading
+ * covers t (the panel then shows nothing rather than a guess).
+ */
+export function periodSection(titles: string[], t: number): Promise<PeriodSection | null> {
+  return once(`period:${titles.join('|')}:${Math.floor(t)}`, async () => {
+    for (const title of titles) {
+      const q = (extra: string) => `${api('en')}?action=parse&format=json&formatversion=2&origin=*&redirects=1&page=${encodeURIComponent(title)}&disableeditsection=1&disabletoc=1&disablelimitreport=1${extra}`
+      let secs: { index: string; line: string; anchor: string }[]
+      try {
+        secs = (await json(q('&prop=sections'))).parse.sections
+      } catch {
+        continue
+      }
+      const plain = (x: string) => x.replace(/<[^>]+>/g, '')
+      let best: { s: (typeof secs)[number]; from: number; to: number } | null = null
+      for (const s of secs) {
+        const yrs = headingYears(plain(s.line))
+        if (!yrs || t < yrs[0] || t >= yrs[1] || yrs[1] - yrs[0] > 1200) continue
+        if (!best || yrs[1] - yrs[0] < best.to - best.from) best = { s, from: yrs[0], to: yrs[1] }
+      }
+      if (!best) continue
+      const html = (await json(q(`&prop=text&section=${best.s.index}`))).parse.text as string
+      const blocks = blocksFrom(html, 150, 'en').filter((b) => b.kind === 'p')
+      if (!blocks.length) continue
+      return { article: title, heading: plain(best.s.line), from: best.from, to: best.to, blocks, url: wikiUrl(`${title}#${best.s.anchor}`) }
+    }
+    return null
+  })
+}
+
 // ---------- terms (hover cards) ----------
 export function term(key: string): Promise<Term> {
   return once(`t:${lang}:${key}`, async () => {

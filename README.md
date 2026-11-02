@@ -98,6 +98,14 @@ See [PLAN.md](PLAN.md) for the architecture. Short version:
   with the ruling power. CShapes moves borders on treaty dates, so a few pieces between the collapse
   of empires and the peace treaties are named for what they were ("Former Austrian crown lands,
   borders until the Treaty of Saint-Germain").
+- **The basics**: the first thing in the panel. For whatever is under the click at that date, a lead
+  sentence (what it was and where) and short rows: who ruled and from where, government, religion,
+  main languages, how old it was and how long it would last (or which period of a longer state it
+  was), what held the spot before and after, its neighbours and size on that year's map, and the
+  wider world. Every clause comes from the atlas's data and is left out when missing; automated
+  modern countries get no founding year, since Wikidata's is often a predecessor's. Below it, *What
+  was happening*: the opening of the Wikipedia section whose heading's years cover the date (the
+  state's own article first, then "History of <country>"), quoted and linked.
 - **Held by**: for any clicked spot, every polity the border sources put there, from the earliest
   map to today, with years and source, found in one worker pass over all of them.
 - **Settings** (`src/time/settings.ts`, sheet in `src/ui/explore/SettingsView.tsx`): every layer and
