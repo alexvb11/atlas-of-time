@@ -7,6 +7,7 @@ import { greenSaharaAt, iceAt, seaLevelAt } from '../time/climate'
 import { periodAt } from '../time/eras'
 import { settings } from '../time/settings'
 import { lonLatToVec3 } from '../geo/sphere'
+import { obliquity } from '../time/astro'
 
 export const SUN = new THREE.Vector3(0.82, 0.32, 0.47).normalize()
 /** the fixed, flattering light used when the seasons layer is off */
@@ -24,6 +25,11 @@ export const world = {
   green: 0,
   /** where the sun is overhead when the seasons layer is on: [lon, lat] */
   subsolar: null as [number, number] | null,
+  /** 0..1: the real star sky (Sky.tsx) replaces the procedural one nearer the present */
+  realSky: 0,
+  /** galactic north pole and galactic centre in world space, kept current by Sky.tsx */
+  galPole: new THREE.Vector3(0, 0.94, 0.32).normalize(),
+  galCore: new THREE.Vector3(-0.6, 0.35, -0.7).normalize(),
   /** where the camera looks from, [lon, lat] (written by the camera rig) */
   view: [20, 22] as [number, number],
   /** modern electric lights 0..1 */
@@ -68,12 +74,6 @@ const TINTS: Record<string, [number, number, number]> = {
 }
 const tmp = new THREE.Color()
 const sunTarget = new THREE.Vector3()
-
-/** Earth's axial tilt in degrees (Laskar 1986, IAU), held at its ends outside ±6,000 years of 2000 */
-function obliquity(t: number) {
-  const T = Math.min(60, Math.max(-80, (t - 2000) / 100))
-  return 23.439291 - 0.0130042 * T - 1.64e-7 * T * T + 5.04e-7 * T * T * T
-}
 
 /**
  * Subsolar point for the seasons layer. The day of the year comes from the fraction of the year,

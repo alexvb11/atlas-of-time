@@ -4,6 +4,7 @@ import * as THREE from 'three'
 import { Globe } from './Globe'
 import { DriftLand } from './DriftLand'
 import { Nebula, Stars } from './Space'
+import { Sky } from './Sky'
 import { CameraRig } from './CameraRig'
 import { Effects } from './Effects'
 import { Borders } from './Borders'
@@ -70,6 +71,7 @@ export function Scene() {
       {showNebula && <Nebula />}
       {showStars && <Stars count={lite ? 3000 : 6500} />}
       <Suspense fallback={null}>
+        <Sky />
         <Globe />
         <DensityLayer />
         <PoliticalFill />

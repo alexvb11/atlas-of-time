@@ -25,6 +25,7 @@ export type Settings = {
   nightLights: boolean
   atmosphere: boolean
   stars: boolean
+  moonSun: boolean
   nebula: boolean
   climate: boolean
   greenSahara: boolean
@@ -67,6 +68,7 @@ export const DEFAULTS: Settings = {
   nightLights: true,
   atmosphere: true,
   stars: true,
+  moonSun: true,
   nebula: true,
   climate: true,
   greenSahara: true,

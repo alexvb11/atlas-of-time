@@ -18,6 +18,8 @@ const VIEWS = {
   himalaya: { t: 2026, lon: 86, lat: 29, dist: 1.35 },
   alps: { t: 2026, lon: 9, lat: 46, dist: 1.25 },
   deep: { t: 2026 - 200e6, lon: 10, lat: 10, dist: 4.3 },
+  sky: { t: 2026, lon: 160, lat: -10, dist: 6.5, sun: 'fixed' },
+  skyold: { t: -9000, lon: 160, lat: -10, dist: 6.5, sun: 'fixed' },
   political: { t: 1500.5, lon: 20, lat: 40, dist: 2.6, extra: { borders: true, politicalFill: true } },
   borders: { t: 1850.5, lon: 10, lat: 48, dist: 1.9, extra: { borders: true } },
 }

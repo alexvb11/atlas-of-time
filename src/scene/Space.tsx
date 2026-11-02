@@ -1,10 +1,11 @@
-// Starfield (with time-warp streaking) and a faint distant nebula.
+// Starfield (with time-warp streaking) and the faint Milky Way haze. The procedural field is shown
+// in deep time, where the real sky cannot be known; Sky.tsx draws the real stars nearer the present.
 import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { world } from './world'
 
-const starVertex = /* glsl */ `
+export const starVertex = /* glsl */ `
 attribute float aSize;
 attribute vec3 aColor;
 attribute float aPhase;
@@ -26,7 +27,8 @@ void main() {
   gl_PointSize = aSize * uPixelRatio * (1.0 + vStretch * 7.0);
 }
 `
-const starFragment = /* glsl */ `
+export const starFragment = /* glsl */ `
+uniform float uOpacity;
 varying vec3 vColor;
 varying vec2 vDir;
 varying float vStretch;
@@ -40,7 +42,7 @@ void main() {
   float s = 1.0 + vStretch * 7.0;
   float d = length(vec2(along, across * s));
   float a = smoothstep(1.0, 0.0, d);
-  a = pow(a, 2.2) * vTw / (1.0 + vStretch * 2.0);
+  a = pow(a, 2.2) * vTw / (1.0 + vStretch * 2.0) * uOpacity;
   gl_FragColor = vec4(vColor * a, a);
 }
 `
@@ -81,13 +83,15 @@ export function Stars({ count = 6500 }: { count?: number }) {
     return g
   }, [count])
   const uniforms = useMemo(
-    () => ({ uWarp: { value: 0 }, uTime: { value: 0 }, uPixelRatio: { value: Math.min(2, window.devicePixelRatio) } }),
+    () => ({ uWarp: { value: 0 }, uTime: { value: 0 }, uPixelRatio: { value: Math.min(2, window.devicePixelRatio) }, uOpacity: { value: 1 } }),
     [],
   )
   useFrame((s) => {
     if (!mat.current) return
     mat.current.uniforms.uWarp.value = world.warp
     mat.current.uniforms.uTime.value = s.clock.elapsedTime
+    // only where the real sky is not shown (see Sky.tsx)
+    mat.current.uniforms.uOpacity.value = 1 - world.realSky
   })
   return (
     <points geometry={geo} raycast={() => null} frustumCulled={false}>
@@ -105,6 +109,8 @@ export function Stars({ count = 6500 }: { count?: number }) {
 }
 
 const nebulaFragment = /* glsl */ `
+uniform vec3 uPole;
+uniform vec3 uCore;
 varying vec3 vDir;
 float hash(vec3 p) { p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float noise(vec3 x) {
@@ -119,19 +125,23 @@ void main() {
   float n = fbm(d * 2.2 + vec3(3.1, 0.4, 1.7));
   float m = fbm(d * 4.0 - vec3(1.3, 2.0, 0.2));
   // keep it to one region of the sky, very faint
-  float region = smoothstep(0.2, 0.95, dot(d, normalize(vec3(-0.6, 0.35, -0.7))));
-  float band = smoothstep(0.45, 0.0, abs(dot(d, normalize(vec3(0.0, 0.94, 0.32)))));
+  float region = smoothstep(0.2, 0.95, dot(d, uCore));
+  float band = smoothstep(0.45, 0.0, abs(dot(d, uPole)));
   vec3 col = mix(vec3(0.03, 0.06, 0.15), vec3(0.10, 0.07, 0.16), m) * pow(n, 3.0) * (region * 0.9 + band * 0.25);
   col += vec3(0.015, 0.035, 0.06) * pow(n, 3.0) * band;
   gl_FragColor = vec4(col * 0.45, 1.0);
 }
 `
 
+/** The Milky Way: its band follows the galactic plane and its glow the galactic centre, which
+ *  Sky.tsx keeps in the real directions (world.galPole, world.galCore) */
 export function Nebula() {
+  const u = useMemo(() => ({ uPole: { value: world.galPole }, uCore: { value: world.galCore } }), [])
   return (
     <mesh scale={120} raycast={() => null} renderOrder={-10}>
       <sphereGeometry args={[1, 48, 32]} />
       <shaderMaterial
+        uniforms={u}
         vertexShader={`varying vec3 vDir; void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`}
         fragmentShader={nebulaFragment}
         side={THREE.BackSide}
