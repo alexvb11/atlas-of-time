@@ -29,10 +29,14 @@ npm run data:entities  # only curated entities, events, Wikipedia/Wikidata enric
 
 The site is static: `npm run build` writes `dist/`, which any static host can serve.
 
-1. **GitHub**: create an empty private repository, then
-   `git remote set-url origin https://github.com/<you>/atlas-of-time.git` and `git push -u origin main`.
-2. **Vercel**: import the repository at vercel.com/new. `vercel.json` already sets the build command,
-   the output folder and cache headers; no environment variables are needed.
+1. **GitHub Pages** (free, included): create an empty **public** repository named `atlas-of-time`,
+   then `git remote set-url origin https://github.com/<you>/atlas-of-time.git` and
+   `git push -u origin main`. In the repository, *Settings → Pages → Source*: **GitHub Actions**.
+   `.github/workflows/deploy.yml` then builds and publishes every push to `main` at
+   `https://<you>.github.io/atlas-of-time/` (the workflow sets `BASE_PATH` to the repository name, so
+   a different name works too).
+2. **Vercel** (alternative): import the repository at vercel.com/new. `vercel.json` already sets the
+   build command, the output folder and cache headers; no environment variables are needed.
 
 Keep the CShapes licence in mind: the site must stay non-commercial while it includes those borders.
 

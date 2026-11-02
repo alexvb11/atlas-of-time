@@ -49,7 +49,7 @@ let clio: Index['cliopatria'] | null = null
 const basemapYears: number[] = []
 
 export function loadHistoryIndex(): Promise<number[]> {
-  indexPromise ??= fetch('/data/history/index.json')
+  indexPromise ??= fetch(`${import.meta.env.BASE_URL}data/history/index.json`)
     .then((r) => r.json() as Promise<Index>)
     .then((j) => {
       const years = j.snapshots.map((s) => s.year)
@@ -59,7 +59,7 @@ export function loadHistoryIndex(): Promise<number[]> {
         years.push(...j.cliopatria.keys)
       }
       if (j.cshapes) {
-        cshapesUrl = new URL(`/data/history/${j.cshapes.url}`, location.href).href
+        cshapesUrl = new URL(`${import.meta.env.BASE_URL}data/history/${j.cshapes.url}`, location.href).href
         for (const k of j.cshapes.keys) cshapesKeys.add(k)
         years.push(...j.cshapes.keys)
       }
@@ -157,7 +157,7 @@ async function queryTimeline(lon: number, lat: number): Promise<Hold[]> {
   })
 }
 
-const abs = (file: string) => new URL(`/data/history/${file}`, location.href).href
+const abs = (file: string) => new URL(`${import.meta.env.BASE_URL}data/history/${file}`, location.href).href
 
 function requestFor(year: number): Request {
   if (cshapesKeys.has(year)) return { year, url: cshapesUrl, cshapes: true }

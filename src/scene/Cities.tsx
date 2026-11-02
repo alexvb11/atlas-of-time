@@ -15,7 +15,7 @@ const MAX_GAP = 60
 const LABELS = 8
 
 let dataP: Promise<City[]> | null = null
-const load = () => (dataP ??= fetch('/data/cities.json').then((r) => r.json()).then((j) => j.cities as City[]))
+const load = () => (dataP ??= fetch(`${import.meta.env.BASE_URL}data/cities.json`).then((r) => r.json()).then((j) => j.cities as City[]))
 
 /** Recorded population at t, or 0 when no figures lie close enough on both sides */
 export function popAt(series: [number, number][], t: number): number {

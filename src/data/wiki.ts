@@ -119,7 +119,7 @@ async function json(url: string) {
 type ArticleIndex = { events: Record<string, string>; entities: Record<string, string> }
 let indexP: Promise<ArticleIndex> | null = null
 export const loadArticleIndex = () =>
-  (indexP ??= fetch('/data/articles.json')
+  (indexP ??= fetch(`${import.meta.env.BASE_URL}data/articles.json`)
     .then((r) => r.json() as Promise<ArticleIndex>)
     .catch((e) => {
       indexP = null
@@ -140,7 +140,7 @@ let countryP: Promise<CountryEvents> | null = null
 export function useCountryEvents() {
   const [ev, setEv] = useState<CountryEvents | null>(null)
   useEffect(() => {
-    ;(countryP ??= fetch('/data/events-auto.json')
+    ;(countryP ??= fetch(`${import.meta.env.BASE_URL}data/events-auto.json`)
       .then((r) => r.json())
       .then((j) => j.events as CountryEvents)
       .catch((e) => {

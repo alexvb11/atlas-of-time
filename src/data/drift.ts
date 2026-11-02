@@ -26,8 +26,8 @@ let worker: Worker | null = null
 export function loadDriftMesh(): Promise<DriftMesh> {
   meshPromise ??= (async () => {
     const [buf, index] = await Promise.all([
-      fetch('/data/drift/mesh.bin').then((r) => r.arrayBuffer()),
-      fetch('/data/drift/index.json').then((r) => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/drift/mesh.bin`).then((r) => r.arrayBuffer()),
+      fetch(`${import.meta.env.BASE_URL}data/drift/index.json`).then((r) => r.json()),
     ])
     const h = new Uint32Array(buf, 0, 4)
     const [n, nt, ns, nc] = h
@@ -67,7 +67,7 @@ export function loadSnapshot(ma: number): Promise<Float32Array> {
   if (!p) {
     p = new Promise<Decoded>((resolve) => {
       resolvers.set(ma, resolve)
-      worker!.postMessage({ type: 'decode', ma, url: new URL(`/data/drift/t${ma}.bin`, location.href).href })
+      worker!.postMessage({ type: 'decode', ma, url: new URL(`${import.meta.env.BASE_URL}data/drift/t${ma}.bin`, location.href).href })
     }).then(({ pos, ok }) => {
       resolvers.delete(ma)
       driftOk.set(pos, ok)

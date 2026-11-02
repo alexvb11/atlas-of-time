@@ -69,7 +69,7 @@ function loadLateTextures() {
   if (late.started) return
   late.started = true
   const loader = new EarthTextureLoader(new THREE.LoadingManager())
-  for (const [key, url] of [['night', `/textures/earth-night${sfx}.webp`], ['clouds', '/textures/clouds.webp']] as const)
+  for (const [key, url] of [['night', `${import.meta.env.BASE_URL}textures/earth-night${sfx}.webp`], ['clouds', `${import.meta.env.BASE_URL}textures/clouds.webp`]] as const)
     loader.load(url, (t) => {
       late[key].image = t.image
       late[key].flipY = t.flipY
@@ -79,7 +79,7 @@ function loadLateTextures() {
 }
 
 export function useEarthTextures() {
-  const [day, data, ice] = useLoader(EarthTextureLoader, [`/textures/earth-day${sfx}.webp`, '/textures/earth-data.webp', '/textures/ice.webp'])
+  const [day, data, ice] = useLoader(EarthTextureLoader, [`${import.meta.env.BASE_URL}textures/earth-day${sfx}.webp`, `${import.meta.env.BASE_URL}textures/earth-data.webp`, `${import.meta.env.BASE_URL}textures/ice.webp`])
   useMemo(() => {
     day.colorSpace = THREE.SRGBColorSpace
     data.colorSpace = THREE.NoColorSpace

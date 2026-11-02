@@ -22,9 +22,9 @@ let dataP: Promise<Data> | null = null
 
 function load(): Promise<Data> {
   return (dataP ??= Promise.all([
-    fetch('/data/countries-50m.json').then((r) => r.json() as Promise<Topology>),
-    fetch('/data/countries.json').then((r) => r.json()),
-    fetch('/data/population.json').then((r) => r.json()),
+    fetch(`${import.meta.env.BASE_URL}data/countries-50m.json`).then((r) => r.json() as Promise<Topology>),
+    fetch(`${import.meta.env.BASE_URL}data/countries.json`).then((r) => r.json()),
+    fetch(`${import.meta.env.BASE_URL}data/population.json`).then((r) => r.json()),
   ]).then(([topo, ctry, pop]) => {
     const byNumeric = ctry.countries as Record<string, Country>
     const fc = feature(topo, topo.objects.countries as GeometryCollection) as unknown as GeoJSON.FeatureCollection

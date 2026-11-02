@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.1 — 2026-11-02
+
+- **Fixed: the production build failed at start-up** ("e is not a function"): the hand-made
+  three.js chunk and the app chunk imported each other. Chunking is now left to the bundler.
+- **GitHub Pages**: a workflow publishes the site on every push to `main`; data and texture paths
+  follow the site's base path, so it works under `/<repo>/`.
+
 ## 0.11.0 — 2026-11-01
 
 - **The basics**: clicking a place now opens with a plain overview for that date: what it was and

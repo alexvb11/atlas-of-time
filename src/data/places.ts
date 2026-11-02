@@ -10,7 +10,7 @@ export type Nearby = PlaceEvent & { km: number; bearing: string; dt: number }
 type Raw = { kinds: string[]; events: [number, number, number, string, number, string?][] }
 let dataP: Promise<{ kinds: string[]; events: Raw['events'] }> | null = null
 export const loadPlaceEvents = () =>
-  (dataP ??= fetch('/data/place-events.json')
+  (dataP ??= fetch(`${import.meta.env.BASE_URL}data/place-events.json`)
     .then((r) => r.json() as Promise<Raw>)
     .catch((e) => {
       dataP = null

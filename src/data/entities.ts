@@ -120,18 +120,18 @@ let ready: EntityIndex | null = null
 let curated: Promise<{ entities: Entity[]; lineages: Record<string, Lineage>; languages: Language[]; events: unknown[]; routes: unknown[] }> | null = null
 
 /** The curated file (entities, lineages, languages, events, routes), fetched once for every reader */
-export const loadCurated = () => (curated ??= fetch('/data/entities.json').then((r) => r.json()))
+export const loadCurated = () => (curated ??= fetch(`${import.meta.env.BASE_URL}data/entities.json`).then((r) => r.json()))
 
 export function loadEntityIndex(): Promise<EntityIndex> {
   promise ??= (async () => {
     const [ents, auto, ctry, topo, pop] = await Promise.all([
       loadCurated(),
-      fetch('/data/entities-auto.json')
+      fetch(`${import.meta.env.BASE_URL}data/entities-auto.json`)
         .then((r) => (r.ok ? r.json() : { entities: [], lineages: {} }))
         .catch(() => ({ entities: [], lineages: {} })),
-      fetch('/data/countries.json').then((r) => r.json()),
-      fetch('/data/countries-50m.json').then((r) => r.json() as Promise<Topology>),
-      fetch('/data/population.json').then((r) => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/countries.json`).then((r) => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/countries-50m.json`).then((r) => r.json() as Promise<Topology>),
+      fetch(`${import.meta.env.BASE_URL}data/population.json`).then((r) => r.json()),
     ])
     const entities = new Map<string, Entity>()
     // summaries and sources for automated entities arrive later (loadEntityText)
@@ -229,7 +229,7 @@ const textListeners = new Set<() => void>()
 export function loadEntityText(): Promise<void> {
   textPromise ??= Promise.all([
     loadEntityIndex(),
-    fetch('/data/entities-auto-text.json')
+    fetch(`${import.meta.env.BASE_URL}data/entities-auto-text.json`)
       .then((r) => (r.ok ? r.json() : {}))
       .catch(() => ({})),
   ]).then(([idx, text]: [EntityIndex, Record<string, [string | null, string[]]>]) => {
