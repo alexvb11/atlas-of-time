@@ -25,6 +25,10 @@ export const world = {
   green: 0,
   /** where the sun is overhead when the seasons layer is on: [lon, lat] */
   subsolar: null as [number, number] | null,
+  /** true while the close-up imagery and terrain patch is on screen (its sources are credited) */
+  detail: false,
+  /** 0..1: how much the PALEOMAP landscapes (PaleoLand.tsx) cover the globe in deep time */
+  paleo: 0,
   /** 0..1: the real star sky (Sky.tsx) replaces the procedural one nearer the present */
   realSky: 0,
   /** galactic north pole and galactic centre in world space, kept current by Sky.tsx */

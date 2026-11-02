@@ -61,7 +61,8 @@ node scripts/qa/explore.mjs   # share link, journey, moving voyage, quiz, on thi
 | Rotate / zoom | drag, wheel, pinch |
 | Select a place | click (deep time: click the drifting land itself) |
 | Deselect | Esc or click empty space |
-| Move through time | drag the time bar, ← / → nudge, Shift+← / → jump eras, Space play/pause |
+| Move through time | drag the time bar (hold Shift to scrub slowly), ← / → or the ‹ › by the year step one year (Alt or Shift: ten), Page Up / Down a century, Shift+← / → jump eras, Space play/pause |
+| Go to an exact year | click the big year and type it: "1066", "44 BC", "12000 years ago", "20 ka", "65 Ma" |
 | Flip film pictures | ‹ › buttons, or ← / → while pointing at a film or with a hover card open |
 | Search | ⌘K / Ctrl+K |
 | Read an event | History tab: click the title (the year jumps the slider) · event cards: *Read the story* |
@@ -77,9 +78,16 @@ node scripts/qa/explore.mjs   # share link, journey, moving voyage, quiz, on thi
 See [PLAN.md](PLAN.md) for the architecture. Short version:
 
 - **Time axis**: astronomical years (1 BCE = 0). The slider maps a segmented, partly logarithmic
-  scale onto it, so 600 Ma and 1914 are both easy to reach.
-- **Deep time**: today's land and country borders are triangulated once and every vertex is
-  reconstructed by GPlates (MERDITH2021) at 101 timesteps (0–750 Ma). Because vertex *i* is the same
+  scale onto it, so 600 Ma and 1914 are both easy to reach. Every stop is exact: a drag settles on
+  the year shown, steps move one readout unit (a year in history, 100 years to 1 Ma further back),
+  and any year can be typed.
+- **Deep time**: back to 540 Ma the globe shows the PALEOMAP PaleoDEMs (Scotese & Wright 2018):
+  mountains, lowlands, shelf seas and deep ocean every 5 million years, crossfaded, with relief;
+  land colours follow what is known (bare before land plants, forests from the Devonian, drier
+  subtropics, polar ice only in the known ice ages), with today's coastlines as faint guides.
+  Today's land and country borders are triangulated once and every vertex is reconstructed by
+  GPlates at 101 timesteps (PALEOMAP to 540 Ma so the crust matches the landscapes, MERDITH2021
+  to 750 Ma). Because vertex *i* is the same
   crust in every snapshot, the GPU interpolates positions every frame. Triangles stretched across two
   plates fade out, and crust the model does not place at a given time is shown only as a ghost.
 - **Selection is a location**. A click stores a present-day lon/lat; in deep time it rides its
@@ -110,6 +118,15 @@ See [PLAN.md](PLAN.md) for the architecture. Short version:
   modern countries get no founding year, since Wikidata's is often a predecessor's. Below it, *What
   was happening*: the opening of the Wikipedia section whose heading's years cover the date (the
   state's own article first, then "History of <country>"), quoted and linked.
+- **Graphics**: physically based sky (single Rayleigh and Mie scattering, ray-marched), ocean sun
+  glint with moving waves, turquoise shelves, cloud shadows, mountain relief lit from real
+  elevation (GEBCO), 8K imagery on capable screens. Zoomed in, NASA GIBS Blue Marble tiles (~600
+  m a pixel) stream in over 3D terrain (Terrain Tiles), and the camera leans toward the horizon;
+  zoom glides. The night sky is real: the Yale Bright Star Catalogue's 9,096 stars, moved to the
+  date by precession and their own motions on the GPU (Thuban is the pole star in 2800 BCE), the
+  Milky Way on the galactic plane, the Moon in its place and phase for the date (Meeus), and the
+  Sun. Before ~30,000 years ago, a generic starfield. Borders are screen-space lines with an
+  adjustable thickness, and a *Political map* setting colours every state.
 - **Held by**: for any clicked spot, every polity the border sources put there, from the earliest
   map to today, with years and source, found in one worker pass over all of them.
 - **Settings** (`src/time/settings.ts`, sheet in `src/ui/explore/SettingsView.tsx`): every layer and
@@ -191,6 +208,14 @@ the reader says so and everything else keeps working.
 | Green Sahara timing | deMenocal & Tierney (2012), *Nature Education Knowledge*; Shanahan et al. (2015), *Nature Geoscience* 8; extent drawn approximately | cited |
 | Axial tilt | Laskar (1986) obliquity polynomial (IAU) | cited |
 | Trade routes | waypoints and years of use from each route's Wikipedia article; enslaved Africans figure from the Trans-Atlantic Slave Trade Database | cited |
+| Ancient landscapes 0–540 Ma | [PALEOMAP PaleoDEMs](https://zenodo.org/records/5460860): Scotese & Wright (2018); converted to 1° WebP maps | CC BY 4.0 |
+| Plates 0–540 Ma | PALEOMAP (Scotese 2016) via the GPlates Web Service | cited |
+| Land elevation (relief) | GEBCO 08 via NASA Visible Earth, record 73934 | GEBCO terms (free with attribution) |
+| Close-up imagery | [NASA GIBS](https://earthdata.nasa.gov/gibs), Blue Marble Next Generation, streamed | Public domain (NASA) |
+| Close-up terrain | [Terrain Tiles](https://registry.opendata.aws/terrain-tiles/) (Mapzen / AWS open data: SRTM, GMTED2010, ETOPO1, NED and others), streamed, credited on screen | Attribution per source |
+| Stars | Yale Bright Star Catalogue, 5th rev. ed. (Hoffleit & Warren 1991, NASA ADC / Harvard) | Public domain |
+| Moon | NASA LRO LROC colour map (NASA SVS 4720) | Public domain (NASA) |
+| Sun and Moon positions, precession | Meeus, *Astronomical Algorithms* (2nd ed.); IAU general precession | cited |
 | Fonts | Inter, Instrument Serif (Google Fonts) | OFL |
 
 **Licence note:** CShapes 2.0 is CC BY-NC-SA 4.0, so while `public/data/history/cshapes.topo.json` is

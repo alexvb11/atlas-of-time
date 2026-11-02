@@ -1,12 +1,13 @@
 // Legend and source notes for the optional layers showing at the current date, above the corner
 // buttons. The layers themselves are switched in Settings.
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useSettings } from '../time/settings'
 import { useTime } from '../time/store'
 import { TRADE_ROUTES, routeAlpha } from '../data/trade'
 import { DENSITY_STOPS } from '../scene/Density'
 import { greenSaharaAt, iceAt, seaLevelAt } from '../time/climate'
-import { subsolarAt } from '../scene/world'
+import { subsolarAt, world } from '../scene/world'
 import { PRESENT, toMa } from '../time/scale'
 
 /** Legend and source notes for the layers visible at the current date (above the corner buttons) */
@@ -14,7 +15,13 @@ export function LayerNotes() {
   const t = useTime((s) => s.time)
   // a sheet on the left covers this corner; its own content wins
   const sheetOpen = useTime((s) => s.side !== null)
-  const { density, trade, sun, sourceNotes, climate, greenSahara } = useSettings()
+  const { density, trade, sun, sourceNotes, climate, greenSahara, terrain } = useSettings()
+  // polled, since it changes with the camera rather than with React state
+  const [detail, setDetail] = useState(false)
+  useEffect(() => {
+    const id = setInterval(() => setDetail(world.detail), 700)
+    return () => clearInterval(id)
+  }, [])
   const notes: { key: string; node: React.ReactNode }[] = []
   const deep = toMa(t) > 0.02
   if (density && !deep && t >= -9999)
@@ -48,6 +55,8 @@ export function LayerNotes() {
       ),
     })
   }
+  if (detail)
+    notes.push({ key: 'detail', node: <span className="text-dim">Close-up: NASA GIBS Blue Marble imagery · terrain from Terrain Tiles (Mapzen / AWS: SRTM, GMTED, ETOPO1 and others), height × {terrain}</span> })
   const green = greenSaharaAt(t)
   if (green > 0.2 && greenSahara && sourceNotes) notes.push({ key: 'green', node: <span className="text-dim">Green Sahara: African Humid Period, about 14,800–5,000 years ago · extent approximate</span> })
   else if (iceAt(t) > 0.15 && climate && sourceNotes && !deep)

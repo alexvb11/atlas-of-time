@@ -4,7 +4,9 @@
 //    land polygons that share vertices with the country borders.
 // 2. Triangulates land in lon/lat (earcut) and refines it conformingly so no edge is longer than
 //    MAX_EDGE_DEG on the sphere (big triangles would cut through the globe).
-// 3. Sends every vertex to the GPlates Web Service (MERDITH2021 plate model) once per timestep.
+// 3. Sends every vertex to the GPlates Web Service once per timestep: PALEOMAP (Scotese) back to
+//    540 Ma, so the drifting crust matches the PALEOMAP PaleoDEM landscapes drawn there, and
+//    MERDITH2021 for the older times PALEOMAP does not cover.
 //    Because the same point list is reconstructed every time, vertex i is the same piece of crust
 //    in every snapshot, so the client can interpolate positions on the GPU.
 //
@@ -24,6 +26,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const cache = path.join(root, 'scripts/.cache')
 const out = path.join(root, 'public/data/drift')
 const MODEL = 'MERDITH2021'
+/** PALEOMAP to 540 Ma (matching the PaleoDEMs), Merdith et al. 2021 beyond */
+const modelAt = (time) => (time <= 540 ? 'PALEOMAP' : MODEL)
 const MAX_EDGE_DEG = Number(process.env.E ?? 5)
 const TIMES = [
   ...Array.from({ length: 51 }, (_, i) => i * 5), // 0..250 Ma every 5 Myr
@@ -217,7 +221,7 @@ async function requestPoints(points, time, cacheName) {
   const CHUNK = 6000
   for (let s = 0; s < points.length; s += CHUNK) {
     const part = points.slice(s, s + CHUNK)
-    const body = `points=${part.map(([a, b]) => `${a.toFixed(4)},${b.toFixed(4)}`).join(',')}&time=${time}&model=${MODEL}&return_null_points`
+    const body = `points=${part.map(([a, b]) => `${a.toFixed(4)},${b.toFixed(4)}`).join(',')}&time=${time}&model=${modelAt(time)}&return_null_points`
     for (let attempt = 0; ; attempt++) {
       try {
         const r = await fetch('https://gws.gplates.org/reconstruct/reconstruct_points/', {
@@ -253,7 +257,7 @@ for (const f of await fs.readdir(cache)) {
   const ll = new Float32Array(ab, 16, n * 2)
   const keyIdx = new Map()
   for (let i = 0; i < n; i++) keyIdx.set(`${norm(ll[i * 2]).toFixed(4)},${ll[i * 2 + 1].toFixed(4)}`, i)
-  previous.push({ name: `gplates-${MODEL}-${n}`, keyIdx })
+  previous.push({ n, keyIdx })
 }
 const vertKey = (i) => `${verts[i][0].toFixed(4)},${verts[i][1].toFixed(4)}`
 const source = verts.map((_, i) => {
@@ -265,18 +269,20 @@ const source = verts.map((_, i) => {
   return null
 })
 const missing = source.map((s, i) => (s ? -1 : i)).filter((i) => i >= 0)
-const missingName = `gplates-${MODEL}-x${createHash('sha1').update(missing.map(vertKey).join(';')).digest('hex').slice(0, 10)}`
+// cache names carry the plate model, so a PALEOMAP time never reuses a Merdith answer
+const missingHash = createHash('sha1').update(missing.map(vertKey).join(';')).digest('hex').slice(0, 10)
 console.log(`${N - missing.length} vertices reused from earlier builds, ${missing.length} new`)
 if (process.env.DRY) process.exit(0)
 
 async function reconstruct(time) {
   const olds = new Map()
   for (const p of previous) {
-    try { olds.set(p, JSON.parse(await fs.readFile(path.join(cache, `${p.name}-${time}.json`), 'utf8'))) } catch {}
+    try { olds.set(p, JSON.parse(await fs.readFile(path.join(cache, `gplates-${modelAt(time)}-${p.n}-${time}.json`), 'utf8'))) } catch {}
   }
   const extraIdx = missing.slice()
   // vertices whose earlier build lacks this timestep must be requested too
   source.forEach((s, i) => { if (s && !olds.has(s[0])) extraIdx.push(i) })
+  const missingName = `gplates-${modelAt(time)}-x${missingHash}`
   const extra = extraIdx.length ? await requestPoints(extraIdx.map((i) => verts[i]), time, extraIdx.length === missing.length ? missingName : `${missingName}-full`) : []
   const out = new Array(N)
   extraIdx.forEach((i, k) => (out[i] = extra[k]))
@@ -356,6 +362,6 @@ for (const t of TIMES) {
 
 await fs.writeFile(
   path.join(out, 'index.json'),
-  JSON.stringify({ model: MODEL, vertices: N, times: TIMES, nulls: nullStats, source: 'GPlates Web Service (gws.gplates.org), Merdith et al. 2021' }),
+  JSON.stringify({ model: 'PALEOMAP to 540 Ma, MERDITH2021 beyond', paleomapUntil: 540, vertices: N, times: TIMES, nulls: nullStats, source: 'GPlates Web Service (gws.gplates.org): PALEOMAP (Scotese 2016) to 540 Ma, Merdith et al. 2021 beyond' }),
 )
 console.log('null points per timestep', nullStats)

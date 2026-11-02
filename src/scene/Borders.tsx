@@ -12,7 +12,7 @@ import { lonLatToVec3 } from '../geo/sphere'
 import { world } from './world'
 import { loadEntityIndex } from '../data/entities'
 import { useTime } from '../time/store'
-import { settings } from '../time/settings'
+import { settings, useSettings } from '../time/settings'
 
 const vtx = /* glsl */ `
 uniform float uLift;
@@ -30,56 +30,67 @@ uniform float uOpacity;
 varying float vFacing;
 void main() { gl_FragColor = vec4(uColor, uOpacity * smoothstep(0.02, 0.3, vFacing)); }
 `
-// Borders are drawn as screen-space lines (three's LineSegments2): a steady pixel width at every
-// zoom, smooth instead of one-pixel aliased. Approximate borders are dashed.
-const lineCache = new Map<string, LineSegments2>()
+// Borders at the default thickness are native GL lines (one pixel, smoothed by the composer's
+// multisampling): cheap enough to keep 60 fps. Thicker borders, chosen in Settings, switch to
+// screen-space lines (three's LineSegments2), which hold any pixel width but cost far more.
+// Approximate borders are dashed either way.
+type BorderLine = THREE.LineSegments | LineSegments2
+const lineCache = new Map<string, BorderLine>()
 const LIFT = 1.0018
+/** pixel width above which the fat lines are used */
+export const FAT_FROM = 1.5
 
-function snapshotLines(snap: Snapshot, soft: boolean) {
-  const key = `${snap.year}${soft ? 's' : ''}`
+function snapshotLines(snap: Snapshot, soft: boolean, fat: boolean): BorderLine {
+  const key = `${snap.year}${soft ? 's' : ''}${fat ? 'f' : ''}`
   let l = lineCache.get(key)
   if (l) {
     // most recently used last, so eviction below drops what was seen longest ago
     lineCache.delete(key)
     lineCache.set(key, l)
-  } else {
-    const src = soft ? snap.soft : snap.segments
-    const pos = new Float32Array(src.length)
-    for (let i = 0; i < src.length; i++) pos[i] = src[i] * LIFT
+    return l
+  }
+  const src = soft ? snap.soft : snap.segments
+  const pos = new Float32Array(src.length)
+  for (let i = 0; i < src.length; i++) pos[i] = src[i] * LIFT
+  const color = soft ? 0xe9dcc4 : 0xd6ecff
+  if (fat) {
     const g = new LineSegmentsGeometry()
     g.setPositions(pos)
-    const m = new LineMaterial({
-      color: soft ? 0xe9dcc4 : 0xd6ecff,
-      linewidth: 1.2,
-      transparent: true,
-      depthWrite: false,
-      opacity: 0,
-      dashed: soft,
-      dashSize: 0.004,
-      gapSize: 0.0033,
-    })
-    l = new LineSegments2(g, m)
-    if (soft) l.computeLineDistances()
-    l.renderOrder = 3
-    l.raycast = () => {}
-    lineCache.set(key, l)
-    // scrubbing through centuries would otherwise keep every year's lines on the GPU
-    for (const [k, old] of lineCache) {
-      if (lineCache.size <= 24) break
-      old.geometry.dispose()
-      ;(old.material as LineMaterial).dispose()
-      lineCache.delete(k)
-    }
+    const m = new LineMaterial({ color, linewidth: 2, transparent: true, depthWrite: false, opacity: 0, dashed: soft, dashSize: 0.004, gapSize: 0.0033 })
+    const f = new LineSegments2(g, m)
+    if (soft) f.computeLineDistances()
+    l = f
+  } else {
+    const g = new THREE.BufferGeometry()
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3))
+    const m = soft
+      ? new THREE.LineDashedMaterial({ color, transparent: true, depthWrite: false, opacity: 0, dashSize: 0.004, gapSize: 0.0033 })
+      : new THREE.LineBasicMaterial({ color, transparent: true, depthWrite: false, opacity: 0 })
+    const t = new THREE.LineSegments(g, m)
+    if (soft) t.computeLineDistances()
+    l = t
+  }
+  l.renderOrder = 3
+  l.raycast = () => {}
+  l.frustumCulled = false
+  lineCache.set(key, l)
+  // scrubbing through centuries would otherwise keep every year's lines on the GPU
+  for (const [k, old] of lineCache) {
+    if (lineCache.size <= 24) break
+    old.geometry.dispose()
+    ;(old.material as THREE.Material).dispose()
+    lineCache.delete(k)
   }
   return l
 }
 
 /** One snapshot's firm and dashed lines, faded by the parent */
-function SnapshotLines({ snap, mats }: { snap: Snapshot; mats: { firm: React.RefObject<LineMaterial | null>; soft: React.RefObject<LineMaterial | null> } }) {
-  const firm = snap.segments.length > 0 ? snapshotLines(snap, false) : null
-  const soft = snap.soft.length > 0 ? snapshotLines(snap, true) : null
-  mats.firm.current = (firm?.material as LineMaterial) ?? null
-  mats.soft.current = (soft?.material as LineMaterial) ?? null
+function SnapshotLines({ snap, lines }: { snap: Snapshot; lines: { firm: React.RefObject<BorderLine | null>; soft: React.RefObject<BorderLine | null> } }) {
+  const fat = useSettings((s) => s.borderWidth > FAT_FROM)
+  const firm = snap.segments.length > 0 ? snapshotLines(snap, false, fat) : null
+  const soft = snap.soft.length > 0 ? snapshotLines(snap, true, fat) : null
+  lines.firm.current = firm
+  lines.soft.current = soft
   return (
     <>
       {firm && <primitive object={firm} />}
@@ -110,8 +121,8 @@ export function Borders() {
 
   const curSnap = cur !== null ? getSnapshot(cur) : undefined
   const nextSnap = next !== null ? getSnapshot(next) : undefined
-  const a = { firm: useRef<LineMaterial>(null), soft: useRef<LineMaterial>(null) }
-  const b = { firm: useRef<LineMaterial>(null), soft: useRef<LineMaterial>(null) }
+  const a = { firm: useRef<BorderLine>(null), soft: useRef<BorderLine>(null) }
+  const b = { firm: useRef<BorderLine>(null), soft: useRef<BorderLine>(null) }
   const { camera } = useThree()
 
   useFrame(() => {
@@ -122,18 +133,17 @@ export function Borders() {
     // dashes stay roughly the same size on screen as the camera zooms
     const dash = Math.max(0.2, camera.position.length() - 1)
     for (const [m, k] of [[a, 1 - fade], [b, fade]] as const) {
-      const firm = m.firm.current
-      const soft = m.soft.current
-      if (firm) {
-        firm.opacity = Math.min(1, base * 2.2) * k
-        firm.linewidth = prefs.borderWidth
-        firm.visible = firm.opacity > 0.003
-      }
-      if (soft) {
-        soft.opacity = prefs.approxBorders ? Math.min(1, base * 2) * k : 0
-        soft.linewidth = prefs.borderWidth * 0.9
-        soft.dashScale = 1 / dash
-        soft.visible = soft.opacity > 0.003
+      for (const [line, soft] of [[m.firm.current, false], [m.soft.current, true]] as const) {
+        if (!line) continue
+        const mat = line.material as THREE.Material & { opacity: number }
+        // fat lines cover more pixels at their edges, so they need a little more opacity to match
+        const gain = mat instanceof LineMaterial ? 1.6 : 1.1
+        mat.opacity = soft ? (prefs.approxBorders ? Math.min(1, base * gain * 0.9) * k : 0) : Math.min(1, base * gain) * k
+        line.visible = mat.opacity > 0.003
+        if (mat instanceof LineMaterial) {
+          mat.linewidth = prefs.borderWidth * (soft ? 0.9 : 1)
+          if (soft) mat.dashScale = 1 / dash
+        } else if (mat instanceof THREE.LineDashedMaterial) mat.scale = 1 / dash
       }
     }
   })
@@ -141,8 +151,8 @@ export function Borders() {
   return (
     <group>
       <CompareGhost version={version} />
-      {curSnap && <SnapshotLines key={`a${curSnap.year}`} snap={curSnap} mats={a} />}
-      {nextSnap && nextSnap !== curSnap && <SnapshotLines key={`b${nextSnap.year}`} snap={nextSnap} mats={b} />}
+      {curSnap && <SnapshotLines key={`a${curSnap.year}`} snap={curSnap} lines={a} />}
+      {nextSnap && nextSnap !== curSnap && <SnapshotLines key={`b${nextSnap.year}`} snap={nextSnap} lines={b} />}
       {curSnap && <Labels snap={curSnap} />}
     </group>
   )

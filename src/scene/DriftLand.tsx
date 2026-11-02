@@ -165,7 +165,8 @@ function DriftLayers({ mesh }: { mesh: DriftMesh }) {
     const u = matRef.current?.uniforms
     if (u) {
       u.uMix.value = pair.f
-      u.uOpacity.value = Math.min(1, world.drift * 1.15) * world.deepConf
+      // where the PALEOMAP landscapes are drawn, the crust mesh only takes clicks
+      u.uOpacity.value = Math.min(1, world.drift * 1.15) * world.deepConf * (1 - world.paleo)
       u.uDim.value = world.dim * 0.3
       u.uTint.value.copy(world.tint)
       u.uTintAmt.value = world.tintAmt
@@ -178,7 +179,8 @@ function DriftLayers({ mesh }: { mesh: DriftMesh }) {
     ] as const) {
       if (!m) continue
       m.uniforms.uMix.value = pair.f
-      m.uniforms.uOpacity.value = op * world.drift
+      // today's coastlines and borders stay as faint guides over the ancient landscapes
+      m.uniforms.uOpacity.value = op * world.drift * (1 - world.paleo * 0.45)
     }
   })
 

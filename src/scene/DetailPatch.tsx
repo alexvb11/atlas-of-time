@@ -206,6 +206,7 @@ export function DetailPatch() {
     const show = on && modern && dist < 2.0
     mat.uniforms.uOpacity.value += ((show && patch ? 1 - THREE.MathUtils.smoothstep(dist, 1.75, 2.0) : 0) - mat.uniforms.uOpacity.value) * 0.12
     mat.uniforms.uDim.value = world.dim
+    world.detail = mat.uniforms.uOpacity.value > 0.3
     if (!show || state.clock.elapsedTime - lastCheck.current < 0.4) return
     lastCheck.current = state.clock.elapsedTime
     // tile zoom from height above the ground: about one tile pixel per screen pixel

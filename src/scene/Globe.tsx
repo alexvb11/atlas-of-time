@@ -147,7 +147,7 @@ export function Globe() {
     }),
     [tex],
   )
-  const atmoUniforms = useMemo(() => ({ uSun: { value: SUN }, uIntensity: { value: 20 }, uShell: { value: 1.06 }, uSteps: { value: mobile ? 8 : 14 } }), [])
+  const atmoUniforms = useMemo(() => ({ uSun: { value: SUN }, uIntensity: { value: 20 }, uShell: { value: 1.06 }, uSteps: { value: mobile ? 7 : 10 } }), [])
 
   useFrame((state, dt) => {
     const f = fadeIn.current

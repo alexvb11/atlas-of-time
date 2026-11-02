@@ -72,9 +72,9 @@ export function Corner() {
             className="hidden pl-1 text-[11px] text-dim italic md:inline"
           >
             {deep
-              ? toMa(t) > 500
-                ? 'Reconstructions this old are highly uncertain · Merdith et al. 2021'
-                : "Plate reconstruction: Merdith et al. 2021 · today's coastlines carried back in time"
+              ? toMa(t) > 540
+                ? 'Reconstructions this old are highly uncertain · Merdith et al. 2021 · today’s coastlines carried back'
+                : 'Landscapes and plates: PALEOMAP (Scotese & Wright 2018) · faint lines: today’s coastlines'
               : t >= 1886
                 ? 'Borders: CShapes 2.0 (ETH Zürich), each change dated to the day'
                 : t >= -3399

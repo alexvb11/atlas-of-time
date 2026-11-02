@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.12.0 — 2026-11-02
+
+### Time
+- **Any exact year**: click the year to type one ("1066", "44 BC", "20 ka", "65 Ma"); ‹ › and
+  ← / → step one year (Shift or Alt: ten); Page Up / Down a century; the wheel over the time bar
+  steps; Shift-drag scrubs slowly; a drag settles on the year shown. The slider no longer pulls
+  toward milestones. Every jump in the app lands on its exact date.
+
+### Graphics
+- Physically based atmosphere (Rayleigh + Mie scattering), ocean glint with waves, turquoise
+  shelves, cloud shadows, mountain relief from real elevation, 8K imagery on capable screens.
+- Close-ups: streamed NASA imagery on 3D terrain, smooth zoom, and the camera leans toward the
+  horizon near the ground.
+- The real night sky: 9,096 catalogue stars moved to the date (precession, proper motion), the
+  Milky Way on the galactic plane, the Moon in its phase, the Sun.
+- Deep time back to 540 Ma: the PALEOMAP PaleoDEM landscapes, with plates rebuilt on PALEOMAP
+  to match.
+- Crisper borders with a thickness setting; *Political map* colouring.
+- Settings: mountain relief, sharp close-ups, terrain height, horizon lean, Moon and Sun,
+  political map, border thickness.
+
 ## 0.11.1 — 2026-11-02
 
 - **Fixed: the production build failed at start-up** ("e is not a function"): the hand-made

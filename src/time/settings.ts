@@ -56,7 +56,7 @@ export const DEFAULTS: Settings = {
   borderLabels: true,
   approxBorders: true,
   borderBrightness: 1,
-  borderWidth: 1.2,
+  borderWidth: 1,
   politicalFill: false,
   labelSize: 'medium',
   trade: true,

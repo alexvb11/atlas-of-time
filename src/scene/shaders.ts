@@ -289,8 +289,8 @@ void main() {
     vec2 ps = sphere(x, uSun, 1.0);
     if (ps.x > 0.0) continue;
     float tl = sphere(x, uSun, uShell).y;
-    float dl = tl / 4.0, lR = 0.0, lM = 0.0;
-    for (int j = 0; j < 4; j++) {
+    float dl = tl / 3.0, lR = 0.0, lM = 0.0;
+    for (int j = 0; j < 3; j++) {
       vec3 y = x + uSun * dl * (float(j) + 0.5);
       float hy = length(y) - 1.0;
       lR += exp(-hy / HR) * dl;
