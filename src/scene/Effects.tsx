@@ -15,6 +15,7 @@ export function Effects({ lite }: { lite: boolean }) {
     offset.current.set(0.0022 * w, 0.0012 * w)
     if (ca.current) ca.current.offset = offset.current
     sound.warp(w)
+    sound.era(world.t)
   })
   if (lite) {
     return (
