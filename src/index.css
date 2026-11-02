@@ -384,6 +384,38 @@ body {
   border-color: var(--c);
 }
 
+/* landmark name tags when flying low */
+.landmark-tag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: #ffe6b8;
+  font: 600 calc(12px * var(--label-scale, 1))/1.2 var(--font-sans);
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.95);
+  white-space: nowrap;
+  transform-origin: left center;
+}
+.landmark-tag i {
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.8;
+}
+.landmark-tag .dot {
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background: #ffe6b8;
+}
+
 /* places reached by a spread (plague, printing, conquest, voyages) */
 .spread-dot {
   position: absolute;

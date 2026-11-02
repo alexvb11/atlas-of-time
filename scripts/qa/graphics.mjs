@@ -26,6 +26,9 @@ const VIEWS = {
   sky: { t: 2026, lon: 160, lat: -10, dist: 6.5, sun: 'fixed' },
   skyold: { t: -9000, lon: 160, lat: -10, dist: 6.5, sun: 'fixed' },
   plague: { t: 1348.6, lon: 15, lat: 45, dist: 2.6, sun: 'always-day', extra: { borders: true, spreads: true } },
+  giza: { t: 2026, lon: 31.128, lat: 29.962, dist: 1.00012 },
+  parthenon: { t: 200, lon: 23.7262, lat: 37.968, dist: 1.00016 },
+  notredame: { t: 1900, lon: 2.3497, lat: 48.8515, dist: 1.00007 },
   political: { t: 1500.5, lon: 20, lat: 40, dist: 2.6, extra: { borders: true, politicalFill: true } },
   borders: { t: 1850.5, lon: 10, lat: 48, dist: 1.9, extra: { borders: true } },
 }

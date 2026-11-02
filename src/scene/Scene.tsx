@@ -14,6 +14,7 @@ import { JourneysLayer } from './Journeys'
 import { CitiesLayer } from './Cities'
 import { TradeRoutesLayer } from './TradeRoutes'
 import { SpreadsLayer } from './Spreads'
+import { LandmarksLayer } from './Landmarks'
 import { DensityLayer } from './Density'
 import { PoliticalFill } from './PoliticalFill'
 import { TerrainTiles } from './TerrainTiles'
@@ -89,6 +90,7 @@ export function Scene() {
         <CitiesLayer />
         <TradeRoutesLayer />
         <SpreadsLayer />
+        <LandmarksLayer />
       </Suspense>
       <Effects lite={lite} />
     </Canvas>

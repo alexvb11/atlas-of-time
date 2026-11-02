@@ -61,6 +61,7 @@ export function LayerNotes() {
       node: (
         <span className="text-dim">
           <a className="pointer-events-auto underline-offset-2 hover:underline" href="https://cloudless.eox.at" target="_blank" rel="noreferrer">EOxCloudless</a> https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024) · terrain: Terrain Tiles (Mapzen / AWS: SRTM, GMTED, ETOPO1 and others){terrain !== 1 ? `, height × ${terrain}` : ''}
+          {t < 1990 && ' · close-ups show today’s landscape, not that of the year shown'}
         </span>
       ),
     })

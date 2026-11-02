@@ -30,8 +30,8 @@ export const pointerOnGlobe = { dragging: false }
 if (import.meta.env.DEV || new URLSearchParams(location.search).has('qa')) (window as unknown as { __rig: typeof rig }).__rig = rig
 
 export const DEFAULT_DIST = 4.3
-/** closest approach: with close-ups on, down to ~400 m above the ground under the view */
-const minDist = () => (settings().detail ? 1 + (groundHeightAt(rig.lon, rig.lat) * settings().terrain + 400) / 6371000 : 1.22)
+/** closest approach: with close-ups on, down to ~900 m above the ground (lower, the 10 m imagery blurs) */
+const minDist = () => (settings().detail ? 1 + (groundHeightAt(rig.lon, rig.lat) * settings().terrain + 900) / 6371000 : 1.22)
 const MAX_DIST = 7
 
 const tmpA = new THREE.Vector3()

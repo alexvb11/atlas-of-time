@@ -15,6 +15,7 @@ export type Settings = {
   trade: boolean
   journeys: boolean
   spreads: boolean
+  landmarks: boolean
   events: boolean
   cities: boolean
   cityLabels: boolean
@@ -63,6 +64,7 @@ export const DEFAULTS: Settings = {
   trade: true,
   journeys: true,
   spreads: true,
+  landmarks: true,
   events: true,
   cities: true,
   cityLabels: true,
