@@ -384,6 +384,61 @@ body {
   border-color: var(--c);
 }
 
+/* places reached by a spread (plague, printing, conquest, voyages) */
+.spread-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--c);
+  font: 500 calc(11px * var(--label-scale, 1))/1 var(--font-sans);
+  text-shadow: 0 1px 5px rgb(0 0 0 / 0.95);
+  white-space: nowrap;
+  will-change: transform, opacity;
+}
+.spread-dot .dot {
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 10px var(--c);
+}
+.spread-dot .ring {
+  position: absolute;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c);
+  opacity: 0;
+}
+.spread-dot.fresh .ring {
+  animation: spread-ring 1.6s ease-out infinite;
+}
+@keyframes spread-ring {
+  from { transform: scale(0.3); opacity: 0.9; }
+  to { transform: scale(2.4); opacity: 0; }
+}
+.spread-dot .txt {
+  opacity: 0.85;
+}
+.spread-dot:not(.fresh) .txt {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.spread-dot:hover .txt,
+.spread-dot:focus-visible .txt {
+  opacity: 1;
+}
+
 /* largest cities at the current date, with their recorded population */
 .city-label {
   position: absolute;

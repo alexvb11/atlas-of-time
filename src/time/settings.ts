@@ -14,6 +14,7 @@ export type Settings = {
   // layers
   trade: boolean
   journeys: boolean
+  spreads: boolean
   events: boolean
   cities: boolean
   cityLabels: boolean
@@ -61,6 +62,7 @@ export const DEFAULTS: Settings = {
   labelSize: 'medium',
   trade: true,
   journeys: true,
+  spreads: true,
   events: true,
   cities: true,
   cityLabels: true,

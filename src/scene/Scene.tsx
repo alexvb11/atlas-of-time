@@ -13,6 +13,7 @@ import { EventsLayer, HerePins } from './Events'
 import { JourneysLayer } from './Journeys'
 import { CitiesLayer } from './Cities'
 import { TradeRoutesLayer } from './TradeRoutes'
+import { SpreadsLayer } from './Spreads'
 import { DensityLayer } from './Density'
 import { PoliticalFill } from './PoliticalFill'
 import { TerrainTiles } from './TerrainTiles'
@@ -87,6 +88,7 @@ export function Scene() {
         <JourneysLayer />
         <CitiesLayer />
         <TradeRoutesLayer />
+        <SpreadsLayer />
       </Suspense>
       <Effects lite={lite} />
     </Canvas>

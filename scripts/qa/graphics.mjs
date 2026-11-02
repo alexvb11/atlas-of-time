@@ -25,6 +25,7 @@ const VIEWS = {
   deep: { t: 2026 - 200e6, lon: 10, lat: 10, dist: 4.3 },
   sky: { t: 2026, lon: 160, lat: -10, dist: 6.5, sun: 'fixed' },
   skyold: { t: -9000, lon: 160, lat: -10, dist: 6.5, sun: 'fixed' },
+  plague: { t: 1348.6, lon: 15, lat: 45, dist: 2.6, sun: 'always-day', extra: { borders: true, spreads: true } },
   political: { t: 1500.5, lon: 20, lat: 40, dist: 2.6, extra: { borders: true, politicalFill: true } },
   borders: { t: 1850.5, lon: 10, lat: 48, dist: 1.9, extra: { borders: true } },
 }

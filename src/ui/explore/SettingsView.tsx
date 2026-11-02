@@ -101,6 +101,7 @@ const SECTIONS: Section[] = [
     rows: [
       { label: 'Trade routes', sub: 'Silk Road, Hansa, galleons… flowing while in use', control: <Toggle k="trade" label="Trade routes" /> },
       { label: 'Voyages and marches', sub: 'Magellan, Hannibal, Marco Polo… moving on the globe', keywords: 'journeys travellers', control: <Toggle k="journeys" label="Voyages and marches" /> },
+      { label: 'Spreads', sub: 'The Black Death, printing, the early Muslim conquests, Polynesian voyages… moving across the map', keywords: 'plague migration diffusion', control: <Toggle k="spreads" label="Spreads" /> },
       { label: 'Event markers', sub: 'Battles, foundings and discoveries near their date', keywords: 'pins dots', control: <Toggle k="events" label="Event markers" /> },
       { label: 'Cities', sub: 'Recorded populations of major cities', control: <Toggle k="cities" label="Cities" /> },
       { label: 'City names and populations', control: <Toggle k="cityLabels" label="City names and populations" /> },
