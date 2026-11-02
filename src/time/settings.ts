@@ -8,6 +8,8 @@ export type Settings = {
   borderLabels: boolean
   approxBorders: boolean
   borderBrightness: number
+  borderWidth: number
+  politicalFill: boolean
   labelSize: 'small' | 'medium' | 'large'
   // layers
   trade: boolean
@@ -50,6 +52,8 @@ export const DEFAULTS: Settings = {
   borderLabels: true,
   approxBorders: true,
   borderBrightness: 1,
+  borderWidth: 1.2,
+  politicalFill: false,
   labelSize: 'medium',
   trade: true,
   journeys: true,

@@ -4,6 +4,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
+import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2.js'
+import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js'
+import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js'
 import { getSnapshot, historyYears, loadHistoryIndex, loadSnapshot, onHistoryChange, snapshotIndexAt, snapshotPair, type Snapshot } from '../data/history'
 import { lonLatToVec3 } from '../geo/sphere'
 import { world } from './world'
@@ -27,62 +30,60 @@ uniform float uOpacity;
 varying float vFacing;
 void main() { gl_FragColor = vec4(uColor, uOpacity * smoothstep(0.02, 0.3, vFacing)); }
 `
-const dashVtx = /* glsl */ `
-uniform float uLift;
-attribute float aDist;
-varying float vFacing;
-varying float vDist;
-void main() {
-  vec3 p = normalize(position);
-  vDist = aDist;
-  vec4 w = modelMatrix * vec4(p * uLift, 1.0);
-  vFacing = dot(normalize(cameraPosition - w.xyz), p);
-  gl_Position = projectionMatrix * viewMatrix * w;
-}
-`
-const dashFrag = /* glsl */ `
-uniform vec3 uColor;
-uniform float uOpacity;
-uniform float uDash;
-varying float vFacing;
-varying float vDist;
-void main() {
-  if (fract(vDist / uDash) > 0.55) discard;
-  gl_FragColor = vec4(uColor, uOpacity * smoothstep(0.02, 0.3, vFacing));
-}
-`
+// Borders are drawn as screen-space lines (three's LineSegments2): a steady pixel width at every
+// zoom, smooth instead of one-pixel aliased. Approximate borders are dashed.
+const lineCache = new Map<string, LineSegments2>()
+const LIFT = 1.0018
 
-const geoCache = new Map<string, THREE.BufferGeometry>()
-
-function snapshotGeometry(snap: Snapshot, soft = false) {
+function snapshotLines(snap: Snapshot, soft: boolean) {
   const key = `${snap.year}${soft ? 's' : ''}`
-  let g = geoCache.get(key)
-  if (!g) {
-    g = new THREE.BufferGeometry()
-    g.setAttribute('position', new THREE.BufferAttribute(soft ? snap.soft : snap.segments, 3))
-    if (soft) g.setAttribute('aDist', new THREE.BufferAttribute(snap.softDist, 1))
-    g.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 1.01)
-    geoCache.set(key, g)
+  let l = lineCache.get(key)
+  if (l) {
+    // most recently used last, so eviction below drops what was seen longest ago
+    lineCache.delete(key)
+    lineCache.set(key, l)
+  } else {
+    const src = soft ? snap.soft : snap.segments
+    const pos = new Float32Array(src.length)
+    for (let i = 0; i < src.length; i++) pos[i] = src[i] * LIFT
+    const g = new LineSegmentsGeometry()
+    g.setPositions(pos)
+    const m = new LineMaterial({
+      color: soft ? 0xe9dcc4 : 0xd6ecff,
+      linewidth: 1.2,
+      transparent: true,
+      depthWrite: false,
+      opacity: 0,
+      dashed: soft,
+      dashSize: 0.004,
+      gapSize: 0.0033,
+    })
+    l = new LineSegments2(g, m)
+    if (soft) l.computeLineDistances()
+    l.renderOrder = 3
+    l.raycast = () => {}
+    lineCache.set(key, l)
+    // scrubbing through centuries would otherwise keep every year's lines on the GPU
+    for (const [k, old] of lineCache) {
+      if (lineCache.size <= 24) break
+      old.geometry.dispose()
+      ;(old.material as LineMaterial).dispose()
+      lineCache.delete(k)
+    }
   }
-  return g
+  return l
 }
 
 /** One snapshot's firm and dashed lines, faded by the parent */
-function SnapshotLines({ snap, mats }: { snap: Snapshot; mats: { firm: React.RefObject<THREE.ShaderMaterial | null>; soft: React.RefObject<THREE.ShaderMaterial | null> } }) {
-  const uFirm = useMemo(() => ({ uLift: { value: 1.0018 }, uColor: { value: new THREE.Color('#d6ecff') }, uOpacity: { value: 0 } }), [])
-  const uSoft = useMemo(() => ({ uLift: { value: 1.0018 }, uColor: { value: new THREE.Color('#e9dcc4') }, uOpacity: { value: 0 }, uDash: { value: 0.006 } }), [])
+function SnapshotLines({ snap, mats }: { snap: Snapshot; mats: { firm: React.RefObject<LineMaterial | null>; soft: React.RefObject<LineMaterial | null> } }) {
+  const firm = snap.segments.length > 0 ? snapshotLines(snap, false) : null
+  const soft = snap.soft.length > 0 ? snapshotLines(snap, true) : null
+  mats.firm.current = (firm?.material as LineMaterial) ?? null
+  mats.soft.current = (soft?.material as LineMaterial) ?? null
   return (
     <>
-      {snap.segments.length > 0 && (
-        <lineSegments geometry={snapshotGeometry(snap)} raycast={() => null} renderOrder={3}>
-          <shaderMaterial ref={mats.firm} vertexShader={vtx} fragmentShader={frag} uniforms={uFirm} transparent depthWrite={false} />
-        </lineSegments>
-      )}
-      {snap.soft.length > 0 && (
-        <lineSegments geometry={snapshotGeometry(snap, true)} raycast={() => null} renderOrder={3}>
-          <shaderMaterial ref={mats.soft} vertexShader={dashVtx} fragmentShader={dashFrag} uniforms={uSoft} transparent depthWrite={false} />
-        </lineSegments>
-      )}
+      {firm && <primitive object={firm} />}
+      {soft && <primitive object={soft} />}
     </>
   )
 }
@@ -109,8 +110,8 @@ export function Borders() {
 
   const curSnap = cur !== null ? getSnapshot(cur) : undefined
   const nextSnap = next !== null ? getSnapshot(next) : undefined
-  const a = { firm: useRef<THREE.ShaderMaterial>(null), soft: useRef<THREE.ShaderMaterial>(null) }
-  const b = { firm: useRef<THREE.ShaderMaterial>(null), soft: useRef<THREE.ShaderMaterial>(null) }
+  const a = { firm: useRef<LineMaterial>(null), soft: useRef<LineMaterial>(null) }
+  const b = { firm: useRef<LineMaterial>(null), soft: useRef<LineMaterial>(null) }
   const { camera } = useThree()
 
   useFrame(() => {
@@ -119,12 +120,20 @@ export function Borders() {
     const prefs = settings()
     const base = 0.3 * prefs.borderBrightness * world.borders * (1 - world.dim * 0.45)
     // dashes stay roughly the same size on screen as the camera zooms
-    const dash = 0.0035 * Math.max(0.2, camera.position.length() - 1)
+    const dash = Math.max(0.2, camera.position.length() - 1)
     for (const [m, k] of [[a, 1 - fade], [b, fade]] as const) {
-      if (m.firm.current) m.firm.current.uniforms.uOpacity.value = base * k
-      if (m.soft.current) {
-        m.soft.current.uniforms.uOpacity.value = prefs.approxBorders ? base * 0.85 * k : 0
-        m.soft.current.uniforms.uDash.value = dash
+      const firm = m.firm.current
+      const soft = m.soft.current
+      if (firm) {
+        firm.opacity = Math.min(1, base * 2.2) * k
+        firm.linewidth = prefs.borderWidth
+        firm.visible = firm.opacity > 0.003
+      }
+      if (soft) {
+        soft.opacity = prefs.approxBorders ? Math.min(1, base * 2) * k : 0
+        soft.linewidth = prefs.borderWidth * 0.9
+        soft.dashScale = 1 / dash
+        soft.visible = soft.opacity > 0.003
       }
     }
   })

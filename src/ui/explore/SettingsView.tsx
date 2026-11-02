@@ -114,6 +114,8 @@ const SECTIONS: Section[] = [
       { label: 'Political borders', control: <Toggle k="borders" label="Political borders" /> },
       { label: 'Country and empire names', keywords: 'labels polity', control: <Toggle k="borderLabels" label="Country and empire names" /> },
       { label: 'Approximate borders', sub: 'Dashed lines for peoples and uncertain borders', keywords: 'dashed uncertain', control: <Toggle k="approxBorders" label="Approximate borders" /> },
+      { label: 'Political map', sub: 'Colour each state and people on the map', keywords: 'fill colour regions countries', control: <Toggle k="politicalFill" label="Political map" /> },
+      { label: 'Border thickness', keywords: 'width lines', control: <Slider k="borderWidth" label="Border thickness" min={0.6} max={3} step={0.1} fmt={(v) => `${v.toFixed(1)} px`} /> },
       { label: 'Border brightness', control: <Slider k="borderBrightness" label="Border brightness" min={0.3} max={2.5} step={0.1} fmt={pct} /> },
       { label: 'Label size', sub: 'Names on the globe', keywords: 'text font', control: <Choice k="labelSize" label="Label size" options={[['small', 'S'], ['medium', 'M'], ['large', 'L']]} /> },
     ],

@@ -13,6 +13,7 @@ import { JourneysLayer } from './Journeys'
 import { CitiesLayer } from './Cities'
 import { TradeRoutesLayer } from './TradeRoutes'
 import { DensityLayer } from './Density'
+import { PoliticalFill } from './PoliticalFill'
 import { updateWorld, world } from './world'
 import { useTime } from '../time/store'
 import { useSettings } from '../time/settings'
@@ -71,6 +72,7 @@ export function Scene() {
       <Suspense fallback={null}>
         <Globe />
         <DensityLayer />
+        <PoliticalFill />
         <DriftLand />
         <Borders />
         <Highlight />
