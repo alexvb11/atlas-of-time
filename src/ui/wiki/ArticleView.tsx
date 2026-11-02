@@ -4,6 +4,7 @@ import { article, film, term, useAsync, LANGS, getLang, displayTitle, type Block
 import { Film } from './Film'
 import { TermLink } from './Term'
 import { useReader } from './store'
+import { ReportMistake } from '../ReportMistake'
 
 export function Parts({ parts }: { parts: Inline[] }) {
   return (
@@ -122,6 +123,7 @@ export function ArticleView({ title, inline = false, subtitle }: { title: string
                   Open in reader ↗
                 </button>
               )}
+              <ReportMistake subject={`article “${a.data.title}”`} context={`Article: ${a.data.url} (if the article itself is wrong, it can also be corrected on Wikipedia)`} />
               <a href={a.data.url} target="_blank" rel="noreferrer" className="ml-auto text-[10.5px] text-dim hover:text-mist">
                 From Wikipedia ({LANGS[a.data.lang] ?? a.data.lang}), CC BY-SA 4.0 · full article ↗
               </a>

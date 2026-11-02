@@ -8,6 +8,8 @@ import { ConfTag, Stat, Ticker } from './bits'
 import { formatNumber, formatPopulation } from '../../time/format'
 import { periodAt } from '../../time/eras'
 import { Basics } from './Basics'
+import { ReportMistake } from '../ReportMistake'
+import { formatYear } from '../../time/format'
 
 /** Wikipedia extracts lose their pronunciation spans and leave "()" or "( ; )" behind */
 const cleanSummary = (t?: string) => t?.replace(/\s*\(\s*[;,]?\s*\)/g, '').replace(/\s{2,}/g, ' ')
@@ -166,6 +168,10 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
         </p>
       )}
       {note && <p className="text-[11px] text-dim italic">{note}</p>}
+      <ReportMistake
+        subject={`${'entity' in res ? res.entity.name : 'polity' in res ? res.polity.name : 'country' in res && res.country ? res.country.name : 'this place'} in ${formatYear(t)}`}
+        context={`Panel: ${res.kind}${res.kind === 'entity' ? ` ${res.entity.id}` : ''}`}
+      />
       {res.kind === 'entity' && res.entity.sources.length > 0 && (
         <p className="text-[11px] text-dim">
           Sources:{' '}
