@@ -23,7 +23,8 @@
     "qa:settings": "node scripts/qa/settings.mjs",
     "qa:basics": "node scripts/qa/basics.mjs",
     "qa:timeline": "node scripts/qa/timeline.mjs",
-    "qa:graphics": "node scripts/qa/graphics.mjs"
+    "qa:graphics": "node scripts/qa/graphics.mjs",
+    "qa:terrain": "node scripts/qa/terrain.mjs 7.66 45.9 1.0018"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

@@ -124,8 +124,8 @@ const SECTIONS: Section[] = [
     title: 'Earth and sky',
     rows: [
       { label: 'Clouds', keywords: 'weather', control: <Slider k="clouds" label="Clouds" min={0} max={1} step={0.05} fmt={(v) => (v < 0.01 ? 'off' : pct(v))} /> },
-      { label: 'Sharp close-ups', sub: 'Stream detailed NASA imagery and 3D terrain when zoomed in (present day)', keywords: 'zoom tiles detail hd', control: <Toggle k="detail" label="Sharp close-ups" /> },
-      { label: 'Terrain height', sub: 'How much mountains rise in close-ups (1× is true scale)', keywords: '3d exaggeration elevation', control: <Slider k="terrain" label="Terrain height" min={1} max={8} step={0.5} fmt={(v) => `${v}×`} /> },
+      { label: 'Sharp close-ups', sub: 'Stream 10 m satellite imagery and 3D terrain when zoomed in (present day)', keywords: 'zoom tiles detail hd', control: <Toggle k="detail" label="Sharp close-ups" /> },
+      { label: 'Terrain height', sub: 'How much mountains rise in close-ups (1× is true scale)', keywords: '3d exaggeration elevation', control: <Slider k="terrain" label="Terrain height" min={1} max={4} step={0.25} fmt={(v) => `${v}×`} /> },
       { label: 'Mountain relief', sub: 'Shading from real elevation, stronger up close', keywords: 'terrain 3d elevation mountains', control: <Slider k="relief" label="Mountain relief" min={0} max={2} step={0.1} fmt={(v) => (v < 0.05 ? 'off' : pct(v))} /> },
       { label: 'City lights at night', keywords: 'night lights electric', control: <Toggle k="nightLights" label="City lights at night" /> },
       { label: 'Atmosphere glow', control: <Toggle k="atmosphere" label="Atmosphere glow" /> },

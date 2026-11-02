@@ -10,7 +10,7 @@
 //   - snow on the highest ground.
 // The drifting crust (DriftLand.tsx) uses the same PALEOMAP plate model, so clicks land on the
 // right continent; today's coastlines stay as faint lines for orientation.
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { lightingChunk } from './shaders'
@@ -134,6 +134,7 @@ export function PaleoLand() {
   useEffect(() => {
     loadIndex().then(setMaps, () => {})
   }, [])
+  const mesh = useRef<THREE.Mesh>(null)
   const [pair, setPair] = useState<{ a: number; b: number } | null>(null)
   const [tex, setTex] = useState<{ a: THREE.Texture; b: THREE.Texture } | null>(null)
   const mat = useMemo(
@@ -177,6 +178,8 @@ export function PaleoLand() {
     const weight = maps ? world.drift * (1 - THREE.MathUtils.smoothstep(ma, MAX_MA - 8, MAX_MA + 2)) : 0
     world.paleo = weight * (tex ? 1 : 0)
     mat.uniforms.uOpacity.value = world.paleo
+    // even fully transparent it would write depth ~5 km up and hide the close-up terrain below
+    if (mesh.current) mesh.current.visible = world.paleo > 0.002
     mat.uniforms.uMa.value = ma
     mat.uniforms.uDim.value = world.dim * 0.3
     if (!maps || weight <= 0) return
@@ -192,5 +195,5 @@ export function PaleoLand() {
       mat.uniforms.uF.value = b === a ? 0 : (ma - a) / (b - a)
     }
   })
-  return <mesh geometry={geo} material={mat} raycast={() => null} renderOrder={1} />
+  return <mesh ref={mesh} geometry={geo} material={mat} raycast={() => null} renderOrder={1} />
 }

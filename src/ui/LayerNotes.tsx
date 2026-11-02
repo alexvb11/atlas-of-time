@@ -56,7 +56,14 @@ export function LayerNotes() {
     })
   }
   if (detail)
-    notes.push({ key: 'detail', node: <span className="text-dim">Close-up: NASA GIBS Blue Marble imagery · terrain from Terrain Tiles (Mapzen / AWS: SRTM, GMTED, ETOPO1 and others), height × {terrain}</span> })
+    notes.push({
+      key: 'detail',
+      node: (
+        <span className="text-dim">
+          <a className="pointer-events-auto underline-offset-2 hover:underline" href="https://cloudless.eox.at" target="_blank" rel="noreferrer">EOxCloudless</a> https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024) · terrain: Terrain Tiles (Mapzen / AWS: SRTM, GMTED, ETOPO1 and others){terrain !== 1 ? `, height × ${terrain}` : ''}
+        </span>
+      ),
+    })
   const green = greenSaharaAt(t)
   if (green > 0.2 && greenSahara && sourceNotes) notes.push({ key: 'green', node: <span className="text-dim">Green Sahara: African Humid Period, about 14,800–5,000 years ago · extent approximate</span> })
   else if (iceAt(t) > 0.15 && climate && sourceNotes && !deep)

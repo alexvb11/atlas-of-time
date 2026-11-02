@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { settings } from '../time/settings'
+import { groundHeightAt } from './TerrainTiles'
 import { world } from './world'
 import gsap from 'gsap'
 import { lonLatToVec3, vec3ToLonLat } from '../geo/sphere'
@@ -29,8 +30,8 @@ export const pointerOnGlobe = { dragging: false }
 if (import.meta.env.DEV || new URLSearchParams(location.search).has('qa')) (window as unknown as { __rig: typeof rig }).__rig = rig
 
 export const DEFAULT_DIST = 4.3
-/** closest approach: nearer when close-up imagery is on, since there is detail to see */
-const minDist = () => (settings().detail ? 1.06 : 1.22)
+/** closest approach: with close-ups on, down to ~400 m above the ground under the view */
+const minDist = () => (settings().detail ? 1 + (groundHeightAt(rig.lon, rig.lat) * settings().terrain + 400) / 6371000 : 1.22)
 const MAX_DIST = 7
 
 const tmpA = new THREE.Vector3()
@@ -77,13 +78,15 @@ export function CameraRig() {
       if (pts.size === 2) {
         const [a, b] = [...pts.values()]
         const d = Math.hypot(a.x - b.x, a.y - b.y)
-        if (pinch0 > 0) rig.zoomTo = THREE.MathUtils.clamp(dist0 * (pinch0 / d), minDist(), MAX_DIST)
+        if (pinch0 > 0) rig.zoomTo = THREE.MathUtils.clamp(1 + (dist0 - 1) * (pinch0 / d), minDist(), MAX_DIST)
         return
       }
       moved += Math.abs(dx) + Math.abs(dy)
       if (moved > 4) pointerOnGlobe.dragging = true
       if (rig.flying) return
-      const k = (0.16 * (rig.dist - 0.9)) / Math.max(1, el.clientHeight / 900)
+      // the ground moves under the pointer at the same speed at any height
+      const alt = Math.max(rig.dist - 1, 0.00004)
+      const k = (0.06 * alt + 0.16 * (rig.dist - 0.9) * THREE.MathUtils.smoothstep(alt, 0.05, 0.5)) / Math.max(1, el.clientHeight / 900)
       vel.current.lon = -dx * k
       vel.current.lat = dy * k
       rig.lon += vel.current.lon
@@ -99,7 +102,9 @@ export function CameraRig() {
       if (!useTime.getState().introDone || rig.flying) return
       rig.lastInput = performance.now()
       // glide rather than jump: the target moves, the camera follows it
-      rig.zoomTo = THREE.MathUtils.clamp((rig.zoomTo ?? rig.dist) * Math.exp(e.deltaY * 0.0012), minDist(), MAX_DIST)
+      // zoom works on the height above the ground, so it is as quick near the surface as in space
+      const alt = (rig.zoomTo ?? rig.dist) - 1
+      rig.zoomTo = THREE.MathUtils.clamp(1 + alt * Math.exp(e.deltaY * 0.0016), minDist(), MAX_DIST)
     }
     el.addEventListener('pointerdown', down)
     el.addEventListener('pointermove', move)
@@ -192,6 +197,10 @@ export function CameraRig() {
     offset.current.x += (wantX - offset.current.x) * k
     offset.current.y += (wantY - offset.current.y) * k
     const cam = camera as THREE.PerspectiveCamera
+    // near plane follows the height: close to the ground it must be small, and kept as large as
+    // possible otherwise for depth precision
+    const near = THREE.MathUtils.clamp((rig.dist - 1) * 0.08, 0.000004, 0.01)
+    if (Math.abs(cam.near - near) / near > 0.05) cam.near = near
     cam.setViewOffset(size.width, size.height, offset.current.x, offset.current.y, size.width, size.height)
 
     // smooth zoom
@@ -208,7 +217,10 @@ export function CameraRig() {
     const lean = prefs.tiltClose ? 1 - THREE.MathUtils.smoothstep(rig.dist, 1.12, 1.55) : 0
     closeLean.current += (lean - closeLean.current) * (1 - Math.exp(-dt * 3))
     const L = closeLean.current
-    const tilt = rig.tilt + L * (rig.dist - 1) * 57.3 * 1.2
+    // near the ground the lean grows toward a low, flying view (about 70° from straight down)
+    const alt = rig.dist - 1
+    const leanK = 1.2 + 1.6 * (1 - THREE.MathUtils.smoothstep(alt, 0.002, 0.04))
+    const tilt = rig.tilt + L * alt * 57.3 * leanK
     const focus = Math.max(rig.focus, L)
 
     // place camera

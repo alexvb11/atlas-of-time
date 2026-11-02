@@ -69,7 +69,7 @@ export const DEFAULTS: Settings = {
   clouds: 1,
   relief: 1,
   detail: true,
-  terrain: 3,
+  terrain: 1,
   nightLights: true,
   atmosphere: true,
   stars: true,
@@ -98,7 +98,8 @@ const KEY = 'atlas.settings.v1'
 function saved(): Partial<Settings> {
   try {
     const s = JSON.parse(localStorage.getItem(KEY) ?? 'null')
-    if (s) return s
+    // the terrain default was 3× before the tiled terrain; true scale is now the default
+    if (s) return s.terrain === 3 ? { ...s, terrain: 1 } : s
     // carry over the earlier Layers menu choices
     const old = JSON.parse(localStorage.getItem('atlas.layers.v1') ?? '{}')
     return { ...old, ...(old.sun === true ? { sun: 'seasons' } : old.sun === false ? { sun: 'fixed' } : {}) }

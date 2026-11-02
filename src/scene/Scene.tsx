@@ -15,7 +15,7 @@ import { CitiesLayer } from './Cities'
 import { TradeRoutesLayer } from './TradeRoutes'
 import { DensityLayer } from './Density'
 import { PoliticalFill } from './PoliticalFill'
-import { DetailPatch } from './DetailPatch'
+import { TerrainTiles } from './TerrainTiles'
 import { PaleoLand } from './PaleoLand'
 import { updateWorld, world } from './world'
 import { useTime } from '../time/store'
@@ -75,7 +75,7 @@ export function Scene() {
       <Suspense fallback={null}>
         <Sky />
         <Globe />
-        <DetailPatch />
+        <TerrainTiles />
         <DensityLayer />
         <PoliticalFill />
         <DriftLand />
