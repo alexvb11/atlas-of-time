@@ -5,6 +5,9 @@
 //   earth-data.webp  lossless. R = present-day land mask (Natural Earth 50m)
 //                    G = ocean depth (GEBCO 08 bathymetry, 255 = shallow / land)
 //                    B = unused (0, so it costs almost nothing compressed)
+//   earth-day-8k.webp the same at 8192 px from the 21600 px source, for high-quality screens
+//   relief.webp      land elevation (GEBCO 08, 0–6,400 m as 0–255, square-root scaled so lowland
+//                    relief still shows), used to light mountains; relief-2k.webp for phones
 //   ice.webp         lossless, approximate Last Glacial Maximum ice-sheet extent (hand-drawn, coarse)
 // Each 1x / mobile size pair keeps the live page off third-party hosts. WebP is 30-40% smaller than
 // the mozjpeg / PNG files it replaced (lossless for the data textures, so sea levels are unchanged).
@@ -25,6 +28,8 @@ const src = {
   night: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/144000/144898/BlackMarble_2016_3km.jpg',
   clouds: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57747/cloud_combined_2048.jpg',
   bath: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73963/gebco_08_rev_bath_21600x10800.png',
+  dayBig: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x21600x10800.jpg',
+  elev: 'https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73934/gebco_08_rev_elev_21600x10800.png',
   land: 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-50m.json',
 }
 async function get(url) {
@@ -44,6 +49,16 @@ const big = { limitInputPixels: false }
 for (const [w, suffix] of [[4096, ''], [2048, '-2k']]) {
   await sharp(await get(src.day), big).resize(w, w / 2).webp({ quality: 86, effort: 6 }).toFile(path.join(out, `earth-day${suffix}.webp`))
   await sharp(await get(src.night), big).resize(w, w / 2).webp({ quality: 84, effort: 6 }).toFile(path.join(out, `earth-night${suffix}.webp`))
+}
+await sharp(await get(src.dayBig), big).resize(8192, 4096).webp({ quality: 84, effort: 6 }).toFile(path.join(out, 'earth-day-8k.webp'))
+// The GEBCO elevation image is linear grey, 0 = sea level, 255 = 6,400 m and above. Re-encode with a
+// square root so hills get as many grey levels as high peaks.
+{
+  const raw = await sharp(await get(src.elev), big).resize(4096, 2048).greyscale().raw().toBuffer()
+  const sq = Buffer.alloc(raw.length)
+  for (let i = 0; i < raw.length; i++) sq[i] = Math.round(Math.sqrt(raw[i] / 255) * 255)
+  await sharp(sq, { raw: { width: 4096, height: 2048, channels: 1 } }).webp({ quality: 92, effort: 6 }).toFile(path.join(out, 'relief.webp'))
+  await sharp(sq, { raw: { width: 4096, height: 2048, channels: 1 } }).resize(2048, 1024).webp({ quality: 92, effort: 6 }).toFile(path.join(out, 'relief-2k.webp'))
 }
 await sharp(await get(src.clouds)).greyscale().webp({ quality: 82, effort: 6 }).toFile(path.join(out, 'clouds.webp'))
 

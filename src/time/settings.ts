@@ -19,6 +19,7 @@ export type Settings = {
   densityOpacity: number
   // earth and sky
   clouds: number
+  relief: number
   nightLights: boolean
   atmosphere: boolean
   stars: boolean
@@ -58,6 +59,7 @@ export const DEFAULTS: Settings = {
   density: false,
   densityOpacity: 0.62,
   clouds: 1,
+  relief: 1,
   nightLights: true,
   atmosphere: true,
   stars: true,

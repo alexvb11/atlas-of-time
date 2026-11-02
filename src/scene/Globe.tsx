@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react'
-import { useFrame, useLoader, type ThreeEvent } from '@react-three/fiber'
+import { useFrame, useLoader, useThree, type ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
 import { atmosphereFragment, atmosphereVertex, cloudFragment, earthFragment, earthVertex } from './shaders'
 import { SUN, world } from './world'
@@ -62,14 +62,26 @@ const lateTexture = (colorSpace: THREE.ColorSpace) => {
 const late = {
   night: lateTexture(THREE.SRGBColorSpace),
   clouds: lateTexture(THREE.NoColorSpace),
-  ready: { night: false, clouds: false },
+  relief: lateTexture(THREE.NoColorSpace),
+  /** the 8192 px day image, for high-quality screens; swapped in when it arrives */
+  dayHD: lateTexture(THREE.SRGBColorSpace),
+  ready: { night: false, clouds: false, relief: false, dayHD: false },
   started: false,
 }
-function loadLateTextures() {
+/** 8K imagery only where it helps and fits: not on phones, not on Low quality, and only if the GPU takes 8192 px textures */
+const wantHD = (maxTex: number) => !mobile && maxTex >= 8192 && settings().quality !== 'low'
+function loadLateTextures(maxTex: number) {
   if (late.started) return
   late.started = true
   const loader = new EarthTextureLoader(new THREE.LoadingManager())
-  for (const [key, url] of [['night', `${import.meta.env.BASE_URL}textures/earth-night${sfx}.webp`], ['clouds', `${import.meta.env.BASE_URL}textures/clouds.webp`]] as const)
+  const base = `${import.meta.env.BASE_URL}textures/`
+  const files: [keyof typeof late.ready, string][] = [
+    ['night', `${base}earth-night${sfx}.webp`],
+    ['clouds', `${base}clouds.webp`],
+    ['relief', `${base}relief${sfx}.webp`],
+  ]
+  if (wantHD(maxTex)) files.push(['dayHD', `${base}earth-day-8k.webp`])
+  for (const [key, url] of files)
     loader.load(url, (t) => {
       late[key].image = t.image
       late[key].flipY = t.flipY
@@ -88,8 +100,9 @@ export function useEarthTextures() {
       t.wrapS = THREE.RepeatWrapping
     }
   }, [day, data, ice])
-  useEffect(loadLateTextures, [])
-  return { day, night: late.night, data, ice, clouds: late.clouds }
+  const gl = useThree((s) => s.gl)
+  useEffect(() => loadLateTextures(gl.capabilities.maxTextureSize), [gl])
+  return { day, night: late.night, data, ice, clouds: late.clouds, relief: late.relief }
 }
 
 export function Globe() {
@@ -97,7 +110,7 @@ export function Globe() {
   const earthMat = useRef<THREE.ShaderMaterial>(null)
   const cloudMat = useRef<THREE.ShaderMaterial>(null)
   const geo = useMemo(() => new THREE.SphereGeometry(1, 192, 128), [])
-  const fadeIn = useRef({ night: 0, clouds: 0 })
+  const fadeIn = useRef<{ night: number; clouds: number; relief?: number }>({ night: 0, clouds: 0 })
   const atmo = useRef<THREE.Mesh>(null)
   const cloudMesh = useRef<THREE.Mesh>(null)
 
@@ -107,6 +120,12 @@ export function Globe() {
       uNight: { value: tex.night },
       uData: { value: tex.data },
       uIceMap: { value: tex.ice },
+      uRelief: { value: tex.relief },
+      uReliefAmt: { value: 0 },
+      uReliefTexel: { value: new THREE.Vector2(1 / (mobile ? 2048 : 4096), 1 / (mobile ? 1024 : 2048)) },
+      uClouds: { value: tex.clouds },
+      uCloudShadow: { value: 0 },
+      uCloudOffset: { value: 0 },
       uSun: { value: SUN },
       uDrift: { value: 0 },
       uSea: { value: 0 },
@@ -128,13 +147,15 @@ export function Globe() {
     }),
     [tex],
   )
-  const atmoUniforms = useMemo(() => ({ uSun: { value: SUN }, uIntensity: { value: 1.25 }, uShell: { value: 1.065 } }), [])
+  const atmoUniforms = useMemo(() => ({ uSun: { value: SUN }, uIntensity: { value: 20 }, uShell: { value: 1.06 }, uSteps: { value: mobile ? 8 : 14 } }), [])
 
   useFrame((state, dt) => {
     const f = fadeIn.current
     if (late.ready.night) f.night = Math.min(1, f.night + dt / 1.2)
     if (late.ready.clouds) f.clouds = Math.min(1, f.clouds + dt / 1.2)
     const prefs = settings()
+    // fade in mountain relief as the file arrives; it grows as the camera comes closer
+    f.relief = late.ready.relief ? Math.min(1, (f.relief ?? 0) + dt / 1.5) : 0
     if (atmo.current) atmo.current.visible = prefs.atmosphere
     if (cloudMesh.current) cloudMesh.current.visible = prefs.clouds > 0.01
     const u = earthMat.current?.uniforms
@@ -146,12 +167,19 @@ export function Globe() {
       u.uLights.value = world.lights * f.night * (prefs.nightLights ? 1 : 0)
       u.uDim.value = world.dim
       u.uTime.value = state.clock.elapsedTime
+      const dist = state.camera.position.length()
+      u.uReliefAmt.value = prefs.relief * (f.relief ?? 0) * 0.55 * THREE.MathUtils.clamp(3.6 - dist, 0.35, 2.2) * (1 - world.drift)
+      u.uCloudShadow.value = prefs.clouds * f.clouds
+      if (late.ready.dayHD && u.uDay.value !== late.dayHD && wantHD(state.gl.capabilities.maxTextureSize)) u.uDay.value = late.dayHD
     }
     const c = cloudMat.current?.uniforms
     if (c) {
       c.uOffset.value = (c.uOffset.value + dt * 0.0016) % 1
+      if (u) u.uCloudOffset.value = c.uOffset.value
       // clouds thin out in deep time so the drifting continents read clearly
-      c.uOpacity.value = 0.82 * (1 - world.drift * 0.75) * f.clouds * prefs.clouds
+      // clouds part as the camera dives in: the cloud map is coarse, the ground below is not
+      const near = THREE.MathUtils.smoothstep(state.camera.position.length(), 1.35, 2.1)
+      c.uOpacity.value = 0.82 * (1 - world.drift * 0.75) * f.clouds * prefs.clouds * (0.15 + 0.85 * near)
       c.uDim.value = world.dim
     }
   })

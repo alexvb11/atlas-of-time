@@ -5,6 +5,8 @@ export const lightingChunk = /* glsl */ `
 uniform vec3 uSun;
 uniform float uDim;
 uniform float uLights;
+// ripple added to the surface normal for the sun's reflection only (set by the earth shader)
+vec3 waveN = vec3(0.0);
 
 vec3 desaturate(vec3 c, float a) {
   float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
@@ -17,10 +19,13 @@ vec3 shade(vec3 albedo, vec3 N, vec3 V, float water, vec3 nightLights) {
   float day = smoothstep(-0.12, 0.22, ndl);
   vec3 col = albedo * (0.025 + 1.2 * max(ndl * 0.85 + 0.15, 0.0) * day);
 
-  // ocean glint
+  // ocean: a tight sun glint plus a broad sheen, and the sky reflected at grazing angles (Fresnel)
   vec3 H = normalize(uSun + V);
-  float spec = pow(max(dot(N, H), 0.0), 70.0) * water * day;
-  col += vec3(1.0, 0.93, 0.82) * spec * 0.55;
+  float nh = max(dot(normalize(N + waveN), H), 0.0);
+  float spec = (pow(nh, 180.0) * 1.1 + pow(nh, 24.0) * 0.07) * water * day;
+  col += vec3(1.0, 0.94, 0.84) * spec * 0.7;
+  float fres0 = pow(1.0 - max(dot(N, V), 0.0), 5.0);
+  col += vec3(0.30, 0.52, 0.85) * fres0 * water * day * 0.18;
 
   // dusk band along the terminator
   col += vec3(1.0, 0.45, 0.18) * 0.05 * exp(-pow(ndl / 0.09, 2.0));
@@ -56,6 +61,12 @@ uniform sampler2D uDay;
 uniform sampler2D uNight;
 uniform sampler2D uData;
 uniform sampler2D uIceMap;
+uniform sampler2D uRelief;
+uniform sampler2D uClouds;
+uniform float uCloudShadow;
+uniform float uCloudOffset;
+uniform float uReliefAmt;
+uniform vec2 uReliefTexel;
 uniform float uDrift;
 uniform float uSea;
 uniform float uIce;
@@ -74,12 +85,38 @@ float noise(vec2 p) {
 }
 
 void main() {
-  vec3 N = normalize(vN);
+  vec3 N0 = normalize(vN);
   vec3 V = normalize(cameraPosition - vWorld);
   vec3 day = texture2D(uDay, vUv).rgb;
   vec3 data = texture2D(uData, vUv).rgb;
   float land = data.r;
   float depth = (1.0 - data.g) * 11000.0 + 22.0;
+
+  // local frame on the sphere: east and north
+  vec3 east = normalize(cross(vec3(0.0, 1.0, 0.0), N0) + vec3(1e-5, 0.0, 0.0));
+  vec3 north = cross(N0, east);
+  vec3 N = N0;
+
+  // mountains: light the relief from the real elevation (GEBCO), stronger as the camera comes close
+  if (uReliefAmt > 0.0) {
+    float h = texture2D(uRelief, vUv).r;
+    float hx = texture2D(uRelief, vUv + vec2(uReliefTexel.x, 0.0)).r - texture2D(uRelief, vUv - vec2(uReliefTexel.x, 0.0)).r;
+    float hy = texture2D(uRelief, vUv + vec2(0.0, uReliefTexel.y)).r - texture2D(uRelief, vUv - vec2(0.0, uReliefTexel.y)).r;
+    // the texture is square-root encoded: undo it so slopes scale with real height
+    float k = uReliefAmt * (0.6 + 1.6 * h);
+    N = normalize(N0 - (east * hx + north * hy) * k * land);
+  }
+
+  // ocean surface: slow wind-driven waves perturb the normal (only matters where the sun glints)
+  float sea = (1.0 - land);
+  if (sea > 0.01) {
+    vec2 p = vUv * vec2(1100.0, 550.0);
+    float t = uTime * 0.08;
+    float w1 = noise(p + vec2(t, t * 0.7)) - 0.5;
+    float w2 = noise(p * 2.3 - vec2(t * 1.3, t * 0.4)) - 0.5;
+    float w3 = noise(p * 0.21 + vec2(t * 0.3, 0.0)) - 0.5;
+    waveN = (east * (w1 + w3 * 1.4) + north * (w2 + w3)) * 0.028 * sea;
+  }
 
   // shelves exposed by lower sea level (Beringia, Doggerland, Sundaland...)
   float exposed = (1.0 - land) * smoothstep(depth - 12.0, depth + 12.0, -uSea);
@@ -107,6 +144,19 @@ void main() {
   float n = noise(vUv * vec2(40.0, 20.0)) * 0.5 + noise(vUv * vec2(160.0, 80.0)) * 0.5;
   vec3 deepOcean = mix(vec3(0.010, 0.040, 0.085), vec3(0.020, 0.075, 0.13), n);
   albedo = mix(albedo, deepOcean, uDrift);
+
+  // shallow seas read turquoise, the deep ocean darker (bathymetry from GEBCO)
+  float shallow = (1.0 - land) * (1.0 - exposed) * (1.0 - smoothstep(30.0, 220.0, depth)) * (1.0 - uDrift);
+  albedo = mix(albedo, albedo * vec3(0.75, 1.12, 1.08) + vec3(0.0, 0.025, 0.03), shallow * 0.8);
+  float deep = (1.0 - land) * smoothstep(1500.0, 6000.0, depth) * (1.0 - uDrift);
+  albedo *= 1.0 - deep * 0.12;
+
+  // clouds cast shadows: the cloud layer sampled a little toward the sun
+  if (uCloudShadow > 0.0) {
+    vec2 toSun = vec2(dot(uSun, east), dot(uSun, north)) * vec2(0.0016, 0.0032);
+    float cs = smoothstep(0.25, 0.9, texture2D(uClouds, vUv + vec2(uCloudOffset, 0.0) - toSun).r);
+    albedo *= 1.0 - cs * uCloudShadow * 0.42 * (1.0 - uDrift);
+  }
 
   float water = mix((1.0 - land) * (1.0 - exposed) * (1.0 - smoothstep(0.2, 0.5, ice)), 1.0, uDrift);
   vec3 lights = pow(texture2D(uNight, vUv).rgb, vec3(1.4)) * vec3(1.6, 1.25, 0.85) * 1.8 * (1.0 - uDrift);
@@ -184,23 +234,82 @@ void main() {
 }
 `
 
-// Rendered on the back faces of a shell of radius uShell: brightest at the planet's limb, fading
-// to nothing at the shell edge, lit by the sun so the night limb stays a faint deep-blue line.
+// Physically based sky: single Rayleigh and Mie scattering of sunlight, ray-marched through a
+// shell of radius uShell around the unit planet (after Nishita et al. 1993; coefficients for
+// Earth's air scaled to planet radii, the shell a little thicker than real so it reads at globe
+// scale). Rendered on the shell's back faces with additive blending: blue limb by day, reddening
+// toward the terminator, a thin deep-blue line on the night side.
 export const atmosphereFragment = /* glsl */ `
 uniform vec3 uSun;
 uniform float uIntensity;
 uniform float uShell;
+uniform float uSteps;
 varying vec3 vN;
 varying vec3 vWorld;
+
+const vec3 BR = vec3(5.8e-6, 13.5e-6, 33.1e-6) * 6.371e6; // Rayleigh, per planet radius
+const float BM = 21e-6 * 6.371e6;                          // Mie
+const float G = 0.76;
+
+vec2 sphere(vec3 ro, vec3 rd, float r) {
+  float b = dot(ro, rd);
+  float c = dot(ro, ro) - r * r;
+  float h = b * b - c;
+  if (h < 0.0) return vec2(1e9, -1e9);
+  h = sqrt(h);
+  return vec2(-b - h, -b + h);
+}
+
 void main() {
-  vec3 N = normalize(vN);
-  vec3 V = normalize(cameraPosition - vWorld);
-  float limb = sqrt(uShell * uShell - 1.0) / uShell;
-  float d = clamp(-dot(V, N) / limb, 0.0, 1.0);
-  float sun = smoothstep(-0.35, 0.55, dot(N, uSun));
-  vec3 col = mix(vec3(0.10, 0.25, 0.75), vec3(0.45, 0.75, 1.0), sun);
-  float a = pow(d, 2.6) * (0.08 + 0.92 * sun) * uIntensity;
-  gl_FragColor = vec4(col * a, a);
+  float H = uShell - 1.0;
+  float HR = H * 0.18;  // density scale heights, as fractions of the shell
+  float HM = H * 0.06;
+  // keep Earth's real optical depths (scale heights 8 km and 1.2 km) in the thicker shell
+  vec3 bR = BR * (0.00126 / HR);
+  float bM = BM * (0.000188 / HM);
+  vec3 ro = cameraPosition;
+  vec3 rd = normalize(vWorld - cameraPosition);
+  vec2 a = sphere(ro, rd, uShell);
+  vec2 p = sphere(ro, rd, 1.0);
+  float t0 = max(a.x, 0.0);
+  float t1 = p.x > 0.0 ? min(a.y, p.x) : a.y;
+  if (t1 <= t0) discard;
+  float ds = (t1 - t0) / uSteps;
+  vec3 sumR = vec3(0.0), sumM = vec3(0.0);
+  float odR = 0.0, odM = 0.0;
+  for (int i = 0; i < 16; i++) {
+    if (float(i) >= uSteps) break;
+    vec3 x = ro + rd * (t0 + ds * (float(i) + 0.5));
+    float hgt = length(x) - 1.0;
+    float dR = exp(-hgt / HR) * ds;
+    float dM = exp(-hgt / HM) * ds;
+    odR += dR;
+    odM += dM;
+    // light path to the sun: skip samples in the planet's shadow
+    vec2 ps = sphere(x, uSun, 1.0);
+    if (ps.x > 0.0) continue;
+    float tl = sphere(x, uSun, uShell).y;
+    float dl = tl / 4.0, lR = 0.0, lM = 0.0;
+    for (int j = 0; j < 4; j++) {
+      vec3 y = x + uSun * dl * (float(j) + 0.5);
+      float hy = length(y) - 1.0;
+      lR += exp(-hy / HR) * dl;
+      lM += exp(-hy / HM) * dl;
+    }
+    vec3 tau = bR * (odR + lR) + bM * 1.1 * (odM + lM);
+    vec3 att = exp(-tau);
+    sumR += dR * att;
+    sumM += dM * att;
+  }
+  float mu = dot(rd, uSun);
+  float phR = 0.0597 * (1.0 + mu * mu);
+  float phM = 0.1194 * ((1.0 - G * G) * (1.0 + mu * mu)) / ((2.0 + G * G) * pow(1.0 + G * G - 2.0 * G * mu, 1.5));
+  vec3 col = (sumR * bR * phR + sumM * bM * phM) * uIntensity;
+  // a faint airglow so the night limb is not black
+  float limb = clamp(1.0 - abs(dot(normalize(vN), rd)), 0.0, 1.0);
+  col += vec3(0.03, 0.06, 0.16) * pow(limb, 6.0) * 0.35;
+  col = 1.0 - exp(-col);
+  gl_FragColor = vec4(col, max(col.r, max(col.g, col.b)));
 }
 `
 

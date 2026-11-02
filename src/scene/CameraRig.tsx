@@ -23,6 +23,8 @@ export const rig = {
   autoRotate: true,
 }
 export const pointerOnGlobe = { dragging: false }
+// dev, or ?qa in production builds, for the screenshot scripts
+if (import.meta.env.DEV || new URLSearchParams(location.search).has('qa')) (window as unknown as { __rig: typeof rig }).__rig = rig
 
 export const DEFAULT_DIST = 4.3
 const MIN_DIST = 1.22

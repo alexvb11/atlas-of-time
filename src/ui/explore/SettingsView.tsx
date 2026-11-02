@@ -122,6 +122,7 @@ const SECTIONS: Section[] = [
     title: 'Earth and sky',
     rows: [
       { label: 'Clouds', keywords: 'weather', control: <Slider k="clouds" label="Clouds" min={0} max={1} step={0.05} fmt={(v) => (v < 0.01 ? 'off' : pct(v))} /> },
+      { label: 'Mountain relief', sub: 'Shading from real elevation, stronger up close', keywords: 'terrain 3d elevation mountains', control: <Slider k="relief" label="Mountain relief" min={0} max={2} step={0.1} fmt={(v) => (v < 0.05 ? 'off' : pct(v))} /> },
       { label: 'City lights at night', keywords: 'night lights electric', control: <Toggle k="nightLights" label="City lights at night" /> },
       { label: 'Atmosphere glow', control: <Toggle k="atmosphere" label="Atmosphere glow" /> },
       { label: 'Stars', keywords: 'space background', control: <Toggle k="stars" label="Stars" /> },
