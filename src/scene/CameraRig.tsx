@@ -21,13 +21,16 @@ export const rig = {
   flying: false,
   lastInput: 0,
   autoRotate: true,
+  /** where wheel and pinch are taking the distance; eased toward each frame (null: no zoom under way) */
+  zoomTo: null as number | null,
 }
 export const pointerOnGlobe = { dragging: false }
 // dev, or ?qa in production builds, for the screenshot scripts
 if (import.meta.env.DEV || new URLSearchParams(location.search).has('qa')) (window as unknown as { __rig: typeof rig }).__rig = rig
 
 export const DEFAULT_DIST = 4.3
-const MIN_DIST = 1.22
+/** closest approach: nearer when close-up imagery is on, since there is detail to see */
+const minDist = () => (settings().detail ? 1.06 : 1.22)
 const MAX_DIST = 7
 
 const tmpA = new THREE.Vector3()
@@ -38,6 +41,7 @@ export function CameraRig() {
   const { camera, gl, size } = useThree()
   const offset = useRef({ x: 0, y: 0 })
   const vel = useRef({ lon: 0, lat: 0 })
+  const closeLean = useRef(0)
   const flyNonce = useTime((s) => s.flyNonce)
   const selection = useTime((s) => s.selection)
   const introDone = useTime((s) => s.introDone)
@@ -73,7 +77,7 @@ export function CameraRig() {
       if (pts.size === 2) {
         const [a, b] = [...pts.values()]
         const d = Math.hypot(a.x - b.x, a.y - b.y)
-        if (pinch0 > 0) rig.dist = THREE.MathUtils.clamp(dist0 * (pinch0 / d), MIN_DIST, MAX_DIST)
+        if (pinch0 > 0) rig.zoomTo = THREE.MathUtils.clamp(dist0 * (pinch0 / d), minDist(), MAX_DIST)
         return
       }
       moved += Math.abs(dx) + Math.abs(dy)
@@ -94,7 +98,8 @@ export function CameraRig() {
       e.preventDefault()
       if (!useTime.getState().introDone || rig.flying) return
       rig.lastInput = performance.now()
-      rig.dist = THREE.MathUtils.clamp(rig.dist * Math.exp(e.deltaY * 0.0012), MIN_DIST, MAX_DIST)
+      // glide rather than jump: the target moves, the camera follows it
+      rig.zoomTo = THREE.MathUtils.clamp((rig.zoomTo ?? rig.dist) * Math.exp(e.deltaY * 0.0012), minDist(), MAX_DIST)
     }
     el.addEventListener('pointerdown', down)
     el.addEventListener('pointermove', move)
@@ -146,6 +151,7 @@ export function CameraRig() {
 
   useFrame((_, dtRaw) => {
     const dt = Math.min(dtRaw, 0.05)
+    const prefs = settings()
     const now = performance.now()
     const state = useTime.getState()
 
@@ -172,7 +178,6 @@ export function CameraRig() {
     }
 
     // idle auto-rotation
-    const prefs = settings()
     if (prefs.autoRotate && introDone && !state.selection && !rig.flying && now - rig.lastInput > 7000 && !state.reducedMotion) {
       rig.lon += dt * 1.6 * prefs.rotateSpeed * Math.min(1, (now - rig.lastInput - 7000) / 3000)
     }
@@ -189,11 +194,28 @@ export function CameraRig() {
     const cam = camera as THREE.PerspectiveCamera
     cam.setViewOffset(size.width, size.height, offset.current.x, offset.current.y, size.width, size.height)
 
+    // smooth zoom
+    if (rig.zoomTo !== null) {
+      if (rig.flying) rig.zoomTo = null
+      else {
+        rig.dist += (rig.zoomTo - rig.dist) * (1 - Math.exp(-dt * 7))
+        if (Math.abs(rig.zoomTo - rig.dist) < 1e-4) rig.zoomTo = null
+      }
+    }
+
+    // close to the ground the camera leans toward the horizon, so relief reads in three
+    // dimensions; the lean is a horizontal offset of about 1.2× the height above the ground
+    const lean = prefs.tiltClose ? 1 - THREE.MathUtils.smoothstep(rig.dist, 1.12, 1.55) : 0
+    closeLean.current += (lean - closeLean.current) * (1 - Math.exp(-dt * 3))
+    const L = closeLean.current
+    const tilt = rig.tilt + L * (rig.dist - 1) * 57.3 * 1.2
+    const focus = Math.max(rig.focus, L)
+
     // place camera
-    lonLatToVec3(rig.lon, rig.lat - rig.tilt, 1, tmpA)
+    lonLatToVec3(rig.lon, rig.lat - tilt, 1, tmpA)
     camera.position.copy(tmpA).multiplyScalar(rig.dist)
     lonLatToVec3(rig.lon, rig.lat, 1, tmpB)
-    look.copy(tmpB).multiplyScalar(rig.focus)
+    look.copy(tmpB).multiplyScalar(focus)
     camera.up.set(0, 1, 0)
     camera.lookAt(look)
   })
@@ -204,6 +226,7 @@ export function CameraRig() {
 /** Pull back, travel the great circle, push in and settle at a drone angle. */
 export function flyTo(toLon: number, toLat: number, toDist: number, reduced = false) {
   gsap.killTweensOf(rig)
+  rig.zoomTo = null
   const from = lonLatToVec3(rig.lon, rig.lat)
   const to = lonLatToVec3(toLon, toLat)
   const ang = from.angleTo(to)
@@ -247,8 +270,9 @@ export function zoomToFit(radiusKm: number, tries = 12) {
     return
   }
   if (pointerOnGlobe.dragging) return
-  const want = THREE.MathUtils.clamp(1 + (radiusKm / 6371) * 4.2, MIN_DIST + 0.06, MAX_DIST)
+  const want = THREE.MathUtils.clamp(1 + (radiusKm / 6371) * 4.2, minDist() + 0.06, MAX_DIST)
   if (want >= rig.dist - 0.02) return
   rig.lastInput = performance.now()
+  rig.zoomTo = null
   gsap.to(rig, { dist: want, duration: useTime.getState().reducedMotion ? 0.01 : 1.2, ease: 'power2.inOut' })
 }

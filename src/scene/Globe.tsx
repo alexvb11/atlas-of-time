@@ -178,8 +178,8 @@ export function Globe() {
       if (u) u.uCloudOffset.value = c.uOffset.value
       // clouds thin out in deep time so the drifting continents read clearly
       // clouds part as the camera dives in: the cloud map is coarse, the ground below is not
-      const near = THREE.MathUtils.smoothstep(state.camera.position.length(), 1.35, 2.1)
-      c.uOpacity.value = 0.82 * (1 - world.drift * 0.75) * f.clouds * prefs.clouds * (0.15 + 0.85 * near)
+      const near = THREE.MathUtils.smoothstep(state.camera.position.length(), 1.2, 2.1)
+      c.uOpacity.value = 0.82 * (1 - world.drift * 0.75) * f.clouds * prefs.clouds * near
       c.uDim.value = world.dim
     }
   })

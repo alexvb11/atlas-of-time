@@ -17,6 +17,8 @@ const VIEWS = {
   glint: { t: 2026, lon: -35, lat: 18, dist: 3.4 },
   himalaya: { t: 2026, lon: 86, lat: 29, dist: 1.35 },
   alps: { t: 2026, lon: 9, lat: 46, dist: 1.25 },
+  alpsclose: { t: 2026, lon: 8, lat: 46.3, dist: 1.09 },
+  everest: { t: 2026, lon: 86.9, lat: 28, dist: 1.08 },
   deep: { t: 2026 - 200e6, lon: 10, lat: 10, dist: 4.3 },
   sky: { t: 2026, lon: 160, lat: -10, dist: 6.5, sun: 'fixed' },
   skyold: { t: -9000, lon: 160, lat: -10, dist: 6.5, sun: 'fixed' },
@@ -29,7 +31,7 @@ for (const [name, v] of Object.entries(VIEWS)) {
   await page.goto(`${base}&v=${name}#t=${v.t}`)
   await page.waitForFunction(() => window.__time?.getState().introDone && window.__rig, null, { timeout: 120000 })
   await page.evaluate((v) => Object.assign(window.__rig, { lon: v.lon, lat: v.lat, dist: v.dist, lastInput: performance.now() + 1e9 }), v)
-  await page.waitForTimeout(7000)
+  await page.waitForTimeout(name.endsWith('close') || name === 'everest' ? 12000 : 7000)
   await page.screenshot({ path: `scripts/qa/shots/gfx-${name}.png` })
 }
 console.log('errors', errors)

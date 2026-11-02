@@ -22,6 +22,8 @@ export type Settings = {
   // earth and sky
   clouds: number
   relief: number
+  detail: boolean
+  terrain: number
   nightLights: boolean
   atmosphere: boolean
   stars: boolean
@@ -33,6 +35,7 @@ export type Settings = {
   // camera and motion
   autoRotate: boolean
   rotateSpeed: number
+  tiltClose: boolean
   motion: 'system' | 'full' | 'reduced'
   warpEffects: boolean
   // time
@@ -65,6 +68,8 @@ export const DEFAULTS: Settings = {
   densityOpacity: 0.62,
   clouds: 1,
   relief: 1,
+  detail: true,
+  terrain: 3,
   nightLights: true,
   atmosphere: true,
   stars: true,
@@ -75,6 +80,7 @@ export const DEFAULTS: Settings = {
   sun: 'fixed',
   autoRotate: true,
   rotateSpeed: 1,
+  tiltClose: true,
   motion: 'system',
   warpEffects: true,
   defaultSpeed: 1,
