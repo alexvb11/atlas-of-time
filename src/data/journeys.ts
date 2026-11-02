@@ -79,6 +79,24 @@ export const JOURNEYS: Journey[] = [
   },
   // ---------- dated movements, drawn as animated paths ----------
   {
+    id: 'fall-of-rome',
+    name: 'The fall of Rome',
+    blurb: 'From the empire’s greatest extent to the last emperor in the West, and the fall of Constantinople.',
+    path: false,
+    color: '#d9a3ff',
+    stops: [
+      { t: 117.5, at: [12.5, 41.9], title: 'The empire at its height', text: 'Under Trajan, who died in 117, the Roman Empire reaches its greatest extent, from Britain to Mesopotamia.', article: 'Trajan' },
+      { t: 286.3, at: [29.92, 40.77], title: 'An empire too big for one ruler', text: 'Diocletian makes Maximian co-emperor for the West; he himself rules the East from Nicomedia.', article: 'Diocletian', approx: true },
+      { t: d(330, 5, 11), at: [28.98, 41.01], title: 'A new Rome on the Bosporus', text: 'Constantine dedicates Constantinople as the empire’s new capital.', article: 'Constantinople' },
+      { t: d(378, 8, 9), at: [26.56, 41.68], title: 'Adrianople', text: 'Gothic warriors destroy a Roman army and kill Emperor Valens.', article: 'Battle of Adrianople' },
+      { t: d(395, 1, 17), at: [9.19, 45.46], title: 'East and West part for good', text: 'Theodosius I dies; his sons rule the eastern and western halves, never to be united again.', article: 'Theodosius I' },
+      { t: d(410, 8, 24), at: [12.5, 41.9], title: 'Rome is sacked', text: 'The Visigoths under Alaric plunder Rome, the first time in 800 years the city has fallen to a foreign enemy.', article: 'Sack of Rome (410)' },
+      { t: 455.45, at: [12.5, 41.9], title: 'The Vandals', text: 'The Vandals sack Rome again, in June 455.', article: 'Sack of Rome (455)' },
+      { t: d(476, 9, 4), at: [12.2, 44.42], title: 'The last emperor in the West', text: 'At Ravenna, Odoacer deposes the boy emperor Romulus Augustulus; the Western Roman Empire is over.', article: 'Fall of the Western Roman Empire' },
+      { t: d(1453, 5, 29), at: [28.98, 41.01], title: 'The end in the East', text: 'The Ottomans take Constantinople, ending the Eastern Roman Empire nearly a thousand years later.', article: 'Fall of Constantinople' },
+    ],
+  },
+  {
     id: 'hannibal',
     name: 'Hannibal’s march on Rome',
     blurb: 'From New Carthage over the Pyrenees and the Alps into Italy, 218–216 BCE.',

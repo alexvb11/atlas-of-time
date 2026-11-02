@@ -7,6 +7,7 @@ import { useReader } from './wiki/store'
 
 type Side = NonNullable<ReturnType<typeof useTime.getState>['side']>
 const ITEMS: { id: Side; label: string; sub: string; icon: string }[] = [
+  { id: 'films', label: 'Documentaries', sub: 'Sit back: narrated films across the map', icon: 'M2 3.5h12v9H2zM6.5 6v4l3.5-2z' },
   { id: 'tours', label: 'Guided journeys', sub: 'Follow a story across the map, narrated', icon: 'M2 12c2-6 4-9 6-9s3 4 6 4M2 12h12' },
   { id: 'quiz', label: 'History quiz', sub: 'Find the place, name the ruler', icon: 'M5 5.5a3 3 0 1 1 4 2.8c-.6.3-1 .8-1 1.5V11M8 13.5v.1' },
   { id: 'compare', label: 'Compare two years', sub: 'Lay one year’s borders over another', icon: 'M2 3.5h5v9H2zM9 3.5h5v9H9z' },
@@ -75,8 +76,9 @@ const Quiz = lazy(() => import('./explore/Quiz'))
 const Today = lazy(() => import('./explore/Today'))
 const JournalView = lazy(() => import('./explore/JournalView'))
 const Compare = lazy(() => import('./explore/Compare'))
+const Films = lazy(() => import('./explore/Films'))
 const SettingsView = lazy(() => import('./explore/SettingsView'))
-const TITLES: Record<Side, string> = { tours: 'Guided journeys', quiz: 'History quiz', today: 'On this day', journal: 'Your journal', compare: 'Compare two years', settings: 'Settings' }
+const TITLES: Record<Side, string> = { tours: 'Guided journeys', quiz: 'History quiz', today: 'On this day', journal: 'Your journal', compare: 'Compare two years', settings: 'Settings', films: 'Documentaries' }
 
 /** The sheet the Explore menu opens, on the left of the globe (full screen on phones) */
 export function SideSheet() {
@@ -121,6 +123,7 @@ export function SideSheet() {
               {side === 'today' && <Today />}
               {side === 'journal' && <JournalView />}
               {side === 'compare' && <Compare />}
+              {side === 'films' && <Films />}
               {side === 'settings' && <SettingsView />}
             </Suspense>
           </div>

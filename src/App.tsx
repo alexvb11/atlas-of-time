@@ -15,32 +15,38 @@ import { HoverCardHost } from './ui/wiki/HoverCard'
 import { SideSheet } from './ui/ExploreMenu'
 import { LayerNotes } from './ui/LayerNotes'
 import { TourPlayer } from './ui/explore/Tours'
+import { useTourStore } from './ui/explore/tourStore'
 
 export default function App() {
   useTimeKeys()
   useShareLink()
   const introDone = useTime((s) => s.introDone)
+  // a documentary film takes the whole screen: the interface steps aside
+  const film = useTourStore((s) => s.doc !== null)
   return (
     <main className="fixed inset-0 overflow-hidden bg-void">
       <Scene />
-      <div id="globe-labels" className={`pointer-events-none fixed inset-0 overflow-hidden transition-opacity duration-1000 ${introDone ? "" : "opacity-0"}`} />
+      {/* place names step back during a film, so the subtitles stay readable */}
+      <div id="globe-labels" className={`pointer-events-none fixed inset-0 overflow-hidden transition-opacity duration-1000 ${!introDone ? 'opacity-0' : film ? 'opacity-25' : ''}`} />
       <div id="globe-events" className={`pointer-events-none fixed inset-0 overflow-hidden ${introDone ? '' : 'invisible'}`} />
       <AnimatePresence>
         {introDone && (
           <>
             {/* soft scrim so the readout stays legible over bright cloud tops */}
             <div key="scrim" className="pointer-events-none fixed inset-x-0 top-0 h-[300px] bg-[radial-gradient(ellipse_70%_100%_at_50%_0%,rgba(2,4,9,.82),rgba(2,4,9,.35)_55%,transparent)]" />
-            <HoverLabel key="hover" />
-            <Panel key="panel" />
-            <header key="header" className="pointer-events-none fixed inset-x-0 top-0 z-10 px-4 pt-[max(12px,env(safe-area-inset-top))]">
-              <TimeBar />
-              <Hud />
-              <Readout />
-            </header>
-            <Corner key="corner" />
-            <LayerNotes key="layer-notes" />
-            <EventCard key="event" />
-            <SideSheet key="side" />
+            {!film && <HoverLabel key="hover" />}
+            {!film && <Panel key="panel" />}
+            {!film && (
+              <header key="header" className="pointer-events-none fixed inset-x-0 top-0 z-10 px-4 pt-[max(12px,env(safe-area-inset-top))]">
+                <TimeBar />
+                <Hud />
+                <Readout />
+              </header>
+            )}
+            {!film && <Corner key="corner" />}
+            {!film && <LayerNotes key="layer-notes" />}
+            {!film && <EventCard key="event" />}
+            {!film && <SideSheet key="side" />}
             <TourPlayer key="tour" />
             <Reader key="reader" />
             <HoverCardHost key="cards" />

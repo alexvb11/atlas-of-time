@@ -6,6 +6,8 @@ import { useTime } from '../../time/store'
 import { useReader } from '../wiki/store'
 import { goTo } from '../TimeBar'
 import { formatYear } from '../../time/format'
+import { DOCUMENTARIES } from '../../data/documentaries'
+import { flyTo } from '../../scene/CameraRig'
 
 const STEP_MS = 9000
 
@@ -75,17 +77,32 @@ export default function Tours() {
 
 /** Drives a playing journey (mounted once in the app): time, camera, caption and narration */
 export function TourPlayer() {
-  const { tour, step, playing, narrate } = useTourStore()
+  const { tour, step, playing, narrate, doc, chapter } = useTourStore()
   const j = JOURNEYS.find((x) => x.id === tour)
   const s = j?.stops[step]
   const timer = useRef(0)
+  const film = DOCUMENTARIES.find((d) => d.id === doc)
 
-  // move time and camera to the stop
+  // move time and camera to the stop; a documentary flies the camera without opening panels
   useEffect(() => {
     if (!s) return
-    goTo(s.t, 1.6)
-    useTime.getState().select(s.at)
-  }, [s])
+    if (doc) {
+      useTime.getState().select(null, false)
+      goTo(s.t, 2.4)
+      flyTo(s.at[0], s.at[1], 2.25, useTime.getState().reducedMotion)
+    } else {
+      goTo(s.t, 1.6)
+      useTime.getState().select(s.at)
+    }
+  }, [s, doc])
+
+  // Escape leaves a documentary
+  useEffect(() => {
+    if (!doc) return
+    const k = (e: KeyboardEvent) => e.key === 'Escape' && useTourStore.getState().stop()
+    window.addEventListener('keydown', k)
+    return () => window.removeEventListener('keydown', k)
+  }, [doc])
 
   // narration, then the next stop
   useEffect(() => {
@@ -94,9 +111,12 @@ export function TourPlayer() {
     synth?.cancel()
     let spoke = false
     const next = () => {
-      if (!useTourStore.getState().playing) return
-      if (step < j.stops.length - 1) useTourStore.getState().go(step + 1)
-      else useTourStore.getState().set({ playing: false })
+      const st = useTourStore.getState()
+      if (!st.playing) return
+      if (step < j.stops.length - 1) st.go(step + 1)
+      else if (film && chapter < film.chapters.length - 1) st.set({ chapter: chapter + 1, tour: film.chapters[chapter + 1], step: 0 })
+      else if (film) st.stop()
+      else st.set({ playing: false })
     }
     if (narrate && synth) {
       const u = new SpeechSynthesisUtterance(`${s.title}. ${s.text}`)
@@ -106,16 +126,67 @@ export function TourPlayer() {
         spoke = true
         if (playing) timer.current = window.setTimeout(next, 1500)
       }
-      // start after the fly-to settles
-      timer.current = window.setTimeout(() => synth.speak(u), 1400)
+      // start after the fly-to settles; if no voice ever finishes (some browsers have none), move on anyway
+      timer.current = window.setTimeout(() => {
+        synth.speak(u)
+        timer.current = window.setTimeout(() => !spoke && playing && next(), 4000 + u.text.length * 85)
+      }, 1400)
     } else if (playing) timer.current = window.setTimeout(next, STEP_MS)
     return () => {
       clearTimeout(timer.current)
       if (!spoke) synth?.cancel()
     }
-  }, [s, j, step, playing, narrate])
+  }, [s, j, step, playing, narrate, film, chapter])
 
   useEffect(() => () => void (typeof speechSynthesis !== 'undefined' && speechSynthesis.cancel()), [])
+
+  if (film && s && j)
+    return (
+      <>
+        {/* letterbox and subtitles */}
+        <div className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[8vh] bg-black" />
+        <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[60] h-[8vh] bg-black" />
+        <button type="button" onClick={() => useTourStore.getState().stop()} className="fixed top-[calc(8vh+12px)] right-4 z-[61] rounded-full bg-black/40 px-3 py-1.5 text-[12px] text-white/70 hover:text-white">
+          Exit film (Esc)
+        </button>
+        <AnimatePresence mode="wait">
+          {step === 0 && (
+            <motion.div
+              key={`title-${j.id}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="pointer-events-none fixed inset-x-0 top-[14vh] z-[61] text-center"
+            >
+              <div className="text-[11px] font-semibold tracking-[0.3em] text-white/60 uppercase">
+                {film.title} · chapter {chapter + 1} of {film.chapters.length}
+              </div>
+              <div className="mt-2 font-display text-[clamp(30px,5vw,56px)] text-white drop-shadow-[0_2px_20px_rgba(0,0,0,.8)]">{j.name}</div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`${j.id}-${step}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            role="status"
+            aria-live="polite"
+            className="pointer-events-none fixed inset-x-0 bottom-[calc(8vh+18px)] z-[61] px-6 text-center"
+          >
+            <div className="text-[13px] tracking-wide text-amber tnum drop-shadow-[0_1px_8px_rgba(0,0,0,.9)]">
+              {s.approx ? 'c. ' : ''}
+              {formatYear(s.t)}
+            </div>
+            <div className="mx-auto mt-1 max-w-[860px] font-display text-[clamp(20px,2.6vw,30px)] leading-snug text-white drop-shadow-[0_2px_12px_rgba(0,0,0,.95)]">{s.title}</div>
+            <div className="mx-auto mt-1 max-w-[760px] text-[clamp(13px,1.4vw,16px)] leading-relaxed text-white/85 drop-shadow-[0_1px_8px_rgba(0,0,0,.95)]">{s.text}</div>
+          </motion.div>
+        </AnimatePresence>
+      </>
+    )
 
   return (
     <AnimatePresence>
