@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTime } from '../../time/store'
 import { useReader } from '../wiki/store'
-import { animateTo } from '../TimeBar'
-import { timeToU } from '../../time/scale'
+import { goTo } from '../TimeBar'
 import { formatYear } from '../../time/format'
 import { loadEvents } from '../../scene/Events'
 import { JOURNEYS } from '../../data/journeys'
@@ -75,7 +74,7 @@ export default function Quiz() {
     const nq = r % 2 === 0 ? await whereQuestion() : ((await rulerQuestion()) ?? (await whereQuestion()))
     asked.current = performance.now()
     setQ(nq)
-    animateTo(timeToU(nq.t), 1.2)
+    goTo(nq.t, 1.2)
     if (nq.kind === 'ruler') {
       useTime.getState().select(nq.at)
       useTime.getState().set({ herePins: [{ lon: nq.at[0], lat: nq.at[1], n: 1, hot: true }] })

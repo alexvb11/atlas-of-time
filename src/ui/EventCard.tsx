@@ -5,8 +5,7 @@ import { loadEvents, type GeoEvent } from '../scene/Events'
 import { useEntityIndex, nameAt } from '../data/entities'
 import { formatYear } from '../time/format'
 import { ConfTag } from './panel/bits'
-import { animateTo } from './TimeBar'
-import { timeToU } from '../time/scale'
+import { goTo } from './TimeBar'
 import { useArticleIndex } from '../data/wiki'
 import { useReader } from './wiki/store'
 
@@ -43,7 +42,7 @@ export function EventCard() {
             <div className="min-w-0 flex-1">
               <div className="text-[10px] font-semibold tracking-[0.2em] text-amber/90 uppercase">{ev.kind}</div>
               <h3 className="mt-0.5 font-display text-[22px] leading-tight text-ink">{ev.title}</h3>
-              <button type="button" onClick={() => animateTo(timeToU(ev.t), 1)} className="mt-0.5 text-[12px] text-cyan tnum hover:underline">
+              <button type="button" onClick={() => goTo(ev.t, 1)} className="mt-0.5 text-[12px] text-cyan tnum hover:underline">
                 {formatYear(ev.t, ev.conf === 'estimated')}
               </button>
               <ConfTag conf={ev.conf} />

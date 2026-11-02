@@ -6,8 +6,7 @@ import { useTime } from '../../time/store'
 import { getSnapshot, historyYears, loadHistoryIndex, loadSnapshot, onHistoryChange, snapshotIndexAt, type Snapshot } from '../../data/history'
 import { formatYear } from '../../time/format'
 import { parseYearQuery } from '../CommandPalette'
-import { animateTo } from '../TimeBar'
-import { timeToU } from '../../time/scale'
+import { goTo } from '../TimeBar'
 
 const PAIRS: { label: string; a: number; b: number }[] = [
   { label: 'Before and after the First World War', a: 1914, b: 1920 },
@@ -89,7 +88,7 @@ export default function Compare() {
             className="bubble px-3 py-1.5 text-[12px] text-mist"
             onClick={() => {
               useTime.getState().set({ compare: yearA })
-              animateTo(timeToU(other + 0.5))
+              goTo(other + 0.5)
             }}
           >
             ⇄ Swap the two years
@@ -102,7 +101,7 @@ export default function Compare() {
             className="bubble px-3 py-1.5 text-[12px] text-mist"
             onClick={() => {
               useTime.getState().set({ compare: p.b })
-              animateTo(timeToU(p.a + 0.5))
+              goTo(p.a + 0.5)
             }}
           >
             {p.label}

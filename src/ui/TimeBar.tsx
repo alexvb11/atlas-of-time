@@ -2,25 +2,17 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { motion } from 'framer-motion'
 import { useTime, type Speed } from '../time/store'
-import { timeToU, ZONES, PRESENT } from '../time/scale'
+import { timeToU, ZONES, PRESENT, settle, stepFrom } from '../time/scale'
 import { MILESTONES, SLIDER_LABELS } from '../time/eras'
 import { formatDate } from '../time/format'
 import { sound } from './sound'
 
-const SNAP = 0.012
-
-function snapTarget(u: number): number | null {
-  let best: number | null = null
-  let bd = SNAP
-  for (const t of MILESTONES) {
-    const mu = timeToU(t)
-    const d = Math.abs(mu - u)
-    if (d < bd) {
-      bd = d
-      best = mu
-    }
-  }
-  return best
+/** One readout unit forward or back (a year in history): exact, not a slider fraction */
+export function stepTime(n: number) {
+  const s = useTime.getState()
+  s.setPlaying(false)
+  s.setTime(stepFrom(s.time, n))
+  sound.tick()
 }
 
 export function jumpEra(dir: 1 | -1) {
@@ -30,7 +22,11 @@ export function jumpEra(dir: 1 | -1) {
   if (next !== undefined) animateTo(next)
 }
 
-export function animateTo(u: number, duration = 0.9) {
+/** Glide to time t and land exactly on it */
+export const goTo = (t: number, duration = 0.9) => animateTo(timeToU(t), duration, t)
+
+/** Glide the slider to u; with exact, land precisely on that time (slider positions round) */
+export function animateTo(u: number, duration = 0.9, exact?: number) {
   const s = useTime.getState()
   const p = { u: s.u }
   gsap.killTweensOf(p)
@@ -40,7 +36,10 @@ export function animateTo(u: number, duration = 0.9) {
     duration: s.reducedMotion ? 0.01 : duration,
     ease: 'power3.inOut',
     onUpdate: () => useTime.getState().setU(p.u),
-    onComplete: () => sound.tick(),
+    onComplete: () => {
+      if (exact !== undefined) useTime.getState().setTime(exact)
+      sound.tick()
+    },
   })
 }
 
@@ -50,6 +49,8 @@ export function TimeBar() {
   const playing = useTime((s) => s.playing)
   const track = useRef<HTMLDivElement>(null)
   const dragging = useRef(false)
+  // Shift-drag scrubs at a twentieth of the speed, for landing on an exact year
+  const fine = useRef<{ x: number; u: number } | null>(null)
 
   const uFromEvent = (e: { clientX: number }) => {
     const r = track.current!.getBoundingClientRect()
@@ -62,28 +63,43 @@ export function TimeBar() {
     const s = useTime.getState()
     s.setScrubbing(true)
     s.setPlaying(false)
-    s.setU(uFromEvent(e))
+    fine.current = e.shiftKey ? { x: e.clientX, u: s.u } : null
+    if (!fine.current) s.setU(uFromEvent(e))
   }
   const onMove = (e: React.PointerEvent) => {
     if (!dragging.current) return
-    useTime.getState().setU(uFromEvent(e))
+    if (e.shiftKey && !fine.current) fine.current = { x: e.clientX, u: useTime.getState().u }
+    if (!e.shiftKey) fine.current = null
+    if (fine.current) {
+      const w = track.current!.getBoundingClientRect().width
+      useTime.getState().setU(fine.current.u + (e.clientX - fine.current.x) / w / 20)
+    } else useTime.getState().setU(uFromEvent(e))
   }
   const onUp = () => {
     if (!dragging.current) return
     dragging.current = false
     const s = useTime.getState()
     s.setScrubbing(false)
-    const snap = snapTarget(s.u)
-    if (snap !== null && Math.abs(snap - s.u) > 1e-5) animateTo(snap, 0.45)
+    fine.current = null
+    // stop exactly on the year shown, not between two
+    s.setTime(settle(s.time))
+  }
+  // the wheel over the track steps one year (or readout unit) per notch
+  const onWheel = (e: React.WheelEvent) => {
+    const d = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY
+    if (Math.abs(d) < 2) return
+    stepTime((d > 0 ? -1 : 1) * (e.shiftKey ? 10 : 1))
   }
 
   const onKey = useCallback((e: React.KeyboardEvent) => {
-    const s = useTime.getState()
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       e.preventDefault()
       const dir = e.key === 'ArrowRight' ? 1 : -1
       if (e.shiftKey) jumpEra(dir)
-      else s.setU(s.u + dir * 0.0025)
+      else stepTime(dir * (e.altKey ? 10 : 1))
+    } else if (e.key === 'PageUp' || e.key === 'PageDown') {
+      e.preventDefault()
+      stepTime(e.key === 'PageUp' ? 100 : -100)
     } else if (e.key === 'Home') animateTo(0)
     else if (e.key === 'End') animateTo(1)
   }, [])
@@ -146,6 +162,7 @@ export function TimeBar() {
             onPointerUp={onUp}
             onPointerCancel={onUp}
             onKeyDown={onKey}
+            onWheel={onWheel}
             className="group relative h-11 cursor-grab touch-none select-none rounded-xl active:cursor-grabbing"
           >
             {/* zones */}
@@ -211,7 +228,7 @@ export function useTimeKeys() {
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
         const dir = e.key === 'ArrowRight' ? 1 : -1
         if (e.shiftKey) jumpEra(dir)
-        else s.setU(s.u + dir * 0.0025)
+        else stepTime(dir * (e.altKey ? 10 : 1))
       } else if (e.key === ' ' && tag !== 'BUTTON') {
         e.preventDefault()
         s.setPlaying(!s.playing)

@@ -9,8 +9,8 @@ import { useTime } from '../time/store'
 import { nameAt, useEntityIndex, type Entity, type EntityIndex } from '../data/entities'
 import { getSnapshot, historyYears, snapshotIndexAt } from '../data/history'
 import { formatYear } from '../time/format'
-import { animateTo } from './TimeBar'
-import { timeToU, PRESENT } from '../time/scale'
+import { goTo } from './TimeBar'
+import { PRESENT } from '../time/scale'
 import { term } from '../data/wiki'
 
 type Item = {
@@ -114,7 +114,7 @@ export function CommandPalette() {
     close()
     const s = useTime.getState()
     if (it.kind === 'goto') {
-      animateTo(timeToU(it.from), 1.2)
+      goTo(it.from, 1.2)
       const place = it.names[0]
       if (!place) return
       // Wikipedia knows where most places are; the atlas's own match is the fallback
@@ -125,7 +125,7 @@ export function CommandPalette() {
       return
     }
     const inEra = time >= it.from && time < it.to
-    if (!inEra) animateTo(timeToU(Math.min(it.to - 1, it.from + Math.min(50, (it.to - it.from) / 3))), 1.2)
+    if (!inEra) goTo(Math.min(it.to - 1, it.from + Math.min(50, (it.to - it.from) / 3)), 1.2)
     if (it.where) setTimeout(() => s.select(it.where), inEra ? 0 : 500)
   }
 

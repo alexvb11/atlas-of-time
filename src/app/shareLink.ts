@@ -4,8 +4,8 @@
 import { useEffect } from 'react'
 import { useTime } from '../time/store'
 import { useReader } from '../ui/wiki/store'
-import { animateTo } from '../ui/TimeBar'
-import { timeToU, PRESENT } from '../time/scale'
+import { goTo } from '../ui/TimeBar'
+import { PRESENT } from '../time/scale'
 
 type Shared = { t?: number; at?: [number, number]; read?: string }
 
@@ -41,7 +41,7 @@ export function useShareLink() {
     if (!introDone) return
     const apply = () => {
       const sh = parseHash()
-      if (sh.t !== undefined) animateTo(timeToU(sh.t), 1.2)
+      if (sh.t !== undefined) goTo(sh.t, 1.2)
       if (sh.at) useTime.getState().select(sh.at)
       if (sh.read) useReader.getState().open(sh.read)
     }

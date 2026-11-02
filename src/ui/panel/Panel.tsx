@@ -11,8 +11,8 @@ import { GeographyTab } from './Geography'
 import { HereTab } from './Here'
 import { HeldByTab } from './HeldBy'
 import { dateRange } from './bits'
-import { animateTo } from '../TimeBar'
-import { timeToU, PRESENT } from '../../time/scale'
+import { goTo } from '../TimeBar'
+import { PRESENT } from '../../time/scale'
 import { formatYear } from '../../time/format'
 import { recordPlace } from '../../data/journal'
 import { ageAt } from '../../time/eras'
@@ -204,7 +204,7 @@ function Breadcrumb({ lineage, current, time }: { lineage: NonNullable<Extract<R
               <button
                 type="button"
                 data-active={active}
-                onClick={() => animateTo(timeToU(Math.min(PRESENT, c.from + Math.min(40, (c.to - c.from) / 3))), 1.1)}
+                onClick={() => goTo(Math.min(PRESENT, c.from + Math.min(40, (c.to - c.from) / 3)), 1.1)}
                 title={`${c.name} · ${formatYear(c.from)}${c.related ? ' (outside today\'s borders)' : ''}`}
                 className={`rounded-full px-2.5 py-1 text-[11px] whitespace-nowrap transition-all duration-300 ${
                   active ? 'bg-amber/90 text-void shadow-[0_0_14px_-2px_rgba(255,196,119,.7)]' : c.related ? 'text-dim italic hover:text-mist' : 'text-mist hover:bg-white/8 hover:text-ink'

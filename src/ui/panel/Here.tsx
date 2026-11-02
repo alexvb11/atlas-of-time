@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import { eventsNear, confirmYears, type Nearby } from '../../data/places'
 import { formatYear } from '../../time/format'
-import { animateTo } from '../TimeBar'
-import { timeToU, PRESENT } from '../../time/scale'
+import { goTo } from '../TimeBar'
+import { PRESENT } from '../../time/scale'
 import { ArticleView } from '../wiki/ArticleView'
 import { zoomToFit } from '../../scene/CameraRig'
 
@@ -101,7 +101,7 @@ export function HereTab() {
                       {exact && <span className="ml-1.5 rounded-full bg-amber/15 px-1.5 py-px text-[9.5px] font-semibold tracking-wider text-amber uppercase">here, this year</span>}
                     </button>
                     <div className="mt-0.5 flex flex-wrap items-center gap-x-2 text-[11.5px] text-mist">
-                      <button type="button" onClick={() => animateTo(timeToU(e.t), 1)} className="text-cyan tnum hover:underline" title="Go to this date">
+                      <button type="button" onClick={() => goTo(e.t, 1)} className="text-cyan tnum hover:underline" title="Go to this date">
                         {formatYear(e.t)}
                       </button>
                       <span>{e.kind}</span>

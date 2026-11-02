@@ -4,8 +4,7 @@ import { JOURNEYS } from '../../data/journeys'
 import { useTourStore } from './tourStore'
 import { useTime } from '../../time/store'
 import { useReader } from '../wiki/store'
-import { animateTo } from '../TimeBar'
-import { timeToU } from '../../time/scale'
+import { goTo } from '../TimeBar'
 import { formatYear } from '../../time/format'
 
 const STEP_MS = 9000
@@ -84,7 +83,7 @@ export function TourPlayer() {
   // move time and camera to the stop
   useEffect(() => {
     if (!s) return
-    animateTo(timeToU(s.t), 1.6)
+    goTo(s.t, 1.6)
     useTime.getState().select(s.at)
   }, [s])
 

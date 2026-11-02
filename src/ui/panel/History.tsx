@@ -7,8 +7,7 @@ import { useArticleIndex, useCountryEvents } from '../../data/wiki'
 import { ArticleView } from '../wiki/ArticleView'
 import { ConfTag } from './bits'
 import { formatYear, formatDate } from '../../time/format'
-import { animateTo } from '../TimeBar'
-import { timeToU } from '../../time/scale'
+import { goTo } from '../TimeBar'
 
 type Ev = { t: number; title: string; detail: string | null; conf?: Conf; entity: string; era?: boolean; article?: string; auto?: boolean }
 
@@ -69,7 +68,7 @@ export function HistoryTab({ res, idx }: { res: Resolution; idx: EntityIndex }) 
               <div className="flex items-baseline gap-2">
                 <button
                   type="button"
-                  onClick={() => animateTo(timeToU(e.t), 1)}
+                  onClick={() => goTo(e.t, 1)}
                   title={`Go to ${formatYear(e.t, e.conf === 'estimated')}`}
                   className="shrink-0 rounded px-0.5 text-[11.5px] text-cyan/90 tnum hover:bg-cyan/10 hover:text-cyan"
                 >

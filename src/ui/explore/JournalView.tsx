@@ -1,8 +1,7 @@
 import { useJournal, clearJournal } from '../../data/journal'
 import { useTime } from '../../time/store'
 import { useReader } from '../wiki/store'
-import { animateTo } from '../TimeBar'
-import { timeToU } from '../../time/scale'
+import { goTo } from '../TimeBar'
 import { formatYear } from '../../time/format'
 
 const ago = (ms: number) => {
@@ -52,7 +51,7 @@ export default function JournalView() {
                 <button
                   type="button"
                   onClick={() => {
-                    animateTo(timeToU(p.t), 1.1)
+                    goTo(p.t, 1.1)
                     useTime.getState().select(p.at)
                   }}
                   className="flex w-full items-baseline gap-2 rounded-xl px-2 py-1.5 text-left hover:bg-white/[.06]"

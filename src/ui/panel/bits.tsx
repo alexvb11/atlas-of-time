@@ -3,8 +3,7 @@ import { animate, useMotionValue, useTransform, motion } from 'framer-motion'
 import type { Conf } from '../../data/entities'
 import { formatYear } from '../../time/format'
 import { useTime } from '../../time/store'
-import { animateTo } from '../TimeBar'
-import { timeToU } from '../../time/scale'
+import { goTo } from '../TimeBar'
 
 /** Ticking counter: numbers glide to their new value as time changes */
 export function Ticker({ value, format }: { value: number; format: (n: number) => string }) {
@@ -55,7 +54,7 @@ export function YearLink({ t, approx, className = '' }: { t: number; approx?: bo
   return (
     <button
       type="button"
-      onClick={() => animateTo(timeToU(t), 1)}
+      onClick={() => goTo(t, 1)}
       className={`rounded-md text-cyan/90 underline-offset-2 transition-colors hover:text-cyan hover:underline ${className}`}
       aria-label={`Jump to ${formatYear(t, approx)}`}
     >

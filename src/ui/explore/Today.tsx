@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { onThisDay, confirmYears, type PlaceEvent } from '../../data/places'
 import { useTime } from '../../time/store'
-import { animateTo } from '../TimeBar'
-import { timeToU } from '../../time/scale'
+import { goTo } from '../TimeBar'
 import { formatYear } from '../../time/format'
 import { ArticleView } from '../wiki/ArticleView'
 
@@ -46,7 +45,7 @@ export default function Today() {
                   type="button"
                   className="ml-auto text-dim hover:text-cyan"
                   onClick={() => {
-                    animateTo(timeToU(e.t), 1.1)
+                    goTo(e.t, 1.1)
                     useTime.getState().select([e.lon, e.lat])
                   }}
                 >

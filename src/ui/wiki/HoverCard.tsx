@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { term, film, useAsync, displayTitle } from '../../data/wiki'
 import { useEntityIndex } from '../../data/entities'
 import { useTime } from '../../time/store'
-import { animateTo } from '../TimeBar'
-import { timeToU, PRESENT } from '../../time/scale'
+import { goTo } from '../TimeBar'
+import { PRESENT } from '../../time/scale'
 import { formatYear } from '../../time/format'
 import { Film } from './Film'
 import { useReader } from './store'
@@ -84,7 +84,7 @@ function Card({ title, anchor }: { title: string; anchor: HTMLElement }) {
     if (!d?.coords) return
     useReader.getState().close()
     useTime.getState().select(d.coords)
-    if (entity) animateTo(timeToU(Math.min(PRESENT, entity.from + Math.min(30, (entity.to - entity.from) / 3))), 1.1)
+    if (entity) goTo(Math.min(PRESENT, entity.from + Math.min(30, (entity.to - entity.from) / 3)), 1.1)
   }
 
   return (

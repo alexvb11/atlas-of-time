@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useTime } from '../../time/store'
 import { timelineAt, type Hold } from '../../data/history'
 import { formatYear } from '../../time/format'
-import { animateTo } from '../TimeBar'
-import { PRESENT, timeToU } from '../../time/scale'
+import { goTo } from '../TimeBar'
+import { PRESENT } from '../../time/scale'
 import { useReader } from '../wiki/store'
 
 const SOURCE: Record<number, string> = { 3: 'CShapes', 2: 'Cliopatria', 1: 'approximate', 0: 'approximate' }
@@ -46,7 +46,7 @@ export function HeldByTab() {
               <span className={`absolute top-[7px] -left-[25px] size-2.5 rounded-full border ${now ? 'border-cyan bg-cyan shadow-[0_0_10px_rgba(127,216,255,.8)]' : h.from <= t ? 'border-white/40 bg-white/30' : 'border-white/25 bg-transparent'}`} />
               <button
                 type="button"
-                onClick={() => animateTo(timeToU(Math.min(PRESENT, h.from + Math.min(1, (h.to - h.from) / 2))))}
+                onClick={() => goTo(Math.min(PRESENT, h.from + Math.min(1, (h.to - h.from) / 2)))}
                 className={`block w-full rounded-xl px-2 py-1 text-left hover:bg-white/[.06] ${now ? 'bg-white/[.06]' : ''}`}
               >
                 <span className="block text-[11px] text-dim tnum">
