@@ -6,8 +6,8 @@
   where, who ruled and from where, government, religion and languages, its age and lifespan (or
   the period of a longer state), what came before and after on that spot, neighbours, size and
   the wider world, plus "What was happening": the Wikipedia section covering that year.
-- Sharper prehistory labels already in 0.9 aside, the panel never states a founding year for an
-  automated modern country, since Wikidata often gives a predecessor's.
+- The overview never states a founding year for an automated modern country, since Wikidata often
+  gives a predecessor's.
 
 ## 0.10.0 — 2026-11-01
 
