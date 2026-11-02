@@ -17,6 +17,8 @@ import { SpreadsLayer } from './Spreads'
 import { LandmarksLayer } from './Landmarks'
 import { DensityLayer } from './Density'
 import { PoliticalFill } from './PoliticalFill'
+import { OldMapLayer } from './OldMap'
+import { CityWallsLayer } from './CityWalls'
 import { TerrainTiles } from './TerrainTiles'
 import { PaleoLand } from './PaleoLand'
 import { updateWorld, world } from './world'
@@ -80,6 +82,7 @@ export function Scene() {
         <TerrainTiles />
         <DensityLayer />
         <PoliticalFill />
+        <OldMapLayer />
         <DriftLand />
         <PaleoLand />
         <Borders />
@@ -91,6 +94,7 @@ export function Scene() {
         <TradeRoutesLayer />
         <SpreadsLayer />
         <LandmarksLayer />
+        <CityWallsLayer />
       </Suspense>
       <Effects lite={lite} />
     </Canvas>

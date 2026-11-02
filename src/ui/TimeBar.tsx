@@ -1,4 +1,5 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useT } from '../i18n'
 import gsap from 'gsap'
 import { motion } from 'framer-motion'
 import { useTime, type Speed } from '../time/store'
@@ -43,7 +44,11 @@ export function animateTo(u: number, duration = 0.9, exact?: number) {
   })
 }
 
+// approximate width at 10 px: CJK, Hangul and kana are about twice as wide as Latin letters
+const labelWidth = (s: string) => [...s].reduce((w, c) => w + (/[\u1100-\u11ff\u2e80-\u9fff\uac00-\ud7af\uff00-\uffef]/.test(c) ? 10.5 : 5.6), 0)
+
 export function TimeBar() {
+  const tt = useT()
   const u = useTime((s) => s.u)
   const time = useTime((s) => s.time)
   const playing = useTime((s) => s.playing)
@@ -114,7 +119,7 @@ export function TimeBar() {
     return () => ro.disconnect()
   }, [])
   const labels = useMemo(() => {
-    const all = SLIDER_LABELS.map((l) => ({ ...l, u: timeToU(l.t), w: l.label.length * 5.6 + 14 }))
+    const all = SLIDER_LABELS.map((l) => ({ ...l, label: tt(l.label), u: timeToU(l.t), w: labelWidth(tt(l.label)) + 14 }))
     const kept: typeof all = []
     for (const l of [...all.filter((x) => x.major), ...all.filter((x) => !x.major)]) {
       const x = l.u * trackW
@@ -122,7 +127,7 @@ export function TimeBar() {
       if (kept.every((k) => Math.abs(k.u * trackW - x) > (k.w + l.w) / 2)) kept.push(l)
     }
     return kept
-  }, [trackW])
+  }, [trackW, tt])
 
   return (
     <motion.div
@@ -176,7 +181,7 @@ export function TimeBar() {
                   background: ['rgba(255,196,119,.22)', 'rgba(170,190,220,.2)', 'rgba(127,216,255,.24)'][i],
                 }}
               >
-                <span className="absolute -top-[25px] left-0 hidden text-[9.5px] font-semibold tracking-[0.18em] text-dim uppercase md:block">{z.label}</span>
+                <span className="absolute -top-[25px] left-0 hidden text-[9.5px] font-semibold tracking-[0.18em] text-dim uppercase md:block">{tt(z.label)}</span>
               </div>
             ))}
             {/* elapsed glow */}
@@ -205,9 +210,9 @@ export function TimeBar() {
           className="bubble shrink-0 px-3.5 py-2 text-[12px] font-medium text-ink disabled:opacity-40"
           onClick={() => animateTo(1, 1.4)}
           disabled={time >= PRESENT}
-          aria-label="Return to today"
+          aria-label={tt('Return to today')}
         >
-          <span className="hidden sm:inline">Today</span>
+          <span className="hidden sm:inline">{tt('Today')}</span>
           <svg className="sm:hidden" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M2 2v10M12 2 6 7l6 5"/></svg>
         </button>
       </div>

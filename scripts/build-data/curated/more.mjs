@@ -1,0 +1,251 @@
+// Poland, Ukraine, Brazil and Ethiopia. Dates follow the linked Wikipedia articles and Britannica;
+// uncertain dates are marked E (estimated) or X (disputed). Language shares come from a census
+// where `langsSource` names one; elsewhere they only order the languages, as in tier1.mjs.
+import { bce, ce, NOW, E, X, entity } from './dsl.mjs'
+
+void bce
+
+export const entities = [
+  // ================= Poland =================
+  entity({
+    id: 'crown-poland', name: 'Kingdom of Poland', kind: 'kingdom', region: 'poland', from: ce(966), to: ce(1569.5), wiki: 'Kingdom of Poland', match: ['Poland', 'Polanes'],
+    names: [[ce(966), ce(1025), 'Duchy of Poland'], [ce(1025), ce(1138), 'Kingdom, then Duchy, of Poland', E], [ce(1138), ce(1320), 'Polish duchies (the fragmentation)'], [ce(1320), ce(1569.5), 'Kingdom of Poland']],
+    capitals: [[ce(966), ce(1038), 'Gniezno', E], [ce(1038), ce(1569.5), 'Kraków', E]],
+    rulers: [[ce(960), ce(992), 'Mieszko I', E], [ce(992), ce(1025), 'Bolesław I the Brave'], [ce(1333), ce(1370), 'Casimir III the Great'], [ce(1386), ce(1434), 'Władysław II Jagiełło'], [ce(1506), ce(1548), 'Sigismund I the Old'], [ce(1548), ce(1569.5), 'Sigismund II Augustus']],
+    gov: [[ce(966), ce(1569.5), 'Monarchy (Piast, then from 1386 Jagiellonian kings)']],
+    religion: [[ce(966), ce(1569.5), 'Catholic Christianity']],
+    langs: [[ce(966), ce(1569.5), [['polish', 0.8], ['latin', 0.05], ['german', 0.1], ['yiddish', 0.05]]]],
+    facts: [
+      [ce(966), null, 'The baptism of Mieszko I in 966 is taken as the founding of the Polish state.'],
+      [ce(1364), null, 'Casimir III founded the University of Kraków in 1364, the oldest in Poland.'],
+      [ce(1410.54), null, 'At Grunwald in 1410 Poland and Lithuania defeated the Teutonic Knights.'],
+    ],
+    events: [[ce(966.3), 'Baptism of Mieszko I', null, E], [ce(1385.62), 'Union of Krewo with Lithuania'], [ce(1410.54), 'Battle of Grunwald']],
+  }),
+  entity({
+    id: 'plc', name: 'Polish–Lithuanian Commonwealth', kind: 'state', region: 'poland', from: ce(1569.5), to: ce(1795.81), wiki: 'Polish–Lithuanian Commonwealth', match: ['Poland-Lithuania', 'Polish–Lithuanian Commonwealth'],
+    capitals: [[ce(1569.5), ce(1596), 'Kraków'], [ce(1596), ce(1795.81), 'Warsaw', E]],
+    rulers: [[ce(1576), ce(1586), 'Stephen Báthory'], [ce(1587), ce(1632), 'Sigismund III Vasa'], [ce(1674), ce(1696), 'John III Sobieski'], [ce(1764), ce(1795.81), 'Stanisław August Poniatowski']],
+    gov: [[ce(1569.5), ce(1795.81), 'Elective monarchy with a parliament of nobles (Sejm), the "Golden Liberty"']],
+    religion: [[ce(1569.5), ce(1795.81), 'Catholic majority; Orthodox, Protestant, Jewish and Muslim minorities']],
+    langs: [[ce(1569.5), ce(1795.81), [['polish', 0.45], ['ukrainian', 0.2], ['lithuanian', 0.1], ['yiddish', 0.1], ['german', 0.1], ['latin', 0.05]]]],
+    facts: [
+      [ce(1573), null, 'The Warsaw Confederation of 1573 guaranteed religious freedom to the nobility, rare in Europe at the time.'],
+      [ce(1683.7), null, 'John III Sobieski led the army that relieved the Ottoman siege of Vienna in 1683.'],
+      [ce(1791.34), null, 'The Constitution of 3 May 1791 was the first modern written national constitution in Europe.'],
+    ],
+    events: [[ce(1569.5), 'Union of Lublin'], [ce(1683.7), 'Battle of Vienna'], [ce(1772.59), 'First Partition'], [ce(1791.34), 'Constitution of 3 May'], [ce(1795.81), 'Third Partition: the Commonwealth is divided between Russia, Prussia and Austria']],
+  }),
+  entity({
+    id: 'second-polish-republic', name: 'Second Polish Republic', kind: 'republic', region: 'poland', from: ce(1918.86), to: ce(1939.76), wiki: 'Second Polish Republic', match: ['Poland'],
+    langsSource: 'Groups from the 1931 census, rounded (Ukrainian includes those recorded as Ruthenian; Yiddish stands for the Jewish population). Belarusian (3%) and others not shown.',
+    capitals: [[ce(1918.86), ce(1939.76), 'Warsaw']],
+    rulers: [[ce(1918.86), ce(1922.95), 'Józef Piłsudski (Chief of State)'], [ce(1926.37), ce(1935.37), 'Józef Piłsudski (de facto, after the May Coup)']],
+    gov: [[ce(1918.86), ce(1926.37), 'Parliamentary republic'], [ce(1926.37), ce(1939.76), 'Authoritarian "Sanation" government']],
+    religion: [[ce(1918.86), ce(1939.76), 'Catholic majority; large Jewish, Orthodox and Greek Catholic minorities']],
+    langs: [[ce(1918.86), ce(1939.76), [['polish', 0.69], ['ukrainian', 0.14], ['yiddish', 0.1], ['german', 0.02]]]],
+    facts: [[ce(1931), null, 'By 1931 about one in five of the world’s Jews lived in Poland.']],
+    events: [[ce(1918.86), 'Independence restored (11 November)'], [ce(1920.62), 'Battle of Warsaw'], [ce(1926.37), 'May Coup by Piłsudski'], [ce(1939.67), 'Germany invades (1 September)'], [ce(1939.71), 'The Soviet Union invades (17 September)']],
+  }),
+  entity({
+    id: 'polish-peoples-republic', name: 'Polish People’s Republic', kind: 'republic', region: 'poland', from: ce(1945.35), to: ce(1989.99), wiki: 'Polish People\'s Republic', match: ['Poland'],
+    names: [[ce(1945.35), ce(1952.55), 'Republic of Poland (communist-led)'], [ce(1952.55), ce(1989.99), 'Polish People’s Republic']],
+    capitals: [[ce(1945.35), ce(1989.99), 'Warsaw']],
+    rulers: [[ce(1956.8), ce(1970.97), 'Władysław Gomułka'], [ce(1970.97), ce(1980.68), 'Edward Gierek'], [ce(1981.8), ce(1989.6), 'Wojciech Jaruzelski']],
+    gov: [[ce(1945.35), ce(1989.99), 'One-party communist state in the Soviet bloc']],
+    religion: [[ce(1945.35), ce(1989.99), 'Catholic Christianity (officially discouraged)']],
+    langs: [[ce(1945.35), ce(1989.99), [['polish', 0.97], ['ukrainian', 0.01], ['german', 0.01], ['russian', 0.01]]]],
+    facts: [[ce(1978.79), null, 'Karol Wojtyła of Kraków became Pope John Paul II in 1978.']],
+    events: [[ce(1956.8), 'Polish October'], [ce(1980.66), 'Gdańsk Agreement; the Solidarity union is born'], [ce(1981.95), 'Martial law declared'], [ce(1989.42), 'Partly free elections; Solidarity wins']],
+  }),
+  entity({
+    id: 'poland', name: 'Republic of Poland', kind: 'republic', region: 'poland', iso3: 'POL', from: ce(1989.99), to: NOW + 1, wiki: 'Poland', match: ['Poland'],
+    capitals: [[ce(1989.99), NOW + 1, 'Warsaw']],
+    gov: [[ce(1989.99), NOW + 1, 'Parliamentary republic']],
+    religion: [[ce(1989.99), NOW + 1, 'Catholic Christianity (majority)']],
+    langs: [[ce(1989.99), NOW + 1, [['polish', 0.97], ['ukrainian', 0.01], ['german', 0.01], ['english', 0.01]]]],
+    events: [[ce(1999.19), 'Joins NATO'], [ce(2004.33), 'Joins the European Union']],
+  }),
+
+  // ================= Ukraine =================
+  entity({
+    id: 'galicia-volhynia', name: 'Galicia–Volhynia', kind: 'principality', region: 'ukraine', from: ce(1199), to: ce(1349), conf: E, wiki: 'Galicia–Volhynia', match: ['Principality of Galicia-Volhynia'],
+    names: [[ce(1199), ce(1253), 'Principality of Galicia–Volhynia'], [ce(1253), ce(1349), 'Kingdom of Ruthenia (Galicia–Volhynia)']],
+    capitals: [[ce(1199), ce(1272), 'Halych', E], [ce(1272), ce(1349), 'Lviv', E]],
+    rulers: [[ce(1199), ce(1205), 'Roman the Great'], [ce(1239), ce(1264), 'Daniel of Galicia', E]],
+    gov: [[ce(1199), ce(1349), 'Principality, a kingdom from 1253']],
+    religion: [[ce(1199), ce(1349), 'Eastern Orthodox Christianity']],
+    langs: [[ce(1199), ce(1349), [['old-east-slavic', 0.9], ['polish', 0.05], ['kipchak', 0.05]]]],
+    facts: [[ce(1256), null, 'Lviv was founded by Daniel of Galicia and named after his son Lev.']],
+    events: [[ce(1253), 'Daniel is crowned King of Ruthenia'], [ce(1349), 'Poland takes Galicia', null, E]],
+  }),
+  entity({
+    id: 'cossack-hetmanate', name: 'Cossack Hetmanate', kind: 'state', region: 'ukraine', from: ce(1648.1), to: ce(1764.8), wiki: 'Cossack Hetmanate', match: ['Cossack Hetmanate', 'Zaporozhian Host'],
+    capitals: [[ce(1648.1), ce(1669), 'Chyhyryn'], [ce(1669), ce(1708.9), 'Baturyn'], [ce(1708.9), ce(1764.8), 'Hlukhiv']],
+    rulers: [[ce(1648.1), ce(1657.6), 'Bohdan Khmelnytsky'], [ce(1687), ce(1708.9), 'Ivan Mazepa'], [ce(1750), ce(1764.8), 'Kyrylo Rozumovsky']],
+    gov: [[ce(1648.1), ce(1654.04), 'Cossack state led by an elected hetman'], [ce(1654.04), ce(1764.8), 'Cossack state under the protection of Muscovy, later Russia']],
+    religion: [[ce(1648.1), ce(1764.8), 'Eastern Orthodox Christianity']],
+    langs: [[ce(1648.1), ce(1764.8), [['ukrainian', 0.9], ['polish', 0.05], ['yiddish', 0.05]]]],
+    facts: [[ce(1709.52), null, 'Hetman Mazepa sided with Sweden against Peter the Great and lost at Poltava in 1709.']],
+    events: [[ce(1648.1), 'Khmelnytsky Uprising begins'], [ce(1654.04), 'Pereiaslav Agreement with Muscovy'], [ce(1709.52), 'Battle of Poltava'], [ce(1764.8), 'Catherine II abolishes the office of hetman']],
+  }),
+  entity({
+    id: 'ukrainian-ssr', name: 'Ukrainian Soviet Socialist Republic', kind: 'republic', region: 'ukraine', from: ce(1919.19), to: ce(1991.65), wiki: 'Ukrainian Soviet Socialist Republic', match: ['Ukrainian SSR', 'Ukraine'],
+    capitals: [[ce(1919.19), ce(1934.48), 'Kharkiv'], [ce(1934.48), ce(1991.65), 'Kyiv']],
+    gov: [[ce(1919.19), ce(1991.65), 'Soviet republic, from 1922 a founding member of the USSR']],
+    religion: [[ce(1919.19), ce(1991.65), 'Orthodox Christianity, suppressed under official atheism']],
+    langs: [[ce(1919.19), ce(1991.65), [['ukrainian', 0.7], ['russian', 0.25], ['yiddish', 0.03], ['polish', 0.02]]]],
+    facts: [[ce(1932.5), null, 'The Holodomor famine of 1932–33 killed millions of people in Ukraine.']],
+    events: [[ce(1932.5), 'Holodomor famine (1932–33)', null, E], [ce(1986.32), 'Chernobyl disaster (26 April)']],
+  }),
+  entity({
+    id: 'ukraine', name: 'Ukraine', kind: 'republic', region: 'ukraine', iso3: 'UKR', from: ce(1991.65), to: NOW + 1, wiki: 'Ukraine', match: ['Ukraine'],
+    langsSource: 'Native language in the 2001 census, the only one held since independence.',
+    capitals: [[ce(1991.65), NOW + 1, 'Kyiv']],
+    gov: [[ce(1991.65), NOW + 1, 'Semi-presidential republic']],
+    religion: [[ce(1991.65), NOW + 1, 'Orthodox Christianity (majority); Greek Catholic in the west']],
+    langs: [[ce(1991.65), NOW + 1, [['ukrainian', 0.675], ['russian', 0.296]]]],
+    events: [[ce(1991.92), 'Independence confirmed by referendum (1 December)'], [ce(2004.9), 'Orange Revolution'], [ce(2014.14), 'Revolution of Dignity'], [ce(2014.21), 'Russia annexes Crimea'], [ce(2022.15), 'Russia launches a full-scale invasion (24 February)']],
+  }),
+
+  // ================= Brazil =================
+  entity({
+    id: 'colonial-brazil', name: 'Colonial Brazil', kind: 'colony', region: 'brazil', from: ce(1500.31), to: ce(1815.96), wiki: 'Colonial Brazil', match: ['Portuguese Brazil', 'Viceroyalty of Brazil'],
+    capitals: [[ce(1549.24), ce(1763), 'Salvador'], [ce(1763), ce(1815.96), 'Rio de Janeiro']],
+    gov: [[ce(1500.31), ce(1815.96), 'Portuguese colony']],
+    religion: [[ce(1500.31), ce(1815.96), 'Catholic Christianity; Indigenous and African religions']],
+    langs: [[ce(1500.31), ce(1815.96), [['portuguese', 0.5], ['tupi', 0.4], ['spanish', 0.1]]]],
+    facts: [
+      [ce(1500.31), null, 'Pedro Álvares Cabral’s fleet reached the coast on 22 April 1500.'],
+      [null, null, 'Close to five million enslaved Africans were brought to Brazil, more than to any other country.'],
+      [ce(1695), null, 'Gold found in Minas Gerais in the 1690s set off the largest gold rush of the colonial era.'],
+    ],
+    events: [[ce(1500.31), 'Cabral reaches Brazil'], [ce(1549.24), 'Salvador founded as the capital'], [ce(1808.18), 'The Portuguese court arrives in Rio, fleeing Napoleon']],
+  }),
+  entity({
+    id: 'kingdom-brazil', name: 'United Kingdom of Portugal, Brazil and the Algarves', kind: 'kingdom', region: 'brazil', from: ce(1815.96), to: ce(1822.69), wiki: 'United Kingdom of Portugal, Brazil and the Algarves',
+    capitals: [[ce(1815.96), ce(1821.3), 'Rio de Janeiro'], [ce(1821.3), ce(1822.69), 'Lisbon']],
+    rulers: [[ce(1815.96), ce(1822.69), 'Maria I, then John VI (from 1816)']],
+    gov: [[ce(1815.96), ce(1822.69), 'Monarchy uniting Portugal and Brazil']],
+    religion: [[ce(1815.96), ce(1822.69), 'Catholic Christianity']],
+    langs: [[ce(1815.96), ce(1822.69), [['portuguese', 0.9], ['tupi', 0.1]]]],
+  }),
+  entity({
+    id: 'empire-brazil', name: 'Empire of Brazil', kind: 'empire', region: 'brazil', from: ce(1822.69), to: ce(1889.87), wiki: 'Empire of Brazil', match: ['Kingdom of Brazil', 'Empire of Brazil'],
+    capitals: [[ce(1822.69), ce(1889.87), 'Rio de Janeiro']],
+    rulers: [[ce(1822.69), ce(1831.27), 'Pedro I'], [ce(1831.27), ce(1889.87), 'Pedro II']],
+    gov: [[ce(1822.69), ce(1889.87), 'Constitutional monarchy']],
+    religion: [[ce(1822.69), ce(1889.87), 'Catholic Christianity (state religion)']],
+    langs: [[ce(1822.69), ce(1889.87), [['portuguese', 0.95], ['tupi', 0.05]]]],
+    facts: [[ce(1888.36), null, 'Brazil was the last country in the Americas to abolish slavery, in 1888.']],
+    events: [[ce(1822.69), 'Pedro declares independence (7 September)'], [ce(1888.36), 'The Golden Law abolishes slavery (13 May)'], [ce(1889.87), 'A republic is proclaimed; the emperor goes into exile']],
+  }),
+  entity({
+    id: 'brazil', name: 'Federative Republic of Brazil', kind: 'republic', region: 'brazil', iso3: 'BRA', from: ce(1889.87), to: NOW + 1, wiki: 'Brazil', match: ['Brazil'],
+    capitals: [[ce(1889.87), ce(1960.3), 'Rio de Janeiro'], [ce(1960.3), NOW + 1, 'Brasília']],
+    gov: [[ce(1889.87), ce(1964.25), 'Federal presidential republic (Vargas dictatorship 1937–1945)'], [ce(1964.25), ce(1985.2), 'Military dictatorship'], [ce(1985.2), NOW + 1, 'Federal presidential republic']],
+    religion: [[ce(1889.87), NOW + 1, 'Catholic Christianity (majority); a fast-growing Protestant share']],
+    langs: [[ce(1889.87), NOW + 1, [['portuguese', 0.98], ['german', 0.01], ['italian', 0.01]]]],
+    events: [[ce(1960.3), 'Brasília becomes the capital'], [ce(1964.25), 'Military coup'], [ce(1988.76), 'A new constitution']],
+  }),
+
+  // ================= Ethiopia =================
+  entity({
+    id: 'aksum', name: 'Kingdom of Aksum', kind: 'kingdom', region: 'ethiopia', from: ce(100), to: ce(940), conf: E, wiki: 'Kingdom of Aksum', match: ['Axum'],
+    capitals: [[ce(100), ce(940), 'Aksum']],
+    rulers: [[ce(320), ce(360), 'Ezana', E], [ce(514), ce(540), 'Kaleb', E]],
+    gov: [[ce(100), ce(940), 'Monarchy (negusa nagast, "king of kings")']],
+    religion: [[ce(100), ce(330), 'Traditional religion with South Arabian gods', E], [ce(330), ce(940), 'Orthodox Christianity', E]],
+    langs: [[ce(100), ce(940), [['geez', 0.8], ['ancient-greek', 0.1], ['arabic', 0.1]]]],
+    facts: [
+      [null, null, 'Aksum minted its own gold, silver and bronze coins.'],
+      [ce(330), null, 'King Ezana adopted Christianity around 330, among the first rulers anywhere to do so.'],
+      [null, null, 'Its giant carved stone stelae still stand in the town of Aksum.'],
+    ],
+    events: [[ce(330), 'Ezana adopts Christianity', null, E]],
+  }),
+  entity({
+    id: 'zagwe', name: 'Zagwe dynasty', kind: 'kingdom', region: 'ethiopia', from: ce(1137), to: ce(1270), conf: X, wiki: 'Zagwe dynasty',
+    capitals: [[ce(1137), ce(1270), 'Roha (Lalibela)', E]],
+    rulers: [[ce(1181), ce(1221), 'Gebre Mesqel Lalibela', E]],
+    gov: [[ce(1137), ce(1270), 'Monarchy']],
+    religion: [[ce(1137), ce(1270), 'Ethiopian Orthodox Christianity']],
+    langs: [[ce(1137), ce(1270), [['geez', 0.6], ['amharic', 0.4]]]],
+    facts: [[null, null, 'The eleven churches of Lalibela were carved down into the living rock under the Zagwe kings.'], [null, null, 'Its start is disputed: dates from the 10th to the 12th century are given.']],
+  }),
+  entity({
+    id: 'ethiopian-empire', name: 'Ethiopian Empire', kind: 'empire', region: 'ethiopia', from: ce(1270), to: ce(1974.7), wiki: 'Ethiopian Empire', match: ['Ethiopia', 'Abyssinia'],
+    capitals: [[ce(1270), ce(1636), 'Moving royal camps', E], [ce(1636), ce(1855), 'Gondar'], [ce(1886), ce(1974.7), 'Addis Ababa']],
+    rulers: [[ce(1270), ce(1285), 'Yekuno Amlak'], [ce(1434), ce(1468), 'Zara Yaqob'], [ce(1632), ce(1667), 'Fasilides'], [ce(1855), ce(1868), 'Tewodros II'], [ce(1889), ce(1913), 'Menelik II'], [ce(1930), ce(1974.7), 'Haile Selassie']],
+    gov: [[ce(1270), ce(1974.7), 'Monarchy of the Solomonic dynasty']],
+    religion: [[ce(1270), ce(1974.7), 'Ethiopian Orthodox Christianity; Islam']],
+    langs: [[ce(1270), ce(1974.7), [['amharic', 0.4], ['oromo', 0.35], ['geez', 0.05], ['arabic', 0.2]]]],
+    facts: [[ce(1896.16), null, 'Victory at Adwa in 1896 kept Ethiopia independent through the Scramble for Africa, apart from the Italian occupation of 1936–1941.']],
+    events: [[ce(1270), 'Yekuno Amlak founds the Solomonic dynasty'], [ce(1896.16), 'Battle of Adwa: Italy is defeated'], [ce(1936.34), 'Italy occupies Addis Ababa'], [ce(1941.34), 'Haile Selassie returns to Addis Ababa']],
+  }),
+  entity({
+    id: 'derg', name: 'Derg', kind: 'republic', region: 'ethiopia', from: ce(1974.7), to: ce(1991.4), wiki: 'Derg', match: [],
+    names: [[ce(1974.7), ce(1987.14), 'Provisional Military Government of Socialist Ethiopia (the Derg)'], [ce(1987.14), ce(1991.4), 'People’s Democratic Republic of Ethiopia']],
+    capitals: [[ce(1974.7), ce(1991.4), 'Addis Ababa']],
+    rulers: [[ce(1977.1), ce(1991.4), 'Mengistu Haile Mariam']],
+    gov: [[ce(1974.7), ce(1987.14), 'Military junta'], [ce(1987.14), ce(1991.4), 'One-party communist state']],
+    religion: [[ce(1974.7), ce(1991.4), 'Ethiopian Orthodox Christianity and Islam, under an atheist state']],
+    langs: [[ce(1974.7), ce(1991.4), [['oromo', 0.35], ['amharic', 0.35], ['arabic', 0.05]]]],
+    events: [[ce(1977), 'The Red Terror (1976–78)', null, E], [ce(1984.5), 'Famine of 1983–85', null, E]],
+  }),
+  entity({
+    id: 'ethiopia', name: 'Federal Democratic Republic of Ethiopia', kind: 'republic', region: 'ethiopia', iso3: 'ETH', from: ce(1991.4), to: NOW + 1, wiki: 'Ethiopia', match: ['Ethiopia'],
+    langsSource: 'First language in the 2007 census; Somali, Tigrinya and some eighty other languages not shown.',
+    capitals: [[ce(1991.4), NOW + 1, 'Addis Ababa']],
+    gov: [[ce(1991.4), NOW + 1, 'Federal parliamentary republic']],
+    religion: [[ce(1991.4), NOW + 1, 'Ethiopian Orthodox Christianity, Islam and Protestant Christianity']],
+    langs: [[ce(1991.4), NOW + 1, [['oromo', 0.338], ['amharic', 0.293]]]],
+    events: [[ce(1993.39), 'Eritrea becomes independent'], [ce(1998.35), 'Eritrean–Ethiopian War (1998–2000)'], [ce(2020.84), 'Tigray War begins']],
+  }),
+]
+
+export const lineages = {
+  POL: {
+    name: 'Poland',
+    spans: [
+      [ce(966), ce(1569.5), 'crown-poland', true],
+      [ce(1569.5), ce(1795.81), 'plc', true],
+      [ce(1795.81), ce(1917.85), 'russian-empire', false],
+      [ce(1918.86), ce(1939.76), 'second-polish-republic', true],
+      [ce(1945.35), ce(1989.99), 'polish-peoples-republic', true],
+      [ce(1989.99), NOW + 1, 'poland', true],
+    ],
+  },
+  UKR: {
+    name: 'Ukraine',
+    spans: [
+      [ce(882), ce(1240), 'kievan-rus', true],
+      [ce(1240), ce(1502), 'golden-horde', false],
+      [ce(1199), ce(1349), 'galicia-volhynia', false, [22, 47.5, 27, 52]],
+      [ce(1569.5), ce(1648.1), 'plc', false],
+      [ce(1648.1), ce(1764.8), 'cossack-hetmanate', true],
+      [ce(1764.8), ce(1917.85), 'russian-empire', false],
+      [ce(1919.19), ce(1991.65), 'ukrainian-ssr', true],
+      [ce(1991.65), NOW + 1, 'ukraine', true],
+    ],
+  },
+  BRA: {
+    name: 'Brazil',
+    spans: [
+      [ce(1500.31), ce(1815.96), 'colonial-brazil', true],
+      [ce(1815.96), ce(1822.69), 'kingdom-brazil', true],
+      [ce(1822.69), ce(1889.87), 'empire-brazil', true],
+      [ce(1889.87), NOW + 1, 'brazil', true],
+    ],
+  },
+  ETH: {
+    name: 'Ethiopia',
+    spans: [
+      [ce(100), ce(940), 'aksum', true],
+      [ce(1137), ce(1270), 'zagwe', true],
+      [ce(1270), ce(1974.7), 'ethiopian-empire', true],
+      [ce(1974.7), ce(1991.4), 'derg', true],
+      [ce(1991.4), NOW + 1, 'ethiopia', true],
+    ],
+  },
+}

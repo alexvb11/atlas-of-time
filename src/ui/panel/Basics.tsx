@@ -5,6 +5,7 @@
 // the data is missing; nothing is generated. Below it, "What was happening": the opening of the
 // Wikipedia section whose heading covers this year, quoted and linked.
 import { useEffect, useMemo, useState } from 'react'
+import { tr } from '../../i18n'
 import { useTime } from '../../time/store'
 import { nameAt, spanAt, isModernAt, type EntityIndex, type Conf } from '../../data/entities'
 import type { Resolution } from '../../data/resolve'
@@ -143,14 +144,14 @@ export function Basics({ res, idx, pop }: { res: Resolution; idx: EntityIndex; p
 
   const age = ageAt(t)
   return (
-    <section aria-label="The basics" className="rounded-2xl border border-cyan/15 bg-cyan/[0.04] px-3.5 py-3">
-      <h3 className="mb-1.5 text-[10px] font-semibold tracking-[0.18em] text-cyan/90 uppercase">The basics · {formatYear(t)}</h3>
+    <section aria-label={tr('The basics')} className="rounded-2xl border border-cyan/15 bg-cyan/[0.04] px-3.5 py-3">
+      <h3 className="mb-1.5 text-[10px] font-semibold tracking-[0.18em] text-cyan/90 uppercase">{tr('The basics')} · {formatYear(t)}</h3>
       <p className="text-[14px] leading-relaxed text-ink">{lead}</p>
       {rows.length > 0 && (
         <dl className="mt-2 space-y-1.5">
           {ORDER.filter((k) => rows.some((r) => r[0] === k)).map((k) => (
             <div key={k} className="grid grid-cols-[72px_1fr] gap-2 text-[13px] leading-snug">
-              <dt className="pt-px text-[10.5px] font-semibold tracking-wider text-dim uppercase">{k}</dt>
+              <dt className="pt-px text-[10.5px] font-semibold tracking-wider text-dim uppercase">{tr(k)}</dt>
               <dd className="text-ink/85">{rows.find((r) => r[0] === k)![1].join(' ')}</dd>
             </div>
           ))}

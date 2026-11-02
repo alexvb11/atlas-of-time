@@ -28,7 +28,7 @@ export function ReportMistake({ subject, context = '' }: { subject: string; cont
       href={reportUrl(subject, context)}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center gap-1.5 text-[11.5px] text-dim underline-offset-2 hover:text-cyan hover:underline"
+      className="inline-flex min-h-6 items-center gap-1.5 text-[11.5px] text-dim underline-offset-2 hover:text-cyan hover:underline"
       title="Opens a pre-filled report on GitHub; you can review it before sending"
     >
       <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 14V2.5M3 3h8l-1.5 3L11 9H3" /></svg>

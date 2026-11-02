@@ -1,4 +1,5 @@
 import { memo, useEffect, useRef, useState } from 'react'
+import { useT } from '../../i18n'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import { useResolution, resolutionKey } from '../../data/useResolution'
@@ -49,6 +50,7 @@ function useIsMobile() {
 
 /** Memoized so the shared-layout pill is only measured when the tab changes, not on every panel update */
 const TabBar = memo(function TabBar({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
+  const tr = useT()
   return (
     <div className="relative mx-5 mt-3 flex shrink-0 gap-1 rounded-full bg-black/20 p-1" role="tablist">
       {TABS.map((t) => (
@@ -62,7 +64,7 @@ const TabBar = memo(function TabBar({ tab, setTab }: { tab: Tab; setTab: (t: Tab
           {tab === t && (
             <motion.span layoutId="tab-pill" className="absolute inset-0 rounded-full bg-gradient-to-b from-cyan to-cyan-deep shadow-[0_0_16px_-2px_rgba(127,216,255,.6)]" transition={{ type: 'spring', stiffness: 420, damping: 32 }} />
           )}
-          <span className="relative">{t}</span>
+          <span className="relative">{tr(t)}</span>
         </button>
       ))}
     </div>
@@ -187,6 +189,7 @@ function Header({ res, idx, closeRef }: { res: Resolution; idx: EntityIndex; clo
 }
 
 function Breadcrumb({ lineage, current, time }: { lineage: NonNullable<Extract<Resolution, { lineage: unknown }>['lineage']>; current: string | null; time: number }) {
+  const tr = useT()
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const el = ref.current?.querySelector<HTMLElement>('[data-active="true"]')
@@ -195,7 +198,7 @@ function Breadcrumb({ lineage, current, time }: { lineage: NonNullable<Extract<R
   return (
     <nav aria-label={`Lineage of ${lineage.name}`} className="mt-3">
       <div ref={ref} className="scroll-thin flex items-center gap-1 overflow-x-auto pb-1.5 [mask-image:linear-gradient(90deg,transparent,#000_16px,#000_calc(100%-16px),transparent)]">
-        <span className="shrink-0 pl-3 text-[9.5px] font-semibold tracking-[0.16em] text-dim uppercase">Lineage</span>
+        <span className="shrink-0 pl-3 text-[9.5px] font-semibold tracking-[0.16em] text-dim uppercase">{tr('Lineage')}</span>
         {lineage.chain.map((c, i) => {
           const active = c.id === current && time >= c.from && time < c.to
           return (

@@ -6,27 +6,30 @@ import { useTime } from '../../time/store'
 import { sound } from '../sound'
 import { LANGS, setLang, useLang } from '../../data/wiki'
 import { clearJournal } from '../../data/journal'
+import { useT } from '../../i18n'
 
 type Row = { label: string; sub?: string; keywords?: string; control: ReactNode }
 type Section = { title: string; rows: Row[] }
 
 function Toggle<K extends keyof Settings>({ k, label }: { k: K; label: string }) {
+  const t = useT()
   const v = useSettings((s) => s[k]) as boolean
   return (
     <label className="relative inline-flex cursor-pointer">
-      <input type="checkbox" role="switch" aria-label={label} checked={v} onChange={() => useSettings.getState().set(k, !v as Settings[K])} className="peer sr-only" />
+      <input type="checkbox" role="switch" aria-label={t(label)} checked={v} onChange={() => useSettings.getState().set(k, !v as Settings[K])} className="peer sr-only" />
       <span aria-hidden className="relative h-5 w-9 shrink-0 rounded-full bg-white/12 transition-colors peer-checked:bg-cyan/70 peer-focus-visible:ring-2 peer-focus-visible:ring-cyan/60 after:absolute after:top-0.5 after:left-0.5 after:size-4 after:rounded-full after:bg-ink after:transition-transform peer-checked:after:translate-x-4" />
     </label>
   )
 }
 
 function Slider<K extends keyof Settings>({ k, label, min, max, step, fmt }: { k: K; label: string; min: number; max: number; step: number; fmt: (v: number) => string }) {
+  const t = useT()
   const v = useSettings((s) => s[k]) as number
   return (
     <span className="flex items-center gap-2">
       <input
         type="range"
-        aria-label={label}
+        aria-label={t(label)}
         min={min}
         max={max}
         step={step}
@@ -40,9 +43,10 @@ function Slider<K extends keyof Settings>({ k, label, min, max, step, fmt }: { k
 }
 
 function Choice<K extends keyof Settings>({ k, label, options }: { k: K; label: string; options: [Settings[K], string][] }) {
+  const t = useT()
   const v = useSettings((s) => s[k])
   return (
-    <span role="radiogroup" aria-label={label} className="flex shrink-0 rounded-full bg-black/25 p-0.5">
+    <span role="radiogroup" aria-label={t(label)} className="flex shrink-0 rounded-full bg-black/25 p-0.5">
       {options.map(([val, name]) => (
         <button
           key={String(val)}
@@ -52,7 +56,7 @@ function Choice<K extends keyof Settings>({ k, label, options }: { k: K; label: 
           onClick={() => useSettings.getState().set(k, val)}
           className={`min-h-6 rounded-full px-2.5 text-[11.5px] transition-colors ${v === val ? 'bg-cyan/80 text-void' : 'text-mist hover:text-ink'}`}
         >
-          {name}
+          {t(name)}
         </button>
       ))}
     </span>
@@ -82,7 +86,7 @@ function SoundToggle() {
 function LangSelect() {
   const lang = useLang()
   return (
-    <select aria-label="Reading language" value={lang} onChange={(e) => setLang(e.target.value)} className="min-h-7 rounded-full border border-white/12 bg-black/30 px-3 text-[12px] text-ink focus:border-cyan/60 focus:outline-none">
+    <select aria-label="Language" value={lang} onChange={(e) => setLang(e.target.value)} className="min-h-7 rounded-full border border-white/12 bg-black/30 px-3 text-[12px] text-ink focus:border-cyan/60 focus:outline-none">
       {Object.entries(LANGS).map(([k, name]) => (
         <option key={k} value={k}>
           {name}
@@ -103,6 +107,7 @@ const SECTIONS: Section[] = [
       { label: 'Voyages and marches', sub: 'Magellan, Hannibal, Marco Polo… moving on the globe', keywords: 'journeys travellers', control: <Toggle k="journeys" label="Voyages and marches" /> },
       { label: 'Spreads', sub: 'The Black Death, printing, the early Muslim conquests, Polynesian voyages… moving across the map', keywords: 'plague migration diffusion', control: <Toggle k="spreads" label="Spreads" /> },
       { label: 'Landmarks in 3D', sub: 'Pyramids, Parthenon, Colosseum, Notre-Dame… at true size when flying low, in the years they stood', keywords: 'buildings monuments models', control: <Toggle k="landmarks" label="Landmarks in 3D" /> },
+      { label: 'City walls', sub: 'Walls of historic cities from OpenStreetMap, from the year they were finished', keywords: 'fortifications footprint rome jerusalem constantinople seoul lucca', control: <Toggle k="cityWalls" label="City walls" /> },
       { label: 'Event markers', sub: 'Battles, foundings and discoveries near their date', keywords: 'pins dots', control: <Toggle k="events" label="Event markers" /> },
       { label: 'Cities', sub: 'Recorded populations of major cities', control: <Toggle k="cities" label="Cities" /> },
       { label: 'City names and populations', control: <Toggle k="cityLabels" label="City names and populations" /> },
@@ -117,6 +122,8 @@ const SECTIONS: Section[] = [
       { label: 'Country and empire names', keywords: 'labels polity', control: <Toggle k="borderLabels" label="Country and empire names" /> },
       { label: 'Approximate borders', sub: 'Dashed lines for peoples and uncertain borders', keywords: 'dashed uncertain', control: <Toggle k="approxBorders" label="Approximate borders" /> },
       { label: 'Political map', sub: 'Colour each state and people on the map', keywords: 'fill colour regions countries', control: <Toggle k="politicalFill" label="Political map" /> },
+      { label: 'Old world map', sub: 'Mercator’s world map of 1569, laid over the globe as he drew it', keywords: 'historical map overlay antique cartography', control: <Choice k="oldMap" label="Old world map" options={[['off', 'Off'], ['mercator-1569', 'Mercator 1569']]} /> },
+      { label: 'Old map strength', keywords: 'opacity historical overlay', control: <Slider k="oldMapOpacity" label="Old map strength" min={0.2} max={1} step={0.05} fmt={pct} /> },
       { label: 'Border thickness', sub: 'Above 1.5 px uses heavier lines that cost some speed', keywords: 'width lines', control: <Slider k="borderWidth" label="Border thickness" min={1} max={4} step={0.5} fmt={(v) => `${v.toFixed(1)} px`} /> },
       { label: 'Border brightness', control: <Slider k="borderBrightness" label="Border brightness" min={0.3} max={2.5} step={0.1} fmt={pct} /> },
       { label: 'Label size', sub: 'Names on the globe', keywords: 'text font', control: <Choice k="labelSize" label="Label size" options={[['small', 'S'], ['medium', 'M'], ['large', 'L']]} /> },
@@ -168,7 +175,7 @@ const SECTIONS: Section[] = [
       { label: 'Source notes', sub: 'Where borders and layers come from, bottom left', keywords: 'credits legend', control: <Toggle k="sourceNotes" label="Source notes" /> },
       { label: 'Name under the pointer', keywords: 'hover tooltip', control: <Toggle k="hoverLabel" label="Name under the pointer" /> },
       { label: 'Definition cards on links', sub: 'Film and definition when pointing at a link', keywords: 'hover cards popups', control: <Toggle k="hoverCards" label="Definition cards on links" /> },
-      { label: 'Reading language', sub: 'Articles, cards and films', keywords: 'language translate', control: <LangSelect /> },
+      { label: 'Language', sub: 'Interface, articles, cards and films', keywords: 'language translate', control: <LangSelect /> },
     ],
   },
   {
@@ -206,13 +213,14 @@ const PRESETS: { name: string; sub: string; values: Partial<Settings> }[] = [
 ]
 
 export default function SettingsView() {
+  const t = useT()
   const [q, setQ] = useState('')
   const [cleared, setCleared] = useState(false)
   const shown = useMemo(() => {
     const n = q.trim().toLowerCase()
     if (!n) return SECTIONS
-    return SECTIONS.map((s) => ({ ...s, rows: s.rows.filter((r) => `${s.title} ${r.label} ${r.sub ?? ''} ${r.keywords ?? ''}`.toLowerCase().includes(n)) })).filter((s) => s.rows.length)
-  }, [q])
+    return SECTIONS.map((s) => ({ ...s, rows: s.rows.filter((r) => `${s.title} ${r.label} ${r.sub ?? ''} ${r.keywords ?? ''} ${t(r.label)} ${r.sub ? t(r.sub) : ''}`.toLowerCase().includes(n)) })).filter((s) => s.rows.length)
+  }, [q, t])
 
   return (
     <div className="text-[13px]">
@@ -220,8 +228,8 @@ export default function SettingsView() {
         type="search"
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Find a setting"
-        aria-label="Find a setting"
+        placeholder={t('Find a setting')}
+        aria-label={t('Find a setting')}
         className="mb-3 w-full rounded-full border border-white/12 bg-black/25 px-4 py-2 text-ink placeholder:text-dim focus:border-cyan/60 focus:outline-none"
       />
       {!q && (
@@ -236,22 +244,22 @@ export default function SettingsView() {
               }}
               className="rounded-2xl border border-white/10 bg-white/[.04] px-3 py-2 text-left hover:border-white/25"
             >
-              <span className="block text-[13px] text-ink">{p.name}</span>
-              <span className="block text-[11px] text-dim">{p.sub}</span>
+              <span className="block text-[13px] text-ink">{t(p.name)}</span>
+              <span className="block text-[11px] text-dim">{t(p.sub)}</span>
             </button>
           ))}
         </div>
       )}
-      {shown.length === 0 && <p className="text-mist">No setting matches “{q}”.</p>}
+      {shown.length === 0 && <p className="text-mist">{t('No setting matches')} “{q}”.</p>}
       {shown.map((s) => (
         <section key={s.title} className="mb-4">
-          <h3 className="mb-1 px-1 text-[11px] font-semibold tracking-[0.14em] text-dim uppercase">{s.title}</h3>
+          <h3 className="mb-1 px-1 text-[11px] font-semibold tracking-[0.14em] text-dim uppercase">{t(s.title)}</h3>
           <div className="rounded-2xl bg-white/[.03]">
             {s.rows.map((r, i) => (
               <div key={r.label} className={`flex items-center gap-3 px-3 py-2.5 ${i ? 'border-t border-white/[.06]' : ''}`}>
                 <span className="min-w-0 flex-1">
-                  <span className="block text-ink">{r.label}</span>
-                  {r.sub && <span className="block text-[11px] leading-snug text-dim">{r.sub}</span>}
+                  <span className="block text-ink">{t(r.label)}</span>
+                  {r.sub && <span className="block text-[11px] leading-snug text-dim">{t(r.sub)}</span>}
                 </span>
                 {r.control}
               </div>
@@ -261,24 +269,24 @@ export default function SettingsView() {
       ))}
       {!q && (
         <section className="mb-2">
-          <h3 className="mb-1 px-1 text-[11px] font-semibold tracking-[0.14em] text-dim uppercase">Your data</h3>
+          <h3 className="mb-1 px-1 text-[11px] font-semibold tracking-[0.14em] text-dim uppercase">{t('Your data')}</h3>
           <div className="flex flex-wrap gap-2">
             <button type="button" className="bubble px-3.5 py-2 text-[12px] text-mist" onClick={() => useSettings.getState().reset()}>
-              Reset all settings
+              {t('Reset all settings')}
             </button>
             <button
               type="button"
               className="bubble px-3.5 py-2 text-[12px] text-mist"
               onClick={() => {
-                if (!window.confirm('Clear your journal of places, eras and articles? This cannot be undone.')) return
+                if (!window.confirm(t('Clear your journal of places, eras and articles? This cannot be undone.'))) return
                 clearJournal()
                 setCleared(true)
               }}
             >
-              {cleared ? 'Journal cleared' : 'Clear my journal'}
+              {cleared ? t('Journal cleared') : t('Clear my journal')}
             </button>
           </div>
-          <p className="mt-2 px-1 text-[11px] text-dim">Settings and the journal are kept in this browser only.</p>
+          <p className="mt-2 px-1 text-[11px] text-dim">{t('Settings and the journal are kept in this browser only.')}</p>
         </section>
       )}
     </div>

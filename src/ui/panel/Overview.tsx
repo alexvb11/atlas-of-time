@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { tr } from '../../i18n'
 import { motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import { useReader } from '../wiki/store'
@@ -140,7 +141,7 @@ export function OverviewTab({ res, idx }: { res: Resolution; idx: EntityIndex })
 
       {facts.length > 0 && (
         <div>
-          <h3 className="mb-2 text-[10px] font-semibold tracking-[0.18em] text-amber/90 uppercase">Did you know</h3>
+          <h3 className="mb-2 text-[10px] font-semibold tracking-[0.18em] text-amber/90 uppercase">{tr('Did you know')}</h3>
           <ul className="space-y-2">
             {facts.map((f, i) => (
               <motion.li

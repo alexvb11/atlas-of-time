@@ -10,12 +10,15 @@ export type Settings = {
   borderBrightness: number
   borderWidth: number
   politicalFill: boolean
+  oldMap: 'off' | 'mercator-1569'
+  oldMapOpacity: number
   labelSize: 'small' | 'medium' | 'large'
   // layers
   trade: boolean
   journeys: boolean
   spreads: boolean
   landmarks: boolean
+  cityWalls: boolean
   events: boolean
   cities: boolean
   cityLabels: boolean
@@ -60,11 +63,14 @@ export const DEFAULTS: Settings = {
   borderBrightness: 1,
   borderWidth: 1,
   politicalFill: false,
+  oldMap: 'off',
+  oldMapOpacity: 0.8,
   labelSize: 'medium',
   trade: true,
   journeys: true,
   spreads: true,
   landmarks: true,
+  cityWalls: true,
   events: true,
   cities: true,
   cityLabels: true,

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { tr } from '../../i18n'
 import { motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import type { EntityIndex, Language, LangSpan } from '../../data/entities'
@@ -264,7 +265,7 @@ function FamilyTree({ langs }: { langs: Language[] }) {
   walk(root, 0)
   return (
     <div>
-      <h3 className="mb-1.5 text-[10px] font-semibold tracking-[0.18em] text-dim uppercase">Language families</h3>
+      <h3 className="mb-1.5 text-[10px] font-semibold tracking-[0.18em] text-dim uppercase">{tr('Language families')}</h3>
       <div className="glass-soft rounded-2xl px-3 py-2">
         {rows.map((r, i) => (
           <div key={i} className="flex items-center text-[12px] leading-6" style={{ paddingLeft: r.depth * 14 }}>

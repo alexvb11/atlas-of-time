@@ -1,4 +1,5 @@
 import { useTime } from '../../time/store'
+import { tr } from '../../i18n'
 import type { EntityIndex } from '../../data/entities'
 import type { Resolution } from '../../data/resolve'
 import { Stat } from './bits'
@@ -65,7 +66,7 @@ export function GeographyTab({ res, idx }: { res: Resolution; idx: EntityIndex }
           <>
             <Stat label="Region">{country.subregion || country.region}</Stat>
             <Stat label="Area today"><span className="tnum">{formatNumber(country.area)}</span> km²</Stat>
-            <Stat label="Coast">{country.landlocked ? 'Landlocked' : 'Has a coastline'}</Stat>
+            <Stat label="Coast">{tr(country.landlocked ? 'Landlocked' : 'Has a coastline')}</Stat>
           </>
         )}
         {Math.abs(sea) > 8 && (
@@ -78,7 +79,7 @@ export function GeographyTab({ res, idx }: { res: Resolution; idx: EntityIndex }
       </div>
       {country && country.borders.length > 0 && (
         <div>
-          <h3 className="mb-1.5 text-[10px] font-semibold tracking-[0.18em] text-dim uppercase">Neighbours today</h3>
+          <h3 className="mb-1.5 text-[10px] font-semibold tracking-[0.18em] text-dim uppercase">{tr('Neighbours today')}</h3>
           <div className="flex flex-wrap gap-1.5">
             {country.borders.map((iso) => {
               const n = idx.countries.get(iso)

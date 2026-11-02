@@ -37,6 +37,11 @@ export function setLang(l: string) {
   }
   langListeners.forEach((f) => f())
 }
+/** Calls f whenever the language changes */
+export const onLang = (f: () => void) => {
+  langListeners.add(f)
+  return () => void langListeners.delete(f)
+}
 export const useLang = () =>
   useSyncExternalStore(
     (f) => {

@@ -4,6 +4,7 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../time/store'
 import { useReader } from './wiki/store'
+import { useT } from '../i18n'
 
 type Side = NonNullable<ReturnType<typeof useTime.getState>['side']>
 const ITEMS: { id: Side; label: string; sub: string; icon: string }[] = [
@@ -16,6 +17,7 @@ const ITEMS: { id: Side; label: string; sub: string; icon: string }[] = [
 ]
 
 export function ExploreMenu() {
+  const t = useT()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -33,7 +35,7 @@ export function ExploreMenu() {
     <div ref={ref} className="relative">
       <button type="button" aria-expanded={open} aria-haspopup="menu" onClick={() => setOpen(!open)} className="bubble flex items-center gap-2 px-3.5 py-2 text-[12px] text-mist">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"><circle cx="8" cy="8" r="6.5" /><path d="M10.8 5.2 9.2 9.2 5.2 10.8 6.8 6.8z" /></svg>
-        <span className="hidden sm:inline">Explore</span>
+        <span className="hidden sm:inline">{t('Explore')}</span>
       </button>
       <AnimatePresence>
         {open && (
@@ -59,8 +61,8 @@ export function ExploreMenu() {
               >
                 <svg className="mt-0.5 shrink-0 text-cyan" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={it.icon} /></svg>
                 <span>
-                  <span className="block text-[13px] text-ink">{it.label}</span>
-                  <span className="block text-[11px] text-mist">{it.sub}</span>
+                  <span className="block text-[13px] text-ink">{t(it.label)}</span>
+                  <span className="block text-[11px] text-mist">{t(it.sub)}</span>
                 </span>
               </button>
             ))}
@@ -82,6 +84,7 @@ const TITLES: Record<Side, string> = { tours: 'Guided journeys', quiz: 'History 
 
 /** The sheet the Explore menu opens, on the left of the globe (full screen on phones) */
 export function SideSheet() {
+  const t = useT()
   const side = useTime((s) => s.side)
   const ref = useRef<HTMLElement>(null)
   useEffect(() => {
@@ -103,7 +106,7 @@ export function SideSheet() {
           tabIndex={-1}
           data-keys-local
           role="dialog"
-          aria-label={TITLES[side]}
+          aria-label={t(TITLES[side])}
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -30 }}
@@ -111,8 +114,8 @@ export function SideSheet() {
           className="glass pointer-events-auto fixed inset-x-0 bottom-0 z-[35] flex h-[70vh] flex-col rounded-t-[28px] outline-none md:inset-auto md:top-[168px] md:bottom-[72px] md:left-4 md:h-auto md:w-[min(440px,calc(100vw-470px))] md:min-w-[360px] md:rounded-[30px]"
         >
           <div className="flex shrink-0 items-center justify-between px-5 pt-4 pb-2">
-            <h2 className="font-display text-[26px] leading-tight text-ink">{TITLES[side]}</h2>
-            <button type="button" onClick={() => useTime.getState().set({ side: null })} className="bubble grid size-9 place-items-center text-mist" aria-label="Close (Escape)">
+            <h2 className="font-display text-[26px] leading-tight text-ink">{t(TITLES[side])}</h2>
+            <button type="button" onClick={() => useTime.getState().set({ side: null })} className="bubble grid size-9 place-items-center text-mist" aria-label={t('Close (Escape)')}>
               <svg width="12" height="12" viewBox="0 0 12 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M2 2l8 8M10 2l-8 8" /></svg>
             </button>
           </div>

@@ -1,0 +1,203 @@
+Explore
+Close (Escape)
+Search a place, empire, or “Paris 1789”…
+Nothing found in this atlas yet.
+Go to a year
+Return to today
+Today
+Search places and eras
+Search
+Settings: layers, map, display and more
+Settings
+Language families
+Did you know
+Neighbours today
+Lineage
+The basics
+Find a setting
+No setting matches
+Your data
+Reset all settings
+Clear your journal of places, eras and articles? This cannot be undone.
+Journal cleared
+Clear my journal
+Settings and the journal are kept in this browser only.
+Layers
+Trade routes
+Silk Road, Hansa, galleons… flowing while in use
+Voyages and marches
+Magellan, Hannibal, Marco Polo… moving on the globe
+Spreads
+The Black Death, printing, the early Muslim conquests, Polynesian voyages… moving across the map
+Landmarks in 3D
+Pyramids, Parthenon, Colosseum, Notre-Dame… at true size when flying low, in the years they stood
+Event markers
+Battles, foundings and discoveries near their date
+Cities
+Recorded populations of major cities
+City names and populations
+Population density
+People per km², today’s borders, from 10,000 BCE
+Density strength
+Borders and labels
+Political borders
+Country and empire names
+Approximate borders
+Dashed lines for peoples and uncertain borders
+Political map
+Colour each state and people on the map
+Old world map
+Mercator’s world map of 1569, laid over the globe as he drew it
+Old map strength
+Border thickness
+Above 1.5 px uses heavier lines that cost some speed
+Border brightness
+Label size
+Names on the globe
+Earth and sky
+Clouds
+Sharp close-ups
+Stream 10 m satellite imagery and 3D terrain when zoomed in (present day)
+Terrain height
+How much mountains rise in close-ups (1× is true scale)
+Mountain relief
+Shading from real elevation, stronger up close
+City lights at night
+Atmosphere glow
+Stars
+The real night sky (Yale Bright Star Catalogue), moved to the date
+Moon and Sun
+The Moon in its place and phase for the date
+Milky Way haze
+Ice ages
+Ice sheets and lower seas at glacial times
+Green Sahara
+Grassland in the African Humid Period
+Sunlight
+Fixed light; the sun for the time of year (live today); or always day
+Camera and motion
+Spin when idle
+Lean toward the horizon up close
+An oblique, aerial view when zoomed in
+Spin speed
+Motion
+Follow the system setting, or choose
+Time-warp effects
+Streaking stars and colour fringes while scrubbing fast
+Time
+Playback speed
+Used when you press play
+Year labels
+44 BCE / 1914 CE, or 44 BC / AD 1914
+Interface
+Era and population strip
+The bar under the time slider
+Source notes
+Where borders and layers come from, bottom left
+Name under the pointer
+Definition cards on links
+Film and definition when pointing at a link
+Language
+Interface, articles, cards and films
+Sound
+Ambient sound
+Read journeys aloud
+Narration by your browser’s voice
+Performance
+Graphics quality
+Low drops glow effects and sharpness for slower devices
+Standard
+The default view
+Clean map
+Borders and names only
+Everything
+Every layer on, seasons included
+Calm
+Less motion, no clouds or effects
+Off
+Mercator 1569
+S
+M
+L
+Fixed
+Seasons
+Day
+System
+Full
+Reduced
+BCE / CE
+BC / AD
+Auto
+High
+Low
+Documentaries
+Sit back: narrated films across the map
+Guided journeys
+Follow a story across the map, narrated
+History quiz
+Find the place, name the ruler
+Compare two years
+Lay one year’s borders over another
+On this day
+What happened on today’s date
+Your journal
+Places, eras and articles you have explored
+Rodinia breaks up
+Cambrian
+Pangaea forms
+Jurassic
+Cretaceous
+Dinosaurs end
+Ice Ages
+Homo sapiens
+Glacial max
+Farming
+Bronze Age
+Classical
+Roman Empire
+Middle Ages
+Mongols
+Exploration
+Industrial
+World Wars
+Deep time
+Prehistory
+Recorded history
+Overview
+Here
+Held by
+History
+Languages
+Geography
+Rule
+People
+Around it
+Size
+Climate
+Epoch
+Life
+Powers
+World population
+Capital
+Ruler
+Government
+Religion
+Area
+Currency
+Region
+Period
+Latitude then
+Latitude now
+Global climate
+Landmass
+Today part of
+Location
+Latitude band
+Area today
+Coast
+Sea level
+Landlocked
+Has a coastline
+City walls
+Walls of historic cities from OpenStreetMap, from the year they were finished
+Era

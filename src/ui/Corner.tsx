@@ -7,8 +7,10 @@ import { currentLink } from '../app/shareLink'
 import { ExploreMenu } from './ExploreMenu'
 import { useSettings } from '../time/settings'
 import { toMa } from '../time/scale'
+import { useT } from '../i18n'
 
 export function Corner() {
+  const tr = useT()
   const soundOn = useTime((s) => s.soundOn)
   const t = useTime((s) => s.time)
   const notesOn = useSettings((s) => s.sourceNotes)
@@ -28,21 +30,21 @@ export function Corner() {
         type="button"
         className="bubble flex items-center gap-2 px-3.5 py-2 text-[12px] text-mist"
         onClick={() => useTime.getState().set({ paletteOpen: true })}
-        aria-label="Search places and eras"
+        aria-label={tr('Search places and eras')}
       >
         <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="7" cy="7" r="5" /><path d="m11 11 3.5 3.5" strokeLinecap="round" /></svg>
-        <span className="hidden sm:inline">Search</span>
+        <span className="hidden sm:inline">{tr('Search')}</span>
         <kbd className="hidden rounded border border-white/12 px-1 text-[10px] text-dim sm:inline">{mac ? '⌘' : 'Ctrl'} K</kbd>
       </button>
       <ExploreMenu />
       <button
         type="button"
         className="bubble flex items-center gap-2 px-3.5 py-2 text-[12px] text-mist"
-        aria-label="Settings: layers, map, display and more"
+        aria-label={tr('Settings: layers, map, display and more')}
         onClick={() => useTime.getState().set({ side: useTime.getState().side === 'settings' ? null : 'settings' })}
       >
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="8" r="2.2" /><path d="M8 1.5v1.8M8 12.7v1.8M14.5 8h-1.8M3.3 8H1.5M12.6 3.4l-1.3 1.3M4.7 11.3l-1.3 1.3M12.6 12.6l-1.3-1.3M4.7 4.7 3.4 3.4" /></svg>
-        <span className="hidden sm:inline">Settings</span>
+        <span className="hidden sm:inline">{tr('Settings')}</span>
       </button>
       <ShareButton />
       <button

@@ -211,11 +211,16 @@ the reader says so and everything else keeps working.
 | Ancient landscapes 0–540 Ma | [PALEOMAP PaleoDEMs](https://zenodo.org/records/5460860): Scotese & Wright (2018); converted to 1° WebP maps | CC BY 4.0 |
 | Plates 0–540 Ma | PALEOMAP (Scotese 2016) via the GPlates Web Service | cited |
 | Land elevation (relief) | GEBCO 08 via NASA Visible Earth, record 73934 | GEBCO terms (free with attribution) |
-| Close-up imagery | [NASA GIBS](https://earthdata.nasa.gov/gibs), Blue Marble Next Generation, streamed | Public domain (NASA) |
+| Close-up imagery | [EOxCloudless 2024](https://cloudless.eox.at) by EOX IT Services GmbH (contains modified Copernicus Sentinel data 2024), streamed, credited on screen | **CC BY-NC-SA 4.0** (non-commercial) |
 | Close-up terrain | [Terrain Tiles](https://registry.opendata.aws/terrain-tiles/) (Mapzen / AWS open data: SRTM, GMTED2010, ETOPO1, NED and others), streamed, credited on screen | Attribution per source |
 | Stars | Yale Bright Star Catalogue, 5th rev. ed. (Hoffleit & Warren 1991, NASA ADC / Harvard) | Public domain |
 | Moon | NASA LRO LROC colour map (NASA SVS 4720) | Public domain (NASA) |
 | Sun and Moon positions, precession | Meeus, *Astronomical Algorithms* (2nd ed.); IAU general precession | cited |
+| Old world map | Gerardus Mercator, *Nova et Aucta Orbis Terrae Descriptio* (1569), composite of the 18 sheets on Wikimedia Commons; reprojected with its own graticule (`oldmaps.mjs`), sheet gaps closed | Public domain |
+| City walls | © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors via the Overpass API (`citywalls.mjs`); years finished from each wall's Wikipedia article | **ODbL** (share-alike for `citywalls.json`) |
+| Landmark models | massing from each monument's Wikipedia article (dimensions, phases), modelled by hand | cited |
+| Spreads, marches, films | places and dates from the linked Wikipedia articles | cited |
+| Interface translations | written for this project (`scripts/i18n/`); corrections welcome | — |
 | Fonts | Inter, Instrument Serif (Google Fonts) | OFL |
 
 **Licence note:** CShapes 2.0 is CC BY-NC-SA 4.0, so while `public/data/history/cshapes.topo.json` is
@@ -240,10 +245,11 @@ the project licence with that in mind.
 Three tiers, shown honestly in the panel:
 
 - **Tier 1, curated**: dated lineages with rulers, capitals, languages, facts and events for
-  26 present-day countries. Rich slice regions: Armenia and the Caucasus, the Mediterranean, China,
+  30 present-day countries. Rich slice regions: Armenia and the Caucasus, the Mediterranean, China,
   Mesoamerica, the British Isles. Major powers: Persia/Iran, Mesopotamia/Iraq, Anatolia/Turkey,
   Russia, India, Japan, both Koreas, the caliphates and Arabia, Spain, France, Germany, Peru, Mali
-  and the Mongols, plus the United States.
+  and the Mongols, the United States, Poland, Ukraine, Brazil and Ethiopia. The other present-day
+  countries are Tier 2.
 - **Tier 2, automated**: every present-day country, identified on Wikidata by ISO code, with its
   predecessor states two steps back. Modern facts only appear after today's state began.
 - **Tier 3, automated**: every other name in the border data, matched to Wikipedia and Wikidata and

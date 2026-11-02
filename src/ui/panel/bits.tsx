@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { tr } from '../../i18n'
 import { animate, useMotionValue, useTransform, motion } from 'framer-motion'
 import type { Conf } from '../../data/entities'
 import { formatYear } from '../../time/format'
@@ -44,7 +45,7 @@ export function ConfTag({ conf, note }: { conf?: Conf; note?: string }) {
 export function Stat({ label, children, wide }: { label: string; children: React.ReactNode; wide?: boolean }) {
   return (
     <div className={`glass-soft rounded-2xl px-3.5 py-2.5 ${wide ? 'col-span-2' : ''}`}>
-      <div className="text-[9.5px] font-semibold tracking-[0.16em] text-dim uppercase">{label}</div>
+      <div className="text-[9.5px] font-semibold tracking-[0.16em] text-dim uppercase">{tr(label)}</div>
       <div className="mt-0.5 text-[13.5px] leading-snug text-ink">{children}</div>
     </div>
   )

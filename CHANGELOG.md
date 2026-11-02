@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.13.0 — 2026-11-02
+
+### Graphics
+- **Close-ups rebuilt**: a tiled terrain engine streams 10 m Sentinel-2 imagery (EOxCloudless 2024)
+  on true-scale 3D terrain, refining by what is on screen; sharp down to about 1 km up, 60 fps over
+  the Himalaya. Close-ups before 1990 are labelled as today's landscape.
+- **3D landmarks** at true size in the years they stood: the Giza pyramids, Stonehenge, the
+  Parthenon (ruined in 1687), the Colosseum, Hagia Sophia, Angkor Wat, Notre-Dame (spire 1859,
+  fire 2019, restored 2024), the Taj Mahal, the Eiffel Tower, the Statue of Liberty, Burj Khalifa.
+- **Old world map**: Mercator's 1569 map laid over the globe as he drew it (Settings → Borders).
+- **City walls** from OpenStreetMap for Rome, Constantinople, Jerusalem, Lucca and Seoul, from the
+  year each was finished.
+
+### History in motion
+- **Spreads**: the Black Death, printing, the early Muslim conquests, the settlement of Polynesia.
+- **Marches**: Alexander, Garibaldi's Thousand, Sherman's March to the Sea, the Long March.
+- **Documentaries**: narrated films with camera flights and subtitles (Explore → Documentaries).
+- **More hand-checked countries**: Poland, Ukraine, Brazil and Ethiopia now have curated lineages
+  (30 in all); census-backed language shares for Ukraine (2001), Ethiopia (2007) and interwar
+  Poland (1931).
+
+### Everywhere
+- **The interface in 20 languages**, following the reading language: buttons, menus, settings, the
+  time bar and panel headings. Data such as era names and article text stays in the language of its
+  source (articles come from that language's Wikipedia).
+- **Era soundscapes** that crossfade with the date.
+- **Installable app** that works offline for what you have already seen.
+- **Report a mistake**: a pre-filled GitHub issue with a link to the view.
+
 ## 0.12.0 — 2026-11-02
 
 ### Time

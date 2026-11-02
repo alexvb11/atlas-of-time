@@ -1,0 +1,1020 @@
+## nl
+Ontdekken
+Sluiten (Esc)
+Zoek een plaats, een rijk of ‘Parijs 1789’…
+Nog niets gevonden in deze atlas.
+Ga naar een jaar
+Terug naar vandaag
+Vandaag
+Plaatsen en tijdperken zoeken
+Zoeken
+Instellingen: lagen, kaart, weergave en meer
+Instellingen
+Taalfamilies
+Wist je dat
+Buren van nu
+Afstamming
+De basis
+Instelling zoeken
+Geen instelling past bij
+Jouw gegevens
+Alle instellingen herstellen
+Je dagboek met plaatsen, tijdperken en artikelen wissen? Dit kan niet ongedaan worden.
+Dagboek gewist
+Mijn dagboek wissen
+Instellingen en dagboek blijven alleen in deze browser.
+Lagen
+Handelsroutes
+Zijderoute, Hanze, galjoenen… in beweging zolang in gebruik
+Reizen en veldtochten
+Magellaan, Hannibal, Marco Polo… onderweg over de wereldbol
+Verspreidingen
+De Zwarte Dood, de boekdrukkunst, de vroege islamitische veroveringen, Polynesische tochten… over de kaart
+Bouwwerken in 3D
+Piramiden, Parthenon, Colosseum, Notre-Dame… op ware grootte in laagvlucht, in de jaren dat ze stonden
+Gebeurtenismarkeringen
+Veldslagen, stichtingen en ontdekkingen rond hun datum
+Steden
+Overgeleverde inwonertallen van grote steden
+Stadsnamen en inwonertallen
+Bevolkingsdichtheid
+Mensen per km², huidige grenzen, vanaf 10.000 v.Chr.
+Sterkte van de dichtheid
+Grenzen en namen
+Politieke grenzen
+Namen van landen en rijken
+Bij benadering grenzen
+Stippellijnen voor volken en onzekere grenzen
+Politieke kaart
+Elke staat en elk volk inkleuren
+Oude wereldkaart
+Mercators wereldkaart van 1569, over de bol gelegd zoals hij die tekende
+Sterkte van de oude kaart
+Dikte van grenzen
+Boven 1,5 px dikkere lijnen die wat snelheid kosten
+Helderheid van grenzen
+Lettergrootte
+Namen op de bol
+Aarde en hemel
+Wolken
+Scherpe close-ups
+Satellietbeelden van 10 m en 3D-terrein bij inzoomen (heden)
+Terreinhoogte
+Hoe hoog bergen oprijzen in close-ups (1× is ware schaal)
+Bergreliëf
+Schaduw uit echte hoogtegegevens, sterker van dichtbij
+Stadslichten ’s nachts
+Gloed van de atmosfeer
+Sterren
+De echte nachthemel (Yale Bright Star Catalogue), verschoven naar de datum
+Maan en zon
+De maan op haar plek en in haar fase voor de datum
+Waas van de Melkweg
+IJstijden
+IJskappen en lagere zeeën in glacialen
+Groene Sahara
+Grasland in de Afrikaanse Vochtige Periode
+Zonlicht
+Vast licht; de zon naar de tijd van het jaar (vandaag live); of altijd dag
+Camera en beweging
+Draaien bij stilstand
+Dichtbij naar de horizon kantelen
+Een schuin luchtbeeld bij inzoomen
+Draaisnelheid
+Beweging
+De systeeminstelling volgen, of kiezen
+Tijdsprongeffecten
+Sterrensporen en kleurranden bij snel scrollen
+Tijd
+Afspeelsnelheid
+Gebruikt als je op afspelen drukt
+Jaarnotatie
+44 v.g.j. / 1914 g.j., of 44 v.Chr. / 1914 n.Chr.
+Interface
+Balk met tijdperk en bevolking
+De balk onder de tijdschuif
+Bronvermeldingen
+Waar grenzen en lagen vandaan komen, linksonder
+Naam onder de aanwijzer
+Uitlegkaarten bij links
+Film en uitleg bij het aanwijzen van een link
+Taal
+Interface, artikelen, kaarten en films
+Geluid
+Omgevingsgeluid
+Reizen voorlezen
+Verteld door de stem van je browser
+Prestaties
+Grafische kwaliteit
+Laag laat gloed en scherpte weg voor tragere apparaten
+Standaard
+De standaardweergave
+Schone kaart
+Alleen grenzen en namen
+Alles
+Alle lagen aan, seizoenen inbegrepen
+Rustig
+Minder beweging, geen wolken of effecten
+Uit
+=
+=
+=
+=
+Vast
+Seizoenen
+Dag
+Systeem
+Volledig
+Beperkt
+=
+=
+Auto
+Hoog
+Laag
+Documentaires
+Leun achterover: vertelde films over de kaart
+Begeleide reizen
+Volg een verhaal over de kaart, verteld
+Geschiedenisquiz
+Vind de plaats, noem de heerser
+Twee jaren vergelijken
+De grenzen van het ene jaar over het andere leggen
+Op deze dag
+Wat er op de datum van vandaag gebeurde
+Jouw dagboek
+Plaatsen, tijdperken en artikelen die je hebt verkend
+Rodinia valt uiteen
+Cambrium
+Pangea ontstaat
+Jura
+Krijt
+Einde van de dinosauriërs
+IJstijden
+=
+Glaciaal maximum
+Landbouw
+Bronstijd
+Klassieke oudheid
+Romeinse Rijk
+Middeleeuwen
+Mongolen
+Ontdekkingsreizen
+Industrialisatie
+Wereldoorlogen
+Diepe tijd
+Prehistorie
+Geschreven geschiedenis
+Overzicht
+Hier
+In handen van
+Geschiedenis
+Talen
+Geografie
+Bestuur
+Mensen
+Omgeving
+Omvang
+Klimaat
+Tijdvak
+Leven
+Machten
+Wereldbevolking
+Hoofdstad
+Heerser
+Staatsvorm
+Religie
+Oppervlakte
+Munteenheid
+Regio
+Periode
+Breedte toen
+Breedte nu
+Wereldklimaat
+Landmassa
+Nu deel van
+Ligging
+Breedtezone
+Oppervlakte nu
+Kust
+Zeeniveau
+Geen kust
+Met kust
+Stadsmuren
+Muren van historische steden uit OpenStreetMap, vanaf het jaar van voltooiing
+Tijdperk
+## pl
+Odkrywaj
+Zamknij (Esc)
+Szukaj miejsca, imperium lub „Paryż 1789”…
+Nic jeszcze nie znaleziono w tym atlasie.
+Przejdź do roku
+Wróć do dziś
+Dziś
+Szukaj miejsc i epok
+Szukaj
+Ustawienia: warstwy, mapa, wyświetlanie i więcej
+Ustawienia
+Rodziny językowe
+Czy wiesz, że
+Dzisiejsi sąsiedzi
+Rodowód
+Podstawy
+Znajdź ustawienie
+Brak ustawień pasujących do
+Twoje dane
+Przywróć wszystkie ustawienia
+Wyczyścić dziennik miejsc, epok i artykułów? Tego nie można cofnąć.
+Dziennik wyczyszczony
+Wyczyść mój dziennik
+Ustawienia i dziennik są przechowywane tylko w tej przeglądarce.
+Warstwy
+Szlaki handlowe
+Jedwabny Szlak, Hanza, galeony… w ruchu, gdy były używane
+Podróże i wyprawy
+Magellan, Hannibal, Marco Polo… w drodze po globie
+Rozprzestrzenianie
+Czarna śmierć, druk, wczesne podboje muzułmańskie, rejsy Polinezyjczyków… na mapie
+Zabytki w 3D
+Piramidy, Partenon, Koloseum, Notre-Dame… w prawdziwej skali przy niskim locie, w latach, gdy stały
+Znaczniki wydarzeń
+Bitwy, założenia i odkrycia w pobliżu ich daty
+Miasta
+Odnotowane liczby mieszkańców dużych miast
+Nazwy i ludność miast
+Gęstość zaludnienia
+Ludzie na km², dzisiejsze granice, od 10 000 p.n.e.
+Siła gęstości
+Granice i nazwy
+Granice polityczne
+Nazwy państw i imperiów
+Granice przybliżone
+Linie przerywane dla ludów i niepewnych granic
+Mapa polityczna
+Pokoloruj każde państwo i lud
+Dawna mapa świata
+Mapa świata Merkatora z 1569 roku, nałożona na glob tak, jak ją narysował
+Siła dawnej mapy
+Grubość granic
+Powyżej 1,5 px grubsze linie, które kosztują trochę płynności
+Jasność granic
+Rozmiar nazw
+Nazwy na globie
+Ziemia i niebo
+Chmury
+Ostre zbliżenia
+Zdjęcia satelitarne 10 m i teren 3D po przybliżeniu (współcześnie)
+Wysokość terenu
+Jak wysoko wznoszą się góry w zbliżeniach (1× to prawdziwa skala)
+Rzeźba gór
+Cieniowanie z prawdziwych wysokości, mocniejsze z bliska
+Światła miast nocą
+Poświata atmosfery
+Gwiazdy
+Prawdziwe nocne niebo (Yale Bright Star Catalogue), przesunięte do daty
+Księżyc i Słońce
+Księżyc na swoim miejscu i w swojej fazie dla daty
+Mgiełka Drogi Mlecznej
+Epoki lodowe
+Lądolody i niższe morza w okresach zlodowaceń
+Zielona Sahara
+Trawy w afrykańskim okresie wilgotnym
+Światło słoneczne
+Stałe światło; słońce według pory roku (dziś na żywo); lub zawsze dzień
+Kamera i ruch
+Obracaj w bezczynności
+Pochyl ku horyzontowi z bliska
+Ukośny widok z lotu ptaka po przybliżeniu
+Prędkość obrotu
+Ruch
+Zgodnie z ustawieniem systemu lub wybierz
+Efekty skoku w czasie
+Smugi gwiazd i barwne obwódki przy szybkim przewijaniu
+Czas
+Prędkość odtwarzania
+Używana po naciśnięciu odtwarzania
+Zapis lat
+44 p.n.e. / 1914 n.e. lub 44 przed Chr. / 1914 po Chr.
+Interfejs
+Pasek epoki i ludności
+Pasek pod suwakiem czasu
+Przypisy źródłowe
+Skąd pochodzą granice i warstwy, w lewym dolnym rogu
+Nazwa pod wskaźnikiem
+Karty definicji przy linkach
+Film i definicja po wskazaniu linku
+Język
+Interfejs, artykuły, karty i filmy
+Dźwięk
+Dźwięk otoczenia
+Czytaj podróże na głos
+Narracja głosem przeglądarki
+Wydajność
+Jakość grafiki
+Niska wyłącza poświaty i ostrość na wolniejszych urządzeniach
+Standard
+Widok domyślny
+Czysta mapa
+Tylko granice i nazwy
+Wszystko
+Wszystkie warstwy, łącznie z porami roku
+Spokój
+Mniej ruchu, bez chmur i efektów
+Wył.
+=
+=
+=
+=
+Stałe
+Pory roku
+Dzień
+System
+Pełny
+Ograniczony
+=
+=
+Auto
+Wysoka
+Niska
+Filmy dokumentalne
+Usiądź wygodnie: filmy z narracją po mapie
+Podróże z przewodnikiem
+Podążaj za historią po mapie, z narracją
+Quiz historyczny
+Znajdź miejsce, nazwij władcę
+Porównaj dwa lata
+Nałóż granice jednego roku na inny
+Tego dnia
+Co wydarzyło się w dzisiejszej dacie
+Twój dziennik
+Miejsca, epoki i artykuły, które poznałeś
+Rozpad Rodinii
+Kambr
+Powstaje Pangea
+Jura
+Kreda
+Koniec dinozaurów
+Epoki lodowe
+=
+Maksimum zlodowacenia
+Rolnictwo
+Epoka brązu
+Starożytność klasyczna
+Cesarstwo rzymskie
+Średniowiecze
+Mongołowie
+Odkrycia
+Industrializacja
+Wojny światowe
+Czas głęboki
+Prehistoria
+Historia pisana
+Przegląd
+Tutaj
+We władaniu
+Historia
+Języki
+Geografia
+Władza
+Ludzie
+Otoczenie
+Wielkość
+Klimat
+Epoka
+Życie
+Potęgi
+Ludność świata
+Stolica
+Władca
+Ustrój
+Religia
+Powierzchnia
+Waluta
+Region
+Okres
+Szerokość wtedy
+Szerokość dziś
+Klimat globalny
+Ląd
+Dziś część
+Położenie
+Strefa szerokości
+Powierzchnia dziś
+Wybrzeże
+Poziom morza
+Bez dostępu do morza
+Z wybrzeżem
+Mury miejskie
+Mury historycznych miast z OpenStreetMap, od roku ukończenia
+Era
+## ru
+Обзор
+Закрыть (Esc)
+Найдите место, империю или «Париж 1789»…
+В этом атласе пока ничего не найдено.
+Перейти к году
+Вернуться в сегодня
+Сегодня
+Поиск мест и эпох
+Поиск
+Настройки: слои, карта, отображение и другое
+Настройки
+Языковые семьи
+А вы знали
+Соседи сегодня
+Преемственность
+Главное
+Найти настройку
+Нет настроек, совпадающих с
+Ваши данные
+Сбросить все настройки
+Очистить дневник мест, эпох и статей? Это нельзя отменить.
+Дневник очищен
+Очистить мой дневник
+Настройки и дневник хранятся только в этом браузере.
+Слои
+Торговые пути
+Шёлковый путь, Ганза, галеоны… в движении, пока использовались
+Путешествия и походы
+Магеллан, Ганнибал, Марко Поло… в пути по глобусу
+Распространения
+Чёрная смерть, книгопечатание, ранние арабские завоевания, полинезийские плавания… по карте
+Памятники в 3D
+Пирамиды, Парфенон, Колизей, Нотр-Дам… в натуральную величину при низком полёте, в годы, когда они стояли
+Метки событий
+Битвы, основания и открытия около их даты
+Города
+Задокументированное население крупных городов
+Названия и население городов
+Плотность населения
+Человек на км², в нынешних границах, с 10 000 г. до н. э.
+Сила плотности
+Границы и названия
+Политические границы
+Названия стран и империй
+Приблизительные границы
+Пунктир для народов и неточных границ
+Политическая карта
+Закрасить каждое государство и народ
+Старинная карта мира
+Карта мира Меркатора 1569 года, наложенная на глобус так, как он её нарисовал
+Сила старинной карты
+Толщина границ
+Свыше 1,5 px — более толстые линии, немного снижающие скорость
+Яркость границ
+Размер подписей
+Названия на глобусе
+Земля и небо
+Облака
+Чёткие крупные планы
+Спутниковые снимки 10 м и 3D-рельеф при приближении (наши дни)
+Высота рельефа
+Насколько поднимаются горы вблизи (1× — реальный масштаб)
+Горный рельеф
+Тени по реальным высотам, сильнее вблизи
+Огни городов ночью
+Свечение атмосферы
+Звёзды
+Настоящее ночное небо (Yale Bright Star Catalogue), смещённое к дате
+Луна и Солнце
+Луна на своём месте и в своей фазе для даты
+Дымка Млечного Пути
+Ледниковые периоды
+Ледниковые щиты и более низкое море в эпохи оледенений
+Зелёная Сахара
+Степи в Африканский влажный период
+Солнечный свет
+Постоянный свет; солнце по времени года (сегодня — вживую); или всегда день
+Камера и движение
+Вращать в покое
+Наклонять к горизонту вблизи
+Косой вид с высоты при приближении
+Скорость вращения
+Движение
+Как в системе, или выбрать
+Эффекты скачка во времени
+Шлейфы звёзд и цветные каймы при быстрой прокрутке
+Время
+Скорость воспроизведения
+При нажатии на воспроизведение
+Запись лет
+44 до н. э. / 1914 н. э. или 44 до Р. Х. / 1914 от Р. Х.
+Интерфейс
+Полоса эпохи и населения
+Полоса под шкалой времени
+Источники
+Откуда взяты границы и слои, внизу слева
+Название под указателем
+Карточки определений у ссылок
+Видео и определение при наведении на ссылку
+Язык
+Интерфейс, статьи, карточки и видео
+Звук
+Фоновый звук
+Читать путешествия вслух
+Озвучка голосом браузера
+Производительность
+Качество графики
+Низкое отключает свечение и резкость на медленных устройствах
+Стандарт
+Вид по умолчанию
+Чистая карта
+Только границы и названия
+Всё
+Все слои, включая времена года
+Спокойно
+Меньше движения, без облаков и эффектов
+Выкл.
+=
+=
+=
+=
+Постоянный
+Времена года
+День
+Система
+Полное
+Сниженное
+=
+=
+Авто
+Высокое
+Низкое
+Документальные фильмы
+Устройтесь поудобнее: фильмы с озвучкой по карте
+Путешествия с гидом
+Следите за историей по карте, с рассказом
+Исторический тест
+Найдите место, назовите правителя
+Сравнить два года
+Наложить границы одного года на другой
+В этот день
+Что произошло в сегодняшнюю дату
+Ваш дневник
+Места, эпохи и статьи, которые вы изучили
+Распад Родинии
+Кембрий
+Образование Пангеи
+Юра
+Мел
+Конец динозавров
+Ледниковые периоды
+=
+Ледниковый максимум
+Земледелие
+Бронзовый век
+Античность
+Римская империя
+Средние века
+Монголы
+Великие открытия
+Индустриализация
+Мировые войны
+Глубокое время
+Доисторический период
+Письменная история
+Обзор
+Здесь
+Во владении
+История
+Языки
+География
+Власть
+Люди
+Вокруг
+Размер
+Климат
+Эпоха
+Жизнь
+Державы
+Население мира
+Столица
+Правитель
+Форма правления
+Религия
+Площадь
+Валюта
+Регион
+Период
+Широта тогда
+Широта сейчас
+Глобальный климат
+Массив суши
+Сегодня в составе
+Местоположение
+Широтный пояс
+Площадь сегодня
+Побережье
+Уровень моря
+Без выхода к морю
+С выходом к морю
+Городские стены
+Стены исторических городов из OpenStreetMap, с года их завершения
+Эра
+## uk
+Огляд
+Закрити (Esc)
+Знайдіть місце, імперію або «Париж 1789»…
+У цьому атласі поки нічого не знайдено.
+Перейти до року
+Повернутися до сьогодні
+Сьогодні
+Пошук місць і епох
+Пошук
+Налаштування: шари, мапа, відображення та інше
+Налаштування
+Мовні родини
+Чи знали ви
+Сусіди сьогодні
+Спадкоємність
+Головне
+Знайти налаштування
+Немає налаштувань, що збігаються з
+Ваші дані
+Скинути всі налаштування
+Очистити щоденник місць, епох і статей? Цього не можна скасувати.
+Щоденник очищено
+Очистити мій щоденник
+Налаштування і щоденник зберігаються лише в цьому браузері.
+Шари
+Торговельні шляхи
+Шовковий шлях, Ганза, галеони… у русі, поки використовувалися
+Подорожі й походи
+Магеллан, Ганнібал, Марко Поло… в дорозі глобусом
+Поширення
+Чорна смерть, книгодрукування, ранні мусульманські завоювання, полінезійські плавання… мапою
+Пам’ятки в 3D
+Піраміди, Парфенон, Колізей, Нотр-Дам… у справжньому розмірі під час низького польоту, в роки, коли вони стояли
+Позначки подій
+Битви, заснування й відкриття біля їхньої дати
+Міста
+Задокументоване населення великих міст
+Назви й населення міст
+Густота населення
+Осіб на км², у сучасних кордонах, від 10 000 р. до н. е.
+Сила густоти
+Кордони й назви
+Політичні кордони
+Назви країн та імперій
+Приблизні кордони
+Пунктир для народів і непевних кордонів
+Політична мапа
+Розфарбувати кожну державу й народ
+Стародавня мапа світу
+Мапа світу Меркатора 1569 року, накладена на глобус так, як він її накреслив
+Сила старої мапи
+Товщина кордонів
+Понад 1,5 px — товщі лінії, що трохи знижують швидкість
+Яскравість кордонів
+Розмір підписів
+Назви на глобусі
+Земля і небо
+Хмари
+Чіткі великі плани
+Супутникові знімки 10 м і 3D-рельєф під час наближення (сьогодення)
+Висота рельєфу
+Наскільки здіймаються гори зблизька (1× — справжній масштаб)
+Гірський рельєф
+Тіні за справжніми висотами, сильніші зблизька
+Вогні міст уночі
+Сяйво атмосфери
+Зорі
+Справжнє нічне небо (Yale Bright Star Catalogue), зсунуте до дати
+Місяць і Сонце
+Місяць на своєму місці й у своїй фазі для дати
+Серпанок Чумацького Шляху
+Льодовикові періоди
+Льодовикові щити й нижче море в часи зледенінь
+Зелена Сахара
+Степи в Африканський вологий період
+Сонячне світло
+Стале світло; сонце за порою року (сьогодні наживо); або завжди день
+Камера й рух
+Обертати в спокої
+Нахиляти до обрію зблизька
+Косий вигляд згори під час наближення
+Швидкість обертання
+Рух
+Як у системі, або вибрати
+Ефекти стрибка в часі
+Шлейфи зір і кольорові облямівки під час швидкого гортання
+Час
+Швидкість відтворення
+Під час натискання на відтворення
+Запис років
+44 до н. е. / 1914 н. е. або 44 до Р. Х. / 1914 від Р. Х.
+Інтерфейс
+Смуга епохи й населення
+Смуга під шкалою часу
+Джерела
+Звідки взято кордони й шари, внизу ліворуч
+Назва під вказівником
+Картки визначень біля посилань
+Відео й визначення під час наведення на посилання
+Мова
+Інтерфейс, статті, картки й відео
+Звук
+Фоновий звук
+Читати подорожі вголос
+Озвучення голосом браузера
+Продуктивність
+Якість графіки
+Низька вимикає сяйво й різкість на повільних пристроях
+Стандарт
+Типовий вигляд
+Чиста мапа
+Лише кордони й назви
+Усе
+Усі шари, включно з порами року
+Спокійно
+Менше руху, без хмар і ефектів
+Вимк.
+=
+=
+=
+=
+Стале
+Пори року
+День
+Система
+Повний
+Зменшений
+=
+=
+Авто
+Висока
+Низька
+Документальні фільми
+Влаштовуйтеся зручніше: фільми з озвученням мапою
+Подорожі з гідом
+Слідкуйте за історією мапою, з розповіддю
+Історична вікторина
+Знайдіть місце, назвіть правителя
+Порівняти два роки
+Накласти кордони одного року на інший
+Цього дня
+Що сталося в сьогоднішню дату
+Ваш щоденник
+Місця, епохи й статті, які ви дослідили
+Розпад Родинії
+Кембрій
+Утворення Пангеї
+Юра
+Крейда
+Кінець динозаврів
+Льодовикові періоди
+=
+Льодовиковий максимум
+Землеробство
+Бронзова доба
+Античність
+Римська імперія
+Середньовіччя
+Монголи
+Великі відкриття
+Індустріалізація
+Світові війни
+Глибокий час
+Доісторичні часи
+Писемна історія
+Огляд
+Тут
+У володінні
+Історія
+Мови
+Географія
+Влада
+Люди
+Довкола
+Розмір
+Клімат
+Епоха
+Життя
+Держави
+Населення світу
+Столиця
+Правитель
+Форма правління
+Релігія
+Площа
+Валюта
+Регіон
+Період
+Широта тоді
+Широта тепер
+Глобальний клімат
+Масив суходолу
+Сьогодні у складі
+Розташування
+Широтний пояс
+Площа сьогодні
+Узбережжя
+Рівень моря
+Без виходу до моря
+З виходом до моря
+Міські мури
+Мури історичних міст з OpenStreetMap, від року їх завершення
+Ера
+## el
+Εξερεύνηση
+Κλείσιμο (Esc)
+Αναζητήστε τόπο, αυτοκρατορία ή «Παρίσι 1789»…
+Δεν βρέθηκε τίποτα ακόμη σε αυτόν τον άτλαντα.
+Μετάβαση σε έτος
+Επιστροφή στο σήμερα
+Σήμερα
+Αναζήτηση τόπων και εποχών
+Αναζήτηση
+Ρυθμίσεις: επίπεδα, χάρτης, προβολή και άλλα
+Ρυθμίσεις
+Γλωσσικές οικογένειες
+Το ξέρατε;
+Σημερινοί γείτονες
+Διαδοχή
+Τα βασικά
+Εύρεση ρύθμισης
+Καμία ρύθμιση δεν ταιριάζει με
+Τα δεδομένα σας
+Επαναφορά όλων των ρυθμίσεων
+Διαγραφή του ημερολογίου τόπων, εποχών και άρθρων; Δεν αναιρείται.
+Το ημερολόγιο διαγράφηκε
+Διαγραφή του ημερολογίου μου
+Οι ρυθμίσεις και το ημερολόγιο μένουν μόνο σε αυτό το πρόγραμμα περιήγησης.
+Επίπεδα
+Εμπορικοί δρόμοι
+Δρόμος του Μεταξιού, Χανσεατική Ένωση, γαλέρες… σε κίνηση όσο χρησιμοποιούνταν
+Ταξίδια και εκστρατείες
+Μαγγελάνος, Αννίβας, Μάρκο Πόλο… σε κίνηση πάνω στην υδρόγειο
+Εξαπλώσεις
+Ο Μαύρος Θάνατος, η τυπογραφία, οι πρώτες μουσουλμανικές κατακτήσεις, τα ταξίδια των Πολυνήσιων… στον χάρτη
+Μνημεία σε 3D
+Πυραμίδες, Παρθενώνας, Κολοσσαίο, Παναγία των Παρισίων… σε πραγματικό μέγεθος σε χαμηλή πτήση, τα χρόνια που στέκονταν
+Σημάδια γεγονότων
+Μάχες, ιδρύσεις και ανακαλύψεις κοντά στη χρονολογία τους
+Πόλεις
+Καταγεγραμμένοι πληθυσμοί μεγάλων πόλεων
+Ονόματα και πληθυσμοί πόλεων
+Πυκνότητα πληθυσμού
+Άνθρωποι ανά km², σημερινά σύνορα, από το 10.000 π.Χ.
+Ένταση πυκνότητας
+Σύνορα και ονόματα
+Πολιτικά σύνορα
+Ονόματα χωρών και αυτοκρατοριών
+Κατά προσέγγιση σύνορα
+Διακεκομμένες γραμμές για λαούς και αβέβαια σύνορα
+Πολιτικός χάρτης
+Χρωματισμός κάθε κράτους και λαού
+Παλιός παγκόσμιος χάρτης
+Ο παγκόσμιος χάρτης του Μερκάτορα του 1569, πάνω στην υδρόγειο όπως τον σχεδίασε
+Ένταση παλιού χάρτη
+Πάχος συνόρων
+Πάνω από 1,5 px πιο χοντρές γραμμές που κοστίζουν λίγη ταχύτητα
+Φωτεινότητα συνόρων
+Μέγεθος ονομάτων
+Ονόματα στην υδρόγειο
+Γη και ουρανός
+Σύννεφα
+Καθαρά κοντινά πλάνα
+Δορυφορικές εικόνες 10 m και τρισδιάστατο ανάγλυφο στο ζουμ (σήμερα)
+Ύψος ανάγλυφου
+Πόσο υψώνονται τα βουνά από κοντά (1× είναι η πραγματική κλίμακα)
+Ορεινό ανάγλυφο
+Σκίαση από πραγματικά υψόμετρα, εντονότερη από κοντά
+Φώτα πόλεων τη νύχτα
+Λάμψη ατμόσφαιρας
+Αστέρια
+Ο πραγματικός νυχτερινός ουρανός (Yale Bright Star Catalogue), μετατοπισμένος στη χρονολογία
+Σελήνη και Ήλιος
+Η Σελήνη στη θέση και τη φάση της για τη χρονολογία
+Πέπλο του Γαλαξία
+Εποχές των παγετώνων
+Στρώματα πάγου και χαμηλότερες θάλασσες στις παγετώδεις περιόδους
+Πράσινη Σαχάρα
+Λιβάδια στην Αφρικανική Υγρή Περίοδο
+Ηλιακό φως
+Σταθερό φως· ο ήλιος κατά την εποχή του έτους (ζωντανά σήμερα)· ή πάντα μέρα
+Κάμερα και κίνηση
+Περιστροφή σε αδράνεια
+Κλίση προς τον ορίζοντα από κοντά
+Πλάγια αεροφωτογραφική όψη στο ζουμ
+Ταχύτητα περιστροφής
+Κίνηση
+Όπως στο σύστημα, ή επιλέξτε
+Εφέ χρονικού άλματος
+Ίχνη αστεριών και χρωματικά περιθώρια σε γρήγορη κύλιση
+Χρόνος
+Ταχύτητα αναπαραγωγής
+Όταν πατάτε αναπαραγωγή
+Γραφή ετών
+44 π.Κ.Ε. / 1914 Κ.Ε., ή 44 π.Χ. / 1914 μ.Χ.
+Διεπαφή
+Λωρίδα εποχής και πληθυσμού
+Η μπάρα κάτω από τον ρυθμιστή χρόνου
+Σημειώσεις πηγών
+Από πού προέρχονται τα σύνορα και τα επίπεδα, κάτω αριστερά
+Όνομα κάτω από τον δείκτη
+Κάρτες ορισμών στους συνδέσμους
+Βίντεο και ορισμός όταν δείχνετε έναν σύνδεσμο
+Γλώσσα
+Διεπαφή, άρθρα, κάρτες και βίντεο
+Ήχος
+Ήχος περιβάλλοντος
+Ανάγνωση ταξιδιών φωναχτά
+Αφήγηση με τη φωνή του προγράμματος περιήγησης
+Επιδόσεις
+Ποιότητα γραφικών
+Η χαμηλή αφαιρεί λάμψεις και ευκρίνεια σε αργές συσκευές
+Τυπική
+Η προεπιλεγμένη προβολή
+Καθαρός χάρτης
+Μόνο σύνορα και ονόματα
+Όλα
+Όλα τα επίπεδα, μαζί με τις εποχές
+Ήρεμη
+Λιγότερη κίνηση, χωρίς σύννεφα ή εφέ
+Όχι
+=
+=
+=
+=
+Σταθερό
+Εποχές
+Μέρα
+Σύστημα
+Πλήρης
+Μειωμένη
+=
+=
+Αυτόματη
+Υψηλή
+Χαμηλή
+Ντοκιμαντέρ
+Χαλαρώστε: αφηγημένες ταινίες στον χάρτη
+Ξεναγήσεις
+Ακολουθήστε μια ιστορία στον χάρτη, με αφήγηση
+Κουίζ ιστορίας
+Βρείτε τον τόπο, ονομάστε τον ηγεμόνα
+Σύγκριση δύο ετών
+Τα σύνορα ενός έτους πάνω σε ένα άλλο
+Σαν σήμερα
+Τι συνέβη στη σημερινή ημερομηνία
+Το ημερολόγιό σας
+Τόποι, εποχές και άρθρα που εξερευνήσατε
+Διάσπαση της Ροδινίας
+Κάμβριο
+Σχηματισμός της Παγγαίας
+Ιουρασικό
+Κρητιδικό
+Τέλος των δεινοσαύρων
+Εποχές των παγετώνων
+=
+Παγετώδες μέγιστο
+Γεωργία
+Εποχή του Χαλκού
+Κλασική αρχαιότητα
+Ρωμαϊκή Αυτοκρατορία
+Μεσαίωνας
+Μογγόλοι
+Ανακαλύψεις
+Εκβιομηχάνιση
+Παγκόσμιοι πόλεμοι
+Βαθύς χρόνος
+Προϊστορία
+Γραπτή ιστορία
+Επισκόπηση
+Εδώ
+Στην κατοχή
+Ιστορία
+Γλώσσες
+Γεωγραφία
+Εξουσία
+Άνθρωποι
+Γύρω
+Μέγεθος
+Κλίμα
+Εποχή
+Ζωή
+Δυνάμεις
+Παγκόσμιος πληθυσμός
+Πρωτεύουσα
+Ηγεμόνας
+Πολίτευμα
+Θρησκεία
+Έκταση
+Νόμισμα
+Περιοχή
+Περίοδος
+Πλάτος τότε
+Πλάτος σήμερα
+Παγκόσμιο κλίμα
+Ξηρά
+Σήμερα μέρος της
+Θέση
+Ζώνη πλάτους
+Έκταση σήμερα
+Ακτή
+Στάθμη θάλασσας
+Χωρίς ακτή
+Με ακτή
+Τείχη πόλεων
+Τείχη ιστορικών πόλεων από το OpenStreetMap, από το έτος ολοκλήρωσής τους
+Εποχή

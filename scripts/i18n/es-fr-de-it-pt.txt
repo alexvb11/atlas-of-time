@@ -1,0 +1,1020 @@
+## es
+Explorar
+Cerrar (Escape)
+Busca un lugar, un imperio o “París 1789”…
+No se encontró nada en este atlas.
+Ir a un año
+Volver a hoy
+Hoy
+Buscar lugares y épocas
+Buscar
+Ajustes: capas, mapa, pantalla y más
+Ajustes
+Familias lingüísticas
+¿Sabías que…?
+Vecinos actuales
+Linaje
+Lo esencial
+Buscar un ajuste
+Ningún ajuste coincide con
+Tus datos
+Restablecer todos los ajustes
+¿Borrar tu diario de lugares, épocas y artículos? No se puede deshacer.
+Diario borrado
+Borrar mi diario
+Los ajustes y el diario se guardan solo en este navegador.
+Capas
+Rutas comerciales
+Ruta de la Seda, Hansa, galeones… en movimiento mientras se usaban
+Viajes y marchas
+Magallanes, Aníbal, Marco Polo… recorriendo el globo
+Expansiones
+La peste negra, la imprenta, las primeras conquistas musulmanas, los viajes polinesios… avanzando por el mapa
+Monumentos en 3D
+Pirámides, Partenón, Coliseo, Notre-Dame… a tamaño real al volar bajo, en los años en que existieron
+Marcadores de eventos
+Batallas, fundaciones y descubrimientos cerca de su fecha
+Ciudades
+Poblaciones registradas de las grandes ciudades
+Nombres y poblaciones de ciudades
+Densidad de población
+Personas por km², fronteras actuales, desde el 10 000 a. C.
+Intensidad de la densidad
+Fronteras y nombres
+Fronteras políticas
+Nombres de países e imperios
+Fronteras aproximadas
+Líneas discontinuas para pueblos y fronteras inciertas
+Mapa político
+Colorea cada estado y pueblo en el mapa
+Mapa antiguo del mundo
+El mapamundi de Mercator de 1569, sobre el globo tal como lo dibujó
+Intensidad del mapa antiguo
+Grosor de las fronteras
+Más de 1,5 px usa líneas más gruesas que restan algo de velocidad
+Brillo de las fronteras
+Tamaño de los nombres
+Nombres sobre el globo
+Tierra y cielo
+Nubes
+Primeros planos nítidos
+Imágenes de satélite de 10 m y relieve 3D al acercarse (actualidad)
+Altura del relieve
+Cuánto se elevan las montañas de cerca (1× es la escala real)
+Relieve montañoso
+Sombreado a partir de la elevación real, más intenso de cerca
+Luces de las ciudades de noche
+Brillo de la atmósfera
+Estrellas
+El cielo nocturno real (Yale Bright Star Catalogue), ajustado a la fecha
+Luna y Sol
+La Luna en su lugar y fase para la fecha
+Neblina de la Vía Láctea
+Glaciaciones
+Casquetes de hielo y mares más bajos en las épocas glaciales
+Sahara verde
+Praderas en el Periodo Húmedo Africano
+Luz solar
+Luz fija; el sol según la época del año (en directo hoy); o siempre de día
+Cámara y movimiento
+Girar en reposo
+Inclinar hacia el horizonte de cerca
+Una vista aérea oblicua al acercarse
+Velocidad de giro
+Movimiento
+Seguir el ajuste del sistema, o elegir
+Efectos de salto temporal
+Estelas de estrellas y bordes de color al desplazarse rápido
+Tiempo
+Velocidad de reproducción
+Se usa al pulsar reproducir
+Formato de los años
+44 a. e. c. / 1914 e. c., o 44 a. C. / 1914 d. C.
+Interfaz
+Franja de época y población
+La barra bajo el control del tiempo
+Notas de fuentes
+De dónde vienen las fronteras y capas, abajo a la izquierda
+Nombre bajo el puntero
+Fichas de definición en los enlaces
+Vídeo y definición al señalar un enlace
+Idioma
+Interfaz, artículos, fichas y vídeos
+Sonido
+Sonido ambiente
+Leer los viajes en voz alta
+Narración con la voz de tu navegador
+Rendimiento
+Calidad gráfica
+Baja quita resplandores y nitidez en dispositivos lentos
+Estándar
+La vista predeterminada
+Mapa limpio
+Solo fronteras y nombres
+Todo
+Todas las capas, estaciones incluidas
+Tranquilo
+Menos movimiento, sin nubes ni efectos
+No
+=
+=
+=
+=
+Fija
+Estaciones
+Día
+Sistema
+Completo
+Reducido
+=
+=
+Auto
+Alta
+Baja
+Documentales
+Ponte cómodo: películas narradas por el mapa
+Viajes guiados
+Sigue una historia por el mapa, narrada
+Quiz de historia
+Encuentra el lugar, nombra al gobernante
+Comparar dos años
+Superpón las fronteras de un año sobre otro
+Tal día como hoy
+Lo que ocurrió en la fecha de hoy
+Tu diario
+Lugares, épocas y artículos que has explorado
+Rodinia se fragmenta
+Cámbrico
+Se forma Pangea
+Jurásico
+Cretácico
+Fin de los dinosaurios
+Glaciaciones
+=
+Máximo glacial
+Agricultura
+Edad del Bronce
+Antigüedad clásica
+Imperio romano
+Edad Media
+Mongoles
+Exploración
+Industrialización
+Guerras mundiales
+Tiempo profundo
+Prehistoria
+Historia escrita
+Resumen
+Aquí
+En manos de
+Historia
+Lenguas
+Geografía
+Gobierno
+Población
+Alrededor
+Tamaño
+Clima
+Época
+Vida
+Potencias
+Población mundial
+Capital
+Gobernante
+Forma de gobierno
+Religión
+Superficie
+Moneda
+Región
+Periodo
+Latitud entonces
+Latitud hoy
+Clima global
+Masa continental
+Hoy parte de
+Ubicación
+Franja de latitud
+Superficie actual
+Costa
+Nivel del mar
+Sin litoral
+Con litoral
+Murallas
+Murallas de ciudades históricas, de OpenStreetMap, desde el año en que se terminaron
+Era
+## fr
+Explorer
+Fermer (Échap)
+Cherchez un lieu, un empire ou « Paris 1789 »…
+Rien trouvé dans cet atlas pour l’instant.
+Aller à une année
+Revenir à aujourd’hui
+Aujourd’hui
+Rechercher des lieux et des époques
+Rechercher
+Réglages : couches, carte, affichage et plus
+Réglages
+Familles de langues
+Le saviez-vous
+Voisins actuels
+Filiation
+L’essentiel
+Trouver un réglage
+Aucun réglage ne correspond à
+Vos données
+Réinitialiser tous les réglages
+Effacer votre journal de lieux, d’époques et d’articles ? C’est irréversible.
+Journal effacé
+Effacer mon journal
+Les réglages et le journal sont conservés dans ce navigateur uniquement.
+Couches
+Routes commerciales
+Route de la soie, Hanse, galions… animées pendant leur usage
+Voyages et marches
+Magellan, Hannibal, Marco Polo… en mouvement sur le globe
+Propagations
+La peste noire, l’imprimerie, les premières conquêtes musulmanes, les voyages polynésiens… sur la carte
+Monuments en 3D
+Pyramides, Parthénon, Colisée, Notre-Dame… en vraie grandeur en vol rasant, pendant les années où ils existaient
+Repères d’événements
+Batailles, fondations et découvertes autour de leur date
+Villes
+Populations attestées des grandes villes
+Noms et populations des villes
+Densité de population
+Habitants par km², frontières actuelles, depuis 10 000 av. J.-C.
+Intensité de la densité
+Frontières et noms
+Frontières politiques
+Noms des pays et des empires
+Frontières approximatives
+Pointillés pour les peuples et les frontières incertaines
+Carte politique
+Colorer chaque État et chaque peuple
+Carte ancienne du monde
+La carte du monde de Mercator (1569), posée sur le globe telle qu’il l’a dessinée
+Intensité de la carte ancienne
+Épaisseur des frontières
+Au-delà de 1,5 px, des traits plus lourds qui coûtent un peu de vitesse
+Luminosité des frontières
+Taille des noms
+Noms sur le globe
+Terre et ciel
+Nuages
+Gros plans nets
+Images satellite à 10 m et relief 3D en zoomant (époque actuelle)
+Hauteur du relief
+Hauteur des montagnes en gros plan (1× = échelle réelle)
+Relief des montagnes
+Ombrage tiré de l’altitude réelle, plus fort de près
+Lumières des villes la nuit
+Halo de l’atmosphère
+Étoiles
+Le vrai ciel nocturne (Yale Bright Star Catalogue), ramené à la date
+Lune et Soleil
+La Lune à sa place et dans sa phase pour la date
+Voile de la Voie lactée
+Âges glaciaires
+Calottes glaciaires et mers plus basses aux époques glaciaires
+Sahara vert
+Prairies de la période humide africaine
+Lumière du soleil
+Lumière fixe ; le soleil selon la saison (en direct aujourd’hui) ; ou toujours le jour
+Caméra et mouvement
+Rotation au repos
+Incliner vers l’horizon de près
+Une vue aérienne oblique en zoomant
+Vitesse de rotation
+Mouvement
+Suivre le réglage du système, ou choisir
+Effets de voyage temporel
+Traînées d’étoiles et franges de couleur en défilement rapide
+Temps
+Vitesse de lecture
+Utilisée en appuyant sur lecture
+Format des années
+44 av. è. c. / 1914 è. c., ou 44 av. J.-C. / 1914 apr. J.-C.
+Interface
+Bande époque et population
+La barre sous le curseur du temps
+Notes de sources
+D’où viennent les frontières et les couches, en bas à gauche
+Nom sous le pointeur
+Fiches de définition sur les liens
+Film et définition au survol d’un lien
+Langue
+Interface, articles, fiches et films
+Son
+Ambiance sonore
+Lire les voyages à voix haute
+Narration par la voix de votre navigateur
+Performances
+Qualité graphique
+Basse supprime les halos et la netteté sur les appareils lents
+Standard
+La vue par défaut
+Carte épurée
+Frontières et noms seulement
+Tout
+Toutes les couches, saisons comprises
+Calme
+Moins de mouvement, ni nuages ni effets
+Non
+=
+=
+=
+=
+Fixe
+Saisons
+Jour
+Système
+Complet
+Réduit
+=
+=
+Auto
+Haute
+Basse
+Documentaires
+Installez-vous : des films narrés à travers la carte
+Voyages guidés
+Suivez une histoire sur la carte, racontée
+Quiz d’histoire
+Trouvez le lieu, nommez le souverain
+Comparer deux années
+Superposer les frontières d’une année à une autre
+Ce jour-là
+Ce qui s’est passé à la date d’aujourd’hui
+Votre journal
+Lieux, époques et articles que vous avez explorés
+Rodinia se disloque
+Cambrien
+Formation de la Pangée
+Jurassique
+Crétacé
+Fin des dinosaures
+Âges glaciaires
+=
+Maximum glaciaire
+Agriculture
+Âge du bronze
+Antiquité classique
+Empire romain
+Moyen Âge
+Mongols
+Grandes découvertes
+Industrialisation
+Guerres mondiales
+Temps profonds
+Préhistoire
+Histoire écrite
+Aperçu
+Ici
+Tenu par
+Histoire
+Langues
+Géographie
+Pouvoir
+Population
+Alentours
+Taille
+Climat
+Époque
+Vie
+Puissances
+Population mondiale
+Capitale
+Souverain
+Régime
+Religion
+Superficie
+Monnaie
+Région
+Période
+Latitude alors
+Latitude aujourd’hui
+Climat mondial
+Masse continentale
+Aujourd’hui en
+Position
+Zone de latitude
+Superficie actuelle
+Littoral
+Niveau de la mer
+Sans littoral
+Avec littoral
+Remparts
+Remparts des villes historiques, d’OpenStreetMap, à partir de leur achèvement
+Ère
+## de
+Entdecken
+Schließen (Esc)
+Ort, Reich oder „Paris 1789“ suchen …
+In diesem Atlas noch nichts gefunden.
+Zu einem Jahr springen
+Zurück zu heute
+Heute
+Orte und Epochen suchen
+Suchen
+Einstellungen: Ebenen, Karte, Anzeige und mehr
+Einstellungen
+Sprachfamilien
+Schon gewusst?
+Heutige Nachbarn
+Abstammung
+Das Wichtigste
+Einstellung finden
+Keine Einstellung passt zu
+Deine Daten
+Alle Einstellungen zurücksetzen
+Dein Tagebuch mit Orten, Epochen und Artikeln löschen? Das lässt sich nicht rückgängig machen.
+Tagebuch gelöscht
+Mein Tagebuch löschen
+Einstellungen und Tagebuch bleiben nur in diesem Browser.
+Ebenen
+Handelswege
+Seidenstraße, Hanse, Galeonen … in Bewegung, solange genutzt
+Reisen und Feldzüge
+Magellan, Hannibal, Marco Polo … unterwegs auf dem Globus
+Ausbreitungen
+Der Schwarze Tod, der Buchdruck, die frühen islamischen Eroberungen, polynesische Seefahrt … über die Karte
+Bauwerke in 3D
+Pyramiden, Parthenon, Kolosseum, Notre-Dame … in echter Größe im Tiefflug, in den Jahren ihres Bestehens
+Ereignismarken
+Schlachten, Gründungen und Entdeckungen um ihr Datum
+Städte
+Belegte Einwohnerzahlen großer Städte
+Städtenamen und Einwohner
+Bevölkerungsdichte
+Menschen pro km², heutige Grenzen, ab 10.000 v. Chr.
+Stärke der Dichte
+Grenzen und Namen
+Politische Grenzen
+Namen von Ländern und Reichen
+Ungefähre Grenzen
+Gestrichelt für Völker und unsichere Grenzen
+Politische Karte
+Jeden Staat und jedes Volk einfärben
+Alte Weltkarte
+Mercators Weltkarte von 1569, so auf den Globus gelegt, wie er sie zeichnete
+Stärke der alten Karte
+Linienstärke der Grenzen
+Über 1,5 px werden dickere Linien genutzt, die etwas Tempo kosten
+Helligkeit der Grenzen
+Schriftgröße
+Namen auf dem Globus
+Erde und Himmel
+Wolken
+Scharfe Nahansichten
+10-m-Satellitenbilder und 3D-Gelände beim Heranzoomen (Gegenwart)
+Geländehöhe
+Wie hoch Berge in Nahansichten aufragen (1× ist maßstabsgetreu)
+Gebirgsrelief
+Schattierung aus echten Höhendaten, aus der Nähe stärker
+Stadtlichter bei Nacht
+Leuchten der Atmosphäre
+Sterne
+Der echte Nachthimmel (Yale Bright Star Catalogue), zum Datum bewegt
+Mond und Sonne
+Der Mond an seinem Ort und in seiner Phase zum Datum
+Schleier der Milchstraße
+Eiszeiten
+Eisschilde und tiefere Meere in Kaltzeiten
+Grüne Sahara
+Grasland in der Afrikanischen Feuchtzeit
+Sonnenlicht
+Festes Licht; die Sonne zur Jahreszeit (heute live); oder immer Tag
+Kamera und Bewegung
+Im Leerlauf drehen
+Nah am Boden zum Horizont neigen
+Eine schräge Luftansicht beim Heranzoomen
+Drehgeschwindigkeit
+Bewegung
+Der Systemeinstellung folgen oder wählen
+Zeitsprung-Effekte
+Sternschlieren und Farbsäume beim schnellen Spulen
+Zeit
+Abspieltempo
+Gilt beim Drücken auf Abspielen
+Jahresangaben
+44 v. u. Z. / 1914 u. Z. oder 44 v. Chr. / 1914 n. Chr.
+Oberfläche
+Leiste für Epoche und Bevölkerung
+Die Leiste unter dem Zeitregler
+Quellenhinweise
+Woher Grenzen und Ebenen stammen, unten links
+Name unter dem Zeiger
+Erklärkarten bei Links
+Film und Erklärung beim Zeigen auf einen Link
+Sprache
+Oberfläche, Artikel, Karten und Filme
+Ton
+Umgebungsklang
+Reisen vorlesen
+Erzählt von der Stimme deines Browsers
+Leistung
+Grafikqualität
+Niedrig verzichtet auf Leuchteffekte und Schärfe für langsame Geräte
+Standard
+Die Standardansicht
+Klare Karte
+Nur Grenzen und Namen
+Alles
+Alle Ebenen an, Jahreszeiten inklusive
+Ruhig
+Weniger Bewegung, keine Wolken oder Effekte
+Aus
+=
+=
+=
+=
+Fest
+Jahreszeiten
+Tag
+System
+Voll
+Reduziert
+=
+=
+Auto
+Hoch
+Niedrig
+Dokumentarfilme
+Zurücklehnen: erzählte Filme über die Karte
+Geführte Reisen
+Folge einer Geschichte über die Karte, erzählt
+Geschichtsquiz
+Finde den Ort, nenne den Herrscher
+Zwei Jahre vergleichen
+Die Grenzen eines Jahres über ein anderes legen
+An diesem Tag
+Was an diesem Datum geschah
+Dein Tagebuch
+Orte, Epochen und Artikel, die du erkundet hast
+Rodinia zerbricht
+Kambrium
+Pangaea entsteht
+Jura
+Kreide
+Ende der Dinosaurier
+Eiszeitalter
+=
+Glaziales Maximum
+Ackerbau
+Bronzezeit
+Klassische Antike
+Römisches Reich
+Mittelalter
+Mongolen
+Entdeckungen
+Industrialisierung
+Weltkriege
+Tiefenzeit
+Vorgeschichte
+Schriftliche Geschichte
+Überblick
+Hier
+Im Besitz von
+Geschichte
+Sprachen
+Geografie
+Herrschaft
+Menschen
+Umfeld
+Größe
+Klima
+Epoche
+Leben
+Mächte
+Weltbevölkerung
+Hauptstadt
+Herrscher
+Regierungsform
+Religion
+Fläche
+Währung
+Region
+Zeitabschnitt
+Breite damals
+Breite heute
+Weltklima
+Landmasse
+Heute Teil von
+Lage
+Breitenzone
+Fläche heute
+Küste
+Meeresspiegel
+Binnenland
+Mit Küste
+Stadtmauern
+Mauern historischer Städte aus OpenStreetMap, ab dem Jahr ihrer Fertigstellung
+Ära
+## it
+Esplora
+Chiudi (Esc)
+Cerca un luogo, un impero o “Parigi 1789”…
+Ancora nulla in questo atlante.
+Vai a un anno
+Torna a oggi
+Oggi
+Cerca luoghi ed epoche
+Cerca
+Impostazioni: livelli, mappa, schermo e altro
+Impostazioni
+Famiglie linguistiche
+Lo sapevi?
+Vicini di oggi
+Discendenza
+L’essenziale
+Trova un’impostazione
+Nessuna impostazione corrisponde a
+I tuoi dati
+Ripristina tutte le impostazioni
+Cancellare il diario di luoghi, epoche e articoli? Non si può annullare.
+Diario cancellato
+Cancella il mio diario
+Impostazioni e diario restano solo in questo browser.
+Livelli
+Rotte commerciali
+Via della Seta, Hansa, galeoni… in movimento finché in uso
+Viaggi e marce
+Magellano, Annibale, Marco Polo… in movimento sul globo
+Diffusioni
+La peste nera, la stampa, le prime conquiste islamiche, i viaggi polinesiani… attraverso la mappa
+Monumenti in 3D
+Piramidi, Partenone, Colosseo, Notre-Dame… a grandezza reale in volo radente, negli anni in cui esistevano
+Indicatori di eventi
+Battaglie, fondazioni e scoperte vicino alla loro data
+Città
+Popolazioni attestate delle grandi città
+Nomi e popolazioni delle città
+Densità di popolazione
+Persone per km², confini attuali, dal 10.000 a.C.
+Intensità della densità
+Confini e nomi
+Confini politici
+Nomi di paesi e imperi
+Confini approssimativi
+Tratteggio per popoli e confini incerti
+Mappa politica
+Colora ogni stato e popolo sulla mappa
+Mappa antica del mondo
+Il mappamondo di Mercatore del 1569, posato sul globo come lo disegnò
+Intensità della mappa antica
+Spessore dei confini
+Oltre 1,5 px usa linee più spesse che costano un po’ di velocità
+Luminosità dei confini
+Dimensione dei nomi
+Nomi sul globo
+Terra e cielo
+Nuvole
+Primi piani nitidi
+Immagini satellitari a 10 m e rilievo 3D zoomando (oggi)
+Altezza del rilievo
+Quanto si alzano le montagne nei primi piani (1× è la scala reale)
+Rilievo montuoso
+Ombreggiatura dall’altitudine reale, più forte da vicino
+Luci delle città di notte
+Bagliore dell’atmosfera
+Stelle
+Il vero cielo notturno (Yale Bright Star Catalogue), portato alla data
+Luna e Sole
+La Luna nella sua posizione e fase per la data
+Velo della Via Lattea
+Ere glaciali
+Calotte di ghiaccio e mari più bassi nelle fasi glaciali
+Sahara verde
+Praterie nel Periodo umido africano
+Luce del sole
+Luce fissa; il sole secondo la stagione (dal vivo oggi); o sempre giorno
+Camera e movimento
+Ruota quando inattivo
+Inclina verso l’orizzonte da vicino
+Una vista aerea obliqua zoomando
+Velocità di rotazione
+Movimento
+Segui l’impostazione di sistema, o scegli
+Effetti di viaggio nel tempo
+Scie di stelle e frange di colore scorrendo veloce
+Tempo
+Velocità di riproduzione
+Usata quando premi play
+Formato degli anni
+44 a.e.v. / 1914 e.v., oppure 44 a.C. / 1914 d.C.
+Interfaccia
+Barra di epoca e popolazione
+La barra sotto il cursore del tempo
+Note sulle fonti
+Da dove vengono confini e livelli, in basso a sinistra
+Nome sotto il puntatore
+Schede di definizione sui link
+Filmato e definizione puntando un link
+Lingua
+Interfaccia, articoli, schede e filmati
+Suono
+Suono ambientale
+Leggi i viaggi ad alta voce
+Narrazione con la voce del browser
+Prestazioni
+Qualità grafica
+Bassa toglie bagliori e nitidezza sui dispositivi lenti
+Standard
+La vista predefinita
+Mappa pulita
+Solo confini e nomi
+Tutto
+Tutti i livelli, stagioni comprese
+Calma
+Meno movimento, niente nuvole né effetti
+No
+=
+=
+=
+=
+Fissa
+Stagioni
+Giorno
+Sistema
+Pieno
+Ridotto
+=
+=
+Auto
+Alta
+Bassa
+Documentari
+Mettiti comodo: film narrati sulla mappa
+Viaggi guidati
+Segui una storia sulla mappa, narrata
+Quiz di storia
+Trova il luogo, nomina il sovrano
+Confronta due anni
+Sovrapponi i confini di un anno a un altro
+Accadde oggi
+Cosa accadde nella data di oggi
+Il tuo diario
+Luoghi, epoche e articoli che hai esplorato
+Rodinia si spezza
+Cambriano
+Nasce la Pangea
+Giurassico
+Cretaceo
+Fine dei dinosauri
+Ere glaciali
+=
+Massimo glaciale
+Agricoltura
+Età del bronzo
+Età classica
+Impero romano
+Medioevo
+Mongoli
+Esplorazioni
+Industrializzazione
+Guerre mondiali
+Tempo profondo
+Preistoria
+Storia scritta
+Panoramica
+Qui
+In mano a
+Storia
+Lingue
+Geografia
+Potere
+Popolazione
+Dintorni
+Dimensioni
+Clima
+Epoca
+Vita
+Potenze
+Popolazione mondiale
+Capitale
+Sovrano
+Forma di governo
+Religione
+Superficie
+Valuta
+Regione
+Periodo
+Latitudine allora
+Latitudine oggi
+Clima globale
+Massa continentale
+Oggi parte di
+Posizione
+Fascia di latitudine
+Superficie oggi
+Costa
+Livello del mare
+Senza sbocco sul mare
+Con costa
+Mura cittadine
+Mura delle città storiche da OpenStreetMap, dall’anno in cui furono completate
+Era
+## pt
+Explorar
+Fechar (Esc)
+Pesquise um lugar, um império ou “Paris 1789”…
+Nada encontrado neste atlas ainda.
+Ir para um ano
+Voltar a hoje
+Hoje
+Pesquisar lugares e épocas
+Pesquisar
+Definições: camadas, mapa, ecrã e mais
+Definições
+Famílias linguísticas
+Sabia que
+Vizinhos atuais
+Linhagem
+O essencial
+Encontrar uma definição
+Nenhuma definição corresponde a
+Os seus dados
+Repor todas as definições
+Apagar o seu diário de lugares, épocas e artigos? Não é possível desfazer.
+Diário apagado
+Apagar o meu diário
+As definições e o diário ficam apenas neste navegador.
+Camadas
+Rotas comerciais
+Rota da Seda, Hansa, galeões… em movimento enquanto usadas
+Viagens e marchas
+Magalhães, Aníbal, Marco Polo… a percorrer o globo
+Expansões
+A peste negra, a imprensa, as primeiras conquistas muçulmanas, as viagens polinésias… pelo mapa
+Monumentos em 3D
+Pirâmides, Pártenon, Coliseu, Notre-Dame… em tamanho real em voo rasante, nos anos em que existiram
+Marcadores de eventos
+Batalhas, fundações e descobertas perto da sua data
+Cidades
+Populações registadas das grandes cidades
+Nomes e populações das cidades
+Densidade populacional
+Pessoas por km², fronteiras atuais, desde 10 000 a.C.
+Intensidade da densidade
+Fronteiras e nomes
+Fronteiras políticas
+Nomes de países e impérios
+Fronteiras aproximadas
+Tracejado para povos e fronteiras incertas
+Mapa político
+Colorir cada estado e povo no mapa
+Mapa antigo do mundo
+O mapa-múndi de Mercator de 1569, sobre o globo tal como o desenhou
+Intensidade do mapa antigo
+Espessura das fronteiras
+Acima de 1,5 px usa linhas mais grossas que custam alguma velocidade
+Brilho das fronteiras
+Tamanho dos nomes
+Nomes no globo
+Terra e céu
+Nuvens
+Grandes planos nítidos
+Imagens de satélite de 10 m e relevo 3D ao aproximar (atualidade)
+Altura do relevo
+Quanto sobem as montanhas de perto (1× é a escala real)
+Relevo montanhoso
+Sombreamento a partir da altitude real, mais forte de perto
+Luzes das cidades à noite
+Brilho da atmosfera
+Estrelas
+O verdadeiro céu noturno (Yale Bright Star Catalogue), ajustado à data
+Lua e Sol
+A Lua no seu lugar e fase para a data
+Névoa da Via Láctea
+Eras glaciais
+Mantos de gelo e mares mais baixos nas épocas glaciais
+Saara verde
+Pradarias no Período Húmido Africano
+Luz do sol
+Luz fixa; o sol conforme a época do ano (ao vivo hoje); ou sempre dia
+Câmara e movimento
+Rodar em repouso
+Inclinar para o horizonte de perto
+Uma vista aérea oblíqua ao aproximar
+Velocidade de rotação
+Movimento
+Seguir a definição do sistema, ou escolher
+Efeitos de salto no tempo
+Rastos de estrelas e franjas de cor ao percorrer depressa
+Tempo
+Velocidade de reprodução
+Usada ao carregar em reproduzir
+Formato dos anos
+44 AEC / 1914 EC, ou 44 a.C. / 1914 d.C.
+Interface
+Faixa de época e população
+A barra sob o controlo do tempo
+Notas de fontes
+De onde vêm as fronteiras e camadas, em baixo à esquerda
+Nome sob o ponteiro
+Fichas de definição nas ligações
+Filme e definição ao apontar para uma ligação
+Idioma
+Interface, artigos, fichas e filmes
+Som
+Som ambiente
+Ler as viagens em voz alta
+Narração com a voz do seu navegador
+Desempenho
+Qualidade gráfica
+Baixa retira brilhos e nitidez em dispositivos lentos
+Padrão
+A vista predefinida
+Mapa limpo
+Só fronteiras e nomes
+Tudo
+Todas as camadas, estações incluídas
+Calmo
+Menos movimento, sem nuvens nem efeitos
+Não
+=
+=
+=
+=
+Fixa
+Estações
+Dia
+Sistema
+Completo
+Reduzido
+=
+=
+Auto
+Alta
+Baixa
+Documentários
+Relaxe: filmes narrados pelo mapa
+Viagens guiadas
+Siga uma história pelo mapa, narrada
+Quiz de história
+Encontre o lugar, nomeie o governante
+Comparar dois anos
+Sobrepor as fronteiras de um ano a outro
+Neste dia
+O que aconteceu na data de hoje
+O seu diário
+Lugares, épocas e artigos que explorou
+Rodínia fragmenta-se
+Câmbrico
+Forma-se a Pangeia
+Jurássico
+Cretácico
+Fim dos dinossauros
+Eras glaciais
+=
+Máximo glacial
+Agricultura
+Idade do Bronze
+Antiguidade clássica
+Império Romano
+Idade Média
+Mongóis
+Descobrimentos
+Industrialização
+Guerras mundiais
+Tempo profundo
+Pré-história
+História escrita
+Resumo
+Aqui
+Nas mãos de
+História
+Línguas
+Geografia
+Poder
+População
+Arredores
+Tamanho
+Clima
+Época
+Vida
+Potências
+População mundial
+Capital
+Governante
+Forma de governo
+Religião
+Área
+Moeda
+Região
+Período
+Latitude então
+Latitude hoje
+Clima global
+Massa continental
+Hoje parte de
+Localização
+Faixa de latitude
+Área atual
+Costa
+Nível do mar
+Sem litoral
+Com litoral
+Muralhas
+Muralhas de cidades históricas, do OpenStreetMap, desde o ano em que foram concluídas
+Era

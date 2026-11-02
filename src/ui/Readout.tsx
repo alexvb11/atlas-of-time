@@ -1,5 +1,6 @@
 // Big date readout, and the global HUD strip (world state at time T).
 import { useEffect, useRef, useState } from 'react'
+import { tr } from '../i18n'
 import { motion } from 'framer-motion'
 import { useTime } from '../time/store'
 import { useSettings } from '../time/settings'
@@ -54,7 +55,7 @@ export function Readout() {
               }}
               onBlur={() => setEditing(false)}
               onKeyDown={(e) => e.key === 'Escape' && setEditing(false)}
-              aria-label="Go to a year"
+              aria-label={tr('Go to a year')}
               aria-invalid={bad}
               placeholder="1066, 44 BC, 20 ka, 65 Ma"
               className="glass w-[min(78vw,340px)] rounded-2xl px-4 py-2 text-center font-display text-[30px] text-ink placeholder:text-[18px] placeholder:text-dim focus:outline-none sm:text-[38px]"
@@ -110,7 +111,7 @@ export function Hud() {
     >
       {items.map((it, i) => (
         <div key={it.k} className={`flex min-w-0 items-baseline gap-2 px-3.5 py-0.5 ${i ? 'border-l border-white/8' : ''}`}>
-          <span className="shrink-0 text-[9.5px] font-semibold tracking-[0.16em] text-dim uppercase">{it.k}</span>
+          <span className="shrink-0 text-[9.5px] font-semibold tracking-[0.16em] text-dim uppercase">{tr(it.k)}</span>
           <span className="truncate text-[12px] text-ink/90 tnum">{it.v}</span>
         </div>
       ))}

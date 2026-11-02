@@ -721,8 +721,8 @@
   "title": "Sámi people",
   "qid": "Q48199",
   "classes": [
-   "ethnic group",
-   "indigenous people"
+   "indigenous people",
+   "ethnic group"
   ],
   "score": 10,
   "why": ""
@@ -869,8 +869,8 @@
   "title": "Anuradhapura kingdom",
   "qid": "Q1965597",
   "classes": [
-   "realm",
-   "historical country"
+   "historical country",
+   "realm"
   ],
   "score": 10,
   "why": ""
@@ -920,8 +920,8 @@
   "qid": "Q234009",
   "classes": [
    "kingdom",
-   "Mahajanapada",
-   "people"
+   "people",
+   "historical country"
   ],
   "score": 10,
   "why": ""
@@ -1519,10 +1519,10 @@
  },
  {
   "name": "Arakan",
-  "title": "Rakhine State",
-  "qid": "Q233838",
+  "title": "Arakan",
+  "qid": "Q40632742",
   "classes": [
-   "state of Myanmar"
+   "geographic location"
   ],
   "score": 10,
   "why": ""
@@ -1726,17 +1726,7 @@
   "classes": [
    "civilization",
    "culture",
-   "archaeological culture"
-  ],
-  "score": 10,
-  "why": ""
- },
- {
-  "name": "Axum",
-  "title": "Kingdom of Aksum",
-  "qid": "Q139377",
-  "classes": [
-   "historical country"
+   "style"
   ],
   "score": 10,
   "why": ""
@@ -1839,8 +1829,8 @@
   "title": "Sámi people",
   "qid": "Q48199",
   "classes": [
-   "ethnic group",
-   "indigenous people"
+   "indigenous people",
+   "ethnic group"
   ],
   "score": 10,
   "why": ""
@@ -2571,16 +2561,6 @@
   "reason": "no candidate passed validation"
  },
  {
-  "name": "Polanes",
-  "title": "Polans (western)",
-  "qid": "Q428713",
-  "classes": [
-   "historical ethnic group"
-  ],
-  "score": 3,
-  "why": "label:Polanes"
- },
- {
   "name": "Balts",
   "title": null,
   "reason": "no candidate passed validation"
@@ -2695,8 +2675,8 @@
   "title": "Aghlabid dynasty",
   "qid": "Q207600",
   "classes": [
-   "Emirate",
    "dynasty",
+   "Emirate",
    "historical country"
   ],
   "score": 4,
@@ -2707,8 +2687,8 @@
   "title": "Kingdom of Asturias",
   "qid": "Q231392",
   "classes": [
-   "kingdom",
-   "historical country"
+   "historical country",
+   "kingdom"
   ],
   "score": 6,
   "why": "label:Kingdom of Asturias dates 27km"
@@ -2729,8 +2709,8 @@
   "qid": "Q188353",
   "classes": [
    "nation",
-   "ethnic group",
-   "nationality"
+   "nationality",
+   "ethnic group"
   ],
   "score": 3,
   "why": "label:Welsh"
@@ -2870,8 +2850,8 @@
   "title": "Malagasy peoples",
   "qid": "Q310983",
   "classes": [
-   "ethnic group",
-   "human population"
+   "human population",
+   "ethnic group"
   ],
   "score": 3,
   "why": "label:Malagasy"
@@ -2893,7 +2873,7 @@
   "classes": [
    "ethnic groups in Indonesia",
    "ethnic group",
-   "native Indonesians"
+   "Bumiputera"
   ],
   "score": 3,
   "why": "label:Malay"
@@ -3370,8 +3350,8 @@
  },
  {
   "name": "Sardinia",
-  "title": "Kingdom of Sardinia",
-  "qid": "Q165154",
+  "title": "Kingdom of Sardinia (1324–1720)",
+  "qid": "Q55599391",
   "classes": [
    "historical country"
   ],
@@ -3618,8 +3598,8 @@
   "title": "Duchy of Swabia",
   "qid": "Q693980",
   "classes": [
-   "historical country",
-   "duchy"
+   "duchy",
+   "historical country"
   ],
   "score": 4,
   "why": "label:Duchy of Swabia dates"
@@ -3644,8 +3624,8 @@
   "title": "Shirvan",
   "qid": "Q638064",
   "classes": [
-   "historical region",
-   "historical country"
+   "historical country",
+   "historical region"
   ],
   "score": 6,
   "why": "label:Shirvan dates 46km"
@@ -3675,9 +3655,9 @@
   "title": "Denmark–Norway",
   "qid": "Q62651",
   "classes": [
-   "real union",
    "personal union",
-   "historical country"
+   "historical country",
+   "real union"
   ],
   "score": 5,
   "why": "label:Denmark-Norway dates 3099km"
@@ -3722,8 +3702,8 @@
   "title": "Later Lê dynasty early period",
   "qid": "Q878276",
   "classes": [
-   "historical country",
-   "dynasty"
+   "dynasty",
+   "historical country"
   ],
   "score": 6,
   "why": "label:Đại Việt dates 215km"
@@ -3755,8 +3735,8 @@
   "qid": "Q517333",
   "classes": [
    "principality",
-   "vassal state",
-   "historical country"
+   "historical country",
+   "vassal state"
   ],
   "score": 6,
   "why": "label:Principality of Polotsk dates 73km"
@@ -3936,17 +3916,6 @@
   "name": "Taiwanese Tribes",
   "title": null,
   "reason": "no candidate passed validation"
- },
- {
-  "name": "Principality of Galicia-Volhynia",
-  "title": "Kingdom of Galicia–Volhynia",
-  "qid": "Q239502",
-  "classes": [
-   "principality",
-   "kingdom"
-  ],
-  "score": 6,
-  "why": "label:Principality of Galicia-Volhynia dates 212km"
  },
  {
   "name": "Principality of Kyiv",
@@ -4146,8 +4115,8 @@
   "title": "Chagatai Khanate",
   "qid": "Q487829",
   "classes": [
-   "khanate",
    "horde",
+   "khanate",
    "historical country"
   ],
   "score": 4,
@@ -4189,8 +4158,8 @@
   "qid": "Q238445",
   "classes": [
    "Emirate",
-   "historical country",
-   "sultanate"
+   "sultanate",
+   "historical country"
   ],
   "score": 6,
   "why": "label:Granada dates 148km"
@@ -4358,18 +4327,6 @@
   "why": "label:Hokuzan dates 9km"
  },
  {
-  "name": "Poland-Lithuania",
-  "title": "Polish–Lithuanian Commonwealth",
-  "qid": "Q172107",
-  "classes": [
-   "historical country",
-   "sovereign state",
-   "rump state"
-  ],
-  "score": 6,
-  "why": "label:Poland-Lithuania dates 307km"
- },
- {
   "name": "Kalmar Union",
   "title": "Kalmar Union",
   "qid": "Q62623",
@@ -4384,8 +4341,8 @@
   "title": "Blue Horde",
   "qid": "Q644979",
   "classes": [
-   "khanate",
    "historical country",
+   "khanate",
    "horde"
   ],
   "score": 6,
@@ -4518,8 +4475,8 @@
   "title": "Hausa Kingdoms",
   "qid": "Q1591030",
   "classes": [
-   "historical country",
-   "group"
+   "group",
+   "historical country"
   ],
   "score": 10,
   "why": ""
@@ -4560,8 +4517,8 @@
   "title": "Hanthawaddy kingdom",
   "qid": "Q1572529",
   "classes": [
-   "historical country",
-   "kingdom"
+   "kingdom",
+   "historical country"
   ],
   "score": 10,
   "why": ""
@@ -4762,9 +4719,9 @@
   "title": "Quechua people",
   "qid": "Q134936",
   "classes": [
-   "indigenous peoples in Ecuador",
-   "indigenous people in Peru",
-   "ethnic group"
+   "ethnic group",
+   "ethnic minority group",
+   "indigenous peoples in Ecuador"
   ],
   "score": 3,
   "why": "label:Quechua"
@@ -5416,8 +5373,8 @@
   "title": "Rumsen people",
   "qid": "Q17091328",
   "classes": [
-   "isolated human group",
-   "Native American tribe"
+   "Native American tribe",
+   "isolated human group"
   ],
   "score": 3,
   "why": "label:Rumsen people"
@@ -5618,8 +5575,8 @@
   "title": "Kuruaya",
   "qid": "Q3817508",
   "classes": [
-   "ethnic group",
-   "indigenous people"
+   "indigenous people",
+   "ethnic group"
   ],
   "score": 3,
   "why": "label:Kuruaya"
@@ -5927,8 +5884,8 @@
   "qid": "Q3513576",
   "classes": [
    "ethnic group",
-   "group of humans",
-   "indigenous peoples in Bolivia"
+   "indigenous peoples in Bolivia",
+   "group of humans"
   ],
   "score": 3,
   "why": "label:Tacana people"
@@ -6094,8 +6051,8 @@
   "title": "Quileute",
   "qid": "Q56535",
   "classes": [
-   "ethnic group",
-   "Indigenous peoples of the United States in North America"
+   "Indigenous peoples of the United States in North America",
+   "ethnic group"
   ],
   "score": 5,
   "why": "label:Quileute people 26km"
@@ -6480,8 +6437,8 @@
   "qid": "Q109402",
   "classes": [
    "ethnic group",
-   "indigenous peoples in Argentina",
-   "indigenous peoples in Chile"
+   "indigenous peoples in Bolivia",
+   "indigenous peoples in Argentina"
   ],
   "score": 3,
   "why": "label:Aymara"
@@ -7234,9 +7191,9 @@
   "title": "Miꞌkmaꞌki",
   "qid": "Q27943532",
   "classes": [
+   "homeland",
    "ancestral home",
-   "territory",
-   "homeland"
+   "territory"
   ],
   "score": 5,
   "why": "label:Mi'kma'ki 568km"
@@ -7544,9 +7501,9 @@
   "title": "Yaminawá",
   "qid": "Q572484",
   "classes": [
-   "indigenous peoples in Brazil",
    "indigenous people",
-   "indigenous people in Peru"
+   "indigenous people in Peru",
+   "indigenous peoples in Brazil"
   ],
   "score": 3,
   "why": "label:Yaminawá people"
@@ -7562,8 +7519,8 @@
   "qid": "Q35170",
   "classes": [
    "tribe",
-   "federally recognized Native American tribe in the United States",
-   "nomadic confederacy"
+   "nomadic confederacy",
+   "federally recognized Native American tribe in the United States"
   ],
   "score": 3,
   "why": "label:Caddo"
@@ -8166,8 +8123,8 @@
   "title": "Palouse",
   "qid": "Q128038",
   "classes": [
-   "WWF ecoregion",
-   "territory"
+   "territory",
+   "WWF ecoregion"
   ],
   "score": 5,
   "why": "label:Palouse 58km"
@@ -8647,8 +8604,8 @@
   "qid": "Q793196",
   "classes": [
    "ethnic group",
-   "indigenous peoples in Bolivia",
-   "indigenous peoples in Paraguay"
+   "indigenous peoples in Paraguay",
+   "indigenous peoples in Bolivia"
   ],
   "score": 3,
   "why": "label:Ayoreo people"
@@ -9466,8 +9423,8 @@
   "title": "Kiriri people",
   "qid": "Q10356498",
   "classes": [
-   "ethnic group",
-   "indigenous people"
+   "indigenous people",
+   "ethnic group"
   ],
   "score": 3,
   "why": "label:Kiriri"
@@ -9678,8 +9635,8 @@
   "qid": "Q33388",
   "classes": [
    "natural language",
-   "sacred language",
-   "indigenous language"
+   "modern language",
+   "sacred language"
   ],
   "score": 5,
   "why": "label:Cherokee 373km"
@@ -10224,8 +10181,8 @@
   "qid": "Q1723904",
   "classes": [
    "tribe",
-   "federally recognized Native American tribe in the United States",
-   "Native American tribe"
+   "Native American tribe",
+   "federally recognized Native American tribe in the United States"
   ],
   "score": 10,
   "why": ""
@@ -10278,8 +10235,8 @@
  },
  {
   "name": "Yuchi",
-  "title": "Yuchi",
-  "qid": "Q973071",
+  "title": "Yuchi people",
+  "qid": "Q30587641",
   "classes": [
    "ethnic group"
   ],
@@ -10588,9 +10545,9 @@
   "title": "Umatilla people",
   "qid": "Q491747",
   "classes": [
-   "Indigenous peoples of the United States in North America",
+   "tribe",
    "ethnic group",
-   "tribe"
+   "Indigenous peoples of the United States in North America"
   ],
   "score": 3,
   "why": "label:Umatilla"
@@ -10682,8 +10639,8 @@
   "title": "Quechan",
   "qid": "Q1754503",
   "classes": [
-   "tribe",
-   "federally recognized Native American tribe in the United States"
+   "federally recognized Native American tribe in the United States",
+   "tribe"
   ],
   "score": 3,
   "why": "label:Yuma"
@@ -10733,8 +10690,8 @@
   "title": "Eyak language",
   "qid": "Q27480",
   "classes": [
-   "dead language",
    "language",
+   "dead language",
    "extinct language"
   ],
   "score": 10,
@@ -11223,16 +11180,16 @@
   "qid": "Q1130350",
   "classes": [
    "ethnic group",
-   "omnivore",
-   "ethnic groups in Indonesia"
+   "ethnic groups in Indonesia",
+   "omnivore"
   ],
   "score": 3,
   "why": "label:Minang"
  },
  {
   "name": "Malkana",
-  "title": "Malgana people",
-  "qid": "Q48803991",
+  "title": "Malkana",
+  "qid": "Q6743863",
   "classes": [
    "ethnic group"
   ],
@@ -13646,8 +13603,8 @@
   "qid": "Q2002279",
   "classes": [
    "colony",
-   "former administrative territorial entity",
-   "overseas province of Portugal"
+   "overseas province of Portugal",
+   "former administrative territorial entity"
   ],
   "score": 6,
   "why": "label:Portuguese Guinea dates 80km"
@@ -13668,8 +13625,8 @@
   "title": "Portuguese Mozambique",
   "qid": "Q889394",
   "classes": [
-   "Portuguese Empire",
    "colony",
+   "Portuguese Empire",
    "historical period"
   ],
   "score": 6,
@@ -13737,16 +13694,6 @@
   "reason": "no candidate passed validation"
  },
  {
-  "name": "Portuguese Brazil",
-  "title": "Colonial Brazil",
-  "qid": "Q2088324",
-  "classes": [
-   "colony"
-  ],
-  "score": 6,
-  "why": "label:Portuguese Brazil dates 395km"
- },
- {
   "name": "Essequibo",
   "title": "Essequibo (colony)",
   "qid": "Q1368792",
@@ -13797,18 +13744,6 @@
   ],
   "score": 6,
   "why": "label:New France dates 60km"
- },
- {
-  "name": "Polish–Lithuanian Commonwealth",
-  "title": "Polish–Lithuanian Commonwealth",
-  "qid": "Q172107",
-  "classes": [
-   "rump state",
-   "sovereign state",
-   "historical country"
-  ],
-  "score": 6,
-  "why": "label:Polish–Lithuanian Commonwealth dates 399km"
  },
  {
   "name": "Post-Ming Warlords",
@@ -14004,8 +13939,8 @@
   "title": "French protectorate of Tunisia",
   "qid": "Q2017684",
   "classes": [
-   "historical country",
-   "protectorate"
+   "protectorate",
+   "historical country"
   ],
   "score": 5,
   "why": "label:Tunis 153km"
@@ -14054,8 +13989,8 @@
   "title": "Duchy of Oldenburg",
   "qid": "Q697084",
   "classes": [
-   "state in the Confederation of the Rhine",
-   "historical country"
+   "historical country",
+   "state in the Confederation of the Rhine"
   ],
   "score": 10,
   "why": ""
@@ -14070,9 +14005,9 @@
   "title": "Electorate of Hanover",
   "qid": "Q706018",
   "classes": [
+   "historical territory",
    "electoral principate",
-   "state in the Holy Roman Empire",
-   "historical territory"
+   "state in the Holy Roman Empire"
   ],
   "score": 10,
   "why": ""
@@ -14116,16 +14051,6 @@
   "name": "Tekrur",
   "title": null,
   "reason": "no candidate passed validation"
- },
- {
-  "name": "Viceroyalty of Brazil",
-  "title": "Viceroyalty of Brazil",
-  "qid": "Q2920081",
-  "classes": [
-   "viceroyalty"
-  ],
-  "score": 4,
-  "why": "label:Viceroyalty of Brazil dates"
  },
  {
   "name": "Florida (Spain)",
@@ -14256,7 +14181,7 @@
   "classes": [
    "country",
    "countship",
-   "principality"
+   "free state"
   ],
   "score": 6,
   "why": "label:Waldeck dates 25km"
@@ -14271,9 +14196,9 @@
   "title": "Principality of Brunswick-Wolfenbüttel",
   "qid": "Q830084",
   "classes": [
-   "state in the Holy Roman Empire",
+   "historical country",
    "principality",
-   "historical country"
+   "state in the Holy Roman Empire"
   ],
   "score": 10,
   "why": ""
@@ -14283,8 +14208,8 @@
   "title": "Anhalt",
   "qid": "Q155578",
   "classes": [
-   "historical region",
-   "federated state"
+   "federated state",
+   "historical region"
   ],
   "score": 10,
   "why": ""
@@ -14299,8 +14224,8 @@
   "title": "Duchy of Holstein",
   "qid": "Q704288",
   "classes": [
-   "state of the German Confederation 1815–1848 & 1850–1866",
-   "state in the Holy Roman Empire"
+   "state in the Holy Roman Empire",
+   "state of the German Confederation 1815–1848 & 1850–1866"
   ],
   "score": 4,
   "why": "label:Holstein dates"
@@ -14489,9 +14414,9 @@
   "title": "Kingdom of Mysore",
   "qid": "Q266923",
   "classes": [
-   "princely state",
    "kingdom",
-   "vassal state"
+   "vassal state",
+   "princely state"
   ],
   "score": 6,
   "why": "label:Mysore dates 41km"
@@ -14538,8 +14463,8 @@
   "title": "Electorate of Bavaria",
   "qid": "Q256961",
   "classes": [
-   "state in the Holy Roman Empire",
-   "historical country"
+   "historical country",
+   "state in the Holy Roman Empire"
   ],
   "score": 10,
   "why": ""
@@ -14571,8 +14496,8 @@
   "title": "Kingdom of Saxony",
   "qid": "Q153015",
   "classes": [
-   "historical country",
    "kingdom",
+   "historical country",
    "state in the Confederation of the Rhine"
   ],
   "score": 6,
@@ -14595,8 +14520,8 @@
  },
  {
   "name": "Kingdom of Sardinia",
-  "title": "Kingdom of Sardinia",
-  "qid": "Q165154",
+  "title": "Kingdom of Sardinia (1324–1720)",
+  "qid": "Q55599391",
   "classes": [
    "historical country"
   ],
@@ -14712,8 +14637,8 @@
   "title": "Bahawalpur (princely state)",
   "qid": "Q800236",
   "classes": [
-   "princely state",
-   "historical country"
+   "historical country",
+   "princely state"
   ],
   "score": 6,
   "why": "label:Bahawalpur dates 147km"
@@ -14818,9 +14743,9 @@
   "title": "Kingdom of Mysore",
   "qid": "Q266923",
   "classes": [
-   "princely state",
    "kingdom",
-   "vassal state"
+   "vassal state",
+   "princely state"
   ],
   "score": 6,
   "why": "label:Mysore dates 63km"
@@ -14955,11 +14880,6 @@
   "why": "label:Netherlands Indies dates 390km"
  },
  {
-  "name": "Kingdom of Brazil",
-  "title": null,
-  "reason": "no candidate passed validation"
- },
- {
   "name": "Natal",
   "title": "Colony of Natal",
   "qid": "Q1301901",
@@ -14975,8 +14895,8 @@
   "qid": "Q2340665",
   "classes": [
    "colony",
-   "historical country",
-   "crown colony"
+   "crown colony",
+   "historical country"
   ],
   "score": 6,
   "why": "label:Basutoland dates 38km"
@@ -15017,8 +14937,8 @@
   "title": "Griqualand West",
   "qid": "Q2547918",
   "classes": [
-   "Griqua state",
-   "historical unrecognized state"
+   "historical unrecognized state",
+   "Griqua state"
   ],
   "score": 5,
   "why": "label:Griqualand West 115km"
@@ -15114,8 +15034,8 @@
   "title": "Portuguese Angola",
   "qid": "Q2826232",
   "classes": [
-   "overseas province of Portugal",
    "colony",
+   "overseas province of Portugal",
    "former administrative territorial entity"
   ],
   "score": 5,
@@ -15196,9 +15116,9 @@
   "title": "Gold Coast (British colony)",
   "qid": "Q503623",
   "classes": [
-   "crown colony",
    "colony",
-   "realm"
+   "historical country",
+   "crown colony"
   ],
   "score": 6,
   "why": "label:Gold Coast dates 124km"
@@ -15283,8 +15203,8 @@
   "title": "Sultanate of Damagaram",
   "qid": "Q4154364",
   "classes": [
-   "sultanate",
-   "historical country"
+   "historical country",
+   "sultanate"
   ],
   "score": 4,
   "why": "label:Sultanate of Damagaram dates"
@@ -15387,7 +15307,7 @@
   "classes": [
    "state",
    "protectorate",
-   "historical country"
+   "Emirate"
   ],
   "score": 6,
   "why": "label:Bokhara Khanate dates 400km"
@@ -15438,8 +15358,8 @@
   "qid": "Q157904",
   "classes": [
    "empire",
-   "sultanate",
-   "historical country"
+   "historical country",
+   "sultanate"
   ],
   "score": 4,
   "why": "label:Sultanate of Zanzibar dates"

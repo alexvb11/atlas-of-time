@@ -33,13 +33,14 @@ import * as med from './curated/mediterranean.mjs'
 import * as china from './curated/china.mjs'
 import * as ab from './curated/americas-britain.mjs'
 import * as tier1 from './curated/tier1.mjs'
+import * as more from './curated/more.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const NOW = 2026
 const log = (...a) => console.log(...a)
 
 // ---------- inputs ----------
-const curated = [caucasus, med, china, ab, tier1].flatMap((m) => m.entities)
+const curated = [caucasus, med, china, ab, tier1, more].flatMap((m) => m.entities)
 const curatedNames = new Set(curated.flatMap((e) => e.match))
 const countries = JSON.parse(await fs.readFile(path.join(root, 'scripts/.cache/mledoze-countries.json'), 'utf8'))
 const historyIndex = JSON.parse(await fs.readFile(path.join(root, 'public/data/history/index.json'), 'utf8'))

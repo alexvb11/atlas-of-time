@@ -3,6 +3,7 @@
 // A year in the query ("Paris 1789", "Rome 44 BC", "1066") goes to that place in that year: the
 // place comes from this atlas when it knows it, else from its Wikipedia article's coordinates.
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { tr } from '../i18n'
 import { AnimatePresence, motion } from 'framer-motion'
 import Fuse from 'fuse.js'
 import { useTime } from '../time/store'
@@ -169,7 +170,7 @@ export function CommandPalette() {
                   } else if (e.key === 'Enter' && results[active]) pick(results[active])
                   else if (e.key === 'Escape') close()
                 }}
-                placeholder="Search a place, empire, or “Paris 1789”…"
+                placeholder={tr('Search a place, empire, or “Paris 1789”…')}
                 className="flex-1 bg-transparent text-[15px] text-ink outline-none placeholder:text-dim"
                 aria-label="Search"
                 role="combobox"
@@ -206,7 +207,7 @@ export function CommandPalette() {
                   </motion.li>
                 )
               })}
-              {!results.length && <li className="px-4 py-6 text-center text-[13px] text-dim">Nothing found in this atlas yet.</li>}
+              {!results.length && <li className="px-4 py-6 text-center text-[13px] text-dim">{tr('Nothing found in this atlas yet.')}</li>}
             </ul>
           </motion.div>
         </motion.div>

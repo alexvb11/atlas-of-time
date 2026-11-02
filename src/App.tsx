@@ -1,4 +1,5 @@
 import { AnimatePresence } from 'framer-motion'
+import { useT } from './i18n'
 import { Scene } from './scene/Scene'
 import { TimeBar, useTimeKeys } from './ui/TimeBar'
 import { Hud, Readout } from './ui/Readout'
@@ -18,6 +19,8 @@ import { TourPlayer } from './ui/explore/Tours'
 import { useTourStore } from './ui/explore/tourStore'
 
 export default function App() {
+  // re-render the interface when its language changes
+  useT()
   useTimeKeys()
   useShareLink()
   const introDone = useTime((s) => s.introDone)

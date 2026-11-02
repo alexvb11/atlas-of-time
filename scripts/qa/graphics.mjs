@@ -30,10 +30,16 @@ const VIEWS = {
   parthenon: { t: 200, lon: 23.7262, lat: 37.968, dist: 1.00016 },
   notredame: { t: 1900, lon: 2.3497, lat: 48.8515, dist: 1.00007 },
   political: { t: 1500.5, lon: 20, lat: 40, dist: 2.6, extra: { borders: true, politicalFill: true } },
+  oldmap: { t: 1570, lon: 20, lat: 30, dist: 3.4, extra: { borders: true, oldMap: 'mercator-1569' } },
+  oldmapeurope: { t: 1570, lon: 30, lat: 45, dist: 1.8, extra: { oldMap: 'mercator-1569' } },
+  wallsrome: { t: 1900, lon: 12.495, lat: 41.87, dist: 1.0011 },
+  wallsseoul: { t: 1900, lon: 126.99, lat: 37.53, dist: 1.0035 },
+  i18n: { t: 1500, lon: 20, lat: 40, dist: 3.2, extra: { hud: true }, lang: 'ja' },
   borders: { t: 1850.5, lon: 10, lat: 48, dist: 1.9, extra: { borders: true } },
 }
 for (const [name, v] of Object.entries(VIEWS)) {
   if (only && name !== only) continue
+  await page.evaluate((l) => localStorage.setItem('atlas.lang', l), v.lang ?? 'en')
   await page.evaluate(([sun, extra]) => { const s = { autoRotate: false, trade: false, events: false, cities: false, hud: false, sourceNotes: false, borders: false, sun, ...extra }; localStorage.setItem('atlas.settings.v1', JSON.stringify(s)) }, [v.sun ?? 'always-day', v.extra ?? {}])
   await page.goto(`${base}&v=${name}#t=${v.t}`)
   await page.waitForFunction(() => window.__time?.getState().introDone && window.__rig, null, { timeout: 120000 })

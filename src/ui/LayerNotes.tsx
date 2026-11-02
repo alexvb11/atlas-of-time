@@ -9,13 +9,14 @@ import { DENSITY_STOPS } from '../scene/Density'
 import { greenSaharaAt, iceAt, seaLevelAt } from '../time/climate'
 import { subsolarAt, world } from '../scene/world'
 import { PRESENT, toMa } from '../time/scale'
+import { OLD_MAPS } from '../scene/OldMap'
 
 /** Legend and source notes for the layers visible at the current date (above the corner buttons) */
 export function LayerNotes() {
   const t = useTime((s) => s.time)
   // a sheet on the left covers this corner; its own content wins
   const sheetOpen = useTime((s) => s.side !== null)
-  const { density, trade, sun, sourceNotes, climate, greenSahara, terrain } = useSettings()
+  const { density, trade, sun, sourceNotes, climate, greenSahara, terrain, oldMap, cityWalls } = useSettings()
   // polled, since it changes with the camera rather than with React state
   const [detail, setDetail] = useState(false)
   useEffect(() => {
@@ -55,6 +56,17 @@ export function LayerNotes() {
       ),
     })
   }
+  if (oldMap !== 'off') {
+    const m = OLD_MAPS[oldMap]
+    notes.push({
+      key: 'oldmap',
+      node: (
+        <span className="text-dim">
+          <span className="text-mist">{m.title}</span> · placed by its own graticule, not fitted to today’s coastlines, so its errors are his · {m.credit}
+        </span>
+      ),
+    })
+  }
   if (detail)
     notes.push({
       key: 'detail',
@@ -62,6 +74,7 @@ export function LayerNotes() {
         <span className="text-dim">
           <a className="pointer-events-auto underline-offset-2 hover:underline" href="https://cloudless.eox.at" target="_blank" rel="noreferrer">EOxCloudless</a> https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024) · terrain: Terrain Tiles (Mapzen / AWS: SRTM, GMTED, ETOPO1 and others){terrain !== 1 ? `, height × ${terrain}` : ''}
           {t < 1990 && ' · close-ups show today’s landscape, not that of the year shown'}
+          {cityWalls && ' · city walls © OpenStreetMap contributors (ODbL), as they survive today'}
         </span>
       ),
     })
