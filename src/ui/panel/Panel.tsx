@@ -1,5 +1,6 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import { useT } from '../../i18n'
+import { useGround } from '../../scene/ground'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTime } from '../../time/store'
 import { useResolution, resolutionKey } from '../../data/useResolution'
@@ -151,6 +152,7 @@ export function Panel() {
 function Header({ res, idx, closeRef }: { res: Resolution; idx: EntityIndex; closeRef: React.RefObject<HTMLButtonElement | null> }) {
   const time = useTime((s) => s.time)
   const { title, kicker, dates } = titleOf(res, time)
+  const tr = useT()
   const flag = res.kind === 'country' ? res.country.flag : res.kind === 'entity' && isModernAt(res.entity, time) ? idx.countries.get(res.entity.iso3!)?.flag : null
   const lineage = 'lineage' in res ? res.lineage : null
   return (
@@ -173,6 +175,18 @@ function Header({ res, idx, closeRef }: { res: Resolution; idx: EntityIndex; clo
           </AnimatePresence>
           {dates && <div className="mt-1 text-[12px] text-mist tnum">{dates}</div>}
         </div>
+        <button
+          type="button"
+          onClick={() => {
+            const sel = useTime.getState().selection
+            if (sel) useGround.getState().enter({ lon: sel[0], lat: sel[1], yaw: 0, pitch: 3 })
+          }}
+          className="bubble flex shrink-0 items-center gap-1.5 px-3 py-2 text-[12px] text-mist"
+          title={tr('Stand on the ground here (G)')}
+        >
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M8 2.5v3M8 10.5v3M2.5 8h3M10.5 8h3" /><circle cx="8" cy="8" r="2.5" /></svg>
+          {tr('Stand here')}
+        </button>
         <button
           ref={closeRef}
           type="button"

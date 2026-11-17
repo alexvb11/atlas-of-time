@@ -1,5 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useT } from '../i18n'
+import { useGround } from '../scene/ground'
+import { rig } from '../scene/CameraRig'
 import gsap from 'gsap'
 import { motion } from 'framer-motion'
 import { useTime, type Speed } from '../time/store'
@@ -238,6 +240,12 @@ export function useTimeKeys() {
         e.preventDefault()
         s.setPlaying(!s.playing)
       } else if (e.key === 'Escape' && s.selection) s.select(null, false)
+      else if ((e.key === 'g' || e.key === 'G') && !e.metaKey && !e.ctrlKey && s.introDone) {
+        // stand on the ground at the centre of the view, or at the selected place; G again lifts off
+        const g = useGround.getState()
+        if (g.on) g.leave()
+        else g.enter({ lon: s.selection?.[0] ?? rig.lon, lat: s.selection?.[1] ?? rig.lat, yaw: 0, pitch: 3 })
+      }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)

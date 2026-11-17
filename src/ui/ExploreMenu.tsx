@@ -8,6 +8,8 @@ import { useT } from '../i18n'
 
 type Side = NonNullable<ReturnType<typeof useTime.getState>['side']>
 const ITEMS: { id: Side; label: string; sub: string; icon: string }[] = [
+  { id: 'moments', label: 'Moments', sub: 'Stand on the ground as it happened, in first person', icon: 'M8 2.5v3M8 10.5v3M2.5 8h3M10.5 8h3M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z' },
+  { id: 'traveller', label: 'Time traveller', sub: 'Dropped somewhere, sometime: work out where and when', icon: 'M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM8 4.5V8l2.5 1.5' },
   { id: 'films', label: 'Documentaries', sub: 'Sit back: narrated films across the map', icon: 'M2 3.5h12v9H2zM6.5 6v4l3.5-2z' },
   { id: 'tours', label: 'Guided journeys', sub: 'Follow a story across the map, narrated', icon: 'M2 12c2-6 4-9 6-9s3 4 6 4M2 12h12' },
   { id: 'quiz', label: 'History quiz', sub: 'Find the place, name the ruler', icon: 'M5 5.5a3 3 0 1 1 4 2.8c-.6.3-1 .8-1 1.5V11M8 13.5v.1' },
@@ -79,8 +81,10 @@ const Today = lazy(() => import('./explore/Today'))
 const JournalView = lazy(() => import('./explore/JournalView'))
 const Compare = lazy(() => import('./explore/Compare'))
 const Films = lazy(() => import('./explore/Films'))
+const Moments = lazy(() => import('./explore/Moments'))
+const TimeTraveller = lazy(() => import('./explore/TimeTraveller'))
 const SettingsView = lazy(() => import('./explore/SettingsView'))
-const TITLES: Record<Side, string> = { tours: 'Guided journeys', quiz: 'History quiz', today: 'On this day', journal: 'Your journal', compare: 'Compare two years', settings: 'Settings', films: 'Documentaries' }
+const TITLES: Record<Side, string> = { moments: 'Moments', traveller: 'Time traveller', tours: 'Guided journeys', quiz: 'History quiz', today: 'On this day', journal: 'Your journal', compare: 'Compare two years', settings: 'Settings', films: 'Documentaries' }
 
 /** The sheet the Explore menu opens, on the left of the globe (full screen on phones) */
 export function SideSheet() {
@@ -127,6 +131,8 @@ export function SideSheet() {
               {side === 'journal' && <JournalView />}
               {side === 'compare' && <Compare />}
               {side === 'films' && <Films />}
+              {side === 'moments' && <Moments />}
+              {side === 'traveller' && <TimeTraveller />}
               {side === 'settings' && <SettingsView />}
             </Suspense>
           </div>

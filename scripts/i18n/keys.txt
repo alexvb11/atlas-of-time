@@ -201,3 +201,46 @@ Has a coastline
 City walls
 Walls of historic cities from OpenStreetMap, from the year they were finished
 Era
+Next
+Leave
+Stay as long as you like: look around, walk, and drag the year to watch this place change.
+Read the story
+Stay here
+Back to the globe
+dramatisation
+Leave the ground
+Drag to look around · hold Walk to move · pinch in to leave
+Drag to look around · W A S D to walk · Shift to run · scroll out to leave
+Walk forward (hold)
+Walk
+Time traveller
+Round
+pts
+Where are you, and when? Drag to look around; walk with W A S D.
+Make a guess
+Give up
+Year
+Lock it in
+Look again
+Place
+See the score
+Next round
+Read about it
+A historian. The buildings gave the game away to you every time.
+Well travelled. The sky and the skyline were on your side.
+Lost in time, which is the fun of it. Try again?
+Play again
+Stand on the ground here (G)
+Stand here
+Stand on the ground at the moment it happened. The sun is where it stood at that hour; the buildings are the atlas’s models at true size; the ground is today’s. Drag to look around, walk with W A S D, and scroll out to leave.
+shots
+includes a dramatised effect
+You are dropped on the ground somewhere on Earth, in some year between 3000 BCE and today, and the date is hidden. Look around: what stands, and what does not yet; the sky; the sounds. Then guess where and when. Five rounds, 100 points a round.
+Fair warning: the ground and the satellite imagery are always today’s. Only the buildings, the sky and the sounds follow the date.
+Best score
+Drop me somewhere
+Look speed
+How fast dragging turns your head on the ground
+Moments
+Stand on the ground as it happened, in first person
+Dropped somewhere, sometime: work out where and when

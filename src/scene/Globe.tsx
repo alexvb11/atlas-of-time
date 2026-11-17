@@ -5,7 +5,7 @@ import { atmosphereFragment, atmosphereVertex, cloudFragment, earthFragment, ear
 import { SUN, world } from './world'
 import { vec3ToLonLat } from '../geo/sphere'
 import { useTime } from '../time/store'
-import { pointerOnGlobe } from './CameraRig'
+import { pointerOnGlobe, rig } from './CameraRig'
 import { settings } from '../time/settings'
 
 // keep in step with the preload media queries in index.html
@@ -156,7 +156,8 @@ export function Globe() {
     const prefs = settings()
     // fade in mountain relief as the file arrives; it grows as the camera comes closer
     f.relief = late.ready.relief ? Math.min(1, (f.relief ?? 0) + dt / 1.5) : 0
-    if (atmo.current) atmo.current.visible = prefs.atmosphere
+    // the shell is made for looking in from space; on the ground GroundSky.tsx takes over
+    if (atmo.current) atmo.current.visible = prefs.atmosphere && rig.groundBlend < 0.35
     if (cloudMesh.current) cloudMesh.current.visible = prefs.clouds > 0.01
     const u = earthMat.current?.uniforms
     if (u) {
@@ -188,7 +189,7 @@ export function Globe() {
   const down = useRef<[number, number] | null>(null)
   const onMove = (e: ThreeEvent<PointerEvent>) => {
     e.stopPropagation()
-    if (pointerOnGlobe.dragging) return
+    if (pointerOnGlobe.dragging || rig.ground) return
     const p = e.point.clone()
     useTime.getState().setHover({ lonlat: vec3ToLonLat(p), x: e.nativeEvent.clientX, y: e.nativeEvent.clientY })
   }
@@ -197,6 +198,7 @@ export function Globe() {
   }
   const onClick = (e: ThreeEvent<MouseEvent>) => {
     e.stopPropagation()
+    if (rig.ground) return
     const d = down.current
     if (d && Math.hypot(e.nativeEvent.clientX - d[0], e.nativeEvent.clientY - d[1]) > 6) return
     useTime.getState().select(vec3ToLonLat(e.point.clone()))

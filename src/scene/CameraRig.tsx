@@ -5,13 +5,14 @@ import { useEffect, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { settings } from '../time/settings'
-import { groundHeightAt } from './TerrainTiles'
+import { groundHeightAt, TILE_BASE } from './TerrainTiles'
 import { world } from './world'
 import gsap from 'gsap'
 import { lonLatToVec3, vec3ToLonLat } from '../geo/sphere'
 import { useTime } from '../time/store'
 import { selectionWorldPosition } from './selectionTrack'
 import { sound } from '../ui/sound'
+import { useGround } from './ground'
 
 export const rig = {
   lon: 20,
@@ -24,6 +25,19 @@ export const rig = {
   autoRotate: true,
   /** where wheel and pinch are taking the distance; eased toward each frame (null: no zoom under way) */
   zoomTo: null as number | null,
+  // ---- ground mode (ground.ts): standing on the terrain at eye height ----
+  ground: false,
+  /** 0 = the orbit shot above, 1 = standing on the ground; tweened while dropping or lifting off */
+  groundBlend: 0,
+  /** heading in degrees clockwise from north, and the look up (+) or down (−) */
+  yaw: 0,
+  pitch: 2,
+  /** eye height above the ground in metres */
+  eye: 1.7,
+  /** the ground's height under the viewer, eased so steps on the terrain grid do not jolt */
+  groundH: NaN,
+  /** walking input: forward/back and right/left, −1..1, and whether running */
+  walk: { f: 0, r: 0, run: false },
 }
 export const pointerOnGlobe = { dragging: false }
 // dev, or ?qa in production builds, for the screenshot scripts
@@ -37,6 +51,14 @@ const MAX_DIST = 7
 const tmpA = new THREE.Vector3()
 const tmpB = new THREE.Vector3()
 const look = new THREE.Vector3()
+const gPos = new THREE.Vector3()
+const gLook = new THREE.Vector3()
+const up = new THREE.Vector3()
+const east = new THREE.Vector3()
+const north = new THREE.Vector3()
+const fwd = new THREE.Vector3()
+const gMat = new THREE.Matrix4()
+const gQuat = new THREE.Quaternion()
 
 export function CameraRig() {
   const { camera, gl, size } = useThree()
@@ -78,11 +100,23 @@ export function CameraRig() {
       if (pts.size === 2) {
         const [a, b] = [...pts.values()]
         const d = Math.hypot(a.x - b.x, a.y - b.y)
+        if (rig.ground) {
+          if (pinch0 > 0 && d < pinch0 * 0.6) useGround.getState().leave()
+          return
+        }
         if (pinch0 > 0) rig.zoomTo = THREE.MathUtils.clamp(1 + (dist0 - 1) * (pinch0 / d), minDist(), MAX_DIST)
         return
       }
       moved += Math.abs(dx) + Math.abs(dy)
       if (moved > 4) pointerOnGlobe.dragging = true
+      if (rig.ground) {
+        // look around: drag turns the head; a slow pan under way is cancelled by the touch
+        if (moved > 4) gsap.killTweensOf(rig, 'yaw,pitch')
+        const k = (0.16 * settings().lookSpeed) / Math.max(1, el.clientHeight / 900)
+        rig.yaw = (rig.yaw - dx * k + 360) % 360
+        rig.pitch = THREE.MathUtils.clamp(rig.pitch + dy * k, -85, 85)
+        return
+      }
       if (rig.flying) return
       // the ground moves under the pointer at the same speed at any height
       const alt = Math.max(rig.dist - 1, 0.00004)
@@ -101,6 +135,11 @@ export function CameraRig() {
       e.preventDefault()
       if (!useTime.getState().introDone || rig.flying) return
       rig.lastInput = performance.now()
+      if (rig.ground) {
+        // wheeling out stands up and lifts off; wheeling in does nothing on the ground
+        if (e.deltaY > 30) useGround.getState().leave()
+        return
+      }
       // glide rather than jump: the target moves, the camera follows it
       // zoom works on the height above the ground, so it is as quick near the surface as in space
       const alt = (rig.zoomTo ?? rig.dist) - 1
@@ -121,11 +160,50 @@ export function CameraRig() {
     }
   }, [gl])
 
+  // ---- walking keys on the ground ----
+  useEffect(() => {
+    const held = new Set<string>()
+    const apply = () => {
+      const w = rig.walk
+      w.f = (held.has('KeyW') || held.has('ArrowUp') ? 1 : 0) - (held.has('KeyS') || held.has('ArrowDown') ? 1 : 0)
+      w.r = (held.has('KeyD') || held.has('ArrowRight') ? 1 : 0) - (held.has('KeyA') || held.has('ArrowLeft') ? 1 : 0)
+      w.run = held.has('ShiftLeft') || held.has('ShiftRight')
+    }
+    const down = (e: KeyboardEvent) => {
+      if (!rig.ground) return
+      const tag = (e.target as HTMLElement).tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement).isContentEditable) return
+      if (/^(KeyW|KeyA|KeyS|KeyD|Arrow(Up|Down|Left|Right)|Shift(Left|Right))$/.test(e.code)) {
+        e.preventDefault()
+        e.stopImmediatePropagation()
+        held.add(e.code)
+        apply()
+        rig.lastInput = performance.now()
+      }
+    }
+    const up = (e: KeyboardEvent) => {
+      held.delete(e.code)
+      apply()
+    }
+    const blur = () => {
+      held.clear()
+      apply()
+    }
+    window.addEventListener('keydown', down, true)
+    window.addEventListener('keyup', up, true)
+    window.addEventListener('blur', blur)
+    return () => {
+      window.removeEventListener('keydown', down, true)
+      window.removeEventListener('keyup', up, true)
+      window.removeEventListener('blur', blur)
+    }
+  }, [])
+
   // ---- cinematic fly-to along the great circle ----
   useEffect(() => {
     if (!flyNonce) return
     const sel = useTime.getState().selection
-    if (!sel) return
+    if (!sel || rig.ground) return
     const reduced = useTime.getState().reducedMotion
     const wp = selectionWorldPosition()
     const [toLon, toLat] = wp ? vec3ToLonLat(wp) : sel
@@ -141,6 +219,7 @@ export function CameraRig() {
     }
     if (!hadSelection.current) return
     hadSelection.current = false
+    if (rig.ground) return
     const reduced = useTime.getState().reducedMotion
     gsap.killTweensOf(rig)
     rig.flying = true
@@ -182,8 +261,20 @@ export function CameraRig() {
       }
     }
 
+    // walking: metres a second along the heading, over the terrain
+    if (rig.ground && (rig.walk.f || rig.walk.r) && !rig.flying) {
+      const w = rig.walk
+      const speed = (w.run ? 14 : 3.2) * dt
+      const h = (rig.yaw * Math.PI) / 180
+      const dn = (w.f * Math.cos(h) - w.r * Math.sin(h)) * speed
+      const de = (w.f * Math.sin(h) + w.r * Math.cos(h)) * speed
+      rig.lat = THREE.MathUtils.clamp(rig.lat + dn / 111320, -85, 85)
+      rig.lon += de / (111320 * Math.max(0.05, Math.cos((rig.lat * Math.PI) / 180)))
+      rig.lastInput = now
+    }
+
     // idle auto-rotation
-    if (prefs.autoRotate && introDone && !state.selection && !rig.flying && now - rig.lastInput > 7000 && !state.reducedMotion) {
+    if (prefs.autoRotate && introDone && !state.selection && !rig.flying && !rig.ground && now - rig.lastInput > 7000 && !state.reducedMotion) {
       rig.lon += dt * 1.6 * prefs.rotateSpeed * Math.min(1, (now - rig.lastInput - 7000) / 3000)
     }
     world.view[0] = rig.lon
@@ -199,8 +290,15 @@ export function CameraRig() {
     const cam = camera as THREE.PerspectiveCamera
     // near plane follows the height: close to the ground it must be small, and kept as large as
     // possible otherwise for depth precision
-    const near = THREE.MathUtils.clamp((rig.dist - 1) * 0.08, 0.000004, 0.01)
-    if (Math.abs(cam.near - near) / near > 0.05) cam.near = near
+    const gb = rig.groundBlend
+    // on the ground the near plane sits 30 cm from the eye (the depth buffer is reversed, so this costs nothing)
+    const near = gb > 0.001 ? 0.00000005 : THREE.MathUtils.clamp((rig.dist - 1) * 0.08, 0.000004, 0.01)
+    const fov = THREE.MathUtils.lerp(38, 64, THREE.MathUtils.smoothstep(gb, 0, 1))
+    if (Math.abs(cam.near - near) / near > 0.05 || Math.abs(cam.fov - fov) > 0.05) {
+      cam.near = near
+      cam.fov = fov
+      cam.updateProjectionMatrix()
+    }
     cam.setViewOffset(size.width, size.height, offset.current.x, offset.current.y, size.width, size.height)
 
     // smooth zoom
@@ -230,6 +328,32 @@ export function CameraRig() {
     look.copy(tmpB).multiplyScalar(focus)
     camera.up.set(0, 1, 0)
     camera.lookAt(look)
+    if (gb <= 0) return
+
+    // ---- on the ground: eye height above the terrain, looking along the heading ----
+    const target = groundHeightAt(rig.lon, rig.lat) * prefs.terrain
+    rig.groundH = Number.isNaN(rig.groundH) ? target : rig.groundH + (target - rig.groundH) * (1 - Math.exp(-dt * 6))
+    lonLatToVec3(rig.lon, rig.lat, TILE_BASE + (rig.groundH + rig.eye) / 6371000, gPos)
+    up.copy(gPos).normalize()
+    east.set(0, 1, 0).cross(up).normalize()
+    north.crossVectors(up, east).normalize()
+    const yaw = (rig.yaw * Math.PI) / 180
+    const pitch = (rig.pitch * Math.PI) / 180
+    fwd.copy(east).multiplyScalar(Math.sin(yaw) * Math.cos(pitch)).addScaledVector(north, Math.cos(yaw) * Math.cos(pitch)).addScaledVector(up, Math.sin(pitch))
+    gLook.copy(gPos).add(fwd)
+    gMat.lookAt(gPos, gLook, up)
+    gQuat.setFromRotationMatrix(gMat)
+    if (gb >= 1) {
+      camera.position.copy(gPos)
+      camera.quaternion.copy(gQuat)
+      camera.up.copy(up)
+      return
+    }
+    // dropping in or lifting off: blend the orbit shot above with the stance on the ground
+    const e = THREE.MathUtils.smoothstep(gb, 0, 1)
+    camera.position.lerp(gPos, e)
+    camera.quaternion.slerp(gQuat, e)
+    camera.up.lerp(up, e).normalize()
   })
 
   return null

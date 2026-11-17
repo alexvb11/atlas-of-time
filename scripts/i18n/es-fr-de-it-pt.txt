@@ -202,6 +202,49 @@ Con litoral
 Murallas
 Murallas de ciudades históricas, de OpenStreetMap, desde el año en que se terminaron
 Era
+Siguiente
+Salir
+Quédate cuanto quieras: mira alrededor, camina y arrastra el año para ver cambiar este lugar.
+Leer la historia
+Quedarme aquí
+Volver al globo
+dramatización
+Dejar el suelo
+Arrastra para mirar · mantén Caminar para avanzar · pellizca para salir
+Arrastra para mirar · W A S D para caminar · Mayús para correr · rueda hacia fuera para salir
+Caminar hacia delante (mantener)
+Caminar
+Viajero del tiempo
+Ronda
+pts
+¿Dónde estás, y cuándo? Arrastra para mirar; camina con W A S D.
+Hacer una apuesta
+Rendirse
+Año
+Confirmar
+Mirar de nuevo
+Lugar
+Ver la puntuación
+Siguiente ronda
+Leer sobre esto
+Todo un historiador. Los edificios te lo contaron todo cada vez.
+Buen viajero. El cielo y el horizonte estaban de tu parte.
+Perdido en el tiempo, que es lo divertido. ¿Otra vez?
+Jugar de nuevo
+Ponerse en pie aquí (G)
+Ponerse aquí
+Ponte en pie en el momento en que ocurrió. El sol está donde estaba a esa hora; los edificios son los modelos del atlas a tamaño real; el suelo es el de hoy. Arrastra para mirar, camina con W A S D y rueda hacia fuera para salir.
+planos
+incluye un efecto dramatizado
+Te dejamos en el suelo en algún lugar de la Tierra, en algún año entre el 3000 a. C. y hoy, con la fecha oculta. Mira alrededor: lo que está en pie y lo que aún no; el cielo; los sonidos. Luego adivina dónde y cuándo. Cinco rondas, 100 puntos cada una.
+Aviso: el suelo y las imágenes de satélite son siempre los de hoy. Solo los edificios, el cielo y los sonidos siguen la fecha.
+Mejor puntuación
+Déjame en algún sitio
+Velocidad de giro
+Cuánto gira la cabeza al arrastrar estando en el suelo
+Momentos
+Ponte en el lugar tal como ocurrió, en primera persona
+Caído en algún lugar, en algún tiempo: averigua dónde y cuándo
 ## fr
 Explorer
 Fermer (Échap)
@@ -406,6 +449,49 @@ Avec littoral
 Remparts
 Remparts des villes historiques, d’OpenStreetMap, à partir de leur achèvement
 Ère
+Suivant
+Quitter
+Restez autant que vous voulez : regardez autour, marchez et faites glisser l’année pour voir ce lieu changer.
+Lire l’histoire
+Rester ici
+Retour au globe
+reconstitution
+Quitter le sol
+Glissez pour regarder · maintenez Marcher pour avancer · pincez pour quitter
+Glissez pour regarder · W A S D pour marcher · Maj pour courir · molette arrière pour quitter
+Avancer (maintenir)
+Marcher
+Voyageur du temps
+Manche
+pts
+Où êtes-vous, et quand ? Glissez pour regarder ; marchez avec W A S D.
+Faire une réponse
+Abandonner
+Année
+Valider
+Regarder encore
+Lieu
+Voir le score
+Manche suivante
+En savoir plus
+Un historien. Les monuments vous ont tout dit à chaque fois.
+Bien voyagé. Le ciel et l’horizon étaient de votre côté.
+Perdu dans le temps, c’est tout le plaisir. On recommence ?
+Rejouer
+Se tenir ici au sol (G)
+Se tenir ici
+Tenez-vous au sol à l’instant où cela s’est passé. Le soleil est où il était à cette heure ; les monuments sont les modèles de l’atlas en vraie grandeur ; le sol est celui d’aujourd’hui. Glissez pour regarder, marchez avec W A S D, molette arrière pour quitter.
+plans
+avec un effet reconstitué
+Vous êtes déposé au sol quelque part sur Terre, une année entre 3000 av. J.-C. et aujourd’hui, la date cachée. Regardez autour : ce qui est debout, ce qui ne l’est pas encore ; le ciel ; les sons. Puis devinez où et quand. Cinq manches, 100 points chacune.
+Avertissement : le sol et les images satellite sont toujours ceux d’aujourd’hui. Seuls les monuments, le ciel et les sons suivent la date.
+Meilleur score
+Déposez-moi quelque part
+Vitesse du regard
+À quelle vitesse le glisser tourne la tête au sol
+Instants
+Tenez-vous au sol au moment même, à la première personne
+Déposé quelque part, un jour : trouvez où et quand
 ## de
 Entdecken
 Schließen (Esc)
@@ -610,6 +696,49 @@ Mit Küste
 Stadtmauern
 Mauern historischer Städte aus OpenStreetMap, ab dem Jahr ihrer Fertigstellung
 Ära
+Weiter
+Verlassen
+Bleib, so lange du willst: schau dich um, geh herum und zieh am Jahr, um diesen Ort sich wandeln zu sehen.
+Die Geschichte lesen
+Hier bleiben
+Zurück zum Globus
+Inszenierung
+Vom Boden aufsteigen
+Ziehen zum Umsehen · Gehen halten zum Laufen · zusammenziehen zum Verlassen
+Ziehen zum Umsehen · W A S D zum Gehen · Umschalt zum Rennen · herausscrollen zum Verlassen
+Vorwärts gehen (halten)
+Gehen
+Zeitreisender
+Runde
+Pkt.
+Wo bist du, und wann? Ziehen zum Umsehen; gehen mit W A S D.
+Raten
+Aufgeben
+Jahr
+Festlegen
+Noch mal schauen
+Ort
+Ergebnis ansehen
+Nächste Runde
+Mehr dazu lesen
+Ein Historiker. Die Bauwerke haben dir jedes Mal alles verraten.
+Weit gereist. Himmel und Skyline waren auf deiner Seite.
+In der Zeit verloren, und das ist der Spaß daran. Noch mal?
+Noch mal spielen
+Hier auf den Boden stellen (G)
+Hier stehen
+Steh am Boden in dem Moment, in dem es geschah. Die Sonne steht, wo sie zu jener Stunde stand; die Bauwerke sind die Modelle des Atlas in echter Größe; der Boden ist der heutige. Ziehen zum Umsehen, gehen mit W A S D, herausscrollen zum Verlassen.
+Einstellungen
+mit inszeniertem Effekt
+Du wirst irgendwo auf der Erde am Boden abgesetzt, in einem Jahr zwischen 3000 v. Chr. und heute, das Datum bleibt verborgen. Schau dich um: was steht, und was noch nicht; der Himmel; die Geräusche. Dann rate, wo und wann. Fünf Runden, je 100 Punkte.
+Zur Warnung: Boden und Satellitenbilder sind immer die heutigen. Nur die Bauwerke, der Himmel und die Geräusche folgen dem Datum.
+Bestes Ergebnis
+Setz mich irgendwo ab
+Blickgeschwindigkeit
+Wie schnell Ziehen den Kopf am Boden dreht
+Momente
+Steh am Boden, als es geschah, in der Ich-Perspektive
+Irgendwo, irgendwann abgesetzt: finde heraus, wo und wann
 ## it
 Esplora
 Chiudi (Esc)
@@ -814,6 +943,49 @@ Con costa
 Mura cittadine
 Mura delle città storiche da OpenStreetMap, dall’anno in cui furono completate
 Era
+Avanti
+Esci
+Resta quanto vuoi: guardati intorno, cammina e trascina l’anno per vedere cambiare questo luogo.
+Leggi la storia
+Resta qui
+Torna al globo
+drammatizzazione
+Lascia il suolo
+Trascina per guardare · tieni premuto Cammina per avanzare · pizzica per uscire
+Trascina per guardare · W A S D per camminare · Maiusc per correre · rotella indietro per uscire
+Avanza (tieni premuto)
+Cammina
+Viaggiatore nel tempo
+Turno
+pt
+Dove sei, e quando? Trascina per guardare; cammina con W A S D.
+Prova a indovinare
+Arrenditi
+Anno
+Conferma
+Guarda ancora
+Luogo
+Vedi il punteggio
+Turno successivo
+Leggi di più
+Uno storico. Gli edifici ti hanno svelato tutto ogni volta.
+Gran viaggiatore. Il cielo e lo skyline erano dalla tua parte.
+Perso nel tempo, che è il bello. Riprovi?
+Gioca ancora
+Mettiti a terra qui (G)
+Mettiti qui
+Mettiti a terra nel momento in cui accadde. Il sole è dov’era a quell’ora; gli edifici sono i modelli dell’atlante a grandezza reale; il suolo è quello di oggi. Trascina per guardare, cammina con W A S D, rotella indietro per uscire.
+inquadrature
+include un effetto drammatizzato
+Vieni lasciato a terra da qualche parte sulla Terra, in un anno tra il 3000 a.C. e oggi, con la data nascosta. Guardati intorno: cosa c’è e cosa ancora no; il cielo; i suoni. Poi indovina dove e quando. Cinque turni, 100 punti l’uno.
+Avviso: il suolo e le immagini satellitari sono sempre quelli di oggi. Solo gli edifici, il cielo e i suoni seguono la data.
+Miglior punteggio
+Lasciami da qualche parte
+Velocità dello sguardo
+Quanto in fretta il trascinamento gira la testa a terra
+Momenti
+Mettiti a terra com’è accaduto, in prima persona
+Lasciato da qualche parte, in qualche tempo: scopri dove e quando
 ## pt
 Explorar
 Fechar (Esc)
@@ -1018,3 +1190,46 @@ Com litoral
 Muralhas
 Muralhas de cidades históricas, do OpenStreetMap, desde o ano em que foram concluídas
 Era
+Seguinte
+Sair
+Fique quanto quiser: olhe em volta, caminhe e arraste o ano para ver este lugar mudar.
+Ler a história
+Ficar aqui
+Voltar ao globo
+dramatização
+Deixar o chão
+Arraste para olhar · mantenha Andar para avançar · aperte os dedos para sair
+Arraste para olhar · W A S D para andar · Shift para correr · roda para fora para sair
+Andar em frente (manter)
+Andar
+Viajante do tempo
+Ronda
+pts
+Onde está, e quando? Arraste para olhar; ande com W A S D.
+Dar um palpite
+Desistir
+Ano
+Confirmar
+Olhar de novo
+Lugar
+Ver a pontuação
+Próxima ronda
+Ler sobre isto
+Um historiador. Os edifícios contaram-lhe tudo de cada vez.
+Bem viajado. O céu e o horizonte estavam do seu lado.
+Perdido no tempo, que é a graça. Outra vez?
+Jogar de novo
+Pôr-se em pé aqui (G)
+Pôr-me aqui
+Ponha-se em pé no momento em que aconteceu. O sol está onde estava àquela hora; os edifícios são os modelos do atlas em tamanho real; o chão é o de hoje. Arraste para olhar, ande com W A S D e roda para fora para sair.
+planos
+inclui um efeito dramatizado
+É deixado no chão algures na Terra, num ano entre 3000 a.C. e hoje, com a data escondida. Olhe em volta: o que está de pé e o que ainda não; o céu; os sons. Depois adivinhe onde e quando. Cinco rondas, 100 pontos cada.
+Aviso: o chão e as imagens de satélite são sempre os de hoje. Só os edifícios, o céu e os sons seguem a data.
+Melhor pontuação
+Deixe-me algures
+Velocidade do olhar
+Quão depressa arrastar roda a cabeça no chão
+Momentos
+Ponha-se no chão tal como aconteceu, na primeira pessoa
+Largado algures, em algum tempo: descubra onde e quando

@@ -59,6 +59,9 @@ node scripts/qa/explore.mjs   # share link, journey, moving voyage, quiz, on thi
 | Action | Input |
 |---|---|
 | Rotate / zoom | drag, wheel, pinch |
+| Stand on the ground | **G**, or *Stand here* in a place's panel: first person at eye height on the real terrain. Drag to look, **W A S D** to walk, **Shift** to run, scroll out / pinch in / **Esc** to lift off. The time bar still works while standing, so a place can be watched changing year by year |
+| Moments | Explore → Moments: first-person scenes at a dated event (Giza, Stonehenge at midsummer sunrise, the Parthenon, the Colosseum, Hagia Sophia, the fall of Constantinople, Angkor at the equinox, the Taj Mahal, Vesuvius, the Eiffel Tower, the Statue of Liberty, the Burj Khalifa), with the sun where it stood at that hour |
+| Time traveller | Explore → Time traveller: dropped on the ground somewhere, sometime, with the date hidden; guess the place and the year over five rounds |
 | Select a place | click (deep time: click the drifting land itself) |
 | Deselect | Esc or click empty space |
 | Move through time | drag the time bar (hold Shift to scrub slowly), ← / → or the ‹ › by the year step one year (Alt or Shift: ten), Page Up / Down a century, Shift+← / → jump eras, Space play/pause |
@@ -68,7 +71,7 @@ node scripts/qa/explore.mjs   # share link, journey, moving voyage, quiz, on thi
 | Read an event | History tab: click the title (the year jumps the slider) · event cards: *Read the story* |
 | Search a place in a year | ⌘K, then e.g. "Paris 1789" or "Rome 44 BC" |
 | Share this view | link button (bottom left): copies a URL with the year, place and article |
-| Journeys, quiz, compare two years, on this day, journal | Explore (bottom left) |
+| Moments, time traveller, documentaries, journeys, quiz, compare two years, on this day, journal | Explore (bottom left) |
 | Layers, map, sky, motion, labels, language, quality… | Settings (bottom left): 34 options in 8 groups, searchable, with presets; remembered in this browser |
 | Who held a spot through time | click it, then the *Held by* tab |
 | Look something up | hover (or focus, or tap) an underlined name; click it to read on, Back walks the trail |

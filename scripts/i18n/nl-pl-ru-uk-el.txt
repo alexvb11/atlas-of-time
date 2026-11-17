@@ -202,6 +202,49 @@ Met kust
 Stadsmuren
 Muren van historische steden uit OpenStreetMap, vanaf het jaar van voltooiing
 Tijdperk
+Volgende
+Verlaten
+Blijf zo lang je wilt: kijk rond, loop en sleep aan het jaar om deze plek te zien veranderen.
+Het verhaal lezen
+Hier blijven
+Terug naar de wereldbol
+dramatisering
+De grond verlaten
+Sleep om rond te kijken · houd Lopen vast om te bewegen · knijp om te verlaten
+Sleep om rond te kijken · W A S D om te lopen · Shift om te rennen · scroll uit om te verlaten
+Vooruit lopen (vasthouden)
+Lopen
+Tijdreiziger
+Ronde
+ptn
+Waar ben je, en wanneer? Sleep om rond te kijken; loop met W A S D.
+Doe een gok
+Opgeven
+Jaar
+Vastleggen
+Nog eens kijken
+Plaats
+Score bekijken
+Volgende ronde
+Lees erover
+Een historicus. De gebouwen verraadden het je elke keer.
+Bereisd. De hemel en de skyline stonden aan jouw kant.
+Verdwaald in de tijd, en dat is juist de lol. Nog eens?
+Opnieuw spelen
+Hier op de grond staan (G)
+Hier staan
+Sta op de grond op het moment dat het gebeurde. De zon staat waar hij op dat uur stond; de gebouwen zijn de modellen van de atlas op ware grootte; de grond is die van vandaag. Sleep om rond te kijken, loop met W A S D, scroll uit om te verlaten.
+shots
+met een gedramatiseerd effect
+Je wordt ergens op aarde op de grond gezet, in een jaar tussen 3000 v.Chr. en nu, met de datum verborgen. Kijk rond: wat er staat, en wat nog niet; de hemel; de geluiden. Raad dan waar en wanneer. Vijf rondes, 100 punten per ronde.
+Eerlijk is eerlijk: de grond en de satellietbeelden zijn altijd die van vandaag. Alleen de gebouwen, de hemel en de geluiden volgen de datum.
+Beste score
+Zet me ergens neer
+Kijksnelheid
+Hoe snel slepen je hoofd draait op de grond
+Momenten
+Sta op de grond zoals het gebeurde, in de eerste persoon
+Ergens, ooit neergezet: zoek uit waar en wanneer
 ## pl
 Odkrywaj
 Zamknij (Esc)
@@ -406,6 +449,49 @@ Z wybrzeżem
 Mury miejskie
 Mury historycznych miast z OpenStreetMap, od roku ukończenia
 Era
+Dalej
+Wyjdź
+Zostań, ile chcesz: rozejrzyj się, chodź i przeciągnij rok, by zobaczyć, jak to miejsce się zmienia.
+Przeczytaj historię
+Zostań tutaj
+Wróć do globusu
+inscenizacja
+Opuść ziemię
+Przeciągnij, by się rozejrzeć · przytrzymaj Idź, by iść · zsuń palce, by wyjść
+Przeciągnij, by się rozejrzeć · W A S D, by iść · Shift, by biec · przewiń w dół, by wyjść
+Idź naprzód (przytrzymaj)
+Idź
+Podróżnik w czasie
+Runda
+pkt
+Gdzie jesteś i kiedy? Przeciągnij, by się rozejrzeć; chodź klawiszami W A S D.
+Zgaduj
+Poddaj się
+Rok
+Zatwierdź
+Spójrz jeszcze raz
+Miejsce
+Zobacz wynik
+Następna runda
+Przeczytaj o tym
+Historyk. Budowle zdradzały ci wszystko za każdym razem.
+Bywały w świecie. Niebo i panorama były po twojej stronie.
+Zagubiony w czasie, i o to chodzi. Jeszcze raz?
+Zagraj ponownie
+Stań tutaj na ziemi (G)
+Stań tutaj
+Stań na ziemi w chwili, gdy to się działo. Słońce jest tam, gdzie było o tej godzinie; budowle to modele atlasu w prawdziwej skali; ziemia jest dzisiejsza. Przeciągnij, by się rozejrzeć, chodź klawiszami W A S D, przewiń w dół, by wyjść.
+ujęć
+zawiera inscenizowany efekt
+Zostajesz postawiony na ziemi gdzieś na świecie, w roku między 3000 p.n.e. a dziś, a data jest ukryta. Rozejrzyj się: co stoi, a czego jeszcze nie ma; niebo; dźwięki. Potem zgadnij gdzie i kiedy. Pięć rund, po 100 punktów.
+Uczciwie: ziemia i zdjęcia satelitarne są zawsze dzisiejsze. Tylko budowle, niebo i dźwięki podążają za datą.
+Najlepszy wynik
+Postaw mnie gdzieś
+Szybkość patrzenia
+Jak szybko przeciąganie obraca głowę na ziemi
+Chwile
+Stań na ziemi, gdy to się działo, z pierwszej osoby
+Postawiony gdzieś, kiedyś: ustal gdzie i kiedy
 ## ru
 Обзор
 Закрыть (Esc)
@@ -610,6 +696,49 @@ Era
 Городские стены
 Стены исторических городов из OpenStreetMap, с года их завершения
 Эра
+Дальше
+Выйти
+Оставайтесь сколько хотите: осмотритесь, пройдитесь и потяните год, чтобы увидеть, как меняется это место.
+Читать историю
+Остаться здесь
+Назад к глобусу
+инсценировка
+Подняться с земли
+Тяните, чтобы осмотреться · удерживайте «Идти», чтобы двигаться · сведите пальцы, чтобы выйти
+Тяните, чтобы осмотреться · W A S D — идти · Shift — бежать · прокрутка назад — выйти
+Идти вперёд (удерживать)
+Идти
+Путешественник во времени
+Раунд
+очк.
+Где вы и когда? Тяните, чтобы осмотреться; идите клавишами W A S D.
+Угадать
+Сдаться
+Год
+Подтвердить
+Посмотреть ещё
+Место
+Посмотреть счёт
+Следующий раунд
+Прочитать об этом
+Историк. Здания каждый раз выдавали вам всё.
+Бывалый путешественник. Небо и силуэт города были на вашей стороне.
+Потерялись во времени — в этом и удовольствие. Ещё раз?
+Сыграть снова
+Встать на землю здесь (G)
+Встать здесь
+Встаньте на землю в тот момент, когда это случилось. Солнце там, где стояло в тот час; здания — модели атласа в натуральную величину; земля — сегодняшняя. Тяните, чтобы осмотреться, идите клавишами W A S D, прокрутите назад, чтобы выйти.
+кадров
+включает инсценированный эффект
+Вас высаживают на землю где-то на Земле, в каком-то году между 3000 г. до н. э. и сегодня, дата скрыта. Осмотритесь: что стоит, а чего ещё нет; небо; звуки. Затем угадайте где и когда. Пять раундов по 100 очков.
+Честно предупреждаем: земля и спутниковые снимки всегда сегодняшние. Только здания, небо и звуки следуют дате.
+Лучший счёт
+Высадите меня где-нибудь
+Скорость взгляда
+Как быстро перетаскивание поворачивает голову на земле
+Моменты
+Встаньте на землю, как это было, от первого лица
+Высажены где-то, когда-то: выясните, где и когда
 ## uk
 Огляд
 Закрити (Esc)
@@ -814,6 +943,49 @@ Era
 Міські мури
 Мури історичних міст з OpenStreetMap, від року їх завершення
 Ера
+Далі
+Вийти
+Залишайтеся скільки завгодно: роззирніться, пройдіться й потягніть рік, щоб побачити, як змінюється це місце.
+Читати історію
+Залишитися тут
+Назад до глобуса
+інсценізація
+Піднятися з землі
+Тягніть, щоб роззирнутися · утримуйте «Йти», щоб рухатися · зведіть пальці, щоб вийти
+Тягніть, щоб роззирнутися · W A S D — йти · Shift — бігти · прокрутка назад — вийти
+Йти вперед (утримувати)
+Йти
+Мандрівник у часі
+Раунд
+оч.
+Де ви і коли? Тягніть, щоб роззирнутися; йдіть клавішами W A S D.
+Вгадати
+Здатися
+Рік
+Підтвердити
+Подивитися ще
+Місце
+Переглянути рахунок
+Наступний раунд
+Прочитати про це
+Історик. Будівлі щоразу видавали вам усе.
+Бувалий мандрівник. Небо й обрис міста були на вашому боці.
+Загубилися в часі — у цьому й задоволення. Ще раз?
+Зіграти знову
+Стати на землю тут (G)
+Стати тут
+Станьте на землю в ту мить, коли це сталося. Сонце там, де стояло в ту годину; будівлі — моделі атласу в справжньому розмірі; земля — сьогоднішня. Тягніть, щоб роззирнутися, йдіть клавішами W A S D, прокрутіть назад, щоб вийти.
+кадрів
+містить інсценізований ефект
+Вас висаджують на землю десь на Землі, у якомусь році між 3000 р. до н. е. і сьогодні, дата прихована. Роззирніться: що стоїть, а чого ще нема; небо; звуки. Тоді вгадайте де й коли. П’ять раундів по 100 очок.
+Чесно попереджаємо: земля й супутникові знімки завжди сьогоднішні. Лише будівлі, небо й звуки йдуть за датою.
+Найкращий рахунок
+Висадіть мене десь
+Швидкість погляду
+Як швидко перетягування повертає голову на землі
+Миті
+Станьте на землю, як це було, від першої особи
+Висаджені десь, колись: з’ясуйте, де й коли
 ## el
 Εξερεύνηση
 Κλείσιμο (Esc)
@@ -1018,3 +1190,46 @@ Era
 Τείχη πόλεων
 Τείχη ιστορικών πόλεων από το OpenStreetMap, από το έτος ολοκλήρωσής τους
 Εποχή
+Επόμενο
+Έξοδος
+Μείνετε όσο θέλετε: κοιτάξτε γύρω, περπατήστε και σύρετε το έτος για να δείτε τον τόπο να αλλάζει.
+Διαβάστε την ιστορία
+Μείνετε εδώ
+Πίσω στην υδρόγειο
+δραματοποίηση
+Αφήστε το έδαφος
+Σύρετε για να κοιτάξετε · κρατήστε το Περπάτημα για να κινηθείτε · τσιμπήστε για έξοδο
+Σύρετε για να κοιτάξετε · W A S D για περπάτημα · Shift για τρέξιμο · κύλιση προς τα έξω για έξοδο
+Περπάτημα μπροστά (κρατήστε)
+Περπάτημα
+Ταξιδιώτης του χρόνου
+Γύρος
+βαθ.
+Πού είστε, και πότε; Σύρετε για να κοιτάξετε· περπατήστε με W A S D.
+Κάντε μια εικασία
+Παραίτηση
+Έτος
+Κλείδωμα
+Κοιτάξτε ξανά
+Τόπος
+Δείτε το σκορ
+Επόμενος γύρος
+Διαβάστε γι’ αυτό
+Ιστορικός. Τα κτίρια σας τα έλεγαν όλα κάθε φορά.
+Πολυταξιδεμένος. Ο ουρανός και ο ορίζοντας ήταν με το μέρος σας.
+Χαμένος στον χρόνο, κι αυτό είναι το ωραίο. Ξανά;
+Παίξτε ξανά
+Σταθείτε εδώ στο έδαφος (G)
+Σταθείτε εδώ
+Σταθείτε στο έδαφος τη στιγμή που συνέβη. Ο ήλιος είναι εκεί που ήταν εκείνη την ώρα· τα κτίρια είναι τα μοντέλα του άτλαντα σε πραγματικό μέγεθος· το έδαφος είναι το σημερινό. Σύρετε για να κοιτάξετε, περπατήστε με W A S D και κυλήστε προς τα έξω για έξοδο.
+πλάνα
+περιλαμβάνει δραματοποιημένο εφέ
+Σας αφήνουν στο έδαφος κάπου στη Γη, σε κάποιο έτος ανάμεσα στο 3000 π.Χ. και σήμερα, με κρυμμένη την ημερομηνία. Κοιτάξτε γύρω: τι στέκεται και τι όχι ακόμη· ο ουρανός· οι ήχοι. Μετά μαντέψτε πού και πότε. Πέντε γύροι, 100 πόντοι ο καθένας.
+Προειδοποίηση: το έδαφος και οι δορυφορικές εικόνες είναι πάντα τα σημερινά. Μόνο τα κτίρια, ο ουρανός και οι ήχοι ακολουθούν την ημερομηνία.
+Καλύτερο σκορ
+Αφήστε με κάπου
+Ταχύτητα βλέμματος
+Πόσο γρήγορα το σύρσιμο γυρίζει το κεφάλι στο έδαφος
+Στιγμές
+Σταθείτε στο έδαφος όπως συνέβη, σε πρώτο πρόσωπο
+Αφημένος κάπου, κάποτε: βρείτε πού και πότε

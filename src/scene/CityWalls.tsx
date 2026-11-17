@@ -8,6 +8,7 @@ import { CITY_WALLS, type CityWall } from '../data/citywalls'
 import { settings, useSettings } from '../time/settings'
 import { useReader } from '../ui/wiki/store'
 import { world } from './world'
+import { TILE_BASE } from './TerrainTiles'
 
 type Outlines = Record<string, number[][]>
 let data: Promise<Outlines> | null = null
@@ -71,10 +72,10 @@ function WallView({ w, lines }: { w: CityWall; lines: number[][] }) {
     m.opacity += (want - m.opacity) * 0.15
     obj.visible = m.opacity > 0.01
     // stand at the town's height, so the lines sit on the ground rather than under it
-    obj.scale.setScalar(1 + (w.elev * settings().terrain) / R)
+    obj.scale.setScalar(TILE_BASE + (w.elev * settings().terrain) / R + 0.0000003)
     const el = tag.current
     if (!el) return
-    lonLatToVec3(w.at[0], w.at[1], 1 + (w.elev * settings().terrain) / R, v)
+    lonLatToVec3(w.at[0], w.at[1], TILE_BASE + (w.elev * settings().terrain) / R, v)
     const facing = v.clone().normalize().dot(camera.position.clone().normalize())
     const op = on && alt < 0.02 && facing > 0.99 && v.distanceTo(camera.position) < 0.016 ? 1 : 0
     el.style.opacity = String(op)

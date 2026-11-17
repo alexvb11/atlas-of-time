@@ -19,6 +19,8 @@ import { DensityLayer } from './Density'
 import { PoliticalFill } from './PoliticalFill'
 import { OldMapLayer } from './OldMap'
 import { CityWallsLayer } from './CityWalls'
+import { GroundSky } from './GroundSky'
+import { GroundFx } from './GroundFx'
 import { TerrainTiles } from './TerrainTiles'
 import { PaleoLand } from './PaleoLand'
 import { updateWorld, world } from './world'
@@ -62,7 +64,7 @@ export function Scene() {
     <Canvas
       className="!fixed inset-0"
       dpr={[1, quality === 'low' ? 1 : lite ? 1.5 : 2]}
-      gl={{ antialias: false, powerPreference: 'high-performance', toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.05 }}
+      gl={{ antialias: false, powerPreference: 'high-performance', reversedDepthBuffer: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.05 }}
       camera={{ fov: 38, near: 0.01, far: 400, position: [0, 0, 30] }}
       onPointerMissed={() => {
         const s = useTime.getState()
@@ -80,6 +82,8 @@ export function Scene() {
         <Sky />
         <Globe />
         <TerrainTiles />
+        <GroundSky />
+        <GroundFx />
         <DensityLayer />
         <PoliticalFill />
         <OldMapLayer />

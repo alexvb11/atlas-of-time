@@ -17,6 +17,12 @@ import { SideSheet } from './ui/ExploreMenu'
 import { LayerNotes } from './ui/LayerNotes'
 import { TourPlayer } from './ui/explore/Tours'
 import { useTourStore } from './ui/explore/tourStore'
+import { GroundHud } from './ui/Ground'
+import { MomentPlayer } from './ui/MomentPlayer'
+import { useMomentStore } from './ui/explore/momentStore'
+import { TravellerHud } from './ui/TravellerHud'
+import { useTraveller } from './ui/explore/travellerStore'
+import { useGround } from './scene/ground'
 
 export default function App() {
   // re-render the interface when its language changes
@@ -25,7 +31,10 @@ export default function App() {
   useShareLink()
   const introDone = useTime((s) => s.introDone)
   // a documentary film takes the whole screen: the interface steps aside
-  const film = useTourStore((s) => s.doc !== null)
+  const scene = useMomentStore((s) => s.moment !== null)
+  const game = useTraveller((s) => s.playing)
+  const film = useTourStore((s) => s.doc !== null) || scene || game
+  const ground = useGround((s) => s.on)
   return (
     <main className="fixed inset-0 overflow-hidden bg-void">
       <Scene />
@@ -37,8 +46,8 @@ export default function App() {
           <>
             {/* soft scrim so the readout stays legible over bright cloud tops */}
             <div key="scrim" className="pointer-events-none fixed inset-x-0 top-0 h-[300px] bg-[radial-gradient(ellipse_70%_100%_at_50%_0%,rgba(2,4,9,.82),rgba(2,4,9,.35)_55%,transparent)]" />
-            {!film && <HoverLabel key="hover" />}
-            {!film && <Panel key="panel" />}
+            {!film && !ground && <HoverLabel key="hover" />}
+            {!film && !ground && <Panel key="panel" />}
             {!film && (
               <header key="header" className="pointer-events-none fixed inset-x-0 top-0 z-10 px-4 pt-[max(12px,env(safe-area-inset-top))]">
                 <TimeBar />
@@ -47,10 +56,13 @@ export default function App() {
               </header>
             )}
             {!film && <Corner key="corner" />}
-            {!film && <LayerNotes key="layer-notes" />}
+            {(!film || game) && <LayerNotes key="layer-notes" />}
             {!film && <EventCard key="event" />}
             {!film && <SideSheet key="side" />}
             <TourPlayer key="tour" />
+            <GroundHud key="ground" />
+            <MomentPlayer key="moment" />
+            <TravellerHud key="traveller" />
             <Reader key="reader" />
             <HoverCardHost key="cards" />
           </>

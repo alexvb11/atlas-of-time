@@ -25,6 +25,8 @@ export const world = {
   green: 0,
   /** where the sun is overhead when the seasons layer is on: [lon, lat] */
   subsolar: null as [number, number] | null,
+  /** a scene (a Moment on the ground) asking for the sun at a known hour: [lon, lat] overhead */
+  sunForce: null as [number, number] | null,
   /** true while the close-up imagery and terrain patch is on screen (its sources are credited) */
   detail: false,
   /** 0..1: how much the PALEOMAP landscapes (PaleoLand.tsx) cover the globe in deep time */
@@ -95,6 +97,15 @@ export function subsolarAt(t: number): [number, number] {
   return [((lon + 540) % 360) - 180, decl]
 }
 
+/** Where the sun stands overhead on the date t at a local hour (solar time) seen from longitude lon */
+export function subsolarFor(t: number, localHour: number, lon: number): [number, number] {
+  const frac = t - Math.floor(t)
+  const day = frac * 365.25
+  const decl = obliquity(t) * Math.sin((2 * Math.PI * (284 + day)) / 365.25)
+  const sunLon = lon - 15 * (localHour - 12)
+  return [((sunLon + 540) % 360) - 180, decl]
+}
+
 export function updateWorld(dt: number) {
   const s = useTime.getState()
   const t = s.time
@@ -105,7 +116,11 @@ export function updateWorld(dt: number) {
   world.sea = set.climate ? seaLevelAt(t) : 0
   world.ice = set.climate ? iceAt(t) : 0
   world.green = set.greenSahara ? greenSaharaAt(t) : 0
-  if (set.sun !== 'fixed' && s.introDone) {
+  if (world.sunForce) {
+    lonLatToVec3(world.sunForce[0], world.sunForce[1], 1, sunTarget)
+    SUN.lerp(sunTarget, 1 - Math.exp(-3 * dt)).normalize()
+    world.subsolar = world.sunForce
+  } else if (set.sun !== 'fixed' && s.introDone) {
     // "always day": the sun stays behind the viewer's shoulder, so the face in view is lit
     world.subsolar = set.sun === 'seasons' ? subsolarAt(t) : [world.view[0] - 22, Math.max(-60, Math.min(60, world.view[1] + 8))]
     lonLatToVec3(world.subsolar[0], world.subsolar[1], 1, sunTarget)

@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.14.0 — 2026-11-16
+
+### On the ground
+- **First person**: press G, or *Stand here* in a place's panel, to stand on the real terrain at
+  eye height. Drag to look, W A S D to walk, Shift to run, scroll out to lift off. The ground is
+  the streamed 3D terrain, the landmarks stand at true size, the city walls are drawn, the time
+  bar still works: stand at Notre-Dame and drag the year to watch the spire rise and burn.
+- **A sky from the ground**: a dome lit by the sun's height (noon blue, warm dusk, dark night
+  with the real stars showing through), with the sun's disk and glare; hills fade into haze. The
+  renderer now uses a reversed depth buffer, so the near plane can sit 30 cm from the eye without
+  the far hills flickering.
+- **Moments**: twelve first-person scenes at dated events, with the sun where it stood at that
+  local hour on that date (sunrise over the heel stone at Stonehenge on the solstice; the equinox
+  sun rising behind Angkor Wat's tower; the land walls of Constantinople in the dark before the
+  final assault, then the dawn of 29 May 1453). Captions say only what the linked Wikipedia
+  article says and are read aloud; the viewer can look around and walk at any time, and stay
+  afterwards. Vesuvius's ash column is a dramatisation and labelled as one.
+- **Time traveller**: a game. Dropped on the ground somewhere, sometime, with the date hidden;
+  work out where and when from what stands (and what does not yet), the sky and the sound. Five
+  rounds, scored on place and year; the best score is kept.
+- Settings: look speed. Interface strings for all of this in the 20 languages.
+
 ## 0.13.0 — 2026-11-02
 
 ### Graphics

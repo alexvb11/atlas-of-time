@@ -16,6 +16,7 @@ import * as THREE from 'three'
 import { lonLatToVec3 } from '../geo/sphere'
 import { settings } from '../time/settings'
 import { SUN, world } from './world'
+import { rig } from './CameraRig'
 
 const IMAGERY = (z: number, x: number, y: number) => `https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2024_3857/default/g/${z}/${y}/${x}.jpg`
 const TERRAIN = (z: number, x: number, y: number) => `https://s3.amazonaws.com/elevation-tiles-prod/terrarium/${z}/${x}/${y}.png`
@@ -24,6 +25,8 @@ const MAX_Z = 14
 const MIN_Z = 3
 const N = 49 // vertices along a tile edge
 const EARTH_M = 6371000
+/** the tiles float this far above the unit sphere (about 32 m), clear of the globe's own surface */
+export const TILE_BASE = 1.000005
 // tiles drawn at once: plenty on a desktop GPU, fewer on phones
 const MAX_TILES = world.isMobile ? 150 : 380
 const CACHE = 600
@@ -135,6 +138,7 @@ uniform vec3 uSun;
 uniform float uOpacity;
 uniform float uDim;
 uniform float uRelief;
+uniform float uGround;
 varying vec2 vUv;
 varying vec3 vN;
 varying vec3 vUp;
@@ -146,13 +150,17 @@ void main() {
   float ndlFlat = dot(up, uSun);
   float day = smoothstep(-0.08, 0.2, ndlFlat);
   // the photo already holds the real shadows: add only how this slope differs from flat ground
-  float rel = clamp(1.0 + uRelief * (dot(N, uSun) - ndlFlat) * 1.7, 0.45, 1.55);
-  vec3 col = albedo * (0.05 + 1.15 * max(ndlFlat * 0.8 + 0.2, 0.0) * day) * rel;
+  float rel = clamp(1.0 + uRelief * (dot(N, uSun) - ndlFlat) * 1.7, mix(0.45, 0.6, uGround), mix(1.55, 1.2, uGround));
+  // on the ground snow and sand must not bloom to white: a tighter exposure
+  vec3 col = albedo * (0.05 + mix(1.15, 0.92, uGround) * max(ndlFlat * 0.8 + 0.2, 0.0) * day) * rel;
+  col = mix(col, min(col, vec3(0.93)), uGround);
   // aerial perspective: distant ground fades into blue haze, as seen from a plane
   float dkm = length(cameraPosition - vWorld) * 6371.0;
   // only inside the air: from space the globe's atmosphere shell does this job
   float camKm = (length(cameraPosition) - 1.0) * 6371.0;
   float haze = (1.0 - exp(-dkm / 900.0)) * 0.55 * (1.0 - smoothstep(25.0, 160.0, camKm));
+  // standing on the ground the air is seen edge-on: hills fade to sky over a few tens of km
+  haze = mix(haze, (1.0 - exp(-dkm / 45.0)) * 0.78, uGround);
   col = mix(col, vec3(0.52, 0.66, 0.86) * (0.2 + 0.8 * day), haze);
   col = mix(col, vec3(dot(col, vec3(0.299, 0.587, 0.114))) * 0.42, uDim);
   gl_FragColor = vec4(col, uOpacity * day);
@@ -178,7 +186,7 @@ function buildMesh(t: Tile, img: HTMLImageElement, heights: Float32Array, mat: T
       const lon = lonOf(t.x + i / (N - 1), n)
       const lat = latOf(t.y + j / (N - 1), n)
       // 30 m above the globe's own sphere so sea level never flickers against it
-      lonLatToVec3(lon, lat, 1.000005 + (Math.max(0, heights[j * N + i]) / EARTH_M) * exag, v).sub(center)
+      lonLatToVec3(lon, lat, TILE_BASE + (Math.max(0, heights[j * N + i]) / EARTH_M) * exag, v).sub(center)
       const k = j * N + i
       pos.set([v.x, v.y, v.z], k * 3)
       uv.set([i / (N - 1), 1 - j / (N - 1)], k * 2)
@@ -274,7 +282,7 @@ export function TerrainTiles() {
       new THREE.ShaderMaterial({
         vertexShader: vert,
         fragmentShader: frag,
-        uniforms: { uMap: { value: null }, uSun: { value: SUN }, uOpacity: { value: 0 }, uDim: { value: 0 }, uRelief: { value: 1 } },
+        uniforms: { uMap: { value: null }, uSun: { value: SUN }, uOpacity: { value: 0 }, uDim: { value: 0 }, uRelief: { value: 1 }, uGround: { value: 0 } },
         transparent: true,
         depthWrite: true,
         // the skirts hang down from the tile edges and are seen from either side
@@ -311,6 +319,7 @@ export function TerrainTiles() {
       u.uOpacity.value = opacity.current
       u.uDim.value = world.dim
       u.uRelief.value = prefs.relief
+      u.uGround.value = rig.groundBlend
     }
     if (!on && opacity.current < 0.01) {
       for (const c of [...g.children]) c.visible = false
@@ -320,7 +329,8 @@ export function TerrainTiles() {
 
     // choose tiles: split a tile while its texels would be bigger than ~1.4 screen pixels
     camDir.copy(camera.position).normalize()
-    const horizon = Math.acos(Math.min(1, 1 / dist))
+    // from the ground the horizon formula gives a few km; mountains show from much further
+    const horizon = Math.acos(Math.min(1, 1 / dist)) + rig.groundBlend * 0.035
     const pxPerRad = size.height / (2 * Math.tan(((camera as THREE.PerspectiveCamera).fov * Math.PI) / 360))
     const exag = prefs.terrain
     const want: Tile[] = []

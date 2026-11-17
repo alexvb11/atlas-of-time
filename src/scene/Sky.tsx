@@ -22,6 +22,7 @@ const skyVertex = starVertex
   .replace('uniform float uWarp;', 'uniform float uWarp;\nuniform mat3 uPrec;\nuniform float uYears;\nuniform float uR;\nattribute vec3 aPM;')
   .replace('vec4 mv = modelViewMatrix * vec4(position, 1.0);', 'vec3 sp = uPrec * (normalize(position + aPM * uYears) * uR);\n  vec4 mv = modelViewMatrix * vec4(sp, 1.0);')
 import { SUN, world } from './world'
+import { rig } from './CameraRig'
 
 type Star = [number, number, number, number, number, number]
 const R_SKY = 95
@@ -197,7 +198,7 @@ export function Sky() {
         m.rotateY(-Math.PI / 2)
       }
     }
-    sun.visible = prefs.moonSun
+    sun.visible = prefs.moonSun && rig.groundBlend < 0.5
     sun.position.copy(SUN).multiplyScalar(180)
   })
 

@@ -156,6 +156,7 @@ const SECTIONS: Section[] = [
     rows: [
       { label: 'Spin when idle', keywords: 'rotate auto', control: <Toggle k="autoRotate" label="Spin when idle" /> },
       { label: 'Lean toward the horizon up close', sub: 'An oblique, aerial view when zoomed in', keywords: 'tilt 3d camera perspective', control: <Toggle k="tiltClose" label="Lean toward the horizon up close" /> },
+      { label: 'Look speed', sub: 'How fast dragging turns your head on the ground', keywords: 'first person mouse sensitivity walk', control: <Slider k="lookSpeed" label="Look speed" min={0.3} max={3} step={0.1} fmt={times} /> },
       { label: 'Spin speed', keywords: 'rotate', control: <Slider k="rotateSpeed" label="Spin speed" min={0.3} max={4} step={0.1} fmt={times} /> },
       { label: 'Motion', sub: 'Follow the system setting, or choose', keywords: 'reduced animation accessibility', control: <Choice k="motion" label="Motion" options={[['system', 'System'], ['full', 'Full'], ['reduced', 'Reduced']]} /> },
       { label: 'Time-warp effects', sub: 'Streaking stars and colour fringes while scrubbing fast', keywords: 'blur aberration', control: <Toggle k="warpEffects" label="Time-warp effects" /> },

@@ -41,6 +41,7 @@ export type Settings = {
   autoRotate: boolean
   rotateSpeed: number
   tiltClose: boolean
+  lookSpeed: number
   motion: 'system' | 'full' | 'reduced'
   warpEffects: boolean
   // time
@@ -91,6 +92,7 @@ export const DEFAULTS: Settings = {
   autoRotate: true,
   rotateSpeed: 1,
   tiltClose: true,
+  lookSpeed: 1,
   motion: 'system',
   warpEffects: true,
   defaultSpeed: 1,

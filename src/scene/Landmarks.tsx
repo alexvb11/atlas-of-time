@@ -9,7 +9,7 @@ import { LANDMARKS, phaseAt, type Landmark, type Part, type Phase } from '../dat
 import { settings } from '../time/settings'
 import { useReader } from '../ui/wiki/store'
 import { formatYear } from '../time/format'
-import { groundHeightAt } from './TerrainTiles'
+import { groundHeightAt, TILE_BASE } from './TerrainTiles'
 import { SUN, world } from './world'
 
 const R = 6371000
@@ -163,7 +163,7 @@ function LandmarkView({ l }: { l: Landmark }) {
     }
     // stand on the ground: the loaded terrain when there is some, else the known elevation
     const ground = Math.max(groundHeightAt(l.at[0], l.at[1]), l.elev)
-    lonLatToVec3(l.at[0], l.at[1], 1 + (ground * prefs.terrain) / R + 0.000001, m.position)
+    lonLatToVec3(l.at[0], l.at[1], TILE_BASE + (ground * prefs.terrain) / R + 0.0000002, m.position)
     m.quaternion.setFromRotationMatrix(basis)
     if (!el) return
     camDir.copy(camera.position).normalize()
