@@ -177,9 +177,13 @@ void main() {
   vec3 albedo = texture2D(uMap, vUv).rgb;
   // on the ground the sea is drawn as water (Ocean.tsx) under the tiles: let it through where the
   // coarse terrain holds sea floor (the fine tiles have none) and the photo is not bright land
-  if (uSeaCut > 0.5 && vHeight < -0.5) {
+  if (uSeaCut > 0.5 && vHeight < 0.5) {
     float lum = dot(albedo, vec3(0.299, 0.587, 0.114));
-    if (albedo.b >= albedo.r * 0.85 && lum < 0.14) discard;
+    // known sea floor: anything dark and not red is water; at sea level with no depth known
+    // (within a kilometre or so of the shore), only clearly blue-grey, dark pixels
+    bool deep = vHeight < -0.5 && albedo.b >= albedo.r * 0.85 && lum < 0.14;
+    bool shore = albedo.b > albedo.r * 1.05 && albedo.b > albedo.g * 0.95 && lum < 0.1;
+    if (deep || shore) discard;
   }
   vec3 up = normalize(vUp);
   vec3 N = normalize(vN);
