@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.14.1 — 2026-11-16
+
+### Graphics on the ground
+- **Water**: the sea is a real surface when standing on the shore: wind waves, the sun's glitter,
+  the sky reflected at grazing angles, fading into the haze. Where the terrain tiles show sea
+  (the coarse tiles' sea floor plus the photo's colour) they let it through; islands and quays
+  stay.
+- **Clouds**: a drifting layer of procedural clouds in the ground sky, lit by the sun, warm at
+  dusk, dark at night; the Clouds setting governs them too.
+- **Ground grain**: the imagery is 10 m a pixel, so up close it smeared; a fine procedural grain
+  gives the ground a surface again within 2 km, and the finest tiles get a mesh twice as dense
+  (25 m between vertices). The horizon haze takes the sky's own colour.
+- **Landmarks**: courses of masonry, sky light on upward faces, weathering toward the ground,
+  aerial perspective with distance.
+
 ## 0.14.0 — 2026-11-16
 
 ### On the ground

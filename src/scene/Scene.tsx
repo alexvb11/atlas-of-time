@@ -21,6 +21,7 @@ import { OldMapLayer } from './OldMap'
 import { CityWallsLayer } from './CityWalls'
 import { GroundSky } from './GroundSky'
 import { GroundFx } from './GroundFx'
+import { Ocean } from './Ocean'
 import { TerrainTiles } from './TerrainTiles'
 import { PaleoLand } from './PaleoLand'
 import { updateWorld, world } from './world'
@@ -84,6 +85,7 @@ export function Scene() {
         <TerrainTiles />
         <GroundSky />
         <GroundFx />
+        <Ocean />
         <DensityLayer />
         <PoliticalFill />
         <OldMapLayer />

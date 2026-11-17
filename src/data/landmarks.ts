@@ -22,6 +22,8 @@ export type Landmark = {
   elev: number
   /** bearing of the model's x axis from east, degrees (counter-clockwise) */
   turn?: number
+  /** height of a course of masonry in metres, for the shading (default 1.2) */
+  course?: number
   color: string
   phases: Phase[]
 }

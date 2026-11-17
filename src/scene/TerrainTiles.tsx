@@ -17,13 +17,18 @@ import { lonLatToVec3 } from '../geo/sphere'
 import { settings } from '../time/settings'
 import { SUN, world } from './world'
 import { rig } from './CameraRig'
+import { horizonColour } from './GroundSky'
+
+const skyHorizon = new THREE.Color(0.66, 0.77, 0.9)
 
 const IMAGERY = (z: number, x: number, y: number) => `https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2024_3857/default/g/${z}/${y}/${x}.jpg`
 const TERRAIN = (z: number, x: number, y: number) => `https://s3.amazonaws.com/elevation-tiles-prod/terrarium/${z}/${x}/${y}.png`
 export const TILE_CREDIT = 'EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024)'
 const MAX_Z = 14
 const MIN_Z = 3
-const N = 49 // vertices along a tile edge
+const N = 49 // vertices along a tile edge (coarse tiles)
+/** the finest tiles, seen from the ground, get a finer mesh (25 m between vertices at zoom 14) */
+const gridOf = (z: number) => (z >= 13 ? 97 : N)
 const EARTH_M = 6371000
 /** the tiles float this far above the unit sphere (about 32 m), clear of the globe's own surface */
 export const TILE_BASE = 1.000005
@@ -49,6 +54,8 @@ type Tile = {
   img?: HTMLImageElement
   used: number
   exag: number
+  /** vertices along an edge of this tile's mesh */
+  n: number
 }
 
 const fetchImage = (url: string) =>
@@ -93,7 +100,7 @@ scratch.width = scratch.height = 256
 const sctx = scratch.getContext('2d', { willReadFrequently: true })!
 
 /** Terrarium tile → metres at N×N grid points, sampled bilinearly (no stair steps) */
-function heightsFrom(img: HTMLImageElement | null): Float32Array {
+function heightsFrom(img: HTMLImageElement | null, N: number): Float32Array {
   const h = new Float32Array(N * N)
   if (!img) return h
   sctx.clearRect(0, 0, 256, 256)
@@ -123,8 +130,11 @@ varying vec2 vUv;
 varying vec3 vN;
 varying vec3 vUp;
 varying vec3 vWorld;
+varying float vHeight;
+attribute float height;
 void main() {
   vUv = uv;
+  vHeight = height;
   vec4 w = modelMatrix * vec4(position, 1.0);
   vWorld = w.xyz;
   vN = normalize(mat3(modelMatrix) * normal);
@@ -139,12 +149,38 @@ uniform float uOpacity;
 uniform float uDim;
 uniform float uRelief;
 uniform float uGround;
+uniform vec3 uHaze;
+uniform vec2 uTileOrigin;
+uniform float uTileMetres;
+uniform float uSeaCut;
 varying vec2 vUv;
+varying float vHeight;
+
+// value noise, for fine grain the photos cannot hold (a sine hash breaks down for large inputs on
+// many GPUs, so this one is integer-friendly and the lattice repeats every 2048 cells)
+float hash(vec2 p) {
+  vec3 p3 = fract(vec3(p.xyx) * 0.1031);
+  p3 += dot(p3, p3.yzx + 33.33);
+  return fract((p3.x + p3.y) * p3.z);
+}
+float vnoise(vec2 p) {
+  p = mod(p, 2048.0);
+  vec2 i = floor(p);
+  vec2 f = fract(p);
+  f = f * f * (3.0 - 2.0 * f);
+  return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), f.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), f.x), f.y);
+}
 varying vec3 vN;
 varying vec3 vUp;
 varying vec3 vWorld;
 void main() {
   vec3 albedo = texture2D(uMap, vUv).rgb;
+  // on the ground the sea is drawn as water (Ocean.tsx) under the tiles: let it through where the
+  // coarse terrain holds sea floor (the fine tiles have none) and the photo is not bright land
+  if (uSeaCut > 0.5 && vHeight < -0.5) {
+    float lum = dot(albedo, vec3(0.299, 0.587, 0.114));
+    if (albedo.b >= albedo.r * 0.85 && lum < 0.14) discard;
+  }
   vec3 up = normalize(vUp);
   vec3 N = normalize(vN);
   float ndlFlat = dot(up, uSun);
@@ -152,6 +188,17 @@ void main() {
   // the photo already holds the real shadows: add only how this slope differs from flat ground
   float rel = clamp(1.0 + uRelief * (dot(N, uSun) - ndlFlat) * 1.7, mix(0.45, 0.6, uGround), mix(1.55, 1.2, uGround));
   // on the ground snow and sand must not bloom to white: a tighter exposure
+  // micro-detail near the eye: the imagery is 10 m a pixel, so up close it smears; a fine
+  // procedural grain at 3 m and 0.6 m gives the ground a surface again, fading out by 2 km
+  float dm = length(cameraPosition - vWorld) * 6371000.0;
+  float near = 1.0 - smoothstep(150.0, 2000.0, dm);
+  if (near > 0.001) {
+    vec2 p = (vUv + uTileOrigin) * uTileMetres;
+    // value noise clusters around 0.5: stretch it so the grain reads; three sizes of grain
+    float g = clamp((vnoise(p / 3.0) * 0.45 + vnoise(p / 0.6) * 0.3 + vnoise(p / 0.15) * 0.25 - 0.5) * 2.8, -1.0, 1.0);
+    float g2 = clamp((vnoise(p / 14.0) - 0.5) * 2.2, -1.0, 1.0);
+    albedo *= 1.0 + near * (0.22 * g + 0.12 * g2);
+  }
   vec3 col = albedo * (0.05 + mix(1.15, 0.92, uGround) * max(ndlFlat * 0.8 + 0.2, 0.0) * day) * rel;
   col = mix(col, min(col, vec3(0.93)), uGround);
   // aerial perspective: distant ground fades into blue haze, as seen from a plane
@@ -161,7 +208,8 @@ void main() {
   float haze = (1.0 - exp(-dkm / 900.0)) * 0.55 * (1.0 - smoothstep(25.0, 160.0, camKm));
   // standing on the ground the air is seen edge-on: hills fade to sky over a few tens of km
   haze = mix(haze, (1.0 - exp(-dkm / 45.0)) * 0.78, uGround);
-  col = mix(col, vec3(0.52, 0.66, 0.86) * (0.2 + 0.8 * day), haze);
+  // the haze takes the sky's own horizon colour when standing on the ground
+  col = mix(col, mix(vec3(0.52, 0.66, 0.86) * (0.2 + 0.8 * day), uHaze, uGround), haze);
   col = mix(col, vec3(dot(col, vec3(0.299, 0.587, 0.114))) * 0.42, uDim);
   gl_FragColor = vec4(col, uOpacity * day);
   #include <tonemapping_fragment>
@@ -169,8 +217,32 @@ void main() {
 }
 `
 
+/** Height from the coarsest loaded ancestor of a tile (zoom 10 or below), where the sea floor is known */
+function coarseHeightAt(t: Tile): ((lon: number, lat: number) => number) | null {
+  for (let za = Math.min(10, t.z - 1); za >= MIN_Z; za--) {
+    const a = tiles.get(`${za}/${t.x >> (t.z - za)}/${t.y >> (t.z - za)}`)
+    if (!a?.heights || a.state !== 'ready') continue
+    const { heights: h, n: N } = a
+    const n = 2 ** za
+    return (lon, lat) => {
+      const fx = (((lon + 180) / 360) * n - a.x) * (N - 1)
+      const r = (lat * Math.PI) / 180
+      const fy = (((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2) * n - a.y) * (N - 1)
+      const x0 = Math.min(N - 2, Math.max(0, Math.floor(fx)))
+      const y0 = Math.min(N - 2, Math.max(0, Math.floor(fy)))
+      const ax = Math.min(1, Math.max(0, fx - x0))
+      const ay = Math.min(1, Math.max(0, fy - y0))
+      return (h[y0 * N + x0] * (1 - ax) + h[y0 * N + x0 + 1] * ax) * (1 - ay) + (h[(y0 + 1) * N + x0] * (1 - ax) + h[(y0 + 1) * N + x0 + 1] * ax) * ay
+    }
+  }
+  return null
+}
+
 function buildMesh(t: Tile, img: HTMLImageElement, heights: Float32Array, mat: THREE.ShaderMaterial, exag: number) {
+  const N = t.n
   const n = 2 ** t.z
+  // the fine tiles have no bathymetry (sea reads 0), so the sea test takes the coarse ancestor's depth
+  const coarse = t.z > 10 ? coarseHeightAt(t) : null
   const center = lonLatToVec3(lonOf(t.x + 0.5, n), latOf(t.y + 0.5, n), 1)
   // N×N surface plus a skirt ring hanging below the edges, hiding cracks between tiles of
   // different detail
@@ -178,6 +250,7 @@ function buildMesh(t: Tile, img: HTMLImageElement, heights: Float32Array, mat: T
   const count = N * N + ring
   const pos = new Float32Array(count * 3)
   const uv = new Float32Array(count * 2)
+  const hgt = new Float32Array(count)
   const v = new THREE.Vector3()
   const tileAngle = ((360 / n) * Math.PI) / 180
   const skirt = Math.min(0.01, tileAngle * 0.04)
@@ -190,6 +263,9 @@ function buildMesh(t: Tile, img: HTMLImageElement, heights: Float32Array, mat: T
       const k = j * N + i
       pos.set([v.x, v.y, v.z], k * 3)
       uv.set([i / (N - 1), 1 - j / (N - 1)], k * 2)
+      // the raw height, sea floor included, for the shader's sea test
+      const raw = heights[j * N + i]
+      hgt[k] = coarse ? Math.min(raw, coarse(lon, lat)) : raw
     }
   // edge indices in order around the tile
   const edge: number[] = []
@@ -203,6 +279,7 @@ function buildMesh(t: Tile, img: HTMLImageElement, heights: Float32Array, mat: T
     v.multiplyScalar(1 - skirt).sub(center)
     pos.set([v.x, v.y, v.z], s * 3)
     uv.set([uv[k * 2], uv[k * 2 + 1]], s * 2)
+    hgt[s] = hgt[k]
   })
   const index: number[] = []
   for (let j = 0; j < N - 1; j++)
@@ -225,6 +302,7 @@ function buildMesh(t: Tile, img: HTMLImageElement, heights: Float32Array, mat: T
     index.push(k, s, k2, k2, s, s2)
   })
   g.setAttribute('uv', new THREE.BufferAttribute(uv, 2))
+  g.setAttribute('height', new THREE.BufferAttribute(hgt, 1))
   g.setIndex(index)
   const tex = new THREE.Texture(img)
   tex.colorSpace = THREE.SRGBColorSpace
@@ -233,7 +311,9 @@ function buildMesh(t: Tile, img: HTMLImageElement, heights: Float32Array, mat: T
   tex.minFilter = THREE.LinearMipmapLinearFilter
   tex.needsUpdate = true
   const m = mat.clone()
-  m.uniforms = { ...mat.uniforms, uMap: { value: tex } }
+  // the tile's place on a 64-tile grid and its width in metres, so the grain runs on across tiles
+  const widthM = (tileAngle * EARTH_M) * Math.cos((latOf(t.y + 0.5, n) * Math.PI) / 180)
+  m.uniforms = { ...mat.uniforms, uMap: { value: tex }, uTileOrigin: { value: new THREE.Vector2(t.x % 64, (t.y % 64)) }, uTileMetres: { value: widthM } }
   const mesh = new THREE.Mesh(g, m)
   mesh.position.copy(center)
   mesh.frustumCulled = false
@@ -265,10 +345,19 @@ export function groundHeightAt(lon: number, lat: number): number {
   }
   if (!best?.heights) return 0
   const n = 2 ** best.z
+  const N = best.n
   const fx = (((lon + 180) / 360) * n - best.x) * (N - 1)
   const r = (lat * Math.PI) / 180
   const fy = (((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2) * n - best.y) * (N - 1)
-  return Math.max(0, best.heights[Math.min(N - 1, Math.round(fy)) * N + Math.min(N - 1, Math.round(fx))])
+  // bilinear, so walking over the grid does not step
+  const x0 = Math.min(N - 2, Math.max(0, Math.floor(fx)))
+  const y0 = Math.min(N - 2, Math.max(0, Math.floor(fy)))
+  const ax = Math.min(1, Math.max(0, fx - x0))
+  const ay = Math.min(1, Math.max(0, fy - y0))
+  const h = best.heights
+  const top = h[y0 * N + x0] * (1 - ax) + h[y0 * N + x0 + 1] * ax
+  const bot = h[(y0 + 1) * N + x0] * (1 - ax) + h[(y0 + 1) * N + x0 + 1] * ax
+  return Math.max(0, top * (1 - ay) + bot * ay)
 }
 
 const tiles = new Map<string, Tile>()
@@ -282,7 +371,7 @@ export function TerrainTiles() {
       new THREE.ShaderMaterial({
         vertexShader: vert,
         fragmentShader: frag,
-        uniforms: { uMap: { value: null }, uSun: { value: SUN }, uOpacity: { value: 0 }, uDim: { value: 0 }, uRelief: { value: 1 }, uGround: { value: 0 } },
+        uniforms: { uMap: { value: null }, uSun: { value: SUN }, uOpacity: { value: 0 }, uDim: { value: 0 }, uRelief: { value: 1 }, uGround: { value: 0 }, uHaze: { value: new THREE.Color(0.66, 0.77, 0.9) }, uTileOrigin: { value: new THREE.Vector2() }, uTileMetres: { value: 1 }, uSeaCut: { value: 0 } },
         transparent: true,
         depthWrite: true,
         // the skirts hang down from the tile edges and are seen from either side
@@ -320,7 +409,10 @@ export function TerrainTiles() {
       u.uDim.value = world.dim
       u.uRelief.value = prefs.relief
       u.uGround.value = rig.groundBlend
+      u.uSeaCut.value = rig.groundBlend > 0.6 ? 1 : 0
+      ;(u.uHaze.value as THREE.Color).copy(skyHorizon)
     }
+    if (rig.groundBlend > 0) horizonColour(camera.position, skyHorizon)
     if (!on && opacity.current < 0.01) {
       for (const c of [...g.children]) c.visible = false
       return
@@ -357,7 +449,7 @@ export function TerrainTiles() {
       let t = tiles.get(key)
       if (!t) {
         if (budget-- <= 0) return null
-        t = { key, z, x, y, state: 'loading', used: frame.current, exag, prio }
+        t = { key, z, x, y, state: 'loading', used: frame.current, exag, prio, n: gridOf(z) }
         tiles.set(key, t)
         load(t)
       }
@@ -451,7 +543,7 @@ export function TerrainTiles() {
       t.retryAt = performance.now() + 3000 * t.tries
       return
     }
-    t.heights = heightsFrom(dem)
+    t.heights = heightsFrom(dem, t.n)
     t.img = img
     t.exag = settings().terrain
     t.mesh = buildMesh(t, img, t.heights, base, t.exag)

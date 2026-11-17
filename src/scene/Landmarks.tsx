@@ -11,6 +11,7 @@ import { useReader } from '../ui/wiki/store'
 import { formatYear } from '../time/format'
 import { groundHeightAt, TILE_BASE } from './TerrainTiles'
 import { SUN, world } from './world'
+import { horizonColour } from './GroundSky'
 
 const R = 6371000
 
@@ -67,19 +68,49 @@ function phaseGeometry(l: Landmark, ph: Phase) {
 
 const vert = /* glsl */ `
 varying vec3 vN;
+varying vec3 vLocal;
+varying vec3 vWorld;
 void main() {
   vN = normalize(mat3(modelMatrix) * normal);
-  gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
+  // the model's own frame in metres: x east, y up, z south
+  vLocal = position * 6371000.0;
+  vec4 w = modelMatrix * vec4(position, 1.0);
+  vWorld = w.xyz;
+  gl_Position = projectionMatrix * viewMatrix * w;
 }
 `
 const frag = /* glsl */ `
 uniform vec3 uColor;
 uniform vec3 uSun;
+uniform vec3 uUp;
+uniform vec3 uSky;
 uniform float uOpacity;
+uniform float uCourse;
 varying vec3 vN;
+varying vec3 vLocal;
+varying vec3 vWorld;
+float hash(vec3 p) { return fract(sin(dot(p, vec3(127.1, 311.7, 74.7))) * 43758.5453); }
 void main() {
-  float l = max(dot(normalize(vN), uSun), 0.0);
-  vec3 c = uColor * (0.32 + 0.85 * l);
+  vec3 N = normalize(vN);
+  float sunUp = dot(uSun, uUp);
+  float day = smoothstep(-0.12, 0.15, sunUp);
+  // direct sun, a soft sky light on upward faces, a little bounce from the ground on downward ones
+  float l = max(dot(N, uSun), 0.0) * day;
+  float skyL = 0.5 + 0.5 * dot(N, uUp);
+  vec3 light = vec3(1.0, 0.96, 0.9) * l * 1.05 + uSky * skyL * 0.9 + vec3(0.25, 0.2, 0.15) * (0.5 - 0.5 * dot(N, uUp)) * day * 0.6;
+  // courses of masonry: faint joints every uCourse metres, a little tonal variety per block
+  float cy = vLocal.y / uCourse;
+  float joint = 1.0 - 0.14 * smoothstep(0.92, 1.0, fract(cy)) * (1.0 - smoothstep(0.0, 0.08, fract(cy)));
+  float along = (abs(N.x) > abs(N.z) ? vLocal.z : vLocal.x) / (uCourse * 2.2);
+  float block = 0.92 + 0.16 * hash(vec3(floor(cy), floor(along + 0.5 * mod(floor(cy), 2.0)), 0.0));
+  // weathering: darker toward the ground, as rain and dust settle
+  float ao = 0.72 + 0.28 * smoothstep(0.0, 12.0, vLocal.y);
+  vec3 c = uColor * light * joint * block * ao;
+  // aerial perspective, as for the terrain
+  float dkm = length(cameraPosition - vWorld) * 6371.0;
+  float camKm = (length(cameraPosition) - 1.0) * 6371.0;
+  float haze = (1.0 - exp(-dkm / 45.0)) * 0.78 * (1.0 - smoothstep(0.4, 25.0, camKm));
+  c = mix(c, uSky, haze);
   gl_FragColor = vec4(c, uOpacity);
   #include <tonemapping_fragment>
   #include <colorspace_fragment>
@@ -95,7 +126,7 @@ function LandmarkView({ l }: { l: Landmark }) {
       new THREE.ShaderMaterial({
         vertexShader: vert,
         fragmentShader: frag,
-        uniforms: { uColor: { value: new THREE.Color(l.color).convertSRGBToLinear() }, uSun: { value: SUN }, uOpacity: { value: 1 } },
+        uniforms: { uColor: { value: new THREE.Color(l.color).convertSRGBToLinear() }, uSun: { value: SUN }, uUp: { value: lonLatToVec3(l.at[0], l.at[1], 1) }, uSky: { value: new THREE.Color(0.66, 0.77, 0.9) }, uOpacity: { value: 1 }, uCourse: { value: l.course ?? 1.2 } },
         transparent: true,
       }),
     [l],
@@ -161,6 +192,7 @@ function LandmarkView({ l }: { l: Landmark }) {
       }
       return
     }
+    horizonColour(camera.position, mat.uniforms.uSky.value as THREE.Color)
     // stand on the ground: the loaded terrain when there is some, else the known elevation
     const ground = Math.max(groundHeightAt(l.at[0], l.at[1]), l.elev)
     lonLatToVec3(l.at[0], l.at[1], TILE_BASE + (ground * prefs.terrain) / R + 0.0000002, m.position)

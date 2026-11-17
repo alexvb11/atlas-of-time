@@ -39,7 +39,8 @@ export default function App() {
     <main className="fixed inset-0 overflow-hidden bg-void">
       <Scene />
       {/* place names step back during a film, so the subtitles stay readable */}
-      <div id="globe-labels" className={`pointer-events-none fixed inset-0 overflow-hidden transition-opacity duration-1000 ${!introDone ? 'opacity-0' : film ? 'opacity-25' : ''}`} />
+      {/* on the ground the globe's name labels would float over the horizon, so they go; the landmark tags stay */}
+      <div id="globe-labels" className={`pointer-events-none fixed inset-0 overflow-hidden transition-opacity duration-1000 ${!introDone || ground ? 'opacity-0' : film ? 'opacity-25' : ''}`} />
       <div id="globe-events" className={`pointer-events-none fixed inset-0 overflow-hidden ${introDone ? '' : 'invisible'}`} />
       <AnimatePresence>
         {introDone && (
